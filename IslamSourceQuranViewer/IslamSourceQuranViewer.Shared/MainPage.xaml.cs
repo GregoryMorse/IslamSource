@@ -123,7 +123,8 @@ public class WindowsRTSettings : XMLRender.PortableSettings
 {
     public string CacheDirectory
     {
-        get {
+        get
+        {
             //Windows.Storage.ApplicationData.Current.LocalFolder.InstalledLocation;
             //Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
             return Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
@@ -131,7 +132,8 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     }
     public KeyValuePair<string, string[]>[] Resources
     {
-        get {
+        get
+        {
             return (new List<KeyValuePair<string, string[]>>(System.Linq.Enumerable.Select("HostPageUtility=Acct,lang,unicode;IslamResources=Hadith,IslamInfo,IslamSource".Split(';'), Str => new KeyValuePair<string, string[]>(Str.Split('=')[0], Str.Split('=')[1].Split(','))))).ToArray();
         }
     }
@@ -139,10 +141,11 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     {
         get
         {
-            return new string[] {"IslamMetadata"};
+            return new string[] { "IslamMetadata" };
         }
     }
-    public string GetTemplatePath() {
+    public string GetTemplatePath()
+    {
         return GetFilePath("metadata\\IslamSource.xml");
     }
     public string GetFilePath(string Path)
@@ -159,65 +162,97 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     }
     public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, FrameworkElement element, bool UseRenderTarget = true)
     {
-#if WINDOWS_APP && STORETOOLKIT
-        if (!UseRenderTarget)
+        double oldWidth = element.Width;
+        double oldHeight = element.Height;
+        double actOldWidth = element.ActualWidth;
+        double actOldHeight = element.ActualHeight;
+        //engine takes the Ceiling so make sure its below or sometimes off by 1 rounding up from ActualWidth/Height
+        element.Width = Math.Floor((float)Width);
+        element.Height = Math.Floor((float)Height);
+        //bool bHasCalledUpdateLayout = false;
+        //should wrap into another event handler and check a bHasCalledUpdateLayout to ignore early calls and race condition
+        //object lockVar = new object();
+        //EventHandler<object> eventHandler = null;
+        //System.Threading.Tasks.TaskCompletionSource<object> t = new System.Threading.Tasks.TaskCompletionSource<object>();
+        //eventHandler = (sender, e) => { lock (lockVar) { if (bHasCalledUpdateLayout && Math.Abs(element.ActualWidth - element.Width) <= 1 && Math.Abs(element.ActualHeight - element.Height) <= 1) { lock (lockVar) { if (bHasCalledUpdateLayout) { bHasCalledUpdateLayout = false; t.SetResult(e); } } } } };
+        //element.LayoutUpdated += eventHandler;
+        //lock (lockVar) {
+        //    element.UpdateLayout();
+        //    bHasCalledUpdateLayout = true;
+        //}
+        ////await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, new Windows.UI.Core.DispatchedHandler(() => element.Dispatcher.ProcessEvents(Windows.UI.Core.CoreProcessEventsOption.ProcessAllIfPresent)));
+        //await t.Task;
+        //element.LayoutUpdated -= eventHandler;
+        await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
+        if (element.ActualWidth > element.Width || element.ActualHeight > element.Height)
         {
-            double oldWidth = element.Width;
-            double oldHeight = element.Height;
-            //engine takes the Ceiling so make sure its below or sometimes off by 1 rounding up from ActualWidth/Height
-            element.Width = Math.Floor((float)Width);
-            element.Height = Math.Floor((float)Height);
-            element.UpdateLayout();
-            //await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, new Windows.UI.Core.DispatchedHandler(() => element.Dispatcher.ProcessEvents(Windows.UI.Core.CoreProcessEventsOption.ProcessAllIfPresent)));
-            await WinRTXamlToolkit.AwaitableUI.EventAsync.FromEvent<object>(eh => element.LayoutUpdated += eh, eh => element.LayoutUpdated -= eh);
-            if (element.ActualWidth > element.Width || element.ActualHeight > element.Height)
-            {
-                if (element.ActualWidth > element.Width) element.Width -= 1;
-                if (element.ActualHeight > element.Height) element.Height -= 1;
-                element.UpdateLayout();
-                await WinRTXamlToolkit.AwaitableUI.EventAsync.FromEvent<object>(eh => element.LayoutUpdated += eh, eh => element.LayoutUpdated -= eh);
-            }
+            if (element.ActualWidth > element.Width) element.Width -= 1;
+            if (element.ActualHeight > element.Height) element.Height -= 1;
+            //bHasCalledUpdateLayout = false;
+            //t = new System.Threading.Tasks.TaskCompletionSource<object>();
+            //eventHandler = (sender, e) => { lock (lockVar) { if (bHasCalledUpdateLayout && Math.Abs(element.ActualWidth - element.Width) <= 1 && Math.Abs(element.ActualHeight - element.Height) <= 1) { lock (lockVar) { if (bHasCalledUpdateLayout) { bHasCalledUpdateLayout = false; t.SetResult(e); } } } } };
+            //element.LayoutUpdated += eventHandler;
+            //lock (lockVar)
+            //{
+            //    element.UpdateLayout();
+            //    bHasCalledUpdateLayout = true;
+            //}
+            //await t.Task;
+            //element.LayoutUpdated -= eventHandler;
+            await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
+        }
+        UseRenderTarget = true;
+#if WINDOWS_APP && STORETOOLKIT
+        if (!UseRenderTarget) {
             System.IO.MemoryStream memstream = await WinRTXamlToolkit.Composition.WriteableBitmapRenderExtensions.RenderToPngStream(element);
-            element.Width = oldWidth;
-            element.Height = oldHeight;
-            element.UpdateLayout();
-            await WinRTXamlToolkit.AwaitableUI.EventAsync.FromEvent<object>(eh => element.LayoutUpdated += eh, eh => element.LayoutUpdated -= eh);
             Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
             Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
             await stream.WriteAsync(memstream.GetWindowsRuntimeBuffer());
             stream.Dispose();
-        }
-        else
-        {
+        } else {
 #endif
-            //Canvas cvs = new Canvas();
-            //cvs.Width = Width;
-            //cvs.Height = Height;
-            //Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path();
-            //object val;
-            //Resources.TryGetValue((object)"PathString", out val);
-            //Binding b = new Binding
-            //{
-            //    Source = (string)val
-            //};
-            //BindingOperations.SetBinding(path, Windows.UI.Xaml.Shapes.Path.DataProperty, b);
-            //cvs.Children.Add(path);
-            float dpi = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
-            Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap wb = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
-            await wb.RenderAsync(element, (int)((float)Width * 96 / dpi), (int)((float)Height * 96 / dpi));
-            Windows.Storage.Streams.IBuffer buf = await wb.GetPixelsAsync();
-            Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
-            Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
-            //Windows.Graphics.Imaging.BitmapPropertySet propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
-            //propertySet.Add("ImageQuality", new Windows.Graphics.Imaging.BitmapTypedValue(1.0, Windows.Foundation.PropertyType.Single)); // Maximum quality
-            Windows.Graphics.Imaging.BitmapEncoder be = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, stream);//, propertySet);
-            be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)Width, (uint)Height, 96, 96, buf.ToArray());
-            await be.FlushAsync();
-            await stream.GetOutputStreamAt(0).FlushAsync();
-            stream.Dispose();
+        //Canvas cvs = new Canvas();
+        //cvs.Width = Width;
+        //cvs.Height = Height;
+        //Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path();
+        //object val;
+        //Resources.TryGetValue((object)"PathString", out val);
+        //Binding b = new Binding
+        //{
+        //    Source = (string)val
+        //};
+        //BindingOperations.SetBinding(path, Windows.UI.Xaml.Shapes.Path.DataProperty, b);
+        //cvs.Children.Add(path);
+        float dpi = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
+        Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap wb = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
+        await wb.RenderAsync(element, (int)((float)Width * 96 / dpi), (int)((float)Height * 96 / dpi));
+        Windows.Storage.Streams.IBuffer buf = await wb.GetPixelsAsync();
+        Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+        Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+        //Windows.Graphics.Imaging.BitmapPropertySet propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
+        //propertySet.Add("ImageQuality", new Windows.Graphics.Imaging.BitmapTypedValue(1.0, Windows.Foundation.PropertyType.Single)); // Maximum quality
+        Windows.Graphics.Imaging.BitmapEncoder be = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, stream);//, propertySet);
+        be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)Width, (uint)Height, 96, 96, buf.ToArray());
+        await be.FlushAsync();
+        await stream.GetOutputStreamAt(0).FlushAsync();
+        stream.Dispose();
 #if WINDOWS_APP && STORETOOLKIT
         }
 #endif
+        element.Width = oldWidth;
+        element.Height = oldHeight;
+        //bHasCalledUpdateLayout = false;
+        //t = new System.Threading.Tasks.TaskCompletionSource<object>();
+        //eventHandler = (sender, e) => { lock (lockVar) { if (bHasCalledUpdateLayout && Math.Abs(element.ActualWidth - actOldWidth) <= 1 && Math.Abs(element.ActualHeight - actOldHeight) <= 1) { lock (lockVar) { if (bHasCalledUpdateLayout) { bHasCalledUpdateLayout = false; t.SetResult(e); } } } } };
+        //element.LayoutUpdated += eventHandler;
+        //lock (lockVar)
+        //{
+        //    element.UpdateLayout();
+        //    bHasCalledUpdateLayout = true;
+        //}
+        //await t.Task;
+        //element.LayoutUpdated -= eventHandler;
+        await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
     }
 }
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -236,7 +271,11 @@ namespace IslamSourceQuranViewer
             this.DataContext = this;
             this.ViewModel = new MyTabViewModel();
             this.InitializeComponent();
-
+#if STORETOOLKIT
+            AppBarButton RenderButton = new AppBarButton() { Icon = new SymbolIcon(Symbol.Camera), Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Render/Label") };
+            RenderButton.Click += RenderPngs_Click;
+            (this.BottomAppBar as CommandBar).PrimaryCommands.Add(RenderButton);
+#endif
 #if WINDOWS_PHONE_APP
             this.NavigationCacheMode = NavigationCacheMode.Required;
 #endif

@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
     <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -82,13 +83,37 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\prv.key" />
-    <Content Include="..\HostPage\Content\*.*"><Link>Content\%(RecursiveDir)%(FileName)</Link></Content>
+    <Content Include="..\HostPage\Content\*.*">
+      <Link>Content\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\HostPage\Content\themes\base\*.*">
+      <Link>Content\themes\base\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\HostPage\Content\themes\base\images\*.*">
+      <Link>Content\themes\base\images\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\HostPage\Content\themes\base\minified\*.*">
+      <Link>Content\themes\base\minified\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\HostPage\Content\themes\base\minified\images\*.*">
+      <Link>Content\themes\base\minified\images\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
     <None Include="islamsource.pubxml" />
-    <Content Include="..\HostPage\host.aspx"><Link>host.aspx</Link></Content>
-    <Content Include="..\files\*.*"><Link>files\%(RecursiveDir)%(FileName)</Link></Content>
-    <Content Include="..\images\*.*"><Link>images\%(RecursiveDir)%(FileName)</Link></Content>
-    <Content Include="..\metadata\*.*"><Link>metadata\%(RecursiveDir)%(FileName)</Link></Content>
-    <Content Include="..\HostPage\Scripts\*.*"><Link>Scripts\%(RecursiveDir)%(FileName)</Link></Content>
+    <Content Include="..\HostPage\host.aspx">
+      <Link>host.aspx</Link>
+    </Content>
+    <Content Include="..\files\*.*">
+      <Link>files\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\images\*.*">
+      <Link>images\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\metadata\*.*">
+      <Link>metadata\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\HostPage\Scripts\*.*">
+      <Link>Scripts\%(RecursiveDir)%(FileName)%(Extension)</Link>
+    </Content>
     <Content Include="Web.config" />
     <None Include="My Project\PublishProfiles\islamsource.pubxml" />
     <None Include="My Project\PublishProfiles\iWebHosting.pubxml" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="yo" original="XMLRENDER/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en-US" target-language="tk-TM" original="XMLRENDER/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1573.0" tool-company="Microsoft" />
     </header>
@@ -52,7 +52,7 @@
         </trans-unit>
         <trans-unit id="Acct_ChangePassword" translate="yes" xml:space="preserve">
           <source>Change Password</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ṣàyípadà ọ̀rọ̀ aṣínà</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Paroly Üýtget</target>
         </trans-unit>
         <trans-unit id="Acct_ChangeUsername" translate="yes" xml:space="preserve">
           <source>Change Username</source>
@@ -68,7 +68,7 @@
         </trans-unit>
         <trans-unit id="Acct_ClearCache" translate="yes" xml:space="preserve">
           <source>Clear Cache</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pa Ìfarasin Rẹ́</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Keşi Arassala</target>
         </trans-unit>
         <trans-unit id="Acct_ClearDiskCache" translate="yes" xml:space="preserve">
           <source>Clear Disk Cache</source>
@@ -80,11 +80,11 @@
         </trans-unit>
         <trans-unit id="Acct_ConfirmPassword" translate="yes" xml:space="preserve">
           <source>Confirm Password</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ṣàrídájú Ọ̀rọ̀ Aṣínà</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Paroly Tassykla</target>
         </trans-unit>
         <trans-unit id="Acct_ControlPanel" translate="yes" xml:space="preserve">
           <source>Control Panel</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pánẹ́ẹ̀lì Ìdarí</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dolandyryş paneli</target>
         </trans-unit>
         <trans-unit id="Acct_CreateDatabase" translate="yes" xml:space="preserve">
           <source>Create Database</source>
@@ -92,7 +92,7 @@
         </trans-unit>
         <trans-unit id="Acct_DeleteAccount" translate="yes" xml:space="preserve">
           <source>Delete Account</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ṣèparẹ́ àkọọ́lẹ̀</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hasaby ýokla</target>
         </trans-unit>
         <trans-unit id="Acct_DotNetVersion" translate="yes" xml:space="preserve">
           <source>Dot Net Version</source>
@@ -104,7 +104,7 @@
         </trans-unit>
         <trans-unit id="Acct_EmailAddress" translate="yes" xml:space="preserve">
           <source>E-mail Address</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Àdírẹ́ẹ̀sì í-meèlì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">E-poçta salgysy</target>
         </trans-unit>
         <trans-unit id="Acct_EmailChangeReactivate" translate="yes" xml:space="preserve">
           <source>E-mail address changed and activation e-mail sent to reactivate account.</source>
@@ -120,7 +120,7 @@
         </trans-unit>
         <trans-unit id="Acct_ForgotPassword" translate="yes" xml:space="preserve">
           <source>Forgot Password</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gbàgbé ọ̀rọ̀ aṣínà?</target>
+          <target state="new">Forgot Password</target>
         </trans-unit>
         <trans-unit id="Acct_ForgotUsername" translate="yes" xml:space="preserve">
           <source>Forgot Username</source>
@@ -128,7 +128,7 @@
         </trans-unit>
         <trans-unit id="Acct_Home" translate="yes" xml:space="preserve">
           <source>Home</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ilé</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Öý</target>
         </trans-unit>
         <trans-unit id="Acct_IncorrectActivationCode" translate="yes" xml:space="preserve">
           <source>Incorrect activation code.</source>
@@ -140,7 +140,7 @@
         </trans-unit>
         <trans-unit id="Acct_InvalidInput" translate="yes" xml:space="preserve">
           <source>Invalid input.</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ìgbàwọlé Àìkójú òsùwọ̀n</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nädogry Girizme</target>
         </trans-unit>
         <trans-unit id="Acct_InvalidUsernamePassword" translate="yes" xml:space="preserve">
           <source>Invalid username or password.</source>
@@ -148,7 +148,7 @@
         </trans-unit>
         <trans-unit id="Acct_Login" translate="yes" xml:space="preserve">
           <source>Login</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Wọlé</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">bellige alyn</target>
         </trans-unit>
         <trans-unit id="Acct_LoginSuccess" translate="yes" xml:space="preserve">
           <source>Login successful.</source>
@@ -172,7 +172,7 @@
         </trans-unit>
         <trans-unit id="Acct_No" translate="yes" xml:space="preserve">
           <source>No</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bẹ́ẹ̀kọ́</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ýok</target>
         </trans-unit>
         <trans-unit id="Acct_NotConfirmDelete" translate="yes" xml:space="preserve">
           <source>Must confirm account deletion.</source>
@@ -184,7 +184,7 @@
         </trans-unit>
         <trans-unit id="Acct_Password" translate="yes" xml:space="preserve">
           <source>Password</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ọ̀rọ̀ aṣínà</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Parol:</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordAlreadyReset" translate="yes" xml:space="preserve">
           <source>Password already reset or process not initiated.</source>
@@ -224,11 +224,11 @@
         </trans-unit>
         <trans-unit id="Acct_PasswordsNotMatch" translate="yes" xml:space="preserve">
           <source>Passwords do not match</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ọ̀rọ̀ aṣínà kò bára mu</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Parollar biri-birine gabat gelenok</target>
         </trans-unit>
         <trans-unit id="Acct_Register" translate="yes" xml:space="preserve">
           <source>Register</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">REGISTER</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bellige al</target>
         </trans-unit>
         <trans-unit id="Acct_Remember" translate="yes" xml:space="preserve">
           <source>Remember?</source>
@@ -244,7 +244,7 @@
         </trans-unit>
         <trans-unit id="Acct_ResetPassword" translate="yes" xml:space="preserve">
           <source>Reset Password</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ṣàtúntò Ọ̀rọ̀ Aṣínà</target>
+          <target state="new">Reset Password</target>
         </trans-unit>
         <trans-unit id="Acct_RetrievePassword" translate="yes" xml:space="preserve">
           <source>Retrieve Password</source>
@@ -260,7 +260,7 @@
         </trans-unit>
         <trans-unit id="Acct_Username" translate="yes" xml:space="preserve">
           <source>Username</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Orúkọ olùmúlò</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ulanyjy ady:</target>
         </trans-unit>
         <trans-unit id="Acct_UsernameChangedBody" translate="yes" xml:space="preserve">
           <source>This e-mail is to inform of the account name change of your {0} account: {1}.</source>
@@ -304,7 +304,7 @@
         </trans-unit>
         <trans-unit id="Acct_Yes" translate="yes" xml:space="preserve">
           <source>Yes</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bẹ́ẹ̀ni</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hawa</target>
         </trans-unit>
         <trans-unit id="lang_am" translate="yes" xml:space="preserve">
           <source>ኣማርኛ</source>
@@ -320,7 +320,7 @@
         </trans-unit>
         <trans-unit id="lang_ber" translate="yes" xml:space="preserve">
           <source>Tamazight</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tamasiti</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tamazitçe</target>
         </trans-unit>
         <trans-unit id="lang_bg" translate="yes" xml:space="preserve">
           <source>български</source>
@@ -348,7 +348,7 @@
         </trans-unit>
         <trans-unit id="lang_en" translate="yes" xml:space="preserve">
           <source>English</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gẹ̀ẹ́sì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Iňlis</target>
         </trans-unit>
         <trans-unit id="lang_es" translate="yes" xml:space="preserve">
           <source>español</source>
@@ -440,7 +440,7 @@
         </trans-unit>
         <trans-unit id="lang_sw" translate="yes" xml:space="preserve">
           <source>Kiswahili</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kisiwahili</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kiswahiliçe</target>
         </trans-unit>
         <trans-unit id="lang_ta" translate="yes" xml:space="preserve">
           <source>தமிழ்</source>
@@ -480,15 +480,15 @@
         </trans-unit>
         <trans-unit id="lang_localam" translate="yes" xml:space="preserve">
           <source>Amharic</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Amuhariki</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Amharça</target>
         </trans-unit>
         <trans-unit id="lang_localar" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Árábìkì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arapça</target>
         </trans-unit>
         <trans-unit id="lang_localaz" translate="yes" xml:space="preserve">
           <source>Azerbaijani</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Aserbaijani</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Azerbaýjança</target>
         </trans-unit>
         <trans-unit id="lang_localber" translate="yes" xml:space="preserve">
           <source>Amazigh</source>
@@ -496,11 +496,11 @@
         </trans-unit>
         <trans-unit id="lang_localbg" translate="yes" xml:space="preserve">
           <source>Bulgarian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bọligeriani</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bolgarça</target>
         </trans-unit>
         <trans-unit id="lang_localbn" translate="yes" xml:space="preserve">
           <source>Bengali</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bẹ̀ngánì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bengali</target>
         </trans-unit>
         <trans-unit id="lang_localbs" translate="yes" xml:space="preserve">
           <source>Bosnian</source>
@@ -508,55 +508,55 @@
         </trans-unit>
         <trans-unit id="lang_localcs" translate="yes" xml:space="preserve">
           <source>Czech</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ṣẹ́ẹ̀ki</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Çehçe</target>
         </trans-unit>
         <trans-unit id="lang_localde" translate="yes" xml:space="preserve">
           <source>German</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ará Jámánì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nemesçe</target>
         </trans-unit>
         <trans-unit id="lang_localdv" translate="yes" xml:space="preserve">
           <source>Divehi</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Difẹhi</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Diwehiçe</target>
         </trans-unit>
         <trans-unit id="lang_localen" translate="yes" xml:space="preserve">
           <source>English</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gẹ̀ẹ́sì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Iňlis</target>
         </trans-unit>
         <trans-unit id="lang_locales" translate="yes" xml:space="preserve">
           <source>Spanish</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sípáníìṣì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ispança</target>
         </trans-unit>
         <trans-unit id="lang_localfa" translate="yes" xml:space="preserve">
           <source>Persian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pásíà</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Parsça</target>
         </trans-unit>
         <trans-unit id="lang_localfr" translate="yes" xml:space="preserve">
           <source>French</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Faransé</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Fransuzça</target>
         </trans-unit>
         <trans-unit id="lang_localha" translate="yes" xml:space="preserve">
           <source>Hausa</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hausa</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gawsaça</target>
         </trans-unit>
         <trans-unit id="lang_localhi" translate="yes" xml:space="preserve">
           <source>Hindi</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Híńdì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hindiçe</target>
         </trans-unit>
         <trans-unit id="lang_localid" translate="yes" xml:space="preserve">
           <source>Indonesian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Indonésíà</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Indonezçe</target>
         </trans-unit>
         <trans-unit id="lang_localit" translate="yes" xml:space="preserve">
           <source>Italian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ará Ítílì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Italýança</target>
         </trans-unit>
         <trans-unit id="lang_localja" translate="yes" xml:space="preserve">
           <source>Japanese</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Japaníìsì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ýaponça</target>
         </trans-unit>
         <trans-unit id="lang_localko" translate="yes" xml:space="preserve">
           <source>Korean</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ará Kòríà</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Koreý</target>
         </trans-unit>
         <trans-unit id="lang_localku" translate="yes" xml:space="preserve">
           <source>Kurdish</source>
@@ -564,95 +564,95 @@
         </trans-unit>
         <trans-unit id="lang_localml" translate="yes" xml:space="preserve">
           <source>Malayalam</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Máláyámù</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Malaýalam dili</target>
         </trans-unit>
         <trans-unit id="lang_localms" translate="yes" xml:space="preserve">
           <source>Malay</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Maleyi</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Malaýça</target>
         </trans-unit>
         <trans-unit id="lang_localnl" translate="yes" xml:space="preserve">
           <source>Dutch</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dútísì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gollandça</target>
         </trans-unit>
         <trans-unit id="lang_localno" translate="yes" xml:space="preserve">
           <source>Norwegian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Norwegian</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Norwegçe</target>
         </trans-unit>
         <trans-unit id="lang_localpl" translate="yes" xml:space="preserve">
           <source>Polish</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pọ́lísì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Polýakça</target>
         </trans-unit>
         <trans-unit id="lang_localpt" translate="yes" xml:space="preserve">
           <source>Portuguese</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Pọtugúisì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Portugalça</target>
         </trans-unit>
         <trans-unit id="lang_localro" translate="yes" xml:space="preserve">
           <source>Romanian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Romaniani</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rumynça</target>
         </trans-unit>
         <trans-unit id="lang_localru" translate="yes" xml:space="preserve">
           <source>Russian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rọ́síà</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rusça</target>
         </trans-unit>
         <trans-unit id="lang_localsd" translate="yes" xml:space="preserve">
           <source>Sindhi</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sindi</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sindçe</target>
         </trans-unit>
         <trans-unit id="lang_localso" translate="yes" xml:space="preserve">
           <source>Somali</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sòmálì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Somaliçe</target>
         </trans-unit>
         <trans-unit id="lang_localsq" translate="yes" xml:space="preserve">
           <source>Albanian</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Alibeniani</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Albança</target>
         </trans-unit>
         <trans-unit id="lang_localsv" translate="yes" xml:space="preserve">
           <source>Swedish</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Suwidiṣi</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Şwed Dili</target>
         </trans-unit>
         <trans-unit id="lang_localsw" translate="yes" xml:space="preserve">
           <source>Swahili</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Suwaili</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Swahiliçe</target>
         </trans-unit>
         <trans-unit id="lang_localta" translate="yes" xml:space="preserve">
           <source>Tamil</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tàmílì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tamilçe</target>
         </trans-unit>
         <trans-unit id="lang_localtg" translate="yes" xml:space="preserve">
           <source>Tajik</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tajiki</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Täjikçe</target>
         </trans-unit>
         <trans-unit id="lang_localth" translate="yes" xml:space="preserve">
           <source>Thai</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Táì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Taýlandça</target>
         </trans-unit>
         <trans-unit id="lang_localtr" translate="yes" xml:space="preserve">
           <source>Turkish</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tọ́kíìsì</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Türkçe</target>
         </trans-unit>
         <trans-unit id="lang_localtt" translate="yes" xml:space="preserve">
           <source>Tatar</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tatari</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tatarça</target>
         </trans-unit>
         <trans-unit id="lang_localug" translate="yes" xml:space="preserve">
           <source>Uyghur</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uyghur</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Uýgur dili</target>
         </trans-unit>
         <trans-unit id="lang_localur" translate="yes" xml:space="preserve">
           <source>Urdu</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Yuridu</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Urduça</target>
         </trans-unit>
         <trans-unit id="lang_localuz" translate="yes" xml:space="preserve">
           <source>Uzbek</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Yusibẹki</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Özbekçe</target>
         </trans-unit>
         <trans-unit id="lang_localzh" translate="yes" xml:space="preserve">
           <source>Chinese</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Chinese</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hytaýça</target>
         </trans-unit>
         <trans-unit id="Acct_Download" translate="yes" xml:space="preserve">
           <source>Download {0}</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gba ẹ̀dà{0}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Göçürip al: {0}</target>
         </trans-unit>
         <trans-unit id="unicode_ArabicComma" translate="yes" xml:space="preserve">
           <source>Arabic Comma</source>
@@ -1060,11 +1060,11 @@
         </trans-unit>
         <trans-unit id="unicode_Colon" translate="yes" xml:space="preserve">
           <source>Colon</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kólọ̀nù</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Iki nokat</target>
         </trans-unit>
         <trans-unit id="unicode_Comma" translate="yes" xml:space="preserve">
           <source>Comma</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kọmá</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Otur</target>
         </trans-unit>
         <trans-unit id="unicode_ExclamationMark" translate="yes" xml:space="preserve">
           <source>Exclamation Mark</source>
@@ -1120,7 +1120,7 @@
         </trans-unit>
         <trans-unit id="unicode_Space" translate="yes" xml:space="preserve">
           <source>Space</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Àlàfo</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bosluk</target>
         </trans-unit>
         <trans-unit id="Acct_CertRequest" translate="yes" xml:space="preserve">
           <source>Certificate Request</source>
@@ -1128,7 +1128,7 @@
         </trans-unit>
         <trans-unit id="Acct_Certificate" translate="yes" xml:space="preserve">
           <source>Certificate</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">ìjẹ́rìísí</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kepilnama</target>
         </trans-unit>
         <trans-unit id="Acct_CertInstall" translate="yes" xml:space="preserve">
           <source>Install Certificate</source>
@@ -1136,7 +1136,7 @@
         </trans-unit>
         <trans-unit id="Acct_CurrentUser" translate="yes" xml:space="preserve">
           <source>Current User</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Aṣàmúlò lọwọlọwọ</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Şu Wagtky Ulanyjy</target>
         </trans-unit>
         <trans-unit id="Acct_DeleteCertRequest" translate="yes" xml:space="preserve">
           <source>Delete Certificate Request</source>
@@ -1180,7 +1180,7 @@
         </trans-unit>
         <trans-unit id="unicode_PopDirectionalFormatting" translate="yes" xml:space="preserve">
           <source>Pop Directional Formatting</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">‬	Gígúnrégé alátọ̀nà Àṣẹ́yọsókè</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">‬	Gönükdirilen Formatlaşdyrmany Aç</target>
         </trans-unit>
         <trans-unit id="unicode_RightToLeftMark" translate="yes" xml:space="preserve">
           <source>Right-To-Left Mark</source>

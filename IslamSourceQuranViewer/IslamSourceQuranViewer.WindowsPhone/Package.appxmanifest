@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.24" />
+  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.26" />
   <mp:PhoneIdentity PhoneProductId="1ad5ad0d-547d-4e29-ae22-55110a8c3934" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Quran Word By Word</DisplayName>
@@ -12,11 +12,13 @@
     <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
   </Prerequisites>
   <Resources>
-    <Resource Language="x-generate" />
+    <!-- <Resource Language="x-generate" /> -->
+    <Resource Language="en" />
+    <Resource Language="hu" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IslamSourceQuranViewer.WindowsPhone.App">
-      <m3:VisualElements DisplayName="Quran Word By Word" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="IslamSourceQuranViewer.WindowsPhone" ForegroundText="light" BackgroundColor="transparent">
+      <m3:VisualElements DisplayName="ms-resource:DisplayName" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="ms-resource:Description" ForegroundText="light" BackgroundColor="transparent">
         <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>
         <m3:SplashScreen Image="Assets\SplashScreen.png" />

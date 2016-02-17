@@ -182,6 +182,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ga.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.gd-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.gd-GB.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.gl.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.gl.Designer.vb</LastGenOutput>
@@ -217,6 +221,10 @@
     <EmbeddedResource Include="Resources.id.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.id.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ig-NG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ig-NG.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.is.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -261,6 +269,10 @@
     <EmbeddedResource Include="Resources.ku-Arab.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ku-Arab.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ky-KG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ky-KG.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.lb.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -317,6 +329,10 @@
     <EmbeddedResource Include="Resources.nn.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.nn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.nso.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.nso.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.or.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -418,6 +434,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ti.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.tk-TM.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.tk-TM.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.tn.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tn.Designer.vb</LastGenOutput>
@@ -425,6 +445,14 @@
     <EmbeddedResource Include="Resources.tr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.tt-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.tt-RU.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ug-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ug-CN.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.uk.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -449,6 +477,10 @@
     <EmbeddedResource Include="Resources.xh.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.xh.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.yo-NG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.yo-NG.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -588,6 +620,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.ga.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.gd-GB.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.gd-GB.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.gl.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -632,6 +669,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.id.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ig-NG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ig-NG.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.is.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -687,6 +729,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.ku-Arab.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ky-KG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ky-KG.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.lb.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -757,6 +804,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.nn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.nso.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.nso.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.or.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -883,6 +935,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.ti.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.tk-TM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.tk-TM.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.tn.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -892,6 +949,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.tt-RU.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.tt-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ug-CN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ug-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.uk.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -922,6 +989,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.xh.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.yo-NG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.yo-NG.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.zh-Hans.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -967,7 +1039,7 @@
     <XliffResource Include="MultilingualResources\XMLRender.fil.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.fr.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ga.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.gd.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.gd-GB.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.gl.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.gu.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ha-Latn.xlf" />
@@ -977,7 +1049,7 @@
     <XliffResource Include="MultilingualResources\XMLRender.hu.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.hy.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.id.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.ig.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ig-NG.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.is.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.it.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.iu-Latn.xlf" />
@@ -989,7 +1061,7 @@
     <XliffResource Include="MultilingualResources\XMLRender.ko.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.kok.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ku-Arab.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.ky.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ky-KG.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.lb.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.lo.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.lt.xlf" />
@@ -1010,10 +1082,8 @@
     <XliffResource Include="MultilingualResources\XMLRender.pa.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.pl.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.prs.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.ps.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.pt.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.quz.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.rm.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ro.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ru.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.rw.xlf" />
@@ -1031,18 +1101,18 @@
     <XliffResource Include="MultilingualResources\XMLRender.tg-Cyrl.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.th.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ti.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.tk.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.tk-TM.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.tn.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.tr.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.tt.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.ug.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.tt-RU.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.ug-CN.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.uk.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ur.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.uz-Latn.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.vi.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.wo.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.xh.xlf" />
-    <XliffResource Include="MultilingualResources\XMLRender.yo.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.yo-NG.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.zh-Hans.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.zh-Hant.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.zu.xlf" />

@@ -34,6 +34,11 @@ namespace IslamSourceQuranViewer
             this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
             this.ProgressGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             Position();
+#if STORETOOLKIT
+            AppBarButton RenderButton = new AppBarButton() { Icon = new SymbolIcon(Symbol.Camera), Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Render/Label") };
+            RenderButton.Click += RenderPngs_Click;
+            (this.BottomAppBar as CommandBar).PrimaryCommands.Add(RenderButton);
+#endif
         }
         public ExtSplashScreen(Windows.ApplicationModel.Activation.SplashScreen splashScreen, bool loadState)
         {

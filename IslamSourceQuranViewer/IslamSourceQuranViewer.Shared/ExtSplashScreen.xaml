@@ -33,9 +33,8 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render" Icon="Camera"></AppBarButton>
-            <AppBarButton Name="Settings" Click="Settings_Click" Label="Settings" Icon="Setting"></AppBarButton>
-            <AppBarButton Name="Back" Click="Back_Click" Label="Back" Icon="Back"></AppBarButton>
+            <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
+            <AppBarButton Name="Back" Click="Back_Click" x:Uid="Back" Icon="Back"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

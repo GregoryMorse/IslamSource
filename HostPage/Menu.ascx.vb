@@ -65,10 +65,10 @@ Partial Class Menu
             'yi is yiddish should be ji
             'iw is hebrew should be he
             'tl is tagalog has no equivalent perhaps could be changed to es-ph or a spanish prefixed dialect
-            If IO.File.Exists(PortableMethods.Settings.GetFilePath(VirtualPathUtility.ToAbsolute("~/bin/" + AllCultures(Count).Name + "/XMLRender.resources.dll"))) Then
+            If AllCultures(Count).Name = CType(Reflection.Assembly.GetAssembly(GetType(XMLRender.Utility)).GetCustomAttributes(GetType(Resources.NeutralResourcesLanguageAttribute), False)(0), Resources.NeutralResourcesLanguageAttribute).CultureName Or IO.File.Exists(PortableMethods.Settings.GetFilePath(VirtualPathUtility.ToAbsolute("~/bin/" + AllCultures(Count).Name + "/XMLRender.resources.dll"))) Then
                 writer.WriteBeginTag("option")
                 writer.WriteAttribute("value", AllCultures(Count).Name)
-                If AllCultures(Count).Name = Globalization.CultureInfo.CurrentCulture.Name Or _
+                If AllCultures(Count).Name = Globalization.CultureInfo.CurrentCulture.Name Or
                     AllCultures(Count).Name = Globalization.CultureInfo.CurrentCulture.TwoLetterISOLanguageName Then writer.WriteAttribute("selected", "selected")
                 writer.Write(HtmlTextWriter.TagRightChar + UtilityWeb.HtmlTextEncode(AllCultures(Count).NativeName))
                 writer.WriteEndTag("option")

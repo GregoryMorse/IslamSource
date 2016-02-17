@@ -1276,9 +1276,11 @@ Public Class RenderArrayWeb
         Dim _Str As String
         Public _Factory As SharpDX.DirectWrite.Factory
         Public Function GetLocaleName(textPosition As Integer, ByRef textLength As Integer) As String Implements SharpDX.DirectWrite.TextAnalysisSource.GetLocaleName
+            textLength = _Str.Length - textPosition
             Return Threading.Thread.CurrentThread.CurrentCulture.Name
         End Function
         Public Function GetNumberSubstitution(textPosition As Integer, ByRef textLength As Integer) As SharpDX.DirectWrite.NumberSubstitution Implements SharpDX.DirectWrite.TextAnalysisSource.GetNumberSubstitution
+            textLength = _Str.Length - textPosition
             Return New SharpDX.DirectWrite.NumberSubstitution(_Factory, SharpDX.DirectWrite.NumberSubstitutionMethod.None, Nothing, True)
         End Function
         Public Function GetTextAtPosition(textPosition As Integer) As String Implements SharpDX.DirectWrite.TextAnalysisSource.GetTextAtPosition
@@ -1466,7 +1468,7 @@ Public Class RenderArrayWeb
         Dim GlyphOffsets(ActualGlyphCount - 1) As SharpDX.DirectWrite.GlyphOffset
         Analyze.GetGlyphPlacements(Str, ClusterMap, TextProps, Str.Length, GlyphIndices, GlyphProps, ActualGlyphCount, FontFace, useFont.Size, False, IsRTL, Analysis, Nothing, New SharpDX.DirectWrite.FontFeature()() {FeatureDisabler}, New Integer() {Str.Length}, GlyphAdvances, GlyphOffsets)
         Dim CharPosInfos As New List(Of CharPosInfo)
-        Dim LastPriorWidth As Single = 0
+        'Dim LastPriorWidth As Single = 0
         Dim PriorWidth As Single = 0
         Dim RunStart As Integer = 0
         Dim RunRes As Integer = ClusterMap(0)

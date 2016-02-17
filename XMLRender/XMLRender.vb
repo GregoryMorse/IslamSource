@@ -1090,6 +1090,9 @@ Public Class ArabicData
         Next
         Return Ranges
     End Function
+    Public Shared Function IsDiacritic(Ch As Char) As Boolean
+        Return ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T"
+    End Function
     Public Shared Function FixStartingCombiningSymbol(Str As String) As String
         Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightEmbedding + Str + PopDirectionalFormatting, Str)
     End Function

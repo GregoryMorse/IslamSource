@@ -35,11 +35,13 @@ namespace IslamSourceQuranViewer
         /// </summary>
         public App()
         {
-            //Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "hu";
+#if STORETOOLKIT
+            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "en";
             //Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
+#endif
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            Settings.InitDefaultSettings();
+            AppSettings.InitDefaultSettings();
         }
 
         /// <summary>

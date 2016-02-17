@@ -6,34 +6,44 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    <Page.Resources>
+        <CollectionViewSource x:Name="FontsSource" Source="{Binding Path=MyAppSettings.Fonts}"></CollectionViewSource>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Arabic Font" VerticalAlignment="Center"></TextBlock>
-                <ComboBox ItemsSource="{Binding Fonts}" VerticalAlignment="Center"></ComboBox>
+                <TextBlock x:Uid="ArabicFont" VerticalAlignment="Center"></TextBlock>
+                <ComboBox ItemsSource="{Binding Source={StaticResource FontsSource}}" SelectedItem="{Binding Path=MyAppSettings.SelectedFont, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
+                <TextBlock x:Uid="Size" VerticalAlignment="Center"></TextBlock>
+                <TextBox Text="{Binding Path=MyAppSettings.FontSize}"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Use Recitation Rule Coloring" VerticalAlignment="Center"></TextBlock>
-                <CheckBox IsChecked="{Binding UseColoring}" VerticalAlignment="Center"></CheckBox>
+                <TextBlock x:Uid="OtherTextFont" VerticalAlignment="Center"></TextBlock>
+                <ComboBox ItemsSource="{Binding Source={StaticResource FontsSource}}" SelectedItem="{Binding Path=MyAppSettings.OtherSelectedFont, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
+                <TextBlock x:Uid="Size" VerticalAlignment="Center"></TextBlock>
+                <TextBox Text="{Binding Path=MyAppSettings.OtherFontSize}"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Show Translation" VerticalAlignment="Center"></TextBlock>
-                <CheckBox IsChecked="{Binding ShowTranslation}" VerticalAlignment="Center"></CheckBox>
+                <TextBlock x:Uid="UseRecitationRuleColoring" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding Path=MyAppSettings.UseColoring, Mode=TwoWay}" VerticalAlignment="Center"></CheckBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Show Transliteration" VerticalAlignment="Center"></TextBlock>
-                <CheckBox IsChecked="{Binding ShowTransliteration}" VerticalAlignment="Center"></CheckBox>
+                <TextBlock x:Uid="ShowTranslation" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding Path=MyAppSettings.ShowTranslation, Mode=TwoWay}" VerticalAlignment="Center"></CheckBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Show Word By Word" VerticalAlignment="Center"></TextBlock>
-                <CheckBox IsChecked="{Binding ShowW4W}" VerticalAlignment="Center"></CheckBox>
+                <TextBlock x:Uid="ShowTransliteration" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding Path=MyAppSettings.ShowTransliteration, Mode=TwoWay}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Uid="ShowWordByWord" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding Path=MyAppSettings.ShowW4W, Mode=TwoWay}" VerticalAlignment="Center"></CheckBox>
             </StackPanel>
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="Back" Click="Back_Click" Label="Back" Icon="Back"></AppBarButton>
+            <AppBarButton Name="Back" Click="Back_Click" x:Uid="Back" Icon="Back"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

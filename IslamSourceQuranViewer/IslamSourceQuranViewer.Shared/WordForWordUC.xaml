@@ -1,6 +1,6 @@
 ﻿<Page
-    x:Class="IslamSourceQuranViewer.WordForWordUC"
     x:Name="TopLevel"
+    x:Class="IslamSourceQuranViewer.WordForWordUC"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:IslamSourceQuranViewer"
@@ -22,6 +22,19 @@
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
         </DataTemplate>
+        <DataTemplate x:Key="ArabicTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding Direction}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}" 
+                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" Language="ar" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}">
+                        <!--<Run Text="{Binding ItemText}" Foreground="{Binding Color}"></Run>-->
+                </TextBlock>
+            </Grid>
+        </DataTemplate>
         <DataTemplate x:Key="NormalTemplate">
             <Grid>
                 <Grid.RowDefinitions>
@@ -30,7 +43,7 @@
 
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
                 <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding Direction}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}" 
-                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.AllFontSize, Mode=OneWay}">
+                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}">
                         <!--<Run Text="{Binding ItemText}" Foreground="{Binding Color}"></Run>-->
                 </TextBlock>
             </Grid>
@@ -44,7 +57,7 @@
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
         </DataTemplate>
-        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}"></local:NormalWordTemplateSelector>
+        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}"></local:NormalWordTemplateSelector>
         <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector" MyTemplate="{StaticResource MyTemplate}"></local:MyDataTemplateSelector>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -69,12 +82,11 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="ZoomIn" Click="ZoomIn_Click" Label="Bigger" Icon="ZoomIn"></AppBarButton>
-            <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" Label="Smaller" Icon="ZoomOut"></AppBarButton>
-            <AppBarButton Name="Default" Click="Default_Click" Label="Default" Icon="Zoom"></AppBarButton>
-            <AppBarButton Name="RenderPngs" Click="RenderPngs_Click" Label="Render" Icon="Camera"></AppBarButton>
-            <AppBarButton Name="Settings" Click="Settings_Click" Label="Settings" Icon="Setting"></AppBarButton>
-            <AppBarButton Name="Back" Click="Back_Click" Label="Back" Icon="Back"></AppBarButton>
+            <AppBarButton Name="ZoomIn" Click="ZoomIn_Click" x:Uid="IncreaseFontSize" Icon="ZoomIn"></AppBarButton>
+            <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" x:Uid="DecreaseFontSize" Icon="ZoomOut"></AppBarButton>
+            <AppBarButton Name="Default" Click="Default_Click" x:Uid="DefaultFontSize" Icon="Zoom"></AppBarButton>
+            <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
+            <AppBarButton Name="Back" Click="Back_Click" x:Uid="Back" Icon="Back"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
