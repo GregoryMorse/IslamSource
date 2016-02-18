@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>پارول ئۆزگەرتىش</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>ئىمنى مۇقىملاش</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>كونترول تاختىسى</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>ھېسابات ئۆچۈرۈش</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>تورخەت ئادرېسى</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>باشبەت</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>كىرگۈزۈش ئىناۋەتسىز</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>كىرىش(&amp;L)</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>ياق</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>پارول</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>پارول ماس كەلمىدى</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>ئىشلەتكۈچى نامى</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>ھەئە</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>بەربەر تىلى</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>ئىنگلىزچە</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>سىۋاھىلى تىلى</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>ئامخارا تىلى</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>ئەرەبچە</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>ئەزەربەيجانچە</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>بۇلغارچە</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>بېنگالچە</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>چېخچە</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>گېرمانچە</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>دىۋېھى تىلى</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>ئىنگلىزچە</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>ئىسپانچە</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>پارسچە</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>فرانسۇزچە</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>خائۇسا تىلى</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>ھىندىچە</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>ھىندونېزىيە تىلى</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>ئىتالىيانچە</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>ياپونچە</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>كورىيانچە</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>مالايالامچە</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>مالايچە</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>گوللاند تىلى</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>نورۋېگىيە تىلى</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>پولەكچە</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>پورتۇگالچە</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>رۇمىنچە</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>رۇسچە</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>سىندى تىلى</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>سومالى تىلى</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>ئالبانچە</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>شۋېد تىلى</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>سۋاھىلىچە</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>تامىل تىلى</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>تاجىكچە</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>تايلاندچە</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>تۈركچە</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>تاتارچە</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ئۇيغۇرچە</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>ئوردۇچە</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>ئۆزبېكچە</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>خەنزۇچە</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>‏‏{0} نى چۈشۈرۈش</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>قوش چېكىت(&amp;C)</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>پەش</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>بوشلۇق</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>تەستىق</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>نۆۋەتتىكى ئىشلەتكۈچى</value>
+  </data>
+</root>

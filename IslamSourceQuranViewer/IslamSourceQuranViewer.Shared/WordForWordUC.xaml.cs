@@ -52,14 +52,22 @@ namespace IslamSourceQuranViewer
         public MyRenderModel ViewModel { get; set; }
         private async void RenderPngs_Click(object sender, RoutedEventArgs e)
         {
-            await WindowsRTSettings.SavePathImageAsFile(1366, 768, "appstorescreenshot-wide", this, false);
-            await WindowsRTSettings.SavePathImageAsFile(768, 1366, "appstorescreenshot-tall", this, false);
-            await WindowsRTSettings.SavePathImageAsFile(1280, 768, "appstorephonescreenshot-wide", this, false);
-            await WindowsRTSettings.SavePathImageAsFile(768, 1280, "appstorephonescreenshot-tall", this, false);
-            await WindowsRTSettings.SavePathImageAsFile(1280, 720, "appstorephonescreenshot1280x720-wide", this, false);
-            await WindowsRTSettings.SavePathImageAsFile(720, 1280, "appstorephonescreenshot720x1280-tall", this, false);
-            await WindowsRTSettings.SavePathImageAsFile(800, 480, "appstorephonescreenshot800x480-wide", this, false);
-            await WindowsRTSettings.SavePathImageAsFile(480, 800, "appstorephonescreenshot480x800-tall", this, false);
+            string[] LangList = "en,hu".Split(',');
+            //string[] LangList = "ar,ar-sa,ar-ae,ar-bh,ar-dz,ar-eg,ar-iq,ar-jo,ar-kw,ar-lb,ar-ly,ar-ma,ar-om,ar-qa,ar-sy,ar-tn,ar-ye,af,af-za,sq,sq-al,am,am-et,hy,hy-am,as,as-in,az,az-arab,az-arab-az,az-cyrl,az-cyrl-az,az-latn,az-latn-az,eu,eu-es,be,be-by,bn,bn-bd,bn-in,bs,bs-cyrl,bs-cyrl-ba,bs-latn,bs-latn-ba,bg,bg-bg,ca,ca-es,ca-es-valencia,chr-cher,chr-cher-us,chr-latn,zh,zh-Hans,zh-cn,zh-hans-cn,zh-sg,zh-hans-sg,zh-Hant,zh-hk,zh-mo,zh-tw,zh-hant-hk,zh-hant-mo,zh-hant-tw,hr,hr-hr,hr-ba,cs,cs-cz,da,da-dk,prs,prs-af,prs-arab,nl,nl-nl,nl-be,en,en-au,en-ca,en-gb,en-ie,en-in,en-nz,en-sg,en-us,en-za,en-bz,en-hk,en-id,en-jm,en-kz,en-mt,en-my,en-ph,en-pk,en-tt,en-vn,en-zw,en-053,en-021,en-029,en-011,en-018,en-014,et,et-ee,fil,fil-latn,fil-ph,fi,fi-fi,fr,fr-be,fr-ca,fr-ch,fr-fr,fr-lu,fr-015,fr-cd,fr-ci,fr-cm,fr-ht,fr-ma,fr-mc,fr-ml,fr-re,frc-latn,frp-latn,fr-155,fr-029,fr-021,fr-011,gl,gl-es,ka,ka-ge,de,de-at,de-ch,de-de,de-lu,de-li,el,el-gr,gu,gu-in,ha,ha-latn,ha-latn-ng,he,he-il,hi,hi-in,hu,hu-hu,is,is-is,ig-latn,ig-ng,id,id-id,iu-cans,iu-latn,iu-latn-ca,ga,ga-ie,xh,xh-za,zu,zu-za,it,it-it,it-ch,ja,ja-jp,kn,kn-in,kk,kk-kz,km,km-kh,quc-latn,qut-gt,qut-latn,rw,rw-rw,sw,sw-ke,kok,kok-in,ko,ko-kr,ku-arab,ku-arab-iq,ky-kg,ky-cyrl,lo,lo-la,lv,lv-lv,lt,lt-lt,lb,lb-lu,mk,mk-mk,ms,ms-bn,ms-my,ml,ml-in,mt,mt-mt,mi,mi-latn,mi-nz,mr,mr-in,mn-cyrl,mn-mong,mn-mn,mn-phag,ne,ne-np,nb,nb-no,nn,nn-no,no,no-no,,or,or-in,fa,fa-ir,pl,pl-pl,pt-br,pt,pt-pt,pa,pa-arab,pa-arab-pk,pa-deva,pa-in,quz,quz-bo,quz-ec,quz-pe,ro,ro-ro,ru,ru-ru,gd-gb,gd-latn,sr-Latn,sr-latn-cs,sr,sr-latn-ba,sr-latn-me,sr-latn-rs,sr-cyrl,sr-cyrl-ba,sr-cyrl-cs,sr-cyrl-me,sr-cyrl-rs,nso,nso-za,tn,tn-bw,tn-za,sd-arab,sd-arab-pk,sd-deva,si,si-lk,sk,sk-sk,sl,sl-si,es,es-cl,es-co,es-es,es-mx,es-ar,es-bo,es-cr,es-do,es-ec,es-gt,es-hn,es-ni,es-pa,es-pe,es-pr,es-py,es-sv,es-us,es-uy,es-ve,es-019,es-419,sv,sv-se,sv-fi,tg-arab,tg-cyrl,tg-cyrl-tj,tg-latn,ta,ta-in,tt-arab,tt-cyrl,tt-latn,tt-ru,te,te-in,th,th-th,ti,ti-et,tr,tr-tr,tk-cyrl,tk-latn,tk-tm,tk-latn-tr,tk-cyrl-tr,uk,uk-ua,ur,ur-pk,ug-arab,ug-cn,ug-cyrl,ug-latn,uz,uz-cyrl,uz-latn,uz-latn-uz,vi,vi-vn,cy,cy-gb,wo,wo-sn,yo-latn,yo-ng".Split(',');
+            for (int count = 0; count < LangList.Length; count++) {
+                Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = LangList[count];
+                //re-render the UI
+                this.Frame.Navigate(this.GetType());
+                this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
+                await WindowsRTSettings.SavePathImageAsFile(1366, 768, "appstorescreenshot-wide", this, false);
+                await WindowsRTSettings.SavePathImageAsFile(768, 1366, "appstorescreenshot-tall", this, false);
+                await WindowsRTSettings.SavePathImageAsFile(1280, 768, "appstorephonescreenshot-wide", this, false);
+                await WindowsRTSettings.SavePathImageAsFile(768, 1280, "appstorephonescreenshot-tall", this, false);
+                await WindowsRTSettings.SavePathImageAsFile(1280, 720, "appstorephonescreenshot1280x720-wide", this, false);
+                await WindowsRTSettings.SavePathImageAsFile(720, 1280, "appstorephonescreenshot720x1280-tall", this, false);
+                await WindowsRTSettings.SavePathImageAsFile(800, 480, "appstorephonescreenshot800x480-wide", this, false);
+                await WindowsRTSettings.SavePathImageAsFile(480, 800, "appstorephonescreenshot480x800-tall", this, false);
+            }
             GC.Collect();
         }
         private void Settings_Click(object sender, RoutedEventArgs e)
@@ -155,7 +163,7 @@ namespace IslamSourceQuranViewer
     {
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem { ItemRuns = System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Color = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr))) }).ToList(), IsArabic = Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Direction = Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL ? FlowDirection.RightToLeft : FlowDirection.LeftToRight } : null)).Where(Arr => Arr != null);
+            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem { IsArabic = Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Direction = (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight, ItemRuns = System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Color = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr))) }).ToList() } : null)).Where(Arr => Arr != null);
         }
         public IEnumerable<object> Items { get; set; }
     }
@@ -357,6 +365,59 @@ namespace IslamSourceQuranViewer
             [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = LF_FACESIZE)]
             public string lfFaceName;
         }
+        public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)
+        {
+            if (Str == string.Empty)
+            {
+                return null;
+            }
+            SharpDX.DirectWrite.Factory factory = new SharpDX.DirectWrite.Factory();
+            SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(factory);
+            LOGFONT lf = new LOGFONT();
+            lf.lfFaceName = useFont;
+            float pointSize = fontSize * Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawDpiY / 72.0f;
+            lf.lfHeight = (int)fontSize;
+            lf.lfQuality = 5; //clear type
+            SharpDX.DirectWrite.Font font = factory.GdiInterop.FromLogFont(lf);
+            SharpDX.DirectWrite.FontFace fontFace = new SharpDX.DirectWrite.FontFace(font);
+            SharpDX.DirectWrite.ScriptAnalysis scriptAnalysis = new SharpDX.DirectWrite.ScriptAnalysis();
+            TextSink analysisSink = new TextSink();
+            TextSource analysisSource = new TextSource(Str, factory);
+            analyzer.AnalyzeScript(analysisSource, 0, Str.Length, analysisSink);
+            scriptAnalysis = analysisSink._scriptAnalysis;
+            int maxGlyphCount = ((Str.Length * 3) / 2) + 0x10;
+            short[] clusterMap = new short[(Str.Length - 1) + 1];
+            SharpDX.DirectWrite.ShapingTextProperties[] textProps = new SharpDX.DirectWrite.ShapingTextProperties[(Str.Length - 1) + 1];
+            short[] glyphIndices = new short[(maxGlyphCount - 1) + 1];
+            SharpDX.DirectWrite.ShapingGlyphProperties[] glyphProps = new SharpDX.DirectWrite.ShapingGlyphProperties[(maxGlyphCount - 1) + 1];
+            int actualGlyphCount = 0;
+            SharpDX.DirectWrite.FontFeature[] featureArray = new SharpDX.DirectWrite.FontFeature[] { new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.GlyphCompositionDecomposition, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StandardLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualAlternates, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StylisticSet1, 1) };
+            while (true)
+            {
+                try
+                {
+                    analyzer.GetGlyphs(Str, Str.Length, fontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { featureArray }, new int[] { Str.Length }, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
+                    break;
+                }
+                catch (SharpDX.SharpDXException exception)
+                {
+                    if (exception.ResultCode == SharpDX.Result.GetResultFromWin32Error(0x7a))
+                    {
+                        maxGlyphCount *= 2;
+                        glyphIndices = new short[(maxGlyphCount - 1) + 1];
+                        glyphProps = new SharpDX.DirectWrite.ShapingGlyphProperties[(maxGlyphCount - 1) + 1];
+                    }
+                }
+            }
+            Array.Resize(ref glyphIndices, (actualGlyphCount - 1) + 1);
+            Array.Resize(ref glyphProps, (actualGlyphCount - 1) + 1);
+            float[] glyphAdvances = new float[(actualGlyphCount - 1) + 1];
+            SharpDX.DirectWrite.GlyphOffset[] glyphOffsets = new SharpDX.DirectWrite.GlyphOffset[(actualGlyphCount - 1) + 1];
+            SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { featureArray };
+            int[] featureRangeLengths = new int[] { Str.Length };
+            analyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, fontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
+            return clusterMap;
+        }
         public static Size GetWordDiacriticPositionsDWrite(string Str, string useFont, float fontSize, char[] Forms, bool IsRTL, ref float BaseLine, ref CharPosInfo[] Pos)
         {
             if (Str == string.Empty)
@@ -388,9 +449,7 @@ namespace IslamSourceQuranViewer
             {
                 try
                 {
-                    SharpDX.DirectWrite.FontFeature[][] featureArrayArray1 = new SharpDX.DirectWrite.FontFeature[][] { featureArray };
-                    int[] numArray1 = new int[] { Str.Length };
-                    analyzer.GetGlyphs(Str, Str.Length, fontFace, false, IsRTL, scriptAnalysis, null, null, featureArrayArray1, numArray1, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
+                    analyzer.GetGlyphs(Str, Str.Length, fontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { featureArray }, new int[] { Str.Length }, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
                     break;
                 }
                 catch (SharpDX.SharpDXException exception)
@@ -414,7 +473,7 @@ namespace IslamSourceQuranViewer
             float PriorWidth = 0f;
             int RunStart = 0;
             int RunRes = clusterMap[0];
-            if (IsRTL & (Pos != null))
+            if (IsRTL)
             {
                 XMLRender.ArabicData.LigatureInfo[] array = XMLRender.ArabicData.GetLigatures(Str, false, Forms);
                 for (int CharCount = 0; CharCount < clusterMap.Length - 1; CharCount++)
@@ -547,10 +606,7 @@ namespace IslamSourceQuranViewer
                 Top = Math.Max(Top, glyphOffsets[i].AscenderOffset + (((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].TopSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
                 Bottom = Math.Min(Bottom, glyphOffsets[i].AscenderOffset + ((((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].AdvanceHeight) + designGlyphMetrics[i].BottomSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
             }
-            if (Pos != null)
-            {
-                Pos = list.ToArray();
-            }
+            Pos = list.ToArray();
             Size Size = new Size(IsRTL ? (Left - Right) : (Right - Left), (Top - Bottom) + ((fontFace.Metrics.LineGap * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
             BaseLine = Top;
             analysisSource.Shadow.Dispose();
@@ -571,55 +627,58 @@ namespace IslamSourceQuranViewer
                 char[] Forms = XMLRender.ArabicData.GetPresentationForms;
                 //XMLRender.ArabicData.LigatureInfo[] ligs = XMLRender.ArabicData.GetLigatures(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), false, Forms);
                 float BaseLine = 0;
-                CharPosInfo[] chpos = null;
-                GetWordDiacriticPositionsDWrite(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, Forms, true, ref BaseLine, ref chpos);
+                short[] chpos = GetWordDiacriticClusters(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, IsArabic);
                 int pos = value[0].ItemText.Length;
                 int count = 1;
                 while (count < value.Count) {
-                    for (int subcount = 0; subcount < chpos.Length; subcount++)
+                    if (value[count].ItemText.Length != 0 && pos != 0 && chpos[pos] == chpos[pos - 1])
                     {
-                        if (pos <= chpos[subcount].Index && pos >= chpos[subcount].Index + chpos[subcount].Length)
+                        if (chpos[pos] == chpos[pos + value[count].ItemText.Length - 1])
                         {
-                            if (pos + value[1].ItemText.Length <= chpos[subcount].Index + chpos[subcount].Length)
-                            {
-                                if (chpos[subcount].Index + chpos[subcount].Length - pos == value[1].ItemText.Length)
-                                {
-                                    value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
-                                }
-                                else {
-                                    value[count - 1].ItemText += value[count].ItemText.Substring(0, chpos[subcount].Index + chpos[subcount].Length - pos); value[count].ItemText = value[count].ItemText.Substring(chpos[subcount].Index + chpos[subcount].Length - pos);
-                                }
-                            }
+                            pos -= value[count - 1].ItemText.Length;
+                            if (!value[count].ItemText.All((ch) => XMLRender.ArabicData.IsDiacritic(ch))) { value[count - 1].Color = value[count].Color; }
+                            value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
                         }
-
+                        else {
+                            int subcount = pos;
+                            while (subcount < pos + value[count].ItemText.Length && chpos[subcount] == chpos[subcount + 1]) { subcount++; }
+                            value[count - 1].ItemText += value[count].ItemText.Substring(0, subcount - pos + 1); value[count].ItemText = value[count].ItemText.Substring(subcount - pos + 1);
+                            pos += subcount - pos + 1;
+                        }
                     }
                     //for (int subcount = 0; subcount < ligs.Length; subcount++) {
-                    //    for indexes which are before, and after, find the maximum index in this group which is after
-                    //    if (pos <= ligs[subcount].Indexes[0] && pos >= ligs[subcount].Indexes[ligs[subcount].Indexes.Length - 1]) {
-                    //        for (int ligcount = ligs[subcount].Indexes.Length - 1; ligcount >= 0; ligcount--) {
-                    //            if (pos + value[1].ItemText.Length <= ligs[subcount].Indexes[ligcount]) {
-                    //                if (ligs[subcount].Indexes[ligcount] - pos == value[1].ItemText.Length) {
+                    //    //for indexes which are before, and after, find the maximum index in this group which is after
+                    //    if (pos > ligs[subcount].Indexes[0] && pos <= ligs[subcount].Indexes[ligs[subcount].Indexes.Length - 1]) {
+                    //        int ligcount;
+                    //        for (ligcount = ligs[subcount].Indexes.Length - 1; ligcount >= 0; ligcount--) {
+                    //            if (pos + value[count].ItemText.Length <= ligs[subcount].Indexes[ligcount]) {
+                    //                if (ligs[subcount].Indexes[ligcount] - pos == value[count].ItemText.Length) {
+                    //                    pos -= value[count - 1].ItemText.Length;
+                    //                    if (!value[count].ItemText.All((ch) => XMLRender.ArabicData.IsDiacritic(ch))) { value[count - 1].Color = value[count].Color; }
                     //                    value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
                     //                } else {
                     //                    value[count - 1].ItemText += value[count].ItemText.Substring(0, ligs[subcount].Indexes[ligcount] - pos); value[count].ItemText = value[count].ItemText.Substring(ligs[subcount].Indexes[ligcount] - pos);
+                    //                    pos += ligs[subcount].Indexes[ligcount] - pos;
                     //                }
-                    //                break; //need to break again...
+                    //                break;
                     //            }
                     //        }
+                    //        if (ligcount != ligs[subcount].Indexes.Length) { break; }
                     //    }
                     //}
-                    //count++;
-                    int charcount = 0;
-                    while (charcount < value[count].ItemText.Length && XMLRender.ArabicData.IsDiacritic(value[count].ItemText[charcount])) { charcount++; }
-                    if (charcount != 0)
-                    {
-                        if (charcount == value[count].ItemText.Length)
-                        {
-                            value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count);
-                        }
-                        else { value[count - 1].ItemText += value[count].ItemText.Substring(0, charcount); value[count].ItemText = value[count].ItemText.Substring(charcount); count++; }
-                    }
-                    else { count++; }
+                    pos += value[count].ItemText.Length;
+                    count++;
+                    //int charcount = 0;
+                    //while (charcount < value[count].ItemText.Length && XMLRender.ArabicData.IsDiacritic(value[count].ItemText[charcount])) { charcount++; }
+                    //if (charcount != 0)
+                    //{
+                    //    if (charcount == value[count].ItemText.Length)
+                    //    {
+                    //        value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count);
+                    //    }
+                    //    else { value[count - 1].ItemText += value[count].ItemText.Substring(0, charcount); value[count].ItemText = value[count].ItemText.Substring(charcount); count++; }
+                    //}
+                    //else { count++; }
                 }
                 _ItemRuns = value;
             }

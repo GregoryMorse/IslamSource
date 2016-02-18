@@ -17,8 +17,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IslamSourceQuranViewer.Windows.App">
-      <m2:VisualElements DisplayName="ms-resource:DisplayName" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="ms-resource:Description" ForegroundText="light" BackgroundColor="#464646">
-        <m2:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+      <m2:VisualElements DisplayName="ms-resource:DisplayName" Square150x150Logo="Assets\Square150x150Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="ms-resource:Description" ForegroundText="light" BackgroundColor="#464646">
+        <m2:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\Square310x310Logo.png" Square70x70Logo="Assets\Square70x70Logo.png">
         </m2:DefaultTile>
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
         <m2:InitialRotationPreference>

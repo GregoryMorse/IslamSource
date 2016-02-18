@@ -168,17 +168,29 @@
     <Content Include="..\..\metadata\UnicodeData.txt">
       <Link>metadata\UnicodeData.txt</Link>
     </Content>
-    <Content Include="Assets\Logo.scale-100.png" />
-    <Content Include="Assets\logo.scale-140.png" />
-    <Content Include="Assets\logo.scale-180.png" />
-    <Content Include="Assets\logo.scale-80.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
     <Content Include="Assets\smalllogo.scale-140.png" />
     <Content Include="Assets\smalllogo.scale-180.png" />
     <Content Include="Assets\smalllogo.scale-80.png" />
+    <Content Include="Assets\smalllogo.targetsize-16.png" />
+    <Content Include="Assets\smalllogo.targetsize-256.png" />
+    <Content Include="Assets\smalllogo.targetsize-32.png" />
+    <Content Include="Assets\smalllogo.targetsize-48.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\splashscreen.scale-140.png" />
     <Content Include="Assets\splashscreen.scale-180.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-140.png" />
+    <Content Include="Assets\Square150x150Logo.scale-180.png" />
+    <Content Include="Assets\Square150x150Logo.scale-80.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-140.png" />
+    <Content Include="Assets\Square310x310Logo.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-80.png" />
+    <Content Include="Assets\Square70x70Logo.scale-100.png" />
+    <Content Include="Assets\Square70x70Logo.scale-140.png" />
+    <Content Include="Assets\Square70x70Logo.scale-180.png" />
+    <Content Include="Assets\Square70x70Logo.scale-80.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\storelogo.scale-140.png" />
     <Content Include="Assets\storelogo.scale-180.png" />

@@ -62,7 +62,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_APP;STORETOOLKIT</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
@@ -85,13 +85,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_APP;STORETOOLKIT</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -139,9 +140,29 @@
     </PRIResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\smalllogo.scale-140.png" />
+    <Content Include="Assets\smalllogo.scale-180.png" />
+    <Content Include="Assets\smalllogo.scale-80.png" />
+    <Content Include="Assets\smalllogo.targetsize-16.png" />
+    <Content Include="Assets\smalllogo.targetsize-256.png" />
+    <Content Include="Assets\smalllogo.targetsize-32.png" />
+    <Content Include="Assets\smalllogo.targetsize-48.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\splashscreen.scale-140.png" />
+    <Content Include="Assets\splashscreen.scale-180.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-140.png" />
+    <Content Include="Assets\Square150x150Logo.scale-180.png" />
+    <Content Include="Assets\Square150x150Logo.scale-80.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-140.png" />
+    <Content Include="Assets\Square310x310Logo.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-80.png" />
+    <Content Include="Assets\Square70x70Logo.scale-100.png" />
+    <Content Include="Assets\Square70x70Logo.scale-140.png" />
+    <Content Include="Assets\Square70x70Logo.scale-180.png" />
+    <Content Include="Assets\Square70x70Logo.scale-80.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="..\..\metadata\en.w4w.txt">
       <Link>metadata\en\en.w4w.txt</Link>
@@ -173,6 +194,12 @@
     <Content Include="..\..\metadata\UnicodeData.txt">
       <Link>metadata\UnicodeData.txt</Link>
     </Content>
+    <Content Include="Assets\storelogo.scale-140.png" />
+    <Content Include="Assets\storelogo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-140.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-80.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SharpDX, Version=2.4.2.0, Culture=neutral, PublicKeyToken=627a3d6d1956f55a, processorArchitecture=MSIL">

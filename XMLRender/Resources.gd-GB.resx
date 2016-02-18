@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Atharraich am facal-faire</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Dearbhaich facal-faire</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>A' phanail-smachd</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Sguab às an cunntas</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Seòladh puist-d</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Dachaigh</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Ion-chur mì-dhligheach</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>&amp;Clàraich a-steach</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>Na seall</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Facal-faire</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Chan eil an dà fhacal-faire co-ionann</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>Clàraich</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Ainm-cleachdaiche</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Tamazight</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Beurla</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Kiswahili</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>Amtharais</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Arabais</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Asarbaideànais</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>Bulgarais</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Seicis</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Gearmailtis</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Beurla</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>Spàinntis</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Pearsais</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Fraingis</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausa</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Hindis</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Innd-Innsis</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Eadailtis</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Seapanais</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Coirèanais</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>Malaidhis</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Duitsis</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Nirribhis</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Pòlainnis</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portagailis</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>Romàinis</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Ruisis</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>Sindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Somàilis</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albàinis</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>Suainis</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Swahili</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Taimilis</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Taidigis</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Cànan nan Tàidh</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Turcais</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatarais</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>Ùigiurais</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>Ùrdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Usbagais</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Sìnis</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>Luchdaich a-nuas {0}</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>&amp;Còilean</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>&amp;Cromag</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Àite bàn</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Teisteanas:</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>An cleachdaiche làithreach</value>
+  </data>
+</root>

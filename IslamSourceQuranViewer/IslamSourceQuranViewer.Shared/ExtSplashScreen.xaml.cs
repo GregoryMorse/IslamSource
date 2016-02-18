@@ -26,7 +26,6 @@ namespace IslamSourceQuranViewer
         private Windows.ApplicationModel.Activation.SplashScreen splash; // Variable to hold the splash screen object.
         internal bool dismissed = false; // Variable to track splash screen dismissal status.
         internal Frame rootFrame;
-        internal System.Threading.SynchronizationContext ctx;
 
         public ExtSplashScreen()
         {
@@ -34,6 +33,7 @@ namespace IslamSourceQuranViewer
             this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
             this.ProgressGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             Position();
+            LayoutUpdated += SplashScreen_LayoutUpdated;
 #if STORETOOLKIT
             AppBarButton RenderButton = new AppBarButton() { Icon = new SymbolIcon(Symbol.Camera), Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Render/Label") };
             RenderButton.Click += RenderPngs_Click;
@@ -42,14 +42,13 @@ namespace IslamSourceQuranViewer
         }
         public ExtSplashScreen(Windows.ApplicationModel.Activation.SplashScreen splashScreen, bool loadState)
         {
-            ctx = System.Threading.SynchronizationContext.Current;
             this.InitializeComponent();
             this.BottomAppBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             this.ProgressGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
             // Listen for window resize events to reposition the extended splash screen image accordingly.
             // This ensures that the extended splash screen formats properly in response to window resizing.
             Window.Current.SizeChanged += new WindowSizeChangedEventHandler(SplashScreen_OnResize);
-            
+            LayoutUpdated += SplashScreen_LayoutUpdated;
             splash = splashScreen;
             if (splash != null)
             {
@@ -77,9 +76,35 @@ namespace IslamSourceQuranViewer
             //MainGrid.SetValue(Canvas.TopProperty, Window.Current.Bounds.Top);
             //MainGrid.Height = Window.Current.Bounds.Height;
             //MainGrid.Width = Window.Current.Bounds.Width;
-            if (Window.Current.Bounds.Width < Window.Current.Bounds.Height * .94 / 722 * 502.655)
+            if (Window.Current.Bounds.Width < Window.Current.Bounds.Height * .94 / 746 * 502.655)
             {
-                MainGrid.ColumnDefinitions[1].Width = new GridLength(Window.Current.Bounds.Width - 2);
+                //MainGrid.ColumnDefinitions[1].Width = new GridLength(Window.Current.Bounds.Width - 2);
+                SplashImg.Width = Window.Current.Bounds.Width - 2;
+                ProgressGrid.Height = SplashImg.Height = SplashImg.Width / 502.655 * 746;
+            }
+            else
+            {
+                SplashImg.Width = Window.Current.Bounds.Height * .94 / 746 * 502.655;
+                ProgressGrid.Height = SplashImg.Height = Window.Current.Bounds.Height * .94;
+            }
+        }
+        void SplashScreen_LayoutUpdated(object sender, object e)
+        {
+            if (splashProgressRing.Height != ProgressGrid.RowDefinitions[1].ActualHeight)
+            {
+                splashProgressRing.Height = ProgressGrid.RowDefinitions[1].ActualHeight;
+                splashProgressRing.Width = ProgressGrid.RowDefinitions[1].ActualHeight;
+            }
+            if (double.IsNaN(MainGrid.Width) || double.IsNaN(MainGrid.Height)) { Position(); return; }
+            if (Math.Min(Window.Current.Bounds.Width, MainGrid.Width) < Math.Min(Window.Current.Bounds.Height, MainGrid.Height) * .94 / 746 * 502.655)
+            {
+                SplashImg.Width = Math.Min(Window.Current.Bounds.Width, MainGrid.Width) - 2;
+                ProgressGrid.Height = SplashImg.Height = SplashImg.Width / 502.655 * 746;
+            }
+            else
+            {
+                SplashImg.Width = Math.Min(Window.Current.Bounds.Height, MainGrid.Height) * .94 / 746 * 502.655;
+                ProgressGrid.Height = SplashImg.Height = Math.Min(Window.Current.Bounds.Height, MainGrid.Height) * .94;
             }
         }
         void SplashScreen_OnResize(Object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
@@ -97,29 +122,24 @@ namespace IslamSourceQuranViewer
         }
 
         // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
-        /*async*/ void DismissedEventHandler(Windows.ApplicationModel.Activation.SplashScreen sender, object e)
+        async void DismissedEventHandler(Windows.ApplicationModel.Activation.SplashScreen sender, object e)
         {
             dismissed = true;
 
             // Complete app setup operations here...
-            /*await*/ DismissExtendedSplash();
+            await DismissExtendedSplash();
         }
-        void /*async System.Threading.Tasks.Task*/ DismissExtendedSplash()
+        async System.Threading.Tasks.Task DismissExtendedSplash()
         {
-            ctx.Post(delegate {
+            await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
+                () =>
+                {
                     rootFrame.Navigate(typeof(MainPage));
                     Window.Current.Content = rootFrame;
-                }, null);
-            //Windows Phone has problem getting TPL event sources properly initialized or a crash will occur on first task call
-            //await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
-            //    () =>
-            //    {
-            //        rootFrame.Navigate(typeof(MainPage));
-            //        Window.Current.Content = rootFrame;
-            //    });
-                // Navigate to mainpage
+                });
+            //Navigate to mainpage
             // Place the frame in the current Window
-            
+
         }
         async System.Threading.Tasks.Task RestoreStateAsync(bool loadState)
         {
@@ -131,54 +151,68 @@ namespace IslamSourceQuranViewer
         }
         private async void RenderPngs_Click(object sender, RoutedEventArgs e)
         {
-            await WindowsRTSettings.SavePathImageAsFile(50, 50, "storelogo.scale-100", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(70, 70, "storelogo.scale-140", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(90, 90, "storelogo.scale-180", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(120, 120, "logo.scale-80", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(150, 150, "logo.scale-100", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(210, 210, "logo.scale-140", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(270, 270, "logo.scale-180", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(360, 360, "logo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(24, 24, "smalllogo.scale-80", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(30, 30, "smalllogo.scale-100", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(42, 42, "smalllogo.scale-140", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(54, 54, "smalllogo.scale-180", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(106, 106, "smalllogo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(620, 300, "splashscreen.scale-100", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(868, 420, "splashscreen.scale-140", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(1116, 540, "splashscreen.scale-180", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(248, 120, "widelogo.scale-80", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(310, 150, "widelogo.scale-100", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(434, 210, "widelogo.scale-140", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(558, 270, "widelogo.scale-180", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(744, 360, "widelogo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(24, 24, "badgelogo.scale-100", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(34, 34, "badgelogo.scale-140", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(34, 34, "badgelogo.scale-180", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(1152, 1920, "SplashScreen.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(360, 360, "Square150x150Logo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(106, 106, "Square44x44Logo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(170, 170, "Square71x71Logo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(120, 120, "StoreLogo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(744, 360, "Wide310x150Logo.scale-240", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(48, 48, "LockScreenLogo.scale-200", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(1240, 600, "SplashScreen.scale-200", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(300, 300, "Square150x150Logo.scale-200", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(88, 88, "Square44x44Logo.scale-200", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(24, 24, "Square44x44Logo.targetsize-24_altform-unplated", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(50, 50, "StoreLogo", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(620, 300, "Wide310x150Logo.scale-200", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(846, 468, "appstorepromotional-846x468", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(558, 756, "appstorepromotional-558x756", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(414, 468, "appstorepromotional-414x468", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(414, 180, "appstorepromotional-414x180", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(558, 558, "appstorepromotional-558x558", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(2400, 1200, "appstorepromotional-2400x1200", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(300, 300, "appstorephonetitleicon-300x300", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(1000, 800, "appstorephonepromotional-1000x800", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(358, 358, "appstorephonepromotional-358x358", MainGrid);
-            await WindowsRTSettings.SavePathImageAsFile(358, 173, "appstorephonepromotional-358x173", MainGrid);
-            GC.Collect();
+            object[,] Win81PhoneLogos = new object[,] {{1152, 1920, "SplashScreen.scale-240"}, {672, 1120, "SplashScreen.scale-140"}, {480, 800, "SplashScreen.scale-100"},
+                        {58, 58, "BadgeLogo.scale-240"}, {33, 33, "BadgeLogo.scale-140"}, {24, 24, "BadgeLogo.scale-100"},
+                        {120, 120, "StoreLogo.scale-240"}, {70, 70, "StoreLogo.scale-140"}, {50, 50, "StoreLogo.scale-100"},
+                        {106, 106, "Square44x44Logo.scale-240"}, {62, 62, "Square44x44Logo.scale-140"}, {44, 44, "Square44x44Logo.scale-100"},
+                        {744, 360, "Wide310x150Logo.scale-240"}, {434, 210, "Wide310x150Logo.scale-140"}, {310, 150, "Wide310x150Logo.scale-100"},
+                        {360, 360, "Square150x150Logo.scale-240"}, {210, 210, "Square150x150Logo.scale-140"}, {150, 150, "Square150x150Logo.scale-100"},
+                        {170, 170, "Square71x71Logo.scale-240"}, {99, 99, "Square71x71Logo.scale-140"}, {71, 71, "Square71x71Logo.scale-100"}};
+            object[,] Win8Logos = new object[,] {{1116, 540, "splashscreen.scale-180"}, {868, 420, "splashscreen.scale-140"}, {620, 300, "splashscreen.scale-100"},
+                        {43, 43, "badgelogo.scale-180"}, {33, 33, "badgelogo.scale-140"}, {24, 24, "badgelogo.scale-100"},
+                        {90, 90, "storelogo.scale-180"}, {70, 70, "storelogo.scale-140"}, {50, 50, "storelogo.scale-100"},
+                        {54, 54, "smalllogo.scale-180"}, {42, 42, "smalllogo.scale-140"}, {30, 30, "smalllogo.scale-100"}, {24, 24, "smalllogo.scale-80"},
+                        {256, 256, "smalllogo.targetsize-256"}, {48, 48, "smalllogo.targetsize-48"}, {32, 32, "smalllogo.targetsize-32"}, {16, 16, "smalllogo.targetsize-16"},
+                        {558, 270, "widelogo.scale-180"}, {434, 210, "widelogo.scale-140"}, {310, 150, "widelogo.scale-100"}, {248, 120, "widelogo.scale-80"},
+                        {270, 270, "logo.scale-180"}, {210, 210, "logo.scale-140"}, {150, 150, "logo.scale-100"}, {120, 120, "logo.scale-80"}};
+            object[,] Win81Logos = new object[,] {{1116, 540, "SplashScreen.scale-180"}, {868, 420, "SplashScreen.scale-140"}, {620, 300, "SplashScreen.scale-100"},
+                        {43, 43, "BadgeLogo.scale-180"}, {33, 33, "BadgeLogo.scale-140"}, {24, 24, "BadgeLogo.scale-100"},
+                        {90, 90, "StoreLogo.scale-180"}, {70, 70, "StoreLogo.scale-140"}, {50, 50, "StoreLogo.scale-100"},
+                        {54, 54, "SmallLogo.scale-180"}, {42, 42, "SmallLogo.scale-140"}, {30, 30, "SmallLogo.scale-100"}, {24, 24, "SmallLogo.scale-80"},
+                        {256, 256, "SmallLogo.targetsize-256"}, {48, 48, "SmallLogo.targetsize-48"}, {32, 32, "SmallLogo.targetsize-32"}, {16, 16, "SmallLogo.targetsize-16"},
+                        {558, 558, "Square310x310Logo.scale-180"}, {434, 434, "Square310x310Logo.scale-140"}, {310, 310, "Square310x310Logo.scale-100"}, {248, 248, "Square310x310Logo.scale-80"},
+                        {558, 270, "Wide310x150Logo.scale-180"}, {434, 210, "Wide310x150Logo.scale-140"}, {310, 150, "Wide310x150Logo.scale-100"}, {248, 120, "Wide310x150Logo.scale-80"},
+                        {270, 270, "Square150x150Logo.scale-180"}, {210, 210, "Square150x150Logo.scale-140"}, {150, 150, "Square150x150Logo.scale-100"}, {120, 120, "Square150x150Logo.scale-80"},
+                        {126, 126, "Square70x70Logo.scale-180"}, {98, 98, "Square70x70Logo.scale-140"}, {70, 70, "Square70x70Logo.scale-100"}, {56, 56, "Square70x70Logo.scale-80"}};
+            object[,] WinUniversalLogos = new object[,] {{2480, 1200, "SplashScreen.scale-400"}, {1240, 600, "SplashScreen.scale-200"}, {930, 450, "SplashScreen.scale-150"}, {775, 375, "SplashScreen.scale-125"}, {620, 300, "SplashScreen.scale-100"},
+                        {96, 96, "LockScreenLogo.scale-400"}, {48, 48, "LockScreenLogo.scale-200"}, {36, 36, "LockScreenLogo.scale-150"}, {30, 30, "LockScreenLogo.scale-125"}, {24, 24, "LockScreenLogo.scale-100"},
+                        {200, 200, "StoreLogo.scale-400"}, {100, 100, "StoreLogo.scale-200"}, {75, 75, "StoreLogo.scale-150"}, {63, 63, "StoreLogo.scale-125"}, {50, 50, "StoreLogo.scale-100"},
+                        {176, 176, "Square44x44Logo.scale-400"}, {88, 88, "Square44x44Logo.scale-200"}, {44, 44, "Square44x44Logo.scale-100"}, {66, 66, "Square44x44Logo.scale-150"}, {55, 55, "Square44x44Logo.scale-125"},
+                        {256, 256, "Square44x44Logo.targetsize-256"}, {48, 48, "Square44x44Logo.targetsize-48"}, {24, 24, "Square44x44Logo.targetsize-24"}, {16, 16, "Square44x44Logo.targetsize-16"},
+                        {256, 256, "Square44x44Logo.targetsize-256_altform-unplated"}, {48, 48, "Square44x44Logo.targetsize-48_altform-unplated"}, {24, 24, "Square44x44Logo.targetsize-24_altform-unplated"}, {16, 16, "Square44x44Logo.targetsize-16_altform-unplated"},
+                        {1240, 1240, "Square310x310Logo.scale-400"}, {620, 620, "Square310x310Logo.scale-200"}, {310, 310, "Square310x310Logo.scale-100"}, {465, 465, "Square310x310Logo.scale-150"}, {388, 388, "Square310x310Logo.scale-125"},
+                        {1240, 600, "Wide310x150Logo.scale-400"}, {620, 300, "Wide310x150Logo.scale-200"}, {310, 150, "Wide310x150Logo.scale-100"}, {465, 225, "Wide310x150Logo.scale-150"}, {388, 188, "Wide310x150Logo.scale-125"},
+                        {600, 600, "Square150x150Logo.scale-400"}, {300, 300, "Square150x150Logo.scale-200"}, {150, 150, "Square150x150Logo.scale-100"}, {225, 225, "Square150x150Logo.scale-150"}, {188, 188, "Square150x150Logo.scale-125"},
+                        {284, 284, "Square71x71Logo.scale-400"}, {142, 142, "Square71x71Logo.scale-200"}, {71, 71, "Square71x71Logo.scale-100"}, {107, 107, "Square71x71Logo.scale-150"}, {89, 89, "Square71x71Logo.scale-125"}};
+            object[,] AppStoreLogos = new object[,] {{846, 468, "appstorepromotional-846x468"}, {558, 756, "appstorepromotional-558x756"}, {414, 468, "appstorepromotional-414x468"},
+                        {414, 180, "appstorepromotional-414x180"}, {558, 558, "appstorepromotional-558x558"}, {2400, 1200, "appstorepromotional-2400x1200"},
+                        {300, 300, "appstorephonetitleicon-300x300"}, {1000, 800, "appstorephonepromotional-1000x800"}, {358, 358, "appstorephonepromotional-358x358"}, {358, 173, "appstorephonepromotional-358x173"}};
+            object[,] OldWin8 = new object[,] { { 360, 360, "logo.scale-240" }, { 106, 106, "smalllogo.scale-240" }, { 744, 360, "widelogo.scale-240" } };
+            await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync("win8", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync("win81phone", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync("win81", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync("winuniversal", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync("appstore", Windows.Storage.CreationCollisionOption.OpenIfExists);
+            for (int count = 0; count <= Win8Logos.GetUpperBound(0); count++)
+            {
+                await WindowsRTSettings.SavePathImageAsFile((int)Win8Logos[count, 0], (int)Win8Logos[count, 1], "win8\\" + (string)Win8Logos[count, 2], MainGrid);
+            }
+            for (int count = 0; count <= Win81PhoneLogos.GetUpperBound(0); count++) {
+                await WindowsRTSettings.SavePathImageAsFile((int)Win81PhoneLogos[count, 0], (int)Win81PhoneLogos[count, 1], "win81phone\\" + (string)Win81PhoneLogos[count, 2], MainGrid);
+            }
+            for (int count = 0; count <= Win81Logos.GetUpperBound(0); count++)
+            {
+                await WindowsRTSettings.SavePathImageAsFile((int)Win81Logos[count, 0], (int)Win81Logos[count, 1], "win81\\" + (string)Win81Logos[count, 2], MainGrid);
+            }
+            for (int count = 0; count <= WinUniversalLogos.GetUpperBound(0); count++)
+            {
+                await WindowsRTSettings.SavePathImageAsFile((int)WinUniversalLogos[count, 0], (int)WinUniversalLogos[count, 1], "winuniversal\\" + (string)WinUniversalLogos[count, 2], MainGrid);
+            }
+            for (int count = 0; count <= AppStoreLogos.GetUpperBound(0); count++)
+            {
+                await WindowsRTSettings.SavePathImageAsFile((int)AppStoreLogos[count, 0], (int)AppStoreLogos[count, 1], "appstore\\" + (string)AppStoreLogos[count, 2], MainGrid);
+            }
+            GC.Collect(); //causes streams and files to properly close 
         }
         private void Settings_Click(object sender, RoutedEventArgs e)
         {

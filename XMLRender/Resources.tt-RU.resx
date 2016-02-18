@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acct_ChangePassword" xml:space="preserve">
+    <value>Серсүзне үзгәртү</value>
+  </data>
+  <data name="Acct_ClearCache" xml:space="preserve">
+    <value>Кэшны чистарту</value>
+  </data>
+  <data name="Acct_ConfirmPassword" xml:space="preserve">
+    <value>Серсүзне раслау</value>
+  </data>
+  <data name="Acct_ControlPanel" xml:space="preserve">
+    <value>Идарә аслыгы</value>
+  </data>
+  <data name="Acct_DeleteAccount" xml:space="preserve">
+    <value>Хисап язмасын бетерү</value>
+  </data>
+  <data name="Acct_EmailAddress" xml:space="preserve">
+    <value>Электрон почта адресы</value>
+  </data>
+  <data name="Acct_ForgotPassword" xml:space="preserve">
+    <value>Серсүзне оныттыгызмы?</value>
+  </data>
+  <data name="Acct_Home" xml:space="preserve">
+    <value>Өй</value>
+  </data>
+  <data name="Acct_InvalidInput" xml:space="preserve">
+    <value>Кертелгәннәр ялгыш</value>
+  </data>
+  <data name="Acct_Login" xml:space="preserve">
+    <value>&amp;Керү</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Системадан чыгарга</value>
+  </data>
+  <data name="Acct_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Acct_Password" xml:space="preserve">
+    <value>Серсүз:</value>
+  </data>
+  <data name="Acct_PasswordsNotMatch" xml:space="preserve">
+    <value>Серсүзләр тәңгәл килми:</value>
+  </data>
+  <data name="Acct_Register" xml:space="preserve">
+    <value>REGISTER</value>
+  </data>
+  <data name="Acct_ResetPassword" xml:space="preserve">
+    <value>Серсүзне ташлату...</value>
+  </data>
+  <data name="Acct_Username" xml:space="preserve">
+    <value>Кулланучы исеме</value>
+  </data>
+  <data name="Acct_Yes" xml:space="preserve">
+    <value>Әйе</value>
+  </data>
+  <data name="lang_ber" xml:space="preserve">
+    <value>Тамазайт</value>
+  </data>
+  <data name="lang_en" xml:space="preserve">
+    <value>Инглиз</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>суахили</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>амхар</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>Гарәп</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>әзербайҗан</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>болгар</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Бенгали</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>Чех</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Алман</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>Дивеһи</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Инглиз</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>испан</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Фарсы</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Француз</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>хауса</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>Һинд</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>Индонезия</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Итальян</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>Япон</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>Корея</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Мальялам</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>малай</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>Голланд</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Норвег</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>Поляк</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Португал</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>румын</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>Рус</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>синдһи</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>сомали</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>албан</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>швед</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Суахили</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Тамил</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>таҗик</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>Тай</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>Төрек</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>татар</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>уйгыр</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>урду</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>үзбәк</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>Кытай</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>{0} йөкләү</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Ике нокта</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Өтер</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Буш ара</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Таныклык:</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Гамәлдәге кулланучы</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Юнәлешне форматлау</value>
+  </data>
+</root>
