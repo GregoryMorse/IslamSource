@@ -193,3 +193,4 @@ IslamSourceQuranViewer/IslamSourceQuranViewer.StoreToolkit.WindowsPhone/metadata
 IslamSourceQuranViewer/IslamSourceQuranViewer.Windows/metadata/*
 IslamSourceQuranViewer/IslamSourceQuranViewer.WindowsPhone/metadata/*
 applicationhost.config
+Package.StoreAssociation.xml
