@@ -648,11 +648,13 @@ Public Class Arabic
         Next
         Return ArabicString
     End Function
+    Private Shared ErrorRegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
     Public Shared Sub DoErrorCheck(ByVal ArabicString As String)
         'need to check for decomposed first
         Dim Count As Integer
         For Count = 0 To CachedData.RuleTranslations("ErrorCheck").Length - 1
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(ArabicString, CachedData.RuleTranslations("ErrorCheck")(Count).Match)
+            If Not ErrorRegExDict.ContainsKey(CachedData.RuleTranslations("ErrorCheck")(Count).Name) Then ErrorRegExDict.Add(CachedData.RuleTranslations("ErrorCheck")(Count).Name, New System.Text.RegularExpressions.Regex(CachedData.RuleTranslations("ErrorCheck")(Count).Match))
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = ErrorRegExDict(CachedData.RuleTranslations("ErrorCheck")(Count).Name).Matches(ArabicString)
             For MatchIndex As Integer = 0 To Matches.Count - 1
                 If CachedData.RuleTranslations("ErrorCheck")(Count).NegativeMatch Is Nothing OrElse Matches(MatchIndex).Result(CachedData.RuleTranslations("ErrorCheck")(Count).NegativeMatch) = String.Empty Then
                     'Debug.Print(CachedData.RuleTranslations("ErrorCheck")(Count).Rule + ": " + TransliterateToScheme(ArabicString, ArabicData.TranslitScheme.Literal, String.Empty).Insert(Matches(MatchIndex).Index, "<!-- -->"))
@@ -695,7 +697,7 @@ Public Class Arabic
     Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, PreStop As Boolean, PostStop As Boolean, Scheme As String, OptionalStops As Integer(), RuleSet As IslamMetadata.IslamData.RuleMetaSet.RuleMetadataTranslation()) As String
         Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString, PreStop, PostStop, OptionalStops), Scheme, OptionalStops, False, RuleSet), PreString, PostString)
     End Function
-    Public Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
+    Private Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
     Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, OptionalStops As Integer(), LearningMode As Boolean, RuleSet As IslamMetadata.IslamData.RuleMetaSet.RuleMetadataTranslation()) As String
         Dim Count As Integer
         Dim MetadataList As New Generic.List(Of RuleMetadata)
@@ -1554,11 +1556,13 @@ Public Class IslamData
             Public Name As String
             <Xml.Serialization.XmlAttribute("match")> _
             Public Match As String
-            <Xml.Serialization.XmlAttribute("evaluator")> _
+            <Xml.Serialization.XmlAttribute("evaluator")>
             Public _Evaluator As String
+            Public _SplitEvaluator As String()
             ReadOnly Property Evaluator As String()
                 Get
-                    Return _Evaluator.Split(";"c)
+                    If _SplitEvaluator Is Nothing Then _SplitEvaluator = _Evaluator.Split(";"c)
+                    Return _SplitEvaluator
                 End Get
             End Property
         End Structure
