@@ -39,13 +39,41 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="StoreResources.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoreResources.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreResources.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoreResources.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="StoreResources.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StoreResources.hu.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="StoreResources.id.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoreResources.id.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreResources.ms.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoreResources.ms.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="StoreResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StoreResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreResources.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoreResources.ru.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreResources.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoreResources.zh-Hans.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StoreResources.zh-Hant.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StoreResources.zh-Hant.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -55,14 +83,56 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StoreResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="StoreResources.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreResources.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreResources.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreResources.fr.resx</DependentUpon>
+    </Compile>
     <Compile Include="StoreResources.hu.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StoreResources.hu.resx</DependentUpon>
     </Compile>
+    <Compile Include="StoreResources.id.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreResources.id.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreResources.ms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreResources.ms.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreResources.ru.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreResources.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreResources.zh-Hans.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreResources.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StoreResources.zh-Hant.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoreResources.zh-Hant.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <XliffResource Include="MultilingualResources\StoreResource.es.xlf" />
+    <XliffResource Include="MultilingualResources\StoreResource.fr.xlf" />
     <XliffResource Include="MultilingualResources\StoreResource.hu.xlf" />
+    <XliffResource Include="MultilingualResources\StoreResource.id.xlf" />
+    <XliffResource Include="MultilingualResources\StoreResource.ms.xlf" />
+    <XliffResource Include="MultilingualResources\StoreResource.ru.xlf" />
+    <XliffResource Include="MultilingualResources\StoreResource.zh-Hans.xlf" />
+    <XliffResource Include="MultilingualResources\StoreResource.zh-Hant.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />

@@ -82,10 +82,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.en.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.es.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.fr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.fr.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.hu.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.hu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.id.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.id.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ms.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ms.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ru.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.zh-Hans.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-Hans.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.zh-Hant.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.zh-Hant.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -93,15 +128,43 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.es.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.fr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.hu.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.id.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.id.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ms.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ms.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ru.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-Hans.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.zh-Hant.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.zh-Hant.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +179,14 @@
   <ItemGroup />
   <ItemGroup>
     <XliffResource Include="MultilingualResources\IslamResources.en.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.es.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.fr.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.hu.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.id.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.ms.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.ru.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.zh-Hans.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.zh-Hant.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />

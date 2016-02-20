@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IslamSourceQuranViewer.Xamarin.MainPage">
+    <ContentPage.Resources>
+        <Style x:Key="TitleStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Global User Interface"/>
+        </Style>
+        <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items}"></CollectionViewSource>
+        <CollectionViewSource x:Name="QuranDivision" Source="{Binding Path=ViewModel.ListItems, Mode=TwoWay}"></CollectionViewSource>
+    </ContentPage.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="tabListBox" Grid.Row="0" ItemsSource="{Binding Source={StaticResource QuranDivisions}}" 
+                        SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollMode="Enabled"
+                        Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}" Margin="5" 
+                        Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!--Binding Converter={StaticResource converter},RelativeSource={RelativeSource AncestorType={x:Type ListView}}}-->
+        <ListBox x:Name="sectionListBox" Grid.Row="1" ItemsSource="{Binding Source={StaticResource QuranDivision}}" 
+                        SelectedItem="{Binding Path=ViewModel.ListSelectedItem, Mode=TwoWay}"
+                        Background="White" BorderBrush="{x:Null}" BorderThickness="0" FontFamily="Global User Interface" DoubleTapped="sectionListBox_DoubleTapped">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Margin="5" 
+                        Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+    <ContentPage.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
+        </CommandBar>
+    </ContentPage.BottomAppBar>
+</ContentPage>
