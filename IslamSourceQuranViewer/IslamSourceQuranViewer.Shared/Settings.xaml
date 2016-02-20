@@ -43,7 +43,6 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="Back" Click="Back_Click" x:Uid="Back" Icon="Back"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

@@ -33,6 +33,11 @@ namespace IslamSourceQuranViewer
             this.DataContext = this;
             UIChanger = new MyUIChanger();
             this.InitializeComponent();
+#if WINDOWS_APP
+            AppBarButton BackButton = new AppBarButton() { Icon = new SymbolIcon(Symbol.Back), Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Back/Label") };
+            BackButton.Click += Back_Click;
+            (this.BottomAppBar as CommandBar).PrimaryCommands.Add(BackButton);
+#endif
 #if STORETOOLKIT
             AppBarButton RenderButton = new AppBarButton() { Icon = new SymbolIcon(Symbol.Camera), Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Render/Label") };
             RenderButton.Click += RenderPngs_Click;
@@ -149,11 +154,11 @@ namespace IslamSourceQuranViewer
             }
         }
 
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class MyRenderModel
     {
@@ -174,7 +179,7 @@ namespace IslamSourceQuranViewer
     }
     public static class FormattedTextBehavior
     {
-        #region FormattedText Attached dependency property
+#region FormattedText Attached dependency property
 
         public static List<MyChildRenderBlockItem> GetFormattedText(DependencyObject obj)
         {
@@ -205,7 +210,7 @@ namespace IslamSourceQuranViewer
             }
         }
 
-        #endregion
+#endregion
     }
     public class MyChildRenderItem
     {
@@ -629,61 +634,64 @@ namespace IslamSourceQuranViewer
 
         List<MyChildRenderBlockItem> _ItemRuns;
         public List<MyChildRenderBlockItem> ItemRuns { get { return _ItemRuns; } set {
-                char[] Forms = XMLRender.ArabicData.GetPresentationForms;
-                //XMLRender.ArabicData.LigatureInfo[] ligs = XMLRender.ArabicData.GetLigatures(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), false, Forms);
-                float BaseLine = 0;
-                short[] chpos = GetWordDiacriticClusters(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, IsArabic);
-                int pos = value[0].ItemText.Length;
-                int count = 1;
-                while (count < value.Count) {
-                    if (value[count].ItemText.Length != 0 && pos != 0 && chpos[pos] == chpos[pos - 1])
+                if (IsArabic)
+                {
+                    char[] Forms = XMLRender.ArabicData.GetPresentationForms;
+                    //XMLRender.ArabicData.LigatureInfo[] ligs = XMLRender.ArabicData.GetLigatures(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), false, Forms);
+                    short[] chpos = GetWordDiacriticClusters(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, IsArabic);
+                    int pos = value[0].ItemText.Length;
+                    int count = 1;
+                    while (count < value.Count)
                     {
-                        if (chpos[pos] == chpos[pos + value[count].ItemText.Length - 1])
+                        if (value[count].ItemText.Length != 0 && pos != 0 && chpos[pos] == chpos[pos - 1])
                         {
-                            pos -= value[count - 1].ItemText.Length;
                             if (!value[count].ItemText.All((ch) => XMLRender.ArabicData.IsDiacritic(ch)) && value[count - 1].Color.Color != Windows.UI.Colors.Black) { value[count - 1].Color = value[count].Color; }
-                            value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
+                            if (chpos[pos] == chpos[pos + value[count].ItemText.Length - 1])
+                            {
+                                pos -= value[count - 1].ItemText.Length;
+                                value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
+                            }
+                            else {
+                                int subcount = pos;
+                                while (subcount < pos + value[count].ItemText.Length && chpos[subcount] == chpos[subcount + 1]) { subcount++; }
+                                value[count - 1].ItemText += value[count].ItemText.Substring(0, subcount - pos + 1); value[count].ItemText = value[count].ItemText.Substring(subcount - pos + 1);
+                                pos += subcount - pos + 1;
+                            }
                         }
-                        else {
-                            int subcount = pos;
-                            while (subcount < pos + value[count].ItemText.Length && chpos[subcount] == chpos[subcount + 1]) { subcount++; }
-                            value[count - 1].ItemText += value[count].ItemText.Substring(0, subcount - pos + 1); value[count].ItemText = value[count].ItemText.Substring(subcount - pos + 1);
-                            pos += subcount - pos + 1;
-                        }
+                        //for (int subcount = 0; subcount < ligs.Length; subcount++) {
+                        //    //for indexes which are before, and after, find the maximum index in this group which is after
+                        //    if (pos > ligs[subcount].Indexes[0] && pos <= ligs[subcount].Indexes[ligs[subcount].Indexes.Length - 1]) {
+                        //        int ligcount;
+                        //        for (ligcount = ligs[subcount].Indexes.Length - 1; ligcount >= 0; ligcount--) {
+                        //            if (pos + value[count].ItemText.Length <= ligs[subcount].Indexes[ligcount]) {
+                        //                if (ligs[subcount].Indexes[ligcount] - pos == value[count].ItemText.Length) {
+                        //                    pos -= value[count - 1].ItemText.Length;
+                        //                    if (!value[count].ItemText.All((ch) => XMLRender.ArabicData.IsDiacritic(ch))) { value[count - 1].Color = value[count].Color; }
+                        //                    value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
+                        //                } else {
+                        //                    value[count - 1].ItemText += value[count].ItemText.Substring(0, ligs[subcount].Indexes[ligcount] - pos); value[count].ItemText = value[count].ItemText.Substring(ligs[subcount].Indexes[ligcount] - pos);
+                        //                    pos += ligs[subcount].Indexes[ligcount] - pos;
+                        //                }
+                        //                break;
+                        //            }
+                        //        }
+                        //        if (ligcount != ligs[subcount].Indexes.Length) { break; }
+                        //    }
+                        //}
+                        pos += value[count].ItemText.Length;
+                        count++;
+                        //int charcount = 0;
+                        //while (charcount < value[count].ItemText.Length && XMLRender.ArabicData.IsDiacritic(value[count].ItemText[charcount])) { charcount++; }
+                        //if (charcount != 0)
+                        //{
+                        //    if (charcount == value[count].ItemText.Length)
+                        //    {
+                        //        value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count);
+                        //    }
+                        //    else { value[count - 1].ItemText += value[count].ItemText.Substring(0, charcount); value[count].ItemText = value[count].ItemText.Substring(charcount); count++; }
+                        //}
+                        //else { count++; }
                     }
-                    //for (int subcount = 0; subcount < ligs.Length; subcount++) {
-                    //    //for indexes which are before, and after, find the maximum index in this group which is after
-                    //    if (pos > ligs[subcount].Indexes[0] && pos <= ligs[subcount].Indexes[ligs[subcount].Indexes.Length - 1]) {
-                    //        int ligcount;
-                    //        for (ligcount = ligs[subcount].Indexes.Length - 1; ligcount >= 0; ligcount--) {
-                    //            if (pos + value[count].ItemText.Length <= ligs[subcount].Indexes[ligcount]) {
-                    //                if (ligs[subcount].Indexes[ligcount] - pos == value[count].ItemText.Length) {
-                    //                    pos -= value[count - 1].ItemText.Length;
-                    //                    if (!value[count].ItemText.All((ch) => XMLRender.ArabicData.IsDiacritic(ch))) { value[count - 1].Color = value[count].Color; }
-                    //                    value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count); count--;
-                    //                } else {
-                    //                    value[count - 1].ItemText += value[count].ItemText.Substring(0, ligs[subcount].Indexes[ligcount] - pos); value[count].ItemText = value[count].ItemText.Substring(ligs[subcount].Indexes[ligcount] - pos);
-                    //                    pos += ligs[subcount].Indexes[ligcount] - pos;
-                    //                }
-                    //                break;
-                    //            }
-                    //        }
-                    //        if (ligcount != ligs[subcount].Indexes.Length) { break; }
-                    //    }
-                    //}
-                    pos += value[count].ItemText.Length;
-                    count++;
-                    //int charcount = 0;
-                    //while (charcount < value[count].ItemText.Length && XMLRender.ArabicData.IsDiacritic(value[count].ItemText[charcount])) { charcount++; }
-                    //if (charcount != 0)
-                    //{
-                    //    if (charcount == value[count].ItemText.Length)
-                    //    {
-                    //        value[count - 1].ItemText += value[count].ItemText; value.RemoveAt(count);
-                    //    }
-                    //    else { value[count - 1].ItemText += value[count].ItemText.Substring(0, charcount); value[count].ItemText = value[count].ItemText.Substring(charcount); count++; }
-                    //}
-                    //else { count++; }
                 }
                 _ItemRuns = value;
             }

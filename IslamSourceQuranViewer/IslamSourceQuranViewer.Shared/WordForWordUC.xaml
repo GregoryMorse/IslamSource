@@ -86,7 +86,6 @@
             <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" x:Uid="DecreaseFontSize" Icon="ZoomOut"></AppBarButton>
             <AppBarButton Name="Default" Click="Default_Click" x:Uid="DefaultFontSize" Icon="Zoom"></AppBarButton>
             <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
-            <AppBarButton Name="Back" Click="Back_Click" x:Uid="Back" Icon="Back"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

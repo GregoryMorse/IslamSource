@@ -28,6 +28,11 @@ namespace IslamSourceQuranViewer
             this.DataContext = this;
             MyAppSettings = new AppSettings();
             this.InitializeComponent();
+#if WINDOWS_APP
+            AppBarButton BackButton = new AppBarButton() { Icon = new SymbolIcon(Symbol.Back), Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Back/Label") };
+            BackButton.Click += Back_Click;
+            (this.BottomAppBar as CommandBar).PrimaryCommands.Add(BackButton);
+#endif
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
