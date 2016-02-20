@@ -77,11 +77,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources.en.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.en.resx</DependentUpon>
-    </Compile>
     <Compile Include="Resources.es.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,10 +119,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources.en.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.en.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.es.Designer.vb</LastGenOutput>
@@ -178,14 +169,15 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\IslamResources.en.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.es.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.fr.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.hu.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.id.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.ms.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.ru.xlf" />
-    <XliffResource Include="MultilingualResources\IslamResources.zh-Hans.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.zh-Hans.xlf">
+      <SubType>Designer</SubType>
+    </XliffResource>
     <XliffResource Include="MultilingualResources\IslamResources.zh-Hant.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />

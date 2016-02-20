@@ -27603,4 +27603,10 @@
   <data name="IslamInfo_TheMostBeneficentTheMostMerciful" xml:space="preserve">
     <value>A leg--bb jótékony a legtöbb irgalmas</value>
   </data>
+  <data name="IslamInfo_Rukus" xml:space="preserve">
+    <value>Rukus</value>
+  </data>
+  <data name="IslamInfo_Verses" xml:space="preserve">
+    <value>Versek</value>
+  </data>
 </root>

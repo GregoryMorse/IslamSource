@@ -36,7 +36,7 @@ namespace IslamSourceQuranViewer
         public App()
         {
 #if STORETOOLKIT
-            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "en";
+            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "zh-Hant";
             //Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
 #endif
             this.InitializeComponent();

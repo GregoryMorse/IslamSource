@@ -36794,6 +36794,14 @@
           <source>The Most Beneficent The Most Merciful</source>
           <target state="translated" state-qualifier="mt-suggestion">A leg--bb jótékony a legtöbb irgalmas</target>
         </trans-unit>
+        <trans-unit id="IslamInfo_Rukus" translate="yes" xml:space="preserve">
+          <source>Rukus</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rukus</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Verses" translate="yes" xml:space="preserve">
+          <source>Verses</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Versek</target>
+        </trans-unit>
       </group>
     </body>
   </file>

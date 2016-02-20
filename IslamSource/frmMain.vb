@@ -54,9 +54,9 @@ Public Class frmMain
         '    If Count = StoreCultures.Length Then Debug.Print("Not Found " + File.Name)
         'Next
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
-        TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.zh-Hant.resx", "..\..\..\metadata\zh-Hant.w4w.corpus.txt")
+        'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.zh-Hant.resx", "..\..\..\metadata\zh-Hant.w4w.corpus.txt")
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
-        Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.zh-Hant.resx", "..\..\..\metadata\zh-Hant.w4w.txt")
+        'Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.zh-Hant.resx", "..\..\..\metadata\zh-Hant.w4w.txt")
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)

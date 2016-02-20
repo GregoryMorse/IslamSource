@@ -1714,10 +1714,14 @@ Public Class IslamData
         <Xml.Serialization.XmlElement("languagedefault")>
         Public LanguageDefaultList() As LanguageDefault
         Public Function GetLanguageByID(LangID As String) As LanguageDefault
-            If LangID = String.Empty Then LangID = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName
             For Count As Integer = 0 To LanguageDefaultList.Length - 1
-                If LanguageDefaultList(Count).ID = LangID Then Return LanguageDefaultList(Count)
+                If LanguageDefaultList(Count).ID = If(LangID = String.Empty, System.Threading.Thread.CurrentThread.CurrentUICulture.Name, LangID) Then Return LanguageDefaultList(Count)
             Next
+            If LangID = String.Empty Then
+                For Count As Integer = 0 To LanguageDefaultList.Length - 1
+                    If LanguageDefaultList(Count).ID = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName Then Return LanguageDefaultList(Count)
+                Next
+            End If
             Return GetLanguageByID(String.Empty)
         End Function
     End Class
@@ -5142,21 +5146,21 @@ Public Class TanzilReader
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(0) + " " + ChapterNode.Attribute("ayas").Value)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(0) + " " + ChapterNode.Attribute("ayas").Value), SchemeType, Scheme, CachedData.RuleMetas("Normal")).Trim(), String.Empty)))
                     End If
-                    If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Verses " + ChapterNode.Attribute("ayas").Value + " "))
+                    If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_Verses") + " " + ChapterNode.Attribute("ayas").Value + " "))
                     Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, Texts.ToArray()))
                     Texts.Clear()
                     If Not NoArabic Then
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attribute("index").Value) - 1).Name)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(ChapterNode.Attribute("index").Value) - 1).Name), SchemeType, Scheme, CachedData.RuleMetas("Normal")).Trim(), String.Empty)))
                     End If
-                    If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Chapter " + TanzilReader.GetChapterEName(ChapterNode) + " "))
+                    If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_Chapter") + " " + TanzilReader.GetChapterEName(ChapterNode) + " "))
                     Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, Texts.ToArray()))
                     Texts.Clear()
                     If Not NoArabic Then
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(2) + " " + ChapterNode.Attribute("rukus").Value)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(2) + " " + ChapterNode.Attribute("rukus").Value), SchemeType, Scheme, CachedData.RuleMetas("Normal")).Trim(), String.Empty)))
                     End If
-                    If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Rukus " + ChapterNode.Attribute("rukus").Value + " "))
+                    If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_Rukus") + " " + ChapterNode.Attribute("rukus").Value + " "))
                     Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, Texts.ToArray()))
                     Texts.Clear()
                 End If

@@ -151,6 +151,24 @@
     <Content Include="..\..\metadata\en.w4w.corpus.txt">
       <Link>metadata\en\en.w4w.corpus.txt</Link>
     </Content>
+    <Content Include="..\..\metadata\zh-Hans.w4w.txt">
+      <Link>metadata\zh-Hans\zh-Hans.w4w.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh.jian.txt">
+      <Link>metadata\zh-Hans\zh.jian.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh-Hans.w4w.corpus.txt">
+      <Link>metadata\zh-Hans\zh-Hans.w4w.corpus.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh-Hant.w4w.txt">
+      <Link>metadata\zh-Hant\zh-Hant.w4w.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh.majian.txt">
+      <Link>metadata\zh-Hant\zh.majian.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh-Hant.w4w.corpus.txt">
+      <Link>metadata\zh-Hant\zh-Hant.w4w.corpus.txt</Link>
+    </Content>
     <Content Include="..\..\metadata\islaminfo.xml">
       <Link>metadata\islaminfo.xml</Link>
     </Content>

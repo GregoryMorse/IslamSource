@@ -60489,6 +60489,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Rukus.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_Rukus() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Rukus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Rule Delayed.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_RuleDelayed() As String
@@ -76955,6 +76964,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_VerseOfTheThrone() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_VerseOfTheThrone", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Verses.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_Verses() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_Verses", resourceCulture)
             End Get
         End Property
         
