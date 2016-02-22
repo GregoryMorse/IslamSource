@@ -745,7 +745,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\IslamResources.hu.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.hu.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.af.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.am.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.ar.xlf" />

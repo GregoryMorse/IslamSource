@@ -41,18 +41,50 @@ Public Class frmMain
         End Function
     End Class
     Private Sub UtilityTestCode()
-        'Dim StoreCultures() As String = "ar,ar-sa,ar-ae,ar-bh,ar-dz,ar-eg,ar-iq,ar-jo,ar-kw,ar-lb,ar-ly,ar-ma,ar-om,ar-qa,ar-sy,ar-tn,ar-ye,af,af-za,sq,sq-al,am,am-et,hy,hy-am,as,as-in,az,az-arab,az-arab-az,az-cyrl,az-cyrl-az,az-latn,az-latn-az,eu,eu-es,be,be-by,bn,bn-bd,bn-in,bs,bs-cyrl,bs-cyrl-ba,bs-latn,bs-latn-ba,bg,bg-bg,ca,ca-es,ca-es-valencia,chr-cher,chr-cher-us,chr-latn,zh,zh-Hans,zh-cn,zh-hans-cn,zh-sg,zh-hans-sg,zh-Hant,zh-hk,zh-mo,zh-tw,zh-hant-hk,zh-hant-mo,zh-hant-tw,hr,hr-hr,hr-ba,cs,cs-cz,da,da-dk,prs,prs-af,prs-arab,nl,nl-nl,nl-be,en,en-au,en-ca,en-gb,en-ie,en-in,en-nz,en-sg,en-us,en-za,en-bz,en-hk,en-id,en-jm,en-kz,en-mt,en-my,en-ph,en-pk,en-tt,en-vn,en-zw,en-053,en-021,en-029,en-011,en-018,en-014,et,et-ee,fil,fil-latn,fil-ph,fi,fi-fi,fr,fr-be,fr-ca,fr-ch,fr-fr,fr-lu,fr-015,fr-cd,fr-ci,fr-cm,fr-ht,fr-ma,fr-mc,fr-ml,fr-re,frc-latn,frp-latn,fr-155,fr-029,fr-021,fr-011,gl,gl-es,ka,ka-ge,de,de-at,de-ch,de-de,de-lu,de-li,el,el-gr,gu,gu-in,ha,ha-latn,ha-latn-ng,he,he-il,hi,hi-in,hu,hu-hu,is,is-is,ig-latn,ig-ng,id,id-id,iu-cans,iu-latn,iu-latn-ca,ga,ga-ie,xh,xh-za,zu,zu-za,it,it-it,it-ch,ja,ja-jp,kn,kn-in,kk,kk-kz,km,km-kh,quc-latn,qut-gt,qut-latn,rw,rw-rw,sw,sw-ke,kok,kok-in,ko,ko-kr,ku-arab,ku-arab-iq,ky-kg,ky-cyrl,lo,lo-la,lv,lv-lv,lt,lt-lt,lb,lb-lu,mk,mk-mk,ms,ms-bn,ms-my,ml,ml-in,mt,mt-mt,mi,mi-latn,mi-nz,mr,mr-in,mn-cyrl,mn-mong,mn-mn,mn-phag,ne,ne-np,nb,nb-no,nn,nn-no,no,no-no,,or,or-in,fa,fa-ir,pl,pl-pl,pt-br,pt,pt-pt,pa,pa-arab,pa-arab-pk,pa-deva,pa-in,quz,quz-bo,quz-ec,quz-pe,ro,ro-ro,ru,ru-ru,gd-gb,gd-latn,sr-Latn,sr-latn-cs,sr,sr-latn-ba,sr-latn-me,sr-latn-rs,sr-cyrl,sr-cyrl-ba,sr-cyrl-cs,sr-cyrl-me,sr-cyrl-rs,nso,nso-za,tn,tn-bw,tn-za,sd-arab,sd-arab-pk,sd-deva,si,si-lk,sk,sk-sk,sl,sl-si,es,es-cl,es-co,es-es,es-mx,es-ar,es-bo,es-cr,es-do,es-ec,es-gt,es-hn,es-ni,es-pa,es-pe,es-pr,es-py,es-sv,es-us,es-uy,es-ve,es-019,es-419,sv,sv-se,sv-fi,tg-arab,tg-cyrl,tg-cyrl-tj,tg-latn,ta,ta-in,tt-arab,tt-cyrl,tt-latn,tt-ru,te,te-in,th,th-th,ti,ti-et,tr,tr-tr,tk-cyrl,tk-latn,tk-tm,tk-latn-tr,tk-cyrl-tr,uk,uk-ua,ur,ur-pk,ug-arab,ug-cn,ug-cyrl,ug-latn,uz,uz-cyrl,uz-latn,uz-latn-uz,vi,vi-vn,cy,cy-gb,wo,wo-sn,yo-latn,yo-ng".Split(","c)
+        Dim StoreCultures() As String = "ar,ar-sa,ar-ae,ar-bh,ar-dz,ar-eg,ar-iq,ar-jo,ar-kw,ar-lb,ar-ly,ar-ma,ar-om,ar-qa,ar-sy,ar-tn,ar-ye,af,af-za,sq,sq-al,am,am-et,hy,hy-am,as,as-in,az,az-arab,az-arab-az,az-cyrl,az-cyrl-az,az-latn,az-latn-az,eu,eu-es,be,be-by,bn,bn-bd,bn-in,bs,bs-cyrl,bs-cyrl-ba,bs-latn,bs-latn-ba,bg,bg-bg,ca,ca-es,ca-es-valencia,chr-cher,chr-cher-us,chr-latn,zh,zh-Hans,zh-cn,zh-hans-cn,zh-sg,zh-hans-sg,zh-Hant,zh-hk,zh-mo,zh-tw,zh-hant-hk,zh-hant-mo,zh-hant-tw,hr,hr-hr,hr-ba,cs,cs-cz,da,da-dk,prs,prs-af,prs-arab,nl,nl-nl,nl-be,en,en-au,en-ca,en-gb,en-ie,en-in,en-nz,en-sg,en-us,en-za,en-bz,en-hk,en-id,en-jm,en-kz,en-mt,en-my,en-ph,en-pk,en-tt,en-vn,en-zw,en-053,en-021,en-029,en-011,en-018,en-014,et,et-ee,fil,fil-latn,fil-ph,fi,fi-fi,fr,fr-be,fr-ca,fr-ch,fr-fr,fr-lu,fr-015,fr-cd,fr-ci,fr-cm,fr-ht,fr-ma,fr-mc,fr-ml,fr-re,frc-latn,frp-latn,fr-155,fr-029,fr-021,fr-011,gl,gl-es,ka,ka-ge,de,de-at,de-ch,de-de,de-lu,de-li,el,el-gr,gu,gu-in,ha,ha-latn,ha-latn-ng,he,he-il,hi,hi-in,hu,hu-hu,is,is-is,ig-latn,ig-ng,id,id-id,iu-cans,iu-latn,iu-latn-ca,ga,ga-ie,xh,xh-za,zu,zu-za,it,it-it,it-ch,ja,ja-jp,kn,kn-in,kk,kk-kz,km,km-kh,quc-latn,qut-gt,qut-latn,rw,rw-rw,sw,sw-ke,kok,kok-in,ko,ko-kr,ku-arab,ku-arab-iq,ky-kg,ky-cyrl,lo,lo-la,lv,lv-lv,lt,lt-lt,lb,lb-lu,mk,mk-mk,ms,ms-bn,ms-my,ml,ml-in,mt,mt-mt,mi,mi-latn,mi-nz,mr,mr-in,mn-cyrl,mn-mong,mn-mn,mn-phag,ne,ne-np,nb,nb-no,nn,nn-no,no,no-no,or,or-in,fa,fa-ir,pl,pl-pl,pt-br,pt,pt-pt,pa,pa-arab,pa-arab-pk,pa-deva,pa-in,quz,quz-bo,quz-ec,quz-pe,ro,ro-ro,ru,ru-ru,gd-gb,gd-latn,sr-Latn,sr-latn-cs,sr,sr-latn-ba,sr-latn-me,sr-latn-rs,sr-cyrl,sr-cyrl-ba,sr-cyrl-cs,sr-cyrl-me,sr-cyrl-rs,nso,nso-za,tn,tn-bw,tn-za,sd-arab,sd-arab-pk,sd-deva,si,si-lk,sk,sk-sk,sl,sl-si,es,es-cl,es-co,es-es,es-mx,es-ar,es-bo,es-cr,es-do,es-ec,es-gt,es-hn,es-ni,es-pa,es-pe,es-pr,es-py,es-sv,es-us,es-uy,es-ve,es-019,es-419,sv,sv-se,sv-fi,tg-arab,tg-cyrl,tg-cyrl-tj,tg-latn,ta,ta-in,tt-arab,tt-cyrl,tt-latn,tt-ru,te,te-in,th,th-th,ti,ti-et,tr,tr-tr,tk-cyrl,tk-latn,tk-tm,tk-latn-tr,tk-cyrl-tr,uk,uk-ua,ur,ur-pk,ug-arab,ug-cn,ug-cyrl,ug-latn,uz,uz-cyrl,uz-latn,uz-latn-uz,vi,vi-vn,cy,cy-gb,wo,wo-sn,yo-latn,yo-ng".Split(","c)
         '"gd", "ig", "ky", "tk", "tt", "ug", "yo" cannot be neutral
-        'Dim AllCultures() As Globalization.CultureInfo = Globalization.CultureInfo.GetCultures(Globalization.CultureTypes.InstalledWin32Cultures)
-        'For Each File In New IO.DirectoryInfo("..\..\..\XMLRender\").EnumerateFiles("*.*.resx")
-        '    Dim Count As Integer
-        '    For Count = 0 To StoreCultures.Length - 1
-        '        If "Resources." + StoreCultures(Count) + ".resx" = File.Name Or "resources." + StoreCultures(Count) + ".resx" = File.Name.ToLower() Then
-        '            Exit For
-        '        End If
-        '    Next
-        '    If Count = StoreCultures.Length Then Debug.Print("Not Found " + File.Name)
-        'Next
+        Dim AllCultures() As Globalization.CultureInfo = Globalization.CultureInfo.GetCultures(Globalization.CultureTypes.InstalledWin32Cultures)
+        For Each File In New IO.DirectoryInfo("..\..\..\XMLRender\").EnumerateFiles("*.*.resx")
+            Dim Count As Integer
+            For Count = 0 To StoreCultures.Length - 1
+                If "Resources." + StoreCultures(Count) + ".resx" = File.Name Or "resources." + StoreCultures(Count) + ".resx" = File.Name.ToLower() Then
+                    Exit For
+                End If
+            Next
+            If Count = StoreCultures.Length Then
+                Debug.Print("Not Found " + File.Name)
+            End If
+        Next
+        For Count = 0 To StoreCultures.Length - 1
+            Dim bFound As Boolean = False
+            For Each File As IO.FileInfo In New IO.DirectoryInfo("..\..\..\XMLRender\").EnumerateFiles("*.*.resx")
+                If "Resources." + StoreCultures(Count) + ".resx" = File.Name Or "resources." + StoreCultures(Count) + ".resx" = File.Name.ToLower() Then
+                    bFound = True
+                    Exit For
+                End If
+            Next
+            If Not bFound And StoreCultures(Count) <> String.Empty And StoreCultures(Count) <> "en" Then
+                Debug.Print("Not Found " + StoreCultures(Count))
+                StoreCultures(Count) = String.Empty
+            End If
+        Next
+        Dim StoreCultureNames(StoreCultures.Length - 1) As String
+        For Count = 0 To StoreCultures.Length - 1
+            'frp and frc not in culture info yet and zh aliases zh-Hant and tk aliases both tk-latn and tk-latn-tr but not writing alias detect system yet
+            If StoreCultures(Count).StartsWith("frp-") Or StoreCultures(Count).StartsWith("frc-") Or StoreCultures(Count) = "zh" Or StoreCultures(Count) = "tk-latn-tr" Then
+                StoreCultures(Count) = String.Empty
+                Continue For
+            End If
+            If StoreCultures(Count) = "pa-arab" Or (StoreCultures(Count) <> String.Empty And (Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).Parent.Name = String.Empty Or Array.IndexOf(StoreCultures, Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).Parent.Name.ToLower()) = -1 And Array.IndexOf(StoreCultures, Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).Parent.Name) = -1 And (Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).Parent.Parent.Name = String.Empty Or Array.IndexOf(StoreCultures, Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).Parent.Parent.Name.ToLower()) = -1 And Array.IndexOf(StoreCultures, Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).Parent.Parent.Name) = -1))) Then
+                StoreCultureNames(Count) = If(Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).DisplayName.StartsWith("Unknown"), Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).Parent.DisplayName, Globalization.CultureInfo.GetCultureInfo(StoreCultures(Count)).DisplayName) + " [" + StoreCultures(Count) + "]"
+            Else
+                StoreCultures(Count) = String.Empty
+            End If
+        Next
+        Array.Sort(StoreCultureNames)
+        For Count = 0 To StoreCultureNames.Length - 1
+            If StoreCultureNames(Count) <> String.Empty Then Debug.Print(StoreCultureNames(Count))
+        Next
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
         'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.zh-Hant.resx", "..\..\..\metadata\zh-Hant.w4w.corpus.txt")
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
