@@ -8,7 +8,7 @@
       <group id="STORERESOURCE/STORERESOURCES.RESX" datatype="resx">
         <trans-unit id="AdditionalLicenseTerms" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="AppFeature1" translate="yes" xml:space="preserve">
           <source>Quran Word by Word Translation</source>
@@ -20,7 +20,7 @@
         </trans-unit>
         <trans-unit id="AppFeature3" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">అరబిక్</target>
         </trans-unit>
         <trans-unit id="AppFeature4" translate="yes" xml:space="preserve">
           <source>Verse by Verse</source>
@@ -60,7 +60,7 @@
         </trans-unit>
         <trans-unit id="Keyword2" translate="yes" xml:space="preserve">
           <source>Translation</source>
-          <target state="new">Translation</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">అనువాదం</target>
         </trans-unit>
         <trans-unit id="Keyword3" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
@@ -68,7 +68,7 @@
         </trans-unit>
         <trans-unit id="Keyword4" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">అరబిక్</target>
         </trans-unit>
         <trans-unit id="Keyword5" translate="yes" xml:space="preserve">
           <source>Qur'an</source>
@@ -88,7 +88,7 @@
         </trans-unit>
         <trans-unit id="PrivacyPolicy" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="ReleaseNotes" translate="yes" xml:space="preserve">
           <source>Initial Version.</source>

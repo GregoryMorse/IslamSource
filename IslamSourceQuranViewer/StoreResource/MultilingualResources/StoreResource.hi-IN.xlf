@@ -8,99 +8,99 @@
       <group id="STORERESOURCE/STORERESOURCES.RESX" datatype="resx">
         <trans-unit id="AdditionalLicenseTerms" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="AppFeature1" translate="yes" xml:space="preserve">
           <source>Quran Word by Word Translation</source>
-          <target state="new">Quran Word by Word Translation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान शब्द से शब्द अनुवाद</target>
         </trans-unit>
         <trans-unit id="AppFeature2" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">लिप्यंतरण</target>
         </trans-unit>
         <trans-unit id="AppFeature3" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">अरबी</target>
         </trans-unit>
         <trans-unit id="AppFeature4" translate="yes" xml:space="preserve">
           <source>Verse by Verse</source>
-          <target state="new">Verse by Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कविता द्वारा कविता</target>
         </trans-unit>
         <trans-unit id="AppFeature5" translate="yes" xml:space="preserve">
           <source>Word by Word</source>
-          <target state="new">Word by Word</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">शब्द शब्द द्वारा</target>
         </trans-unit>
         <trans-unit id="AppFeature6" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान</target>
         </trans-unit>
         <trans-unit id="AppFeature7" translate="yes" xml:space="preserve">
           <source>Quran viewer</source>
-          <target state="new">Quran viewer</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान व्यूअर</target>
         </trans-unit>
         <trans-unit id="AppFeature8" translate="yes" xml:space="preserve">
           <source>Tajweed</source>
-          <target state="new">Tajweed</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tajweed</target>
         </trans-unit>
         <trans-unit id="CopyrightTrademarkInfo" translate="yes" xml:space="preserve">
           <source>(c) GMorseCode</source>
-          <target state="new">(c) GMorseCode</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">(c) GMorseCode</target>
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</source>
-          <target state="new">Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान अपनी अरबी, लिप्यंतरण और अनुवाद द्वारा शब्द शब्द और कविता द्वारा कविता शिक्षण, अध्ययन, अनुसंधान, memorization, प्रतिबिंब और tajweed की महारत के लिए के साथ।</target>
         </trans-unit>
         <trans-unit id="DesktopScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">मुख्य कुरान दर्शक।</target>
         </trans-unit>
         <trans-unit id="Keyword1" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान</target>
         </trans-unit>
         <trans-unit id="Keyword2" translate="yes" xml:space="preserve">
           <source>Translation</source>
-          <target state="new">Translation</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">अनुवाद</target>
         </trans-unit>
         <trans-unit id="Keyword3" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">लिप्यंतरण</target>
         </trans-unit>
         <trans-unit id="Keyword4" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">अरबी</target>
         </trans-unit>
         <trans-unit id="Keyword5" translate="yes" xml:space="preserve">
           <source>Qur'an</source>
-          <target state="new">Qur'an</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान</target>
         </trans-unit>
         <trans-unit id="Keyword6" translate="yes" xml:space="preserve">
           <source>Koran</source>
-          <target state="new">Koran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान</target>
         </trans-unit>
         <trans-unit id="Keyword7" translate="yes" xml:space="preserve">
           <source>Al-Quran</source>
-          <target state="new">Al-Quran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">अल-कुरान</target>
         </trans-unit>
         <trans-unit id="MobileScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">मुख्य कुरान दर्शक।</target>
         </trans-unit>
         <trans-unit id="PrivacyPolicy" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="ReleaseNotes" translate="yes" xml:space="preserve">
           <source>Initial Version.</source>
-          <target state="new">Initial Version.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">प्रारंभिक संस्करण।</target>
         </trans-unit>
         <trans-unit id="SupportContactInfo" translate="yes" xml:space="preserve">
           <source>gregory.morse@live.com</source>
-          <target state="new">gregory.morse@live.com</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">gregory.morse@live.com</target>
         </trans-unit>
         <trans-unit id="Website" translate="yes" xml:space="preserve">
           <source>http://www.islamsource.info</source>
-          <target state="new">http://www.islamsource.info</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">http://www.islamsource.info</target>
         </trans-unit>
       </group>
     </body>

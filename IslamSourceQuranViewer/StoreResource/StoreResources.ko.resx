@@ -12,4 +12,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdditionalLicenseTerms" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>꾸 란 단어 번역</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>음역</value>
+  </data>
+  <data name="AppFeature3" xml:space="preserve">
+    <value>아랍어</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>구절에 의해 구절</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>단어 단어</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>꾸 란</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>꾸 란 뷰어</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(c) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>아랍어, 음역 및 번역 단어와 구절에 의해 구절 학습, 공부, 연구, 기억, 반사 및 tajweed의 지배에 대 한 Qur'an.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>메인 꾸 란 뷰어입니다.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>꾸 란</value>
+  </data>
+  <data name="Keyword2" xml:space="preserve">
+    <value>번역</value>
+  </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>음역</value>
+  </data>
+  <data name="Keyword4" xml:space="preserve">
+    <value>아랍어</value>
+  </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Qur'an</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>코 란</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>알-꾸 란</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>메인 꾸 란 뷰어입니다.</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>초기 버전입니다.</value>
+  </data>
+  <data name="SupportContactInfo" xml:space="preserve">
+    <value>gregory.morse@live.com</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>http://www.islamsource.info</value>
+  </data>
 </root>

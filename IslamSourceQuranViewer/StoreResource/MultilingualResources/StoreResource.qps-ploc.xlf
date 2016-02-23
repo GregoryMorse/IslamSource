@@ -8,99 +8,99 @@
       <group id="STORERESOURCE/STORERESOURCES.RESX" datatype="resx">
         <trans-unit id="AdditionalLicenseTerms" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="AppFeature1" translate="yes" xml:space="preserve">
           <source>Quran Word by Word Translation</source>
-          <target state="new">Quran Word by Word Translation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[63AF3][!!_Qúřâη Ẃõŕď вў Ŵôŗđ Ţŕáήŝļàтíóй_!!]</target>
         </trans-unit>
         <trans-unit id="AppFeature2" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[12059][!!_Τѓàήśľíтèŕâţįòη_!!]</target>
         </trans-unit>
         <trans-unit id="AppFeature3" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[6423A][!!_Âřãъíĉ_!!]</target>
         </trans-unit>
         <trans-unit id="AppFeature4" translate="yes" xml:space="preserve">
           <source>Verse by Verse</source>
-          <target state="new">Verse by Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[B1539][!!_Vęѓşè Бý Vêŕşé_!!]</target>
         </trans-unit>
         <trans-unit id="AppFeature5" translate="yes" xml:space="preserve">
           <source>Word by Word</source>
-          <target state="new">Word by Word</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[287DE][!!_Ẅóŕđ Бў Ẅòŕð_!!]</target>
         </trans-unit>
         <trans-unit id="AppFeature6" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[3B21A][!!_Qúřãй_!!]</target>
         </trans-unit>
         <trans-unit id="AppFeature7" translate="yes" xml:space="preserve">
           <source>Quran viewer</source>
-          <target state="new">Quran viewer</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[9B7C4][!!_Qµřãи νįêŵèѓ_!!]</target>
         </trans-unit>
         <trans-unit id="AppFeature8" translate="yes" xml:space="preserve">
           <source>Tajweed</source>
-          <target state="new">Tajweed</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[BBB78][!!_Тâјẁęęđ_!!]</target>
         </trans-unit>
         <trans-unit id="CopyrightTrademarkInfo" translate="yes" xml:space="preserve">
           <source>(c) GMorseCode</source>
-          <target state="new">(c) GMorseCode</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[55FCD][!!_(ĉ) ĠМôřšéĊôđé_!!]</target>
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</source>
-          <target state="new">Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[746CE][!!_Qµŗ'áή ẁíťћ įтş Ãѓâвìć, ťŗãήŝļíţèŕàτíôη àйð ţѓâήšľãτîõη ẅôřď ъý ŵôŕď ãйđ νêŕŝé ьУ νêřŝè ƒòŗ ĺęâѓйíηģ, śţùđŷįηġ, ŗęśéáŕĉн, мéмóříźáţìôй, řêƒĺêćţíòη ãиð màśťéřý ôƒ ţâĵŵęęď._!!]</target>
         </trans-unit>
         <trans-unit id="DesktopScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[229A1][!!_Μãįή Qµѓáи νíęẃêŕ._!!]</target>
         </trans-unit>
         <trans-unit id="Keyword1" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[32E0A][!!_Qùřáη_!!]</target>
         </trans-unit>
         <trans-unit id="Keyword2" translate="yes" xml:space="preserve">
           <source>Translation</source>
-          <target state="new">Translation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[CB07F][!!_Ţѓãиŝľáţîòй_!!]</target>
         </trans-unit>
         <trans-unit id="Keyword3" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[98833][!!_Τŕàήŝľíťéѓâтìôή_!!]</target>
         </trans-unit>
         <trans-unit id="Keyword4" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[2D87E][!!_Âŗãьîĉ_!!]</target>
         </trans-unit>
         <trans-unit id="Keyword5" translate="yes" xml:space="preserve">
           <source>Qur'an</source>
-          <target state="new">Qur'an</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[E5D4C][!!_Qûř'âи_!!]</target>
         </trans-unit>
         <trans-unit id="Keyword6" translate="yes" xml:space="preserve">
           <source>Koran</source>
-          <target state="new">Koran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[13922][!!_Κôŗâй_!!]</target>
         </trans-unit>
         <trans-unit id="Keyword7" translate="yes" xml:space="preserve">
           <source>Al-Quran</source>
-          <target state="new">Al-Quran</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[B3AC9][!!_Ãĺ-Qµѓãή_!!]</target>
         </trans-unit>
         <trans-unit id="MobileScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[9F060][!!_Μãįи Qúŕãи νìęẁèŕ._!!]</target>
         </trans-unit>
         <trans-unit id="PrivacyPolicy" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="ReleaseNotes" translate="yes" xml:space="preserve">
           <source>Initial Version.</source>
-          <target state="new">Initial Version.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[2BA63][!!_Îήìţíâļ Vêŕŝîôй._!!]</target>
         </trans-unit>
         <trans-unit id="SupportContactInfo" translate="yes" xml:space="preserve">
           <source>gregory.morse@live.com</source>
-          <target state="new">gregory.morse@live.com</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[9B290][!!_ġŗéĝóѓУ.мõřšè@ĺíνé.ćòм_!!]</target>
         </trans-unit>
         <trans-unit id="Website" translate="yes" xml:space="preserve">
           <source>http://www.islamsource.info</source>
-          <target state="new">http://www.islamsource.info</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[605E9][!!_ћттр://ẃẃŵ.îśļãмśóúŗćę.ìиƒò_!!]</target>
         </trans-unit>
       </group>
     </body>

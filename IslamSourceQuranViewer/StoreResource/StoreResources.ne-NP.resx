@@ -12,4 +12,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdditionalLicenseTerms" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AppFeature3" xml:space="preserve">
+    <value>अरबी</value>
+  </data>
+  <data name="Keyword2" xml:space="preserve">
+    <value>अनुवाद</value>
+  </data>
+  <data name="Keyword4" xml:space="preserve">
+    <value>अरबी</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value></value>
+  </data>
 </root>

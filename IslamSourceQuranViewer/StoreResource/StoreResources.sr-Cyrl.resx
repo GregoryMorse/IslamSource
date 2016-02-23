@@ -12,4 +12,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdditionalLicenseTerms" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Кур 'ан дословно превођење</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>Транслитератион</value>
+  </data>
+  <data name="AppFeature3" xml:space="preserve">
+    <value>арапски</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Стих по стих</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Реч по реч</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>Кур'ан</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>Кур 'ан виеwер</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Тајwеед</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(ц ) ГМорсеЦоде</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Куран са својим арапски, транслитератион и превођење реч по реч и стих по стих, за уцење и студирам, истраживање, поиети, одраз и господарење тајwеед.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Главна Кур'ан приказивач.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>Кур'ан</value>
+  </data>
+  <data name="Keyword2" xml:space="preserve">
+    <value>Превод</value>
+  </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>Транслитератион</value>
+  </data>
+  <data name="Keyword4" xml:space="preserve">
+    <value>арапски</value>
+  </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Куран</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Куран</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Ал-Кур'ан</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Главна Кур'ан приказивач.</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Почетна верзија.</value>
+  </data>
+  <data name="SupportContactInfo" xml:space="preserve">
+    <value>Gregory.Morse@Live.com</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>http://www.islamsource.info</value>
+  </data>
 </root>

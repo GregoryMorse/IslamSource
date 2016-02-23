@@ -302,6 +302,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ml.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.mn-MN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.mn-MN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.mr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.mr.Designer.vb</LastGenOutput>
@@ -770,6 +774,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.ml.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.mn-MN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.mn-MN.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.mr.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1069,6 +1078,7 @@
     <XliffResource Include="MultilingualResources\XMLRender.mi.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.mk.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ml.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.mn-MN.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.mr.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ms.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.mt.xlf" />

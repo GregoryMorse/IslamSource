@@ -12,4 +12,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdditionalLicenseTerms" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>อัลกุรอานคำโดยคำแปล</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>เขียนทับศัพท์</value>
+  </data>
+  <data name="AppFeature3" xml:space="preserve">
+    <value>อาหรับ</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>ข้อโดยข้อ</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>คำ โดยคำ</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>อัลกุรอาน</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>ดูอัลกุรอาน</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>นบีมุฮัมมัด</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(c) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>อัลกุรอานภาษาอาหรับ สากล และแปลคำโดย word และข้อโดยข้อการเรียนรู้ การศึกษา วิจัย เปียโน และของนบีมุฮัมมัด</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>ตัวแสดงหลักอัลกุรอาน</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>อัลกุรอาน</value>
+  </data>
+  <data name="Keyword2" xml:space="preserve">
+    <value>การแปล</value>
+  </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>เขียนทับศัพท์</value>
+  </data>
+  <data name="Keyword4" xml:space="preserve">
+    <value>อาหรับ</value>
+  </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>อัลกุรอาน</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>สิทธิ</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>คัมภีร์อัลกุรอาน</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>ตัวแสดงหลักอัลกุรอาน</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>รุ่นเริ่มต้น</value>
+  </data>
+  <data name="SupportContactInfo" xml:space="preserve">
+    <value>gregory.morse@live.com</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>http://www.islamsource.info</value>
+  </data>
 </root>

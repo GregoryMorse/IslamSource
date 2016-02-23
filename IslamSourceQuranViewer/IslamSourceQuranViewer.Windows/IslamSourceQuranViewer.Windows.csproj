@@ -19,8 +19,7 @@
     <PackageCertificateThumbprint>BFEAC8A0C6BDC08641C82BC2B8E5DFDEDC73B37B</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -235,7 +234,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Resources.resw" />
+    <PRIResource Include="Resources.resw">
+      <LastGenOutput>Resources2.Designer.cs</LastGenOutput>
+    </PRIResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

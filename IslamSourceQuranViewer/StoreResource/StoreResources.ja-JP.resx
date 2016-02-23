@@ -12,4 +12,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AdditionalLicenseTerms" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>単語単位で翻訳</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>音訳</value>
+  </data>
+  <data name="AppFeature3" xml:space="preserve">
+    <value>アラビア語</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>によって詩</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>単語単位で</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>コーラン</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>コーラン ビューアー</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(c) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>クルアーンはアラビア語、翻字翻訳単語単位での学習、勉強、研究、記憶、反射、tajweed の習得によって詩と。</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>メイン コーラン ビューアー。</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>コーラン</value>
+  </data>
+  <data name="Keyword2" xml:space="preserve">
+    <value>翻訳</value>
+  </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>音訳</value>
+  </data>
+  <data name="Keyword4" xml:space="preserve">
+    <value>アラビア語</value>
+  </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>クルアーン</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>コーラン</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>アル クルアーン</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>メイン コーラン ビューアー。</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>初期バージョン。</value>
+  </data>
+  <data name="SupportContactInfo" xml:space="preserve">
+    <value>gregory.morse@live.com</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>http://www.islamsource.info</value>
+  </data>
 </root>
