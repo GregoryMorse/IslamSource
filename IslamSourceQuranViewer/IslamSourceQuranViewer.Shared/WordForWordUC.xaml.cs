@@ -50,7 +50,7 @@ namespace IslamSourceQuranViewer
             dynamic t = e.Parameter;
             Division = t.Division;
             Selection = t.Selection;
-            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), String.Empty, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
+            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
             MainControl.ItemsSource = this.ViewModel.RenderItems;
         }
         public MyUIChanger UIChanger { get; set; }
@@ -63,11 +63,12 @@ namespace IslamSourceQuranViewer
             for (int count = 0; count < LangList.Length; count++) {
                 Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = LangList[count];
                 Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
-                await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync(LangList[count], Windows.Storage.CreationCollisionOption.OpenIfExists);
+                //Windows.Storage.ApplicationData.Current.LocalFolder
+                await Windows.Storage.KnownFolders.PicturesLibrary.CreateFolderAsync(LangList[count], Windows.Storage.CreationCollisionOption.OpenIfExists);
                 //re-render the UI
                 //this.Frame.Navigate(this.GetType(), new { Division = Division, Selection = Selection});
                 //this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
-                this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), String.Empty, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
+                this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
                 MainControl.ItemsSource = this.ViewModel.RenderItems;
                 UpdateLayout();
                 await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
@@ -82,7 +83,7 @@ namespace IslamSourceQuranViewer
             }
             Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = origLang;
             Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
-            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), String.Empty, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
+            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
             MainControl.ItemsSource = this.ViewModel.RenderItems;
             UpdateLayout();
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });

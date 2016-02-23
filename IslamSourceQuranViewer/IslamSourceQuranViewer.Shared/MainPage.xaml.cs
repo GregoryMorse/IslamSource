@@ -26,9 +26,12 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         IReadOnlyList<Windows.Storage.StorageFile> files = tn.Result; //await folder.GetFilesAsync();
         return new List<string>(files.Select(file => file.Name)).ToArray();
     }
+    private static Windows.ApplicationModel.Resources.Core.ResourceContext _resourceContext;
     public /*async*/ Stream LoadStream(string FilePath)
     {
-        Windows.ApplicationModel.Resources.Core.ResourceCandidate rc = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetValue(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"), Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView());
+        Windows.ApplicationModel.Resources.Core.ResourceCandidate rc = null;
+        if (_resourceContext == null && Windows.UI.Xaml.Window.Current.CoreWindow != null) { _resourceContext = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView();  }
+        if (_resourceContext != null) { rc = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetValue(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"), _resourceContext); }
         System.Threading.Tasks.Task<Windows.Storage.StorageFile> t;
         if (rc != null && rc.IsMatch) {
             t = rc.GetValueAsFileAsync().AsTask();
@@ -272,9 +275,8 @@ namespace IslamSourceQuranViewer
     {
         public MainPage()
         {
-            XMLRender.PortableMethods.FileIO = new WindowsRTFileIO();
-            XMLRender.PortableMethods.Settings = new WindowsRTSettings();
             this.DataContext = this;
+            UIChanger = new MyUIChanger();
             this.ViewModel = new MyTabViewModel();
             this.InitializeComponent();
 #if STORETOOLKIT
@@ -286,6 +288,7 @@ namespace IslamSourceQuranViewer
             this.NavigationCacheMode = NavigationCacheMode.Required;
 #endif
         }
+        public MyUIChanger UIChanger { get; set; }
         public MyTabViewModel ViewModel { get; set; }
 
         private void sectionListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
@@ -302,6 +305,46 @@ namespace IslamSourceQuranViewer
         {
             this.Frame.Navigate(typeof(Settings));
         }
+    }
+    public static class ListFormattedTextBehavior
+    {
+        #region FormattedText Attached dependency property
+
+        public static List<string> GetFormattedText(DependencyObject obj)
+        {
+            return (List<string>)obj.GetValue(FormattedTextProperty);
+        }
+
+        public static void SetFormattedText(DependencyObject obj, List<string> value)
+        {
+            obj.SetValue(FormattedTextProperty, value);
+        }
+
+        public static readonly DependencyProperty FormattedTextProperty =
+            DependencyProperty.RegisterAttached("FormattedText",
+            typeof(List<string>),
+            typeof(ListFormattedTextBehavior),
+            new PropertyMetadata(null, FormattedTextChanged));
+
+        private static void FormattedTextChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+            List<string> value = e.NewValue as List<string>;
+
+            TextBlock textBlock = sender as TextBlock;
+
+            if (textBlock != null)
+            {
+                textBlock.Inlines.Clear();
+                textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = value[0], FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
+                if (value.Count > 1)
+                {
+                    textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = "(" + value[1] + ")", FontWeight = Windows.UI.Text.FontWeights.Bold, FlowDirection = FlowDirection.RightToLeft, FontFamily = new FontFamily(AppSettings.strSelectedFont), FontSize = AppSettings.dFontSize });
+                    textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = value[2], FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
+                }
+            }
+        }
+
+        #endregion
     }
     public class MyTabViewModel : INotifyPropertyChanged
     {
@@ -366,7 +409,7 @@ namespace IslamSourceQuranViewer
         {
             get
             {
-                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { Name = (string)(Arr.Cast<object>()).First(), Index = (int)(Arr.Cast<object>()).Last() }); }
+                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() }); }
                 return _Items;
             }
         }
@@ -385,7 +428,7 @@ namespace IslamSourceQuranViewer
 
     public class MyListItem
     {
-        public string Name { get; set; }
+        public List<string> TextItems { get; set; }
         public int Index { get; set; }
     }
 }

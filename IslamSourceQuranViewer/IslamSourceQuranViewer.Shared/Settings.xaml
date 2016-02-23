@@ -8,6 +8,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <CollectionViewSource x:Name="FontsSource" Source="{Binding Path=MyAppSettings.Fonts}"></CollectionViewSource>
+        <CollectionViewSource x:Name="TranslationsSource" Source="{Binding Path=MyAppSettings.TranslationList}"></CollectionViewSource>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Orientation="Vertical">
@@ -38,6 +39,10 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Uid="ShowWordByWord" VerticalAlignment="Center"></TextBlock>
                 <CheckBox IsChecked="{Binding Path=MyAppSettings.ShowW4W, Mode=TwoWay}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Uid="Translation" VerticalAlignment="Center"></TextBlock>
+                <ComboBox ItemsSource="{Binding Source={StaticResource TranslationsSource}}" SelectedItem="{Binding Path=MyAppSettings.SelectedTranslation, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
             </StackPanel>
         </StackPanel>
     </Grid>

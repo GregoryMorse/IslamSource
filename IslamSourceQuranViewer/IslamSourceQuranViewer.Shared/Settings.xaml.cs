@@ -46,6 +46,8 @@ namespace IslamSourceQuranViewer
         public AppSettings() { }
         public static void InitDefaultSettings()
         {
+            XMLRender.PortableMethods.FileIO = new WindowsRTFileIO();
+            XMLRender.PortableMethods.Settings = new WindowsRTSettings();
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))
             {
                 strSelectedFont = "Times New Roman";
@@ -78,6 +80,10 @@ namespace IslamSourceQuranViewer
             {
                 bShowW4W = true;
             }
+            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentTranslation")) {
+                iSelectedTranslation = IslamMetadata.TanzilReader.GetTranslationIndex(String.Empty);
+            }
+
         }
         public static string strSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"] = value; } }
         public static string strOtherSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"] = value; } }
@@ -93,6 +99,15 @@ namespace IslamSourceQuranViewer
             get
             {
                 return new List<string> { "Times New Roman", "Traditional Arabic", "Arabic Typesetting", "Sakkal Majalla", "Microsoft Uighur", "Arial", "Global User Interface" };
+            }
+        }
+        public static int iSelectedTranslation { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"] = value; } }
+        public string SelectedTranslation { get { return IslamMetadata.CachedData.IslamData.Translations.TranslationList[iSelectedTranslation].Name; } set { iSelectedTranslation = Array.FindIndex(IslamMetadata.CachedData.IslamData.Translations.TranslationList, (Translation) => Translation.Name == value); } }
+        public List<string> TranslationList
+        {
+            get
+            {
+                return new List<string>(IslamMetadata.CachedData.IslamData.Translations.TranslationList.Where((Translation) => { return Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Name || Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Parent.Name; }).Select((Translation) => Translation.Name));
             }
         }
         public static bool bUseColoring { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["UseColoring"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["UseColoring"] = value; } }

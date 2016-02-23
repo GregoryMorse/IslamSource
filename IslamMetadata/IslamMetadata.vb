@@ -5242,7 +5242,7 @@ Public Class TanzilReader
                                 If Not NoArabic Then
                                     If Colorize Then
                                         Texts.AddRange(WordColors(Count))
-                                        Texts.AddRange(TranslitColors(Count))
+                                        Texts.AddRange(TranslitColors(Count - PauseMarks))
                                     Else
                                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Words(Count)))
                                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count - PauseMarks), String.Empty)))

@@ -12,7 +12,14 @@
     <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
   </Prerequisites>
   <Resources>
-    <Resource Language="x-generate" />
+    <!--<Resource Language="x-generate" />-->
+    <Resource Language="en" />
+    <Resource Language="hu" />
+    <Resource Language="zh-Hans" />
+    <Resource Language="zh-Hant" />
+    <Resource Language="ru" />
+    <Resource Language="fr" />
+    <Resource Language="es" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IslamSourceQuranViewer.StoreToolkit.WindowsPhone.App">

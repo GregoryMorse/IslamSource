@@ -7549,7 +7549,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<reciter name="Yasser_Ad-Dussary_128kbps" reciter="Yasser Ad-Dussary" bitrate="128" source="everyayah"></reciter>
 	</reciters>
 	<translations>
-		<translation file="en-maulana_ali" name="Maulana Muhammad Ali" translator="Maulana Muhammad Ali"></translation>
+		<translation file="en.maulana_ali" name="Maulana Muhammad Ali" translator="Maulana Muhammad Ali"></translation>
 		<translation file="en.asad" name="Asad" translator="Muhammad Asad"></translation>
 		<translation file="hu.halima" name="Halima" translator="Kiss Zsuzsanna Halima"></translation>
 
