@@ -276,6 +276,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.ml.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.mn-MN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.mn-MN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.mr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.mr.Designer.vb</LastGenOutput>
@@ -658,6 +662,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.ml.resx</DependentUpon>
     </Compile>
+    <Compile Include="W4WResources.mn-MN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.mn-MN.resx</DependentUpon>
+    </Compile>
     <Compile Include="W4WResources.mr.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -800,6 +809,7 @@
     <XliffResource Include="MultilingualResources\ResourceToolkit.mi.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.mk.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.ml.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.mn-MN.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.mr.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.ms.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.mt.xlf" />

@@ -164,41 +164,32 @@
     <Content Include="Assets\Square70x70Logo.scale-180.png" />
     <Content Include="Assets\Square70x70Logo.scale-80.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="..\..\metadata\en.w4w.txt">
-      <Link>metadata\en\en.w4w.txt</Link>
+    <Content Include="..\..\metadata\en.*">
+      <Link>metadata\en\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\hu.halima.txt">
-      <Link>metadata\hu\hu.halima.txt</Link>
+    <Content Include="..\..\metadata\hu.*">
+      <Link>metadata\hu\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\hu.w4w.corpus.txt">
-      <Link>metadata\hu\hu.w4w.corpus.txt</Link>
+    <Content Include="..\..\metadata\zh-Hans.*">
+      <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\hu.w4w.txt">
-      <Link>metadata\hu\hu.w4w.txt</Link>
+    <Content Include="..\..\metadata\zh-Hant.*">
+      <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\en.sahih.txt">
-      <Link>metadata\en\en.sahih.txt</Link>
+    <Content Include="..\..\metadata\zh.*">
+      <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\en.w4w.corpus.txt">
-      <Link>metadata\en\en.w4w.corpus.txt</Link>
+    <Content Include="..\..\metadata\zh.*">
+      <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\zh-Hans.w4w.txt">
-      <Link>metadata\zh-Hans\zh-Hans.w4w.txt</Link>
+    <Content Include="..\..\metadata\fr.*">
+      <Link>metadata\fr\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\zh.jian.txt">
-      <Link>metadata\zh-Hans\zh.jian.txt</Link>
+    <Content Include="..\..\metadata\es.*">
+      <Link>metadata\es\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\zh-Hans.w4w.corpus.txt">
-      <Link>metadata\zh-Hans\zh-Hans.w4w.corpus.txt</Link>
-    </Content>
-    <Content Include="..\..\metadata\zh-Hant.w4w.txt">
-      <Link>metadata\zh-Hant\zh-Hant.w4w.txt</Link>
-    </Content>
-    <Content Include="..\..\metadata\zh.majian.txt">
-      <Link>metadata\zh-Hant\zh.majian.txt</Link>
-    </Content>
-    <Content Include="..\..\metadata\zh-Hant.w4w.corpus.txt">
-      <Link>metadata\zh-Hant\zh-Hant.w4w.corpus.txt</Link>
+    <Content Include="..\..\metadata\ru.*">
+      <Link>metadata\ru\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\islaminfo.xml">
       <Link>metadata\islaminfo.xml</Link>

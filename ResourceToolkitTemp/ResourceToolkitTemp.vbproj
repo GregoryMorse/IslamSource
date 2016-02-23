@@ -56,6 +56,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework and Windows SDK is automatically included -->
+    <EmbeddedResource Include="QuranResources.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.de.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuranResources.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.es.Designer.vb</LastGenOutput>
@@ -63,6 +67,10 @@
     <EmbeddedResource Include="QuranResources.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.fr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.he.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.he.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="QuranResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +118,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="QuranResources.de.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.de.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuranResources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +137,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuranResources.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.he.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.he.resx</DependentUpon>
     </Compile>
     <Compile Include="QuranResources.ru.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -142,8 +160,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.de.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.es.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.fr.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.he.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.ru.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.zh-Hans.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.zh-Hant.xlf" />

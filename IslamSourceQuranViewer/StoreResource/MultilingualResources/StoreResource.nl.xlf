@@ -24,7 +24,7 @@
         </trans-unit>
         <trans-unit id="AppFeature4" translate="yes" xml:space="preserve">
           <source>Verse by Verse</source>
-          <target state="new">Verse by Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vers voor vers</target>
         </trans-unit>
         <trans-unit id="AppFeature5" translate="yes" xml:space="preserve">
           <source>Word by Word</source>

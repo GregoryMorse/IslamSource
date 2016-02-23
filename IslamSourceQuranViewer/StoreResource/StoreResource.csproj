@@ -1206,6 +1206,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <DependentUpon>Resources.resw</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="StoreResources.af-ZA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2953,6 +2958,11 @@
     <XliffResource Include="MultilingualResources\StoreResource.zh-TW.xlf" />
     <XliffResource Include="MultilingualResources\StoreResource.zu-ZA.xlf" />
     <XliffResource Include="MultilingualResources\StoreResource.zu.xlf" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources.resw">
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </PRIResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />
