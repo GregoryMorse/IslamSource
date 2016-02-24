@@ -1141,7 +1141,7 @@ var rs, next, str = '', sura = 1; func = function() { if (next.document.readySta
 			<noun text="&lt;iqaAmapN" id="CallToBeginThePrayer"></noun>
 			<noun text="qibolapN" id="DirectionOfPrayer"></noun>
 			<noun text="sujuwdN" id="Prostrating"></noun>
-			<noun text="sajodapN" id="Prostration"></noun>
+			<noun text="sajodapN" plural="sujuwdN" id="Prostration"></noun>
 			<noun text="rakoEapN" id="UnitOfPrayer"></noun>
 			<noun text="rukuwEN" plural="rukuwEaAtN" id="BowOfPrayer"></noun>
 			<noun text="wuDuw^&apos;N" id="Ablution"></noun>
@@ -3051,6 +3051,9 @@ var rs, next, str = '', sura = 1; func = function() { if (next.document.readySta
 		<word text="&lt;iEoraAbu {loquro&apos;aAni" id="QuranicGrammar"></word>
 		<word text="gariybu {loquro&apos;aAni" id="UnusualQuranicTerms"></word>
 		<word text="majaAzu {loquro&apos;aAni" id="QuranicMetaphor"></word>
+		<word text="suwarN fiY tarokiybi {lowaHoYi" id="ChaptersInRevelationOrder"></word>
+		<word text="qawaAEidu {lt~ajowiydi" id="RecitationRules"></word>
+		<word text="&gt;aqosaAmN mahimN" id="ImportantSelections"></word>
 		<!-- {search:suboHa`n[aiu].?.? .ll.*} -->
 		<!-- {search:suboHa`n[aiu].?.? rab.*} -->
 		<!-- {search:loHamodu lil~ahi rab.*} -->
@@ -6800,17 +6803,17 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<book title="An Introduction to the Principles of Tafseer" arabic="muqad~imapu fiY &gt;uSuwlu {lt~afosiyri" author="&lt;ibonu Tayomiy~api"></book>
 	</islamicbooks>
 	<qurandivisions>
-		<division description="Chapters"></division>
-		<division description="ChaptersRevelationOrder"></division>
-		<division description="Parts"></division>
-		<division description="Groups"></division>
-		<division description="Stations"></division>
-		<division description="Sections"></division>
-		<division description="Pages"></division>
-		<division description="Prostrations"></division>
-		<division description="ImportantSelections"></division>
-		<division description="Letters"></division>
-		<division description="RecitationRules"></division>
+		<division description="Chapters" arabic="ChapterFromQuran"></division>
+		<division description="ChaptersRevelationOrder" arabic="ChaptersInRevelationOrder"></division>
+		<division description="Parts" arabic="Part"></division>
+		<division description="Groups" arabic="Party"></division>
+		<division description="Stations" arabic="Station"></division>
+		<division description="Sections" arabic="BowOfPrayer"></division>
+		<division description="Pages" arabic="NewspaperPage"></division>
+		<division description="Prostrations" arabic="Prostration"></division>
+		<division description="ImportantSelections" arabic="ImportantSelections"></division>
+		<division description="Letters" arabic="ParticleEdgeAspectDialect"></division>
+		<division description="RecitationRules" arabic="RecitationRules"></division>
 	</qurandivisions>
 	<quranselections>
 		<quranselection description="VerseOfTheThrone">

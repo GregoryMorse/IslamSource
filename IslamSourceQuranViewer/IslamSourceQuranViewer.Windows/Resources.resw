@@ -159,9 +159,6 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Size</value>
   </data>
-  <data name="Translation.Text" xml:space="preserve">
-    <value>Translation</value>
-  </data>
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Use Recitation Rule Coloring</value>
   </data>

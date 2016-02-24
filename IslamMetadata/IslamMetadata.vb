@@ -1804,6 +1804,8 @@ Public Class IslamData
     Structure QuranDivision
         <Xml.Serialization.XmlAttribute("description")> _
         Public Description As String
+        <Xml.Serialization.XmlAttribute("arabic")>
+        Public Arabic As String
     End Structure
     <Xml.Serialization.XmlArray("qurandivisions")> _
     <Xml.Serialization.XmlArrayItem("division")> _

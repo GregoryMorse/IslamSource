@@ -57222,6 +57222,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Recitation Rules.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_RecitationRules() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RecitationRules", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Recitations.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Recitations() As String

@@ -11,8 +11,8 @@
 namespace IslamSourceQuranViewer {
     using System;
     using System.Reflection;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -125,6 +125,15 @@ namespace IslamSourceQuranViewer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Other Text Font.
+        /// </summary>
+        internal static string OtherTextFont_Text {
+            get {
+                return ResourceManager.GetString("OtherTextFont.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Render.
         /// </summary>
         internal static string Render_Label {
@@ -166,6 +175,15 @@ namespace IslamSourceQuranViewer {
         internal static string ShowWordByWord_Text {
             get {
                 return ResourceManager.GetString("ShowWordByWord.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        internal static string Size_Text {
+            get {
+                return ResourceManager.GetString("Size.Text", resourceCulture);
             }
         }
         

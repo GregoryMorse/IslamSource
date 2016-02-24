@@ -24,6 +24,9 @@
   <data name="AppFeature3" xml:space="preserve">
     <value>Arabisch</value>
   </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Vers voor vers</value>
+  </data>
   <data name="AppFeature5" xml:space="preserve">
     <value>Woord per woord</value>
   </data>

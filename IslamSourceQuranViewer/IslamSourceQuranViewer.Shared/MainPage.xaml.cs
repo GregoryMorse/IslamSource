@@ -26,12 +26,11 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         IReadOnlyList<Windows.Storage.StorageFile> files = tn.Result; //await folder.GetFilesAsync();
         return new List<string>(files.Select(file => file.Name)).ToArray();
     }
-    private static Windows.ApplicationModel.Resources.Core.ResourceContext _resourceContext;
     public /*async*/ Stream LoadStream(string FilePath)
     {
         Windows.ApplicationModel.Resources.Core.ResourceCandidate rc = null;
-        if (_resourceContext == null && Windows.UI.Xaml.Window.Current.CoreWindow != null) { _resourceContext = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView();  }
-        if (_resourceContext != null) { rc = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetValue(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"), _resourceContext); }
+        if (IslamSourceQuranViewer.App._resourceContext == null && Windows.UI.Xaml.Window.Current != null && Windows.UI.Xaml.Window.Current.CoreWindow != null) { IslamSourceQuranViewer.App._resourceContext = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView();  }
+        if (IslamSourceQuranViewer.App._resourceContext != null) { rc = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetValue(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"), IslamSourceQuranViewer.App._resourceContext); }
         System.Threading.Tasks.Task<Windows.Storage.StorageFile> t;
         if (rc != null && rc.IsMatch) {
             t = rc.GetValueAsFileAsync().AsTask();
@@ -276,8 +275,8 @@ namespace IslamSourceQuranViewer
         public MainPage()
         {
             this.DataContext = this;
-            UIChanger = new MyUIChanger();
             this.ViewModel = new MyTabViewModel();
+            UIChanger = new MyUIChanger();
             this.InitializeComponent();
 #if STORETOOLKIT
             AppBarButton RenderButton = new AppBarButton() { Icon = new SymbolIcon(Symbol.Camera), Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Render/Label") };
@@ -287,6 +286,18 @@ namespace IslamSourceQuranViewer
 #if WINDOWS_PHONE_APP
             this.NavigationCacheMode = NavigationCacheMode.Required;
 #endif
+        }
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            IEnumerable<MyTabItem> items = null;
+            System.Threading.Tasks.Task t = new System.Threading.Tasks.Task(() =>
+            {
+                items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
+            });
+            t.Start();
+            await t;
+            ViewModel.Items = items;
+            LoadingRing.IsActive = false;
         }
         public MyUIChanger UIChanger { get; set; }
         public MyTabViewModel ViewModel { get; set; }
@@ -350,12 +361,20 @@ namespace IslamSourceQuranViewer
     {
         public MyTabViewModel()
         {
-            Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
+        }
+        private IEnumerable<MyTabItem> _Items;
+        public IEnumerable<MyTabItem> Items { get
+            {
+                return _Items;
+            }
+            set
+            {
+                _Items = value;
+                PropertyChanged(this, new PropertyChangedEventArgs("Items"));
+            }
         }
 
-        public IEnumerable<MyTabItem> Items { get; set; }
-
-        public IEnumerable<MyListItem> _ListItems;
+        private IEnumerable<MyListItem> _ListItems;
         public IEnumerable<MyListItem> ListItems
         {
             get

@@ -27714,4 +27714,7 @@
   <data name="IslamInfo_Verses" xml:space="preserve">
     <value>Verses</value>
   </data>
+  <data name="IslamInfo_RecitationRules" xml:space="preserve">
+    <value>Recitation Rules</value>
+  </data>
 </root>

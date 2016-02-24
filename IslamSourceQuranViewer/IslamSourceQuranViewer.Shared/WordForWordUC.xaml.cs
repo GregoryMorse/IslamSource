@@ -31,6 +31,7 @@ namespace IslamSourceQuranViewer
         public WordForWordUC()
         {
             this.DataContext = this;
+            this.ViewModel = new MyRenderModel();
             UIChanger = new MyUIChanger();
             this.InitializeComponent();
 #if WINDOWS_APP
@@ -45,31 +46,38 @@ namespace IslamSourceQuranViewer
 #endif
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            dynamic t = e.Parameter;
-            Division = t.Division;
-            Selection = t.Selection;
-            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
-            MainControl.ItemsSource = this.ViewModel.RenderItems;
+            XMLRender.RenderArray render = null;
+            dynamic c = e.Parameter;
+            System.Threading.Tasks.Task t = new System.Threading.Tasks.Task(() =>
+            {
+                Division = c.Division;
+                Selection = c.Selection;
+                render = IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1");
+            });
+            t.Start();
+            await t;
+            this.ViewModel.RenderItems = System.Linq.Enumerable.Select(render.Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr));
+            LoadingRing.IsActive = false;
         }
         public MyUIChanger UIChanger { get; set; }
         public MyRenderModel ViewModel { get; set; }
         private async void RenderPngs_Click(object sender, RoutedEventArgs e)
         {
             string origLang = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
-            string[] LangList = "en,hu,zh-Hans,zh-Hant,ru,es,fr".Split(',');
+            string[] LangList = "en,hu,zh-Hans,zh-Hant,ru,es,fr,id".Split(',');
             //string[] LangList = "ar,ar-sa,ar-ae,ar-bh,ar-dz,ar-eg,ar-iq,ar-jo,ar-kw,ar-lb,ar-ly,ar-ma,ar-om,ar-qa,ar-sy,ar-tn,ar-ye,af,af-za,sq,sq-al,am,am-et,hy,hy-am,as,as-in,az,az-arab,az-arab-az,az-cyrl,az-cyrl-az,az-latn,az-latn-az,eu,eu-es,be,be-by,bn,bn-bd,bn-in,bs,bs-cyrl,bs-cyrl-ba,bs-latn,bs-latn-ba,bg,bg-bg,ca,ca-es,ca-es-valencia,chr-cher,chr-cher-us,chr-latn,zh,zh-Hans,zh-cn,zh-hans-cn,zh-sg,zh-hans-sg,zh-Hant,zh-hk,zh-mo,zh-tw,zh-hant-hk,zh-hant-mo,zh-hant-tw,hr,hr-hr,hr-ba,cs,cs-cz,da,da-dk,prs,prs-af,prs-arab,nl,nl-nl,nl-be,en,en-au,en-ca,en-gb,en-ie,en-in,en-nz,en-sg,en-us,en-za,en-bz,en-hk,en-id,en-jm,en-kz,en-mt,en-my,en-ph,en-pk,en-tt,en-vn,en-zw,en-053,en-021,en-029,en-011,en-018,en-014,et,et-ee,fil,fil-latn,fil-ph,fi,fi-fi,fr,fr-be,fr-ca,fr-ch,fr-fr,fr-lu,fr-015,fr-cd,fr-ci,fr-cm,fr-ht,fr-ma,fr-mc,fr-ml,fr-re,frc-latn,frp-latn,fr-155,fr-029,fr-021,fr-011,gl,gl-es,ka,ka-ge,de,de-at,de-ch,de-de,de-lu,de-li,el,el-gr,gu,gu-in,ha,ha-latn,ha-latn-ng,he,he-il,hi,hi-in,hu,hu-hu,is,is-is,ig-latn,ig-ng,id,id-id,iu-cans,iu-latn,iu-latn-ca,ga,ga-ie,xh,xh-za,zu,zu-za,it,it-it,it-ch,ja,ja-jp,kn,kn-in,kk,kk-kz,km,km-kh,quc-latn,qut-gt,qut-latn,rw,rw-rw,sw,sw-ke,kok,kok-in,ko,ko-kr,ku-arab,ku-arab-iq,ky-kg,ky-cyrl,lo,lo-la,lv,lv-lv,lt,lt-lt,lb,lb-lu,mk,mk-mk,ms,ms-bn,ms-my,ml,ml-in,mt,mt-mt,mi,mi-latn,mi-nz,mr,mr-in,mn-cyrl,mn-mong,mn-mn,mn-phag,ne,ne-np,nb,nb-no,nn,nn-no,no,no-no,,or,or-in,fa,fa-ir,pl,pl-pl,pt-br,pt,pt-pt,pa,pa-arab,pa-arab-pk,pa-deva,pa-in,quz,quz-bo,quz-ec,quz-pe,ro,ro-ro,ru,ru-ru,gd-gb,gd-latn,sr-Latn,sr-latn-cs,sr,sr-latn-ba,sr-latn-me,sr-latn-rs,sr-cyrl,sr-cyrl-ba,sr-cyrl-cs,sr-cyrl-me,sr-cyrl-rs,nso,nso-za,tn,tn-bw,tn-za,sd-arab,sd-arab-pk,sd-deva,si,si-lk,sk,sk-sk,sl,sl-si,es,es-cl,es-co,es-es,es-mx,es-ar,es-bo,es-cr,es-do,es-ec,es-gt,es-hn,es-ni,es-pa,es-pe,es-pr,es-py,es-sv,es-us,es-uy,es-ve,es-019,es-419,sv,sv-se,sv-fi,tg-arab,tg-cyrl,tg-cyrl-tj,tg-latn,ta,ta-in,tt-arab,tt-cyrl,tt-latn,tt-ru,te,te-in,th,th-th,ti,ti-et,tr,tr-tr,tk-cyrl,tk-latn,tk-tm,tk-latn-tr,tk-cyrl-tr,uk,uk-ua,ur,ur-pk,ug-arab,ug-cn,ug-cyrl,ug-latn,uz,uz-cyrl,uz-latn,uz-latn-uz,vi,vi-vn,cy,cy-gb,wo,wo-sn,yo-latn,yo-ng".Split(',');
             for (int count = 0; count < LangList.Length; count++) {
                 Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = LangList[count];
+                App._resourceContext = null;
                 Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
-                //Windows.Storage.ApplicationData.Current.LocalFolder
-                await Windows.Storage.KnownFolders.PicturesLibrary.CreateFolderAsync(LangList[count], Windows.Storage.CreationCollisionOption.OpenIfExists);
+                //Windows.Storage.KnownFolders.PicturesLibrary
+                await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync(LangList[count], Windows.Storage.CreationCollisionOption.OpenIfExists);
                 //re-render the UI
                 //this.Frame.Navigate(this.GetType(), new { Division = Division, Selection = Selection});
                 //this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
-                this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
-                MainControl.ItemsSource = this.ViewModel.RenderItems;
+                this.ViewModel.RenderItems = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), String.Empty, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr));
                 UpdateLayout();
                 await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
                 await WindowsRTSettings.SavePathImageAsFile(1366, 768, LangList[count] + "\\appstorescreenshot-wide", this, true);
@@ -82,9 +90,9 @@ namespace IslamSourceQuranViewer
                 await WindowsRTSettings.SavePathImageAsFile(480, 800, LangList[count] + "\\appstorephonescreenshot480x800-tall", this, true);
             }
             Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = origLang;
+            App._resourceContext = null;
             Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
-            this.ViewModel = new MyRenderModel(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items);
-            MainControl.ItemsSource = this.ViewModel.RenderItems;
+            this.ViewModel.RenderItems = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr));
             UpdateLayout();
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
             GC.Collect();
@@ -169,20 +177,24 @@ namespace IslamSourceQuranViewer
 
 #endregion
     }
-    public class MyRenderModel
+    public class MyRenderModel : INotifyPropertyChanged
     {
-        public MyRenderModel(List<XMLRender.RenderArray.RenderItem> RendItems)
+        public MyRenderModel()
         {
-            RenderItems = System.Linq.Enumerable.Select(RendItems, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr));
         }
+        private IEnumerable<MyRenderItem> _RenderItems;
+        public IEnumerable<MyRenderItem> RenderItems { get { return _RenderItems; } set { _RenderItems = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderItems")); } }
+#region Implementation of INotifyPropertyChanged
 
-        public IEnumerable<MyRenderItem> RenderItems { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
     }
-    public class MyRenderItem
+        public class MyRenderItem
     {
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem { IsArabic = Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Direction = (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight, ItemRuns = System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Color = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr))) }).ToList() } : null)).Where(Arr => Arr != null);
+            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel { RenderItems = System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)) } : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem { IsArabic = Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Direction = (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight, ItemRuns = System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Color = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr))) }).ToList() } : null)).Where(Arr => Arr != null);
         }
         public IEnumerable<object> Items { get; set; }
     }

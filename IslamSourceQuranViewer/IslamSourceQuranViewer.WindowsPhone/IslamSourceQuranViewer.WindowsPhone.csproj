@@ -102,10 +102,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources.Designer.cs">
-      <DependentUpon>Resources.resw</DependentUpon>
+    <Compile Include="Resources*.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>$([System.String]::Copy('%(FileName)').Replace('.Designer','')).resw</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +114,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\StoreResource\Resources*.resx">
+      <Link>%(FileName).resw</Link>
+    </Content>
     <Content Include="Assets\badgelogo.scale-100.png" />
     <Content Include="Assets\splashscreen.scale-100.png" />
     <Content Include="Assets\splashscreen.scale-140.png" />
@@ -138,6 +141,9 @@
     </Content>
     <Content Include="..\..\metadata\hu.*">
       <Link>metadata\hu\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\id.*">
+      <Link>metadata\id\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\zh-Hans.*">
       <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
@@ -173,8 +179,8 @@
       <Link>metadata\UnicodeData.txt</Link>
     </Content>
     <None Include="Package.StoreAssociation.xml" />
-    <PRIResource Include="Resources.resw">
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    <PRIResource Include="Resources*.resw">
+      <LastGenOutput>%(FileName).Designer.cs</LastGenOutput>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>

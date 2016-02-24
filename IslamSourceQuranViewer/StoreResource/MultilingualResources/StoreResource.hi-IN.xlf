@@ -105,4 +105,73 @@
       </group>
     </body>
   </file>
+  <file datatype="xml" source-language="en-US" target-language="hi-IN" original="STORERESOURCE/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1573.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="STORERESOURCE/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="ArabicFont.Text" translate="yes" xml:space="preserve">
+          <source>Arabic Font</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">अरबी फ़ॉन्ट</target>
+        </trans-unit>
+        <trans-unit id="Back.Label" translate="yes" xml:space="preserve">
+          <source>Back</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">वापस</target>
+        </trans-unit>
+        <trans-unit id="DecreaseFontSize.Label" translate="yes" xml:space="preserve">
+          <source>Decrease Font Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">फ़ॉन्ट आकार घटाएँ</target>
+        </trans-unit>
+        <trans-unit id="DefaultFontSize.Label" translate="yes" xml:space="preserve">
+          <source>Default Font Size</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">डिफ़ॉल्ट फ़ॉन्ट आकार</target>
+        </trans-unit>
+        <trans-unit id="Description" translate="yes" xml:space="preserve">
+          <source>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान अपनी अरबी, लिप्यंतरण और अनुवाद द्वारा शब्द शब्द और कविता द्वारा कविता शिक्षण, अध्ययन, अनुसंधान, memorization, प्रतिबिंब और tajweed की महारत के लिए के साथ।</target>
+        </trans-unit>
+        <trans-unit id="DisplayName" translate="yes" xml:space="preserve">
+          <source>Quran Word By Word</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">कुरान शब्द शब्द</target>
+        </trans-unit>
+        <trans-unit id="IncreaseFontSize.Label" translate="yes" xml:space="preserve">
+          <source>Increase Font Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">फ़ॉन्ट आकार बढ़ाएँ</target>
+        </trans-unit>
+        <trans-unit id="OtherTextFont.Text" translate="yes" xml:space="preserve">
+          <source>Other Text Font</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">अन्य पाठ फ़ॉन्ट</target>
+        </trans-unit>
+        <trans-unit id="Render.Label" translate="yes" xml:space="preserve">
+          <source>Render</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">प्रस्तुत करना</target>
+        </trans-unit>
+        <trans-unit id="Settings.Label" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">सेटिंग्स</target>
+        </trans-unit>
+        <trans-unit id="ShowTranslation.Text" translate="yes" xml:space="preserve">
+          <source>Show Translation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">अनुवाद दिखाएँ</target>
+        </trans-unit>
+        <trans-unit id="ShowTransliteration.Text" translate="yes" xml:space="preserve">
+          <source>Show Transliteration</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">शो लिप्यंतरण</target>
+        </trans-unit>
+        <trans-unit id="ShowWordByWord.Text" translate="yes" xml:space="preserve">
+          <source>Show Word By Word</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">शो शब्द शब्द</target>
+        </trans-unit>
+        <trans-unit id="Size.Text" translate="yes" xml:space="preserve">
+          <source>Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">SIZE</target>
+        </trans-unit>
+        <trans-unit id="UseRecitationRuleColoring.Text" translate="yes" xml:space="preserve">
+          <source>Use Recitation Rule Coloring</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">सस्वर पाठ नियम रंग का उपयोग करें</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
 </xliff>

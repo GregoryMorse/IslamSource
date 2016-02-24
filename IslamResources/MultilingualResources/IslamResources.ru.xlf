@@ -36802,6 +36802,10 @@
           <source>Verses</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Стихи</target>
         </trans-unit>
+        <trans-unit id="IslamInfo_RecitationRules" translate="yes" xml:space="preserve">
+          <source>Recitation Rules</source>
+          <target state="new">Recitation Rules</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arābu valodas fontu</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Atpakaļ</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Samazināt fonta lielumu</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Noklusējuma fonta lielums</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Korāns ar tās arābu, transliterācija un tulkošanas pa vārdam un dzejolis, dzejolis, mācību, studiju, pētniecības, memorization, pārdomu un tajweed meistarību.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Korāns pa vārdam</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Palielināt fonta lielumu</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Citi teksta fontu</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Atveidot</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Iestatījumi</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Rādīt Translation</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Rādīt transliterācija</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Rādīt pa vārdam</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Lielums</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Izmantot sarīkojums noteikums krāsošana</value>
+  </data>
+</root>

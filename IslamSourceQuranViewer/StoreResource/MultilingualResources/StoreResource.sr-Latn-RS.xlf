@@ -105,4 +105,73 @@
       </group>
     </body>
   </file>
+  <file datatype="xml" source-language="en-US" target-language="sr-Latn-RS" original="STORERESOURCE/RESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1573.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="STORERESOURCE/RESOURCES.RESX" datatype="resx">
+        <trans-unit id="ArabicFont.Text" translate="yes" xml:space="preserve">
+          <source>Arabic Font</source>
+          <target state="new">Arabic Font</target>
+        </trans-unit>
+        <trans-unit id="Back.Label" translate="yes" xml:space="preserve">
+          <source>Back</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nazad</target>
+        </trans-unit>
+        <trans-unit id="DecreaseFontSize.Label" translate="yes" xml:space="preserve">
+          <source>Decrease Font Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Smanji veličinu fonta</target>
+        </trans-unit>
+        <trans-unit id="DefaultFontSize.Label" translate="yes" xml:space="preserve">
+          <source>Default Font Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Podrazumevana veličina fonta</target>
+        </trans-unit>
+        <trans-unit id="Description" translate="yes" xml:space="preserve">
+          <source>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</source>
+          <target state="new">Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</target>
+        </trans-unit>
+        <trans-unit id="DisplayName" translate="yes" xml:space="preserve">
+          <source>Quran Word By Word</source>
+          <target state="new">Quran Word By Word</target>
+        </trans-unit>
+        <trans-unit id="IncreaseFontSize.Label" translate="yes" xml:space="preserve">
+          <source>Increase Font Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Povećaj veličinu fonta</target>
+        </trans-unit>
+        <trans-unit id="OtherTextFont.Text" translate="yes" xml:space="preserve">
+          <source>Other Text Font</source>
+          <target state="new">Other Text Font</target>
+        </trans-unit>
+        <trans-unit id="Render.Label" translate="yes" xml:space="preserve">
+          <source>Render</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Prikazivanje</target>
+        </trans-unit>
+        <trans-unit id="Settings.Label" translate="yes" xml:space="preserve">
+          <source>Settings</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Postavke</target>
+        </trans-unit>
+        <trans-unit id="ShowTranslation.Text" translate="yes" xml:space="preserve">
+          <source>Show Translation</source>
+          <target state="new">Show Translation</target>
+        </trans-unit>
+        <trans-unit id="ShowTransliteration.Text" translate="yes" xml:space="preserve">
+          <source>Show Transliteration</source>
+          <target state="new">Show Transliteration</target>
+        </trans-unit>
+        <trans-unit id="ShowWordByWord.Text" translate="yes" xml:space="preserve">
+          <source>Show Word By Word</source>
+          <target state="new">Show Word By Word</target>
+        </trans-unit>
+        <trans-unit id="Size.Text" translate="yes" xml:space="preserve">
+          <source>Size</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Veličina</target>
+        </trans-unit>
+        <trans-unit id="UseRecitationRuleColoring.Text" translate="yes" xml:space="preserve">
+          <source>Use Recitation Rule Coloring</source>
+          <target state="new">Use Recitation Rule Coloring</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
 </xliff>

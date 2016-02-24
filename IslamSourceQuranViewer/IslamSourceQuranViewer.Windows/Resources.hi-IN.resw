@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>अरबी फ़ॉन्ट</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>वापस</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>फ़ॉन्ट आकार घटाएँ</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>डिफ़ॉल्ट फ़ॉन्ट आकार</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>कुरान अपनी अरबी, लिप्यंतरण और अनुवाद द्वारा शब्द शब्द और कविता द्वारा कविता शिक्षण, अध्ययन, अनुसंधान, memorization, प्रतिबिंब और tajweed की महारत के लिए के साथ।</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>कुरान शब्द शब्द</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>फ़ॉन्ट आकार बढ़ाएँ</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>अन्य पाठ फ़ॉन्ट</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>प्रस्तुत करना</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>सेटिंग्स</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>अनुवाद दिखाएँ</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>शो लिप्यंतरण</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>शो शब्द शब्द</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>SIZE</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>सस्वर पाठ नियम रंग का उपयोग करें</value>
+  </data>
+</root>

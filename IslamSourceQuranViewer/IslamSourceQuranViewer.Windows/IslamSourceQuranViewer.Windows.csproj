@@ -124,10 +124,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources.Designer.cs">
+    <Compile Include="Resources*.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resw</DependentUpon>
+      <DependentUpon>$([System.String]::Copy('%(FileName)').Replace('.Designer','')).resw</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -138,11 +138,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\StoreResource\Resources*.resx">
+      <Link>%(FileName).resw</Link>
+    </Content>
     <Content Include="..\..\metadata\en.*">
       <Link>metadata\en\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\hu.*">
       <Link>metadata\hu\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\id.*">
+      <Link>metadata\id\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\zh-Hans.*">
       <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
@@ -225,8 +231,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Resources.resw">
-      <LastGenOutput>Resources2.Designer.cs</LastGenOutput>
+    <PRIResource Include="Resources*.resw">
+      <LastGenOutput>%(FileName).Designer.cs</LastGenOutput>
     </PRIResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

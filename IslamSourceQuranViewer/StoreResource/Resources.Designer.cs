@@ -8,9 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IslamSourceQuranViewer {
+namespace StoreResource {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
@@ -40,7 +39,7 @@ namespace IslamSourceQuranViewer {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IslamSourceQuranViewer.Resources", typeof(Resources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("StoreResource.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -125,6 +124,15 @@ namespace IslamSourceQuranViewer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Other Text Font.
+        /// </summary>
+        internal static string OtherTextFont_Text {
+            get {
+                return ResourceManager.GetString("OtherTextFont.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Render.
         /// </summary>
         internal static string Render_Label {
@@ -166,6 +174,15 @@ namespace IslamSourceQuranViewer {
         internal static string ShowWordByWord_Text {
             get {
                 return ResourceManager.GetString("ShowWordByWord.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        internal static string Size_Text {
+            get {
+                return ResourceManager.GetString("Size.Text", resourceCulture);
             }
         }
         

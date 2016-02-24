@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabų k. šriftas</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Atgal</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Mažinti šriftą</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Numatytasis šrifto dydis</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Korano su Arabų, transliteracijos ir žodis po žodžio ir iki stichijos mokymosi, studijų, mokslinių tyrimų, atmintimi, atspindys ir meistriškumo, tajweed vertimas.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Korano žodis po žodžio</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Didinti šriftą</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Kitos teksto šriftas</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Generuoti</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>parametrai</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Rodyti Vertimas</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Rodyti transliteracija</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Rodyti žodis po žodžio</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Dydis</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Naudoti deklamavimas taisyklė dažymas</value>
+  </data>
+</root>

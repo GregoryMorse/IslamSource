@@ -20,11 +20,12 @@
     <Resource Language="ru" />
     <Resource Language="fr" />
     <Resource Language="es" />
+    <Resource Language="id" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IslamSourceQuranViewer.StoreToolkit.WindowsPhone.App">
-      <m3:VisualElements DisplayName="IslamSourceQuranViewer.StoreToolkit.WindowsPhone" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="IslamSourceQuranViewer.StoreToolkit.WindowsPhone" ForegroundText="light" BackgroundColor="transparent">
-        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+      <m3:VisualElements DisplayName="IslamSourceQuranViewer.StoreToolkit.WindowsPhone" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="IslamSourceQuranViewer.StoreToolkit.WindowsPhone" ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>
         <m3:SplashScreen Image="Assets\SplashScreen.png" />
         <m3:InitialRotationPreference>

@@ -11,9 +11,9 @@
         <Style x:Key="TitleStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
         </Style>
-        <CollectionViewSource x:Name="QuranText" Source="{Binding Path=ViewModel.RenderItems}"></CollectionViewSource>
+        <CollectionViewSource x:Name="QuranText" Source="{Binding Path=ViewModel.RenderItems, Mode=OneWay}"></CollectionViewSource>
         <DataTemplate x:Key="WordTemplate">
-            <ItemsControl ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
+            <ItemsControl ItemsSource="{Binding RenderItems, Mode=OneWay}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <local:MyWrapPanel FlowDirection="RightToLeft"></local:MyWrapPanel>
@@ -60,15 +60,14 @@
         <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}"></local:NormalWordTemplateSelector>
         <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector" MyTemplate="{StaticResource MyTemplate}"></local:MyDataTemplateSelector>
     </Page.Resources>
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Rectangle Fill="White"></Rectangle>
-        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" ItemsSource="{Binding Source={StaticResource QuranText}, Mode=OneWay}">
+        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" ItemsSource="{Binding Mode=OneWay, Source={StaticResource QuranText}}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <local:MyWrapPanel Background="White" FlowDirection="RightToLeft"></local:MyWrapPanel>
+                    <local:MyWrapPanel Background="White" FlowDirection="RightToLeft"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.Template>
@@ -79,6 +78,7 @@
                 </ControlTemplate>
             </ItemsControl.Template>
         </ItemsControl>
+        <ProgressRing Name="LoadingRing" IsActive="True" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"></ProgressRing>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>

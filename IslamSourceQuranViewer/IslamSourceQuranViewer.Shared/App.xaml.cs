@@ -25,6 +25,7 @@ namespace IslamSourceQuranViewer
     /// </summary>
     public sealed partial class App : Application
     {
+        public static Windows.ApplicationModel.Resources.Core.ResourceContext _resourceContext;
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
 #endif
