@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>阿拉伯文字體</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>返回</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>縮小字型</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>預設字型大小</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>其阿拉伯文、 音譯與翻譯詞對詞和詩句學習、 學習、 研究、 記憶、 反射和掌握 tajweed 古蘭經。</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>古蘭經 》 詞對詞</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>放大字型</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>其他文本字體</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>捲帶器</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>顯示翻譯</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>顯示音譯</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>顯示字</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>使用背誦規則著色</value>
+  </data>
+</root>

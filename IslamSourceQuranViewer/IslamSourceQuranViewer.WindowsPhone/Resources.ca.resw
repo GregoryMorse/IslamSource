@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Font àrab</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Endarrere</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Disminueix el cos de la lletra</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Lletra per defecte</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Alcorà àrab, transliteració i traducció paraula per paraula i el vers per vers per aprenentatge, estudis, investigació, memorització, reflexió i domini dels tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Paraula per paraula de Quran</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Augmenta el cos de la lletra</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Altre tipus de lletra de Text</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Representació</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Configuració</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Traducció Mostra el</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Transliteració Mostra el</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Paraula per paraula Mostra el</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Mida</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Ús recitació regla per pintar</value>
+  </data>
+</root>
