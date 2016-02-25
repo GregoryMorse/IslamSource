@@ -182,6 +182,10 @@ namespace IslamSourceQuranViewer
         public MyRenderModel()
         {
         }
+        public double CalculateWidth(double maxWidth)
+        {
+            return RenderItems.Select((Item) => Item.CalculateWidth(maxWidth)).Sum();
+        }
         private IEnumerable<MyRenderItem> _RenderItems;
         public IEnumerable<MyRenderItem> RenderItems { get { return _RenderItems; } set { _RenderItems = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderItems")); } }
 #region Implementation of INotifyPropertyChanged
@@ -196,7 +200,24 @@ namespace IslamSourceQuranViewer
         {
             Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel { RenderItems = System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)) } : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem { IsArabic = Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Direction = (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight, ItemRuns = System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Color = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr))) }).ToList() } : null)).Where(Arr => Arr != null);
         }
+        public double CalculateWidth(double maxWidth)
+        {
+            return Items.Select((Item) => Item.GetType() == typeof(MyRenderItem) ? ((MyRenderItem)Item).CalculateWidth(maxWidth) : ((MyChildRenderItem)Item).CalculateWidth(maxWidth)).Max();
+        }
         public IEnumerable<object> Items { get; set; }
+    }
+    public class VirtualizingWrapPanel : Windows.UI.Xaml.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            double width = 0.0;
+            return ((IEnumerable<MyRenderItem>)value).Select((Item) => Item.CalculateWidth(Window.Current.Bounds.Width));
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
     }
     public static class FormattedTextBehavior
     {
@@ -235,6 +256,18 @@ namespace IslamSourceQuranViewer
     }
     public class MyChildRenderItem
     {
+        public static double CalculateWidth(string text, string FontFamily, float FontSize, float maxWidth, float maxHeight)
+        {
+            SharpDX.DirectWrite.Factory factory = new SharpDX.DirectWrite.Factory();
+            SharpDX.DirectWrite.TextFormat format = new SharpDX.DirectWrite.TextFormat(factory, FontFamily, FontSize);
+            SharpDX.DirectWrite.TextLayout layout = new SharpDX.DirectWrite.TextLayout(factory, text, format, maxWidth, maxHeight);
+            return layout.Metrics.Width;
+        }
+        public double CalculateWidth(double maxWidth)
+        {
+            return ItemRuns.Select((Item) => CalculateWidth(string.Join(String.Empty, Item.ItemText), IsArabic ? AppSettings.strSelectedFont : AppSettings.strOtherSelectedFont, IsArabic ? (float)AppSettings.dFontSize : (float)AppSettings.dOtherFontSize, maxWidth, 0)).Max();
+        }
+
         [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
         public struct LayoutInfo
         {

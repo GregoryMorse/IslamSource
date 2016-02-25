@@ -64,10 +64,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" ItemsSource="{Binding Mode=OneWay, Source={StaticResource QuranText}}">
+        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}" local:FormattedRowBehavior.FormattedRow="{Binding Mode=OneWay, Source={StaticResource QuranText}}" ItemsSource="{Binding Mode=OneWay, Source={StaticResource QuranText}}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <local:MyWrapPanel Background="White" FlowDirection="RightToLeft"/>
+                    <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.Template>
