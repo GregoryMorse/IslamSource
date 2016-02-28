@@ -41,7 +41,7 @@ namespace IslamSourceQuranViewer
         }
         public AppSettings MyAppSettings { get; set; }
     }
-    public class AppSettings //: INotifyPropertyChanged
+    public class AppSettings : INotifyPropertyChanged
     {
         public AppSettings() { }
         public static void InitDefaultSettings()
@@ -102,7 +102,7 @@ namespace IslamSourceQuranViewer
             }
         }
         public static int iSelectedTranslation { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"] = value; } }
-        public string SelectedTranslation { get { return IslamMetadata.CachedData.IslamData.Translations.TranslationList[iSelectedTranslation].Name; } set { iSelectedTranslation = Array.FindIndex(IslamMetadata.CachedData.IslamData.Translations.TranslationList, (Translation) => Translation.Name == value); } }
+        public string SelectedTranslation { get { return IslamMetadata.CachedData.IslamData.Translations.TranslationList[iSelectedTranslation].Name; } set { if (value != null) { iSelectedTranslation = Array.FindIndex(IslamMetadata.CachedData.IslamData.Translations.TranslationList, (Translation) => Translation.Name == value); } } }
         public List<string> TranslationList
         {
             get
@@ -118,10 +118,34 @@ namespace IslamSourceQuranViewer
         public bool ShowTranslation { get { return bShowTranslation; } set { bShowTranslation = value; } }
         public bool ShowTransliteration { get { return bShowTransliteration; } set { bShowTransliteration = value; } }
         public bool ShowW4W { get { return bShowW4W; } set { bShowW4W = value; } }
-        //#region Implementation of INotifyPropertyChanged
+        public static string strAppLanguage { get { return (string)Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride; }
+            set {
+                Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = (value == Windows.Globalization.ApplicationLanguages.Languages.First() ? string.Empty : value);
+                App._resourceContext = null;
+                if (Windows.UI.Xaml.Window.Current != null && Windows.UI.Xaml.Window.Current.CoreWindow != null) Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
+                Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
+                Windows.ApplicationModel.Resources.Core.ResourceContext.ResetGlobalQualifierValues();
+                System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo(value);
+                System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo(value);
+                while (System.Globalization.CultureInfo.CurrentUICulture.Name != value)
+                {
+                    System.Threading.Tasks.Task.Delay(100);
+                }
+            }
+        }
+        public string AppLanguage { get { return new Windows.Globalization.Language(strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage).DisplayName + " (" + (strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage) + ")"; } set { strAppLanguage = value.Substring(value.LastIndexOf("(")).Trim('(', ')'); PropertyChanged(this, new PropertyChangedEventArgs("TranslationList")); iSelectedTranslation = IslamMetadata.TanzilReader.GetTranslationIndex(String.Empty); PropertyChanged(this, new PropertyChangedEventArgs("SelectedTranslation")); } }
 
-        //public event PropertyChangedEventHandler PropertyChanged;
+        public List<string> AppLanguageList
+        {
+            get
+            {
+                return Windows.Globalization.ApplicationLanguages.ManifestLanguages.Select((Item) => new Windows.Globalization.Language(Item).DisplayName + " (" + Item + ")").ToList();
+            }
+        }
+        #region Implementation of INotifyPropertyChanged
 
-        //#endregion
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
     }
 }

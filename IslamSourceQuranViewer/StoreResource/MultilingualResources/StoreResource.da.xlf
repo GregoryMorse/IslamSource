@@ -171,6 +171,10 @@
           <source>Use Recitation Rule Coloring</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Brug Recitation regel farve</target>
         </trans-unit>
+        <trans-unit id="DefaultLanguage.Text" translate="yes" xml:space="preserve">
+          <source>Default Language</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Standardsprog</target>
+        </trans-unit>
       </group>
     </body>
   </file>

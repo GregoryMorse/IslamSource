@@ -72,6 +72,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Include="Resources.de.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.de.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +91,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.he.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.he.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.hu.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -119,6 +129,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.de.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.es.Designer.vb</LastGenOutput>
@@ -126,6 +140,10 @@
     <EmbeddedResource Include="Resources.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.fr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.he.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.he.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,8 +187,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <XliffResource Include="MultilingualResources\IslamResources.de.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.es.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.fr.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.he.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.hu.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.id.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.ms.xlf" />

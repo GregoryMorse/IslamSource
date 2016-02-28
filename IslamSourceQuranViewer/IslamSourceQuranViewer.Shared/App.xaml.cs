@@ -36,10 +36,6 @@ namespace IslamSourceQuranViewer
         /// </summary>
         public App()
         {
-#if STORETOOLKIT
-            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "ru";
-            //Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
-#endif
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
 
@@ -47,14 +43,17 @@ namespace IslamSourceQuranViewer
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
 #endif
             AppSettings.InitDefaultSettings();
+#if STORETOOLKIT
+            AppSettings.strAppLanguage = "en";
+#endif
         }
 
-        /// <summary>
-        /// Invoked when the application is launched normally by the end user.  Other entry points
-        /// will be used when the application is launched to open a specific file, to display
-        /// search results, and so forth.
-        /// </summary>
-        /// <param name="e">Details about the launch request and process.</param>
+            /// <summary>
+            /// Invoked when the application is launched normally by the end user.  Other entry points
+            /// will be used when the application is launched to open a specific file, to display
+            /// search results, and so forth.
+            /// </summary>
+            /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
 #if DEBUG

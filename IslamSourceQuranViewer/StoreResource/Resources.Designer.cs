@@ -97,6 +97,15 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default Language.
+        /// </summary>
+        internal static string DefaultLanguage_Text {
+            get {
+                return ResourceManager.GetString("DefaultLanguage.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Qur&apos;an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed..
         /// </summary>
         internal static string Description {

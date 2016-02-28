@@ -171,6 +171,10 @@
           <source>Use Recitation Rule Coloring</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">सस्वर पाठ नियम रंग का उपयोग करें</target>
         </trans-unit>
+        <trans-unit id="DefaultLanguage.Text" translate="yes" xml:space="preserve">
+          <source>Default Language</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">डिफ़ॉल्‍ट भाषा</target>
+        </trans-unit>
       </group>
     </body>
   </file>

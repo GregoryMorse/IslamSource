@@ -171,6 +171,10 @@
           <source>Use Recitation Rule Coloring</source>
           <target state="new">Use Recitation Rule Coloring</target>
         </trans-unit>
+        <trans-unit id="DefaultLanguage.Text" translate="yes" xml:space="preserve">
+          <source>Default Language</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Default Language</target>
+        </trans-unit>
       </group>
     </body>
   </file>

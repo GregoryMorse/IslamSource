@@ -171,6 +171,10 @@
           <source>Use Recitation Rule Coloring</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">استخدام تلاوة حكم التلوين</target>
         </trans-unit>
+        <trans-unit id="DefaultLanguage.Text" translate="yes" xml:space="preserve">
+          <source>Default Language</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اللغة الافتراضية</target>
+        </trans-unit>
       </group>
     </body>
   </file>

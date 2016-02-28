@@ -129,6 +129,9 @@
   <data name="DefaultFontSize.Label" xml:space="preserve">
     <value>Default Font Size</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Default Language</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</value>
   </data>

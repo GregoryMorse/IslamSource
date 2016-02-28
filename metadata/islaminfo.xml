@@ -7681,6 +7681,8 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<languagedefault language="ms" quran="ms.basmeih" quranw4w="ms.w4w.terjemah" transliteration="Malay"></languagedefault>
 		<languagedefault language="ur" quran="ur.ahmedali" quranw4w="ur.w4w.hafiznazarmuhammad" transliteration="Arabic"></languagedefault>
 		<languagedefault language="ar" quran="ar.muyassar" quranw4w="" transliteration="Arabic"></languagedefault>
+		<languagedefault language="de" quran="de.aburida" quranw4w="de.w4w.corpus" transliteration="German"></languagedefault>
+		<languagedefault language="he" quran="" quranw4w="he.w4w.corpus" transliteration="Hebraw"></languagedefault>
 	</languagedefaults>
 	<partsofspeech>
 		<pos symbol="N" id="NounName" color="84,141,212"></pos>

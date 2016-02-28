@@ -449,7 +449,7 @@ Public Class Arabic
                 Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
                 If Match <> -1 Then
                     For MetaCount As Integer = MetadataList(Index).Index To MetadataList(Index).Index + MetadataList(Index).Length - 1
-                        RuleIndexes(MetaCount) = Count
+                        If CachedData.IslamData.ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
                     Next
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
                 End If
@@ -696,7 +696,7 @@ Public Class Arabic
             ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme, LearningMode)
             Index += 1
         End While
-        ArabicString = ReplaceTranslitRule(ArabicString, Scheme, LearningMode)
+        ArabicString = ReplaceTranslitRule(ArabicString, Scheme, LearningMode, Nothing)
         'process wasl loanwords and names
         'process loanwords and names
         If System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Success Then Debug.WriteLine(ArabicString.Substring(System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Index) + " --- " + ArabicString)
@@ -771,16 +771,31 @@ Public Class Arabic
         End While
         Return MetadataList
     End Function
-    Public Shared Function ReplaceTranslitRule(ArabicString As String, Scheme As String, LearningMode As Boolean) As String
+    Public Shared Function ReplaceTranslitRule(ArabicString As String, Scheme As String, LearningMode As Boolean, ByRef DiffMap As List(Of Integer)) As String
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         Dim Count As Integer
+        Dim _DiffMap As List(Of Integer) = If(DiffMap Is Nothing, Nothing, DiffMap)
         For Count = 0 To CachedData.RuleTranslations("RomanizationRules").Length - 1
+            Dim AdjRepCount As Integer = 0
             If CachedData.RuleTranslations("RomanizationRules")(Count).RuleFunc = RuleFuncs.eNone Then
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RuleTranslations("RomanizationRules")(Count).Match, CachedData.RuleTranslations("RomanizationRules")(Count).Evaluator)
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RuleTranslations("RomanizationRules")(Count).Match, Function(Match As System.Text.RegularExpressions.Match)
+                                                                                                                                                             Dim Str As String = Match.Result(CachedData.RuleTranslations("RomanizationRules")(Count).Evaluator)
+                                                                                                                                                             If Not _DiffMap Is Nothing And Str.Length > Match.Length Then _DiffMap.InsertRange(Match.Index + AdjRepCount + Match.Length, Linq.Enumerable.Select(Str.Substring(0, Str.Length - Match.Length).ToCharArray(), Function(It) _DiffMap(Match.Index + AdjRepCount + Match.Length - 1)))
+                                                                                                                                                             If Not _DiffMap Is Nothing And Str.Length < Match.Length Then _DiffMap.RemoveRange(Match.Index + AdjRepCount + Str.Length, Match.Length - Str.Length)
+                                                                                                                                                             AdjRepCount += Str.Length - Match.Length
+                                                                                                                                                             Return Str
+                                                                                                                                                         End Function)
             Else
-                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RuleTranslations("RomanizationRules")(Count).Match, Function(Match As System.Text.RegularExpressions.Match) RuleFunctions(CachedData.RuleTranslations("RomanizationRules")(Count).RuleFunc - 1)(Match.Result(CachedData.RuleTranslations("RomanizationRules")(Count).Evaluator), Scheme, LearningMode)(0))
+                ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RuleTranslations("RomanizationRules")(Count).Match, Function(Match As System.Text.RegularExpressions.Match)
+                                                                                                                                                             Dim Str As String = RuleFunctions(CachedData.RuleTranslations("RomanizationRules")(Count).RuleFunc - 1)(Match.Result(CachedData.RuleTranslations("RomanizationRules")(Count).Evaluator), Scheme, LearningMode)(0)
+                                                                                                                                                             If Not _DiffMap Is Nothing And Str.Length > Match.Length Then _DiffMap.InsertRange(Match.Index + AdjRepCount + Match.Length, Linq.Enumerable.Select(Str.Substring(0, Str.Length - Match.Length).ToCharArray(), Function(It) _DiffMap(Match.Index + AdjRepCount + Match.Length - 1)))
+                                                                                                                                                             If Not _DiffMap Is Nothing And Str.Length < Match.Length Then _DiffMap.RemoveRange(Match.Index + AdjRepCount + Str.Length, Match.Length - Str.Length)
+                                                                                                                                                             AdjRepCount += Str.Length - Match.Length
+                                                                                                                                                             Return Str
+                                                                                                                                                         End Function)
             End If
         Next
+        If Not DiffMap Is Nothing Then DiffMap = _DiffMap
         Return ArabicString
     End Function
     Public Shared Function TransliterateWithRulesColor(ByVal ArabicString As String, Scheme As String, BreakWords As Boolean, LearningMode As Boolean, MetadataList As Generic.List(Of RuleMetadata)) As RenderArray.RenderText()()
@@ -796,17 +811,14 @@ Public Class Arabic
             OffsetList(OffsetList.Count - 1) = ArabicString.Length - OffsetList(OffsetList.Count - 1)
             Index += 1
         End While
-        Dim RuleIndexes As New List(Of Integer)
-        For Count = 0 To ArabicString.Length - 1
-            RuleIndexes.Add(0)
-        Next
+        Dim RuleIndexes As List(Of Integer) = New List(Of Integer)(Linq.Enumerable.Select(ArabicString.ToCharArray(), Function(It) 0))
         Dim CumOffset As Integer = 0
         For Index = MetadataList.Count - 1 To 0 Step -1
             For Count = 0 To CachedData.IslamData.ColorRules.Length - 1
                 Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
                 If Match <> -1 Then
                     For MetaCount As Integer = MetadataList(Index).Index + CumOffset To MetadataList(Index).Index + CumOffset + MetadataList(Index).Length + OffsetList(Index) - 1
-                        RuleIndexes(MetaCount) = Count
+                        If CachedData.IslamData.ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
                     Next
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
                 End If
@@ -816,16 +828,15 @@ Public Class Arabic
         Dim Base As Integer = 0
         Dim WordRenderers As New List(Of RenderArray.RenderText())
         Dim Renderers As New List(Of RenderArray.RenderText)
+        ArabicString = ReplaceTranslitRule(ArabicString, Scheme, LearningMode, RuleIndexes)
         For Count = 0 To RuleIndexes.Count - 1
-            'this line does not do justice to the problems created here without doing a proper indexing mapping for ReplaceTranslitRule!
-            If Count <> RuleIndexes.Count - 1 AndAlso ArabicString(Count + 1) = ArabicData.ArabicShadda AndAlso RuleIndexes(Count + 1) <> RuleIndexes(Count) Then RuleIndexes(Count + 1) = RuleIndexes(Count)
             If Count = RuleIndexes.Count - 1 Or (ArabicString(Count) = " "c And BreakWords) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ReplaceTranslitRule(ArabicString.Substring(Base, Count - Base), Scheme, LearningMode), ReplaceTranslitRule(ArabicString.Substring(Base), Scheme, LearningMode))) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
                 WordRenderers.Add(Renderers.ToArray())
                 Renderers = New List(Of RenderArray.RenderText)
                 Base = Count + 1
             ElseIf RuleIndexes(Count) <> RuleIndexes(Count + 1) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ReplaceTranslitRule(ArabicString.Substring(Base, Count - Base + 1), Scheme, LearningMode)) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
                 Base = Count + 1
             End If
         Next

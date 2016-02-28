@@ -6454,7 +6454,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
       <rule name="HelperHamza" match="helpertatweelhamzaabove" evaluator="{ArabicLetterHamza}"></rule>
       <rule name="HelperMadda" match="helpermaddah" evaluator="{ArabicLetterHamza}{ArabicFatha}{ArabicLetterAlef}"></rule>
       <rule name="Empty" match="empty|compulsorystop|startofhizb|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath" evaluator=""></rule>
-      <rule name="Normal" match="null|notyeh|notwaw|nullassimilate|nullassimilator|helpermeem|assimilator|assimilatorincomplete|dipthong" evaluator="{0}"></rule>
+      <rule name="Normal" match="null|notyeh|notwaw|nullassimilate|nullassimilator|helpermeem|assimilator|assimilatorincomplete|dipthong|helperpunctuation" evaluator="{0}"></rule>
       <rule name="NecessaryProlongation" match="necessaryprolong" evaluator="{0}-{0}-{0}"></rule>
       <rule name="ObligatoryProlongation" match="obligatoryprolong" evaluator="{0}" rulefunc="eObligatory"></rule>
       <rule name="PermissibleProlongation" match="permissibleprolong" evaluator="{0}(-{0})(-{0})"></rule>
@@ -6505,7 +6505,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
     <colorrule name="PermissibleProlongation" match="permissibleprolong" color="OrangeRed"></colorrule>
     <colorrule name="NormalProlongation" match="normalprolong" color="213,139,24"></colorrule>
     <colorrule name="Nasalization" match="nasalize" color="Green"></colorrule>
-    <colorrule name="Unannounced" match="empty|spellnumber|assimilate|assimilateincomplete" color="Gray"></colorrule>
+    <colorrule name="Unannounced" match="empty|spellnumber|assimilate|assimilateincomplete|helperpunctuation" color="Gray"></colorrule>
     <colorrule name="EmphaticPronunciation" match="emphasis" color="DarkBlue"></colorrule>
     <colorrule name="UnrestLetters" match="bounce" color="Blue"></colorrule>
 	</colorrules>
@@ -6547,7 +6547,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="EndOfWordVowelPresentedSukun" match="{EndOfWordVowelPresentedSukun}" evaluator=";end"></metarule>
 		</metaruleset>
 		<metaruleset name="ClassicArabicDialect">
-	    <metarule name="NumberSpelling" match="({ArabicEndOfAyah})()((?:{ArabicNumbers})+)()(?={EndOfWord})" evaluator="empty;helperlparen;spellnumber;helperrparen"></metarule>
+	    <metarule name="NumberSpelling" match="({ArabicEndOfAyah})()((?:{ArabicNumbers})+)()(?={EndOfWord})" evaluator="empty;helperlparen|helperpunctuation;spellnumber;helperrparen|helperpunctuation"></metarule>
 		  <metarule name="HeadingNumberSpelling" match="({StartingOnWordNotEndOfAyah})((?:{ArabicNumbers})+)(?={EndOfWord})" evaluator=";spellnumber"></metarule>
 
 	    <metarule name="SubstituteLengthening" match="()(?:({ArabicLetterHamza})({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?()|({ArabicFathatan})({ArabicSmallLowMeem}|{ArabicSmallHighMeemIsolatedForm})?({ArabicLetterAlef}|{ArabicLetterAlefMaksura}))()()()(?={StoppingOnWord}|({JoinToNextWord}))" evaluator="learningmode(helperlbracket,);;helperfatha|normalprolong;empty;helperalef|normalprolong;helperfatha|normalprolong;empty;helperalef|normalprolong;learningmode(helperslash,);learningmode(helperfathatan,);learningmode(helperrbracket,);optionalstop"></metarule>
@@ -7681,6 +7681,8 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<languagedefault language="ms" quran="ms.basmeih" quranw4w="ms.w4w.terjemah" transliteration="Malay"></languagedefault>
 		<languagedefault language="ur" quran="ur.ahmedali" quranw4w="ur.w4w.hafiznazarmuhammad" transliteration="Arabic"></languagedefault>
 		<languagedefault language="ar" quran="ar.muyassar" quranw4w="" transliteration="Arabic"></languagedefault>
+		<languagedefault language="de" quran="de.aburida" quranw4w="de.w4w.corpus" transliteration="German"></languagedefault>
+		<languagedefault language="he" quran="" quranw4w="he.w4w.corpus" transliteration="Hebraw"></languagedefault>
 	</languagedefaults>
 	<partsofspeech>
 		<pos symbol="N" id="NounName" color="84,141,212"></pos>

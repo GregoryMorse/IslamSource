@@ -171,6 +171,10 @@
           <source>Use Recitation Rule Coloring</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">[C0FF7][!!_Úšę Ŗéćíтâτįõη Řûĺê Čóĺõŕįηĝ_!!]</target>
         </trans-unit>
+        <trans-unit id="DefaultLanguage.Text" translate="yes" xml:space="preserve">
+          <source>Default Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[62D3C][!!_Ďêƒàùĺť Ĺãиĝùàġę_!!]</target>
+        </trans-unit>
       </group>
     </body>
   </file>
