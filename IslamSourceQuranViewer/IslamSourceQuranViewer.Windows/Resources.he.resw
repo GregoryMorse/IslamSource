@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>השתמש אמירת כלל צביעה</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>שפת ברירת המחדל</value>
+  </data>
 </root>

@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Utilizarea recitarea regula colorat</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Limbă implicită</value>
+  </data>
 </root>

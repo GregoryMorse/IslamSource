@@ -27,4 +27,7 @@
   <data name="Size.Text" xml:space="preserve">
     <value>اندازه</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>لسان حالت اصلی</value>
+  </data>
 </root>

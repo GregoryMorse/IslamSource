@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Uso recitación regla para colorear</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Idioma predeterminado</value>
+  </data>
 </root>

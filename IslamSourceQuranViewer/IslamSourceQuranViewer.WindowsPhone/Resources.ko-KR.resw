@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>암송 규칙 색소를 사용 하 여</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>기본 언어</value>
+  </data>
 </root>

@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Izmantot sarīkojums noteikums krāsošana</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Noklusējuma valoda</value>
+  </data>
 </root>

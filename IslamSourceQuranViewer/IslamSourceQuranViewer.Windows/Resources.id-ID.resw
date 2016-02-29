@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Menggunakan pembacaan aturan mewarnai</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Bahasa Default</value>
+  </data>
 </root>

@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>[C0FF7][!!_Úšę Ŗéćíтâτįõη Řûĺê Čóĺõŕįηĝ_!!]</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>[62D3C][!!_Ďêƒàùĺť Ĺãиĝùàġę_!!]</value>
+  </data>
 </root>

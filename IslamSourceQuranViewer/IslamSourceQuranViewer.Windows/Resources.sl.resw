@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Uporaba recitacija pravilo barvanje</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Privzeti jezik</value>
+  </data>
 </root>
