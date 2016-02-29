@@ -328,50 +328,52 @@ Public Class Arabic
     Public Shared UthmaniShortVowelsBeforeLongVowelsSmallYeh As String = ArabicData.ArabicKasra + ArabicData.ArabicSmallYeh
 
     Public Shared PrefixPattern As String = ""
-
-    Public Enum RuleFuncs As Integer
+    Public Enum MetaRuleFuncs As Integer
         eNone
         eUpperCase
         eSpellNumber
         eSpellLetter
         eSpellLongLetter
         eSpellLongMergedLetter
-        eLookupLetter
-        eLookupLongVowelDipthong
         eDivideTanween
-        eLeadingGutteral
-        eTrailingGutteral
-        eResolveAmbiguity
         eLearningMode
         eObligatory
     End Enum
-    Public Delegate Function RuleFunction(Str As String, Scheme As String, LearningMode As Boolean) As String()
+    Public Enum RuleFuncs As Integer
+        eNone
+        eLookupLetter
+        eLookupLongVowelDipthong
+        eLeadingGutteral
+        eTrailingGutteral
+        eResolveAmbiguity
+    End Enum
+    Public Delegate Function MetaRuleFunction(Str As String, LearningMode As Boolean) As String()
+    Public Shared MetaRuleFunctions As MetaRuleFunction() = {
+        Function(Str As String, LearningMode As Boolean) {Str.ToUpper()},
+        Function(Str As String, LearningMode As Boolean)
+            Return {Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty, Nothing)), True, False, False))} 'GetMetarules(NumStr, Nothing, CachedData.RuleMetas("Normal"))
+        End Function,
+        Function(Str As String, LearningMode As Boolean)
+            Return {ArabicLetterSpelling(Str, True, False, False)} 'GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran"))
+        End Function,
+        Function(Str As String, LearningMode As Boolean)
+            Return {ArabicLetterSpelling(Str, True, True, False)} 'GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran"))
+        End Function,
+        Function(Str As String, LearningMode As Boolean)
+            Return {ArabicLetterSpelling(Str, True, True, True)} 'GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran"))
+        End Function,
+        Function(Str As String, LearningMode As Boolean) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
+        Function(Str As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str}),
+        Function(Str As String, LearningMode As Boolean) {Str + "-" + Str + "(-" + Str(0) + ")"}
+    }
+
+    Public Delegate Function RuleFunction(Str As String, Scheme As String) As String()
     Public Shared RuleFunctions As RuleFunction() = {
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {Str.ToUpper()},
-        Function(Str As String, Scheme As String, LearningMode As Boolean)
-            Dim NumStr As String = Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty, Nothing)), True, False, False))
-            Return {TransliterateWithRules(NumStr, Scheme, LearningMode, GetMetarules(NumStr, Nothing, CachedData.RuleMetas("Normal")))}
-        End Function,
-        Function(Str As String, Scheme As String, LearningMode As Boolean)
-            Dim SpellStr As String = ArabicLetterSpelling(Str, True, False, False)
-            Return {TransliterateWithRules(SpellStr, Scheme, LearningMode, GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran")))}
-        End Function,
-        Function(Str As String, Scheme As String, LearningMode As Boolean)
-            Dim SpellStr As String = ArabicLetterSpelling(Str, True, True, False)
-            Return {TransliterateWithRules(SpellStr, Scheme, LearningMode, GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran")))}
-        End Function,
-        Function(Str As String, Scheme As String, LearningMode As Boolean)
-            Dim SpellStr As String = ArabicLetterSpelling(Str, True, True, True)
-            Return {TransliterateWithRules(SpellStr, Scheme, LearningMode, GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran")))}
-        End Function,
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeLongVowelFromString(Str, Scheme)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)},
-        Function(Str As String, Scheme As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str}),
-        Function(Str As String, Scheme As String, LearningMode As Boolean) {Str + "-" + Str + "(-" + Str(0) + ")"}
+        Function(Str As String, Scheme As String) {GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme)},
+        Function(Str As String, Scheme As String) {GetSchemeLongVowelFromString(Str, Scheme)},
+        Function(Str As String, Scheme As String) {GetSchemeGutteralFromString(Str.Remove(Str.Length - 1), Scheme, True) + Str.Chars(Str.Length - 1)},
+        Function(Str As String, Scheme As String) {Str.Chars(0) + GetSchemeGutteralFromString(Str.Remove(0, 1), Scheme, False)},
+        Function(Str As String, Scheme As String) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)}
     }
     'Javascript does not support negative or positive lookbehind in regular expressions
     Public Shared AllowZeroLength As String() = {"helperfatha", "helperdamma", "helperkasra", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
@@ -618,8 +620,8 @@ Public Class Arabic
             If Match <> Nothing Then
                 Dim Str As New System.Text.StringBuilder
                 Str.Append(String.Format(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length)))
-                If CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).RuleFunc <> RuleFuncs.eNone Then
-                    Dim Args As String() = RuleFunctions(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).RuleFunc - 1)(Str.ToString(), Scheme, LearningMode)
+                If CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).MetaRuleFunc <> MetaRuleFuncs.eNone Then
+                    Dim Args As String() = MetaRuleFunctions(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).MetaRuleFunc - 1)(Str.ToString(), LearningMode)
                     If Args.Length = 1 Then
                         Str.Clear()
                         Str.Append(Args(0))
@@ -627,7 +629,7 @@ Public Class Arabic
                         Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(","c)
                         Str.Clear()
                         For Index As Integer = 0 To Args.Length - 1
-                            If Not Args(Index) Is Nothing And (LearningMode Or CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).RuleFunc <> RuleFuncs.eLearningMode Or Index <> 0) Then
+                            If Not Args(Index) Is Nothing And (LearningMode Or CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).MetaRuleFunc <> MetaRuleFuncs.eLearningMode Or Index <> 0) Then
                                 Str.Append(ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), Scheme, LearningMode))
                             End If
                         Next
@@ -787,7 +789,7 @@ Public Class Arabic
                                                                                                                                                          End Function)
             Else
                 ArabicString = System.Text.RegularExpressions.Regex.Replace(ArabicString, CachedData.RuleTranslations("RomanizationRules")(Count).Match, Function(Match As System.Text.RegularExpressions.Match)
-                                                                                                                                                             Dim Str As String = RuleFunctions(CachedData.RuleTranslations("RomanizationRules")(Count).RuleFunc - 1)(Match.Result(CachedData.RuleTranslations("RomanizationRules")(Count).Evaluator), Scheme, LearningMode)(0)
+                                                                                                                                                             Dim Str As String = RuleFunctions(CachedData.RuleTranslations("RomanizationRules")(Count).RuleFunc - 1)(Match.Result(CachedData.RuleTranslations("RomanizationRules")(Count).Evaluator), Scheme)(0)
                                                                                                                                                              If Not _DiffMap Is Nothing And Str.Length > Match.Length Then _DiffMap.InsertRange(Match.Index + AdjRepCount + Match.Length, Linq.Enumerable.Select(Str.Substring(0, Str.Length - Match.Length).ToCharArray(), Function(It) _DiffMap(Match.Index + AdjRepCount + Match.Length - 1)))
                                                                                                                                                              If Not _DiffMap Is Nothing And Str.Length < Match.Length Then _DiffMap.RemoveRange(Match.Index + AdjRepCount + Str.Length, Match.Length - Str.Length)
                                                                                                                                                              AdjRepCount += Str.Length - Match.Length
@@ -804,6 +806,7 @@ Public Class Arabic
         DoErrorCheck(ArabicString)
         Dim Index As Integer = 0
         Dim OffsetList As New List(Of Integer)
+        Dim WordBreakList As List(Of Integer) = New List(Of Integer)(Linq.Enumerable.Select(ArabicString.ToCharArray(), Function(It) If(It = " ", -1, 0)))
         While Index <= MetadataList.Count - 1
             Dim OldLength As Integer = ArabicString.Length
             OffsetList.Add(ArabicString.Length)
@@ -823,6 +826,9 @@ Public Class Arabic
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
                 End If
             Next
+            For MetaCount As Integer = MetadataList(Index).Index + CumOffset To MetadataList(Index).Index + CumOffset + MetadataList(Index).Length + OffsetList(Index) - 1
+                If ArabicString(MetaCount) = " "c And BreakWords And MetadataList(Index).Type = "spellnumber" Then RuleIndexes(MetaCount) = -1
+            Next
             CumOffset += OffsetList(Index)
         Next
         Dim Base As Integer = 0
@@ -830,10 +836,13 @@ Public Class Arabic
         Dim Renderers As New List(Of RenderArray.RenderText)
         ArabicString = ReplaceTranslitRule(ArabicString, Scheme, LearningMode, RuleIndexes)
         For Count = 0 To RuleIndexes.Count - 1
+            If RuleIndexes(Count) = -1 Or Count <> RuleIndexes.Count - 1 AndAlso RuleIndexes(Count + 1) = -1 Then Continue For
             If Count = RuleIndexes.Count - 1 Or (ArabicString(Count) = " "c And BreakWords) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
-                WordRenderers.Add(Renderers.ToArray())
-                Renderers = New List(Of RenderArray.RenderText)
+                If Count <> 0 Then
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                    WordRenderers.Add(Renderers.ToArray())
+                    Renderers = New List(Of RenderArray.RenderText)
+                End If
                 Base = Count + 1
             ElseIf RuleIndexes(Count) <> RuleIndexes(Count + 1) Then
                 Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
@@ -1568,21 +1577,27 @@ Public Class IslamData
             Public _RuleFunc As String
             ReadOnly Property RuleFunc As Arabic.RuleFuncs
                 Get
-                    If _RuleFunc = "eLearningMode" Then Return Arabic.RuleFuncs.eLearningMode
-                    If _RuleFunc = "eDivideTanween" Then Return Arabic.RuleFuncs.eDivideTanween
                     If _RuleFunc = "eLeadingGutteral" Then Return Arabic.RuleFuncs.eLeadingGutteral
                     If _RuleFunc = "eLookupLetter" Then Return Arabic.RuleFuncs.eLookupLetter
                     If _RuleFunc = "eLookupLongVowelDipthong" Then Return Arabic.RuleFuncs.eLookupLongVowelDipthong
-                    If _RuleFunc = "eSpellLetter" Then Return Arabic.RuleFuncs.eSpellLetter
-                    If _RuleFunc = "eSpellLongLetter" Then Return Arabic.RuleFuncs.eSpellLongLetter
-                    If _RuleFunc = "eSpellLongMergedLetter" Then Return Arabic.RuleFuncs.eSpellLongMergedLetter
-                    If _RuleFunc = "eSpellNumber" Then Return Arabic.RuleFuncs.eSpellNumber
                     If _RuleFunc = "eTrailingGutteral" Then Return Arabic.RuleFuncs.eTrailingGutteral
-                    If _RuleFunc = "eUpperCase" Then Return Arabic.RuleFuncs.eUpperCase
                     If _RuleFunc = "eResolveAmbiguity" Then Return Arabic.RuleFuncs.eResolveAmbiguity
-                    If _RuleFunc = "eObligatory" Then Return Arabic.RuleFuncs.eObligatory
                     'If _RuleFunc = "eNone" Then
                     Return Arabic.RuleFuncs.eNone
+                End Get
+            End Property
+            ReadOnly Property MetaRuleFunc As Arabic.MetaRuleFuncs
+                Get
+                    If _RuleFunc = "eLearningMode" Then Return Arabic.MetaRuleFuncs.eLearningMode
+                    If _RuleFunc = "eDivideTanween" Then Return Arabic.MetaRuleFuncs.eDivideTanween
+                    If _RuleFunc = "eSpellLetter" Then Return Arabic.MetaRuleFuncs.eSpellLetter
+                    If _RuleFunc = "eSpellLongLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongLetter
+                    If _RuleFunc = "eSpellLongMergedLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongMergedLetter
+                    If _RuleFunc = "eSpellNumber" Then Return Arabic.MetaRuleFuncs.eSpellNumber
+                    If _RuleFunc = "eUpperCase" Then Return Arabic.MetaRuleFuncs.eUpperCase
+                    If _RuleFunc = "eObligatory" Then Return Arabic.MetaRuleFuncs.eObligatory
+                    'If _RuleFunc = "eNone" Then
+                    Return Arabic.MetaRuleFuncs.eNone
                 End Get
             End Property
         End Structure

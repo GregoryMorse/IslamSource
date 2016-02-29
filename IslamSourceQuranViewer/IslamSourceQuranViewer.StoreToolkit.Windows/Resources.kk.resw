@@ -30,4 +30,7 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Өлшем</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Әдепкі тіл</value>
+  </data>
 </root>

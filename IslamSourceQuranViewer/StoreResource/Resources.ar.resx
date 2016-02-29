@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>استخدام تلاوة حكم التلوين</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>اللغة الافتراضية</value>
+  </data>
 </root>

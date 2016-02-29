@@ -88,11 +88,12 @@ Public Class frmMain
         'For Count = 0 To StoreCultureNames.Length - 1
         '    If StoreCultureNames(Count) <> String.Empty Then Debug.Print(StoreCultureNames(Count))
         'Next
-        TanzilReader.WordFileToResource("..\..\..\metadata\id.w4w.terjemah.txt", "..\..\..\ResourceToolkitTempForeign\QuranResources.id.resx")
+        'TanzilReader.WordFileToResource("..\..\..\metadata\id.w4w.terjemah.txt", "..\..\..\ResourceToolkitTempForeign\QuranResources.resx")
+        'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTempForeign\QuranResources.ms.resx", "..\..\..\metadata\ms.w4w.terjemah.txt")
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
-        'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.fr.resx", "..\..\..\metadata\fr.w4w.corpus.txt")
+        'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.he.resx", "..\..\..\metadata\he.w4w.corpus.txt")
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
-        'Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.fr.resx", "..\..\..\metadata\fr.w4w.txt")
+        'Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.he.resx", "..\..\..\metadata\he.w4w.txt")
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
@@ -116,7 +117,7 @@ Public Class frmMain
         Dim IndexToVerse As Integer()() = Nothing
         'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 18, 13)
         'Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
-        Arabic.TransliterateWithRulesColor(Arabic.TransliterateFromBuckwalter("gayori {lomagoDuwbi Ealayohimo walaA {lD~aA^l~iyna"), "PlainRoman", True, False, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("gayori {lomagoDuwbi Ealayohimo walaA {lD~aA^l~iyna"), Nothing, CachedData.RuleMetas("UthmaniQuran")))
+        Arabic.TransliterateWithRulesColor(Arabic.TransliterateFromBuckwalter("wa{lomurosala`ti EurofFA"), "PlainRoman", True, False, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("wa{lomurosala`ti EurofFA"), Nothing, CachedData.RuleMetas("UthmaniQuran")))
         Text = TanzilReader.GetQuranText(CachedData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
         'Debug.Print(Arabic.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
         Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, Arabic.GetMetarules(Text, TanzilReader.GenerateDefaultStops(Text), CachedData.RuleMetas("UthmaniQuran"))))

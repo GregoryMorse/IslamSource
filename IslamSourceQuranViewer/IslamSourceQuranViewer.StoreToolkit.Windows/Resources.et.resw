@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Kasutage ettekandmine reegel värvimine</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Vaikekeel</value>
+  </data>
 </root>

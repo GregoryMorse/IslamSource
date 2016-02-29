@@ -13,8 +13,8 @@ Imports System.Reflection
 <Assembly: AssemblyCompany("")> 
 <Assembly: AssemblyProduct("ResourceToolkitTempForeign")> 
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
-<Assembly: AssemblyTrademark("")> 
-<Assembly: NeutralResourcesLanguage("en")>
+<Assembly: AssemblyTrademark("")>
+<Assembly: NeutralResourcesLanguage("id")>
 
 ' Version information for an assembly consists of the following four values:
 '

@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Naudoti deklamavimas taisyklė dažymas</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Numatytoji kalba</value>
+  </data>
 </root>

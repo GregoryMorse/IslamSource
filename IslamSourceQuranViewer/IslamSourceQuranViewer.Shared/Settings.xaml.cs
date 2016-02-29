@@ -54,7 +54,7 @@ namespace IslamSourceQuranViewer
             }
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("OtherCurrentFont"))
             {
-                strOtherSelectedFont = "Times New Roman";
+                strOtherSelectedFont = "Arial";
             }
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("FontSize"))
             {
@@ -94,11 +94,42 @@ namespace IslamSourceQuranViewer
         public static double dOtherFontSize { get { return (double)Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherFontSize"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherFontSize"] = value; } }
         public string FontSize { get { return dFontSize.ToString(); } set { double fontSize;  if (double.TryParse(value, out fontSize)) { dFontSize = fontSize; } } }
         public string OtherFontSize { get { return dOtherFontSize.ToString(); } set { double fontSize; if (double.TryParse(value, out fontSize)) { dOtherFontSize = fontSize; } } }
+        public List<string> GetFontList()
+        {
+            List<string> fontList = new List<string>();
+            SharpDX.DirectWrite.FontCollection fontCollection = MyUIChanger.DWFactory.GetSystemFontCollection(false);
+            for (int i = 0; i < fontCollection.FontFamilyCount; i++)
+            {
+                int index = 0;
+                if (!fontCollection.GetFontFamily(i).FamilyNames.FindLocaleName(System.Globalization.CultureInfo.CurrentCulture.Name, out index))
+                {
+                    for (int j = 0; j < Windows.Globalization.ApplicationLanguages.Languages.Count; j++)
+                    {
+                        if (fontCollection.GetFontFamily(i).FamilyNames.FindLocaleName(Windows.Globalization.ApplicationLanguages.Languages[j], out index))
+                        {
+                            fontList.Add(fontCollection.GetFontFamily(i).FamilyNames.GetString(index));
+                            break;
+                        }
+                    }
+
+                }
+                else { fontList.Add(fontCollection.GetFontFamily(i).FamilyNames.GetString(index)); }
+
+            }
+            return fontList;// new List<string> { "Times New Roman", "Traditional Arabic", "Arabic Typesetting", "Sakkal Majalla", "Microsoft Uighur", "Arial", "Global User Interface" };
+        }
         public List<string> Fonts
         {
             get
             {
-                return new List<string> { "Times New Roman", "Traditional Arabic", "Arabic Typesetting", "Sakkal Majalla", "Microsoft Uighur", "Arial", "Global User Interface" };
+                return GetFontList();
+            }
+        }
+        public List<string> OtherFonts
+        {
+            get
+            {
+                return GetFontList();
             }
         }
         public static int iSelectedTranslation { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"] = value; } }

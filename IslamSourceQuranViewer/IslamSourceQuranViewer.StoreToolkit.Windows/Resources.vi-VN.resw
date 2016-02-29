@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Sử dụng lần chuỗi quy tắc màu</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Ngôn ngữ Mặc định</value>
+  </data>
 </root>

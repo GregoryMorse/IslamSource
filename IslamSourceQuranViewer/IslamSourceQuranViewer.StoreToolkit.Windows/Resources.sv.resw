@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Använda recitationen regel färg</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Standardspråk</value>
+  </data>
 </root>

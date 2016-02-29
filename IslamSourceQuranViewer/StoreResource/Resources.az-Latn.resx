@@ -27,4 +27,7 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Ölçü</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Susmaya görə dil</value>
+  </data>
 </root>

@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Használja a szavalat szabály színezés</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Alapértelmezett nyelv</value>
+  </data>
 </root>

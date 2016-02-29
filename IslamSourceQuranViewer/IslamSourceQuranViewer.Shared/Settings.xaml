@@ -8,6 +8,7 @@
     mc:Ignorable="d">
     <Page.Resources>
         <CollectionViewSource x:Name="FontsSource" Source="{Binding Path=MyAppSettings.Fonts}"></CollectionViewSource>
+        <CollectionViewSource x:Name="OtherFontsSource" Source="{Binding Path=MyAppSettings.OtherFonts}"></CollectionViewSource>
         <CollectionViewSource x:Name="TranslationsSource" Source="{Binding Path=MyAppSettings.TranslationList}"></CollectionViewSource>
         <CollectionViewSource x:Name="AppLanguagesSource" Source="{Binding Path=MyAppSettings.AppLanguageList}"></CollectionViewSource>
     </Page.Resources>
@@ -21,7 +22,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Uid="OtherTextFont" VerticalAlignment="Center"></TextBlock>
-                <ComboBox ItemsSource="{Binding Source={StaticResource FontsSource}}" SelectedItem="{Binding Path=MyAppSettings.OtherSelectedFont, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
+                <ComboBox ItemsSource="{Binding Source={StaticResource OtherFontsSource}}" SelectedItem="{Binding Path=MyAppSettings.OtherSelectedFont, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
                 <TextBlock x:Uid="Size" VerticalAlignment="Center"></TextBlock>
                 <TextBox Text="{Binding Path=MyAppSettings.OtherFontSize}"></TextBox>
             </StackPanel>

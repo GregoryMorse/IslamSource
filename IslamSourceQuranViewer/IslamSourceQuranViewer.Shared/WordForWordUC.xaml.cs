@@ -113,18 +113,21 @@ namespace IslamSourceQuranViewer
         {
             UIChanger.FontSize += 1.0;
             UIChanger.OtherFontSize += 1.0;
+            this.ViewModel.RegroupRenderModels(UIChanger.MaxWidth);
         }
 
         private void ZoomOut_Click(object sender, RoutedEventArgs e)
         {
             UIChanger.FontSize -= 1.0;
             UIChanger.OtherFontSize -= 1.0;
+            this.ViewModel.RegroupRenderModels(UIChanger.MaxWidth);
         }
 
         private void Default_Click(object sender, RoutedEventArgs e)
         {
             UIChanger.FontSize = 30.0;
             UIChanger.OtherFontSize = 20.0;
+            this.ViewModel.RegroupRenderModels(UIChanger.MaxWidth);
         }
     }
     public class MyUIChanger : INotifyPropertyChanged
@@ -141,6 +144,8 @@ namespace IslamSourceQuranViewer
             set
             {
                 AppSettings.dFontSize = value;
+                _DWArabicFormat.Dispose();
+                _DWArabicFormat = null;
                 PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
             }
         }
@@ -160,6 +165,8 @@ namespace IslamSourceQuranViewer
             set
             {
                 AppSettings.dOtherFontSize = value;
+                _DWNormalFormat.Dispose();
+                _DWNormalFormat = null;
                 PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
             }
         }
@@ -170,6 +177,21 @@ namespace IslamSourceQuranViewer
                 return AppSettings.strOtherSelectedFont;
             }
         }
+        public static void CleanupDW()
+        {
+            _DWNormalFormat.Dispose();
+            _DWNormalFormat = null;
+            _DWArabicFormat.Dispose();
+            _DWArabicFormat = null;
+            _DWFactory.Dispose();
+            _DWFactory = null;
+        }
+        private static SharpDX.DirectWrite.Factory _DWFactory;
+        public static SharpDX.DirectWrite.Factory DWFactory { get { if (_DWFactory == null) _DWFactory = new SharpDX.DirectWrite.Factory(); return _DWFactory; } }
+        private static SharpDX.DirectWrite.TextFormat _DWArabicFormat;
+        public static SharpDX.DirectWrite.TextFormat DWArabicFormat { get { if (_DWArabicFormat == null) _DWArabicFormat = new SharpDX.DirectWrite.TextFormat(MyUIChanger.DWFactory, AppSettings.strSelectedFont, (float)AppSettings.dFontSize); return _DWArabicFormat; } }
+        private static SharpDX.DirectWrite.TextFormat _DWNormalFormat;
+        public static SharpDX.DirectWrite.TextFormat DWNormalFormat { get { if (_DWNormalFormat == null) _DWNormalFormat = new SharpDX.DirectWrite.TextFormat(MyUIChanger.DWFactory, AppSettings.strOtherSelectedFont, (float)AppSettings.dOtherFontSize); return _DWNormalFormat; } }
         private double _MaxWidth;
         public double MaxWidth
         {
@@ -305,21 +327,17 @@ public static class FormattedTextBehavior
     {
         private double _MaxWidth;
         public double MaxWidth { get { return _MaxWidth; } set { _MaxWidth = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("MaxWidth")); } }
-        public static double CalculateWidth(string text, string FontFamily, float FontSize, float maxWidth, float maxHeight)
+        public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
         {
-            SharpDX.DirectWrite.Factory factory = new SharpDX.DirectWrite.Factory();
-            SharpDX.DirectWrite.TextFormat format = new SharpDX.DirectWrite.TextFormat(factory, FontFamily, FontSize);
-            SharpDX.DirectWrite.TextLayout layout = new SharpDX.DirectWrite.TextLayout(factory, text, format, maxWidth, maxHeight);
+            SharpDX.DirectWrite.TextLayout layout = new SharpDX.DirectWrite.TextLayout(MyUIChanger.DWFactory, text, IsArabic ? MyUIChanger.DWArabicFormat : MyUIChanger.DWNormalFormat, maxWidth, maxHeight);
             double width = layout.Metrics.WidthIncludingTrailingWhitespace + layout.Metrics.Left;
             layout.Dispose();
-            format.Dispose();
-            factory.Dispose();
             return width;
         }
         public double CalculateWidth()
         {
             //5 margin on both sides
-            return 5 + 5 + 1 + 1 + CalculateWidth(string.Join(String.Empty, ItemRuns.Select((Item) => Item.ItemText)), IsArabic ? AppSettings.strSelectedFont : AppSettings.strOtherSelectedFont, IsArabic ? (float)AppSettings.dFontSize : (float)AppSettings.dOtherFontSize, (float)float.MaxValue, float.MaxValue);
+            return 5 + 5 + 1 + 1 + CalculateWidth(string.Join(String.Empty, ItemRuns.Select((Item) => Item.ItemText)), IsArabic, (float)float.MaxValue, float.MaxValue);
         }
 #region Implementation of INotifyPropertyChanged
 
@@ -493,20 +511,23 @@ public static class FormattedTextBehavior
             {
                 return null;
             }
-            SharpDX.DirectWrite.Factory factory = new SharpDX.DirectWrite.Factory();
-            SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(factory);
-            LOGFONT lf = new LOGFONT();
-            lf.lfFaceName = useFont;
-            SharpDX.Direct2D1.Factory fact2d = new SharpDX.Direct2D1.Factory();
-            float pointSize = fontSize * fact2d.DesktopDpi.Height / 72.0f;
-            fact2d.Dispose();
-            lf.lfHeight = (int)fontSize;
-            lf.lfQuality = 5; //clear type
-            SharpDX.DirectWrite.Font font = factory.GdiInterop.FromLogFont(lf);
+            SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(MyUIChanger.DWFactory);
+            //LOGFONT lf = new LOGFONT();
+            //lf.lfFaceName = useFont;
+            //SharpDX.Direct2D1.Factory fact2d = new SharpDX.Direct2D1.Factory();
+            //float pointSize = fontSize * fact2d.DesktopDpi.Height / 72.0f;
+            //fact2d.Dispose();
+            //lf.lfHeight = (int)fontSize;
+            //lf.lfQuality = 5; //clear type
+            //SharpDX.DirectWrite.Font font = MyUIChanger.DWFactory.GdiInterop.FromLogFont(lf);
+            int index;
+            MyUIChanger.DWArabicFormat.FontCollection.FindFamilyName(MyUIChanger.DWArabicFormat.FontFamilyName, out index);
+            SharpDX.DirectWrite.Font font = MyUIChanger.DWArabicFormat.FontCollection.GetFontFamily(index).GetFirstMatchingFont(SharpDX.DirectWrite.FontWeight.Normal, SharpDX.DirectWrite.FontStretch.Normal, SharpDX.DirectWrite.FontStyle.Normal);
             SharpDX.DirectWrite.FontFace fontFace = new SharpDX.DirectWrite.FontFace(font);
+            //fontFace.FaceType = SharpDX.DirectWrite.FontFaceType.
             SharpDX.DirectWrite.ScriptAnalysis scriptAnalysis = new SharpDX.DirectWrite.ScriptAnalysis();
             TextSink analysisSink = new TextSink();
-            TextSource analysisSource = new TextSource(Str, factory);
+            TextSource analysisSource = new TextSource(Str, MyUIChanger.DWFactory);
             analyzer.AnalyzeScript(analysisSource, 0, Str.Length, analysisSink);
             scriptAnalysis = analysisSink._scriptAnalysis;
             int maxGlyphCount = ((Str.Length * 3) / 2) + 0x10;
@@ -548,7 +569,6 @@ public static class FormattedTextBehavior
             fontFace.Dispose();
             font.Dispose();
             analyzer.Dispose();
-            factory.Dispose();
             return clusterMap;
         }
         public static Size GetWordDiacriticPositionsDWrite(string Str, string useFont, float fontSize, char[] Forms, bool IsRTL, ref float BaseLine, ref CharPosInfo[] Pos)
@@ -557,18 +577,17 @@ public static class FormattedTextBehavior
             {
                 return new Size(0f, 0f);
             }
-            SharpDX.DirectWrite.Factory factory = new SharpDX.DirectWrite.Factory();
-            SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(factory);
+            SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(MyUIChanger.DWFactory);
             LOGFONT lf = new LOGFONT();
             lf.lfFaceName = useFont;
             float pointSize = fontSize * Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawDpiY / 72.0f;
             lf.lfHeight = (int)fontSize;
             lf.lfQuality = 5; //clear type
-            SharpDX.DirectWrite.Font font = factory.GdiInterop.FromLogFont(lf);
+            SharpDX.DirectWrite.Font font = MyUIChanger.DWFactory.GdiInterop.FromLogFont(lf);
             SharpDX.DirectWrite.FontFace fontFace = new SharpDX.DirectWrite.FontFace(font);
             SharpDX.DirectWrite.ScriptAnalysis scriptAnalysis = new SharpDX.DirectWrite.ScriptAnalysis();
             TextSink analysisSink = new TextSink();
-            TextSource analysisSource = new TextSource(Str, factory);
+            TextSource analysisSource = new TextSource(Str, MyUIChanger.DWFactory);
             analyzer.AnalyzeScript(analysisSource, 0, Str.Length, analysisSink);
             scriptAnalysis = analysisSink._scriptAnalysis;
             int maxGlyphCount = ((Str.Length * 3) / 2) + 0x10;
@@ -750,7 +769,6 @@ public static class FormattedTextBehavior
             fontFace.Dispose();
             font.Dispose();
             analyzer.Dispose();
-            factory.Dispose();
             return Size;
         }
 

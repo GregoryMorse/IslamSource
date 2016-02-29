@@ -57,4 +57,7 @@
   <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
     <value>Использование декламации правила окраски</value>
   </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Язык по умолчанию</value>
+  </data>
 </root>
