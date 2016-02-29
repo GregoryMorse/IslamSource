@@ -6667,7 +6667,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		</metaruleset>
 		<metaruleset name="UthmaniQuran" from="ClassicArabicDialect">
 	    <metarule name="DivisionMarkers" match="(?:({ArabicSmallHighMeemInitialForm})|({ArabicStartOfRubElHizb})|({ArabicEndOfAyah})|({ArabicPlaceOfSajdah}))(?={EndOfWord})" evaluator="compulsorystop;startofhizb;endofversestop;prostration"></metarule>
-	    <metarule name="ContinueStopMarkers" match="(?:({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})({EndOfWord})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen}))({EndOfWord})" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;empty;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath;empty"></metarule>
+	    <metarule name="ContinueStopMarkers" match="(?:({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})({EndOfWord})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura}))({EndOfWord})|(\s+)({ArabicSmallHighSeen})(?={EndOfWord})" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;empty;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;empty;empty;subtlestopwithoutbreath"></metarule>
 	    <metarule name="ContinueStopMarkersAtEnding" match="({StartOfWord})(?:({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})({EndOfWord})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen}))$" evaluator="empty;canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;empty;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath"></metarule>
 
 			<metarule name="MaddahObligatoryLightened" match="{MaddahObligatoryLightened}" evaluator="necessaryprolong;null;necessaryprolong;null;necessaryprolong;null;necessaryprolong;null;necessaryprolong;null;necessaryprolong;null"></metarule>
@@ -6828,7 +6828,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<quranselection description="VerseOfTheTenRights">
 			<verse chapter="4" startverse="36"></verse>
 		</quranselection>
-		<quranselection>
+		<quranselection description="RemembranceAfterPrayer">
 			<verse chapter="59" startverse="22" endverse="24"></verse>
 		</quranselection>
 		<quranselection description="LongestVerse">
