@@ -144,7 +144,7 @@ namespace IslamSourceQuranViewer
             set
             {
                 AppSettings.dFontSize = value;
-                _DWArabicFormat.Dispose();
+                if (_DWArabicFormat != null) _DWArabicFormat.Dispose();
                 _DWArabicFormat = null;
                 PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
             }
@@ -165,7 +165,7 @@ namespace IslamSourceQuranViewer
             set
             {
                 AppSettings.dOtherFontSize = value;
-                _DWNormalFormat.Dispose();
+                if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
                 _DWNormalFormat = null;
                 PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
             }
@@ -179,11 +179,11 @@ namespace IslamSourceQuranViewer
         }
         public static void CleanupDW()
         {
-            _DWNormalFormat.Dispose();
+            if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
             _DWNormalFormat = null;
-            _DWArabicFormat.Dispose();
+            if (_DWArabicFormat != null) _DWArabicFormat.Dispose();
             _DWArabicFormat = null;
-            _DWFactory.Dispose();
+            if (_DWFactory != null) _DWFactory.Dispose();
             _DWFactory = null;
         }
         private static SharpDX.DirectWrite.Factory _DWFactory;

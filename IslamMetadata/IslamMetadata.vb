@@ -347,21 +347,14 @@ Public Class Arabic
         eTrailingGutteral
         eResolveAmbiguity
     End Enum
+
     Public Delegate Function MetaRuleFunction(Str As String, LearningMode As Boolean) As String()
     Public Shared MetaRuleFunctions As MetaRuleFunction() = {
         Function(Str As String, LearningMode As Boolean) {Str.ToUpper()},
-        Function(Str As String, LearningMode As Boolean)
-            Return {Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty, Nothing)), True, False, False))} 'GetMetarules(NumStr, Nothing, CachedData.RuleMetas("Normal"))
-        End Function,
-        Function(Str As String, LearningMode As Boolean)
-            Return {ArabicLetterSpelling(Str, True, False, False)} 'GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran"))
-        End Function,
-        Function(Str As String, LearningMode As Boolean)
-            Return {ArabicLetterSpelling(Str, True, True, False)} 'GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran"))
-        End Function,
-        Function(Str As String, LearningMode As Boolean)
-            Return {ArabicLetterSpelling(Str, True, True, True)} 'GetMetarules(SpellStr, Nothing, CachedData.RuleMetas("UthmaniQuran"))
-        End Function,
+        Function(Str As String, LearningMode As Boolean) {Arabic.TransliterateFromBuckwalter(Arabic.ArabicWordFromNumber(CInt(TransliterateToScheme(Str, ArabicData.TranslitScheme.Literal, String.Empty, Nothing)), True, False, False))},
+        Function(Str As String, LearningMode As Boolean) {ArabicLetterSpelling(Str, True, False, False)},
+        Function(Str As String, LearningMode As Boolean) {ArabicLetterSpelling(Str, True, True, False)},
+        Function(Str As String, LearningMode As Boolean) {ArabicLetterSpelling(Str, True, True, True)},
         Function(Str As String, LearningMode As Boolean) {CachedData.ArabicFathaDammaKasra(Array.IndexOf(CachedData.ArabicTanweens, Str)), ArabicData.ArabicLetterNoon},
         Function(Str As String, LearningMode As Boolean) If(LearningMode, {Str, String.Empty}, {String.Empty, Str}),
         Function(Str As String, LearningMode As Boolean) {Str + "-" + Str + "(-" + Str(0) + ")"}
@@ -376,6 +369,7 @@ Public Class Arabic
         Function(Str As String, Scheme As String) {If(SchemeHasValue(GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(0))), Scheme) + GetSchemeValueFromSymbol(ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Str.Chars(1))), Scheme), Scheme), Str.Chars(0) + "-" + Str.Chars(1), Str)}
     }
     'Javascript does not support negative or positive lookbehind in regular expressions
+    Public Shared RecursiveMetadata As String() = {"spellnumber", "spellletter", "spelllongletter", "spelllongmergedletter"}
     Public Shared AllowZeroLength As String() = {"helperfatha", "helperdamma", "helperkasra", "helperlparen", "helperrparen", "learningmode(helperslash,)", "learningmode(helperlbracket,)", "learningmode(helperrbracket,)", "learningmode(helperfathatan,)", "learningmode(helperteh,)"}
     Public Shared Function IsLetter(Index As Integer) As Boolean
         Return Array.FindIndex(CachedData.ArabicLetters, Function(Str As String) Str = ArabicData.ArabicLetters(Index).Symbol) <> -1
@@ -614,7 +608,7 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, Scheme As String, LearningMode As Boolean) As String
+    Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, LearningMode As Boolean) As String
         For Count As Integer = 0 To CachedData.RuleTranslations("ColoringSpelledOutRules").Length - 1
             Dim Match As String = Array.Find(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty))).ToArray(), Str) <> -1)
             If Match <> Nothing Then
@@ -630,7 +624,7 @@ Public Class Arabic
                         Str.Clear()
                         For Index As Integer = 0 To Args.Length - 1
                             If Not Args(Index) Is Nothing And (LearningMode Or CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).MetaRuleFunc <> MetaRuleFuncs.eLearningMode Or Index <> 0) Then
-                                Str.Append(ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), Scheme, LearningMode))
+                                Str.Append(ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), LearningMode))
                             End If
                         Next
                     End If
@@ -695,7 +689,12 @@ Public Class Arabic
         DoErrorCheck(ArabicString)
         Dim Index As Integer = 0
         While Index <= MetadataList.Count - 1
-            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme, LearningMode)
+            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), LearningMode)
+            If Not MetadataList(Index).Children Is Nothing Then
+                For SubCount As Integer = 0 To MetadataList(Index).Children.Length - 1
+                    ArabicString = ArabicString.Remove(MetadataList(Index).Index).Insert(MetadataList(Index).Index, ReplaceMetadata(ArabicString.Substring(MetadataList(Index).Index), MetadataList(Index).Children(SubCount), LearningMode))
+                Next
+            End If
             Index += 1
         End While
         ArabicString = ReplaceTranslitRule(ArabicString, Scheme, LearningMode, Nothing)
@@ -723,9 +722,10 @@ Public Class Arabic
                         If (OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso ((Matches(MatchIndex).Groups(SubCount + 1).Success AndAlso Matches(MatchIndex).Groups(SubCount + 1).Length = 0 AndAlso (Matches(MatchIndex).Groups(SubCount + 1).Index = 0 Or Matches(MatchIndex).Groups(SubCount + 1).Index = ArabicString.Length)) OrElse (Not OptionalStops Is Nothing AndAlso Matches(MatchIndex).Groups(SubCount + 1).Value <> String.Empty AndAlso Array.IndexOf(OptionalStops, Matches(MatchIndex).Groups(SubCount + 1).Index) <> -1))) Then Exit For
                     Next
                     If StopCount <> RuleSet(Count).OptionalNotStopIndexes.Length Then Continue For
-                    For SubCount = 0 To RuleSet(Count).Evaluator.Length - 1
+                    For SubCount As Integer = 0 To RuleSet(Count).Evaluator.Length - 1
                         If Not RuleSet(Count).Evaluator(SubCount) Is Nothing AndAlso RuleSet(Count).Evaluator(SubCount) <> String.Empty And (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 Or Array.IndexOf(AllowZeroLength, RuleSet(Count).Evaluator(SubCount).Split("|"c)(0)) <> -1) Then
-                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, RuleSet(Count).Evaluator(SubCount), SubCount))
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, RuleSet(Count).Evaluator(SubCount), SubCount) With {.Children = If(Array.IndexOf(RecursiveMetadata, RuleSet(Count).Evaluator(SubCount)) <> -1, GetMetarules(MetaRuleFunctions((Linq.Enumerable.First(CachedData.RuleTranslations("ColoringSpelledOutRules"), Function(Item) Item.Match = RuleSet(Count).Evaluator(SubCount))).MetaRuleFunc - 1)(Matches(MatchIndex).Groups(SubCount + 1).Value, False)(0), Nothing, If(RuleSet(Count).Evaluator(SubCount) = "spellnumber", CachedData.RuleMetas("Normal"), RuleSet)).ToArray(), Nothing)})
+                            If (Not MetadataList(MetadataList.Count - 1).Children Is Nothing) Then Array.Sort(MetadataList(MetadataList.Count - 1).Children, New RuleMetadataComparer)
                             'Debug.WriteLine(RuleSet(Count).Name + " Index: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Index) + " Length: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Length) + " Ruling: " + RuleSet(Count).Evaluator(SubCount))
                         End If
                     Next
@@ -806,11 +806,21 @@ Public Class Arabic
         DoErrorCheck(ArabicString)
         Dim Index As Integer = 0
         Dim OffsetList As New List(Of Integer)
-        Dim WordBreakList As List(Of Integer) = New List(Of Integer)(Linq.Enumerable.Select(ArabicString.ToCharArray(), Function(It) If(It = " ", -1, 0)))
+        Dim RecOffsetList As New List(Of List(Of Integer))
         While Index <= MetadataList.Count - 1
             Dim OldLength As Integer = ArabicString.Length
             OffsetList.Add(ArabicString.Length)
-            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), Scheme, LearningMode)
+            ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), LearningMode)
+            If Not MetadataList(Index).Children Is Nothing Then
+                RecOffsetList.Add(New List(Of Integer))
+                For SubCount As Integer = 0 To MetadataList(Index).Children.Length - 1
+                    RecOffsetList(Index).Add(ArabicString.Length)
+                    ArabicString = ArabicString.Remove(MetadataList(Index).Index).Insert(MetadataList(Index).Index, ReplaceMetadata(ArabicString.Substring(MetadataList(Index).Index), MetadataList(Index).Children(SubCount), LearningMode))
+                    RecOffsetList(Index)(RecOffsetList(Index).Count - 1) = ArabicString.Length - RecOffsetList(Index)(RecOffsetList(Index).Count - 1)
+                Next
+            Else
+                RecOffsetList.Add(Nothing)
+            End If
             OffsetList(OffsetList.Count - 1) = ArabicString.Length - OffsetList(OffsetList.Count - 1)
             Index += 1
         End While
@@ -826,8 +836,23 @@ Public Class Arabic
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
                 End If
             Next
+            If Not MetadataList(Index).Children Is Nothing Then
+                For SubCount As Integer = MetadataList(Index).Children.Length - 1 To 0 Step -1
+                    Dim RecCumOffset As Integer = 0
+                    For Count = 0 To CachedData.IslamData.ColorRules.Length - 1
+                        Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Children(SubCount).Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
+                        If Match <> -1 Then
+                            For MetaCount As Integer = MetadataList(Index).Index + CumOffset + MetadataList(Index).Children(SubCount).Index + RecCumOffset To MetadataList(Index).Index + CumOffset + MetadataList(Index).Children(SubCount).Index + RecCumOffset + MetadataList(Index).Children(SubCount).Length + RecOffsetList(Index)(SubCount) - 1
+                                If CachedData.IslamData.ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
+                            Next
+                            'ApplyColorRules(Strings(Strings.Count - 1).Text)
+                        End If
+                    Next
+                    RecCumOffset += RecOffsetList(Index)(SubCount)
+                Next
+            End If
             For MetaCount As Integer = MetadataList(Index).Index + CumOffset To MetadataList(Index).Index + CumOffset + MetadataList(Index).Length + OffsetList(Index) - 1
-                If ArabicString(MetaCount) = " "c And BreakWords And MetadataList(Index).Type = "spellnumber" Then RuleIndexes(MetaCount) = -1
+                If ArabicString(MetaCount) = " "c And BreakWords And Array.IndexOf(RecursiveMetadata, MetadataList(Index).Type) <> -1 Then RuleIndexes(MetaCount) = -1
             Next
             CumOffset += OffsetList(Index)
         Next
@@ -1757,8 +1782,14 @@ Public Class IslamData
                 For Count As Integer = 0 To LanguageDefaultList.Length - 1
                     If LanguageDefaultList(Count).ID = System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName Then Return LanguageDefaultList(Count)
                 Next
+                For Count As Integer = 0 To LanguageDefaultList.Length - 1
+                    If LanguageDefaultList(Count).ID = System.Threading.Thread.CurrentThread.CurrentUICulture.Parent.Name Then Return LanguageDefaultList(Count)
+                Next
+                For Count As Integer = 0 To LanguageDefaultList.Length - 1
+                    If LanguageDefaultList(Count).ID = System.Threading.Thread.CurrentThread.CurrentUICulture.Parent.TwoLetterISOLanguageName Then Return LanguageDefaultList(Count)
+                Next
             End If
-            Return GetLanguageByID(String.Empty)
+            Return If(LangID = String.Empty, LanguageDefaultList(0), GetLanguageByID(String.Empty))
         End Function
     End Class
     <Xml.Serialization.XmlElement("languagedefaults")>

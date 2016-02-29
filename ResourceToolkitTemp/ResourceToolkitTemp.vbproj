@@ -96,6 +96,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.hr.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.hu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.hu.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuranResources.it.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.it.Designer.vb</LastGenOutput>
@@ -229,6 +233,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuranResources.hr.resx</DependentUpon>
     </Compile>
+    <Compile Include="QuranResources.hu.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.hu.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuranResources.it.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -296,6 +305,7 @@
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.fr.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.he.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.hr.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.hu.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.it.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.nl.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.pl.xlf" />
