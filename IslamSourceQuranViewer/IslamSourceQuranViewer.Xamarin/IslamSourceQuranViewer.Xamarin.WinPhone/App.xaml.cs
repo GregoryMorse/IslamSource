@@ -6,9 +6,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using IslamSourceQuranViewer.Xamarin.WinPhone.Resources;
+using IslamSourceQuranViewer.Xam.WinPhone.Resources;
 
-namespace IslamSourceQuranViewer.Xamarin.WinPhone
+namespace IslamSourceQuranViewer.Xam.WinPhone
 {
 	public partial class App : Application
 	{

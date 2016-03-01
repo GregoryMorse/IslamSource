@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("IslamSourceQuranViewer.Xamarin.Droid.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("IslamSourceQuranViewer.Xam.Droid.Resource", IsApplication=true)]
 
-namespace IslamSourceQuranViewer.Xamarin.Droid
+namespace IslamSourceQuranViewer.Xam.Droid
 {
 	
 	

@@ -7,9 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace IslamSourceQuranViewer.Xamarin.Droid
+namespace IslamSourceQuranViewer.Xam.Droid
 {
-	[Activity (Label = "IslamSourceQuranViewer.Xamarin", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity (Label = "IslamSourceQuranViewer.Xam", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -17,7 +17,7 @@ namespace IslamSourceQuranViewer.Xamarin.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new IslamSourceQuranViewer.Xamarin.App ());
+			LoadApplication (new IslamSourceQuranViewer.Xam.App ());
 		}
 	}
 }

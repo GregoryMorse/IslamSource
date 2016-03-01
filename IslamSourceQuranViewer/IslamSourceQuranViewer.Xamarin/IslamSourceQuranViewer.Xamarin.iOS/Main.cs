@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace IslamSourceQuranViewer.Xamarin.iOS
+namespace IslamSourceQuranViewer.Xam.iOS
 {
 	public class Application
 	{

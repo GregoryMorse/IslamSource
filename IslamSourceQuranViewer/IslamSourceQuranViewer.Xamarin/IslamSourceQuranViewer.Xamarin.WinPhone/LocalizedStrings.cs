@@ -1,6 +1,6 @@
-﻿using IslamSourceQuranViewer.Xamarin.WinPhone.Resources;
+﻿using IslamSourceQuranViewer.Xam.WinPhone.Resources;
 
-namespace IslamSourceQuranViewer.Xamarin.WinPhone
+namespace IslamSourceQuranViewer.Xam.WinPhone
 {
 	/// <summary>
 	/// Provides access to string resources.

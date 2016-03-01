@@ -8,7 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
-namespace IslamSourceQuranViewer.Xamarin.WinPhone
+namespace IslamSourceQuranViewer.Xam.WinPhone
 {
 	public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage
 	{
@@ -18,7 +18,7 @@ namespace IslamSourceQuranViewer.Xamarin.WinPhone
 			SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
 			global::Xamarin.Forms.Forms.Init ();
-			LoadApplication (new IslamSourceQuranViewer.Xamarin.App ());
+			LoadApplication (new IslamSourceQuranViewer.Xam.App ());
 		}
 	}
 }

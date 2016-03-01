@@ -41,13 +41,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Stor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.StoreToolkit.WindowsPhone", "IslamSourceQuranViewer\IslamSourceQuranViewer.StoreToolkit.WindowsPhone\IslamSourceQuranViewer.StoreToolkit.WindowsPhone.csproj", "{DF9CA61E-C790-4DD6-9846-40AEFE4DA12B}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "IslamSourceQuranViewer.Xamarin", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.shproj", "{E83B66D5-0687-4731-8ED7-8C03F1256485}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "IslamSourceQuranViewer.Xam", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xam.shproj", "{E83B66D5-0687-4731-8ED7-8C03F1256485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xamarin.WinPhone", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.WinPhone\IslamSourceQuranViewer.Xamarin.WinPhone.csproj", "{7938A73B-820D-4B8D-862D-7C93621C7CC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.WinPhone", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.WinPhone\IslamSourceQuranViewer.Xam.WinPhone.csproj", "{7938A73B-820D-4B8D-862D-7C93621C7CC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xamarin.iOS", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.iOS\IslamSourceQuranViewer.Xamarin.iOS.csproj", "{F3F0D2B7-C929-4C72-9E8D-AB5C2AE237F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.iOS", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.iOS\IslamSourceQuranViewer.Xam.iOS.csproj", "{F3F0D2B7-C929-4C72-9E8D-AB5C2AE237F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xamarin.Droid", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.Droid\IslamSourceQuranViewer.Xamarin.Droid.csproj", "{AFE36D4E-C30B-4FB0-A390-415894D6CC18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.Droid", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.Droid\IslamSourceQuranViewer.Xam.Droid.csproj", "{AFE36D4E-C30B-4FB0-A390-415894D6CC18}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

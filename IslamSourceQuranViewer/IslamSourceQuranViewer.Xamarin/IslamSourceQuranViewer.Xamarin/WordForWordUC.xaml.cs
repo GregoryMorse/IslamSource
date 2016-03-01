@@ -9,7 +9,7 @@ using Xamarin.Forms;
 using System.Collections;
 using System.Collections.Specialized;
 
-namespace IslamSourceQuranViewer.Xamarin
+namespace IslamSourceQuranViewer.Xam
 {
 	public partial class WordForWordUC : ContentPage
 	{

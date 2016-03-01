@@ -5,13 +5,13 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace IslamSourceQuranViewer.Xamarin
+namespace IslamSourceQuranViewer.Xam
 {
 	public class App : Application
 	{
 		public App ()
 		{
-            MainPage = new IslamSourceQuranViewer.Xamarin.MainPage();
+            MainPage = new IslamSourceQuranViewer.Xam.MainPage();
 			// The root page of your application
 			//MainPage = new ContentPage {
 			//	Content = new StackLayout {

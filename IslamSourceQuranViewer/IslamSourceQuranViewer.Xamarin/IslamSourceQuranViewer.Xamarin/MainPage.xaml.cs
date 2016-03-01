@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace IslamSourceQuranViewer.Xamarin
+namespace IslamSourceQuranViewer.Xam
 {
 	public partial class MainPage : ContentPage
 	{

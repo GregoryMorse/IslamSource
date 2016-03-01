@@ -6,11 +6,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IslamSourceQuranViewer.Xamarin.WinPhone")]
+[assembly: AssemblyTitle("IslamSourceQuranViewer.Xam.WinPhone")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IslamSourceQuranViewer.Xamarin.WinPhone")]
+[assembly: AssemblyProduct("IslamSourceQuranViewer.Xam.WinPhone")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
