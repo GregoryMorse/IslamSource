@@ -11,8 +11,8 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
-        <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items}"></CollectionViewSource>
-        <CollectionViewSource x:Name="QuranDivision" Source="{Binding Path=ViewModel.ListItems, Mode=TwoWay}"></CollectionViewSource>
+        <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items, Mode=OneWay}"></CollectionViewSource>
+        <CollectionViewSource x:Name="QuranDivision" Source="{Binding Path=ViewModel.ListItems, Mode=OneWay}"></CollectionViewSource>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>

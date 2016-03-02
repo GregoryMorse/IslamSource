@@ -11,13 +11,12 @@
         <Style x:Key="TitleStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
         </Style>
-        <CollectionViewSource x:Name="QuranText" Source="{Binding Path=ViewModel.RenderModels, Mode=OneWay}"></CollectionViewSource>
         <DataTemplate x:Key="WordTemplate">
-            <ItemsControl ItemsSource="{Binding RenderItems, Mode=OneWay}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
+            <ItemsControl ItemsSource="{Binding Mode=OneWay, Path=RenderSource}" ItemTemplateSelector="{StaticResource WrapTemplate}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <local:MyWrapPanel FlowDirection="RightToLeft"></local:MyWrapPanel>
-                        <!--<StackPanel Orientation="Horizontal" Width="auto"></StackPanel>-->
+                        <!--<local:MyWrapPanel FlowDirection="RightToLeft"></local:MyWrapPanel>-->
+                        <VirtualizingStackPanel FlowDirection="RightToLeft"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -78,7 +77,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding Mode=OneWay, Source={StaticResource QuranText}}">
+        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding Mode=OneWay, Path=ViewModel.RenderSource}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>

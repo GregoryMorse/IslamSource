@@ -609,10 +609,13 @@ Public Class Arabic
         Return ArabicString
     End Function
     Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, LearningMode As Boolean) As String
+        If MetadataRule.Type.Length = 0 OrElse MetadataRule.Type.Length = 1 And MetadataRule.Type(0) = String.Empty Then Return ArabicString
+        Dim MetaTypeList As String() = New List(Of String)(Linq.Enumerable.Select(MetadataRule.Type, Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty))).ToArray()
+        'use a dictionary/map here...
         For Count As Integer = 0 To CachedData.IslamData.ColorRuleSets(0).ColorRules.Length - 1
             Dim TypeIndex As Integer = 0
             Dim Match As String = Array.Find(CachedData.IslamData.ColorRuleSets(0).ColorRules(Count).Match, Function(Str As String)
-                                                                                                                TypeIndex = Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataRule.Type, Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty))).ToArray(), Str)
+                                                                                                                TypeIndex = Array.IndexOf(MetaTypeList, Str)
                                                                                                                 Return TypeIndex <> -1
                                                                                                             End Function)
             If Match <> Nothing Then
