@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IslamSourceQuranViewer.Xamarin.Droid</RootNamespace>
-    <AssemblyName>IslamSourceQuranViewer.Xamarin.Droid</AssemblyName>
+    <RootNamespace>IslamSourceQuranViewer.Xam.Droid</RootNamespace>
+    <AssemblyName>IslamSourceQuranViewer.Xam.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -89,6 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\IslamMetadata\IslamMetadata.vbproj">
+      <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
+      <Name>IslamMetadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\XMLRender\XMLRender.vbproj">
+      <Project>{8ac9d06f-320d-4cf4-8a73-725a5ef177ad}</Project>
+      <Name>XMLRender</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems" Label="Shared" Condition="Exists('..\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

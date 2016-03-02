@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IslamSourceQuranViewer.Xam.MainPage">
     <ContentPage.Resources>
-        <Style x:Key="TitleStyle" TargetType="TextBlock">
+        <Style x:Key="TitleStyle" TargetType="Label">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
@@ -23,7 +23,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Title}" Margin="5" 
+                    <Label Text="{Binding Title}" Margin="5" 
                         Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -39,7 +39,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}" Margin="5" 
+                    <Label Text="{Binding Name}" Margin="5" 
                         Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -47,7 +47,7 @@
     </Grid>
     <ContentPage.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
+            <!--<AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>-->
         </CommandBar>
     </ContentPage.BottomAppBar>
 </ContentPage>
