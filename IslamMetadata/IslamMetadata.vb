@@ -304,7 +304,7 @@ Public Class Arabic
         Return LiteralString.ToString()
     End Function
     Structure RuleMetadata
-        Sub New(NewIndex As Integer, NewLength As Integer, NewType As String, NewOrigOrder As Integer)
+        Sub New(NewIndex As Integer, NewLength As Integer, NewType As String(), NewOrigOrder As Integer)
             Index = NewIndex
             Length = NewLength
             Type = NewType
@@ -312,7 +312,7 @@ Public Class Arabic
         End Sub
         Public Index As Integer
         Public Length As Integer
-        Public Type As String
+        Public Type As String()
         Public OrigOrder As Integer
         Public Children As RuleMetadata()
     End Structure
@@ -441,11 +441,11 @@ Public Class Arabic
             RuleIndexes.Add(0)
         Next
         For Index = 0 To MetadataList.Count - 1
-            For Count = 0 To CachedData.IslamData.ColorRules.Length - 1
-                Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
+            For Count = 0 To CachedData.IslamData.ColorRuleSets(1).ColorRules.Length - 1
+                Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRuleSets(1).ColorRules(Count).Match, Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Type, Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
                 If Match <> -1 Then
                     For MetaCount As Integer = MetadataList(Index).Index To MetadataList(Index).Index + MetadataList(Index).Length - 1
-                        If CachedData.IslamData.ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
+                        If CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
                     Next
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
                 End If
@@ -456,12 +456,12 @@ Public Class Arabic
         Dim Renderers As New List(Of RenderArray.RenderText)
         For Count = 0 To RuleIndexes.Count - 1
             If Count = RuleIndexes.Count - 1 Or (ArabicString(Count) = " "c And BreakWords) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
                 WordRenderers.Add(Renderers.ToArray())
                 Renderers = New List(Of RenderArray.RenderText)
                 Base = Count + 1
             ElseIf RuleIndexes(Count) <> RuleIndexes(Count + 1) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
                 Base = Count + 1
             End If
         Next
@@ -546,7 +546,7 @@ Public Class Arabic
                                 Exit For
                             End If
                         Next
-                        Replacements.Add(New RuleMetadata(Matches(MatchCount).Index + DupCount, Matches(MatchCount).Length - DupCount, Matches(MatchCount).Result(Rules(Count).Evaluator).Substring(DupCount), Count))
+                        Replacements.Add(New RuleMetadata(Matches(MatchCount).Index + DupCount, Matches(MatchCount).Length - DupCount, {Matches(MatchCount).Result(Rules(Count).Evaluator).Substring(DupCount)}, Count))
                     End If
                 Next
             End If
@@ -556,7 +556,7 @@ Public Class Arabic
             If Count <> 0 AndAlso (Replacements(Count).Index + Replacements(Count).Length > Replacements(Count - 1).Index) Then
                 'Debug.Print(Rules(Replacements(Count - 1).OrigOrder).Name + ":" + Arabic.TransliterateToScheme(Replacements(Count - 1).Type, ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + "-" + Rules(Replacements(Count).OrigOrder).Name + ":" + Arabic.TransliterateToScheme(Replacements(Count).Type, ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + "-" + Arabic.TransliterateToScheme(ArabicString.Substring(Math.Max(Replacements(Count).Index - 15, 0), Math.Min(Replacements(Count - 1).Index + Replacements(Count - 1).Length + 15, ArabicString.Length) - Math.Max(Replacements(Count).Index - 15, 0)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
             End If
-            ArabicString = ArabicString.Substring(0, Replacements(Count).Index) + Replacements(Count).Type + ArabicString.Substring(Replacements(Count).Index + Replacements(Count).Length)
+            ArabicString = ArabicString.Substring(0, Replacements(Count).Index) + Replacements(Count).Type(0) + ArabicString.Substring(Replacements(Count).Index + Replacements(Count).Length)
         Next
         Return ArabicString
     End Function
@@ -609,22 +609,26 @@ Public Class Arabic
         Return ArabicString
     End Function
     Public Shared Function ReplaceMetadata(ArabicString As String, MetadataRule As RuleMetadata, LearningMode As Boolean) As String
-        For Count As Integer = 0 To CachedData.RuleTranslations("ColoringSpelledOutRules").Length - 1
-            Dim Match As String = Array.Find(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataRule.Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty))).ToArray(), Str) <> -1)
+        For Count As Integer = 0 To CachedData.IslamData.ColorRuleSets(0).ColorRules.Length - 1
+            Dim TypeIndex As Integer = 0
+            Dim Match As String = Array.Find(CachedData.IslamData.ColorRuleSets(0).ColorRules(Count).Match, Function(Str As String)
+                                                                                                                TypeIndex = Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataRule.Type, Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty))).ToArray(), Str)
+                                                                                                                Return TypeIndex <> -1
+                                                                                                            End Function)
             If Match <> Nothing Then
                 Dim Str As New System.Text.StringBuilder
-                Str.Append(String.Format(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length)))
-                If CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).MetaRuleFunc <> MetaRuleFuncs.eNone Then
-                    Dim Args As String() = MetaRuleFunctions(CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).MetaRuleFunc - 1)(Str.ToString(), LearningMode)
+                Str.Append(String.Format(CachedData.IslamData.ColorRuleSets(0).ColorRules(Count).Evaluator, ArabicString.Substring(MetadataRule.Index, MetadataRule.Length)))
+                If CachedData.IslamData.ColorRuleSets(0).ColorRules(Count).MetaRuleFunc <> MetaRuleFuncs.eNone Then
+                    Dim Args As String() = MetaRuleFunctions(CachedData.IslamData.ColorRuleSets(0).ColorRules(Count).MetaRuleFunc - 1)(Str.ToString(), LearningMode)
                     If Args.Length = 1 Then
                         Str.Clear()
                         Str.Append(Args(0))
                     Else
-                        Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type, Match + "\((.*)\)").Groups(1).Value.Split(","c)
+                        Dim MetaArgs As String() = System.Text.RegularExpressions.Regex.Match(MetadataRule.Type(TypeIndex), Match + "\((.*)\)").Groups(1).Value.Split(","c)
                         Str.Clear()
                         For Index As Integer = 0 To Args.Length - 1
-                            If Not Args(Index) Is Nothing And (LearningMode Or CachedData.RuleTranslations("ColoringSpelledOutRules")(Count).MetaRuleFunc <> MetaRuleFuncs.eLearningMode Or Index <> 0) Then
-                                Str.Append(ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, MetaArgs(Index).Replace(" "c, "|"c), Index), LearningMode))
+                            If Not Args(Index) Is Nothing And (LearningMode Or CachedData.IslamData.ColorRuleSets(0).ColorRules(Count).MetaRuleFunc <> MetaRuleFuncs.eLearningMode Or Index <> 0) Then
+                                Str.Append(ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, {MetaArgs(Index).Replace(" "c, "|"c)}, Index), LearningMode))
                             End If
                         Next
                     End If
@@ -723,8 +727,8 @@ Public Class Arabic
                     Next
                     If StopCount <> RuleSet(Count).OptionalNotStopIndexes.Length Then Continue For
                     For SubCount As Integer = 0 To RuleSet(Count).Evaluator.Length - 1
-                        If Not RuleSet(Count).Evaluator(SubCount) Is Nothing AndAlso RuleSet(Count).Evaluator(SubCount) <> String.Empty And (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 Or Array.IndexOf(AllowZeroLength, RuleSet(Count).Evaluator(SubCount).Split("|"c)(0)) <> -1) Then
-                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, RuleSet(Count).Evaluator(SubCount), SubCount) With {.Children = If(Array.IndexOf(RecursiveMetadata, RuleSet(Count).Evaluator(SubCount)) <> -1, GetMetarules(MetaRuleFunctions((Linq.Enumerable.First(CachedData.RuleTranslations("ColoringSpelledOutRules"), Function(Item) Item.Match = RuleSet(Count).Evaluator(SubCount))).MetaRuleFunc - 1)(Matches(MatchIndex).Groups(SubCount + 1).Value, False)(0), Nothing, If(RuleSet(Count).Evaluator(SubCount) = "spellnumber", CachedData.RuleMetas("Normal"), RuleSet)).ToArray(), Nothing)})
+                        If Not RuleSet(Count).Evaluator(SubCount) Is Nothing AndAlso RuleSet(Count).Evaluator(SubCount).Length <> 0 And (Matches(MatchIndex).Groups(SubCount + 1).Length <> 0 Or Array.IndexOf(AllowZeroLength, RuleSet(Count).Evaluator(SubCount)(0)) <> -1) Then
+                            MetadataList.Add(New RuleMetadata(Matches(MatchIndex).Groups(SubCount + 1).Index, Matches(MatchIndex).Groups(SubCount + 1).Length, RuleSet(Count).Evaluator(SubCount), SubCount) With {.Children = If(Linq.Enumerable.Any(RecursiveMetadata, Function(It) Array.IndexOf(RuleSet(Count).Evaluator(SubCount), It) <> -1), GetMetarules(MetaRuleFunctions((Linq.Enumerable.First(CachedData.IslamData.ColorRuleSets(0).ColorRules, Function(Item) Linq.Enumerable.Any(Item.Match, Function(Mat) Array.IndexOf(RuleSet(Count).Evaluator(SubCount), Mat) <> -1))).MetaRuleFunc - 1)(Matches(MatchIndex).Groups(SubCount + 1).Value, False)(0), Nothing, If(Array.IndexOf(RuleSet(Count).Evaluator(SubCount), "spellnumber") <> -1, CachedData.RuleMetas("Normal"), RuleSet)).ToArray(), Nothing)})
                             If (Not MetadataList(MetadataList.Count - 1).Children Is Nothing) Then Array.Sort(MetadataList(MetadataList.Count - 1).Children, New RuleMetadataComparer)
                             'Debug.WriteLine(RuleSet(Count).Name + " Index: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Index) + " Length: " + CStr(Matches(MatchIndex).Groups(SubCount + 1).Length) + " Ruling: " + RuleSet(Count).Evaluator(SubCount))
                         End If
@@ -736,9 +740,9 @@ Public Class Arabic
         Dim Index As Integer = 0
         While Index <= MetadataList.Count - 1
             Do While Index <> MetadataList.Count - 1 AndAlso MetadataList(Index).Index = MetadataList(Index + 1).Index AndAlso MetadataList(Index).Length = MetadataList(Index + 1).Length
-                Dim FirstRule As String() = MetadataList(Index).Type.Split("|"c)
+                Dim FirstRule As String() = MetadataList(Index).Type
                 Dim SecondRule As New List(Of String)
-                SecondRule.AddRange(MetadataList(Index + 1).Type.Split("|"c))
+                SecondRule.AddRange(MetadataList(Index + 1).Type)
                 Dim FirstUpdate As New System.Text.StringBuilder
                 For FirstIndex As Integer = 0 To FirstRule.Length - 1
                     Dim SecondIndex As Integer
@@ -766,7 +770,7 @@ Public Class Arabic
                 Next
                 SecondRule.Insert(0, FirstUpdate.ToString())
                 'Debug.WriteLine("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
-                MetadataList(Index) = New RuleMetadata(MetadataList(Index).Index, MetadataList(Index).Length, String.Join("|"c, SecondRule.ToArray()), MetadataList(Index).OrigOrder)
+                MetadataList(Index) = New RuleMetadata(MetadataList(Index).Index, MetadataList(Index).Length, SecondRule.ToArray(), MetadataList(Index).OrigOrder)
                 MetadataList.RemoveAt(Index + 1)
             Loop
             Index += 1
@@ -827,11 +831,11 @@ Public Class Arabic
         Dim RuleIndexes As List(Of Integer) = New List(Of Integer)(Linq.Enumerable.Select(ArabicString.ToCharArray(), Function(It) 0))
         Dim CumOffset As Integer = 0
         For Index = MetadataList.Count - 1 To 0 Step -1
-            For Count = 0 To CachedData.IslamData.ColorRules.Length - 1
-                Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
+            For Count = 0 To CachedData.IslamData.ColorRuleSets(1).ColorRules.Length - 1
+                Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRuleSets(1).ColorRules(Count).Match, Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Type, Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
                 If Match <> -1 Then
                     For MetaCount As Integer = MetadataList(Index).Index + CumOffset To MetadataList(Index).Index + CumOffset + MetadataList(Index).Length + OffsetList(Index) - 1
-                        If CachedData.IslamData.ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
+                        If CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
                     Next
                     'ApplyColorRules(Strings(Strings.Count - 1).Text)
                 End If
@@ -839,11 +843,11 @@ Public Class Arabic
             If Not MetadataList(Index).Children Is Nothing Then
                 For SubCount As Integer = MetadataList(Index).Children.Length - 1 To 0 Step -1
                     Dim RecCumOffset As Integer = 0
-                    For Count = 0 To CachedData.IslamData.ColorRules.Length - 1
-                        Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRules(Count).Match.Split("|"c), Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Children(SubCount).Type.Split("|"c), Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
+                    For Count = 0 To CachedData.IslamData.ColorRuleSets(1).ColorRules.Length - 1
+                        Dim Match As Integer = Array.FindIndex(CachedData.IslamData.ColorRuleSets(1).ColorRules(Count).Match, Function(Str As String) Array.IndexOf(New List(Of String)(Linq.Enumerable.Select(MetadataList(Index).Children(SubCount).Type, Function(S As String) System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)", String.Empty))).ToArray(), Str) <> -1)
                         If Match <> -1 Then
                             For MetaCount As Integer = MetadataList(Index).Index + CumOffset + MetadataList(Index).Children(SubCount).Index + RecCumOffset To MetadataList(Index).Index + CumOffset + MetadataList(Index).Children(SubCount).Index + RecCumOffset + MetadataList(Index).Children(SubCount).Length + RecOffsetList(Index)(SubCount) - 1
-                                If CachedData.IslamData.ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
+                                If CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(MetaCount)).Color = &HFF000000 Then RuleIndexes(MetaCount) = Count
                             Next
                             'ApplyColorRules(Strings(Strings.Count - 1).Text)
                         End If
@@ -864,13 +868,13 @@ Public Class Arabic
             If RuleIndexes(Count) = -1 Or Count <> RuleIndexes.Count - 1 AndAlso RuleIndexes(Count + 1) = -1 Then Continue For
             If Count = RuleIndexes.Count - 1 Or (ArabicString(Count) = " "c And BreakWords) Then
                 If Count <> 0 Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
                     WordRenderers.Add(Renderers.ToArray())
                     Renderers = New List(Of RenderArray.RenderText)
                 End If
                 Base = Count + 1
             ElseIf RuleIndexes(Count) <> RuleIndexes(Count + 1) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRules.Length).Color})
+                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
                 Base = Count + 1
             End If
         Next
@@ -1563,30 +1567,62 @@ Public Class IslamData
             End Get
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("arabicgroups")> _
-    <Xml.Serialization.XmlArrayItem("group")> _
+    <Xml.Serialization.XmlArray("arabicgroups")>
+    <Xml.Serialization.XmlArrayItem("group")>
     Public ArabicGroups() As ArabicGroup
-    Structure ColorRule
-        <Xml.Serialization.XmlAttribute("name")> _
-        Public Name As String
-        <Xml.Serialization.XmlAttribute("match")> _
-        Public Match As String
-        <Xml.Serialization.XmlAttribute("color")> _
-        Public _Color As String
-        ReadOnly Property Color As Integer
-            Get
-                If _Color.Contains(",") Then
-                    Dim RGB As Byte() = New List(Of Byte)(Linq.Enumerable.Select(_Color.Split(","c), Function(Str As String) CByte(Str))).ToArray()
-                    Return Utility.MakeArgb(&HFF, RGB(0), RGB(1), RGB(2))
-                Else
-                    Return Utility.ColorFromName(_Color)
-                End If
-            End Get
-        End Property
+    Structure ColorRuleCategory
+        Structure ColorRule
+            <Xml.Serialization.XmlAttribute("name")>
+            Public Name As String
+            <Xml.Serialization.XmlAttribute("match")>
+            Public _Match As String
+            ReadOnly Property Match As String()
+                Get
+                    Return _Match.Split("|"c)
+                End Get
+            End Property
+            <Xml.Serialization.XmlAttribute("color")>
+            Public _Color As String
+            ReadOnly Property Color As Integer
+                Get
+                    If _Color.Contains(",") Then
+                        Dim RGB As Byte() = New List(Of Byte)(Linq.Enumerable.Select(_Color.Split(","c), Function(Str As String) CByte(Str))).ToArray()
+                        Return Utility.MakeArgb(&HFF, RGB(0), RGB(1), RGB(2))
+                    Else
+                        Return Utility.ColorFromName(_Color)
+                    End If
+                End Get
+            End Property
+            <Xml.Serialization.XmlAttribute("evaluator")>
+            Public _Evaluator As String
+            Public ReadOnly Property Evaluator As String
+                Get
+                    Return CachedData.TranslateRegEx(_Evaluator, False)
+                End Get
+            End Property
+            <Xml.Serialization.XmlAttribute("rulefunc")>
+            Public _RuleFunc As String
+            ReadOnly Property MetaRuleFunc As Arabic.MetaRuleFuncs
+                Get
+                    If _RuleFunc = "eLearningMode" Then Return Arabic.MetaRuleFuncs.eLearningMode
+                    If _RuleFunc = "eDivideTanween" Then Return Arabic.MetaRuleFuncs.eDivideTanween
+                    If _RuleFunc = "eSpellLetter" Then Return Arabic.MetaRuleFuncs.eSpellLetter
+                    If _RuleFunc = "eSpellLongLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongLetter
+                    If _RuleFunc = "eSpellLongMergedLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongMergedLetter
+                    If _RuleFunc = "eSpellNumber" Then Return Arabic.MetaRuleFuncs.eSpellNumber
+                    If _RuleFunc = "eUpperCase" Then Return Arabic.MetaRuleFuncs.eUpperCase
+                    If _RuleFunc = "eObligatory" Then Return Arabic.MetaRuleFuncs.eObligatory
+                    'If _RuleFunc = "eNone" Then
+                    Return Arabic.MetaRuleFuncs.eNone
+                End Get
+            End Property
+        End Structure
+        <Xml.Serialization.XmlElement("colorrule")>
+        Public ColorRules() As ColorRule
     End Structure
-    <Xml.Serialization.XmlArray("colorrules")> _
-    <Xml.Serialization.XmlArrayItem("colorrule")> _
-    Public ColorRules() As ColorRule
+    <Xml.Serialization.XmlArray("colorrulesets")>
+                        <Xml.Serialization.XmlArrayItem("colorruleset")>
+    Public ColorRuleSets() As ColorRuleCategory
 
     Structure RuleTranslationCategory
         Structure RuleTranslation
@@ -1594,6 +1630,7 @@ Public Class IslamData
             Public Name As String
             <Xml.Serialization.XmlAttribute("match")> _
             Public Match As String
+
             <Xml.Serialization.XmlAttribute("evaluator")> _
             Public Evaluator As String
             <Xml.Serialization.XmlAttribute("negativematch")> _
@@ -1609,20 +1646,6 @@ Public Class IslamData
                     If _RuleFunc = "eResolveAmbiguity" Then Return Arabic.RuleFuncs.eResolveAmbiguity
                     'If _RuleFunc = "eNone" Then
                     Return Arabic.RuleFuncs.eNone
-                End Get
-            End Property
-            ReadOnly Property MetaRuleFunc As Arabic.MetaRuleFuncs
-                Get
-                    If _RuleFunc = "eLearningMode" Then Return Arabic.MetaRuleFuncs.eLearningMode
-                    If _RuleFunc = "eDivideTanween" Then Return Arabic.MetaRuleFuncs.eDivideTanween
-                    If _RuleFunc = "eSpellLetter" Then Return Arabic.MetaRuleFuncs.eSpellLetter
-                    If _RuleFunc = "eSpellLongLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongLetter
-                    If _RuleFunc = "eSpellLongMergedLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongMergedLetter
-                    If _RuleFunc = "eSpellNumber" Then Return Arabic.MetaRuleFuncs.eSpellNumber
-                    If _RuleFunc = "eUpperCase" Then Return Arabic.MetaRuleFuncs.eUpperCase
-                    If _RuleFunc = "eObligatory" Then Return Arabic.MetaRuleFuncs.eObligatory
-                    'If _RuleFunc = "eNone" Then
-                    Return Arabic.MetaRuleFuncs.eNone
                 End Get
             End Property
         End Structure
@@ -1665,10 +1688,10 @@ Public Class IslamData
             Public Match As String
             <Xml.Serialization.XmlAttribute("evaluator")>
             Public _Evaluator As String
-            Public _SplitEvaluator As String()
-            ReadOnly Property Evaluator As String()
+            Public _SplitEvaluator As String()()
+            ReadOnly Property Evaluator As String()()
                 Get
-                    If _SplitEvaluator Is Nothing Then _SplitEvaluator = _Evaluator.Split(";"c)
+                    If _SplitEvaluator Is Nothing Then _SplitEvaluator = New List(Of String())(Linq.Enumerable.Select(_Evaluator.Split(";"c), Function(Str) Str.Split("|"c))).ToArray()
                     Return _SplitEvaluator
                 End Get
             End Property
@@ -1678,7 +1701,7 @@ Public Class IslamData
                 Dim StopIndexes As New List(Of Integer)
                 Dim NotStopIndexes As New List(Of Integer)
                 For Count = 0 To Evaluator.Length - 1
-                    Dim EvaluatorParts As String() = Evaluator(Count).Split("|"c)
+                    Dim EvaluatorParts As String() = Evaluator(Count)
                     If Array.IndexOf(EvaluatorParts, "optionalstop") <> -1 Then StopIndexes.Add(Count)
                     If Array.IndexOf(EvaluatorParts, "optionalnotstop") <> -1 Then NotStopIndexes.Add(Count)
                 Next
@@ -4864,14 +4887,14 @@ Public Class TanzilReader
             End If
             Matches = System.Text.RegularExpressions.Regex.Matches(Text, If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Match, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Match))
             Dim SieveCount As Integer = 0
-            Dim MetaRules As String() = If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Evaluator, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator)
+            Dim MetaRules As String()() = If(bVerSet, CachedData.RuleMetas("Verification")(MetaCount).Evaluator, CachedData.RuleMetas("UthmaniQuran")(MetaCount).Evaluator)
             Dim CoverageMap(MetaRules.Length - 1) As Boolean
             For Count = 0 To Matches.Count - 1
                 If Count = 0 AndAlso Matches(Count).Groups.Count <> MetaRules.Length + 1 Then Debug.WriteLine("Discrepency in metadata:" + CStr(MainCount + 1) + ":" + CStr(MetaRules.Length) + ":Got:" + CStr(Matches(Count).Groups.Count - 1))
                 Dim bSieve As Boolean = False
                 For SubCount = 0 To MetaRules.Length - 1
                     If Matches(Count).Groups(SubCount + 1).Success Then CoverageMap(SubCount) = True
-                    If Array.IndexOf(MetaRules(SubCount).Split("|"c), If(bAssumeContinue, "optionalstop", "optionalnotstop")) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
+                    If Array.IndexOf(MetaRules(SubCount), If(bAssumeContinue, "optionalstop", "optionalnotstop")) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
                         'check continuity in prior patterns
                         Dim CheckLen As Integer = 0
                         For CheckCount = 1 To SubCount
@@ -4884,7 +4907,7 @@ Public Class TanzilReader
                 Next
                 If Not bSieve Then
                     For SubCount = 0 To MetaRules.Length - 1
-                        If Array.IndexOf(MatchMetadata, MetaRules(SubCount).Split("|"c)(0)) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
+                        If Array.IndexOf(MatchMetadata, MetaRules(SubCount)(0)) <> -1 And Matches(Count).Groups(SubCount + 1).Success Then
                             'If Verify.Length <> 0 And Not System.Text.RegularExpressions.Regex.Match(Matches(Count).Groups(SubCount + 1).Value, Verify(MainCount - 1)).Success Then
                             '    Debug.WriteLine("Erroneous Match: " + Check(MainCount, 0) + " " + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Matches(Count).Groups(SubCount + 1).Index - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
                             '    'Debug.WriteLine(TextPositionToMorphology(Text, Matches(Count).Groups(SubCount + 1).Index))
@@ -4906,7 +4929,7 @@ Public Class TanzilReader
             Next
             Debug.WriteLine(CStr(SieveCount))
             For Count = 0 To CoverageMap.Length - 1
-                If Not CoverageMap(Count) Then Debug.WriteLine("Unused Metadata: " + CStr(Count) + " " + MetaRules(Count))
+                If Not CoverageMap(Count) Then Debug.WriteLine("Unused Metadata: " + CStr(Count) + " " + String.Join("|"c, MetaRules(Count)))
             Next
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
@@ -5103,7 +5126,7 @@ Public Class TanzilReader
                 Dim IndexToVerse As Integer()() = Nothing
                 Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, GetMetaRuleSet("UthmaniQuran").Rules(Index).Match)
-                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, GetMetaRuleSet("UthmaniQuran").Rules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(GetMetaRuleSet("UthmaniQuran").Rules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(New List(Of String)(Linq.Enumerable.Select(GetMetaRuleSet("UthmaniQuran").Rules(Index).Evaluator, Function(Str As String) DocBuilder.GetRegExText(Str))).ToArray(), False))})
+                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, GetMetaRuleSet("UthmaniQuran").Rules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(GetMetaRuleSet("UthmaniQuran").Rules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(New List(Of String)(Linq.Enumerable.Select(GetMetaRuleSet("UthmaniQuran").Rules(Index).Evaluator, Function(Str As String()) DocBuilder.GetRegExText(String.Join("|"c, Str)))).ToArray(), False))})
                 For SubCount = 0 To Matches.Count - 1
                     Dim StartWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index, New QuranWordIndexComparer)
                     If StartWordIndex < 0 Then StartWordIndex = (StartWordIndex Xor -1) - 1

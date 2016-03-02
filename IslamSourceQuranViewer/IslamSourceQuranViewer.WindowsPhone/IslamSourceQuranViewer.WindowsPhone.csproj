@@ -152,10 +152,7 @@
       <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\zh.*">
-      <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
-    </Content>
-    <Content Include="..\..\metadata\zh.*">
-      <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
+      <Link>metadata\zh\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\fr.*">
       <Link>metadata\fr\%(FileName)%(Extension)</Link>

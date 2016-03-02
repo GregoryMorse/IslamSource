@@ -6422,48 +6422,6 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
       <rule name="LettersTanweensVowelsHamza" match="({ArabicLetters}|{ArabicTanweens}|{ArabicFathaDammaKasra}|{ArabicLetterHamza})" evaluator="$&amp;" rulefunc="eLookupLetter"></rule>
       <rule name="Punctuation" match="({ArabicPunctuationSymbols})" evaluator="$&amp;" rulefunc="eLookupLetter"></rule>
 		</ruleset>
-		<ruleset name="ColoringSpelledOutRules">
-			<rule name="LearningMode" match="learningmode" evaluator="{0}" rulefunc="eLearningMode"></rule>
-      <rule name="DivideTanween" match="dividetanween" evaluator="{0}" rulefunc="eDivideTanween"></rule>
-      <rule name="LeftParenthesis" match="helperlparen" evaluator="("></rule>
-      <rule name="RightParenthesis" match="helperrparen" evaluator=")"></rule>
-      <rule name="LeftBracket" match="helperlbracket" evaluator="["></rule>
-      <rule name="RightBracket" match="helperrbracket" evaluator="]"></rule>
-      <rule name="HelperSlash" match="helperslash" evaluator="/"></rule>
-      <rule name="HelperHeh" match="helperheh" evaluator="{ArabicLetterHeh}"></rule>
-      <rule name="HelperTeh" match="helperteh" evaluator="{ArabicLetterTeh}"></rule>
-      <rule name="LetterSpelling" match="spellletter" evaluator="{0}" rulefunc="eSpellLetter"></rule>
-      <rule name="LetterSpelling" match="spelllongletter" evaluator="{0}" rulefunc="eSpellLongLetter"></rule>
-      <rule name="LetterSpelling" match="spelllongmergedletter" evaluator="{0}" rulefunc="eSpellLongMergedLetter"></rule>
-      <rule name="NumberSpelling" match="spellnumber" evaluator="{0}" rulefunc="eSpellNumber"></rule>
-      <rule name="HelperPrefix" match="helperprefix" evaluator="{0}-"></rule>
-      <rule name="HelperFathatan" match="helperfathatan" evaluator="{ArabicFathatan}"></rule>
-      <rule name="HelperFatha" match="helperfatha" evaluator="{ArabicFatha}"></rule>
-      <rule name="HelperKasra" match="helperkasra" evaluator="{ArabicKasra}"></rule>
-      <rule name="HelperDamma" match="helperdamma" evaluator="{ArabicDamma}"></rule>
-      <rule name="HelperAlef" match="helperalef" evaluator="{ArabicLetterAlef}"></rule>
-      <rule name="HelperWaw" match="helperwaw" evaluator="{ArabicLetterWaw}"></rule>
-      <rule name="HelperYeh" match="helperyeh" evaluator="{ArabicLetterYeh}"></rule>
-      <rule name="HelperMeem" match="helpermeem" evaluator="{ArabicLetterMeem}"></rule>
-      <rule name="HelperNoon" match="helpernoon" evaluator="{ArabicLetterNoon}"></rule>
-      <rule name="HelperSeen" match="helperseen" evaluator="{ArabicLetterSeen}"></rule>
-      <rule name="HelperAin" match="helperain" evaluator="{ArabicLetterAin}"></rule>
-      <rule name="HelperHamza" match="helperhamza|hamza" evaluator="{ArabicLetterHamza}"></rule>
-      <rule name="HelperHamza" match="helperyehhamza" evaluator="{ArabicLetterHamza}"></rule>
-      <rule name="HelperHamza" match="helperwawhamza" evaluator="{ArabicLetterHamza}"></rule>
-      <rule name="HelperHamza" match="helpertatweelhamzaabove" evaluator="{ArabicLetterHamza}"></rule>
-      <rule name="HelperMadda" match="helpermaddah" evaluator="{ArabicLetterHamza}{ArabicFatha}{ArabicLetterAlef}"></rule>
-      <rule name="Empty" match="empty|compulsorystop|startofhizb|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath" evaluator=""></rule>
-      <rule name="Normal" match="null|notyeh|notwaw|nullassimilate|nullassimilator|helpermeem|assimilator|assimilatorincomplete|dipthong|helperpunctuation" evaluator="{0}"></rule>
-      <rule name="NecessaryProlongation" match="necessaryprolong" evaluator="{0}-{0}-{0}"></rule>
-      <rule name="ObligatoryProlongation" match="obligatoryprolong" evaluator="{0}" rulefunc="eObligatory"></rule>
-      <rule name="PermissibleProlongation" match="permissibleprolong" evaluator="{0}(-{0})(-{0})"></rule>
-      <rule name="NormalProlongation" match="normalprolong" evaluator="{0}"></rule>
-      <rule name="Nasalization" match="nasalize" evaluator="{0}"></rule>
-      <rule name="Unannounced" match="assimilate|assimilateincomplete" evaluator=""></rule>
-      <rule name="EmphaticPronunciation" match="emphasis" evaluator="{0}" rulefunc="eUpperCase"></rule>
- 	   	<rule name="UnrestLetters" match="bounce" evaluator="{0}-{0}"></rule>
-    </ruleset>
 		<ruleset name="ErrorCheck">
 			<!-- <rule name="HamzaStartEndWord" match="({StartOfWord})(?={EndOfWord})" evaluator="$&amp;"></rule>
 			<rule name="HamzaStartWord" match="({StartOfWord})({ArabicLetterAlefWasla}(?:{ArabicLetterWawWithHamzaAbove}|{ArabicLetterYehWithHamzaAbove}))" evaluator="$&amp;"></rule>
@@ -6498,17 +6456,61 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 			-->
 		</ruleset>
 	</translitrules>
-	<colorrules>
-    <colorrule name="Normal" match="null|notyeh|notwaw|nullassimilator|nullassimilate|helperhamza|helperyehhamza|helperwawhamza|helpertatweelhamzaabove|helpermaddah|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath" color="Black"></colorrule>
-    <colorrule name="NecessaryProlongation" match="necessaryprolong" color="DarkRed"></colorrule>
-    <colorrule name="ObligatoryProlongation" match="obligatoryprolong" color="175,17,28"></colorrule>
-    <colorrule name="PermissibleProlongation" match="permissibleprolong" color="OrangeRed"></colorrule>
-    <colorrule name="NormalProlongation" match="normalprolong" color="213,139,24"></colorrule>
-    <colorrule name="Nasalization" match="nasalize" color="Green"></colorrule>
-    <colorrule name="Unannounced" match="empty|spellnumber|assimilate|assimilateincomplete|helperpunctuation" color="Gray"></colorrule>
-    <colorrule name="EmphaticPronunciation" match="emphasis" color="DarkBlue"></colorrule>
-    <colorrule name="UnrestLetters" match="bounce" color="Blue"></colorrule>
-	</colorrules>
+	<colorrulesets>
+		<colorruleset name="ColoringSpelledOutRules">
+			<colorrule name="LearningMode" match="learningmode" evaluator="{0}" rulefunc="eLearningMode"></colorrule>
+	    <colorrule name="DivideTanween" match="dividetanween" evaluator="{0}" rulefunc="eDivideTanween"></colorrule>
+	    <colorrule name="LeftParenthesis" match="helperlparen" evaluator="("></colorrule>
+	    <colorrule name="RightParenthesis" match="helperrparen" evaluator=")"></colorrule>
+	    <colorrule name="LeftBracket" match="helperlbracket" evaluator="["></colorrule>
+	    <colorrule name="RightBracket" match="helperrbracket" evaluator="]"></colorrule>
+	    <colorrule name="HelperSlash" match="helperslash" evaluator="/"></colorrule>
+	    <colorrule name="HelperHeh" match="helperheh" evaluator="{ArabicLetterHeh}"></colorrule>
+	    <colorrule name="HelperTeh" match="helperteh" evaluator="{ArabicLetterTeh}"></colorrule>
+	    <colorrule name="LetterSpelling" match="spellletter" evaluator="{0}" rulefunc="eSpellLetter"></colorrule>
+	    <colorrule name="LetterSpelling" match="spelllongletter" evaluator="{0}" rulefunc="eSpellLongLetter"></colorrule>
+	    <colorrule name="LetterSpelling" match="spelllongmergedletter" evaluator="{0}" rulefunc="eSpellLongMergedLetter"></colorrule>
+	    <colorrule name="NumberSpelling" match="spellnumber" evaluator="{0}" rulefunc="eSpellNumber"></colorrule>
+	    <colorrule name="HelperPrefix" match="helperprefix" evaluator="{0}-"></colorrule>
+	    <colorrule name="HelperFathatan" match="helperfathatan" evaluator="{ArabicFathatan}"></colorrule>
+	    <colorrule name="HelperFatha" match="helperfatha" evaluator="{ArabicFatha}"></colorrule>
+	    <colorrule name="HelperKasra" match="helperkasra" evaluator="{ArabicKasra}"></colorrule>
+	    <colorrule name="HelperDamma" match="helperdamma" evaluator="{ArabicDamma}"></colorrule>
+	    <colorrule name="HelperAlef" match="helperalef" evaluator="{ArabicLetterAlef}"></colorrule>
+	    <colorrule name="HelperWaw" match="helperwaw" evaluator="{ArabicLetterWaw}"></colorrule>
+	    <colorrule name="HelperYeh" match="helperyeh" evaluator="{ArabicLetterYeh}"></colorrule>
+	    <colorrule name="HelperMeem" match="helpermeem" evaluator="{ArabicLetterMeem}"></colorrule>
+	    <colorrule name="HelperNoon" match="helpernoon" evaluator="{ArabicLetterNoon}"></colorrule>
+	    <colorrule name="HelperSeen" match="helperseen" evaluator="{ArabicLetterSeen}"></colorrule>
+	    <colorrule name="HelperAin" match="helperain" evaluator="{ArabicLetterAin}"></colorrule>
+	    <colorrule name="HelperHamza" match="helperhamza|hamza" evaluator="{ArabicLetterHamza}"></colorrule>
+	    <colorrule name="HelperHamza" match="helperyehhamza" evaluator="{ArabicLetterHamza}"></colorrule>
+	    <colorrule name="HelperHamza" match="helperwawhamza" evaluator="{ArabicLetterHamza}"></colorrule>
+	    <colorrule name="HelperHamza" match="helpertatweelhamzaabove" evaluator="{ArabicLetterHamza}"></colorrule>
+	    <colorrule name="HelperMadda" match="helpermaddah" evaluator="{ArabicLetterHamza}{ArabicFatha}{ArabicLetterAlef}"></colorrule>
+	    <colorrule name="Empty" match="empty|compulsorystop|startofhizb|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath" evaluator=""></colorrule>
+	    <colorrule name="Normal" match="null|notyeh|notwaw|nullassimilate|nullassimilator|helpermeem|assimilator|assimilatorincomplete|dipthong|helperpunctuation" evaluator="{0}"></colorrule>
+	    <colorrule name="NecessaryProlongation" match="necessaryprolong" evaluator="{0}-{0}-{0}"></colorrule>
+	    <colorrule name="ObligatoryProlongation" match="obligatoryprolong" evaluator="{0}" rulefunc="eObligatory"></colorrule>
+	    <colorrule name="PermissibleProlongation" match="permissibleprolong" evaluator="{0}(-{0})(-{0})"></colorrule>
+	    <colorrule name="NormalProlongation" match="normalprolong" evaluator="{0}"></colorrule>
+	    <colorrule name="Nasalization" match="nasalize" evaluator="{0}"></colorrule>
+	    <colorrule name="Unannounced" match="assimilate|assimilateincomplete" evaluator=""></colorrule>
+	    <colorrule name="EmphaticPronunciation" match="emphasis" evaluator="{0}" rulefunc="eUpperCase"></colorrule>
+	   	<colorrule name="UnrestLetters" match="bounce" evaluator="{0}-{0}"></colorrule>
+		</colorruleset>
+		<colorruleset name="ColoringRules">
+	    <colorrule name="Normal" match="null|notyeh|notwaw|nullassimilator|nullassimilate|helperhamza|helperyehhamza|helperwawhamza|helpertatweelhamzaabove|helpermaddah|helperfatha|helperkasra|helperdamma|helpermeem|assimilator|assimilatorincomplete|dipthong|compulsorystop|endofversestop|prostration|canstoporcontinue|prohibitedtostop|stopatfirstnotsecond|stopatsecondnotfirst|bettertostopbutpermissibletocontinue|bettertocontinuebutpermissibletostop|subtlestopwithoutbreath" color="Black"></colorrule>
+	    <colorrule name="NecessaryProlongation" match="necessaryprolong" color="DarkRed"></colorrule>
+	    <colorrule name="ObligatoryProlongation" match="obligatoryprolong" color="175,17,28"></colorrule>
+	    <colorrule name="PermissibleProlongation" match="permissibleprolong" color="OrangeRed"></colorrule>
+	    <colorrule name="NormalProlongation" match="normalprolong" color="213,139,24"></colorrule>
+	    <colorrule name="Nasalization" match="nasalize" color="Green"></colorrule>
+	    <colorrule name="Unannounced" match="empty|spellnumber|assimilate|assimilateincomplete|helperpunctuation" color="Gray"></colorrule>
+	    <colorrule name="EmphaticPronunciation" match="emphasis" color="DarkBlue"></colorrule>
+	    <colorrule name="UnrestLetters" match="bounce" color="Blue"></colorrule>
+		</colorruleset>
+	</colorrulesets>
 	<metarules>
 		<metaruleset name="Verification">
 			<metarule name="AlefMaddahAbove" match="((?:{StartOfWord})(?:{ArabicLetterLam}{ArabicKasra})?|(?:{ArabicLetterReh}|{ArabicLetterLam}|{ArabicLetterWaw}){ArabicShadda}?{ArabicFatha})({ArabicLetterAlefWithMaddaAbove})()()" evaluator=";helperhamza;helperfatha;helperalef"></metarule>

@@ -134,10 +134,7 @@
       <Link>Resources\raw-zh-Hant\%(FileName)%(Extension)</Link>
     </AndroidResource>
     <AndroidResource Include="..\..\..\metadata\zh.*">
-      <Link>Resources\raw-zh-Hans\%(FileName)%(Extension)</Link>
-    </AndroidResource>
-    <AndroidResource Include="..\..\..\metadata\zh.*">
-      <Link>Resources\raw-zh-Hant\%(FileName)%(Extension)</Link>
+      <Link>Resources\raw-zh\%(FileName)%(Extension)</Link>
     </AndroidResource>
     <AndroidResource Include="..\..\..\metadata\fr.*">
       <Link>Resources\raw-fr\%(FileName)%(Extension)</Link>
