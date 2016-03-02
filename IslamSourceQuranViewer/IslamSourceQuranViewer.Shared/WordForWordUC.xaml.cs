@@ -18,15 +18,15 @@ using WinRTXamlToolkit.Controls;
 
 namespace IslamSourceQuranViewer
 {
-    public class MyWrapPanel : WrapPanel
-    {
-        protected override Size MeasureOverride(Size constraint)
-        {
-            Size size = base.MeasureOverride(constraint);
-            size.Width += 1;
-            return size;
-        }
-    }
+    //public class MyWrapPanel : WrapPanel
+    //{
+    //    protected override Size MeasureOverride(Size constraint)
+    //    {
+    //        Size size = base.MeasureOverride(constraint);
+    //        size.Width += 1;
+    //        return size;
+    //    }
+    //}
     public sealed partial class WordForWordUC : Page
     {
         public WordForWordUC()
@@ -215,7 +215,7 @@ namespace IslamSourceQuranViewer
     }
     public class MyRenderModel : INotifyPropertyChanged
     {
-        public MyRenderModel(IEnumerable<MyRenderItem> NewRenderItems)
+        public MyRenderModel(List<MyRenderItem> NewRenderItems)
         {
             RenderItems = NewRenderItems;
             MaxWidth = CalculateWidth();
@@ -227,7 +227,7 @@ namespace IslamSourceQuranViewer
             return RenderItems.Select((Item) => Item.MaxWidth).Sum();
         }
         private List<MyRenderItem> _RenderItems;
-        public IEnumerable<MyRenderItem> RenderItems { get { return _RenderItems; } set { _RenderItems = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderItems")); } }
+        public List<MyRenderItem> RenderItems { get { return _RenderItems; } set { _RenderItems = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderItems")); } }
         #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -238,7 +238,7 @@ namespace IslamSourceQuranViewer
     {
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend))) } } : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr)) }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight) : null)).Where(Arr => Arr != null);
+            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)).ToList()) } } : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr)) }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight) : null)).Where(Arr => Arr != null).ToList();
             MaxWidth = CalculateWidth();
         }
         public double MaxWidth { get; set; }
@@ -252,7 +252,7 @@ namespace IslamSourceQuranViewer
             _Items.FirstOrDefault((Item) => { if (Item.GetType() != typeof(MyChildRenderItem)) { ((VirtualizingWrapPanelAdapter)Item).RegroupRenderModels(maxWidth); } return false; });
         }
         private List<object> _Items;
-        public IEnumerable<object> Items { get { return _Items; } set { _Items = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Items")); } }
+        public List<object> Items { get { return _Items; } set { _Items = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Items")); } }
         #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -273,6 +273,7 @@ namespace IslamSourceQuranViewer
         public List<MyRenderModel> RenderModels {
             get
             {
+                if (_RenderModels == null) { _RenderModels = new List<MyRenderModel>(); }
                 return _RenderModels;
             }
             set
@@ -294,7 +295,7 @@ namespace IslamSourceQuranViewer
             value.FirstOrDefault((Item) => {
                 Item.RegroupRenderModels(maxWidth); double itemWidth = Math.Min(Item.MaxWidth, maxWidth); if (width + itemWidth > maxWidth) { width = itemWidth; groupIndex++; } else { width += itemWidth; }
                 GroupIndexes.Add(new int[] { groupIndex, GroupIndexes.Count }); return false; });
-            return new List<MyRenderModel>(GroupIndexes.GroupBy((Item) => Item[0], (Item) => value.ElementAt(Item[1])).Select((Item) => new MyRenderModel(Item)));
+            return GroupIndexes.GroupBy((Item) => Item[0], (Item) => value.ElementAt(Item[1])).Select((Item) => new MyRenderModel(Item.ToList())).ToList();
         }
 #region Implementation of INotifyPropertyChanged
 
