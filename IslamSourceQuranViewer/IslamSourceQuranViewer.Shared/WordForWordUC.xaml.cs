@@ -131,6 +131,50 @@ namespace IslamSourceQuranViewer
             this.ViewModel.RegroupRenderModels(UIChanger.MaxWidth);
         }
     }
+    public class WidthLimiterConverter : DependencyObject, IValueConverter
+    {
+        //public static double GetTopLevelMaxValue(DependencyObject obj)
+        //{
+        //    return (double)obj.GetValue(TopLevelMaxValueProperty);
+        //}
+
+        //public static void SetTopLevelMaxValue(DependencyObject obj, double value)
+        //{
+        //    obj.SetValue(TopLevelMaxValueProperty, value);
+        //}
+
+        //public static readonly DependencyProperty TopLevelMaxValueProperty =
+        //    DependencyProperty.RegisterAttached("TopLevelMaxValue",
+        //                                typeof(double),
+        //                                typeof(WidthLimiterConverter),
+        //                                new PropertyMetadata(null, TopLevelMaxValueChanged));
+
+        public double TopLevelMaxValue
+        {
+            get { return (double)GetValue(TopLevelMaxValueProperty); }
+            set { SetValue(TopLevelMaxValueProperty, value); }
+        }
+
+        public static readonly DependencyProperty TopLevelMaxValueProperty =
+            DependencyProperty.Register("TopLevelMaxValue",
+                                        typeof(double),
+                                        typeof(WidthLimiterConverter),
+                                        new PropertyMetadata(0.0));
+
+        //private static void TopLevelMaxValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    ((WidthLimiterConverter)sender).TopLevelMaxValue = (double)e.NewValue;
+        //}
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return Math.Min((double)value, TopLevelMaxValue);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public class MyUIChanger : INotifyPropertyChanged
     {
         public MyUIChanger()
