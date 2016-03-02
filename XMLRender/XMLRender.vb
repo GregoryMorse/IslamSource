@@ -1006,7 +1006,7 @@ Public Class ArabicData
     Public Shared ExplicitCategories As String() = New String() {"LRE", "LRO", "RLE", "RLO", "PDF", "LRI", "RLI", "FSI", "PDI"}
     Public Shared CausesJoining As Char() = New Char() {ArabicTatweel, ZeroWidthJoiner}
     Public Shared Function GetJoiningData() As Dictionary(Of Char, String)
-        Dim Strs As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\ArabicShaping.txt"))
+        Dim Strs As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "ArabicShaping.txt")))
         Dim Joiners As New Dictionary(Of Char, String)
         For Count = 0 To Strs.Length - 1
             If Strs(Count)(0) <> "#" Then
@@ -1030,7 +1030,7 @@ Public Class ArabicData
     Public Shared _Ranges As Dictionary(Of String, List(Of List(Of Integer)))
     Public Shared _Names As Dictionary(Of Char, String())
     Public Shared Sub GetDecompositionCombiningCatData()
-        Dim Strs As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\UnicodeData.txt"))
+        Dim Strs As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "UnicodeData.txt")))
         _CombPos = New Dictionary(Of Char, Integer)
         _UniClass = New Dictionary(Of Char, String)
         _Ranges = New Dictionary(Of String, List(Of List(Of Integer)))

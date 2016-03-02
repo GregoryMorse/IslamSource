@@ -11,6 +11,7 @@ namespace IslamSourceQuranViewer.Xam
 	{
 		public App ()
 		{
+            AppSettings.InitDefaultSettings();
             MainPage = new IslamSourceQuranViewer.Xam.MainPage();
 			// The root page of your application
 			//MainPage = new ContentPage {

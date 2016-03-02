@@ -921,7 +921,7 @@ Public Class Arabic
         Return Strings
     End Function
     Public Shared Function DisplayDict() As Array()
-        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\HansWeir.txt"))
+        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "HansWeir.txt")))
         Dim Count As Integer
         Dim Words As New List(Of String())
         Words.Add(New String() {})
@@ -2682,7 +2682,7 @@ Public Class CachedData
     Shared _TotalUniqueWordsInStations As Integer = 0
     Shared _TotalWordsInStations As Integer = 0
     Public Shared Sub GetMorphologicalData()
-        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\quranic-corpus-morphology-0.4.txt"))
+        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
         For Count As Integer = 0 To Lines.Length - 1
             If Lines(Count).Length <> 0 AndAlso Lines(Count).Chars(0) <> "#" Then
                 'LOCATION	FORM	TAG	FEATURES
@@ -2920,7 +2920,7 @@ Public Class CachedData
     Public Shared ReadOnly Property IslamData As IslamData
         Get
             If _ObjIslamData Is Nothing Then
-                Dim fs As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\islaminfo.xml"))
+                Dim fs As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "islaminfo.xml")))
                 Dim xs As Xml.Serialization.XmlSerializer = New Xml.Serialization.XmlSerializer(GetType(IslamData))
                 _ObjIslamData = CType(xs.Deserialize(fs), IslamData)
                 fs.Dispose()
@@ -2931,7 +2931,7 @@ Public Class CachedData
     Public Shared ReadOnly Property XMLDocMain As Xml.Linq.XDocument
         Get
             If _XMLDocMain Is Nothing Then
-                Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + TanzilReader.QuranTextNames(0) + ".xml"))
+                Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", TanzilReader.QuranTextNames(0) + ".xml")))
                 _XMLDocMain = Xml.Linq.XDocument.Load(Stream)
                 Stream.Dispose()
             End If
@@ -2941,7 +2941,7 @@ Public Class CachedData
     Public Shared ReadOnly Property XMLDocInfo As Xml.Linq.XDocument
         Get
             If _XMLDocInfo Is Nothing Then
-                Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\quran-data.xml"))
+                Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quran-data.xml")))
                 _XMLDocInfo = Xml.Linq.XDocument.Load(Stream)
                 Stream.Dispose()
             End If
@@ -2954,7 +2954,7 @@ Public Class CachedData
             If _XMLDocInfos Is Nothing Then
                 _XMLDocInfos = New Collections.Generic.List(Of Xml.Linq.XDocument)
                 For Count = 0 To CachedData.IslamData.Collections.Length - 1
-                    Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + CachedData.IslamData.Collections(Count).FileName + "-data.xml"))
+                    Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", CachedData.IslamData.Collections(Count).FileName + "-data.xml")))
                     _XMLDocInfos.Add(Xml.Linq.XDocument.Load(Stream))
                     Stream.Dispose()
                 Next
@@ -3297,12 +3297,12 @@ Public Class DocBuilder
             W4WItems = New Dictionary(Of String, Dictionary(Of String, String))
         End If
         If Not W4WItems.ContainsKey(LangID) Then
-            If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath("metadata\" + LangID + ".txt")) And W4WItems.ContainsKey(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage) Then
+            If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".txt"))) And W4WItems.ContainsKey(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage) Then
                 W4WItems.Add(LangID, W4WItems(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage))
             Else
-                If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath("metadata\" + LangID + ".txt")) Then LangID = CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage
+                If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".txt"))) Then LangID = CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage
                 W4WItems.Add(LangID, New Dictionary(Of String, String))
-                For Each Line As String In Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + LangID + ".txt"))
+                For Each Line As String In Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".txt")))
                     W4WItems(LangID).Add(Line.Substring(0, Line.IndexOf("="c)), Line.Substring(Line.IndexOf("="c) + 1))
                 Next
             End If
@@ -3647,7 +3647,7 @@ Public Class TanzilReader
             Total = 0
             All = GetQuranWordTotalNumber()
             Array.Sort(FreqArray, Function(Key As String, NextKey As String) Dict.Item(NextKey).Count.CompareTo(Dict.Item(Key).Count))
-            Dim W4WLines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).QuranW4WFile + ".txt"))
+            Dim W4WLines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).QuranW4WFile + ".txt")))
             For Count As Integer = 0 To FreqArray.Length - 1
                 Dim TranslationDict As New Dictionary(Of String, List(Of Integer()))
                 For WordCount As Integer = 0 To Dict.Item(FreqArray(Count)).Count - 1
@@ -4493,9 +4493,9 @@ Public Class TanzilReader
         Dim Doc As Xml.Linq.XDocument
         Dim Stream As IO.Stream
         If ScriptType = QuranScripts.Uthmani Then
-            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
+            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(BaseText) + ".xml")))
         Else
-            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml"))
+            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(BaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")))
         End If
         Doc = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
@@ -4517,14 +4517,14 @@ Public Class TanzilReader
     End Function
     Public Shared Sub CompareQuranFormats(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
         Dim Doc As Xml.Linq.XDocument
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(BaseText) + ".xml")))
         Doc = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim TargetDoc As Xml.Linq.XDocument
         If BaseText = TargetBaseText Then
-            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml"))
+            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")))
         Else
-            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml"))
+            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(TargetBaseText) + "-" + QuranFileNames(ScriptType) + If(Presentation <> ArabicPresentation.None, "-" + PresentationCacheNames(Presentation), String.Empty) + ".xml")))
         End If
         TargetDoc = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
@@ -4576,9 +4576,9 @@ Public Class TanzilReader
         Dim Doc As Xml.Linq.XDocument
         Dim Stream As IO.Stream
         If SrcScriptType = QuranScripts.Uthmani Then
-            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + QuranTextNames(BaseText) + ".xml"))
+            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(BaseText) + ".xml")))
         Else
-            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("IslamMetadata\quran-" + QuranFileNames(SrcScriptType) + ".xml"))
+            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("IslamMetadata", "quran-" + QuranFileNames(SrcScriptType) + ".xml")))
         End If
         Doc = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
@@ -4779,7 +4779,7 @@ Public Class TanzilReader
         Dim Verse As Integer = Integer.Parse(Arabic.TransliterateToScheme(System.Text.RegularExpressions.Regex.Match(Text.Substring(WordPos), ArabicData.ArabicEndOfAyah + "(\d{1,3})").Groups(1).Value, ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
         If Verse = 1 Then Chapter += 1
         Dim Word As Integer = System.Text.RegularExpressions.Regex.Matches(Text.Substring(0, WordPos).Substring(Text.Substring(0, WordPos).LastIndexOf(ArabicData.ArabicEndOfAyah) + 1), "(\s.)?\s").Count
-        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\quranic-corpus-morphology-0.4.txt"))
+        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
         TextPositionToMorphology = String.Empty
         For Count As Integer = 0 To Lines.Length - 1
             If Lines(Count).Length <> 0 AndAlso Lines(Count).Chars(0) <> "#" Then
@@ -5205,8 +5205,8 @@ Public Class TanzilReader
         Dim Text As String = String.Empty
         Dim Node As Xml.Linq.XAttribute
         Dim Renderer As New RenderArray(String.Empty)
-        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + GetTranslationFileName(Translation)))
-        Dim W4WLines As String() = If(W4W, Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).QuranW4WFile + ".txt")), Nothing)
+        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", GetTranslationFileName(Translation))))
+        Dim W4WLines As String() = If(W4W, Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).QuranW4WFile + ".txt"))), Nothing)
         If Not QuranText Is Nothing Then
             For Chapter = 0 To QuranText.Count - 1
                 Dim ChapterNode As Xml.Linq.XElement = GetChapterByIndex(BaseChapter + Chapter)
@@ -5604,7 +5604,7 @@ Public Class HadithReader
     Public Shared Function GetHadithMappingText(Index As Integer, HadithTranslation As String) As Array()
         Dim XMLDocTranslate As Xml.Linq.XDocument
         If CachedData.IslamData.Collections(Index).Translations.Length = 0 Then Return New Array() {}
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, HadithTranslation) + ".xml"))
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", GetTranslationXMLFileName(Index, HadithTranslation) + ".xml")))
         XMLDocTranslate = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim Output As New List(Of Object)
@@ -5641,10 +5641,10 @@ Public Class HadithReader
             Dim XMLDocTranslate As Xml.Linq.XDocument = Nothing
             Dim Strings() As String = Nothing
             If CachedData.IslamData.Collections(Index).Translations.Length <> 0 Then
-                Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + GetTranslationXMLFileName(Index, Translation) + ".xml"))
+                Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", GetTranslationXMLFileName(Index, Translation) + ".xml")))
                 XMLDocTranslate = Xml.Linq.XDocument.Load(Stream)
                 Stream.Dispose()
-                Strings = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath("metadata\" + GetTranslationFileName(Index, Translation) + ".txt"))
+                Strings = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", GetTranslationFileName(Index, Translation) + ".txt")))
             End If
             For Hadith = 0 To HadithText.Count - 1
                 'Handle missing or excess chapter indexes
@@ -5707,7 +5707,7 @@ Public Class HadithReader
     End Function
     Public Shared Function GetHadithText(ByVal BookIndex As Integer, Collection As Integer) As Collections.Generic.List(Of Collections.Generic.List(Of Object))
         Dim XMLDocMain As Xml.Linq.XDocument
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + CachedData.IslamData.Collections(Collection).FileName + ".xml"))
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", CachedData.IslamData.Collections(Collection).FileName + ".xml")))
         XMLDocMain = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim BookNode As Xml.Linq.XElement = GetHadithTextBook(XMLDocMain, BookIndex)

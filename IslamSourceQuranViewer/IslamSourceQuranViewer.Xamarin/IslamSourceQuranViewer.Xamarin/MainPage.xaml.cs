@@ -16,7 +16,10 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
     }
     public /*async*/ Stream LoadStream(string FilePath)
     {
-        return File.Open(FilePath, FileMode.Open, FileAccess.Read);
+#if __ANDROID__
+        return ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).Assets.Open(FilePath.Trim('/'));
+#endif
+        //return File.Open(FilePath, FileMode.Open, FileAccess.Read);
     }
     public /*async*/ void SaveStream(string FilePath, Stream Stream)
     {
@@ -46,7 +49,7 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
         return Directory.Exists(Path);
     }
     public /*async*/ void CreateDirectory(string Path)
-    {
+    {        
         Directory.CreateDirectory(Path);
     }
     public /*async*/ DateTime PathGetLastWriteTimeUtc(string Path)
@@ -64,7 +67,9 @@ public class AndroidiOSSettings : XMLRender.PortableSettings
     {
         get
         {
-            return Directory.GetCurrentDirectory();
+#if __ANDROID__
+            return ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).CacheDir.Path;
+#endif
         }
     }
     public KeyValuePair<string, string[]>[] Resources
@@ -83,7 +88,7 @@ public class AndroidiOSSettings : XMLRender.PortableSettings
     }
     public string GetTemplatePath()
     {
-        return GetFilePath("metadata\\IslamSource.xml");
+        return GetFilePath("metadata/IslamSource.xml");
     }
     public string GetFilePath(string Path)
     {
@@ -105,13 +110,19 @@ namespace IslamSourceQuranViewer.Xam
 	{
 		public MainPage ()
 		{
-            this.DataContext = this;
+            this.BindingContext = this;
             this.ViewModel = new MyTabViewModel();
             UIChanger = new MyUIChanger();
             InitializeComponent();
-		}
+            ViewModel.Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
+        }
         public MyUIChanger UIChanger { get; set; }
         public MyTabViewModel ViewModel { get; set; }
+        private void sectionListBox_DoubleTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (ViewModel.ListSelectedItem == null) return;
+            //this.Frame.Navigate(typeof(WordForWordUC), new { Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index });
+        }
     }
     //public static class ListFormattedTextBehavior
     //{
@@ -210,11 +221,11 @@ namespace IslamSourceQuranViewer.Xam
             }
         }
 
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
 
     public class MyTabItem

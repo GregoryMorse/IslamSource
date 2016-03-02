@@ -317,48 +317,48 @@ namespace IslamSourceQuranViewer.Xam
         public MyUIChanger()
         {
         }
-        public double FontSize
-        {
-            get
-            {
-                return AppSettings.dFontSize;
-            }
-            set
-            {
-                AppSettings.dFontSize = value;
-                //if (_DWArabicFormat != null) _DWArabicFormat.Dispose();
-                //_DWArabicFormat = null;
-                PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
-            }
-        }
-        public string FontFamily
-        {
-            get
-            {
-                return AppSettings.strSelectedFont;
-            }
-        }
-        public double OtherFontSize
-        {
-            get
-            {
-                return AppSettings.dOtherFontSize;
-            }
-            set
-            {
-                AppSettings.dOtherFontSize = value;
-                //if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
-                //_DWNormalFormat = null;
-                PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
-            }
-        }
-        public string OtherFontFamily
-        {
-            get
-            {
-                return AppSettings.strOtherSelectedFont;
-            }
-        }
+        //public double FontSize
+        //{
+        //    get
+        //    {
+        //        return AppSettings.dFontSize;
+        //    }
+        //    set
+        //    {
+        //        AppSettings.dFontSize = value;
+        //        //if (_DWArabicFormat != null) _DWArabicFormat.Dispose();
+        //        //_DWArabicFormat = null;
+        //        PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
+        //    }
+        //}
+        //public string FontFamily
+        //{
+        //    get
+        //    {
+        //        return AppSettings.strSelectedFont;
+        //    }
+        //}
+        //public double OtherFontSize
+        //{
+        //    get
+        //    {
+        //        return AppSettings.dOtherFontSize;
+        //    }
+        //    set
+        //    {
+        //        AppSettings.dOtherFontSize = value;
+        //        //if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
+        //        //_DWNormalFormat = null;
+        //        PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
+        //    }
+        //}
+        //public string OtherFontFamily
+        //{
+        //    get
+        //    {
+        //        return AppSettings.strOtherSelectedFont;
+        //    }
+        //}
         public static void CleanupDW()
         {
             //if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
@@ -419,7 +419,7 @@ namespace IslamSourceQuranViewer.Xam
     {
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend))) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr)) }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight) : null)).Where(Arr => Arr != null);
+            //Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend))) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr)) }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight) : null)).Where(Arr => Arr != null);
             MaxWidth = CalculateWidth();
         }
         public double MaxWidth { get; set; }
@@ -616,7 +616,7 @@ namespace IslamSourceQuranViewer.Xam
     }
     public class MyChildRenderBlockItem
     {
-        public Windows.UI.Color Clr;
+        //public Windows.UI.Color Clr;
         //public SolidColorBrush Color { get { return new SolidColorBrush(Clr); } }
         public string ItemText { get; set; }
     }
