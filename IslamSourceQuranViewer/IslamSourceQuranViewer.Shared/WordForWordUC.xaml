@@ -12,6 +12,7 @@
             <Setter Property="Foreground" Value="Black"/>
         </Style>
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
+        <local:ArabicFlowConverter x:Key="ArabicFlow"/>
         <DataTemplate x:Key="WordTemplate">
             <ItemsControl ItemsSource="{Binding Mode=OneWay, Path=RenderSource}" ItemTemplate="{StaticResource WrapTemplate}">
                 <ItemsControl.ItemsPanel>
@@ -29,9 +30,8 @@
                 </Grid.RowDefinitions>
 
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding Direction}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}"
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding IsRTL, Converter={StaticResource ArabicFlow}}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}"
                         TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" Language="ar" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}">
-                        <!--<Run Text="{Binding ItemText}" Foreground="{Binding Color}"></Run>-->
                 </TextBlock>
             </Grid>
         </DataTemplate>
@@ -44,7 +44,6 @@
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
                 <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding Direction}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}"
                         TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}">
-                        <!--<Run Text="{Binding ItemText}" Foreground="{Binding Color}"></Run>-->
                 </TextBlock>
             </Grid>
         </DataTemplate>

@@ -294,7 +294,7 @@ namespace IslamSourceQuranViewer
     {
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)).ToList()) } } : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(ArrItem.Clr), XMLRender.Utility.ColorG(ArrItem.Clr), XMLRender.Utility.ColorB(ArrItem.Clr)) }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, (Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) ? FlowDirection.RightToLeft : FlowDirection.LeftToRight) : null)).Where(Arr => Arr != null).ToList();
+            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)).ToList()) } } : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = ArrItem.Clr }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) : null)).Where(Arr => Arr != null).ToList();
             MaxWidth = CalculateWidth();
         }
         public double MaxWidth { get; set; }
@@ -388,7 +388,7 @@ public static class FormattedTextBehavior
             if (textBlock != null)
             {
                 textBlock.Inlines.Clear();
-                value.FirstOrDefault((it) => { textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = it.ItemText, Foreground = it.Color }); return false; });
+                value.FirstOrDefault((it) => { textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = it.ItemText, Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, XMLRender.Utility.ColorR(it.Clr), XMLRender.Utility.ColorG(it.Clr), XMLRender.Utility.ColorB(it.Clr))) }); return false; });
             }
         }
 
@@ -825,10 +825,10 @@ public static class FormattedTextBehavior
             return Size;
         }
 
-        public MyChildRenderItem(List<MyChildRenderBlockItem> NewItemRuns, bool NewIsArabic, FlowDirection NewDirection)
+        public MyChildRenderItem(List<MyChildRenderBlockItem> NewItemRuns, bool NewIsArabic, bool NewIsRTL)
         {
+            IsRTL = NewIsRTL;
             IsArabic = NewIsArabic; //must be set before ItemRuns
-            Direction = NewDirection;
             ItemRuns = NewItemRuns;
             MaxWidth = CalculateWidth();
         }
@@ -845,7 +845,7 @@ public static class FormattedTextBehavior
                     {
                         if (value[count].ItemText.Length != 0 && pos != 0 && chpos[pos] == chpos[pos - 1])
                         {
-                            if (!XMLRender.ArabicData.IsDiacritic(value[count].ItemText.First()) && value[count - 1].Clr != Windows.UI.Colors.Black) { value[count - 1].Clr = value[count].Clr; }
+                            if (!XMLRender.ArabicData.IsDiacritic(value[count].ItemText.First()) && (value[count - 1].Clr != 0xFF000000)) { value[count - 1].Clr = value[count].Clr; }
                             if (chpos[pos] == chpos[pos + value[count].ItemText.Length - 1])
                             {
                                 pos -= value[count - 1].ItemText.Length;
@@ -896,13 +896,24 @@ public static class FormattedTextBehavior
                 _ItemRuns = value;
             }
         }
-        public FlowDirection Direction { get; set; }
         public bool IsArabic { get; set; }
+        public bool IsRTL { get; set; }
+    }
+    public class ArabicFlowConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return (bool)value ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class MyChildRenderBlockItem
     {
-        public Windows.UI.Color Clr;
-        public SolidColorBrush Color { get { return new SolidColorBrush(Clr);  } }
+        public int Clr;
         public string ItemText { get; set; }
     }
     public class MyDataTemplateSelector : DataTemplateSelector
