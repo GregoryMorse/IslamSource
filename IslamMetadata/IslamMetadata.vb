@@ -1525,12 +1525,15 @@ Public Class IslamData
     Structure ArabicCapInfo
         <Xml.Serialization.XmlAttribute("name")> _
         Public Name As String
-        <Xml.Serialization.XmlAttribute("text")> _
-        Public _Text As String
-        ReadOnly Property Text As String()
+        Public Text As String()
+        <Xml.Serialization.XmlAttribute("text")>
+        Public Property _Text As String
             Get
-                Return _Text.Split({"  "}, StringSplitOptions.None)
+                Return String.Join("  ", Text)
             End Get
+            Set(value As String)
+                Text = value.Split({"  "}, StringSplitOptions.None)
+            End Set
         End Property
     End Structure
     <Xml.Serialization.XmlArray("arabiccaptures")> _
@@ -1539,12 +1542,15 @@ Public Class IslamData
     Structure ArabicNumInfo
         <Xml.Serialization.XmlAttribute("name")> _
         Public Name As String
-        <Xml.Serialization.XmlAttribute("text")> _
-        Public _Text As String
-        ReadOnly Property Text As String()
+        Public Text As String()
+        <Xml.Serialization.XmlAttribute("text")>
+        Public Property _Text As String
             Get
-                Return _Text.Split(" "c)
+                Return String.Join(" "c, Text)
             End Get
+            Set(value As String)
+                Text = value.Split(" "c)
+            End Set
         End Property
     End Structure
     <Xml.Serialization.XmlArray("arabicnumbers")> _
@@ -1562,12 +1568,15 @@ Public Class IslamData
     Structure ArabicGroup
         <Xml.Serialization.XmlAttribute("name")> _
         Public Name As String
-        <Xml.Serialization.XmlAttribute("text")> _
-        Public _Text As String
-        ReadOnly Property Text As String()
+        Public Text As String()
+        <Xml.Serialization.XmlAttribute("text")>
+        Public Property _Text As String
             Get
-                Return _Text.Split(" "c)
+                Return String.Join(" "c, Text)
             End Get
+            Set(value As String)
+                Text = value.Split(" "c)
+            End Set
         End Property
     End Structure
     <Xml.Serialization.XmlArray("arabicgroups")>
@@ -1577,47 +1586,84 @@ Public Class IslamData
         Structure ColorRule
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
+            Public Match As String()
             <Xml.Serialization.XmlAttribute("match")>
-            Public _Match As String
-            ReadOnly Property Match As String()
+            Public Property _Match As String
                 Get
-                    Return _Match.Split("|"c)
+                    Return String.Join("|"c, Match)
                 End Get
+                Set(value As String)
+                    Match = value.Split("|"c)
+                End Set
             End Property
+            Public Color As Integer
+            Private __Color As String
             <Xml.Serialization.XmlAttribute("color")>
-            Public _Color As String
-            ReadOnly Property Color As Integer
+            Public Property _Color As String
                 Get
-                    If _Color.Contains(",") Then
-                        Dim RGB As Byte() = New List(Of Byte)(Linq.Enumerable.Select(_Color.Split(","c), Function(Str As String) CByte(Str))).ToArray()
-                        Return Utility.MakeArgb(&HFF, RGB(0), RGB(1), RGB(2))
+                    Return __Color
+                End Get
+                Set(value As String)
+                    __Color = value
+                    If value.Contains(",") Then
+                        Dim RGB As Byte() = New List(Of Byte)(Linq.Enumerable.Select(value.Split(","c), Function(Str As String) CByte(Str))).ToArray()
+                        Color = Utility.MakeArgb(&HFF, RGB(0), RGB(1), RGB(2))
                     Else
-                        Return Utility.ColorFromName(_Color)
+                        Color = Utility.ColorFromName(value)
                     End If
-                End Get
+                End Set
             End Property
+            Public Evaluator As String
+            Private __Evaluator As String
             <Xml.Serialization.XmlAttribute("evaluator")>
-            Public _Evaluator As String
-            Public ReadOnly Property Evaluator As String
+            Public Property _Evaluator As String
                 Get
-                    Return CachedData.TranslateRegEx(_Evaluator, False)
+                    Return __Evaluator
                 End Get
+                Set(value As String)
+                    __Evaluator = value
+                    Evaluator = CachedData.TranslateRegEx(value, False)
+                End Set
             End Property
+            Public MetaRuleFunc As Arabic.MetaRuleFuncs
+            Private __MetaRuleFunc As String
             <Xml.Serialization.XmlAttribute("rulefunc")>
-            Public _RuleFunc As String
-            ReadOnly Property MetaRuleFunc As Arabic.MetaRuleFuncs
+            Public Property _MetaRuleFunc As String
                 Get
-                    If _RuleFunc = "eLearningMode" Then Return Arabic.MetaRuleFuncs.eLearningMode
-                    If _RuleFunc = "eDivideTanween" Then Return Arabic.MetaRuleFuncs.eDivideTanween
-                    If _RuleFunc = "eSpellLetter" Then Return Arabic.MetaRuleFuncs.eSpellLetter
-                    If _RuleFunc = "eSpellLongLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongLetter
-                    If _RuleFunc = "eSpellLongMergedLetter" Then Return Arabic.MetaRuleFuncs.eSpellLongMergedLetter
-                    If _RuleFunc = "eSpellNumber" Then Return Arabic.MetaRuleFuncs.eSpellNumber
-                    If _RuleFunc = "eUpperCase" Then Return Arabic.MetaRuleFuncs.eUpperCase
-                    If _RuleFunc = "eObligatory" Then Return Arabic.MetaRuleFuncs.eObligatory
-                    'If _RuleFunc = "eNone" Then
-                    Return Arabic.MetaRuleFuncs.eNone
+                    Return __MetaRuleFunc
                 End Get
+                Set(value As String)
+                    __MetaRuleFunc = value
+                    Select Case value
+                        Case "eLearningMode"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eLearningMode
+                            Exit Select
+                        Case "eDivideTanween"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eDivideTanween
+                            Exit Select
+                        Case "eSpellLetter"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eSpellLetter
+                            Exit Select
+                        Case "eSpellLongLetter"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eSpellLongLetter
+                            Exit Select
+                        Case "eSpellLongMergedLetter"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eSpellLongMergedLetter
+                            Exit Select
+                        Case "eSpellNumber"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eSpellNumber
+                            Exit Select
+                        Case "eUpperCase"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eUpperCase
+                            Exit Select
+                        Case "eObligatory"
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eObligatory
+                            Exit Select
+                            'If _RuleFunc = "eNone" Then
+                        Case Else
+                            MetaRuleFunc = Arabic.MetaRuleFuncs.eNone
+                    End Select
+                End Set
             End Property
         End Structure
         <Xml.Serialization.XmlElement("colorrule")>
@@ -1638,18 +1684,36 @@ Public Class IslamData
             Public Evaluator As String
             <Xml.Serialization.XmlAttribute("negativematch")> _
             Public NegativeMatch As String
-            <Xml.Serialization.XmlAttribute("rulefunc")> _
-            Public _RuleFunc As String
-            ReadOnly Property RuleFunc As Arabic.RuleFuncs
+            Public RuleFunc As Arabic.RuleFuncs
+            Public __RuleFunc As String
+            <Xml.Serialization.XmlAttribute("rulefunc")>
+            Public Property _RuleFunc As String
                 Get
-                    If _RuleFunc = "eLeadingGutteral" Then Return Arabic.RuleFuncs.eLeadingGutteral
-                    If _RuleFunc = "eLookupLetter" Then Return Arabic.RuleFuncs.eLookupLetter
-                    If _RuleFunc = "eLookupLongVowelDipthong" Then Return Arabic.RuleFuncs.eLookupLongVowelDipthong
-                    If _RuleFunc = "eTrailingGutteral" Then Return Arabic.RuleFuncs.eTrailingGutteral
-                    If _RuleFunc = "eResolveAmbiguity" Then Return Arabic.RuleFuncs.eResolveAmbiguity
-                    'If _RuleFunc = "eNone" Then
-                    Return Arabic.RuleFuncs.eNone
+                    Return __RuleFunc
                 End Get
+                Set(value As String)
+                    __RuleFunc = value
+                    Select Case value
+                        Case "eLeadingGutteral"
+                            RuleFunc = Arabic.RuleFuncs.eLeadingGutteral
+                            Exit Select
+                        Case "eLookupLetter"
+                            RuleFunc = Arabic.RuleFuncs.eLookupLetter
+                            Exit Select
+                        Case "eLookupLongVowelDipthong"
+                            RuleFunc = Arabic.RuleFuncs.eLookupLongVowelDipthong
+                            Exit Select
+                        Case "eTrailingGutteral"
+                            RuleFunc = Arabic.RuleFuncs.eTrailingGutteral
+                            Exit Select
+                        Case "eResolveAmbiguity"
+                            RuleFunc = Arabic.RuleFuncs.eResolveAmbiguity
+                            Exit Select
+                        Case Else
+                            'If _RuleFunc = "eNone" Then
+                            RuleFunc = Arabic.RuleFuncs.eNone
+                    End Select
+                End Set
             End Property
         End Structure
         <Xml.Serialization.XmlAttribute("name")> _
@@ -1665,19 +1729,25 @@ Public Class IslamData
         Public Name As String
         <Xml.Serialization.XmlAttribute("match")> _
         Public Match As String
-        <Xml.Serialization.XmlAttribute("evaluator")> _
-        Public _Evaluator As String
-        ReadOnly Property Evaluator As String()
+        <Xml.Serialization.XmlAttribute("evaluator")>
+        Public Evaluator As String()
+        Public Property _Evaluator As String
             Get
-                Return _Evaluator.Split("|"c)
+                Return String.Join("|"c, Evaluator)
             End Get
+            Set(value As String)
+                Evaluator = value.Split("|"c)
+            End Set
         End Property
-        <Xml.Serialization.XmlAttribute("metarules")> _
-        Public _MetaRules As String
-        ReadOnly Property MetaRules As String()
+        <Xml.Serialization.XmlAttribute("metarules")>
+        Public MetaRules As String()
+        Public Property _MetaRules As String
             Get
-                Return _MetaRules.Split("|"c)
+                Return String.Join("|"c, MetaRules)
             End Get
+            Set(value As String)
+                MetaRules = value.Split("|"c)
+            End Set
         End Property
     End Structure
     <Xml.Serialization.XmlArray("verificationset")> _
@@ -5659,7 +5729,7 @@ Public Class HadithReader
         Dim ChapterNode As Xml.Linq.XElement = Nothing
         Dim SubChapterNode As Xml.Linq.XElement
         If Not BookNode Is Nothing Then
-            Dim Str As String = Arabic.TransliterateFromBuckwalter("Had~iv " + BookNode.Attribute("hadiths").Value + " ")
+            Dim Str As String = Arabic.TransliterateFromBuckwalter("Had~ivu " + BookNode.Attribute("hadiths").Value + " ")
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.GetMetarules(Str, Nothing, CachedData.RuleMetas("Normal"))).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + BookNode.Attribute("hadiths").Value + " ")}))
             Str = Arabic.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attribute("name").Value + " "
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.GetMetarules(Str, Nothing, CachedData.RuleMetas("Normal"))).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Book " + CStr(BookIndex) + ": " + GetBookEName(BookNode, Index) + " ")}))
@@ -5678,11 +5748,11 @@ Public Class HadithReader
                     ChapterIndex = CInt(HadithText(Hadith)(1))
                     ChapterNode = GetChapterByIndex(BookNode, ChapterIndex)
                     If Not ChapterNode Is Nothing Then
-                        Str = Arabic.TransliterateFromBuckwalter("Had~iv " + ChapterNode.Attribute("hadiths").Value + " ")
+                        Str = Arabic.TransliterateFromBuckwalter("Had~ivu " + ChapterNode.Attribute("hadiths").Value + " ")
                         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.GetMetarules(Str, Nothing, CachedData.RuleMetas("Normal"))).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + ChapterNode.Attribute("hadiths").Value + " ")}))
                         Dim Heads As New List(Of RenderArray.RenderText)
-                        Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split(Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + ChapterNode.Attribute("name").Value + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, S))))
-                        Str = Arabic.TransliterateFromBuckwalter("bAb " + CStr(ChapterIndex)) + " " + System.Text.RegularExpressions.Regex.Replace(ChapterNode.Attribute("name").Value, "(\d+).(\d+(?:-\d+)?)", String.Empty) + " "
+                        Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split(Arabic.TransliterateFromBuckwalter("baAbu " + CStr(ChapterIndex)) + " " + ChapterNode.Attribute("name").Value + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, S))))
+                        Str = Arabic.TransliterateFromBuckwalter("baAbu " + CStr(ChapterIndex)) + " " + System.Text.RegularExpressions.Regex.Replace(ChapterNode.Attribute("name").Value, "(\d+).(\d+(?:-\d+)?)", String.Empty) + " "
                         Heads.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.GetMetarules(Str, Nothing, CachedData.RuleMetas("Normal"))).Trim()))
                         Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split("Chapter " + CStr(ChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attribute("index").Value + "Chapter" + ChapterNode.Attribute("index").Value), String.Empty) + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, S))))
                         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, Heads.ToArray()))
@@ -5695,11 +5765,11 @@ Public Class HadithReader
                     If Not ChapterNode Is Nothing Then
                         SubChapterNode = GetSubChapterByIndex(ChapterNode, SubChapterIndex)
                         If Not SubChapterNode Is Nothing Then
-                            Str = Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attribute("hadiths").Value + " ")
-                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("Had~iv " + SubChapterNode.Attribute("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.GetMetarules(Str, Nothing, CachedData.RuleMetas("Normal"))).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + SubChapterNode.Attribute("hadiths").Value + " ")}))
+                            Str = Arabic.TransliterateFromBuckwalter("Had~ivu " + SubChapterNode.Attribute("hadiths").Value + " ")
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("Had~ivu " + SubChapterNode.Attribute("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.GetMetarules(Str, Nothing, CachedData.RuleMetas("Normal"))).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + SubChapterNode.Attribute("hadiths").Value + " ")}))
                             Dim Heads As New List(Of RenderArray.RenderText)
-                            Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split(Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attribute("name").Value + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, S))))
-                            Str = Arabic.TransliterateFromBuckwalter("bAb " + CStr(SubChapterIndex)) + " " + System.Text.RegularExpressions.Regex.Replace(SubChapterNode.Attribute("name").Value, "(\d+).(\d+(?:-\d+)?)", String.Empty) + " "
+                            Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split(Arabic.TransliterateFromBuckwalter("baAbu " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attribute("name").Value + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, S))))
+                            Str = Arabic.TransliterateFromBuckwalter("baAbu " + CStr(SubChapterIndex)) + " " + System.Text.RegularExpressions.Regex.Replace(SubChapterNode.Attribute("name").Value, "(\d+).(\d+(?:-\d+)?)", String.Empty) + " "
                             Heads.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.GetMetarules(Str, Nothing, CachedData.RuleMetas("Normal"))).Trim()))
                             Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split("Sub-Chapter " + CStr(SubChapterIndex) + ": " + Utility.DefaultValue(Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attribute("index").Value + "Chapter" + ChapterNode.Attribute("index").Value + "Subchapter" + SubChapterNode.Attribute("index").Value), String.Empty) + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, S))))
                             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, Heads.ToArray()))

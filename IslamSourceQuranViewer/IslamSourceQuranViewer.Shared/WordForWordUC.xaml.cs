@@ -133,22 +133,6 @@ namespace IslamSourceQuranViewer
     }
     public class WidthLimiterConverter : DependencyObject, IValueConverter
     {
-        //public static double GetTopLevelMaxValue(DependencyObject obj)
-        //{
-        //    return (double)obj.GetValue(TopLevelMaxValueProperty);
-        //}
-
-        //public static void SetTopLevelMaxValue(DependencyObject obj, double value)
-        //{
-        //    obj.SetValue(TopLevelMaxValueProperty, value);
-        //}
-
-        //public static readonly DependencyProperty TopLevelMaxValueProperty =
-        //    DependencyProperty.RegisterAttached("TopLevelMaxValue",
-        //                                typeof(double),
-        //                                typeof(WidthLimiterConverter),
-        //                                new PropertyMetadata(null, TopLevelMaxValueChanged));
-
         public double TopLevelMaxValue
         {
             get { return (double)GetValue(TopLevelMaxValueProperty); }
@@ -161,10 +145,6 @@ namespace IslamSourceQuranViewer
                                         typeof(WidthLimiterConverter),
                                         new PropertyMetadata(0.0));
 
-        //private static void TopLevelMaxValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-        //{
-        //    ((WidthLimiterConverter)sender).TopLevelMaxValue = (double)e.NewValue;
-        //}
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             return Math.Min((double)value, TopLevelMaxValue);
@@ -224,6 +204,13 @@ namespace IslamSourceQuranViewer
         }
         public static void CleanupDW()
         {
+            _DWFeatureArray = null;
+            if (_DWFontFace != null) _DWFontFace.Dispose();
+            _DWFontFace = null;
+            if (_DWFont != null) _DWFont.Dispose();
+            _DWFont = null;
+            if (_DWAnalyzer != null) _DWAnalyzer.Dispose();
+            _DWAnalyzer = null;
             if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
             _DWNormalFormat = null;
             if (_DWArabicFormat != null) _DWArabicFormat.Dispose();
@@ -237,6 +224,31 @@ namespace IslamSourceQuranViewer
         public static SharpDX.DirectWrite.TextFormat DWArabicFormat { get { if (_DWArabicFormat == null) _DWArabicFormat = new SharpDX.DirectWrite.TextFormat(MyUIChanger.DWFactory, AppSettings.strSelectedFont, (float)AppSettings.dFontSize); return _DWArabicFormat; } }
         private static SharpDX.DirectWrite.TextFormat _DWNormalFormat;
         public static SharpDX.DirectWrite.TextFormat DWNormalFormat { get { if (_DWNormalFormat == null) _DWNormalFormat = new SharpDX.DirectWrite.TextFormat(MyUIChanger.DWFactory, AppSettings.strOtherSelectedFont, (float)AppSettings.dOtherFontSize); return _DWNormalFormat; } }
+        private static SharpDX.DirectWrite.TextAnalyzer _DWAnalyzer;
+        public static SharpDX.DirectWrite.TextAnalyzer DWAnalyzer { get { if (_DWAnalyzer == null) _DWAnalyzer = new SharpDX.DirectWrite.TextAnalyzer(MyUIChanger.DWFactory); return _DWAnalyzer; } }
+        private static SharpDX.DirectWrite.FontFeature[] _DWFeatureArray;
+        public static SharpDX.DirectWrite.FontFeature[] DWFeatureArray { get { if (_DWFeatureArray == null) _DWFeatureArray = new SharpDX.DirectWrite.FontFeature[] { new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.GlyphCompositionDecomposition, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StandardLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualAlternates, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StylisticSet1, 1) }; return _DWFeatureArray; } }
+        private static SharpDX.DirectWrite.Font _DWFont;
+        private static SharpDX.DirectWrite.FontFace _DWFontFace;
+        public static SharpDX.DirectWrite.FontFace DWFontFace { get {
+                //LOGFONT lf = new LOGFONT();
+                //lf.lfFaceName = useFont;
+                //SharpDX.Direct2D1.Factory fact2d = new SharpDX.Direct2D1.Factory();
+                //float pointSize = fontSize * fact2d.DesktopDpi.Height / 72.0f;
+                //fact2d.Dispose();
+                //lf.lfHeight = (int)fontSize;
+                //lf.lfQuality = 5; //clear type
+                //SharpDX.DirectWrite.Font font = MyUIChanger.DWFactory.GdiInterop.FromLogFont(lf);
+                if (_DWFontFace == null)
+                {
+                    int index;
+                    MyUIChanger.DWArabicFormat.FontCollection.FindFamilyName(MyUIChanger.DWArabicFormat.FontFamilyName, out index);
+                    _DWFont = MyUIChanger.DWArabicFormat.FontCollection.GetFontFamily(index).GetFirstMatchingFont(SharpDX.DirectWrite.FontWeight.Normal, SharpDX.DirectWrite.FontStretch.Normal, SharpDX.DirectWrite.FontStyle.Normal);
+                    _DWFontFace = new SharpDX.DirectWrite.FontFace(_DWFont);
+                    //fontFace.FaceType = SharpDX.DirectWrite.FontFaceType.
+                }
+                return _DWFontFace;
+            } }
         private double _MaxWidth;
         public double MaxWidth
         {
@@ -570,24 +582,10 @@ public static class FormattedTextBehavior
             {
                 return null;
             }
-            SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(MyUIChanger.DWFactory);
-            //LOGFONT lf = new LOGFONT();
-            //lf.lfFaceName = useFont;
-            //SharpDX.Direct2D1.Factory fact2d = new SharpDX.Direct2D1.Factory();
-            //float pointSize = fontSize * fact2d.DesktopDpi.Height / 72.0f;
-            //fact2d.Dispose();
-            //lf.lfHeight = (int)fontSize;
-            //lf.lfQuality = 5; //clear type
-            //SharpDX.DirectWrite.Font font = MyUIChanger.DWFactory.GdiInterop.FromLogFont(lf);
-            int index;
-            MyUIChanger.DWArabicFormat.FontCollection.FindFamilyName(MyUIChanger.DWArabicFormat.FontFamilyName, out index);
-            SharpDX.DirectWrite.Font font = MyUIChanger.DWArabicFormat.FontCollection.GetFontFamily(index).GetFirstMatchingFont(SharpDX.DirectWrite.FontWeight.Normal, SharpDX.DirectWrite.FontStretch.Normal, SharpDX.DirectWrite.FontStyle.Normal);
-            SharpDX.DirectWrite.FontFace fontFace = new SharpDX.DirectWrite.FontFace(font);
-            //fontFace.FaceType = SharpDX.DirectWrite.FontFaceType.
-            SharpDX.DirectWrite.ScriptAnalysis scriptAnalysis = new SharpDX.DirectWrite.ScriptAnalysis();
+            SharpDX.DirectWrite.ScriptAnalysis scriptAnalysis;
             TextSink analysisSink = new TextSink();
             TextSource analysisSource = new TextSource(Str, MyUIChanger.DWFactory);
-            analyzer.AnalyzeScript(analysisSource, 0, Str.Length, analysisSink);
+            MyUIChanger.DWAnalyzer.AnalyzeScript(analysisSource, 0, Str.Length, analysisSink);
             scriptAnalysis = analysisSink._scriptAnalysis;
             int maxGlyphCount = ((Str.Length * 3) / 2) + 0x10;
             short[] clusterMap = new short[(Str.Length - 1) + 1];
@@ -595,12 +593,11 @@ public static class FormattedTextBehavior
             short[] glyphIndices = new short[(maxGlyphCount - 1) + 1];
             SharpDX.DirectWrite.ShapingGlyphProperties[] glyphProps = new SharpDX.DirectWrite.ShapingGlyphProperties[(maxGlyphCount - 1) + 1];
             int actualGlyphCount = 0;
-            SharpDX.DirectWrite.FontFeature[] featureArray = new SharpDX.DirectWrite.FontFeature[] { new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.GlyphCompositionDecomposition, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StandardLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualAlternates, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StylisticSet1, 1) };
             while (true)
             {
                 try
                 {
-                    analyzer.GetGlyphs(Str, Str.Length, fontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { featureArray }, new int[] { Str.Length }, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
+                    MyUIChanger.DWAnalyzer.GetGlyphs(Str, Str.Length, MyUIChanger.DWFontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { MyUIChanger.DWFeatureArray }, new int[] { Str.Length }, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
                     break;
                 }
                 catch (SharpDX.SharpDXException exception)
@@ -617,17 +614,14 @@ public static class FormattedTextBehavior
             Array.Resize(ref glyphProps, (actualGlyphCount - 1) + 1);
             float[] glyphAdvances = new float[(actualGlyphCount - 1) + 1];
             SharpDX.DirectWrite.GlyphOffset[] glyphOffsets = new SharpDX.DirectWrite.GlyphOffset[(actualGlyphCount - 1) + 1];
-            SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { featureArray };
+            SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { MyUIChanger.DWFeatureArray };
             int[] featureRangeLengths = new int[] { Str.Length };
-            analyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, fontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
+            MyUIChanger.DWAnalyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, MyUIChanger.DWFontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
             analysisSource.Shadow.Dispose();
             analysisSink.Shadow.Dispose();
             analysisSource.Dispose();
             analysisSource._Factory = null;
             analysisSink.Dispose();
-            fontFace.Dispose();
-            font.Dispose();
-            analyzer.Dispose();
             return clusterMap;
         }
         public static Size GetWordDiacriticPositionsDWrite(string Str, string useFont, float fontSize, char[] Forms, bool IsRTL, ref float BaseLine, ref CharPosInfo[] Pos)
