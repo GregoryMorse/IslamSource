@@ -92,10 +92,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.fr.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.gu.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.gu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ha-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ha-Latn.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.he.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.hi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.hi.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.hu.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -107,15 +122,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.id.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.ig-NG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ig-NG.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.ms.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.ms.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources.pa-Arab.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pa-Arab.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.pa.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.pa.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources.ru.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.ru.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.ur.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.ur.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.wo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.wo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources.yo-NG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.yo-NG.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources.zh-Hans.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -141,9 +186,21 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.fr.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.gu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.gu.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ha-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ha-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.he.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.he.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.hi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.hi.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,9 +210,21 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.id.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ig-NG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ig-NG.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources.ms.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ms.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.pa-Arab.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pa-Arab.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.pa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.pa.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -166,6 +235,18 @@
     <EmbeddedResource Include="Resources.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ru.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.ur.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ur.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.wo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.wo.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.yo-NG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.yo-NG.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -190,11 +271,20 @@
     <XliffResource Include="MultilingualResources\IslamResources.de.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.es.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.fr.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.gu.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.ha-Latn.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.he.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.hi.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.hu.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.id.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.ig-NG.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.ms.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.pa-Arab.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.pa.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.ru.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.ur.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.wo.xlf" />
+    <XliffResource Include="MultilingualResources\IslamResources.yo-NG.xlf" />
     <XliffResource Include="MultilingualResources\IslamResources.zh-Hans.xlf">
       <SubType>Designer</SubType>
     </XliffResource>
