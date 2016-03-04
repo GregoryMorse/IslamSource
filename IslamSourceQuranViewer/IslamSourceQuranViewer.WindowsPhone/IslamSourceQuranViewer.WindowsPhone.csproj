@@ -163,6 +163,12 @@
     <Content Include="..\..\metadata\ru.*">
       <Link>metadata\ru\%(FileName)%(Extension)</Link>
     </Content>
+    <Content Include="..\..\metadata\de.*">
+      <Link>metadata\de\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ms.*">
+      <Link>metadata\ms\%(FileName)%(Extension)</Link>
+    </Content>
     <Content Include="..\..\metadata\islaminfo.xml">
       <Link>metadata\islaminfo.xml</Link>
     </Content>

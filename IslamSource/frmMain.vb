@@ -111,7 +111,7 @@ Public Class frmMain
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
         'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.he.resx", "..\..\..\metadata\he.w4w.corpus.txt")
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
-        'Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.he.resx", "..\..\..\metadata\he.w4w.txt")
+        Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.ms.resx", "..\..\..\metadata\ms.w4w.txt")
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
