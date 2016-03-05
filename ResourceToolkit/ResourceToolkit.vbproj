@@ -344,6 +344,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.ru.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.ur.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.ur.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.zh-Hans.Designer.vb</LastGenOutput>
@@ -742,6 +746,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="W4WResources.ur.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.ur.resx</DependentUpon>
+    </Compile>
     <Compile Include="W4WResources.zh-Hans.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -825,6 +834,7 @@
     <XliffResource Include="MultilingualResources\ResourceToolkit.prs.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.pt.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.ru.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.ur.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.zh-Hans.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.zh-Hant.xlf" />
   </ItemGroup>
