@@ -46,12 +46,22 @@ Public Class frmMain
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.qurandev.txt")
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.shehnazshaikh.txt")
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\id.w4w.terjemah.txt")
-        Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\ur.w4w.hafiznazarmuhammad.txt") '1000+ errors needs prefix fixing
+        Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\ur.w4w.hafiznazarmuhammad.txt") '150 errors needs fixing
         Dim LineCount As Integer = 0
         For Count As Integer = 0 To 113
             For VerseCount = 0 To Text(Count).Length - 1
-                If New List(Of String)(Linq.Enumerable.Where(Text(Count)(VerseCount).Split(" "c), Function(It) It.Length <> 1)).Count <> Lines(LineCount).Split("|"c).Length Then
-                    Debug.Print("Fault line: " + CStr(LineCount + 1) + "(" + CStr(Count + 1) + ":" + CStr(VerseCount + 1) + ") Arabic word count: " + CStr(New List(Of String)(Linq.Enumerable.Where(Text(Count)(VerseCount).Split(" "c), Function(It) It.Length <> 1)).Count) + " Translation word count: " + CStr(Lines(LineCount).Split("|"c).Length))
+                Dim Words As String() = New List(Of String)(Linq.Enumerable.Where(Text(Count)(VerseCount).Split(" "c), Function(It) It.Length <> 1)).ToArray()
+                Dim TranslationWords As String() = Lines(LineCount).Split("|"c)
+                If Words.Length <> TranslationWords.Length Then
+                    Dim Str As String = String.Empty
+                    For WordCount = 0 To Math.Max(Words.Length, TranslationWords.Length) - 1
+                        Str += "["
+                        If WordCount < Words.Length Then Str += Words(WordCount)
+                        Str += " : "
+                        If WordCount < TranslationWords.Length Then Str += TranslationWords(WordCount)
+                        Str += "] "
+                    Next
+                    Debug.Print("Fault line: " + CStr(LineCount + 1) + "(" + CStr(Count + 1) + ":" + CStr(VerseCount + 1) + ") Arabic word count: " + CStr(Words.Length) + " Translation word count: " + CStr(TranslationWords.Length) + " " + CStr(Words.Length - TranslationWords.Length) + "(" + Str + ")")
                 End If
                 LineCount += 1
             Next
