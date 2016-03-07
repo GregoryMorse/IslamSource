@@ -609,8 +609,10 @@ Public Class ArabicData
         If Res.Length <> 0 Then Return Res
         Return ArabicLetters(FindLetterBySymbol(Character)).UnicodeName
     End Function
+    Private Shared CamelCaseRegEx As System.Text.RegularExpressions.Regex
     Public Shared Function ToCamelCase(Str As String) As String
-        Return System.Text.RegularExpressions.Regex.Replace(Str, "([A-Z])([A-Z]+)(-| |$)", Function(CamCase As System.Text.RegularExpressions.Match) CamCase.Groups(1).Value + CamCase.Groups(2).Value.ToLower())
+        If CamelCaseRegEx Is Nothing Then CamelCaseRegEx = New System.Text.RegularExpressions.Regex("([A-Z])([A-Z]+)(-| |$)")
+        Return CamelCaseRegEx.Replace(Str, Function(CamCase As System.Text.RegularExpressions.Match) CamCase.Groups(1).Value + CamCase.Groups(2).Value.ToLower())
     End Function
     Public Shared Function IsTerminating(Str As String, Index As Integer) As Boolean
         Dim bIsEnd = True 'default to non-connecting end

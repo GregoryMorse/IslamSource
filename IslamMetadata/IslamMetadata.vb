@@ -629,7 +629,6 @@ Public Class Arabic
                         Str.Clear()
                         For Index As Integer = 0 To Args.Length - 1
                             If Not Args(Index) Is Nothing And (LearningMode Or CachedData.IslamData.ColorRuleSets(0).ColorRules(Count).MetaRuleFunc <> MetaRuleFuncs.eLearningMode Or Index <> 0) Then
-
                                 Str.Append(ReplaceMetadata(Args(Index), New RuleMetadata(0, Args(Index).Length, New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(MetadataRule.Type(TypeIndex).Args(Index), Function(S) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs With {.RuleName = S})).ToArray(), Index), LearningMode))
                             End If
                         Next
@@ -645,7 +644,7 @@ Public Class Arabic
         'need to check for decomposed first
         Dim Count As Integer
         For Count = 0 To CachedData.RuleTranslations("ErrorCheck").Length - 1
-            If Not ErrorRegExDict.ContainsKey(CachedData.RuleTranslations("ErrorCheck")(Count).Name) Then ErrorRegExDict.Add(CachedData.RuleTranslations("ErrorCheck")(Count).Name, New System.Text.RegularExpressions.Regex(CachedData.RuleTranslations("ErrorCheck")(Count).Match))
+            If Not ErrorRegExDict.ContainsKey(CachedData.RuleTranslations("ErrorCheck")(Count).Name) Then ErrorRegExDict.Add(CachedData.RuleTranslations("ErrorCheck")(Count).Name, New System.Text.RegularExpressions.Regex(CachedData.RuleTranslations("ErrorCheck")(Count).Match, Text.RegularExpressions.RegexOptions.))
             Dim Matches As System.Text.RegularExpressions.MatchCollection = ErrorRegExDict(CachedData.RuleTranslations("ErrorCheck")(Count).Name).Matches(ArabicString)
             For MatchIndex As Integer = 0 To Matches.Count - 1
                 If CachedData.RuleTranslations("ErrorCheck")(Count).NegativeMatch Is Nothing OrElse Matches(MatchIndex).Result(CachedData.RuleTranslations("ErrorCheck")(Count).NegativeMatch) = String.Empty Then
@@ -692,7 +691,7 @@ Public Class Arabic
     Private Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
     Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, LearningMode As Boolean, MetadataList As Generic.List(Of RuleMetadata)) As String
         If Scheme = String.Empty Then Scheme = CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(String.Empty).TranslitScheme
-        DoErrorCheck(ArabicString)
+        'DoErrorCheck(ArabicString)
         Dim Index As Integer = 0
         While Index <= MetadataList.Count - 1
             ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), LearningMode)
