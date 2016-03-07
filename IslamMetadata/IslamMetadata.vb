@@ -3396,12 +3396,12 @@ Public Class DocBuilder
             W4WItems = New Dictionary(Of String, Dictionary(Of String, String))
         End If
         If Not W4WItems.ContainsKey(LangID) Then
-            If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".txt"))) And W4WItems.ContainsKey(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage) Then
+            If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".w4w.txt"))) And W4WItems.ContainsKey(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage) Then
                 W4WItems.Add(LangID, W4WItems(CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage))
             Else
-                If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".txt"))) Then LangID = CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage
+                If Not PortableMethods.FileIO.PathExists(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".w4w.txt"))) Then LangID = CachedData.IslamData.LanguageDefaultInfo.DefaultLanguage
                 W4WItems.Add(LangID, New Dictionary(Of String, String))
-                For Each Line As String In Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".txt")))
+                For Each Line As String In Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", LangID + ".w4w.txt")))
                     W4WItems(LangID).Add(Line.Substring(0, Line.IndexOf("="c)), Line.Substring(Line.IndexOf("="c) + 1))
                 Next
             End If
@@ -5202,7 +5202,7 @@ Public Class TanzilReader
                 Dim IndexToVerse As Integer()() = Nothing
                 Dim Text As String = QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
                 Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, GetMetaRuleSet("UthmaniQuran").Rules(Index).Match)
-                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, GetMetaRuleSet("UthmaniQuran").Rules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(GetMetaRuleSet("UthmaniQuran").Rules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(New List(Of String)(Linq.Enumerable.Select(GetMetaRuleSet("UthmaniQuran").Rules(Index).Evaluator, Function(Str As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs()) DocBuilder.GetRegExText(String.Join("|"c, Linq.Enumerable.Select(Str, Function(S) S.RuleName + If(S.Args.Length = 0, "", "(" + String.Join(",", Linq.Enumerable.Select(S.Args, Function(Arg) String.Join(" ", Arg))) + ")")))))).ToArray(), False))})
+                Renderer.Items.AddRange(New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, GetMetaRuleSet("UthmaniQuran").Rules(Index).Name)}), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeRegExGroups(DocBuilder.GetRegExText(GetMetaRuleSet("UthmaniQuran").Rules(Index).Match), False)), New RenderArray.RenderItem(RenderArray.RenderTypes.eText, DocBuilder.ColorizeList(New List(Of String)(Linq.Enumerable.Select(GetMetaRuleSet("UthmaniQuran").Rules(Index).Evaluator, Function(Str As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs()) DocBuilder.GetRegExText(String.Join("|"c, Linq.Enumerable.Select(Str, Function(S) S.RuleName + If(S.Args Is Nothing OrElse S.Args.Length = 0, "", "(" + String.Join(",", Linq.Enumerable.Select(S.Args, Function(Arg) String.Join(" ", Arg))) + ")")))))).ToArray(), False))})
                 For SubCount = 0 To Matches.Count - 1
                     Dim StartWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index, New QuranWordIndexComparer)
                     If StartWordIndex < 0 Then StartWordIndex = (StartWordIndex Xor -1) - 1
