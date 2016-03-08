@@ -12,11 +12,11 @@
         </trans-unit>
         <trans-unit id="AppFeature1" translate="yes" xml:space="preserve">
           <source>Quran Word by Word Translation</source>
-          <target state="new">Quran Word by Word Translation</target>
+          <target state="translated">کلام ترجمہ کی طرف سے قرآن کلام</target>
         </trans-unit>
         <trans-unit id="AppFeature2" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="translated">حرفی</target>
         </trans-unit>
         <trans-unit id="AppFeature3" translate="yes" xml:space="preserve">
           <source>Arabic</source>
@@ -24,23 +24,23 @@
         </trans-unit>
         <trans-unit id="AppFeature4" translate="yes" xml:space="preserve">
           <source>Verse by Verse</source>
-          <target state="new">Verse by Verse</target>
+          <target state="translated">آیت کی طرف سے آیت</target>
         </trans-unit>
         <trans-unit id="AppFeature5" translate="yes" xml:space="preserve">
           <source>Word by Word</source>
-          <target state="new">Word by Word</target>
+          <target state="translated">لفظ سے لفظ</target>
         </trans-unit>
         <trans-unit id="AppFeature6" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="translated">قرآن</target>
         </trans-unit>
         <trans-unit id="AppFeature7" translate="yes" xml:space="preserve">
           <source>Quran viewer</source>
-          <target state="new">Quran viewer</target>
+          <target state="translated">قرآن ناظر</target>
         </trans-unit>
         <trans-unit id="AppFeature8" translate="yes" xml:space="preserve">
           <source>Tajweed</source>
-          <target state="new">Tajweed</target>
+          <target state="translated">تجوید</target>
         </trans-unit>
         <trans-unit id="CopyrightTrademarkInfo" translate="yes" xml:space="preserve">
           <source>(c) GMorseCode</source>
@@ -48,15 +48,15 @@
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</source>
-          <target state="new">Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</target>
+          <target state="translated">اس کے عربی، سیکھنے، تعلیم حاصل کرنے، تحقیق، حفظ، فکر اور تجوید کی مہارت کے لئے لفظ اور آیت کی طرف سے نقل حرفی اور ترجمہ لفظ آیت کی طرف سے قرآن.</target>
         </trans-unit>
         <trans-unit id="DesktopScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="translated">مین قرآن ناظرین.</target>
         </trans-unit>
         <trans-unit id="Keyword1" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="translated">قرآن</target>
         </trans-unit>
         <trans-unit id="Keyword2" translate="yes" xml:space="preserve">
           <source>Translation</source>
@@ -64,7 +64,7 @@
         </trans-unit>
         <trans-unit id="Keyword3" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="translated">حرفی</target>
         </trans-unit>
         <trans-unit id="Keyword4" translate="yes" xml:space="preserve">
           <source>Arabic</source>
@@ -72,19 +72,19 @@
         </trans-unit>
         <trans-unit id="Keyword5" translate="yes" xml:space="preserve">
           <source>Qur'an</source>
-          <target state="new">Qur'an</target>
+          <target state="translated">قرآن</target>
         </trans-unit>
         <trans-unit id="Keyword6" translate="yes" xml:space="preserve">
           <source>Koran</source>
-          <target state="new">Koran</target>
+          <target state="translated">قرآن پاک</target>
         </trans-unit>
         <trans-unit id="Keyword7" translate="yes" xml:space="preserve">
           <source>Al-Quran</source>
-          <target state="new">Al-Quran</target>
+          <target state="translated">امام القرآن</target>
         </trans-unit>
         <trans-unit id="MobileScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="translated">مین قرآن ناظرین.</target>
         </trans-unit>
         <trans-unit id="PrivacyPolicy" translate="yes" xml:space="preserve">
           <source></source>
@@ -92,7 +92,7 @@
         </trans-unit>
         <trans-unit id="ReleaseNotes" translate="yes" xml:space="preserve">
           <source>Initial Version.</source>
-          <target state="new">Initial Version.</target>
+          <target state="translated">ابتدائی ورژن.</target>
         </trans-unit>
         <trans-unit id="SupportContactInfo" translate="yes" xml:space="preserve">
           <source>gregory.morse@live.com</source>
