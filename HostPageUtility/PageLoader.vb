@@ -1770,6 +1770,7 @@ Public Class RenderArrayWeb
                                 If CurRenderArray(TestCount).TextItems(TestSubCount).DisplayClass = RenderArray.RenderDisplayClass.eNested Then Exit For
                                 Dim TestNextCount As Integer
                                 For TestNextCount = 0 To _Bounds(TestCount)(TestSubCount).Count - 1
+                                    'however why keep it together when its going to be broken apart on the next page anyway if its very long???
                                     If _Bounds(TestCount)(TestSubCount)(TestNextCount).Rect.Bottom + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
                                         If MaxRect.Left <> Doc.PageSize.Width Or MaxRect.Top <> Doc.PageSize.Height Then
                                             Writer.DirectContent.SaveState()
@@ -1790,6 +1791,18 @@ Public Class RenderArrayWeb
                         Next
                     End If
                     For NextCount As Integer = 0 To _Bounds(Count)(SubCount).Count - 1
+                        If NextCount <> 0 AndAlso _Bounds(Count)(SubCount)(NextCount).Rect.Bottom + PageOffset.Y + BaseOffset.Y > Doc.PageSize.Height - Doc.BottomMargin - Doc.TopMargin Then
+                            If MaxRect.Left <> Doc.PageSize.Width Or MaxRect.Top <> Doc.PageSize.Height Then
+                                Writer.DirectContent.SaveState()
+                                Writer.DirectContent.SetLineWidth(1)
+                                Writer.DirectContent.Rectangle(MaxRect.Left + Doc.LeftMargin + 1, Doc.PageSize.Height - Doc.TopMargin - MaxRect.Bottom + 1, MaxRect.Width - 2, MaxRect.Height - 2)
+                                Writer.DirectContent.Stroke()
+                                Writer.DirectContent.RestoreState()
+                                MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
+                            End If
+                            Doc.NewPage()
+                            PageOffset.Y = -_Bounds(Count)(SubCount)(NextCount - 1).Rect.Top - BaseOffset.Y
+                        End If
                         Dim Rect As RectangleF = _Bounds(Count)(SubCount)(NextCount).Rect
                         Dim Text As String = AddDiacriticSpacing(theText.Substring(0, _Bounds(Count)(SubCount)(NextCount).nChar), Forms)
                         Dim FixedFont As New iTextSharp.text.Font(Font)

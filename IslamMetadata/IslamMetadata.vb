@@ -644,7 +644,7 @@ Public Class Arabic
         'need to check for decomposed first
         Dim Count As Integer
         For Count = 0 To CachedData.RuleTranslations("ErrorCheck").Length - 1
-            If Not ErrorRegExDict.ContainsKey(CachedData.RuleTranslations("ErrorCheck")(Count).Name) Then ErrorRegExDict.Add(CachedData.RuleTranslations("ErrorCheck")(Count).Name, New System.Text.RegularExpressions.Regex(CachedData.RuleTranslations("ErrorCheck")(Count).Match, Text.RegularExpressions.RegexOptions.))
+            If Not ErrorRegExDict.ContainsKey(CachedData.RuleTranslations("ErrorCheck")(Count).Name) Then ErrorRegExDict.Add(CachedData.RuleTranslations("ErrorCheck")(Count).Name, New System.Text.RegularExpressions.Regex(CachedData.RuleTranslations("ErrorCheck")(Count).Match))
             Dim Matches As System.Text.RegularExpressions.MatchCollection = ErrorRegExDict(CachedData.RuleTranslations("ErrorCheck")(Count).Name).Matches(ArabicString)
             For MatchIndex As Integer = 0 To Matches.Count - 1
                 If CachedData.RuleTranslations("ErrorCheck")(Count).NegativeMatch Is Nothing OrElse Matches(MatchIndex).Result(CachedData.RuleTranslations("ErrorCheck")(Count).NegativeMatch) = String.Empty Then
