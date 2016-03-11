@@ -13,6 +13,7 @@
         </Style>
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
         <local:ArabicFlowConverter x:Key="ArabicFlow"/>
+        <CollectionViewSource x:Name="VerseNumbers" Source="{Binding Path=ViewModel.VerseReferences, Mode=OneWay}"></CollectionViewSource>
         <DataTemplate x:Key="WordTemplate">
             <ItemsControl ItemsSource="{Binding Mode=OneWay, Path=RenderSource}" ItemTemplate="{StaticResource WrapTemplate}">
                 <ItemsControl.ItemsPanel>
@@ -77,7 +78,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding Mode=OneWay, Path=ViewModel.RenderSource}">
+        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding Mode=OneWay, Path=ViewModel.RenderSource}" VirtualizingStackPanel.VirtualizationMode="Recycling">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>
@@ -92,12 +93,34 @@
             </ItemsControl.Template>
         </ItemsControl>
         <ProgressRing Name="LoadingRing" IsActive="True" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"></ProgressRing>
+        <MediaElement Name="VersePlayer" CurrentStateChanged="MediaElement_CurrentStateChanged" AreTransportControlsEnabled="False" AutoPlay="False"></MediaElement>
+        <Popup x:Name="GoToVersePopup">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+                <ListBox ItemsSource="{Binding Source={StaticResource VerseNumbers}, Mode=OneWay}" 
+                        SelectedItem="{Binding Path=ViewModel.CurrentVerse, Mode=TwoWay}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding VerseText}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}"
+                                       FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}"></TextBlock>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ListBox>
+            </Border>
+        </Popup>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="ZoomIn" Click="ZoomIn_Click" x:Uid="IncreaseFontSize" Icon="ZoomIn"></AppBarButton>
-            <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" x:Uid="DecreaseFontSize" Icon="ZoomOut"></AppBarButton>
-            <AppBarButton Name="Default" Click="Default_Click" x:Uid="DefaultFontSize" Icon="Zoom"></AppBarButton>
+            <AppBarButton Name="ZoomIn" Click="ZoomIn_Click" x:Uid="IncreaseFontSize" Icon="FontIncrease"></AppBarButton>
+            <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" x:Uid="DecreaseFontSize" Icon="FontDecrease"></AppBarButton>
+            <AppBarButton Name="PlayPause" Click="PlayPause_Click" x:Uid="Play" Icon="Play"></AppBarButton>
+            <AppBarButton Name="GoToVerse" Click="GoToVerse_Click" x:Uid="GoToVerse" Icon="List"></AppBarButton>
+            <AppBarButton Name="Default" Click="Default_Click" x:Uid="DefaultFontSize" Icon="FontSize"></AppBarButton>
             <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>

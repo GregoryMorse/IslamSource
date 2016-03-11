@@ -91,8 +91,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)BuildUtility\bin\$(ConfigurationName)\BuildUtility.exe"
-"$(ProgramFiles)\Microsoft\ILMerge\ILMerge.exe" /lib:"$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0.3" /out:"$(ProjectDir)$(OutDir)IslamMetadataMerged.dll" "$(ProjectDir)$(OutDir)IslamMetadata.dll" "$(SolutionDir)BuildUtility\bin\$(ConfigurationName)\IslamMetadataRegEx.dll" /targetplatform:v4</PostBuildEvent>
+    <PostBuildEvent>"$(ProgramFiles)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\sgen.exe" /assembly:"$(ProjectDir)$(OutDir)IslamMetadata.dll" /type:IslamMetadata.IslamData /force
+REM "$(SolutionDir)BuildUtility\bin\$(ConfigurationName)\BuildUtility.exe"
+REM "$(ProgramFiles)\Microsoft\ILMerge\ILMerge.exe" /lib:"$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0.3" /out:"$(ProjectDir)$(OutDir)IslamMetadataMerged.dll" "$(ProjectDir)$(OutDir)IslamMetadata.dll" "$(SolutionDir)BuildUtility\bin\$(ConfigurationName)\IslamMetadataRegEx.dll" /targetplatform:v4</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

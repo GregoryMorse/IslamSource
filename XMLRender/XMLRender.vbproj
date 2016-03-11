@@ -1132,6 +1132,11 @@
   <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
     <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>REM "$(ProgramFiles)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\sgen.exe" /assembly:"$(ProjectDir)$(OutDir)XMLRender.dll" /type:XMLRender.ArabicData.ArabicCombo /force
+REM move /Y "$(ProjectDir)$(OutDir)XMLRender.XmlSerializers.dll" "$(ProjectDir)$(OutDir)XMLRender.XmlSerializersArabicCombo.dll"
+REM "$(ProgramFiles)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\sgen.exe" /assembly:"$(ProjectDir)$(OutDir)XMLRender.dll" /type:XMLRender.ArabicData.ArabicSymbol /force</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
