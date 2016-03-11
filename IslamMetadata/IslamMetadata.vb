@@ -1241,51 +1241,63 @@ Public Class Arabic
     End Function
 End Class
 Class AudioRecitation
-    Function GetURL(Source As String, ReciterName As String, Chapter As Integer, Verse As Integer) As String
+    Public Static Function GetURL(Source As String, ReciterName As String, Chapter As Integer, Verse As Integer) As String
         Dim Base As String = String.Empty
         If Source = "everyayah" Then Base = "http://www.everyayah.com/data/"
         If Source = "tanzil" Then Base = "http://tanzil.net/res/audio/"
         Return Base + ReciterName + "/" + Chapter.ToString("D3") + Verse.ToString("D3") + ".mp3"
     End Function
 End Class
-<Xml.Serialization.XmlRoot("islamdata")> _
+<Xml.Serialization.XmlRoot("islamdata")>
 Public Class IslamData
+    Public Structure Reciter
+        <Xml.Serialization.XmlAttribute("name")>
+        Public Name As String
+        <Xml.Serialization.XmlAttribute("reciter")>
+        Public Reciter As String
+        <Xml.Serialization.XmlAttribute("source")>
+        Public Source As String
+    End Structure
+    <Xml.Serialization.XmlArray("reciters")>
+    <Xml.Serialization.XmlArrayItem("reciter")>
+    Public Reciters() As Reciter
+
     Public Structure ListCategory
         Public Structure Word
-            <Xml.Serialization.XmlAttribute("text")> _
+            <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
-            <Xml.Serialization.XmlAttribute("id")> _
+            <Xml.Serialization.XmlAttribute("id")>
             Public TranslationID As String
         End Structure
-        <Xml.Serialization.XmlAttribute("title")> _
+        <Xml.Serialization.XmlAttribute("title")>
         Public Title As String
-        <Xml.Serialization.XmlElement("word")> _
+        <Xml.Serialization.XmlElement("word")>
         Public Words() As Word
     End Structure
-    <Xml.Serialization.XmlArray("lists")> _
-    <Xml.Serialization.XmlArrayItem("category")> _
+    <Xml.Serialization.XmlArray("lists")>
+    <Xml.Serialization.XmlArrayItem("category")>
     Public Lists() As ListCategory
 
     Public Structure Phrase
-        <Xml.Serialization.XmlAttribute("text")> _
+        <Xml.Serialization.XmlAttribute("text")>
         Public Text As String
-        <Xml.Serialization.XmlAttribute("id")> _
+        <Xml.Serialization.XmlAttribute("id")>
         Public TranslationID As String
     End Structure
-    <Xml.Serialization.XmlArray("phrases")> _
-    <Xml.Serialization.XmlArrayItem("word")> _
+    <Xml.Serialization.XmlArray("phrases")>
+    <Xml.Serialization.XmlArrayItem("word")>
     Public Phrases() As Phrase
 
     Public Structure AbbrevWord
-        <Xml.Serialization.XmlAttribute("text")> _
+        <Xml.Serialization.XmlAttribute("text")>
         Public Text As String
-        <Xml.Serialization.XmlAttribute("font")> _
+        <Xml.Serialization.XmlAttribute("font")>
         Public Font As String
-        <Xml.Serialization.XmlAttribute("id")> _
+        <Xml.Serialization.XmlAttribute("id")>
         Public TranslationID As String
     End Structure
-    <Xml.Serialization.XmlArray("abbreviations")> _
-    <Xml.Serialization.XmlArrayItem("word")> _
+    <Xml.Serialization.XmlArray("abbreviations")>
+    <Xml.Serialization.XmlArrayItem("word")>
     Public Abbreviations() As AbbrevWord
 
     Public Structure GrammarSet
@@ -1315,66 +1327,66 @@ Public Class IslamData
             Public Grammar As String
         End Structure
         Public Structure GrammarTransform
-            <Xml.Serialization.XmlAttribute("text")> _
+            <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
-            <Xml.Serialization.XmlAttribute("id")> _
+            <Xml.Serialization.XmlAttribute("id")>
             Public TranslationID As String
-            <Xml.Serialization.XmlAttribute("grammar")> _
+            <Xml.Serialization.XmlAttribute("grammar")>
             Public Grammar As String
-            <Xml.Serialization.XmlAttribute("match")> _
+            <Xml.Serialization.XmlAttribute("match")>
             Public Match As String
-            <Xml.Serialization.XmlAttribute("from")> _
+            <Xml.Serialization.XmlAttribute("from")>
             Public From As String
         End Structure
-        <Xml.Serialization.XmlArray("transforms")> _
-        <Xml.Serialization.XmlArrayItem("transform")> _
+        <Xml.Serialization.XmlArray("transforms")>
+        <Xml.Serialization.XmlArrayItem("transform")>
         Public Transforms() As GrammarTransform
         Public Structure GrammarParticle
-            <Xml.Serialization.XmlAttribute("text")> _
+            <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
-            <Xml.Serialization.XmlAttribute("id")> _
+            <Xml.Serialization.XmlAttribute("id")>
             Public TranslationID As String
-            <Xml.Serialization.XmlAttribute("grammar")> _
+            <Xml.Serialization.XmlAttribute("grammar")>
             Public Grammar As String
         End Structure
-        <Xml.Serialization.XmlArray("particles")> _
-        <Xml.Serialization.XmlArrayItem("particle")> _
+        <Xml.Serialization.XmlArray("particles")>
+        <Xml.Serialization.XmlArrayItem("particle")>
         Public Particles() As GrammarParticle
         Public Structure GrammarNoun
-            <Xml.Serialization.XmlAttribute("text")> _
+            <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
-            <Xml.Serialization.XmlAttribute("id")> _
+            <Xml.Serialization.XmlAttribute("id")>
             Public TranslationID As String
-            <Xml.Serialization.XmlAttribute("plural")> _
+            <Xml.Serialization.XmlAttribute("plural")>
             Public Plural As String
-            <Xml.Serialization.XmlAttribute("grammar")> _
+            <Xml.Serialization.XmlAttribute("grammar")>
             Public Grammar As String
         End Structure
-        <Xml.Serialization.XmlArray("nouns")> _
-        <Xml.Serialization.XmlArrayItem("noun")> _
+        <Xml.Serialization.XmlArray("nouns")>
+        <Xml.Serialization.XmlArrayItem("noun")>
         Public Nouns() As GrammarNoun
         Public Structure GrammarVerb
-            <Xml.Serialization.XmlAttribute("text")> _
+            <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
-            <Xml.Serialization.XmlAttribute("id")> _
+            <Xml.Serialization.XmlAttribute("id")>
             Public TranslationID As String
-            <Xml.Serialization.XmlAttribute("poss")> _
+            <Xml.Serialization.XmlAttribute("poss")>
             Public Possessives As String
-            <Xml.Serialization.XmlAttribute("grammar")> _
+            <Xml.Serialization.XmlAttribute("grammar")>
             Public Grammar As String
         End Structure
-        <Xml.Serialization.XmlArray("verbs")> _
-        <Xml.Serialization.XmlArrayItem("verb")> _
+        <Xml.Serialization.XmlArray("verbs")>
+        <Xml.Serialization.XmlArrayItem("verb")>
         Public Verbs() As GrammarVerb
     End Structure
-    <Xml.Serialization.XmlElement("grammar")> _
+    <Xml.Serialization.XmlElement("grammar")>
     Public Grammar As GrammarSet
 
     Public Structure TranslitScheme
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Alphabet() As String
-        <Xml.Serialization.XmlAttribute("alphabet")> _
+        <Xml.Serialization.XmlAttribute("alphabet")>
         Property AlphabetParse As String
             Get
                 If Alphabet.Length = 0 Then Return String.Empty
@@ -1387,7 +1399,7 @@ Public Class IslamData
             End Set
         End Property
         Public Hamza() As String
-        <Xml.Serialization.XmlAttribute("hamza")> _
+        <Xml.Serialization.XmlAttribute("hamza")>
         Property HamzaParse As String
             Get
                 If Hamza.Length = 0 Then Return String.Empty
@@ -1400,7 +1412,7 @@ Public Class IslamData
             End Set
         End Property
         Public SpecialLetters() As String
-        <Xml.Serialization.XmlAttribute("literals")> _
+        <Xml.Serialization.XmlAttribute("literals")>
         Property SpecialLettersParse As String
             Get
                 If SpecialLetters.Length = 0 Then Return String.Empty
@@ -1413,7 +1425,7 @@ Public Class IslamData
             End Set
         End Property
         Public Vowels() As String
-        <Xml.Serialization.XmlAttribute("fathadammakasratanweenlongvowelsdipthongsshaddasukun")> _
+        <Xml.Serialization.XmlAttribute("fathadammakasratanweenlongvowelsdipthongsshaddasukun")>
         Property VowelsParse As String
             Get
                 If Vowels.Length = 0 Then Return String.Empty
@@ -1426,7 +1438,7 @@ Public Class IslamData
             End Set
         End Property
         Public Multis() As String
-        <Xml.Serialization.XmlAttribute("multis")> _
+        <Xml.Serialization.XmlAttribute("multis")>
         Property MultisParse As String
             Get
                 If Multis.Length = 0 Then Return String.Empty
@@ -1439,7 +1451,7 @@ Public Class IslamData
             End Set
         End Property
         Public Gutterals() As String
-        <Xml.Serialization.XmlAttribute("gutterals")> _
+        <Xml.Serialization.XmlAttribute("gutterals")>
         Property GutteralsParse As String
             Get
                 If Gutterals.Length = 0 Then Return String.Empty
@@ -1452,7 +1464,7 @@ Public Class IslamData
             End Set
         End Property
         Public Tajweed() As String
-        <Xml.Serialization.XmlAttribute("tajweed")> _
+        <Xml.Serialization.XmlAttribute("tajweed")>
         Property TajweedParse As String
             Get
                 If Tajweed.Length = 0 Then Return String.Empty
@@ -1465,7 +1477,7 @@ Public Class IslamData
             End Set
         End Property
         Public Silent() As String
-        <Xml.Serialization.XmlAttribute("silent")> _
+        <Xml.Serialization.XmlAttribute("silent")>
         Property SilentParse As String
             Get
                 If Silent.Length = 0 Then Return String.Empty
@@ -1478,7 +1490,7 @@ Public Class IslamData
             End Set
         End Property
         Public Punctuation() As String
-        <Xml.Serialization.XmlAttribute("punctuation")> _
+        <Xml.Serialization.XmlAttribute("punctuation")>
         Property PunctuationParse As String
             Get
                 If Punctuation.Length = 0 Then Return String.Empty
@@ -1491,7 +1503,7 @@ Public Class IslamData
             End Set
         End Property
         Public Numbers() As String
-        <Xml.Serialization.XmlAttribute("number")> _
+        <Xml.Serialization.XmlAttribute("number")>
         Property NumbersParse As String
             Get
                 If Numbers.Length = 0 Then Return String.Empty
@@ -1504,7 +1516,7 @@ Public Class IslamData
             End Set
         End Property
         Public NonArabic() As String
-        <Xml.Serialization.XmlAttribute("nonarabic")> _
+        <Xml.Serialization.XmlAttribute("nonarabic")>
         Property NonArabicParse As String
             Get
                 If NonArabic.Length = 0 Then Return String.Empty
@@ -1517,11 +1529,11 @@ Public Class IslamData
             End Set
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("translitschemes")> _
-    <Xml.Serialization.XmlArrayItem("scheme")> _
+    <Xml.Serialization.XmlArray("translitschemes")>
+    <Xml.Serialization.XmlArrayItem("scheme")>
     Public TranslitSchemes() As TranslitScheme
     Structure ArabicCapInfo
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Text As String()
         <Xml.Serialization.XmlAttribute("text")>
@@ -1534,11 +1546,11 @@ Public Class IslamData
             End Set
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("arabiccaptures")> _
-    <Xml.Serialization.XmlArrayItem("caps")> _
+    <Xml.Serialization.XmlArray("arabiccaptures")>
+    <Xml.Serialization.XmlArrayItem("caps")>
     Public ArabicCaptures() As ArabicCapInfo
     Structure ArabicNumInfo
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Text As String()
         <Xml.Serialization.XmlAttribute("text")>
@@ -1551,20 +1563,20 @@ Public Class IslamData
             End Set
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("arabicnumbers")> _
-    <Xml.Serialization.XmlArrayItem("nums")> _
+    <Xml.Serialization.XmlArray("arabicnumbers")>
+    <Xml.Serialization.XmlArrayItem("nums")>
     Public ArabicNumbers() As ArabicNumInfo
     Structure ArabicPattern
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlAttribute("match")> _
+        <Xml.Serialization.XmlAttribute("match")>
         Public Match As String
     End Structure
-    <Xml.Serialization.XmlArray("arabicpatterns")> _
-    <Xml.Serialization.XmlArrayItem("pattern")> _
+    <Xml.Serialization.XmlArray("arabicpatterns")>
+    <Xml.Serialization.XmlArrayItem("pattern")>
     Public ArabicPatterns() As ArabicPattern
     Structure ArabicGroup
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Text As String()
         <Xml.Serialization.XmlAttribute("text")>
@@ -1578,7 +1590,7 @@ Public Class IslamData
         End Property
     End Structure
     <Xml.Serialization.XmlArray("arabicgroups")>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <Xml.Serialization.XmlArrayItem("group")>
+    <Xml.Serialization.XmlArrayItem("group")>
     Public ArabicGroups() As ArabicGroup
     Structure ColorRuleCategory
         Structure ColorRule
@@ -1668,19 +1680,19 @@ Public Class IslamData
         Public ColorRules() As ColorRule
     End Structure
     <Xml.Serialization.XmlArray("colorrulesets")>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <Xml.Serialization.XmlArrayItem("colorruleset")>
+    <Xml.Serialization.XmlArrayItem("colorruleset")>
     Public ColorRuleSets() As ColorRuleCategory
 
     Structure RuleTranslationCategory
         Structure RuleTranslation
-            <Xml.Serialization.XmlAttribute("name")> _
+            <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
-            <Xml.Serialization.XmlAttribute("match")> _
+            <Xml.Serialization.XmlAttribute("match")>
             Public Match As String
 
-            <Xml.Serialization.XmlAttribute("evaluator")> _
+            <Xml.Serialization.XmlAttribute("evaluator")>
             Public Evaluator As String
-            <Xml.Serialization.XmlAttribute("negativematch")> _
+            <Xml.Serialization.XmlAttribute("negativematch")>
             Public NegativeMatch As String
             Public RuleFunc As Arabic.RuleFuncs
             Public __RuleFunc As String
@@ -1714,18 +1726,18 @@ Public Class IslamData
                 End Set
             End Property
         End Structure
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlElement("rule")> _
+        <Xml.Serialization.XmlElement("rule")>
         Public Rules() As RuleTranslation
     End Structure
-    <Xml.Serialization.XmlArray("translitrules")> _
-    <Xml.Serialization.XmlArrayItem("ruleset")> _
+    <Xml.Serialization.XmlArray("translitrules")>
+    <Xml.Serialization.XmlArrayItem("ruleset")>
     Public RuleSets() As RuleTranslationCategory
     Structure VerificationData
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlAttribute("match")> _
+        <Xml.Serialization.XmlAttribute("match")>
         Public Match As String
         <Xml.Serialization.XmlAttribute("evaluator")>
         Public Evaluator As String()
@@ -1748,14 +1760,14 @@ Public Class IslamData
             End Set
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("verificationset")> _
-    <Xml.Serialization.XmlArrayItem("verification")> _
+    <Xml.Serialization.XmlArray("verificationset")>
+    <Xml.Serialization.XmlArrayItem("verification")>
     Public VerificationSet() As VerificationData
     Structure RuleMetaSet
         Structure RuleMetadataTranslation
-            <Xml.Serialization.XmlAttribute("name")> _
+            <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
-            <Xml.Serialization.XmlAttribute("match")> _
+            <Xml.Serialization.XmlAttribute("match")>
             Public Match As String
             <Xml.Serialization.XmlAttribute("evaluator")>
             Public _Evaluator As String
@@ -1796,11 +1808,11 @@ Public Class IslamData
                 End Get
             End Property
         End Structure
-        <Xml.Serialization.XmlAttribute("from")> _
+        <Xml.Serialization.XmlAttribute("from")>
         Public From As String
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlElement("metarule")> _
+        <Xml.Serialization.XmlElement("metarule")>
         Public _Rules() As RuleMetadataTranslation
         ReadOnly Property Rules As RuleMetadataTranslation()
             Get
@@ -1811,51 +1823,51 @@ Public Class IslamData
             End Get
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("metarules")> _
-    <Xml.Serialization.XmlArrayItem("metaruleset")> _
+    <Xml.Serialization.XmlArray("metarules")>
+    <Xml.Serialization.XmlArrayItem("metaruleset")>
     Public MetaRules() As RuleMetaSet
     Structure LanguageInfo
-        <Xml.Serialization.XmlAttribute("code")> _
+        <Xml.Serialization.XmlAttribute("code")>
         Public Code As String
-        <Xml.Serialization.XmlAttribute("rtl")> _
+        <Xml.Serialization.XmlAttribute("rtl")>
         Public IsRTL As Boolean
     End Structure
-    <Xml.Serialization.XmlArray("languages")> _
-    <Xml.Serialization.XmlArrayItem("language")> _
+    <Xml.Serialization.XmlArray("languages")>
+    <Xml.Serialization.XmlArrayItem("language")>
     Public LanguageList() As LanguageInfo
 
     Structure ArabicFontList
-        <Xml.Serialization.XmlAttribute("id")> _
+        <Xml.Serialization.XmlAttribute("id")>
         Public ID As String
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlAttribute("family")> _
+        <Xml.Serialization.XmlAttribute("family")>
         Public Family As String
-        <Xml.Serialization.XmlAttribute("embedname")> _
+        <Xml.Serialization.XmlAttribute("embedname")>
         Public EmbedName As String
-        <Xml.Serialization.XmlAttribute("file")> _
+        <Xml.Serialization.XmlAttribute("file")>
         Public FileName As String
-        <Xml.Serialization.XmlAttribute("scale")> _
-        <ComponentModel.DefaultValueAttribute(-1.0)> _
+        <Xml.Serialization.XmlAttribute("scale")>
+        <ComponentModel.DefaultValueAttribute(-1.0)>
         Public Scale As Double
     End Structure
-    <Xml.Serialization.XmlArray("arabicfonts")> _
-    <Xml.Serialization.XmlArrayItem("arabicfont")> _
+    <Xml.Serialization.XmlArray("arabicfonts")>
+    <Xml.Serialization.XmlArrayItem("arabicfont")>
     Public ArabicFonts() As ArabicFontList
 
     Public Structure ScriptFont
         Public Structure Font
-            <Xml.Serialization.XmlAttribute("id")> _
+            <Xml.Serialization.XmlAttribute("id")>
             Public ID As String
         End Structure
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlElement("font")> _
+        <Xml.Serialization.XmlElement("font")>
         Public FontList() As Font
     End Structure
 
-    <Xml.Serialization.XmlArray("scriptfonts")> _
-    <Xml.Serialization.XmlArrayItem("scriptfont")> _
+    <Xml.Serialization.XmlArray("scriptfonts")>
+    <Xml.Serialization.XmlArrayItem("scriptfont")>
     Public ScriptFonts() As ScriptFont
     Public Class LanguageDefaults
         Public Class LanguageDefault
@@ -1894,21 +1906,21 @@ Public Class IslamData
     Public LanguageDefaultInfo As LanguageDefaults
     Public Class TranslationsInfo
         Public Structure TranslationInfo
-            <Xml.Serialization.XmlAttribute("name")> _
+            <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
-            <Xml.Serialization.XmlAttribute("file")> _
+            <Xml.Serialization.XmlAttribute("file")>
             Public FileName As String
-            <Xml.Serialization.XmlAttribute("translator")> _
+            <Xml.Serialization.XmlAttribute("translator")>
             Public Translator As String
         End Structure
         <Xml.Serialization.XmlElement("translation")>
         Public TranslationList() As TranslationInfo
     End Class
     Structure VerseNumberScheme
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public ExtraVerses As Integer()()
-        <Xml.Serialization.XmlAttribute("extraverses")> _
+        <Xml.Serialization.XmlAttribute("extraverses")>
         Property ExtraVersesStr As String
             Get
                 Return String.Join(",", Linq.Enumerable.Select(ExtraVerses, Function(Ints As Integer()) String.Join(":", Linq.Enumerable.Select(Ints, Function(Int As Integer) CStr(Int)))))
@@ -1922,7 +1934,7 @@ Public Class IslamData
             End Set
         End Property
         Public CombinedVerses As Integer()()
-        <Xml.Serialization.XmlAttribute("combinedverses")> _
+        <Xml.Serialization.XmlAttribute("combinedverses")>
         Property CombinedVersesStr As String
             Get
                 Return String.Join(",", Linq.Enumerable.Select(CombinedVerses, Function(Ints As Integer()) String.Join(":", Linq.Enumerable.Select(Ints, Function(Int As Integer) CStr(Int)))))
@@ -1936,97 +1948,97 @@ Public Class IslamData
             End Set
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("versenumberschemes")> _
-    <Xml.Serialization.XmlArrayItem("versenumberscheme")> _
+    <Xml.Serialization.XmlArray("versenumberschemes")>
+    <Xml.Serialization.XmlArrayItem("versenumberscheme")>
     Public VerseNumberSchemes As VerseNumberScheme()
 
-    <Xml.Serialization.XmlElement("translations")> _
+    <Xml.Serialization.XmlElement("translations")>
     Public Translations As TranslationsInfo
     Structure QuranSelection
         Structure QuranSelectionInfo
-            <Xml.Serialization.XmlAttribute("chapter")> _
+            <Xml.Serialization.XmlAttribute("chapter")>
             Public ChapterNumber As Integer
-            <Xml.Serialization.XmlAttribute("startverse")> _
+            <Xml.Serialization.XmlAttribute("startverse")>
             Public VerseNumber As Integer
-            <ComponentModel.DefaultValueAttribute(1)> _
-            <Xml.Serialization.XmlAttribute("startword")> _
+            <ComponentModel.DefaultValueAttribute(1)>
+            <Xml.Serialization.XmlAttribute("startword")>
             Public WordNumber As Integer
-            <ComponentModel.DefaultValueAttribute(0)> _
-            <Xml.Serialization.XmlAttribute("endword")> _
+            <ComponentModel.DefaultValueAttribute(0)>
+            <Xml.Serialization.XmlAttribute("endword")>
             Public EndWordNumber As Integer
-            <ComponentModel.DefaultValueAttribute(0)> _
-            <Xml.Serialization.XmlAttribute("endverse")> _
+            <ComponentModel.DefaultValueAttribute(0)>
+            <Xml.Serialization.XmlAttribute("endverse")>
             Public ExtraVerseNumber As Integer
         End Structure
-        <Xml.Serialization.XmlAttribute("description")> _
+        <Xml.Serialization.XmlAttribute("description")>
         Public Description As String
-        <Xml.Serialization.XmlElement("verse")> _
+        <Xml.Serialization.XmlElement("verse")>
         Public SelectionInfo As QuranSelectionInfo()
     End Structure
-    <Xml.Serialization.XmlArray("quranselections")> _
-    <Xml.Serialization.XmlArrayItem("quranselection")> _
+    <Xml.Serialization.XmlArray("quranselections")>
+    <Xml.Serialization.XmlArrayItem("quranselection")>
     Public QuranSelections As QuranSelection()
     Structure QuranDivision
-        <Xml.Serialization.XmlAttribute("description")> _
+        <Xml.Serialization.XmlAttribute("description")>
         Public Description As String
         <Xml.Serialization.XmlAttribute("arabic")>
         Public Arabic As String
     End Structure
-    <Xml.Serialization.XmlArray("qurandivisions")> _
-    <Xml.Serialization.XmlArrayItem("division")> _
+    <Xml.Serialization.XmlArray("qurandivisions")>
+    <Xml.Serialization.XmlArrayItem("division")>
     Public QuranDivisions As QuranDivision()
 
     Structure QuranChapter
-        <Xml.Serialization.XmlAttribute("index")> _
+        <Xml.Serialization.XmlAttribute("index")>
         Public Index As String
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <ComponentModel.DefaultValueAttribute(0)> _
-        <Xml.Serialization.XmlAttribute("uniqueletters")> _
+        <ComponentModel.DefaultValueAttribute(0)>
+        <Xml.Serialization.XmlAttribute("uniqueletters")>
         Public UniqueLetters As Integer
     End Structure
-    <Xml.Serialization.XmlArray("quranchapters")> _
-    <Xml.Serialization.XmlArrayItem("chapter")> _
+    <Xml.Serialization.XmlArray("quranchapters")>
+    <Xml.Serialization.XmlArrayItem("chapter")>
     Public QuranChapters As QuranChapter()
 
     Structure QuranPart
-        <Xml.Serialization.XmlAttribute("index")> _
+        <Xml.Serialization.XmlAttribute("index")>
         Public Index As String
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlAttribute("id")> _
+        <Xml.Serialization.XmlAttribute("id")>
         Public ID As String
     End Structure
-    <Xml.Serialization.XmlArray("quranparts")> _
-    <Xml.Serialization.XmlArrayItem("part")> _
+    <Xml.Serialization.XmlArray("quranparts")>
+    <Xml.Serialization.XmlArrayItem("part")>
     Public QuranParts As QuranPart()
 
     Structure CollectionInfo
         Structure CollTranslationInfo
-            <Xml.Serialization.XmlAttribute("name")> _
+            <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
-            <Xml.Serialization.XmlAttribute("file")> _
+            <Xml.Serialization.XmlAttribute("file")>
             Public FileName As String
         End Structure
-        <Xml.Serialization.XmlAttribute("name")> _
+        <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
-        <Xml.Serialization.XmlAttribute("file")> _
+        <Xml.Serialization.XmlAttribute("file")>
         Public FileName As String
-        <Xml.Serialization.XmlAttribute("default")> _
+        <Xml.Serialization.XmlAttribute("default")>
         Public DefaultTranslation As String
-        <Xml.Serialization.XmlArray("translations")> _
-        <Xml.Serialization.XmlArrayItem("translation")> _
+        <Xml.Serialization.XmlArray("translations")>
+        <Xml.Serialization.XmlArrayItem("translation")>
         Public Translations() As CollTranslationInfo
     End Structure
-    <Xml.Serialization.XmlArray("hadithcollections")> _
-    <Xml.Serialization.XmlArrayItem("collection")> _
+    <Xml.Serialization.XmlArray("hadithcollections")>
+    <Xml.Serialization.XmlArrayItem("collection")>
     Public Collections() As CollectionInfo
     Structure PartOfSpeechInfo
-        <Xml.Serialization.XmlAttribute("symbol")> _
+        <Xml.Serialization.XmlAttribute("symbol")>
         Public Symbol As String
-        <Xml.Serialization.XmlAttribute("id")> _
+        <Xml.Serialization.XmlAttribute("id")>
         Public Id As String
-        <Xml.Serialization.XmlAttribute("color")> _
+        <Xml.Serialization.XmlAttribute("color")>
         Public _Color As String
         ReadOnly Property Color As Integer
             Get
@@ -2039,8 +2051,8 @@ Public Class IslamData
             End Get
         End Property
     End Structure
-    <Xml.Serialization.XmlArray("partsofspeech")> _
-    <Xml.Serialization.XmlArrayItem("pos")> _
+    <Xml.Serialization.XmlArray("partsofspeech")>
+    <Xml.Serialization.XmlArrayItem("pos")>
     Public PartsOfSpeech() As PartOfSpeechInfo
 End Class
 Public Class CachedData

@@ -215,17 +215,38 @@ namespace IslamSourceQuranViewer
         }
         private void PlayPause_Click(object sender, RoutedEventArgs e)
         {
-            VersePlayer.Source = new Uri("");
+            VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.Reciters(0).Source, IslamMetadata.CachedData.IslamData.Reciters(0).Name, CurrentPlayingChapter, CurrentPlayingVerse));
         }
         private void GoToVerse_Click(object sender, RoutedEventArgs e)
         {
             GoToVersePopup.IsOpen = true;
+            ViewModel.PropertyChanged += NewVerseSelection;
+            GoToVersePopup.Closed += PopupClosed;
+        }
+
+        private void PopupClosed(object sender, object e)
+        {
+            ViewModel.PropertyChanged -= NewVerseSelection;
+            GoToVersePopup.Closed -= PopupClosed;
+        }
+
+        void NewVerseSelection(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "CurrentVerse")
+            {
+                GoToVersePopup.IsOpen = false;
+                ScrollToVerse(ViewModel.CurrentVerse.VerseItem);
+            }
+        }
+        private void ScrollToVerse(MyRenderModel Item)
+        {
             ScrollViewer sv = VisualTreeHelper.GetChild(VisualTreeHelper.GetChild(MainControl, 0), 0) as ScrollViewer;
             //ScrollViewer sv = WinRTXamlToolkit.Controls.Extensions.ItemsControlExtensions.GetScrollViewer(MainControl);
-            FrameworkElement ItemContainer = MainControl.ContainerFromItem(ViewModel.CurrentVerse.VerseItem) as FrameworkElement;
+            FrameworkElement ItemContainer = MainControl.ContainerFromItem(Item) as FrameworkElement;
             Point pos = ItemContainer.TransformToVisual(sv).TransformPoint(new Point());
             sv.ChangeView(null, sv.VerticalOffset + pos.Y, null);
         }
+        private int CurrentPlayingChapter;
         private int CurrentPlayingVerse;
         private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
         {
@@ -236,7 +257,8 @@ namespace IslamSourceQuranViewer
                     PlayPause.Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Pause/Label");
                 } else {
                     if (mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Stopped) {
-
+                        CurrentPlayingVerse += 1;
+                        ScrollToVerse(ViewModel.VerseReferences[CurrentPlayingVerse].VerseItem);
                     } 
                 }
             }
