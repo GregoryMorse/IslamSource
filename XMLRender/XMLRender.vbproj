@@ -1023,7 +1023,9 @@
     <Compile Include="My Project\AssemblyInfo.vb" />
   </ItemGroup>
   <ItemGroup>
-    <XliffResource Include="MultilingualResources\XMLRender.af.xlf" />
+    <XliffResource Include="MultilingualResources\XMLRender.af.xlf">
+      <SubType>Designer</SubType>
+    </XliffResource>
     <XliffResource Include="MultilingualResources\XMLRender.am.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.ar.xlf" />
     <XliffResource Include="MultilingualResources\XMLRender.as.xlf" />

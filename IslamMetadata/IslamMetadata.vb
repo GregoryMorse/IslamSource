@@ -5359,6 +5359,78 @@ Public Class TanzilReader
         Next
         Utility.WriteAllLines(WordFilePath, New List(Of String)(Linq.Enumerable.Select(W4WLines, Function(Input As List(Of String)) String.Join("|"c, Input.ToArray()))).ToArray())
     End Sub
+    Public Shared Function DoGetRenderedQuranTextW4W(Text As String, MetaRules As Generic.List(Of Arabic.RuleMetadata), DefStops As Integer(), W4WLines As String(), Chapter As Integer, Verse As Integer, BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray.RenderText
+        Dim Texts As New List(Of RenderArray.RenderText)
+        Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
+        Dim PauseMarks As Integer = 0
+        If NoRef Then
+            If Not NoArabic Then
+                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("(")))
+                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(")"), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter(")"), Nothing, CachedData.RuleMetas("Normal"))), String.Empty)))
+            End If
+            If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), ")"))
+            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
+            Texts.Clear()
+        End If
+        Dim Words As String() = Nothing
+        Dim TranslitWords As String() = Nothing
+        Dim WordColors As RenderArray.RenderText()() = Nothing
+        Dim TranslitColors As RenderArray.RenderText()() = Nothing
+        If Colorize Then
+            WordColors = Arabic.ApplyColorRules(Text, True, MetaRules)
+            TranslitColors = Arabic.TransliterateWithRulesColor(Text, Scheme, True, False, MetaRules)
+        Else
+            Words = If(Text Is Nothing, {}, Text.Split(" "c))
+            TranslitWords = Arabic.TransliterateToScheme(Text, SchemeType, Scheme, MetaRules).Split(" "c)
+        End If
+        Dim Pos As Integer = 0
+        For Count As Integer = 0 To If(Colorize, WordColors.Length, Words.Length) - 1
+            'handle start/end words here which have space placeholders
+            If If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) = 1 AndAlso
+                    If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ChrW(0) Then
+                PauseMarks += 1
+            ElseIf If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) = 1 AndAlso
+                    (Arabic.IsStop(ArabicData.FindLetterBySymbol(If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)))) Or If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicStartOfRubElHizb Or If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicPlaceOfSajdah) Then
+                PauseMarks += 1
+                If Not NoArabic Then
+                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " " + If(Colorize, String.Join(String.Empty, Linq.Enumerable.Select(WordColors(Count), Function(Item) CStr(Item.Text))), Words(Count))))
+                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " "))
+                    'Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count), String.Empty)))
+                    If Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, Array.IndexOf(DefStops, Pos) = -1))
+                End If
+                If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
+                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
+                Texts.Clear()
+            ElseIf If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) <> 0 Then
+                If Not NoArabic Then
+                    If Colorize Then
+                        Texts.AddRange(WordColors(Count))
+                        Texts.AddRange(TranslitColors(Count - PauseMarks))
+                    Else
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Words(Count)))
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count - PauseMarks), String.Empty)))
+                    End If
+                    If If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicEndOfAyah Then
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False))
+                    End If
+                End If
+                If Translation <> String.Empty Then
+                    If If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicEndOfAyah Then
+                        If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), "(" + If(NoRef, String.Empty, CStr(CInt(If(Chapter = 0, BaseVerse, 1)) + Verse) + ")")))
+                    Else
+                        Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), TanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks)))
+                    End If
+                End If
+                If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
+                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
+                If Not NoArabic AndAlso Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, True)}))
+                Texts.Clear()
+            End If
+            Pos += If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1
+        Next
+        'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(If(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
+        Return New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items)
+    End Function
     Public Shared Function DoGetRenderedQuranText(QuranText As Collections.Generic.List(Of String()), BaseChapter As Integer, BaseVerse As Integer, Translation As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer, W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, NoRef As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray
         Dim Text As String = String.Empty
         Dim Node As Xml.Linq.XAttribute
@@ -5405,19 +5477,29 @@ Public Class TanzilReader
                     If CInt(If(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
                         Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attribute("bismillah")
                         If Not Node Is Nothing Then
+                            Dim LeadingMetaRules As List(Of Arabic.RuleMetadata) = Nothing
+                            Dim LeadingDefStops As Integer() = Nothing
                             If Not NoArabic Then
-                                Dim LeadingMetaRules As List(Of Arabic.RuleMetadata) = Arabic.GetMetarules(Node.Value, GenerateDefaultStops(Node.Value), CachedData.RuleMetas("UthmaniQuran"))
-                                If Colorize Then
-                                    Texts.AddRange(Arabic.ApplyColorRules(Node.Value, False, LeadingMetaRules)(0))
-                                    Texts.AddRange(Arabic.TransliterateWithRulesColor(Node.Value, Scheme, False, False, LeadingMetaRules)(0))
-                                Else
-                                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Node.Value))
-                                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Node.Value, SchemeType, Scheme, LeadingMetaRules).Trim(), String.Empty)))
-                                End If
+                                LeadingDefStops = GenerateDefaultStops(Node.Value)
+                                LeadingMetaRules = Arabic.GetMetarules(Node.Value, GenerateDefaultStops(Node.Value), CachedData.RuleMetas("UthmaniQuran"))
                             End If
-                            If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), TanzilReader.GetTranslationVerse(Lines, 1, 1)))
-                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                            Texts.Clear()
+                            If W4W And Translation <> String.Empty Then
+                                Texts.Add(DoGetRenderedQuranTextW4W(Node.Value, LeadingMetaRules, LeadingDefStops, W4WLines, 1 - BaseChapter, 1 - BaseVerse, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4WNum, NoArabic, Header, NoRef, Colorize, Verses))
+                            End If
+                            If Verses Then
+                                If Not NoArabic Then
+                                    If Colorize Then
+                                        Texts.AddRange(Arabic.ApplyColorRules(Node.Value, False, LeadingMetaRules)(0))
+                                        Texts.AddRange(Arabic.TransliterateWithRulesColor(Node.Value, Scheme, False, False, LeadingMetaRules)(0))
+                                    Else
+                                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Node.Value))
+                                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Node.Value, SchemeType, Scheme, LeadingMetaRules).Trim(), String.Empty)))
+                                    End If
+                                End If
+                                If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), TanzilReader.GetTranslationVerse(Lines, 1, 1)))
+                                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
+                                Texts.Clear()
+                            End If
                         End If
                     End If
                     If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse) Then
@@ -5435,74 +5517,7 @@ Public Class TanzilReader
                         MetaRules = Arabic.GetMetarules(Text, DefStops, CachedData.RuleMetas("UthmaniQuran"))
                     End If
                     If W4W And Translation <> String.Empty Then
-                        Dim PauseMarks As Integer = 0
-                        If NoRef Then
-                            If Not NoArabic Then
-                                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("(")))
-                                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(")"), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter(")"), Nothing, CachedData.RuleMetas("Normal"))), String.Empty)))
-                            End If
-                            If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), ")"))
-                            Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                            Texts.Clear()
-                        End If
-                        Dim Words As String() = Nothing
-                        Dim TranslitWords As String() = Nothing
-                        Dim WordColors As RenderArray.RenderText()() = Nothing
-                        Dim TranslitColors As RenderArray.RenderText()() = Nothing
-                        If Colorize Then
-                            WordColors = Arabic.ApplyColorRules(Text, True, MetaRules)
-                            TranslitColors = Arabic.TransliterateWithRulesColor(Text, Scheme, True, False, MetaRules)
-                        Else
-                            Words = If(Text Is Nothing, {}, Text.Split(" "c))
-                            TranslitWords = Arabic.TransliterateToScheme(Text, SchemeType, Scheme, MetaRules).Split(" "c)
-                        End If
-                        Dim Pos As Integer = 0
-                        For Count As Integer = 0 To If(Colorize, WordColors.Length, Words.Length) - 1
-                            'handle start/end words here which have space placeholders
-                            If If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) = 1 AndAlso
-                                If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ChrW(0) Then
-                                PauseMarks += 1
-                            ElseIf If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) = 1 AndAlso
-                                (Arabic.IsStop(ArabicData.FindLetterBySymbol(If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)))) Or If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicStartOfRubElHizb Or If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicPlaceOfSajdah) Then
-                                PauseMarks += 1
-                                If Not NoArabic Then
-                                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " " + If(Colorize, String.Join(String.Empty, Linq.Enumerable.Select(WordColors(Count), Function(Item) CStr(Item.Text))), Words(Count))))
-                                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " "))
-                                    'Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count), String.Empty)))
-                                    If Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, Array.IndexOf(DefStops, Pos) = -1))
-                                End If
-                                If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
-                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                                Texts.Clear()
-                            ElseIf If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) <> 0 Then
-                                If Not NoArabic Then
-                                    If Colorize Then
-                                        Texts.AddRange(WordColors(Count))
-                                        Texts.AddRange(TranslitColors(Count - PauseMarks))
-                                    Else
-                                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Words(Count)))
-                                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count - PauseMarks), String.Empty)))
-                                    End If
-                                    If If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicEndOfAyah Then
-                                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False))
-                                    End If
-                                End If
-                                If Translation <> String.Empty Then
-                                    If If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicEndOfAyah Then
-                                        If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), "(" + If(NoRef, String.Empty, CStr(CInt(If(Chapter = 0, BaseVerse, 1)) + Verse) + ")")))
-                                    Else
-                                        Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), TanzilReader.GetW4WTranslationVerse(W4WLines, BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks)))
-                                    End If
-                                End If
-                                If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
-                                Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                                If Not NoArabic AndAlso Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, True)}))
-                                Texts.Clear()
-                            End If
-                            Pos += If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1
-                        Next
-                        'Text += Arabic.TransliterateFromBuckwalter("(" + CStr(If(Chapter = 0, BaseVerse, 1) + Verse) + ") ")
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items))
+                        Texts.Add(DoGetRenderedQuranTextW4W(Text, MetaRules, DefStops, W4WLines, Chapter, Verse, BaseChapter, BaseVerse, Translation, SchemeType, Scheme, TranslationIndex, W4WNum, NoArabic, Header, NoRef, Colorize, Verses))
                     End If
                     If Verses Then
                         If Not NoArabic Then
