@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Ahmed Raza Khan." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Ahmed Raza Khan - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Ahmed Raza Khan		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: July 17, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Mon, 1 Aug 2011 00:00:02 -0400 </div>
+<div class="info"> -0,0 +1 </div>
+<div class="text ltr"><span class="ins">Allah - beginning with the name of - the Most Gracious, the Most Merciful.</span></div>
+
+<div class="info"> -6,2 +7 </div>
+<div class="text ltr">The path of those whom You have favoured – Not the path of those who earned Your anger – nor of those who are astray.</div>
+
+
+<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿All</span> <span class="ins">All</span> praise is to Allah, the Lord Of The Creation.</div>
+
+<div class="info"> -6,2 +6,2 </div>
+<div class="text ltr">The path of those whom You have favoured <span class="del">-</span> <span class="ins">–</span></div>
+
+<div class="text ltr">Not the path of those who earned Your anger <span class="del">-</span> <span class="ins">–</span> nor of those who are astray.</div>
+
+<div class="info"> -11 +11 </div>
+<div class="text ltr">And who believe in this (Qur’an) which has been sent down upon you, O beloved Prophet, (Mohammed <span class="del">-</span> <span class="ins">–</span> peace and blessings be upon him) and what was sent down before you; and are certain of the Hereafter.</div>
+
+<div class="info"> -13 +13 </div>
+<div class="text ltr">As for those whose fate is disbelief, whether you warn them or do not warn them <span class="del">-</span> <span class="ins">–</span> it is all one for them; they will not believe. (Because their hearts are sealed <span class="del">-</span> <span class="ins">–</span> see next verse).</div>
+
+<div class="info"> -15 +15 </div>
+<div class="text ltr">And among the people are <span class="del">some *</span> <span class="ins">some*</span> that say, “We believe in Allah and the Last <span class="del">Day **”</span> <span class="ins">Day**”</span> whereas they are not believers! (* The hypocrites ** the Day of Resurrection)</div>
+
+<div class="info"> -23 +23 </div>
+<div class="text ltr">These are the people who purchased error in exchange of guidance <span class="del">-</span> <span class="ins">–</span> so their bargain did not profit them, and they did not know how to trade.</div>
+
+<div class="info"> -29,3 +29,3 </div>
+<div class="text ltr">The One Who has appointed the earth a base for you, and the sky a canopy <span class="del">-</span> <span class="ins">–</span> and caused water to pour down from the sky, thereby producing fruits as food for you; and do not knowingly set up rivals to Allah!</div>
+
+<div class="text ltr">And if you are in any doubt concerning what We have sent down upon Our distinguished bondman (Prophet Mohammed <span class="del">-</span> <span class="ins">–</span> peace and blessings be upon him), bring forth a single surah (chapter) equal to it; and call upon all your supporters, other than Allah, if you are truthful.</div>
+
+<div class="text ltr">And if you are unable to bring forth (one chapter) <span class="del">-</span> <span class="ins">–</span> and We declare that you can never bring one <span class="del">-</span> <span class="ins">–</span> then fear the fire (of hell), the fuel of which is men and stones; kept ready for the disbelievers.</div>
+
+<div class="info"> -34 +34 </div>
+<div class="text ltr">Those who break the covenant of Allah after ratifying it <span class="del">-</span> <span class="ins">–</span> and sever what Allah has ordered to join, and who cause turmoil (evil / religious chaos) in the earth; it is they who are the losers.</div>
+
+<div class="info"> -41,3 +41,3 </div>
+<div class="text ltr">And (remember) when We ordered the angels to prostrate before Adam, so they all prostrated, except Iblis (Satan <span class="del">-</span> <span class="ins">–</span> devil); he refused and was proud <span class="del">-</span> <span class="ins">–</span> and became a disbeliever.</div>
+
+<div class="text ltr">And We said, “O Adam! You and your wife dwell in this Garden, and eat freely from it wherever you please <span class="del">-</span> <span class="ins">–</span> but do not approach this tree for you will become of those who transgress.”</div>
+
+<div class="text ltr">So the devil destabilised them in it and removed them from where they were <span class="del">-</span> <span class="ins">–</span> and We said, “Go down, one of you is an enemy to the other; and for a fixed time you shall stay on earth and feed in it.”</div>
+
+<div class="info"> -45 +45 </div>
+<div class="text ltr">We said, “Go down from Paradise, all of you; then if some guidance comes to you from Me <span class="del">-</span> <span class="ins">–</span> so whoever follows My guidance, for such is neither fear nor any grief.”</div>
+
+<div class="info"> -48 +48 </div>
+<div class="text ltr">And accept faith in what I have sent down (the Qur’an), which confirms what is with you (the Torah / Bible), and do not be the first to disbelieve in it <span class="del">-</span> <span class="ins">–</span> and do not exchange My verses for an abject <span class="del">-</span> <span class="ins">–</span> and fear Me alone.</div>
+
+<div class="info"> -58 +58 </div>
+<div class="text ltr">And when We made a commitment with Moosa (Moses) for forty nights <span class="del">-</span> <span class="ins">–</span> then behind him you started worshipping the calf, and you were unjust.</div>
+
+<div class="info"> -61 +61 </div>
+<div class="text ltr">And when Moosa said to his people, “O my people! You have wronged yourselves by taking the <span class="del">calf, *</span> <span class="ins">calf,*</span> therefore turn in repentance to your Creator, therefore kill each other; this is better for you before your Creator”; He therefore accepted your repentance; indeed He only is the Most Acceptor of Repentance, the Most Merciful. (* as your deity for worship)</div>
+
+<div class="info"> -65 +65 </div>
+<div class="text ltr">And when We said, “Enter this town and eat freely from what is in it, and enter the gate whilst prostrating, and say, ‘May our sins be forgiven’ <span class="del">-</span> <span class="ins">–</span> We will forgive you your sins; and We will soon increase the reward for the righteous.”</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/en.ahmedraza/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -15,16 +15,64 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>کلام ترجمہ کی طرف سے قرآن کلام</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>حرفی</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>عربی</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>آیت کی طرف سے آیت</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>لفظ سے لفظ</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>قرآن</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>قرآن ناظر</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>تجوید</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>اس کے عربی، سیکھنے، تعلیم حاصل کرنے، تحقیق، حفظ، فکر اور تجوید کی مہارت کے لئے لفظ اور آیت کی طرف سے نقل حرفی اور ترجمہ لفظ آیت کی طرف سے قرآن.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>مین قرآن ناظرین.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>قرآن</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>ترجمہ</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>حرفی</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>عربی</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>قرآن</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>قرآن پاک</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>امام القرآن</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>مین قرآن ناظرین.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>ابتدائی ورژن.</value>
   </data>
 </root>

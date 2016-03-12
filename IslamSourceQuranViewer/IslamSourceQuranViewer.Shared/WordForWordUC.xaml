@@ -8,6 +8,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
+        <MenuFlyout x:Key="ContextFlyout">
+            <MenuFlyoutItem x:Uid="AddBookmark"></MenuFlyoutItem>
+            <MenuFlyoutItem x:Uid="RemoveBookmark"></MenuFlyoutItem>
+            <MenuFlyoutItem x:Uid="CopyToClipboard"></MenuFlyoutItem>
+            <MenuFlyoutItem x:Uid="SetPlaybackVerse"></MenuFlyoutItem>
+            <MenuFlyoutItem x:Uid="ShowMorphologyInfo"></MenuFlyoutItem>
+            <MenuFlyoutItem x:Uid="ShowExegesis"></MenuFlyoutItem>
+        </MenuFlyout>
         <Style x:Key="TitleStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
         </Style>
@@ -61,7 +69,7 @@
             <ItemsControl ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" Height="auto"></StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="auto" Holding="StackPanel_Holding" FlyoutBase.AttachedFlyout="{StaticResource ContextFlyout}"></StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.Template>

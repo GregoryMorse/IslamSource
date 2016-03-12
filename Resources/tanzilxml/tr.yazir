@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Elmalili Hamdi Yazir." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Elmalili Hamdi Yazir - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Elmalili Hamdi Yazir		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: June 4, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -296,2 +296,2 </div>
+<div class="text ltr"><span class="del">3, 4. O, sana kendisinden öncekileri tasdik edip doğrulayan bu kitabı hak ile indirdi. Daha önce insanlara hidayet olarak Tevrat'ı ve İncil'i de yine O indirmişti.. Evet bu Furkan'ı da O indirdi. Gerçek şu ki, Allah'ın âyetlerini inkâr edenler için çetin bir azap vardır. Allah çok güçlüdür, intikamını alır.</span> </div>
+
+<div class="text ltr"><span class="del">3, 4.</span> O, sana kendisinden öncekileri tasdik edip doğrulayan bu kitabı hak ile indirdi. Daha önce insanlara hidayet olarak Tevrat'ı ve İncil'i de yine O indirmişti.. Evet bu Furkan'ı da O indirdi. Gerçek şu ki, Allah'ın âyetlerini inkâr edenler için çetin bir azap vardır. Allah çok güçlüdür, intikamını alır.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -459,2 +459,2 </div>
+<div class="text ltr"><span class="del">166, 167. İki topluluğun karşılaştığı günde başınıza gelen musibet de Allah'ın izniyledir. Bu da müminleri belirlemesi ve hem de münafıklık yapanları ayırt etmesi içindir. Ve onlara: "Geliniz, Allah yolunda savaşınız veya (hiç olmazsa) savunmaya geçiniz." denilmişti. Onlar ise: "Biz savaşmasını (veya savaş olacağını) bilseydik arkanızdan gelirdik." demişlerdi. Onlar, o gün, imandan çok küfre yakındılar. kalblerinde olmayanı ağızlarıyla söylüyorlardı. Allah neyi gizlediklerini daha iyi bilendir.</span> </div>
+
+<div class="text ltr"><span class="del">166, 167.</span> İki topluluğun karşılaştığı günde başınıza gelen musibet de Allah'ın izniyledir. Bu da müminleri belirlemesi ve hem de münafıklık yapanları ayırt etmesi içindir. Ve onlara: "Geliniz, Allah yolunda savaşınız veya (hiç olmazsa) savunmaya geçiniz." denilmişti. Onlar ise: "Biz savaşmasını (veya savaş olacağını) bilseydik arkanızdan gelirdik." demişlerdi. Onlar, o gün, imandan çok küfre yakındılar. kalblerinde olmayanı ağızlarıyla söylüyorlardı. Allah neyi gizlediklerini daha iyi bilendir.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -611,2 +611,2 </div>
+<div class="text ltr"><span class="del">118, 119. Allah o şeytana lanet etti. Ve o da: "Elbette senin kullarından belirli bir pay alacağım, onları mutlaka saptıracağım, onları boş kuruntulara sokacağım, ve onlara emredeceğim de hayvanların kulaklarını yaracaklar, onlara emredeceğim de Allah'ın yaratışını değiştirecekler" dedi. Kim Allah'ı bırakıp da şeytanı dost edinirse, şüphesiz o, apaçık bir ziyana uğramış olur.</span> </div>
+
+<div class="text ltr"><span class="del">118, 119.</span> Allah o şeytana lanet etti. Ve o da: "Elbette senin kullarından belirli bir pay alacağım, onları mutlaka saptıracağım, onları boş kuruntulara sokacağım, ve onlara emredeceğim de hayvanların kulaklarını yaracaklar, onlara emredeceğim de Allah'ın yaratışını değiştirecekler" dedi. Kim Allah'ı bırakıp da şeytanı dost edinirse, şüphesiz o, apaçık bir ziyana uğramış olur.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -653,2 +653,2 </div>
+<div class="text ltr"><span class="del">160, 161. Yahudilerin zulmetmeleri ve birçok kimseleri Allah yolundan alıkoymaları, yasaklandıkları halde faiz almaları ve insanların mallarını haksız yere yemeleri sebebiyle daha önce kendilerine helâl kılınan temiz şeyleri haram kıldık. Onlardan kâfir olanlara can yakıcı bir azap hazırladık.</span> </div>
+
+<div class="text ltr"><span class="del">160, 161.</span> Yahudilerin zulmetmeleri ve birçok kimseleri Allah yolundan alıkoymaları, yasaklandıkları halde faiz almaları ve insanların mallarını haksız yere yemeleri sebebiyle daha önce kendilerine helâl kılınan temiz şeyleri haram kıldık. Onlardan kâfir olanlara can yakıcı bir azap hazırladık.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -1894,2 +1894,2 </div>
+<div class="text ltr"><span class="del">92, 93. Rabbin hakkı için biz, mutlaka onların hepsini yaptıklarından dolayı hesaba çekeceğiz.</span> </div>
+
+<div class="text ltr"><span class="del">92, 93.</span> Rabbin hakkı için biz, mutlaka onların hepsini yaptıklarından dolayı hesaba çekeceğiz.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3007,2 +3007,2 </div>
+<div class="text ltr"><span class="del">75, 76. İbrahim dedi ki: "İyi ama, ister sizin, ister önceki atalarınızın olsun, neye taptığınızı (biraz olsun) düşündünüz mü?"</span> </div>
+
+<div class="text ltr"><span class="del">75, 76.</span> İbrahim dedi ki: "İyi ama, ister sizin, ister önceki atalarınızın olsun, neye taptığınızı (biraz olsun) düşündünüz mü?"</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3024,2 +3024,2 </div>
+<div class="text ltr"><span class="del">92, 93. Onlara, "Allah'ı bırakıp da taptıklarınız, hani nerede? Size yardım edebiliyorlar mı veya kendilerini kurtarabiliyorlar mı?" denilir.</span> </div>
+
+<div class="text ltr"><span class="del">92, 93.</span> Onlara, "Allah'ı bırakıp da taptıklarınız, hani nerede? Size yardım edebiliyorlar mı veya kendilerini kurtarabiliyorlar mı?" denilir.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3028 +3028 </div>
+<div class="text ltr"><span class="del">Ve bütün o İblis orduları onun içinde birbirleriyle çekişirlerken dediler ki:</span> <span class="ins">=</span></div>
+
+<div class="info"> -3083,2 +3083,2 </div>
+<div class="text ltr"><span class="del">151, 152. "Yeryüzünde bozgunculuk yapıp dirlik düzenlik vermeyen bozguncuların emrine uymayın."</span> </div>
+
+<div class="text ltr"><span class="del">151, 152.</span> "Yeryüzünde bozgunculuk yapıp dirlik düzenlik vermeyen bozguncuların emrine uymayın."</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3130,4 +3130,4 </div>
+<div class="text ltr"><span class="del">198, 199.</span> Biz onu Arapça bilmeyenlerden birine indirseydik de, bunu o okusaydı, yine de ona iman etmezlerdi.</div>
+
+<div class="text ltr"><span class="del">198, 199. Biz onu Arapça bilmeyenlerden birine indirseydik de, bunu o okusaydı, yine de ona iman etmezlerdi.</span> </div>
+
+<div class="text ltr"><span class="del">200, 201. Böylece onu günahkarların kalplerine soktuk. (okuyup anladılar, ama yine de) acıklı azabı görünceye kadar ona iman etmezler.</span> </div>
+
+<div class="text ltr"><span class="del">200, 201.</span> <span class="ins">=</span></div>
+
+<div class="text ltr">Böylece onu günahkarların kalplerine soktuk. (okuyup anladılar, ama yine de) acıklı azabı görünceye kadar ona iman etmezler.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3157,2 +3157,2 </div>
+<div class="text ltr"><span class="del">225, 226. Onların her vadide şaşkın şaşkın dolaştıklarını ve gerçekte yapmadıkları şeyleri söylediklerini görmedin mi?</span> </div>
+
+<div class="text ltr"><span class="del">225, 226.</span> Onların her vadide şaşkın şaşkın dolaştıklarını ve gerçekte yapmadıkları şeyleri söylediklerini görmedin mi?</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/tr.yazir/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

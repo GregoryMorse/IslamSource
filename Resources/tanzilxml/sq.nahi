@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Hasan Efendi Nahi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Hasan Efendi Nahi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Hasan Efendi Nahi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿Me</span> <span class="ins">Me</span> emër të Allahut, Mëshirues dhe Përdëllimtar i Madh.</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -52,2 +52,2 </div>
+<div class="text ltr"><span class="del">45-46. Ndihmoni vetes me durim e me namaz, e kjo është njëmend vështirë pos për ata që i përulen Zotit, të cilët janë të bindur se do të dalin para Zotit dhe me të vërtetë do të kthehen tek Ai.</span> </div>
+
+<div class="text ltr"><span class="del">45-46.</span> Ndihmoni vetes me durim e me namaz, e kjo është njëmend vështirë pos për ata që i përulen Zotit, të cilët janë të bindur se do të dalin para Zotit dhe me të vërtetë do të kthehen tek Ai.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -6236 +6236 </div>
+<div class="text ltr">prej xhindëve dhe prej njerëzve!”</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -21 +21 </div>
+<div class="text ltr">Kur të takohen me ata që besojnë, thonë: <span class="del">“ Besojmë!”</span> <span class="ins">“Besojmë!”</span> – por kur të ngelin vetëm me djajtë e tyre (me njerëzit e këqinj) thonë: “Na vetëm bëjmë sahaka, na jemi me ju”.</div>
+
+<div class="info"> -33 +33 </div>
+<div class="text ltr">Allahu nuk ngurron të jep shembullin e mushkajës ose diçka më të madhe se atë, ata që besojnë e dinë që kjo është e vërtetë nga Perëndia e tyre, e ata që nuk besojnë <span class="del">thonë: “-Çka</span> <span class="ins">thonë:“-Çka</span> don të tregojë Allahu me këtë shembull. Në këtë mënyrë Ai shumëkend e ka hutuar e shumëkujt ia ka treguar rrugën e vërtetë. Ai i la të humbur vetëm mëkatarët e mëdhenj”,</div>
+
+<div class="info"> -386 +386 </div>
+<div class="text ltr">Të gjitha ushqimet kanë qenë të lejuara për bijt e Israilit, përveç asaj që Israili ia ndaloi vetes para shpalljes së Teuratit. Thuaj <span class="del">( o</span> <span class="ins">(o</span> Muhammed!): “Silleni Teuratin dhe lexonie nëse flisni të vërtetën!”</div>
+
+<div class="info"> -849 +849 </div>
+<div class="text ltr">Ai natën ju vë në gjumë dhe di çka punoni ditën. Ju zgjon <span class="del">ditën,për</span> <span class="ins">ditën, për</span> të arritur kohën e caktuar të jetës. Pastaj, i ktheheni Atij dhe ju tregon atë që keni punuar.</div>
+
+<div class="info"> -908 +908 </div>
+<div class="text ltr">E pse mos ta hani ate që është therrë në emër të Perëndisë, e Ai ju ka shpjeguar ç’është e ndaluar, - përveç se kur jeni në <span class="del">shtrënges.ë</span> <span class="ins">shtrënges. ë</span> shumë prej tyre nga padia, i shmangin ata prej udhës së mbarë për kënaqësinë e vet. Me të vërtetë, Zoti yt i njeh më së miri ata që e kanë kaluar kufirin.</div>
+
+<div class="info"> -1318 +1318 </div>
+<div class="text ltr">Dhe nëse të kthen Perëndia (nga lufta në <span class="del">Medine(</span> <span class="ins">Medine)</span> te një grup i hipokritëve, e, ata kërkojnë leje nga ti, që të shkojnë me ty në luftë, thuaju (o Muhammed): “Kurrë nuk do të shkoni me mua në luftë dhe kurrë me mua nuk do tëluftoni kundër armikut! Ju, ishit të kënaqur kur nuk erdhët herën e parë, prandaj rrini me ata që ngelin pas (me gratë dhe fëmijët).</div>
+
+<div class="info"> -1388 +1388 </div>
+<div class="text ltr">Me të vërtetë, jeta e kësaj bote i shembëllen shiut që Na e lëshojmë nga qielli, me të përzihen bimët e tokës, me të cilat ushqehen njerëzit dhe shtazët. E, kur Toka të vishet dhe <span class="del">zbukurohet,dhe</span> <span class="ins">zbukurohet, dhe</span> kur banorët e saj mendojnë se ata janë zotërues të saj, (atëherë) u vie urdhëri Ynë, natën ose ditën, dhe Na e bëjmë atë si të ketë qenë e korrur, thuajse nuk kishte ekzistuar dje. Kështu, Na ua shpjegojmë argumentet, njerëzve që mendojnë.</div>
+
+<div class="info"> -1681 +1681 </div>
+<div class="text ltr">(Bijtë e Jakubit) thanë: “Pasha Perëndinë, ti po e përmend Jusufin <span class="del">papra ,</span> <span class="ins">papra,</span> saqë do të sëmuresh rëndë ose do të vdesish!”</div>
+
+<div class="info"> -1690 +1690 </div>
+<div class="text ltr">E, kur karavani u largua nga toka (e Egjiptit), babai i tyre tha: <span class="del">“Unë,me</span> <span class="ins">“Unë, me</span> të vërtetë, po ndjejë erën e Jusufit, sikur ju të mos më quanit matuf”.</div>
+
+<div class="info"> -2366 +2366 </div>
+<div class="text ltr"><span class="del">(Musai)u</span> <span class="ins">(Musai) u</span> përgjegj: “Ky është shkopi im, në të cilin mbahem dhe me të u shkundi gjethe dhenëve të mia, e me të kam edhe dobi të tjera.</div>
+
+<div class="info"> -2662 +2662 </div>
+<div class="text ltr">Na, për çdo popull kemi hartuar dispozita fetare, e ata shkojnë sipas tyre, dhe mos lejo, kurrsesi që të bëjnë polëmikë me ty, - për atë çështje. Dhe thirri ti (ata) te Zoti yt! <span class="del">Ti,me</span> <span class="ins">Ti, me</span> të vërtetë, je në rrugën e drejtë.</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/sq.nahi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

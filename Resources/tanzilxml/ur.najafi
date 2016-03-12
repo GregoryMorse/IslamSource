@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Ayatollah Muhammad Hussain Najafi ." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Ayatollah Muhammad Hussain Najafi  - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Ayatollah Muhammad Hussain Najafi 		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 19, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> New Urdu translation ur.najafi added <br/> Fri, 19 Aug 2011 15:57:00 +0430 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text rtl"><span class="ins">(شروع کرتا ہوں) اللہ کے نام سے جو بڑا مہربان نہایت رحم والا ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">ہر قسم کی تعریف اس اللہ کے لیے جو سب جہانوں کا پروردگار ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">جو (سب پر) بڑا مہربان (اور خاص بندوں پر) نہایت رحم کرنے والا ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">جزا و سزا کے دن کا مالک (و مختار) ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">(اے اللہ!) ہم تیری ہی عبادت کرتے ہیں اور تجھ ہی سے مدد مانگتے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">ہمیں سیدھے راستے کی (اور اس پر چلنے کی) ہدایت کرتا رہ۔</span></div>
+
+<div class="text rtl"><span class="ins">راستہ ان لوگوں کا جن پر تو نے انعام و احسان کیا نہ ان کا (راستہ) جن پر تیرا قہر و غضب نازل ہوا۔ اور نہ ان کا جو گمراہ ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">الف۔ لام۔ میم۔</span></div>
+
+<div class="text rtl"><span class="ins">یہ (قرآن) وہ کتاب ہے جس (کے کلام اللہ ہونے) میں کوئی شک و شبہ نہیں ہے۔ (یہ) ہدایت ہے ان پرہیزگاروں کے لیے۔</span></div>
+
+<div class="text rtl"><span class="ins">جو غیب پر ایمان رکھتے ہیں اور پورے اہتمام سے نماز ادا کرتے ہیں اور جو کچھ ہم نے ان کو دیا ہے اس میں سے کچھ (میری راہ میں) خرچ کرتے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">اور جو ایمان رکھتے ہیں اس پر جو آپ پر نازل کیا گیا ہے اور اس پر بھی جو آپ سے پہلے (سابقہ انبیاء) پر نازل کیا گیا۔ اور آخرت پر یقین رکھتے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">یہی لوگ اپنے پروردگار کی ہدایت پر (قائم) ہیں اور یہی وہ ہیں جو (آخرت میں) فوز و فلاح پانے والے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">(اے رسول) جن لوگوں نے کفر اختیار کیا۔ ان کے لیے برابر ہے۔ آپ انہیں ڈرائیں یا نہ ڈرائیں۔ بہرحال وہ ایمان نہیں لائیں گے۔</span></div>
+
+<div class="text rtl"><span class="ins">خدا نے ان کے دلوں اور ان کے کانوں پر مہر لگا دی ہے اور ان کی آنکھوں پر پردہ پڑ گیا ہے۔ اور (آخرت میں) ان کے لیے بڑا عذاب ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">اور کچھ لوگ ایسے بھی ہیں جو کہتے ہیں کہ ہم اللہ اور روزِ آخرت پر ایمان لائے ہیں۔ حالانکہ وہ مؤمن نہیں ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">خدا اور اہل ایمان کو دھوکہ دے رہے ہیں حالانکہ وہ خود اپنے سوا کسی کو دھوکہ نہیں دیتے۔ مگر انہیں اس کا (احساس) نہیں ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">ان کے دلوں میں (نفاق) کی ایک بیماری ہے۔ سو اللہ نے ان کی بیماری اور بڑھا دی ہے اور ان کے (مسلسل) جھوٹ بولنے کی وجہ سے ان کے لیے دردناک عذاب ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">اور جب ان سے کہا جائے کہ زمین میں فساد نہ پھیلاؤ۔ تو کہتے ہیں کہ ہم تو اصلاح کرنے والے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">خبردار۔ درحقیقت وہی فساد پھیلانے والے ہیں۔ لیکن انہیں شعور نہیں ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">اور جب ان سے کہا جاتا ہے کہ تم بھی اسی طرح ایمان لاؤ جس طرح اور لوگ ایمان لائے ہیں تو وہ کہتے ہیں کہ کیا ہم بیوقوفوں کی طرح ایمان لائیں؟ خبردار۔ یہی لوگ خود بیوقوف ہیں لیکن جانتے نہیں ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">اور یہ لوگ جب اہل ایمان سے ملتے ہیں تو کہتے ہیں کہ ہم بھی ایمان لائے ہیں اور جب علیحدگی میں اپنے شیطانوں سے ملتے ہیں تو کہتے ہیں کہ ہم تو تمہارے ساتھ ہیں ان (مسلمانوں) سے تو ہم صرف مذاق کر رہے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">خود اللہ ان سے مذاق کر رہا ہے اور انہیں ڈھیل دے رہا ہے اور وہ اپنی سرکشی میں اندھوں کی طرح بھٹک رہے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">یہی وہ لوگ ہیں جنہوں نے ہدایت کے بدلے گمراہی خریدلی۔ سو نہ تو ان کی تجارت سود مند ہوئی اور نہ ہی انہیں ہدایت نصیب ہوئی۔</span></div>
+
+<div class="text rtl"><span class="ins">ان کی مثال اس شخص کی سی ہے جس نے آگ روشن کی۔ اور جب آگ نے اس کے گرد و نواح کو روشن کر دیا تو اللہ نے ان کی روشنی (بینائی) سلب کر لی اور ان کو اندھیروں میں چھوڑ دیا اب انہیں کچھ سجھائی نہیں دیتا۔</span></div>
+
+<div class="text rtl"><span class="ins">پس وہ ایسے بہرے، گونگے اور اندھے ہیں کہ اب (گمراہی سے راہِ ہدایت کی طرف) نہیں لوٹیں گے۔</span></div>
+
+<div class="text rtl"><span class="ins">یا (پھر ان کی مثال ایسی ہے جیسے) آسمان سے زور دار بارش برس رہی ہو جس میں تاریکیاں ہوں۔ اور گرج چمک بھی۔ اور وہ گرنے والی بجلیوں سے مرنے کے ڈر سے اپنی انگلیاں اپنے کانوں میں ٹھونس لیں۔ حالانکہ اللہ ہر طرف سے کافروں کو گھیرے ہوئے ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">قریب ہے کہ بجلی (کی چمک) ان کی آنکھوں کو اچک لے (انہیں خیرہ کر دے) جب بجلی ان کے لئے اجالا کرتی ہے تو وہ اس کی روشنی میں چلنے لگتے ہیں اور جب اندھیرا چھا جاتا ہے تو کھڑے رہ جاتے ہیں اگر اللہ چاہتا تو ان کی سماعت و بصارت (سننے اور دیکھنے کی طاقت) کو زائل کر دیتا۔ بے شک اللہ ہر چیز پر قادر ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">اے لوگو! اپنے اس پروردگار کی عبادت (پرستش) کرو جس نے تمہیں بھی پیدا کیا اور انہیں بھی جو تم سے پہلے ہو گزرے تاکہ تم پرہیزگار بن جاؤ۔</span></div>
+
+<div class="text rtl"><span class="ins">وہی (پروردگار) جس نے تمہارے لئے زمین کا فرش بچھایا اور آسمان کا شامیانہ لگایا (اور اسے چھت بنایا) اور آسمان (بلندی) سے پانی برسایا۔ اس سے تمہاری روزی کے لئے کچھ پھل برآمد کئے سو جان بوجھ کر (کسی کو) اللہ کا ہمسر و شریک نہ بناؤ۔</span></div>
+
+<div class="text rtl"><span class="ins">اور جو کچھ (قرآن) ہم نے اپنے بندہ (خاص) پر نازل کیا ہے اگر تمہیں اس (کے کلام اللہ ہونے) میں شک ہے تو تم اس کے مانند ایک ہی سورہ لے آؤ۔ اور اگر تم سچے ہو تو ایک اللہ کو چھوڑ کر اپنے سب حمایتیوں و ہم نواؤں کو بھی بلا لو۔</span></div>
+
+<div class="text rtl"><span class="ins">لیکن اگر تم یہ کام نہ کر سکو اور ہرگز ایسا نہیں کر سکوگے تو پھر (دوزخ کی) اس آگ سے ڈرو۔ جس کا ایندھن آدمی اور پتھر ہیں جو کافروں کے لئے تیار کی گئی ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">اور (اے رسول) ان لوگوں کو خوشخبری دے دو جو ایمان لائے اور نیک عمل کئے۔ کہ ان کے لئے (بہشت کے) ایسے باغ ہیں کہ جن کے نیچے سے نہریں جاری ہیں۔ جب بھی انہیں ان (باغات) سے کوئی پھل کھانے کو ملے گا تو وہ (اس کی صورت دیکھ کر) کہیں گے کہ یہ تو وہی ہے جو اس سے پہلے ہمیں (دنیا میں) کھانے کو مل چکا ہے۔ حالانکہ انہیں جو دیا گیا ہے وہ (صورت میں دنیا کے پھل سے) ملتا جلتا ہے (مگر ذائقہ الگ ہوگا) اور ان کے لئے وہاں پاکیزہ بیویاں ہوں گی اور وہ ان (بہشتوں) میں ہمیشہ ہمیشہ رہیں گے۔</span></div>
+
+<div class="text rtl"><span class="ins">بے شک اللہ اس بات سے ہرگز نہیں شرماتا کہ (کسی مطلب کی وضاحت کے لئے) مچھر اور اس سے بھی بڑھ کر (کسی حقیر چیز) کی مثال بیان کرے۔ پس جو لوگ مؤمن ہیں وہ تو جانتے ہیں کہ یہ (مثال یقینا) حق ہے ان کے پروردگار کی طرف سے اور جو کافر ہیں وہ کہتے ہیں کہ ایسی مثال سے اللہ کا کیا مقصد ہے؟ اللہ ایسی مثال سے بہت سوں کو گمراہی میں چھوڑ دیتا ہے اور بہت سوں کو ہدایت کرتا ہے اور وہ گمراہی میں نہیں چھوڑتا مگر فاسقوں (نافرمانوں) کو۔</span></div>
+
+<div class="text rtl"><span class="ins">جو خدا سے مستحکم عہد و پیمان کرنے کے بعد اسے توڑ دیتے ہیں اور جس (رشتہ) کے جوڑنے کا اللہ نے حکم دیا ہے وہ اسے توڑتے ہیں۔ اور زمین میں فساد پھیلاتے ہیں (دراصل) یہی لوگ ہیں جو نقصان اٹھانے والے ہیں۔</span></div>
+
+<div class="text rtl"><span class="ins">بھلا تم کس طرح اللہ کا انکار کرتے ہو۔ حالانکہ تم مردہ (بے جان) تھے تو اسی نے تمہیں زندہ کیا (جاندار بنایا) پھر وہی تمہیں موت دے گا پھر وہی تمہیں زندگی دے گا۔ پھر تم اسی کی طرف لوٹائے جاؤگے۔</span></div>
+
+<div class="text rtl"><span class="ins">وہی تو وہ (اللہ) ہے جس نے تمہارے لئے پیدا کیا وہ سب کچھ جو زمین میں ہے پھر آسمان کی طرف توجہ فرمائی تو سات آسمان ہموار و استوار کر دیئے۔ اور وہ ہر چیز کا جاننے والا ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">(اے رسول وہ وقت یاد کرو) جب تمہارے پروردگار نے فرشتوں سے کہا کہ میں زمین پر ایک خلیفہ (جانشین) بنانے والا ہوں تو انہوں نے کہا کیا تو اس میں اس کو (خلیفہ) بنائے گا جو اس میں فساد پھیلائے گا اور خون ریزی کرے گا۔ حالانکہ ہم تیری حمد و ثنائ کے ساتھ تسبیح کرتے ہیں اور تیری تقدیس (پاکیزگی بیان) کرتے ہیں۔ فرمایا: یقینا میں وہ کچھ جانتا ہوں جو تم نہیں جانتے۔</span></div>
+
+<div class="text rtl"><span class="ins">اور اس (اللہ) نے آدم (ع) کو (تمام چیزوں کے) نام سکھائے۔ پھر ان کو (جن کے نام سکھائے تھے) فرشتوں کے سامنے پیش کیا اور فرمایا اگر تم سچے ہو (کہ تم خلافت کے زیادہ حقدار ہو) تو مجھے ان اشخاص کے نام بتاؤ۔</span></div>
+
+<div class="text rtl"><span class="ins">انہوں نے کہا (ہر نقص و عیب سے) تیری ذات پاک ہے۔ ہمیں اس کے سوا جو تو نے ہمیں تعلیم دیا ہے (سکھایا ہے) اور مزید کچھ علم نہیں ہے۔ بے شک تو بڑا علم والا اور بڑی حکمت والا ہے۔</span></div>
+
+<div class="text rtl"><span class="ins">فرمایا: اے آدم تم ان کو ان کے نام بتاؤ۔ تو جب آدم نے ان (فرشتوں) کو ان کے نام بتا دیئے تو خدا نے فرمایا کیا میں نے تم سے نہیں کہا تھا کہ میں آسمانوں اور زمین کے سب مخفی رازوں کو جانتا ہوں اور وہ بھی جانتا ہوں جو تم ظاہر کر رہے ہو اور وہ بھی جو تم (اندرونِ دل) چھپائے ہوئے تھے۔</span></div>
+
+<div class="text rtl"><span class="ins">اور (وہ وقت یاد کرو) جب ہم نے فرشتوں سے کہا کہ آدم کے سامنے سجدہ میں گر جاؤ ابلیس کے سوا سب سجدہ میں گر گئے۔ اس نے انکار و تکبر کیا اور کافروں میں سے ہوگیا۔</span></div>
+
+<div class="text rtl"><span class="ins">اور ہم نے کہا: اے آدم! تم اور تمہاری بیوی دونوں بہشت میں رہو۔ اور اس سے جہاں سے تمہارا دل چاہے مزے اور فراغت کے ساتھ کھاؤ۔ لیکن اس (مخصوص) درخت کے پاس نہ جانا (اس کا پھل نہ کھانا) ورنہ تم زیاں کاروں میں سے ہو جاؤگے۔</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ur.najafi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

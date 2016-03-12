@@ -215,7 +215,7 @@ namespace IslamSourceQuranViewer
         }
         private void PlayPause_Click(object sender, RoutedEventArgs e)
         {
-            VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.Reciters(0).Source, IslamMetadata.CachedData.IslamData.Reciters(0).Name, CurrentPlayingChapter, CurrentPlayingVerse));
+            VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Source, IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Name, CurrentPlayingChapter, CurrentPlayingVerse));
         }
         private void GoToVerse_Click(object sender, RoutedEventArgs e)
         {
@@ -262,6 +262,17 @@ namespace IslamSourceQuranViewer
                     } 
                 }
             }
+        }
+
+        private void StackPanel_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+            e.Handled = true;
+            //AddBookmark.Text
+            //RemoveBookmark.Text
+            //CopyToClipboard.Text
+            //SetPlaybackVerse.Text
+            //ShowMorphologyInfo.Text
+            //ShowExegesis.Text
         }
     }
     public class WidthLimiterConverter : DependencyObject, IValueConverter
@@ -497,6 +508,7 @@ namespace IslamSourceQuranViewer
     public class VerseInfo
     {
         public MyRenderModel VerseItem;
+        private int ChapterNumber;
         private int VerseNumber;
         public string VerseText
         {

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Besim Korkut." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Besim Korkut - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Besim Korkut		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: May 22, 2013</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Sat, 1 Jun 2013 00:00:02 -0400 </div>
+<div class="info"> -61 +61 </div>
+<div class="text ltr">i kada je Musa rekao narodu svome: "O narode moj, prihvativši tele, vi ste samo sebi nepravdu učinili; zato se Stvoritelju svome pokajte i <span class="del">jedni druge poubijajte.</span> <span class="ins">između vas prestupnike smrću kaznite.</span> To je bolje za vas kod Stvoritelja vašeg, On će vam oprostiti! On prima pokajanje i On je milostiv";</div>
+
+
+<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿U</span> <span class="ins">U</span> ime Allaha, Milostivog, Samilosnog!</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -6236 +6236 </div>
+<div class="text ltr">od džina i od ljudi!"</div>
+
+
+<div class="date"> First version <br/> Fri, 4 Jun 2010 19:54:20 -0400 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">﻿U ime Allaha, Milostivog, Samilosnog!</span></div>
+
+<div class="text ltr"><span class="ins">Tebe, Allaha, Gospodara svjetova, hvalimo,</span></div>
+
+<div class="text ltr"><span class="ins">Milostivog, Samilosnog,</span></div>
+
+<div class="text ltr"><span class="ins">Vladara Dana sudnjeg,</span></div>
+
+<div class="text ltr"><span class="ins">Tebi se klanjamo i od Tebe pomoć tražimo!</span></div>
+
+<div class="text ltr"><span class="ins">Uputi nas na Pravi put,</span></div>
+
+<div class="text ltr"><span class="ins">na Put onih kojima si milost Svoju darovao, a ne onih koji su protiv sebe srdžbu izazvali, niti onih koji su zalutali!</span></div>
+
+<div class="text ltr"><span class="ins">Elif Lām Mīm.</span></div>
+
+<div class="text ltr"><span class="ins">Ova Knjiga, u koju nema nikakve sumnje, uputstvo je svima onima koji se budu Allaha bojali;</span></div>
+
+<div class="text ltr"><span class="ins">onima koji u nevidljivi svijet budu vjerovali i molitvu obavljali i udjeljivali dio od onoga što im Mi budemo davali;</span></div>
+
+<div class="text ltr"><span class="ins">i onima koji budu vjerovali u ono što se objavljuje tebi i u ono što je objavljeno prije tebe, i onima koji u onaj svijet budu čvrsto vjerovali.</span></div>
+
+<div class="text ltr"><span class="ins">Njima će Gospodar njihov na Pravi put ukazati i oni će ono što žele ostvariti.</span></div>
+
+<div class="text ltr"><span class="ins">Onima koji neće da vjeruju doista je svejedno – opominjao ih ti ili ne opominjao – oni neće vjerovati.</span></div>
+
+<div class="text ltr"><span class="ins">Allah je zapečatio srca njihova i uši njihove, a pred očima njihovim je koprena; njih čeka patnja golema.</span></div>
+
+<div class="text ltr"><span class="ins">Ima ljudi koji govore: "Vjerujemo u Allaha i u onaj svijet!" – a oni nisu vjernici.</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/bs.korkut/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

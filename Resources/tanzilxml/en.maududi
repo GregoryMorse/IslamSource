@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Abul Ala Maududi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Abul Ala Maududi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Abul Ala Maududi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: May 10, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Wed, 1 Jun 2011 00:00:01 -0400 </div>
+<div class="info"> -288 +288 </div>
+<div class="text ltr">Guard against the disgrace and misery of the <span class="del">bay</span> <span class="ins">day</span> when you shall return to Allah: there everyone shall be paid in full, for the good or evil one has earned and none shall be wronged.</div>
+
+<div class="info"> -1133 +1133 </div>
+<div class="text ltr">And certainly We have created for Hell many of the jinn and mankind; they have hearts with which they fail to understand; and they have eyes with which they fail to see; and they have <span class="del">cars</span> <span class="ins">ears</span> with which they fail to hear. They are like cattle - indeed, even more astray. Such are utterly heedless.</div>
+
+<div class="info"> -2872 +2872 </div>
+<div class="text ltr">And on that Day <span class="del">(y our</span> <span class="ins">(your</span> Lord will <span class="del">gather:. II</span> <span class="ins">gather</span> these people together as well as their deities, whom they worship besides AIlah. Then He will ask them, "Did you mislead these servants of Mine, or did they themselves go astray?"</div>
+
+
+<div class="date"> Major fixes to en.maududi. Several fixes to fr.hamidullah. <br/> Tue, 10 May 2011 02:16:07 -0400 </div>
+<div class="info"> -129 +129 </div>
+<div class="text ltr">O children of Israel, remember that special favour <span class="del">1</span> <span class="ins">I</span> bestowed upon you, and that I exalted you above all the communities of the world.</div>
+
+<div class="info"> -147 +147 </div>
+<div class="text ltr">Or do you say that <span class="del">Abraham.</span> <span class="ins">Abraham,</span> Ismail, Isaac, Jacob and his children were all Jews or <span class="del">Christians?"</span> <span class="ins">Christians?</span> Ask <span class="del">them,"Do</span> <span class="ins">them, "Do</span> you know more than Allah does? And who is more unjust than the one who hides the testimony which Allah has entrusted to him? Allah is not unaware of what you are doing.</div>
+
+<div class="info"> -179 +179 </div>
+<div class="text ltr">O Believers, if you are true worshippers of Allah alone, eat without hesitation of the good and clean things wherewith We have provided you and be grateful to Allah.<span class="del">°</span> </div>
+
+<div class="info"> -194 +194 </div>
+<div class="text ltr">It has been made lawful for you to go to your wives during the nights of the fast days. They are as a garment to you and you are as a garment to them. Though Allah knew that you were secretly dishonest to yourselves, He has pardoned your guilt and forgiven you. NOW you are permitted to have intercourse with your wives and enjoy what Allah has made lawful for you. You are also pemitted to eat and drink during the nights of the Fast months. until you can discern the white streak of dawn from the blackness of night. " Then (abstain from all these things and) complete your fast till night-fall. But you should not have intercourse with your wives while you confine yourselves to mosques. These are the bounds set by Allah; so do <span class="del">not</span> <span class="ins">nut</span> go near them. In this way Allah makes His Commands clear to mankind. It is expected that they will guard themselves against wrong ways.</div>
+
+<div class="info"> -227 +227 </div>
+<div class="text ltr">And they <span class="del">ask"What</span> <span class="ins">ask "What</span> ought we to spend (in the way of Allah)"? <span class="del">Say"Spend</span> <span class="ins">Say "Spend</span> whatever you can spare." Thus Allah makes His commands clear to you so that you may think about the good of both this world and the Hereafter. <span class="ins">They ask you about the right way of dealing with orphans. Say "The right way is that which is for their good." Then there is no harm if you live a common life with them for they are after all your own brethren. Allah knows well the one who means harm and also the one who means good. If Allah had willed He would have been hard upon you in this matter for He is All-Powerful but He is at the same time AlI-Wise.</span></div>
+
+<div class="info"> -235 +235 </div>
+<div class="text ltr">Divorced women <span class="del">must wait</span> <span class="ins">shall keep themselves in waiting</span> for three <span class="del">monthly courses. And</span> <span class="ins">menstrual courses and</span> it is <span class="del">not lawful</span> <span class="ins">unlawful</span> for <span class="del">them to hide what Allah has created in their wombs,</span> <span class="ins">them,</span> if they<span class="del">sincerely</span>  believe in Allah and the Last <span class="del">Day. Their</span> <span class="ins">Day, to hide whatever Allah might have created in their wombs. Should their</span> husbands <span class="ins">desire reconciliation during this time they</span> are<span class="del">best</span>  entitled to take them back <span class="del">as</span> <span class="ins">into wedlock. Women have the same rights against</span> their <span class="del">wives during this waiting period, if they desire reconciliation.</span> <span class="ins">men as men have against them; but men have a degree above them. Allah is All- Powerful, All-Wise.</span></div>
+
+<div class="info"> -282 +282 </div>
+<div class="text ltr">But those who devour interest become like the one whom Satan has bewitched and maddened by his touch. They have been condemned to this condition because they say, "Trade is just like interest", whereas Allah has made trade lawful and interest <span class="del">unlawfu1.</span> <span class="ins">unlawful.</span> Henceforth, if one abstains from taking interest after receiving this admonition from his Lord, no legal action will be taken against him regarding the interest he had devoured before; his case shall ultimately go to Allah. But if one repeats the same crime after <span class="del">this,</span> <span class="ins">this,.</span> he shall go to Hell, where he shall abide for ever.</div>
+
+<div class="info"> -288 +288 </div>
+<div class="text ltr">Guard against the disgrace and misery of the <span class="del">day</span> <span class="ins">bay</span> when you shall return to Allah: there everyone shall be paid in full, for the good or evil one has earned and none shall be wronged.</div>
+
+<div class="info"> -308 +308 </div>
+<div class="text ltr">Say: 'Shall I tell you of things better than these? For the God-fearing there are, with their Lord, gardens beneath which rivers flow; there they will abide for ever, will have spouses of stainless <span class="ins">purity as companions, and will enjoy the good pleasure of Allah.' Allah thoroughly observes His servants.</span></div>
+
+<div class="info"> -328 +328 </div>
+<div class="text ltr"><span class="del">.</span> (He also heard) when the woman of 'Imran said: 'O Lord! Behold, unto You do I vow that the child in my womb is to be devoted to Your exclusive service. Accept it, then, from me. Surely You alone are All-Hearing, All-Knowing.'</div>
+
+<div class="info"> -582 +582 </div>
+<div class="text ltr">They wish that you should disbelieve just as they disbelieved so that you may all be alike. Do not, therefore, take from them allies until they emigrate in the way of Allah, but if they turn their backs (on emigration), seize them and slay them wherever you come upon them. Take none of them for your ally or helper, <span class="ins">This is the verdict on those hypocritical confessors of faith who belong to a belligerent, non-Muslim nation and actually participate in acts of hostility against the Islamic state.</span></div>
+
+<div class="info"> -671,2 +671,2 </div>
+<div class="text ltr">Believers! Neither desecrate the symbols of (devotion to) Allah, nor the holy month, nor the animals of offering, nor the animals wearing collars indicating they are for sacrifice, nor ill-treat those who have set out for the Holy House seeking from their Lord His bounty and good pleasure. <span class="ins">But once you are free from Pilgrimage obligations, you are free to hunt. Do not let your wrath against the people who have barred you from the Holy Mosque move you to commit undue transgressions; rather, help one another in acts of righteousness and piety, and do not help one another in sin and transgression. Fear Allah. Surely Allah is severe in retribution.</span></div>
+
+<div class="text ltr">Forbidden to you are carrion, blood, the flesh of swine, the animal slaughtered in any name other than Allah's, the animal which has either been strangled, killed by blows, has died of a fall, by goring or that devoured by a beast of prey - unless it be that which you yourselves might have slaughtered while it was still alive - and that which was slaughtered at the <span class="del">altars.-</span> <span class="ins">altars. - You are also forbidden to seek knowledge of your fate by divining arrows. All these are sinful acts. This day the unbelievers have fully despaired of your religion. Do not fear them; but fear Me. This day I have perfected for you your religion, and have bestowed upon you My bounty in full measure, and have been pleased to assign for you Islam as your religion. (Follow, then, the lawful and unlawful bounds enjoined upon you.) As for he who is driven by hunger, without being wilfully inclined to sin, surely Allah is All-Forgiving, All-Compassionate.</span></div>
+
+<div class="info"> -681 +681 </div>
+<div class="text ltr">Surely Allah took a covenant with the Children of Israel, and We raised up from them twelve of their leaders, and Allah said: 'Behold, I am with you; if you establish Prayer and pay Zakah and believe in My Prophets and help them, and lend Allah a good loan, I will certainly efface from you your evil deeds, and will surely cause you to enter the Gardens beneath which rivers flow. <span class="ins">Whosoever of you disbelieves thereafter has indeed gone astray from the right way.</span></div>
+
+<div class="info"> -710 +710 </div>
+<div class="text ltr">O Messenger! Do not be grieved on account of those who vie with one another in disbelieving: even though they be those who say with their mouths: 'We believe' even though their hearts have no faith; or they be Jews who have their ears eagerly turned to falsehood and spy for other people who did not chance to come to you, who pervert the words of Allah, taking them out of their proper context in order to distort their meaning. <span class="ins">They say to people: 'If such and such teaching is given to you, accept it; if you are not given that, then beware! You can be of no avail to him whom Allah wills to fall into error. Those are the ones whose hearts Allah does not want to purify. For them there is degradation in this world and a mighty chastisement in the Next.</span></div>
+
+<div class="info"> -717 +717 </div>
+<div class="text ltr">Then We revealed the Book to you (O Muhammad!) with Truth, confirming whatever of the Book was revealed before, and protecting and guarding over it. Judge, then, in the affairs of men in accordance with the Law that Allah has revealed, and do not follow their desires in disregard of the Truth which has come to you. For each of you We have appointed a Law and a way of life. And had Allah so willed, He would surely have made you one single community; instead, (He gave each of you a Law and a way of life) in order to test you by what He gave you. <span class="ins">Vie, then, one with another in good works. Unto Allah is the return of all of you; and He will then make you understand the truth concerning the matters on which you disagreed.</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/en.maududi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

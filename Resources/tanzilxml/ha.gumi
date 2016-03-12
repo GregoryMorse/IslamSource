@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Abubakar Mahmoud Gumi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Abubakar Mahmoud Gumi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Abubakar Mahmoud Gumi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿Da</span> <span class="ins">Da</span> sũnan Allah, Mai rahama, Mai jin ƙai.</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -13 +13 </div>
+<div class="text ltr">Lalle ne waɗanda suka kãfirta daidai ne a <span class="del">kansu,shin</span> <span class="ins">kansu, shin</span> kã yi musu gargaɗi kõ ba ka yi musu gargaɗi ba, ba zã su yi ĩmãni ba.</div>
+
+<div class="info"> -16 +16 </div>
+<div class="text ltr">Suna yaudarayya da Allah da waɗanda suka yi <span class="del">ĩmãni,alhãli</span> <span class="ins">ĩmãni, alhãli</span> bã su yaudarar kõwa fãce kansu, kuma bã su sakankancẽwa!</div>
+
+<div class="info"> -21 +21 </div>
+<div class="text ltr">Kuma idan sun haɗu da waɗanda suka yi <span class="del">ĩmãni,sukan</span> <span class="ins">ĩmãni, sukan</span> ce: "Mun yi ĩmãni. "Kuma idan sun wõfinta zuwa ga shaiɗãnunsu, sukan ce: "Lalle ne muna tãre da ku: Mu mãsu izgili, kawai ne."</div>
+
+<div class="info"> -28,2 +28,2 </div>
+<div class="text ltr">Yã ku mutãne! Ku bauta wa Ubangjinku, Wanda Ya halicce ku, kũ da waɗanda suke daga gabãninku, tsammãninku ku kãre <span class="del">kanku !</span> <span class="ins">kanku!</span></div>
+
+<div class="text ltr">Wanda Ya sanya muku ƙasa <span class="del">shimfiɗa,kuma</span> <span class="ins">shimfiɗa, kuma</span> sama gini, kuma Ya saukar da ruwa daga sama, sa'an nan Ya fitar da abinci daga 'ya'yan itãce game da shi, sabõda ku. Sabõda haka kada ku sanya wa Allah wasu kĩshiyõyi, alhãli kuwa kuna sane.</div>
+
+<div class="info"> -40 +40 </div>
+<div class="text ltr">Ya ce: "Yã Ãdam! Ka gaya musu sũnãyensu." To, a lokacin da ya gaya musu sũnãyensu, (Allah) Ya ce: "Ashe, ban ce muku ba, lalle Ni, Inã sane da gaibin sammai da ƙasa, kuma (Inã sane <span class="del">da )</span> <span class="ins">da)</span> abin da kuke bayyanawa da abin da kuka kasance kuna ɓõyewa?"</div>
+
+<div class="info"> -47 +47,2 </div>
+<div class="text ltr">Yã Banĩ <span class="del">Isrã'Ĩla !</span> <span class="ins">Isrã'Ĩla!</span> Ku tuna ni'imãTa a kanku, kuma ku cika alƙawariNa, In cika muku da alƙawarinku. kuma Ni, ku ji tsõro Na.</div>
+
+<div class="text ltr">Kuma, ku yi ĩmãni da abin da na saukar, mai gaskatãwa ga abin da yake tãre da ku, kuma kada ku kasance farkon kãfiri game da shi, Kuma kada ku sayi 'yan kuɗi kaɗan da ãyõyiNa. Kuma ku ji tsõrõNa, Nĩ kaɗai.</div>
+
+<div class="info"> -55 +55,0 </div>
+<div class="text ltr"><span class="del">- Missing -</span> </div>
+
+<div class="info"> -69 +69 </div>
+<div class="text ltr">Lalle ne waɗanda suka yi ĩmãni, da waɗanda suka <span class="del">tũba ,</span> <span class="ins">tũba,</span> da Nasãra da Makarkata, wana ya yi ĩmani da Allah da Yinin Lãhira, kuma ya aikata aikin ƙwarai, to, suna da ijãrarsu a wurin Ubangijinsu, kuma bãbu tsõro a kansu, kuma ba su zama suna yin baƙin ciki ba.</div>
+
+<div class="info"> -90 +90 </div>
+<div class="text ltr">Kuma a lõkacin da Muka karɓi alkawarin <span class="del">Bani-Isrã'ĩla :</span> <span class="ins">Bani-Isrã'ĩla:</span> "Kada ku bauta wa kõwa fãce Allah, kuma ga mahaifa ku kyautata, da mai zumunta da marãyu da matalauta, kuma ku faɗi magana mai kyau zuwa ga mutãne, kuma ku tsayar da salla, kuma ku bãyar da zakka, sa'an nan kuka jũya bãya, fãce kaɗan daga gare <span class="del">ku,alhãli</span> <span class="ins">ku, alhãli</span> kuwa kuna mãsu bijirẽwa.</div>
+
+<div class="info"> -106 +106 </div>
+<div class="text ltr">Kuma lalle ne haƙĩƙa Mun saukar, zuwa gare ka, ãyõyi bayyanannu, kuma ba wanda yake kãfirta da su fãce <span class="del">fãsikai .</span> <span class="ins">fãsikai.</span></div>
+
+<div class="info"> -116 +116 </div>
+<div class="text ltr">Mãsu yawa daga Ma'abuta Littãfi sunã gũrin dã sun mayar da ku, daga bãyan ĩmãninku, <span class="del">kãfirai,sabõda</span> <span class="ins">kãfirai, sabõda</span> hãsada daga wurin rãyukansu, daga bayãn gaskiya tã bayyana a gare su. To, ku yãfe, kuma ku kau da kai, sai Allah Yã zo da umurninSa. Lalle ne Allah a kan dukkan kõme Mai ĩkon yi ne.</div>
+
+<div class="info"> -139 +139 </div>
+<div class="text ltr">Kuma lbrãhĩm ya yi wasiyya da ita ga ɗiyansa, kuma Ya'aƙũbu (ya yi <span class="del">wasiyya,suka</span> <span class="ins">wasiyya, suka</span> ce:) "Yã ɗiyãna! Lalle ne, Allah Ya zãɓã muku addini don haka kada ku mutu, lalle, fãce kuna Musulmi."</div>
+
+<div class="info"> -167 +167 </div>
+<div class="text ltr">Sai waɗanda suka <span class="del">tũba,kuma</span> <span class="ins">tũba, kuma</span> suka gyãra, kuma suka bayyana, to waɗannan Ina karɓar tũba a kansu kuma Nĩ ne Mai karɓar tũba, Mai jin ƙai.</div>
+
+<div class="info"> -189 +189 </div>
+<div class="text ltr">To, wanda ya ji tsõron karkata ko kuwa wani zunubi daga mai wasiyyar, sai ya yi sulhi a tsakãninsu to bãbu laifi a kansa. Lalle ne Allah, Mai gãfara <span class="del">ne,Mai</span> <span class="ins">ne, Mai</span> jin ƙai.</div>
+
+<div class="info"> -228 +228 </div>
+<div class="text ltr">Kuma kada ku auri mãtã mushirikai sai sun yi ĩmãni: Kuma lalle ne baiwa mũminaita ce mafi alhẽri daga ɗiya <span class="del">kãfira,kuma</span> <span class="ins">kãfira, kuma</span> kõ da tã bã ku sha'awa. Kuma kada ku aurar wa maza mushirikai sai sun yi ĩmãni, kuma lalle ne bãwa mũmini shi ne mafi alhẽri daga da mushiriki, kuma kõ da yã bã ku sha'awa, waɗannan suna kira ne zuwa ga wuta kuma Allah Yana kira zuwa ga Aljanna da gãfara da izninsa. Kuma Yana bayyana ãyõyinsa ga mutãne; tsammãninsu suna tunãwa.</div>
+
+<div class="info"> -237 +237 </div>
+<div class="text ltr">Sa'an nan idan ya sake ta (na uku), to, bã ta halatta a gare shi, daga bãya, sai tã yi jima'i da wani miji waninsa. Sa'an nan idan (sãbon mijin, watau na biyu) ya sake ta, to, bãbu laifi a kansu ga su kõma wa (auren) <span class="del">jũna,idan</span> <span class="ins">jũna, idan</span> sun (mijin farko da matar) yi zaton cẽwa zã su tsayar da iyãkõkin Allah, kuma waɗancan dõkõkin Allah ne Yana bayyana su ga mutãne waɗanda suke sani.</div>
+
+<div class="info"> -239 +239 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ha.gumi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

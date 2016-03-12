@@ -61,6 +61,15 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Bookmark.
+        /// </summary>
+        internal static string AddBookmark_Text {
+            get {
+                return ResourceManager.GetString("AddBookmark.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arabic Font.
         /// </summary>
         internal static string ArabicFont_Text {
@@ -75,6 +84,24 @@ namespace StoreResource {
         internal static string Back_Label {
             get {
                 return ResourceManager.GetString("Back.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bookmarks.
+        /// </summary>
+        internal static string Bookmarks_Text {
+            get {
+                return ResourceManager.GetString("Bookmarks.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy to Clipboard.
+        /// </summary>
+        internal static string CopyToClipboard_Text {
+            get {
+                return ResourceManager.GetString("CopyToClipboard.Text", resourceCulture);
             }
         }
         
@@ -124,6 +151,15 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go to Verse.
+        /// </summary>
+        internal static string GoToVerse_Label {
+            get {
+                return ResourceManager.GetString("GoToVerse.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Increase Font Size.
         /// </summary>
         internal static string IncreaseFontSize_Label {
@@ -142,6 +178,42 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pause.
+        /// </summary>
+        internal static string Pause_Label {
+            get {
+                return ResourceManager.GetString("Pause.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play.
+        /// </summary>
+        internal static string Play_Label {
+            get {
+                return ResourceManager.GetString("Play.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reciter.
+        /// </summary>
+        internal static string Reciter_Text {
+            get {
+                return ResourceManager.GetString("Reciter.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Bookmark.
+        /// </summary>
+        internal static string RemoveBookmark_Text {
+            get {
+                return ResourceManager.GetString("RemoveBookmark.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Render.
         /// </summary>
         internal static string Render_Label {
@@ -151,11 +223,38 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set Playback Verse .
+        /// </summary>
+        internal static string SetPlaybackVerse_Text {
+            get {
+                return ResourceManager.GetString("SetPlaybackVerse.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         internal static string Settings_Label {
             get {
                 return ResourceManager.GetString("Settings.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Exegesis.
+        /// </summary>
+        internal static string ShowExegesis_Text {
+            get {
+                return ResourceManager.GetString("ShowExegesis.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Morphology Information.
+        /// </summary>
+        internal static string ShowMorphologyInfo_Text {
+            get {
+                return ResourceManager.GetString("ShowMorphologyInfo.Text", resourceCulture);
             }
         }
         

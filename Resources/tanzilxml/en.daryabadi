@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Abdul Majid Daryabadi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Abdul Majid Daryabadi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Abdul Majid Daryabadi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 16, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text ltr"><span class="del">﻿In</span> <span class="ins">In</span> the name of Allah, the Compassionate, the Merciful.</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -6236 +6236 </div>
+<div class="text ltr">Whether of Jinn or of mankind.</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -106 +106 </div>
+<div class="text ltr">And assuredly We have sent down Unto thee evident <span class="del">signs,and</span> <span class="ins">signs, and</span> none shall disbelieve therein save the transgressors.</div>
+
+<div class="info"> -121 +121 </div>
+<div class="text ltr">And who is more unjust than he who preventeth the mosques of Allah, that His name be mentioned therein, and striveth after their ruin? These! it was not for them to enter therein except in fear. Unto them shall be humiliation in this <span class="del">World,and</span> <span class="ins">World, and</span> unto them in the Hereafter a torment mighty.</div>
+
+<div class="info"> -142,2 +142,2 </div>
+<div class="text ltr">And they say: become Jews or Nazarenes, and ye shall be guided. Say thou: Aye! we follow the faith of Ibrahim, the <span class="del">upright,and</span> <span class="ins">upright, and</span> he was not of the associators.</div>
+
+<div class="text ltr">Say: we believe in Allah and that which hath been sent down unto us and that which was sent down unto Ibrahim and Ismai'l and Ishaq and Ya'qub and the <span class="del">tribes,and</span> <span class="ins">tribes, and</span> that which was vouchsafed unto Musa and lsa, and that which was vouchsafed unto the prophets from their Lord; we differentiate not between any of them, and unto Him are submissive.</div>
+
+<div class="info"> -158 +158 </div>
+<div class="text ltr">Even as We have sent amidst you an apostle from amongst you, who rehearseth unto you Our revelations and purifieth <span class="del">you,and</span> <span class="ins">you, and</span> teacheth you the Book and wisdom, and teacheth you that which ye were not wont to know.</div>
+
+<div class="info"> -192,2 +192,2 </div>
+<div class="text ltr">The month of Ramadhan: therein was sent down the Qur'an: is a guidance unto mankind, and with evidences: one of the Books of guidance and the distinction. So whosoever of you witnesseth the month, he shall fast it, and whosoever sick or journeying, for him the like number of other days. Allah intendeth for you ease, and intendeth not for you hardship; so ye shall fulfil the number and shall magnify Allah for His having guided <span class="del">you,and</span> <span class="ins">you, and</span> haply ye may give thanks.</div>
+
+<div class="text ltr">And when My bondsmen ask thee regarding Me, then verily I am Nigh; I answer the call of the caller when he calleth unto <span class="del">Me, ;</span> <span class="ins">Me,;</span> so let them answer Me and believe in Me, haply they may be rightly directed.</div>
+
+<div class="info"> -206 +206 </div>
+<div class="text ltr">Then hurry from the place whence the other people have hurried, and ask forgiveness of Allah, verily Allah is <span class="del">Forgiving,Merciful.</span> <span class="ins">Forgiving, Merciful.</span></div>
+
+<div class="info"> -208 +208 </div>
+<div class="text ltr">And of mankind are some who say: our Lord! vouchsafe unto us good in the world and good in the <span class="del">Hereafter,and</span> <span class="ins">Hereafter, and</span> save us from the torment of the Fire.</div>
+
+<div class="info"> -217 +217 </div>
+<div class="text ltr">Await they only that Allah shall come unto them in the shadows of the <span class="del">Clouds,and</span> <span class="ins">Clouds, and</span> also the angels, and the affair is decreed! And unto Allah are all affairs returned.</div>
+
+<div class="info"> -224 +224 </div>
+<div class="text ltr">They ask thee of the sacred month, of fighting therein. Say thou; fighting therein is grievous; and hindering people from the way of Allah and unbelief in Him and in the sanctity of the Sacred Mosque and driving out its dwellers therefrom are more grievous with Allah, and such temptation is far more grievous than that slaughter. And they will not cease fighting you so that they might make you apostatize from your religion, if they can. And whosoever of you apostatizeth from his faith and dieth an Infidel, then these it is whose works shall be of none effect in this world and the Hereafter, and they shall be the fellows of the <span class="del">Fire ;</span> <span class="ins">Fire;</span> therein they shall be abiders.</div>
+
+<div class="info"> -256 +256 </div>
+<div class="text ltr">Then when Talut sallied forth with the hosts, he said, verily God will prove you with a river: then whosoever drinketh thereof shall be none of mine, and whosoever tasteth it not, verily shall be mine, excepting him who ladeth a lading with his hand. But they drank thereof, save a few of them. Then when he had crossed it, <span class="del">he,and</span> <span class="ins">he, and</span> those who believe with him, they said: We have no strength to-day against Jalut and his hosts. But those who imagined that they were going to meet Allah Said how oft hath a small party prevailed against a large party by God's leave! And Allah is with the patiently persevering.</div>
+
+<div class="info"> -311 +311 </div>
+<div class="text ltr">Allah beareth witness - and also the angles and those endued with knowledge that there is no god but He, the Maintainer of <span class="del">equity :</span> <span class="ins">equity:</span> there is no god but He, the Mighty, the Wise.</div>
+
+<div class="info"> -357 +357 </div>
+<div class="text ltr">Say <span class="del">thou :</span> <span class="ins">thou:</span> O people of the Book! come to a word common between us and between you; that we shall worship none save Allah's and that we shall not associate aught with Him, and that none of you shall take others as Lords beside Allah. Then if they turn away, <span class="del">say :</span> <span class="ins">say:</span> bear witness that verily we are Muslims.</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/en.daryabadi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

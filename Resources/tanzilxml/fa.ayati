@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for AbdolMohammad Ayati." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - AbdolMohammad Ayati - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		AbdolMohammad Ayati		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 1, 2012</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Sat, 1 Sep 2012 00:00:02 -0400 </div>
+<div class="info"> -1353 +1353 </div>
+<div class="text rtl">و نيز خدا پذيرفت توبه آن سه تن را كه از جنگ تخلف كرده بودند، تا آنگاه كه زمين با همه گشادگيش بر آنها تنگ شد و جان در تنشان نمى‌گنجيد و خود دانستند كه جز خداوند هيچ پناهگاهى كه بدان روى آورند ندارند. پس خداوند توبه آنان بپذيرفت تا به او <span class="del">باآزيند،</span> <span class="ins">بازآيند،</span> كه توبه‌پذير و مهربان است.</div>
+
+
+<div class="date"> ch.jian renamed to zh.jian + minor fixes <br/> Sun, 2 Jan 2011 04:33:35 -0500 </div>
+<div class="info"> -516 +516 </div>
+<div class="text rtl">مادرانتان و دخترانتان و خواهرانتان و عمه‌هايتان و خاله‌هايتان و دختران برادران و دختران خواهرانتان و زنانى كه شما را شير داده‌اند و خواهران شيريتان و مادران زنانتان بر شما حرام شده‌اند. و دختران زنانتان كه در كنار شما هستند، هرگاه با آن زنان همبستر شده‌ايد بر شما حرام شده‌اند. ولى اگر همبستر نشده‌ايد، گناهى مرتكب نشده‌ايد. و نيز <span class="del">آنان</span> <span class="ins">زنان</span> پسرانى كه از پشت شما هستند بر شما حرام شده‌اند. و نبايد دو خواهر را در يك زمان به زنى گيريد، مگر آنكه پيش از اين چنين كرده باشيد. هر آينه خدا آمرزنده و مهربان است.</div>
+
+<div class="info"> -518 +518 </div>
+<div class="text rtl">هر كس را كه توانگرى نباشد تا آزادزنان مؤمنه را به نكاح خود درآورد از كنيزان مؤمنه‌اى كه مالك آنها هستيد به زنى گيرد. و خدا به ايمان شما آگاه‌تر است. همه از جنس يكديگريد. پس بندگان را به اذن صاحبانشان نكاح كنيد و مهرشان را به نحو شايسته‌اى بدهيد. و بايد كه پاكدامن باشند نه زناكار و نه از آنها كه به پنهان دوست مى‌گيرند. و چون شوهر كردند، هرگاه مرتكب فحشا شوند شكنجه آنان نصف شكنجه <span class="del">آزادآنان</span> <span class="ins">آزادزنان</span> است. و اين براى كسانى است از شما كه بيم دارند كه به رنج افتند. با اين همه، اگر صبر كنيد برايتان بهتر است و خدا آمرزنده و مهربان است.</div>
+
+
+<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text rtl"><span class="del">﻿به</span> <span class="ins">به</span> نام خداى بخشاينده مهربان‌</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text rtl"><span class="del">به</span> <span class="ins">﻿به</span> نام خداى بخشاينده مهربان‌</div>
+
+<div class="info"> -29 +29 </div>
+<div class="text rtl">آن خداوندى كه زمين را چون فراشى بگسترد، و آسمان را چون بنايى <span class="del">بيفراشت ،</span> <span class="ins">بيفراشت،</span> و از آسمان آبى فرستاد، و بدان آب براى روزى شما از زمين هر گونه ثمره‌اى برويانيد، و خود مى‌دانيد كه نبايد براى خدا همتايانى قرار دهيد.</div>
+
+<div class="info"> -313 +313 </div>
+<div class="text rtl">اگر با تو به داورى برخيزند بگوى: من و پيروانم در دين خويش به خدا اخلاص ورزيديم. به اهل كتاب و مشركان بگو: آيا شما هم به خدا اخلاص <span class="del">ورزيده‌ايد؟اگر</span> <span class="ins">ورزيده‌ايد؟ اگر</span> اخلاص ورزيده‌اند پس هدايت يافته‌اند و اگر رويگردان شده‌اند، بر تو تبليغ است و بس، و خدا بندگان را مى‌بيند.</div>
+
+<div class="info"> -327 +327 </div>
+<div class="text rtl">فرزندانى بودند، برخى از نسل برخى ديگر پديد آمده. و خدا شنوا و <span class="del">داناست .</span> <span class="ins">داناست.</span></div>
+
+<div class="info"> -336 +336 </div>
+<div class="text rtl">اى مريم، از پروردگارت اطاعت كن و سجده كن و با نمازگزاران نماز <span class="del">بخوان .</span> <span class="ins">بخوان.</span></div>
+
+<div class="info"> -420 +420 </div>
+<div class="text rtl">تا گروهى از كافران را هلاك كند، يا خوار گرداند. آنگاه نوميد <span class="del">بازگردند .</span> <span class="ins">بازگردند.</span></div>
+
+<div class="info"> -497 +497 </div>
+<div class="text rtl">مهر <span class="del">آنان</span> <span class="ins">زنان</span> را به طيب خاطر به آنها بدهيد. و اگر پاره‌اى از آن را به رضايت به شما بخشيدند بگيريد كه خوش و گوارايتان خواهد بود.</div>
+
+<div class="info"> -500 +500 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/fa.ayati/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

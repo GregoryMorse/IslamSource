@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Abdullah Yusuf Ali." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Abdullah Yusuf Ali - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Abdullah Yusuf Ali		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: May 10, 2013</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Sat, 1 Jun 2013 00:00:02 -0400 </div>
+<div class="info"> -568 +568 </div>
+<div class="text ltr">And why should ye not fight in the cause of Allah and of those who, being weak, are ill-treated (and oppressed)?- Men, women, and children, whose cry is: "Our Lord! Rescue us from this town, whose people are oppressors; and raise for us from <span class="del">thee</span> <span class="ins">Thee</span> one who will protect; and raise for us from <span class="del">thee</span> <span class="ins">Thee</span> one who will help!"</div>
+
+
+<div class="date"> Minor fixes <br/> Tue, 1 Feb 2011 23:17:06 -0500 </div>
+<div class="info"> -2852 +2852 </div>
+<div class="text ltr">It is no fault in the blind nor in one born lame, nor in one afflicted with illness, nor in yourselves, that ye should eat in your own houses, or those of your fathers, or your mothers, or your brothers, or your sisters, or your father's brothers or your father's sisters, or your <span class="del">mohter's</span> <span class="ins">mother's</span> brothers, or your mother's sisters, or in houses of which the keys are in your possession, or in the house of a sincere friend of yours: there is no blame on you, whether ye eat in company or separately. But if ye enter houses, salute each other - a greeting of blessing and purity as from Allah. Thus does Allah make clear the signs to you: that ye may understand.</div>
+
+<div class="info"> -2867,2 +2867,2 </div>
+<div class="text ltr">When it sees them from a place <span class="del">fAr</span> <span class="ins">far</span> off, they will hear its fury and its ranging sigh.</div>
+
+<div class="text ltr">And when they are cast, bound together into a constricted place therein, they will <span class="del">pLead</span> <span class="ins">plead</span> for destruction there and then!</div>
+
+<div class="info"> -2881 +2881 </div>
+<div class="text ltr">That Day, the dominion as of right and truth, shall be (wholly) for (Allah) Most Merciful: it will be a Day of dire difficulty for the <span class="del">Misbelievers.</span> <span class="ins">misbelievers.</span></div>
+
+<div class="info"> -4396 +4396 </div>
+<div class="text ltr">To them will be passed round, dishes and goblets of gold: there will be there all that the souls could desire, all that their <span class="del">ayes</span> <span class="ins">eyes</span> could delight in: and ye shall abide therein (for eye).</div>
+
+
+<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -412 +412 </div>
+<div class="text ltr">Ah! ye are those who love them, but they love you not,- though ye believe in the whole of the Book. When they meet you, they say, "We believe": But when they are alone, they bite off the very tips of their fingers at you in their rage. Say: "Perish in <span class="del">you</span> <span class="ins">your</span> rage; Allah knoweth well all the secrets of the heart."</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -1028 +1028 </div>
+<div class="text ltr">"And remember how He made you inheritors after the 'Ad people and gave you habitations in the land: ye build for yourselves palaces and castles in (open) plains, and <span class="del">care</span> <span class="ins">carve</span> out homes in the mountains; so bring to remembrance the benefits (ye have received) from Allah, and refrain from evil and mischief on the earth."</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -8 +8 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/en.yusufali/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

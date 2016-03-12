@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Mahdi Elahi Ghomshei." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Mahdi Elahi Ghomshei - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Mahdi Elahi Ghomshei		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: July 17, 2011</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Mon, 1 Aug 2011 00:00:02 -0400 </div>
+<div class="info"> -2298 +2298 </div>
+<div class="text rtl">من از شما و بتانی که به جای خدا <span class="del">می‌پرتسید</span> <span class="ins">می‌پرستید</span> دوری کرده و خدای یکتایم را می‌خوانم و امیدوارم که چون او را بخوانم از درگاه لطفش محروم نمانم (و مرا از شرّ مشرکان حفظ کند).</div>
+
+
+<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text rtl"><span class="del">﻿به</span> <span class="ins">به</span> نام خداوند بخشنده مهربان</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -279 +279 </div>
+<div class="text rtl">(ای رسول بر تو دعوت خلق است و) هدایت خلق بر تو نیست، خدا هر که را خواهد هدایت کند. و هر قسم انفاق و احسان کنید درباره خویش کرده‌اید، و نبایست انفاق کنید جز در راه رضای خدا، و هر انفاق و احسانی کنید از خدا پاداش تمام به شما رسد و<span class="del">به</span>  هرگز به شما ستم نخواهد رسید.</div>
+
+<div class="info"> -1917 +1917 </div>
+<div class="text rtl">و نشانه‌هایی (در زمین مانند کوهها و دریاها و رودها و جنگلها مقرر داشت) <span class="del">*و</span> <span class="ins">و</span> آنان به ستارگان (در شبها) هدایت یابند.</div>
+
+<div class="info"> -1937 +1937 </div>
+<div class="text rtl">و همانا ما در میان هر امتی پیغمبری فرستادیم که خدای یکتا را پرستید و از بتان و فرعونان دوری کنید، پس بعضی مردم را خدا هدایت کرد و بعضی دیگر ضلالت و گمراهی بر آنان <span class="del">حتی</span> <span class="ins">حتمی</span> شد، اکنون در روی زمین گردش کنید تا بنگرید عاقبت آنان که (انبیاء را) تکذیب کردند به کجا رسید (و آنها چگونه هلاک ابدی شدند).</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -1 +1 </div>
+<div class="text rtl"><span class="del">به</span> <span class="ins">﻿به</span> نام خداوند بخشنده مهربان</div>
+
+<div class="info"> -33 +33 </div>
+<div class="text rtl">و خدا را شرم و ملاحظه از آن نیست که به پشه و چیزی بزرگتر از آن مثل زند، پس آنهایی که به خدا ایمان آورده‌اند می‌دانند که آن مثل حق است از جانب او، و اما آنهایی که کافرند می‌گویند: خدا را از این مثل چه مقصود <span class="del">است؟گمراه</span> <span class="ins">است؟ گمراه</span> می‌کند به آن مثل بسیاری را و هدایت می‌کند بسیاری <span class="del">را!و</span> <span class="ins">را! و</span> گمراه نمی‌کند به آن مگر فاسقان را.</div>
+
+<div class="info"> -74 +74 </div>
+<div class="text rtl">و (به یاد آرید) وقتی که موسی به قوم خود فرمود که به امر خدا گاوی را ذبح کنید، گفتند: ما را به تمسخر <span class="del">گرفته‌ای؟موسی</span> <span class="ins">گرفته‌ای؟ موسی</span> گفت: پناه می‌برم به خدا از آنکه (سخن به تمسخر گویم و) از مردم نادان باشم.</div>
+
+<div class="info"> -80 +80 </div>
+<div class="text rtl">پس دستور دادیم بعضی از اعضاء گاو را بر بدن کشته زنید (تا زنده شود و قاتل را معرفی <span class="del">کند) .</span> <span class="ins">کند).</span> این گونه خداوند مردگان را زنده خواهد فرمود، و قدرت کامله خویش را به شما آشکار می‌نماید، باشد که عقل خود را به کار برید.</div>
+
+<div class="info"> -83 +83 </div>
+<div class="text rtl">و هرگاه با مؤمنان روبرو شوند گویند: ما نیز ایمان آورده‌ایم؛ و چون با یکدیگر خلوت کنند گویند: چرا دری که خدا از علوم به روی شما گشوده به روی مسلمانان باز می‌کنید تا به کمک همان علوم با شما نزد خدایتان محاجّه <span class="del">کنند؟چرا</span> <span class="ins">کنند؟ چرا</span> راه عقل و اندیشه نمی‌پویید؟</div>
+
+<div class="info"> -92 +92 </div>
+<div class="text rtl">(با این عهد و اقرار) باز شما (به همان خوی زشت) خون یکدیگر می‌ریزید و گروهی از خودتان را از دیارشان می‌رانید و در بدکرداری و ستم بر ضعیفان همدست و پشتیبان یکدیگرید، و چون اسیر شوند برای آزادی آنها فدیه می‌دهید، در صورتی که به حکم تورات، اخراج کردن آنها بر شما حرام شده <span class="del">است!چرا</span> <span class="ins">است! چرا</span> به برخی از احکام ایمان آورده و به بعضی کافر <span class="del">می‌شوید؟پس</span> <span class="ins">می‌شوید؟ پس</span> جزای چنین مردم بدکردار چیست به جز ذلّت و خواری در زندگانی این جهان و بازگشتن به سخت‌ترین عذاب در روز <span class="del">قیامت؟و</span> <span class="ins">قیامت؟ و</span> خدا غافل از کردار شما نیست.</div>
+
+<div class="info"> -95,3 +95,3 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/fa.ghomshei/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

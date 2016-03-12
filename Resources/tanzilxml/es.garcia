@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Muhammad Isa García." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Muhammad Isa García - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Muhammad Isa García		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: July 15, 2014</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Two new Spanesh translations es.bornez and es.garcia are added. <br/> Wed, 16 Jul 2014 02:04:37 +0800 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">En el nombre de Dios, el Compasivo con toda la creación, el Misericordioso con los creyentes.</span></div>
+
+<div class="text ltr"><span class="ins">Todas las alabanzas son para Dios, Señor de todo cuanto existe,</span></div>
+
+<div class="text ltr"><span class="ins">el Compasivo, el Misericordioso.</span></div>
+
+<div class="text ltr"><span class="ins">Soberano absoluto del Día del Juicio Final,</span></div>
+
+<div class="text ltr"><span class="ins">solo a Ti te adoramos y solo de Ti imploramos ayuda.</span></div>
+
+<div class="text ltr"><span class="ins">¡Guíanos por el camino recto!</span></div>
+
+<div class="text ltr"><span class="ins">El camino de los que has colmado con Tus favores, no el de los que cayeron en Tu ira, ni el de los que se extraviaron.</span></div>
+
+<div class="text ltr"><span class="ins">Álif. Lam. Mim.</span></div>
+
+<div class="text ltr"><span class="ins">Este es el Libro del cual no hay duda, es guía para los que son conscientes de Dios y e temen devocionalmente,</span></div>
+
+<div class="text ltr"><span class="ins">los que creen en lo oculto, practican la oración, dan caridad de lo que les he proveído,</span></div>
+
+<div class="text ltr"><span class="ins">y creen en lo que te ha sido revelado [¡oh, Mujámmad!] y en lo que fue revelado [originalmente a los profetas anteriores], y tienen certeza de la existencia de la otra vida.</span></div>
+
+<div class="text ltr"><span class="ins">Esos son los que están en la guía de su Señor y serán los bienaventurados.</span></div>
+
+<div class="text ltr"><span class="ins">A los que niegan la verdad les da lo mismo que les adviertas o no, no creerán.</span></div>
+
+<div class="text ltr"><span class="ins">Dios ha sellado sus corazones y sus oídos, sobre sus ojos hay un velo y recibirán un castigo terrible [en el Infierno].</span></div>
+
+<div class="text ltr"><span class="ins">Entre las personas hay [hipócritas] que dicen: "Creemos en Dios y en el Día de la Resurrección", pero no son creyentes.</span></div>
+
+<div class="text ltr"><span class="ins">Pretenden engañar a Dios y también a los creyentes pero, sin advertirlo, solo se engañan a sí mismos.</span></div>
+
+<div class="text ltr"><span class="ins">Sus corazones tienen una enfermedad y [por su actitud] Dios agrava aún más su enfermedad. Sufrirán un castigo doloroso por haber mentido.</span></div>
+
+<div class="text ltr"><span class="ins">Cuando se les dice: ¡No siembren la corrupción en la Tierra! Responden: "¡Pero si nosotros somos los que hacemos el bien!"</span></div>
+
+<div class="text ltr"><span class="ins">¿Acaso no son ellos los corruptores? [Sí,] pero no se dan cuenta.</span></div>
+
+<div class="text ltr"><span class="ins">Cuando se les dice: "¡Crean como ha creído la gente!" Responden: "¿Es que vamos a creer como lo hacen los tontos?" ¿Acaso no son ellos los tontos? [Sí,] pero no lo saben.</span></div>
+
+<div class="text ltr"><span class="ins">Cuando se encuentran con los creyentes les dicen: "¡Somos creyentes!" Pero cuando están a solas con los malvados de entre ellos, les aseguran: "¡Estamos con ustedes, solo nos burlábamos de ellos!"</span></div>
+
+<div class="text ltr"><span class="ins">[Pero] Dios hará que sus burlas caigan sobre ellos mismos y dejará que permanezcan extraviados, en su ceguera.</span></div>
+
+<div class="text ltr"><span class="ins">Ellos vendieron la guía, cambiándola por el desvío, y tal negocio no les resultó provechoso, no siendo de los bien guiados.</span></div>
+
+<div class="text ltr"><span class="ins">Su ejemplo es como el de los que encienden fuego, y cuando les alumbra a su alrededor, [debido a su desvío] Dios les quita la luz dejándolos en tinieblas, por lo que no pueden ver.</span></div>
+
+<div class="text ltr"><span class="ins">Son sordos, mudos y ciegos, y no volverán [al buen camino].</span></div>
+
+<div class="text ltr"><span class="ins">O [son] como los que al ser azotados por una lluvia torrencial cargada de oscuridad, truenos y relámpagos, se tapan los oídos con sus dedos al caer los rayos por temor a la muerte. Dios asedia a los que niegan la verdad.</span></div>
+
+<div class="text ltr"><span class="ins">Los relámpagos casi ciegan sus ojos. Cuando los iluminan caminan a su luz, pero cuando la oscuridad vuelve sobre ellos se detienen. Si Dios hubiese querido les habría dejado sordos y ciegos. Dios tiene poder sobre todas las cosas.</span></div>
+
+<div class="text ltr"><span class="ins">¡Oh, seres humanos! Adoren a su Señor que los creó a ustedes y a quienes los precedieron, para que así alcancen el temor devocional de Dios.</span></div>
+
+<div class="text ltr"><span class="ins">Él hizo para ustedes de la Tierra un lugar habitable y del cielo un techo, e hizo descender la lluvia del cielo con la que hace brotar frutos para su sustento. En consecuencia, no dediquen actos de adoración a otros además de Dios, ahora que saben [que Él es el único Creador].</span></div>
+
+<div class="text ltr"><span class="ins">Si dudan de lo que le he revelado a Mi siervo traigan un capítulo [del Corán] similar, y recurran para ello a quienes toman por socorredores en lugar de Dios, si es verdad lo que afirman.</span></div>
+
+<div class="text ltr"><span class="ins">Si no lo hacen, y por cierto que no podrán hacerlo, teman al fuego, cuyo combustible serán seres humanos y piedras, [un fuego] que ha sido preparado para los que niegan la verdad.</span></div>
+
+<div class="text ltr"><span class="ins">Y albricia a los creyentes que obran correctamente que tendrán como recompensa jardines por donde corren los ríos. Cuando allí reciban frutos dirán: "Esto es similar a lo que recibimos anteriormente", pero solo lo será en apariencia. Allí tendrán esposas puras, donde morarán por toda la eternidad.</span></div>
+
+<div class="text ltr"><span class="ins">Dios no se avergüenza de poner como ejemplo a un mosquito o algo aún más pequeño. Los creyentes saben que es la verdad proveniente de su Señor, en cambio los que niegan la verdad dicen: "¿Qué pretende Dios con este ejemplo?" Así es como Él extravía a muchos y guía a muchos [con este ejemplo], pero no extravía sino a los perversos,</span></div>
+
+<div class="text ltr"><span class="ins">los que no cumplen con el pacto establecido con Dios a pesar de haberse comprometido, rompen [los lazos familiares] que Dios ordenó respetar y siembran corrupción en la Tierra. Ésos son los perdedores.</span></div>
+
+<div class="text ltr"><span class="ins">¿Cómo osan no creer en Dios siendo que no existían y Él les dio la vida, luego los hará morir y finalmente los resucitará y a Él serán retornados [para que los juzgue el Día del Juicio Final]?</span></div>
+
+<div class="text ltr"><span class="ins">Él es Quien creó para ustedes todo cuanto hay en la Tierra, luego se volvió hacia el cielo e hizo de éste siete cielos; Él conoce todas las cosas.</span></div>
+
+<div class="text ltr"><span class="ins">Y [menciona, oh, Mujámmad] cuando tu Señor le dijo a los ángeles: "He de establecer en la Tierra a quien la herede", dijeron: "¿Pondrás en ella a quien la corrompa [devastándola] y derrame sangre siendo que nosotros te glorificamos y santificamos?" Dijo: "Yo sé lo que ustedes ignoran".</span></div>
+
+<div class="text ltr"><span class="ins">Y [Dios] enseñó a Adán los nombres de todas las cosas, luego se las mostró a los ángeles y dijo: "Díganme sus nombres, si es que dicen la verdad".</span></div>
+
+<div class="text ltr"><span class="ins">Dijeron: "¡Glorificado seas! No tenemos más conocimiento que el que Tú nos has concedido, Tú todo lo conoces, todo lo sabes".</span></div>
+
+<div class="text ltr"><span class="ins">Dijo: "¡Oh Adán! Infórmales sobre sus nombres". Y cuando les hubo informado sobre sus nombres, Dios dijo: "¿Acaso no les dije que conozco lo oculto de los cielos y de la Tierra, y sé lo que manifiestan y lo que ocultan?"</span></div>
+
+<div class="text ltr"><span class="ins">Pero cuando dije a los ángeles: "¡Prostérnense ante Adán!" Todos se prosternaron excepto Iblís, que se negó y fue soberbio, y se convirtió en uno de los incrédulos.</span></div>
+
+<div class="text ltr"><span class="ins">Dije: "¡Oh, Adán! Habita con tu esposa el Paraíso, y coman de su abundancia cuanto deseen, pero no se acerquen a este árbol, porque si lo hacen se convertirán ambos en transgresores".</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/es.garcia/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

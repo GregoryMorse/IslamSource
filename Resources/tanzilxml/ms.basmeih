@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Abdullah Muhammad Basmeih." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Abdullah Muhammad Basmeih - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Abdullah Muhammad Basmeih		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: September 7, 2012</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Mon, 1 Oct 2012 00:00:02 -0400 </div>
+<div class="info"> -472 +472 </div>
+<div class="text ltr">Allah tidak sekali-kali akan membiarkan orang-orang yang beriman dalam keadaan yang kamu ada seorang (bercampur aduk mukmin dan munafik, bahkan Ia tetap menguji kamu) sehingga Ia memisahkan yang buruk <span class="del">(manufik)</span> <span class="ins">(munafik)</span> daripada yang baik (beriman). Dan Allah tidak sekali-kali akan memperlihatkan kepada kamu perkara-perkara yang Ghaib akan tetapi Allah memilih dari RasulNya sesiapa yang dikehendakiNya (untuk memperlihatkan kepadanya perkara-perkara yang Ghaib). Oleh itu berimanlah kamu kepada Allah dan Rasul-rasulNya; dan kamu beriman dan bertaqwa, maka kamu akan beroleh pahala yang besar.</div>
+
+<div class="info"> -633 +633 </div>
+<div class="text ltr">Dan sesungguhnya Allah telahpun menurunkan kepada kamu (perintahNya) di dalam Kitab (Al-Quran), iaitu: apabila kamu mendengar ayat-ayat keterangan Allah diingkari dan diejek-ejek (oleh kaum kafir dan munafik), maka janganlah kamu duduk (bergaul) dengan mereka sehingga mereka masuk kepada memperkatakan soal yang lain; kerana sesungguhnya (jika kamu melakukan yang demikian), tentulah kamu sama seperti mereka. Sesungguhnya Allah akan menghimpunkan sekalian orang <span class="del">manufik</span> <span class="ins">munafik</span> dan orang kafir di dalam neraka jahannam.</div>
+
+<div class="info"> -1315 +1315 </div>
+<div class="text ltr">(Orang-orang <span class="del">manufik</span> <span class="ins">munafik</span> itu) sama sahaja engkau meminta ampun untuk mereka atau engkau tidak meminta ampun bagi mereka. Jika engkau (wahai Muhammad) meminta ampun bagi mereka tujuh puluh kali (sekalipun) maka Allah tidak sekali-kali mengampunkan mereka; yang demikian itu, kerana mereka telah kufur kepada Allah dan RasulNya; dan Allah tidak akan memberi hidayah petunjuk kepada kaum yang fasik.</div>
+
+
+<div class="date"> Minor fixes <br/> Mon, 1 Aug 2011 00:00:02 -0400 </div>
+<div class="info"> -5139 +5139 </div>
+<div class="text ltr">(Kerana) sesungguhnya kamu - dalam hati mereka, - sangat ditakuti lebih dari Allah; yang demikian itu, kerana mereka ialah kaum yang tidak <span class="del">memgerti</span> <span class="ins">mengerti</span> (akan kekuasaan Allah dan kebesaranNya).</div>
+
+
+<div class="date"> New translations added: ur.maududi, ms.basmieh, ru.sablukov, and ru.kuliev-alsaadi <br/> Mon, 4 Oct 2010 02:30:28 -0400 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.</span></div>
+
+<div class="text ltr"><span class="ins">Segala puji tertentu bagi Allah, Tuhan yang memelihara dan mentadbirkan sekalian alam.</span></div>
+
+<div class="text ltr"><span class="ins">Yang Maha Pemurah, lagi Maha Mengasihani.</span></div>
+
+<div class="text ltr"><span class="ins">Yang Menguasai pemerintahan hari Pembalasan (hari Akhirat).</span></div>
+
+<div class="text ltr"><span class="ins">Engkaulah sahaja (Ya Allah) Yang Kami sembah, dan kepada Engkaulah sahaja kami memohon pertolongan.</span></div>
+
+<div class="text ltr"><span class="ins">Tunjukilah kami jalan yang lurus.</span></div>
+
+<div class="text ltr"><span class="ins">Iaitu jalan orang-orang yang Engkau telah kurniakan nikmat kepada mereka, bukan (jalan) orang-orang yang Engkau telah murkai, dan bukan pula (jalan) orang-orang yang sesat.</span></div>
+
+<div class="text ltr"><span class="ins">Alif, Laam, Miim.</span></div>
+
+<div class="text ltr"><span class="ins">Kitab Al-Quran ini, tidak ada sebarang syak padanya (tentang datangnya dari Allah dan tentang sempurnanya); ia pula menjadi petunjuk bagi orang-orang yang (hendak) bertaqwa;</span></div>
+
+<div class="text ltr"><span class="ins">Iaitu orang-orang yang beriman kepada perkara-perkara yang ghaib, dan mendirikan (mengerjakan) sembahyang serta membelanjakan (mendermakan) sebahagian dari rezeki yang Kami berikan kepada mereka.</span></div>
+
+<div class="text ltr"><span class="ins">Dan juga orang-orang yang beriman kepada Kitab "Al-Quran" yang diturunkan kepadamu (Wahai Muhammad), dan Kitab-kitab yang diturunkan dahulu daripadamu, serta mereka yakin akan (adanya) hari akhirat (dengan sepenuhnya).</span></div>
+
+<div class="text ltr"><span class="ins">Mereka itulah yang tetap mendapat petunjuk dari Tuhan mereka, dan merekalah orang-orang yang berjaya.</span></div>
+
+<div class="text ltr"><span class="ins">Sesungguhnya orang-orang kafir (yang tidak akan beriman), sama sahaja kepada mereka: sama ada engkau beri amaran kepadanya atau engkau tidak beri amaran, mereka tidak akan beriman.</span></div>
+
+<div class="text ltr"><span class="ins">(Dengan sebab keingkaran mereka), Allah mematerikan atas hati mereka serta pendengaran mereka, dan pada penglihatan mereka ada penutupnya; dan bagi mereka pula disediakan azab seksa yang amat besar.</span></div>
+
+<div class="text ltr"><span class="ins">Dan di antara manusia ada yang berkata: "Kami telah beriman kepada Allah dan kepada hari akhirat"; padahal mereka sebenarnya tidak beriman.</span></div>
+
+<div class="text ltr"><span class="ins">Mereka hendak memperdayakan Allah dan orang-orang yang beriman, padahal mereka hanya memperdaya dirinya sendiri, sedang mereka tidak menyedarinya.</span></div>
+
+<div class="text ltr"><span class="ins">Dalam hati mereka (golongan yang munafik itu) terdapat penyakit (syak dan hasad dengki), maka Allah tambahkan lagi penyakit itu kepada mereka; dan mereka pula akan beroleh azab seksa yang tidak terperi sakitnya, dengan sebab mereka berdusta (dan mendustakan kebenaran).</span></div>
+
+<div class="text ltr"><span class="ins">Dan apabila dikatakan kepada mereka: "Janganlah kamu membuat bencana dan kerosakan di muka bumi", mereka menjawab: " Sesungguhnya kami orang-orang yang hanya membuat kebaikan".</span></div>
+
+<div class="text ltr"><span class="ins">Ketahuilah! Bahawa sesungguhnya mereka itulah orang-orang yang sebenar-benarnya membuat bencana dan kerosakan, tetapi mereka tidak menyedarinya.</span></div>
+
+<div class="text ltr"><span class="ins">Dan apabila dikatakan kepada mereka: "Berimanlah kamu sebagaimana orang-orang itu telah beriman". Mereka menjawab: "Patutkah kami ini beriman sebagaimana berimannya orang-orang bodoh itu?" Ketahuilah! Sesungguhnya merekalah orang-orang yang bodoh, tetapi mereka tidak mengetahui (hakikat yang sebenarnya).</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/ms.basmeih/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

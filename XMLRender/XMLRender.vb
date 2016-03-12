@@ -1113,7 +1113,7 @@ Public Class ArabicData
 End Class
 Public Class RenderArray
     Enum RenderTypes
-        eHeaderLeft
+        eHeaderLeft 'these 3 should be text and combined display class, they are not that distinct
         eHeaderCenter
         eHeaderRight
         eText
@@ -1123,6 +1123,7 @@ Public Class RenderArray
         eNested
         eArabic
         eTransliteration
+        eTransliterationRTL
         eLTR
         eRTL
         eContinueStop
@@ -1131,6 +1132,7 @@ Public Class RenderArray
         eTag
         eLink
         ePassThru
+        eReference
     End Enum
     Structure RenderText
         Public DisplayClass As RenderDisplayClass

@@ -107,6 +107,9 @@ Public Class Arabic
             If Compare = 0 Then Compare = GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicSymbol), _Scheme).CompareTo(GetSchemeValueFromSymbol(DirectCast(y, ArabicData.ArabicSymbol), _Scheme))
         End Function
     End Class
+    Public Shared Function GetRecitationSymbol(Index As Integer) As String
+        Return ArabicData.ArabicLetters(Index).UnicodeName + " (" + ArabicData.FixStartingCombiningSymbol(ArabicData.ArabicLetters(Index).Symbol) + ArabicData.LeftToRightEmbedding + ")" + ArabicData.PopDirectionalFormatting
+    End Function
     Public Shared Function GetRecitationSymbols() As Array()
         Return New List(Of Object())(Linq.Enumerable.Select(CachedData.RecitationSymbols, Function(Ch As String) New Object() {ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName + " (" + ArabicData.FixStartingCombiningSymbol(Ch) + ArabicData.LeftToRightEmbedding + ")" + ArabicData.PopDirectionalFormatting, ArabicData.FindLetterBySymbol(Ch.Chars(0))})).ToArray()
     End Function
@@ -1240,28 +1243,41 @@ Public Class Arabic
         Return Text
     End Function
 End Class
-Class AudioRecitation
-    Public Static Function GetURL(Source As String, ReciterName As String, Chapter As Integer, Verse As Integer) As String
+Public Class AudioRecitation
+    Public Shared Function GetURL(Source As String, ReciterName As String, Chapter As Integer, Verse As Integer) As String
         Dim Base As String = String.Empty
         If Source = "everyayah" Then Base = "http://www.everyayah.com/data/"
         If Source = "tanzil" Then Base = "http://tanzil.net/res/audio/"
         Return Base + ReciterName + "/" + Chapter.ToString("D3") + Verse.ToString("D3") + ".mp3"
     End Function
+    Public Shared Function GetReciterIndex(ReciterName As String) As Integer
+        If ReciterName = String.Empty Then ReciterName = CachedData.IslamData.ReciterList.DefaultReciter
+        For Count As Integer = 0 To CachedData.IslamData.ReciterList.Reciters.Length - 1
+            If CachedData.IslamData.ReciterList.Reciters(Count).Reciter = ReciterName Then
+                Return Count
+            End If
+        Next
+        Return -1
+    End Function
 End Class
 <Xml.Serialization.XmlRoot("islamdata")>
 Public Class IslamData
-    Public Structure Reciter
-        <Xml.Serialization.XmlAttribute("name")>
-        Public Name As String
-        <Xml.Serialization.XmlAttribute("reciter")>
-        Public Reciter As String
-        <Xml.Serialization.XmlAttribute("source")>
-        Public Source As String
+    Public Structure Reciters
+        Public Structure Reciter
+            <Xml.Serialization.XmlAttribute("name")>
+            Public Name As String
+            <Xml.Serialization.XmlAttribute("reciter")>
+            Public Reciter As String
+            <Xml.Serialization.XmlAttribute("source")>
+            Public Source As String
+        End Structure
+        <Xml.Serialization.XmlElement("reciter")>
+        Public Reciters() As Reciter
+        <Xml.Serialization.XmlAttribute("default")>
+        Public DefaultReciter As String
     End Structure
-    <Xml.Serialization.XmlArray("reciters")>
-    <Xml.Serialization.XmlArrayItem("reciter")>
-    Public Reciters() As Reciter
-
+    <Xml.Serialization.XmlElement("reciters")>
+    Public ReciterList As Reciters
     Public Structure ListCategory
         Public Structure Word
             <Xml.Serialization.XmlAttribute("text")>
@@ -4308,10 +4324,42 @@ Public Class TanzilReader
         Next
         Return Nothing
     End Function
+    Public Shared Function GetRecitationRule(Index As Integer) As String
+        Return Utility.LoadResourceString("IslamInfo_" + GetMetaRuleSet("UthmaniQuran").Rules(Index).Name)
+    End Function
     Public Shared Function GetRecitationRules() As Array()
-        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(GetMetaRuleSet("UthmaniQuran").Rules, Function(Convert As IslamData.RuleMetaSet.RuleMetadataTranslation) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Name), CInt(Array.IndexOf(CachedData.IslamData.MetaRules, Convert))})).ToArray()
+        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(GetMetaRuleSet("UthmaniQuran").Rules, Function(Convert As IslamData.RuleMetaSet.RuleMetadataTranslation) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Name), CInt(Array.IndexOf(GetMetaRuleSet("UthmaniQuran").Rules, Convert))})).ToArray()
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
+    End Function
+    Public Shared Function GetGroupSelectionName(DivisionsParts()() As Integer, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
+        Return New List(Of Object())(Linq.Enumerable.Select(DivisionsParts, Function(DivisionPart, Index) New Object() {GetSelectionName(DivisionPart(0), DivisionPart(1), SchemeType, Scheme), Index})).ToArray()
+    End Function
+    Public Shared Function GetSelectionName(Division As Integer, Part As Integer, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
+        If Division = 0 Then
+            Return TanzilReader.GetChapterName(GetTextChapter(CachedData.XMLDocInfo, Part), SchemeType, Scheme)
+        ElseIf Division = 1 Then
+            Return TanzilReader.GetChapterName(GetChapterIndexByRevelationOrder(Part), SchemeType, Scheme)
+        ElseIf Division = 2 Then
+            Return TanzilReader.GetPartName(Part, SchemeType, Scheme)
+        ElseIf Division = 3 Then
+            Return TanzilReader.GetGroupName(Part)
+        ElseIf Division = 4 Then
+            Return TanzilReader.GetStationName(Part)
+        ElseIf Division = 5 Then
+            Return TanzilReader.GetSectionName(Part)
+        ElseIf Division = 6 Then
+            Return TanzilReader.GetPageName(Part)
+        ElseIf Division = 7 Then
+            Return TanzilReader.GetSajdaName(Part)
+        ElseIf Division = 8 Then
+            Return TanzilReader.GetImportantName(Part)
+        ElseIf Division = 9 Then
+            Return Arabic.GetRecitationSymbol(Part)
+        ElseIf Division = 10 Then
+            Return GetRecitationRule(Part)
+        End If
+        Return Nothing
     End Function
     Public Shared Function GetSelectionNames(Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
         Dim Division As Integer = 0
@@ -4321,7 +4369,7 @@ Public Class TanzilReader
         ElseIf Division = 1 Then
             Return TanzilReader.GetChapterNamesByRevelationOrder(SchemeType, Scheme)
         ElseIf Division = 2 Then
-            Return TanzilReader.GetPartNames()
+            Return TanzilReader.GetPartNames(SchemeType, Scheme)
         ElseIf Division = 3 Then
             Return TanzilReader.GetGroupNames()
         ElseIf Division = 4 Then
@@ -5551,13 +5599,16 @@ Public Class TanzilReader
     Public Shared Function IsSajda(ByVal Chapter As Integer, ByVal Verse As Integer) As Boolean
         Dim Node As Xml.Linq.XElement
         For Each Node In Utility.GetChildNode("sajdas", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements
-            If Node.Name = "sajda" AndAlso _
-                CInt(Node.Attribute("sura").Value) = Chapter AndAlso _
+            If Node.Name = "sajda" AndAlso
+                CInt(Node.Attribute("sura").Value) = Chapter AndAlso
                 CInt(Node.Attribute("aya").Value) = Verse Then
                 Return True
             End If
         Next
         Return False
+    End Function
+    Public Shared Function GetImportantName(Index As Integer) As String
+        Return Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.QuranSelections(Index).Description)
     End Function
     Public Shared Function GetImportantNames() As Array()
         Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(CachedData.IslamData.QuranSelections, Function(Convert As IslamData.QuranSelection) New Object() {Utility.LoadResourceString("IslamInfo_" + Convert.Description), CInt(Array.IndexOf(CachedData.IslamData.QuranSelections, Convert))})).ToArray()
@@ -5570,8 +5621,11 @@ Public Class TanzilReader
     Public Shared Function GetChapterByIndex(ByVal Index As Integer) As Xml.Linq.XElement
         Return Utility.GetChildNodeByIndex("sura", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("suras", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
     End Function
+    Public Shared Function GetChapterName(Convert As Xml.Linq.XElement, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
+        Return Convert.Attribute("index").Value + ". " + GetChapterEName(Convert) + " (" + ArabicData.RightToLeftEmbedding + Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name) + ArabicData.PopDirectionalFormatting + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name), Nothing, CachedData.RuleMetas("Normal"))))
+    End Function
     Public Shared Function GetChapterNames(SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
-        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("sura", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("suras", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value + ". " + GetChapterEName(Convert) + " (" + ArabicData.RightToLeftEmbedding + Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name) + ArabicData.PopDirectionalFormatting + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name), Nothing, CachedData.RuleMetas("Normal")))), CInt(Convert.Attribute("index").Value)})).ToArray()
+        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("sura", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("suras", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {GetChapterName(Convert, SchemeType, Scheme), CInt(Convert.Attribute("index").Value)})).ToArray()
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function
@@ -5579,7 +5633,7 @@ Public Class TanzilReader
         Return Utility.LoadResourceString("IslamInfo_QuranChapter" + ChapterNode.Attribute("index").Value)
     End Function
     Public Shared Function GetChapterNamesByRevelationOrder(SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
-        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("sura", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("suras", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value + ". " + GetChapterEName(Convert) + " (" + ArabicData.RightToLeftEmbedding + Arabic.TransliterateFromBuckwalter(CachedData.QuranHeaders(1) + " " + CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name) + ArabicData.PopDirectionalFormatting + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter(CachedData.IslamData.QuranChapters(CInt(Convert.Attribute("index").Value) - 1).Name), Nothing, CachedData.RuleMetas("Normal")))), CInt(Convert.Attribute("order").Value)})).ToArray()
+        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("sura", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("suras", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {GetChapterName(Convert, SchemeType, Scheme), CInt(Convert.Attribute("order").Value)})).ToArray()
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function
@@ -5591,8 +5645,12 @@ Public Class TanzilReader
         Next
         Return Nothing
     End Function
-    Public Shared Function GetPartNames() As Array()
-        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("juz", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("juzs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " ") + ")", CInt(Convert.Attribute("index").Value)})).ToArray()
+    Public Shared Function GetPartName(Index As Integer, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
+        Dim Convert As Xml.Linq.XElement = Utility.GetChildNodeByIndex("juz", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("juzs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+        Return Convert.Attribute("index").Value + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " ") + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), Nothing, CachedData.RuleMetas("Normal"))))
+    End Function
+    Public Shared Function GetPartNames(SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
+        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("juz", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("juzs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " ") + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), Nothing, CachedData.RuleMetas("Normal")))), CInt(Convert.Attribute("index").Value)})).ToArray()
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function
@@ -5601,6 +5659,10 @@ Public Class TanzilReader
     End Function
     Public Shared Function GetPartByIndex(ByVal Index As Integer) As Xml.Linq.XElement
         Return Utility.GetChildNodeByIndex("juz", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("juzs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+    End Function
+    Public Shared Function GetGroupName(Index As Integer) As String
+        Dim Convert As Xml.Linq.XElement = Utility.GetChildNodeByIndex("quarter", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("hizbs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+        Return Convert.Attribute("index").Value
     End Function
     Public Shared Function GetGroupNames() As Array()
         Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("quarter", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("hizbs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value, CInt(Convert.Attribute("index").Value)})).ToArray()
@@ -5613,6 +5675,10 @@ Public Class TanzilReader
     Public Shared Function GetGroupByIndex(ByVal Index As Integer) As Xml.Linq.XElement
         Return Utility.GetChildNodeByIndex("quarter", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("hizbs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
     End Function
+    Public Shared Function GetStationName(Index As Integer) As String
+        Dim Convert As Xml.Linq.XElement = Utility.GetChildNodeByIndex("manzil", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("manzils", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+        Return Convert.Attribute("index").Value
+    End Function
     Public Shared Function GetStationNames() As Array()
         Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("manzil", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("manzils", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value, CInt(Convert.Attribute("index").Value)})).ToArray()
         Array.Sort(Names, New Utility.CompareNameValueArray)
@@ -5623,6 +5689,10 @@ Public Class TanzilReader
     End Function
     Public Shared Function GetStationByIndex(ByVal Index As Integer) As Xml.Linq.XElement
         Return Utility.GetChildNodeByIndex("manzil", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("manzils", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+    End Function
+    Public Shared Function GetSectionName(Index As Integer) As String
+        Dim Convert As Xml.Linq.XElement = Utility.GetChildNodeByIndex("ruku", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("rukus", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+        Return Convert.Attribute("index").Value
     End Function
     Public Shared Function GetSectionNames() As Array()
         Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("ruku", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("rukus", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value, CInt(Convert.Attribute("index").Value)})).ToArray()
@@ -5635,6 +5705,10 @@ Public Class TanzilReader
     Public Shared Function GetSectionByIndex(ByVal Index As Integer) As Xml.Linq.XElement
         Return Utility.GetChildNodeByIndex("ruku", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("rukus", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
     End Function
+    Public Shared Function GetPageName(Index As Integer) As String
+        Dim Convert As Xml.Linq.XElement = Utility.GetChildNodeByIndex("page", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("pages", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+        Return Convert.Attribute("index").Value
+    End Function
     Public Shared Function GetPageNames() As Array()
         Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("page", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("pages", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value, CInt(Convert.Attribute("index").Value)})).ToArray()
         Array.Sort(Names, New Utility.CompareNameValueArray)
@@ -5645,6 +5719,10 @@ Public Class TanzilReader
     End Function
     Public Shared Function GetPageByIndex(ByVal Index As Integer) As Xml.Linq.XElement
         Return Utility.GetChildNodeByIndex("page", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("pages", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+    End Function
+    Public Shared Function GetSajdaName(Index As Integer) As String
+        Dim Convert As Xml.Linq.XElement = Utility.GetChildNodeByIndex("sajda", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("sajdas", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
+        Return Convert.Attribute("index").Value
     End Function
     Public Shared Function GetSajdaNames() As Array()
         Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("sajda", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("sajdas", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value, CInt(Convert.Attribute("index").Value)})).ToArray()

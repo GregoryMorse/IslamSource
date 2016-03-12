@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Mohammad Habib Shakir." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Mohammad Habib Shakir - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Mohammad Habib Shakir		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: June 22, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -282 +282 </div>
+<div class="text ltr">Those who swallow down usury cannot arise except as one whom Shaitan has prostrated by (his) touch does rise. That is because they say, trading is only like usury; and Allah has allowed trading and forbidden usury. To whomsoever then the admonition has come from his Lord, then he desists, he shall have what has already passed, and his affair is in the hands of Allah; and whoever returns (to it)-- these <span class="del">arc</span> <span class="ins">are</span> the inmates of the fire; they shall abide in it.</div>
+
+<div class="info"> -846 +846 </div>
+<div class="text ltr">Say: Surely I have manifest proof from my Lord and you call it a lie; I have not with me that which you would hasten; the<span class="del">t</span>  judgment is only Allah's; He relates the truth and He is the best of deciders.</div>
+
+<div class="info"> -1786 +1786 </div>
+<div class="text ltr">My Lord! surely they have led many men astray; then whoever follows me, he is surely of me, and whoever disobeys me, Thou surely <span class="del">arc</span> <span class="ins">art</span> Forgiving, Merciful:</div>
+
+
+<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -170 +170 </div>
+<div class="text ltr">And your <span class="del">Allah</span> <span class="ins">God</span> is one <span class="del">Allah!</span> <span class="ins">God!</span> there is no god but He; He is the Beneficent, the Merciful.</div>
+
+<div class="info"> -213 +213 </div>
+<div class="text ltr">And when it is said to him, guard against (the <span class="del">punish ment</span> <span class="ins">punishment</span> of) Allah; pride carries him off to sin, therefore hell is sufficient for him; and certainly it is an evil resting place.</div>
+
+<div class="info"> -226 +226 </div>
+<div class="text ltr">They ask you about intoxicants and games of chance. Say: In both of them there is a great sin and means of profit for men, and their sin is greater than their profit. And they ask you as to what they should spend. Say: What you can spare. Thus does Allah make clear to you the communications, that you may <span class="del">ponder</span> <span class="ins">ponder,</span></div>
+
+<div class="info"> -242 +242 </div>
+<div class="text ltr">And there is no blame on you respecting that which you speak indirectly in the asking of (such) women in marriage or keep (the proposal) concealed within your minds; Allah knows that you <span class="del">win</span> <span class="ins">will</span> mention them, but do not give them a promise in secret unless you speak in a lawful manner, and do not confirm the marriage tie until the writing is fulfilled, and know that Allah knows what is in your minds, therefore beware of Him, and know that Allah is Forgiving, Forbearing.</div>
+
+<div class="info"> -246 +246 </div>
+<div class="text ltr">But if you are in danger, then (say your prayers) on foot or on horseback; and when you are secure, then remember Allah, <span class="del">as.</span> <span class="ins">as</span> He has taught you what you did not know.</div>
+
+<div class="info"> -324 +324 </div>
+<div class="text ltr">Say: If you love Allah, then follow me, Allah will love you and forgive you your faults, and Allah is Forgiving, <span class="del">MercifuL</span> <span class="ins">Merciful.</span></div>
+
+<div class="info"> -335 +335 </div>
+<div class="text ltr">And when the angels said: O Marium! surely Allah has chosen you and purified you and chosen you above the women of<span class="del">of</span>  the world.</div>
+
+<div class="info"> -410 +410 </div>
+<div class="text ltr">The likeness of what they spend in the life of this world is as the likeness of wind in which is intense cold (that) smites the seed produce of a people who <span class="del">haw</span> <span class="ins">have</span> done injustice to their souls and destroys it; and Allah is not unjust to them, but they are unjust to themselves.</div>
+
+<div class="info"> -647 +647 </div>
+<div class="text ltr">And We lifted the mountain (Sainai) over them at (the<span class="del">li</span>  taking of the covenant) and We said to them: Enter the door making obeisance; and We said to them: Do not exceed the limits of the Sabbath, and We made with them a firm covenant.</div>
+
+<div class="info"> -696 +696 </div>
+<div class="text ltr">And relate to them the story of the two sons of Adam with truth when they both offered an offering, but it was accepted from one of them and was not accepted from the other. He said: I<span class="del">I</span>  will most certainly slay you. (The other) said: Allah only accepts from those who guard (against evil).</div>
+
+<div class="info"> -721 +721 </div>
+<div class="text ltr">But you will see those in whose hearts is a disease hastening towards them, saying: We fear lest a calamity should befall us; but it may be that Allah will bring the victory or a <span class="del">punish ment</span> <span class="ins">punishment</span> from Himself, so that they shall be regretting on account of what they hid in their souls.</div>
+
+<div class="info"> -783 +783 </div>
+<div class="text ltr">Isa the son of Marium said: O Allah, our Lord! send<span class="del">i</span>  down to us food from heaven which should be to us an ever-recurring happiness, to the first of us and to the last of us, and a sign from Thee, and grant us means of subsistence, and Thou art the best of the Providers.</div>
+
+<div class="info"> -1091 +1091 </div>
+<div class="text ltr">And We made the people who were deemed weak to <span class="del">mhent</span> <span class="ins">inherit</span> the eastern lands and the western ones which We had blessed; and the good word of your Lord was fulfilled in the children of Israel because they bore up (sufferings) patiently; and We utterly destroyed what Firon and his people had wrought and what they built.</div>
+
+<div class="info"> -1144 +1144 </div>
+<div class="text ltr">But when He gives them a good one, <span class="del">thcy</span> <span class="ins">they</span> set up with Him associates in what He has given them; but high is Allah above what they associate (with Him).</div>
+
+<div class="info"> -1320 +1320 </div>
+<div class="text ltr">And let not their property and their children excite your <span class="del">admlration;</span> <span class="ins">admiration;</span> Allah only wishes to chastise them with these in this world and (that) their souls may depart while they are unbelievers</div>
+
+<div class="info"> -1335 +1335 </div>	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/en.shakir/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

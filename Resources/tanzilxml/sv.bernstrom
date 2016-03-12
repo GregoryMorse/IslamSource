@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Knut Bernström." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Knut Bernström - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Knut Bernström		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: July 30, 2012</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Wed, 1 Aug 2012 00:00:02 -0400 </div>
+<div class="info"> -671,2 +671,2 </div>
+<div class="text ltr">Troende! Vanhelga inte de riter och symboler som Gud har instiftat, inte heller den [åt vallfärden] helgade månaden eller de bekransade offerdjuren, och visa respekt för dem som beger sig till Helgedomen för att söka Guds nåd och Hans välbehag. När ni lägger av vallfärdsdräkten får ni [på nytt] ägna er åt jakt. <span class="ins">Och låt inte hat mot dem som spärrade vägen för er till den heliga Moskén driva er till angreppshandlingar, utan samarbeta för att befrämja fromhet och gudsfruktan, och slut er inte samman för att befrämja synd och fiendskap. Och frukta Gud! Gud straffar med stränghet.</span></div>
+
+<div class="text ltr">FÖRBJUDET för er är kött av självdöda djur och blod och svinkött och sådant [kött] som har slaktats i ett annat namn än Guds; [vidare kött av] djur som strypts eller kvävts eller dödats genom ett hårt slag eller [som] fallit utför ett stup eller stångats ihjäl eller rivits av ett rovdjur - om ni inte har slaktat djuret på föreskrivet sätt [medan det var vid liv] - och djur som slaktats på hedniska offeraltare. <span class="ins">[Förbjudet är även] att genom teckentydning försöka utforska vad framtiden bär i sitt sköte; detta är ett ogudaktigt företag. Förnekarna av sanningen har nu misströstat om [att kunna göra slut på] er tro. Oroa er därför inte för dem - frukta Mig! Denna dag har Jag fullbordat det religiösa regelverket för er och skänkt er Min välsignelse i fullaste mått. Jag har beslutat att Islam skall vara er religion. Om någon drivs [att bryta mot förbuden ovan] av hunger, inte av lust att överträda dem, [skall han finna] Gud ständigt förlåtande, barmhärtig.</span></div>
+
+<div class="info"> -1029 +1029 </div>
+<div class="text ltr">Folkets högmodiga äldste frågade dem av de svaga [bland folket] som trodde [på profeten]: "Är ni helt säkra på att Salih [som han säger] är sänd av sin Herre?" <span class="ins">De svarade: "Vi tror på det [budskap] som han har fört med sig."</span></div>
+
+<div class="info"> -1097 +1097 </div>
+<div class="text ltr">Och när Moses kom till det möte Vi hade utsatt och hans Herre talade till honom, sade han: "Herre, visa Dig för mig, så att jag får se Dig!" <span class="ins">[Gud] sade: "Du kan inte se Mig; men se på berget - om det står kvar stadigt där det står, skall du få se Mig." Och då hans Herre visade Sig för berget krossades det till en grushög och Moses föll medvetslös till marken. Men när han kom till sina sinnen sade han: "Stor är Du i Din härlighet! Jag vänder tillbaka till Dig i djup ånger och jag är den förste att tro på Dig."</span></div>
+
+<div class="info"> -1533 +1533 </div>
+<div class="text ltr">Och [Guds] fördömelse följde dem i detta liv och [skall vila tungt över dem] på Uppståndelsens dag. <span class="ins">Stammen Aad förnekade sin Herre - Det är ute med Aad, Huds folk!</span></div>
+
+<div class="info"> -1720 +1720 </div>
+<div class="text ltr">Åskan lovprisar Honom liksom änglarna, som står i bävan inför Honom; och Han slungar blixten mot den Han vill. <span class="ins">Ändå tvistar de om Gud, [den Allsmäktige,] fruktansvärd i Sin straffande vrede.</span></div>
+
+<div class="info"> -1759 +1759 </div>
+<div class="text ltr">HAR NI inte hört berättas om dem som levde före er, Noas folk och stammarna Aad och Thamud och de som kom efter dem? Ingen känner dem [nu] utom Gud. <span class="ins">Sändebuden kom till dem med klara bevis, men med händerna för munnen svarade de: "Vi tror inte på det [budskap] som ni [säger att ni] har blivit anförtrodda, och vi oroas av starka misstankar om [det verkliga syftet bakom] era maningar till oss!"</span></div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+<div class="info"> -1902 +1902 </div>
+<div class="text ltr">[DEN SISTA stunden] är avhängig av Guds beslut; skynda därför inte på den! 	Stor är Han i Sin härlighet, höjd högt över allt vad [människor] vill sätta vid Hans sida!</div>
+
+<div class="info"> -2388 +2388 </div>
+<div class="text ltr">Och då gick din syster [till Farao palats] och sade: 'Skall jag visa er till [en kvinna] som kan ta hand om honom [och amma honom]?' Så gav Vi dig tillbaka till din moder, så att hennes ögon fick glädjas och hon glömde sin <span class="del">sorg.[När</span> <span class="ins">sorg. [När</span> du hade nått vuxen ålder] dödade du en man. Vi befriade dig från ångesten [över detta] men prövade dig med [andra svåra] prövningar. Därpå vistades du flera år hos folket i Madyan; och nu, Moses, har du enligt Mitt beslut kommit [till Vårt möte];</div>
+
+<div class="info"> -5304 +5304 </div>
+<div class="text ltr">SÅDANT är Vårt straff [i denna värld]. Men det straff [som väntar syndarna] i det kommande livet är sannerligen hårdare - om de bara <span class="del">visste ...!</span> <span class="ins">visste...!</span></div>
+
+
+<div class="date"> First version <br/> Fri, 4 Jun 2010 19:54:20 -0400 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">I GUDS, DEN NÅDERIKES, DEN BARMHÄRTIGES NAMN</span></div>
+
+<div class="text ltr"><span class="ins">Lov och pris tillkommer Gud, världarnas Herre,</span></div>
+
+<div class="text ltr"><span class="ins">den Nåderike, den Barmhärtige,</span></div>
+
+<div class="text ltr"><span class="ins">som allsmäktig råder över Domens dag!</span></div>
+
+<div class="text ltr"><span class="ins">Dig tillber vi; Dig anropar vi om hjälp.</span></div>
+
+<div class="text ltr"><span class="ins">Led oss på den raka vägen -</span></div>
+
+<div class="text ltr"><span class="ins">den väg de vandrat som Du har välsignat med Dina gåvor; inte de som har drabbats av [Din] vrede och inte de som har gått vilse!</span></div>
+
+<div class="text ltr"><span class="ins">Alif lam meem.</span></div>
+
+<div class="text ltr"><span class="ins">DENNA Skrift - här råder inget tvivel - är en vägledning för dem som fruktar Gud och ständigt har Honom för ögonen,</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/sv.bernstrom/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

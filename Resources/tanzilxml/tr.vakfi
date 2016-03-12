@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Diyanet Vakfi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Diyanet Vakfi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Diyanet Vakfi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: June 4, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Duplicate lines removed <br/> Fri, 4 Jun 2010 20:00:03 -0400 </div>
+<div class="info"> -459,2 +459,2 </div>
+<div class="text ltr"><span class="del">166, 167. İki birliğin karşılaştığı gün sizin başınıza gelenler, ancak Allah'ın dilemesiyle olmuştur ki, bu da, müminleri ayırdetmesi ve münafıkları ortaya çıkarması için idi. Bunlara: "Gelin, Allah yolunda çarpışın; ya da savunma yapın" denildiği zaman, "Harbetmeyi bilseydik, elbette sizin peşinizden gelirdik" dediler. Onlar o gün, imandan çok, kafirliğe yakın idiler. Ağızlarıyla, kalplerinde olmayanı söylüyorlardı. Halbuki Allah, onların içlerinde gizlediklerini daha iyi bilir.</span> </div>
+
+<div class="text ltr"><span class="del">166, 167.</span> İki birliğin karşılaştığı gün sizin başınıza gelenler, ancak Allah'ın dilemesiyle olmuştur ki, bu da, müminleri ayırdetmesi ve münafıkları ortaya çıkarması için idi. Bunlara: "Gelin, Allah yolunda çarpışın; ya da savunma yapın" denildiği zaman, "Harbetmeyi bilseydik, elbette sizin peşinizden gelirdik" dediler. Onlar o gün, imandan çok, kafirliğe yakın idiler. Ağızlarıyla, kalplerinde olmayanı söylüyorlardı. Halbuki Allah, onların içlerinde gizlediklerini daha iyi bilir.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -2240,2 +2240,2 </div>
+<div class="text ltr"><span class="del">100, 101. Ve, gözleri beni görmeye kapalı bulunan, kulak vermeye de tahammül edemez olan kafirleri o gün cehennemle yüz yüze getirmişizdir.</span> </div>
+
+<div class="text ltr"><span class="del">100, 101.</span> Ve, gözleri beni görmeye kapalı bulunan, kulak vermeye de tahammül edemez olan kafirleri o gün cehennemle yüz yüze getirmişizdir.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -2351 +2351 </div>
+<div class="text ltr"><span class="del">Biz, Kur'an'ı sana, güçlük çekesin diye değil, ancak Allah'tan korkanlara bir öğüt olsun diye indirdik.</span> <span class="ins">=</span></div>
+
+<div class="info"> -2739,2 +2739,2 </div>
+<div class="text ltr"><span class="del">66, 67. Çünkü ayetlerim size okunurdu da, siz, buna karşı kibirlenerek arkanızı döner, geceleyin (Kabe'nin etrafında toplanarak) hezeyanlar savururdunuz.</span> </div>
+
+<div class="text ltr"><span class="del">66, 67.</span> Çünkü ayetlerim size okunurdu da, siz, buna karşı kibirlenerek arkanızı döner, geceleyin (Kabe'nin etrafında toplanarak) hezeyanlar savururdunuz.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -2903,2 +2903,2 </div>
+<div class="text ltr"><span class="del">48. 49, Rüzgarları rahmetinin önünde müjdeci olarak gönderen O'dur. Biz, ölü toprağa can vermek, yarattığımız nice hayvanlara ve nice insanlara su vermek için gökten tertemiz su indirdik.</span> </div>
+
+<div class="text ltr"><span class="del">48. 49,</span> Rüzgarları rahmetinin önünde müjdeci olarak gönderen O'dur. Biz, ölü toprağa can vermek, yarattığımız nice hayvanlara ve nice insanlara su vermek için gökten tertemiz su indirdik.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -2942,2 +2942,2 </div>
+<div class="text ltr"><span class="del">10, 11. Hani Rabbin Musa'ya: O zalimler güruhuna, Firavun'un kavmine git. Hala (başlarına gelecekten) sakınmayacaklar mı onlar? diye seslenmişti.</span> </div>
+
+<div class="text ltr"><span class="del">10, 11.</span> Hani Rabbin Musa'ya: O zalimler güruhuna, Firavun'un kavmine git. Hala (başlarına gelecekten) sakınmayacaklar mı onlar? diye seslenmişti.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3098 +3098 </div>
+<div class="text ltr"><span class="del">Rabbinizin sizler için yarattığı eşlerinizi bırakıp da, insanlar içinden erkeklere mi yaklaşıyorsunuz? Doğrusu siz sınırı aşmış (sapık) bir kavimsiniz!</span> <span class="ins">=</span></div>
+
+<div class="info"> -3426,2 +3426,2 </div>
+<div class="text ltr"><span class="del">17, 18. Haydi siz, akşama ulaştığınızda (akşam ve yatsı vaktinde) sabaha kavuştuğunuzda, gündüzün sonunda ve öğle vaktine eriştiğinizde Allah'ı tesbih edin (namaz kılın), ki göklerde ve yerde hamd O'na mahsustur.</span> </div>
+
+<div class="text ltr"><span class="del">17, 18.</span> Haydi siz, akşama ulaştığınızda (akşam ve yatsı vaktinde) sabaha kavuştuğunuzda, gündüzün sonunda ve öğle vaktine eriştiğinizde Allah'ı tesbih edin (namaz kılın), ki göklerde ve yerde hamd O'na mahsustur.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -3458 +3458 </div>
+<div class="text ltr"><span class="del">0ysa</span> <span class="ins">Oysa</span> onlar, daha önce, üzerlerine yağmur yağdırılmasından iyice ümitlerini kesmişlerdi.</div>
+
+<div class="info"> -4002,2 +4002,2 </div>
+<div class="text ltr"><span class="del">32, 33. Süleyman: Gerçekten ben mal sevgisini, Rabbimi anmak için istedim, dedi. Nihayet güneş battı. (O zaman:) Onları (atları) tekrar bana getirin, dedi. Bacaklarını ve boyunlarını sıvazlamaya başladı.</span> </div>
+
+<div class="text ltr"><span class="del">32, 33.</span> Süleyman: Gerçekten ben mal sevgisini, Rabbimi anmak için istedim, dedi. Nihayet güneş battı. (O zaman:) Onları (atları) tekrar bana getirin, dedi. Bacaklarını ve boyunlarını sıvazlamaya başladı.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -4640,2 +4640,2 </div>
+<div class="text ltr"><span class="del">10, 11. Kullara rızık olması için birbirine girmiş, küme küme tomurcukları olan uzun boylu hurma ağaçları yetiştirdik. Ve o su ile ölü toprağa can verdik. İşte hayata yeniden çıkış da böyledir.</span> </div>
+
+<div class="text ltr"><span class="del">10, 11.</span> Kullara rızık olması için birbirine girmiş, küme küme tomurcukları olan uzun boylu hurma ağaçları yetiştirdik. Ve o su ile ölü toprağa can verdik. İşte hayata yeniden çıkış da böyledir.</div>
+
+<div class="text ltr"><span class="ins">=</span></div>
+
+<div class="info"> -6019 +6019 </div>
+<div class="text ltr"><span class="del">0'nun</span> <span class="ins">O'nun</span> vuracağı bağı kimse vuramaz.</div>
+
+
+<div class="date"> Major spacing and punctuation fixes <br/> Fri, 4 Jun 2010 19:56:23 -0400 </div>
+
+<div class="text ltr">diff --git a/trans/tr.vakfi.txt b/trans/tr.vakfi.txt</div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/tr.vakfi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

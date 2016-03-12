@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Ali Quli Qarai." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Ali Quli Qarai - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Ali Quli Qarai		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: July 16, 2013</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> New English translation en.qarai is added. <br/> Tue, 16 Jul 2013 23:25:21 +0430 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text ltr"><span class="ins">In the Name of Allah, the All-beneficent, the All-merciful.</span></div>
+
+<div class="text ltr"><span class="ins">All praise belongs to Allah, Lord of all the worlds,</span></div>
+
+<div class="text ltr"><span class="ins">the All-beneficent, the All-merciful,</span></div>
+
+<div class="text ltr"><span class="ins">Master of the Day of Retribution.</span></div>
+
+<div class="text ltr"><span class="ins">You [alone] do we worship, and to You [alone] do we turn for help.</span></div>
+
+<div class="text ltr"><span class="ins">Guide us on the straight path,</span></div>
+
+<div class="text ltr"><span class="ins">the path of those whom You have blessed — such as have not incurred Your wrath, nor are astray.</span></div>
+
+<div class="text ltr"><span class="ins">Alif, Lam, Mim.</span></div>
+
+<div class="text ltr"><span class="ins">This is the Book, there is no doubt in it, a guidance to the Godwary,</span></div>
+
+<div class="text ltr"><span class="ins">who believe in the Unseen, maintain the prayer, and spend out of what We have provided for them;</span></div>
+
+<div class="text ltr"><span class="ins">and who believe in what has been sent down to you and what was sent down before you, and are certain of the Hereafter.</span></div>
+
+<div class="text ltr"><span class="ins">Those follow their Lord’s guidance and it is they who are the felicitous.</span></div>
+
+<div class="text ltr"><span class="ins">As for the faithless, it is the same to them whether you warn them or do not warn them, they will not have faith.</span></div>
+
+<div class="text ltr"><span class="ins">Allah has set a seal on their hearts and their hearing, and there is a blindfold on their sight, and there is a great punishment for them.</span></div>
+
+<div class="text ltr"><span class="ins">Among the people are those who say, ‘We have faith in Allah and the Last Day,’ but they have no faith.</span></div>
+
+<div class="text ltr"><span class="ins">They seek to deceive Allah and those who have faith, yet they deceive no one but themselves, but they are not aware.</span></div>
+
+<div class="text ltr"><span class="ins">There is a sickness in their hearts; then Allah increased their sickness, and there is a painful punishment for them because of the lies they used to tell.</span></div>
+
+<div class="text ltr"><span class="ins">When they are told, ‘Do not cause corruption on the earth,’ they say, ‘We are only reformers!’</span></div>
+
+<div class="text ltr"><span class="ins">Behold! They are themselves the agents of corruption, but they are not aware.</span></div>
+
+<div class="text ltr"><span class="ins">And when they are told, ‘Believe like the people who have believed,’ they say, ‘Shall we believe like the fools who have believed?’ Behold! They are themselves the fools, but they do not know.</span></div>
+
+<div class="text ltr"><span class="ins">When they meet the faithful, they say, ‘We believe,’ but when they are alone with their devils, they say, ‘We are with you; we were only deriding [them].’</span></div>
+
+<div class="text ltr"><span class="ins">It is Allah who derides them, and leaves them bewildered in their rebellion.</span></div>
+
+<div class="text ltr"><span class="ins">They are the ones who bought error for guidance, so their trade did not profit them, nor were they guided.</span></div>
+
+<div class="text ltr"><span class="ins">Their parable is that of one who lighted a torch, and when it had lit up all around him, Allah took away their light, and left them sightless in a manifold darkness.</span></div>
+
+<div class="text ltr"><span class="ins">Deaf, dumb, and blind, they will not come back.</span></div>
+
+<div class="text ltr"><span class="ins">Or that of a rainstorm from the sky, wherein is darkness, thunder and lightning: they put their fingers in their ears due to the thunderclaps, apprehensive of death; and Allah besieges the faithless.</span></div>
+
+<div class="text ltr"><span class="ins">The lightning almost snatches away their sight: whenever it shines for them, they walk in it, and when the darkness falls upon them, they stand. Had Allah willed, He would have taken away their hearing and sight. Indeed Allah has power over all things.</span></div>
+
+<div class="text ltr"><span class="ins">O mankind! Worship your Lord, who created you and those who were before you, so that you may be Godwary</span></div>
+
+<div class="text ltr"><span class="ins">—He who made the earth a place of repose for you, and the sky a canopy, and He sends down water from the sky and with it brings forth crops for your sustenance. So do not set up equals to Allah, while you know.</span></div>
+
+<div class="text ltr"><span class="ins">And if you are in doubt concerning what We have sent down to Our servant, then bring a surah like it, and invoke your helpers besides Allah, if you are truthful.</span></div>
+
+<div class="text ltr"><span class="ins">But if you do not—and you will not—then beware the Fire whose fuel will be humans and stones, prepared for the faithless.</span></div>
+
+<div class="text ltr"><span class="ins">And give good news to those who have faith and do righteous deeds, that for them shall be gardens with streams running in them: whenever they are provided with their fruit for nourishment, they will say, ‘This is what we were provided before,’ and they were given something resembling it. There will be chaste mates for them, and they will remain therein [forever].</span></div>
+
+<div class="text ltr"><span class="ins">Indeed Allah is not ashamed to draw a parable whether it is that of a gnat or something above it. As for those who have faith, they know it is the truth from their Lord; and as for the faithless, they say, ‘What did Allah mean by this parable?’ Thereby He leads many astray, and thereby He guides many; and He leads no one astray thereby except the transgressors</span></div>
+
+<div class="text ltr"><span class="ins">—those who break the covenant made with Allah after having pledged it solemnly, and sever what Allah has commanded to be joined, and cause corruption on the earth—it is they who are the losers.</span></div>
+
+<div class="text ltr"><span class="ins">How can you be unfaithful to Allah, [seeing that] you were lifeless and He gave you life, then He will make you die and then bring you to life, and then you will be brought back to Him?</span></div>
+
+<div class="text ltr"><span class="ins">It is He who created for you all that is in the earth, then He turned to the heaven and fashioned it into seven heavens, and He has knowledge of all things.</span></div>
+
+<div class="text ltr"><span class="ins">When your Lord said to the angels, ‘Indeed I am going to set a viceroy on the earth,’ they said, ‘Will You set in it someone who will cause corruption in it and shed blood, while we celebrate Your praise and proclaim Your sanctity?’ He said, ‘Indeed I know what you do not know.’</span></div>
+
+<div class="text ltr"><span class="ins">And He taught Adam the Names, all of them; then presented them to the angels and said, ‘Tell me the names of these, if you are truthful.’</span></div>
+
+<div class="text ltr"><span class="ins">They said, ‘Immaculate are You! We have no knowledge except what You have taught us. Indeed You are the All-knowing, the All-wise.’</span></div>
+
+<div class="text ltr"><span class="ins">He said, ‘O Adam, inform them of their names,’ and when he had informed them of their names, He said, ‘Did I not tell you that I know the Unseen of the heavens and the earth, and that I know whatever you disclose and whatever you conceal?’</span></div>
+
+<div class="text ltr"><span class="ins">And when We said to the angels, ‘Prostrate before Adam,’ they prostrated, but not Iblis: he refused and acted arrogantly, and he was one of the faithless.</span></div>
+
+<div class="text ltr"><span class="ins">We said, ‘O Adam, dwell with your mate in paradise and eat thereof freely whencesoever you wish, but do not approach this tree, lest you should be among the wrongdoers.’</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/en.qarai/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

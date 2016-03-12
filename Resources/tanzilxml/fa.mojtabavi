@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Sayyed Jalaloddin Mojtabavi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Sayyed Jalaloddin Mojtabavi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Sayyed Jalaloddin Mojtabavi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: April 16, 2012</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Minor fixes <br/> Tue, 1 May 2012 00:00:01 -0400 </div>
+<div class="info"> -2272 +2272 </div>
+<div class="text rtl">پس به او <span class="ins">(عيسى) بار گرفت، و با او به جايگاهى دور -از شهر و مردم- بيرون رفت.</span></div>
+
+
+<div class="date"> Fixes to fa.bahrampour and fa.mojtabavi <br/> Thu, 14 Apr 2011 06:09:03 -0400 </div>
+<div class="info"> -1897,104 +1896,0 </div>
+<div class="text rtl"><span class="del">و اگر خواهيم هر آينه آنها را بر جايشان مسخ كنيم- به شكل زشتى چون بوزينه و خوك درآوريم-، پس نه پيش‌رفتن [و گذشتن از آنجا] توانند و نه [به صورت اول‌] بازگردند.</span> </div>
+
+<div class="text rtl"><span class="del">و هر كه را عمر دراز دهيم در آفرينش نگونسارش كنيم- نيرومندى‌اش را به سستى و ناتوانى دگرگون سازيم-، آيا خرد را كار نمى‌بندند؟</span> </div>
+
+<div class="text rtl"><span class="del">و او- محمد</span> </div>
+
+<div class="text rtl"><span class="del">تا بيم دهد هر كه را زنده- با فهم و خردمند يا مؤمن- باشد و آن گفتار- عذاب و هلاكت- بر كافران سزا گردد.</span> </div>
+
+<div class="text rtl"><span class="del">آيا نديده‌اند كه ما از آنچه دستهاى [قدرت‌] ما [بى‌كمك آفريدگان‌] ساخته است چهارپايان را براى آنان آفريديم پس ايشان دارندگان آنهايند؟</span> </div>
+
+<div class="text rtl"><span class="del">و آنها</span> </div>
+
+<div class="text rtl"><span class="del">و آنان را در آنها سودهايى است- از پوست و پشم و كود آنها- و آشاميدنيهايى- از شيرشان-. آيا سپاس نمى‌گزارند؟</span> </div>
+
+<div class="text rtl"><span class="del">و به جاى خداى يكتا خدايانى گرفتند بدان اميد كه يارى شوند</span> </div>
+
+<div class="text rtl"><span class="del">[و حال آنكه آن بتان‌] يارى‌كردن ايشان نتوانند و آنان</span> </div>
+
+<div class="text rtl"><span class="del">پس سخن آنان تو را اندوهگين نكند، همانا ما آنچه را پنهان مى‌دارند و آنچه را آشكار مى‌كنند مى‌دانيم.</span> </div>
+
+<div class="text rtl"><span class="del">آيا آدمى نديده- ندانسته- است كه ما او را از نطفه‌اى آفريديم، كه اكنون ستيزه‌گرى- يا دشمنى- آشكار است؟!</span> </div>
+
+<div class="text rtl"><span class="del">و براى ما مَثَلى زد- در زنده‌كردن مردگان- و آفرينش خود را فراموش كرده گفت: كيست كه استخوانها را در حالى كه پوسيده و خاك شده زنده مى‌كند؟</span> </div>
+
+<div class="text rtl"><span class="del">بگو: همان [خداى‌] كه نخستين بار آفريدش زنده‌اش مى‌كند، و او به همه آفرينش- يا آفريدگان- داناست.</span> </div>
+
+<div class="text rtl"><span class="del">همان [خداى‌] كه براى شما از درخت سبز آتشى پديد كرد پس آنگاه شما از آن آتش مى‌افروزيد.</span> </div>
+
+<div class="text rtl"><span class="del">آيا آن كه آسمانها و زمين را آفريد بر آفريدن مانند اينها توانا نيست؟ چرا [تواناست‌]، و اوست آفريدگار دانا.</span> </div>
+
+<div class="text rtl"><span class="del">جز اين نيست كه كار و فرمان او، چون چيزى را بخواهد، اين است كه گويدش: باش، پس مى‌باشد.</span> </div>
+
+<div class="text rtl"><span class="del">پس پاك و منزه است آن [خداى‌] كه پادشاهى- مالكيت و حاكميت- همه چيز به دست اوست و به سوى او بازگردانيده مى‌شويد.</span> </div>
+
+<div class="text rtl"><span class="del">سوگند به آن صف‌زدگان- فرشتگان صف‌كشيده- كه [به طاعت و بندگى‌] صف زده‌اند.</span> </div>
+
+<div class="text rtl"><span class="del">سوگند به آن رانندگان كه سخت مى‌رانند- فرشتگانى كه ابرها يا ديوان را مى‌رانند-.</span> </div>
+
+<div class="text rtl"><span class="del">و سوگند به آن خوانندگان ياد و پند- آيات قرآن-</span> </div>
+
+<div class="text rtl"><span class="del">كه هر آينه خداى شما يكى است</span> </div>
+
+<div class="text rtl"><span class="del">خداوند آسمانها و زمين و آنچه ميان آنهاست و خداوند خاورها- جايهاى برآمدن آفتاب و ستارگان-.</span> </div>
+
+<div class="text rtl"><span class="del">همانا ما آسمان دنيا- نزديكتر- را به زيور ستارگان بياراستيم،</span> </div>
+
+<div class="text rtl"><span class="del">و از هر ديو سركش و نافرمان نگاه داشتيم،</span> </div>
+
+<div class="text rtl"><span class="del">كه نمى‌توانند به [گفتار] گروه والاتر- فرشتگان عالم بالا- گوش فرا دارند، و از هر سو [با شهابها] تير انداخته شوند</span> </div>
+
+<div class="text rtl"><span class="del">تا رانده و دور گردند، و آنان راست عذابى پيوسته و هميشه</span> </div>
+
+<div class="text rtl"><span class="del">مگر آن كس [از ديوان‌] كه سخنى [از سخنان فرشتگان عالم بالا] را دزدانه بربايد، پس شهابى از پى او افتد و به او رسد.</span> </div>
+
+<div class="text rtl"><span class="del">از آنها- مشركان- بپرس كه آنان در آفرينش سخت‌تر و دشوارترند يا آن چيزها [ى ديگر] كه آفريديم- فرشتگان و آسمانها و زمين و ...-، ما آنها را از گِلى چسبنده آفريده‌ايم.</span> </div>
+
+<div class="text rtl"><span class="del">بلكه تو شگفتى نمودى- از ايمان نياوردنشان- و آنها مسخره مى‌كنند.</span> </div>
+
+<div class="text rtl"><span class="del">و چون پند داده شوند، ياد نكنند و پند نپذيرند.</span> </div>
+
+<div class="text rtl"><span class="del">و چون نشانه‌اى ببينند به ريشخند گيرند.</span> </div>
+
+<div class="text rtl"><span class="del">و گويند: اين جز جادويى آشكار نيست.</span> </div>
+
+<div class="text rtl"><span class="del">آيا چون بمُرديم و خاك و استخوانى چند شديم باز برانگيخته مى‌شويم؟!</span> </div>
+
+<div class="text rtl"><span class="del">و آيا پدران پيشين ما نيز [برانگيخته مى‌شوند]؟</span> </div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/fa.mojtabavi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

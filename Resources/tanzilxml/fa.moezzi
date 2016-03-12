@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Changelog for Quran translations in Tanzil translations repository. This changelog is for Mohammad Kazem Moezzi." /> 
+	<meta name="keywords" content="Quran, Tanzil, Translation, Authentic, Qur'an, Al-Qur'an, Kuran, Koran, قرآن, تنزیل، تنزيل, قرءان مجيد, قرآن كريم, ترجمه "/>
+	<title>Translation Changelog - Mohammad Kazem Moezzi - Tanzil</title>
+	<link href="/pub/common/css/page.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	
+<div class="header">
+	<div class="content">
+		<a href="http://tanzil.net/" title="Tanzil.net" class="item logo">TANZIL</a>
+		<div class="sep">&bull;</div>
+		<a href="http://tanzil.net/wiki/" class="item">Documents</a>
+		<a href="http://tanzil.net/download/" class="item">Quran Text</a>
+		<a href="http://tanzil.net/trans/" class="item">Translations</a>
+		<div class="clear"></div>
+	</div>
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+	.result { color:#444; }
+	.del { background-color: #faa; color: #333; }
+	.ins { background-color: #afa; color: #333; }
+	.date { color: green; margin-top: 15px;}
+	.info { color: #f66; }
+	.more { padding-top: 8px;}
+	.subtitle { font-size: 50%; color: gray; }
+	.text { padding: 2px 7px; background-color: #f6f6f6; margin: 4px 0;}
+	.text.ltr { border-left: 2px solid #ddd; direction: ltr; }
+	.text.rtl { border-right: 2px solid #ddd; direction: rtl; }
+</style>
+
+<div class="body">
+	<div class="content">
+	
+	<h1>
+		Mohammad Kazem Moezzi		<!--span class="subtitle">(Change Log)<span-->
+	</h1>
+
+	<hr>
+	<h3>Change Log</h3>
+	
+	<!--p><b>Change Log</b><br/> Last Update: August 24, 2010</p>
+	<hr-->
+	
+	<div class="result">
+		<div class="date"> Several fixes <br/> Tue, 14 Sep 2010 00:38:47 -0400 </div>
+<div class="info"> -1179 +1179 </div>
+<div class="text rtl">اگر پیروزی جوئید همانا بیامدتان پیروزی و اگر کوتاه آئید (دست <span class="del">بردارید)پس</span> <span class="ins">بردارید) پس</span> آن بهتر است برای شما و اگر بازگردید بازگردیم و بی‌نیازتان نکند جمعیت شما به چیزی و هر چند فزون باشد و آنکه خدا است با مؤمنان‌</div>
+
+<div class="info"> -3772 +3772 </div>
+<div class="text rtl">و اگر می‌خواستیم هر آینه مسخ می‌کردیم ایشان را (پیکری دیگر <span class="del">می‌آوردیمشان)با</span> <span class="ins">می‌آوردیمشان) با</span> فرمانروائیشان پس نتوانند رفتن را و نه بازگردند</div>
+
+<div class="info"> -4610 +4610 </div>
+<div class="text rtl">همانا راست آورد خدا به پیمبر خویش خواب را به درست (به <span class="del">حق)ّ</span> <span class="ins">حق) ّ</span> که درآئید در مسجد حرام اگر خدا خواهد آسودگان (ایمنان) تراشندگان سرهای خویش و کوتاه‌کنندگان (ناخن و موی) ناهراسندگان پس دانست آنچه را ندانستید پس گذارد نزدیک آن پیروزیی نزدیک را</div>
+
+
+<div class="date"> First version <br/> Fri, 4 Jun 2010 19:54:20 -0400 </div>
+<div class="info"> -0,0 +1,6236 </div>
+<div class="text rtl"><span class="ins">بنام خداوند بخشاینده مهربان‌</span></div>
+
+<div class="text rtl"><span class="ins">سپاس خدایرا پروردگار جهانیان‌</span></div>
+
+<div class="text rtl"><span class="ins">بخشاینده مهربان‌</span></div>
+
+<div class="text rtl"><span class="ins">که فرمانروای روز رستاخیز است‌</span></div>
+
+<div class="text rtl"><span class="ins">خدایا تو را پرستش کنیم و از تو یاری خواهیم‌</span></div>
+
+<div class="text rtl"><span class="ins">ما را به راه راست هدایت فرما</span></div>
+
+<div class="text rtl"><span class="ins">راه آنانکه برایشان روزی فرستادی نه راه غضب‌شدگان و نه راه گمگشتگان‌</span></div>
+
+<div class="text rtl"><span class="ins">الم‌</span></div>
+
+<div class="text rtl"><span class="ins">این نامه که تردیدی در آن نیست راهنمای پرهیزکاران است‌</span></div>
+
+<div class="text rtl"><span class="ins">که به نادیده ایمان آوردند و برپای دارند نماز را و از آنچه بدانان داده‌ایم ببخشند</span></div>
+
+<div class="text rtl"><span class="ins">و آن کسانی که ایمان آوردند بدانچه بر تو و پیش از تو نازل شده است و به آخرت یقین دارند</span></div>
+
+<div class="text rtl"><span class="ins">آنانند بر هدایتی از پروردگار خویش و آنانند رستگاران‌</span></div>
+
+<div class="text rtl"><span class="ins">همانا گروه کفّار یکسان است بر ایشان بترسانیشان یا نترسانیشان ایمان نیاورند</span></div>
+
+<div class="text rtl"><span class="ins">مهر نهاد خدا بر دلهاشان و بر گوش ایشان و بر دیدگان ایشان است پرده‌ای و برای ایشان است شکنجه بزرگ‌</span></div>
+
+<div class="text rtl"><span class="ins">و از مردمند گروهی که گویند ایمان آوردیم به خدا و به روز بازپسین حالی که نیستند مؤمنان‌</span></div>
+
+<div class="text rtl"><span class="ins">نیرنگ با خدا و مؤمنان می‌بازند حالی که فریب نمی‌دهند جز خویشتن را و درنمی‌یابند</span></div>
+
+<div class="text rtl"><span class="ins">در دلهای آنان است مرضی و خدا بیفزودشان مرضی و ایشان را است عذابی دردناک بدانچه بودند دروغ می‌گفتند</span></div>
+
+<div class="text rtl"><span class="ins">و اگر گفته شود بدیشان فساد نکنید در زمین گویند نیستیم ما جز اصلاح‌کنندگان‌</span></div>
+
+<div class="text rtl"><span class="ins">همانا آنانند مفسدان و لیکن درنمی‌یابند</span></div>
+
+<div class="text rtl"><span class="ins">و هرگاه گفته شود بدیشان ایمان آرید چنان که ایمان آوردند مردم گویند آیا ایمان آریم چنان که ایمان آوردند بی‌خردان همانا ایشانند بی‌خردان و لیکن نمی‌دانند</span></div>
+
+<div class="text rtl"><span class="ins">و هرگاه ملاقات کنند مؤمنان را گویند ایمان آوردیم و چون خلوت کنند با شیاطین خود گویند همانا ما با شمائیم نیستیم ما جز مسخره‌کنندگان‌</span></div>
+
+<div class="text rtl"><span class="ins">خدا مسخره کند بدیشان و مهلتشان دهد در سرکشی خود فرو روند</span></div>
+
+<div class="text rtl"><span class="ins">آنانند که خریدند گمراهی را به هدایت پس نه سودمند شد سوداگریشان و نبودند راه‌یافتگان‌</span></div>
+
+<div class="text rtl"><span class="ins">مثَل ایشان مثَل آن است که افروخت آتشی تا گاهی که روشن کرد پیرامونش را ببرد خدا نور ایشان را و بگذاردشان در تاریکیهائی که نمی‌بینند</span></div>
+
+<div class="text rtl"><span class="ins">کرانند گنگانند کورانند پس باز نمی‌گردند</span></div>
+
+<div class="text rtl"><span class="ins">یا مانند بارانی از آسمان که در آن است تاریکیهائی و رعد و برقی می‌نهند انگشتان خویش را در گوشهاشان از صاعقه‌ها از ترس مرگ و خداوند فراگیرنده است به کافران‌</span></div>
+
+<div class="text rtl"><span class="ins">نزدیک است برق برباید دیدگان ایشان را هرگاه روشنائیشان دهد روان شوند در آن و گاهی که تاریکی افکند بر ایشان بایستند و اگر می‌خواست خدا می‌برد گوش و دیدگان ایشان را همانا خداوند است بر همه چیز توانا</span></div>
+
+<div class="text rtl"><span class="ins">ای مردم پرستش کنید پروردگار خویش را آنکه بیافرید شما و پیشینیان را شاید که شما پرهیزکاری کنید</span></div>
+
+<div class="text rtl"><span class="ins">آنکه گردانید برای شما زمین را فرش و بستری و آسمان را سازمانی و پوششی و فرو ریخت از آسمان آبی پس برون آورد بدان از میوه‌ها روزیی برای شما پس قرار ندهید برای خدا همتایانی و خود می‌دانید</span></div>
+	</div>
+	
+	<div class="more" style="display: block;">
+		<a href="http://tanzil.net/trans/log/fa.moezzi/2">See more...</a>
+	</div>
+	
+	</div>
+
+</div>
+
+<div class="footer">
+	<div class="content">
+		<div style="margin: 0 -20px">
+			<a href="http://tanzil.net/">Tanzil</a> &copy 2014 
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

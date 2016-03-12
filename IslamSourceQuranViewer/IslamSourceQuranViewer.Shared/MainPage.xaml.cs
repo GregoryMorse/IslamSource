@@ -289,10 +289,11 @@ namespace IslamSourceQuranViewer
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            IEnumerable<MyTabItem> items = null;
+            List<MyTabItem> items = null;
             System.Threading.Tasks.Task t = new System.Threading.Tasks.Task(() =>
             {
-                items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
+                items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx + 1 }).ToList();
+                items.Insert(0, new MyTabItem { IsBookmarks = true, Title = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Bookmarks/Text"), Index = 0 });
             });
             t.Start();
             await t;
@@ -421,6 +422,7 @@ namespace IslamSourceQuranViewer
 
     public class MyTabItem
     {
+        public bool IsBookmarks { get; set; }
         public string Title { get; set; }
         public int Index { get; set; }
         private IEnumerable<MyListItem> _Items;
@@ -428,6 +430,7 @@ namespace IslamSourceQuranViewer
         {
             get
             {
+                if (IsBookmarks) return System.Linq.Enumerable.Select(AppSettings.Bookmarks, (Bookmark, Idx) => new MyListItem { TextItems = { IslamMetadata.TanzilReader.GetSelectionName(Bookmark[0], Bookmark[1], XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty) }, Index = Idx });
                 if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() }); }
                 return _Items;
             }
