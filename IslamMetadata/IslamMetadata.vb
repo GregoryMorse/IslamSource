@@ -2807,6 +2807,23 @@ Public Class CachedData
     Shared _TotalWordsInParts As Integer = 0
     Shared _TotalUniqueWordsInStations As Integer = 0
     Shared _TotalWordsInStations As Integer = 0
+    Shared _MorphDataToLineNumber As Dictionary(Of Integer(), Integer)
+    Public Shared Function GetMorphologicalDataForWord(Chapter As Integer, Verse As Integer, Word As Integer) As String
+        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
+        If _MorphDataToLineNumber Is Nothing Then
+            _MorphDataToLineNumber = New Dictionary(Of Integer(), Integer)
+            For Count As Integer = 0 To Lines.Length - 1
+                If Lines(Count).Length <> 0 AndAlso Lines(Count).Chars(0) <> "#" Then
+                    Dim Pieces As String() = Lines(Count).Split(CChar(vbTab))
+                    Dim Location As Integer() = New List(Of Integer)(Linq.Enumerable.Select(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))).ToArray()
+                    _MorphDataToLineNumber.Add(Location, Count)
+                End If
+            Next
+        End If
+        Dim LineTest As Integer = 1
+
+        Return Lines(_MorphDataToLineNumber(New Integer() {Chapter, Verse, Word, 1}))
+    End Function
     Public Shared Sub GetMorphologicalData()
         Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
         For Count As Integer = 0 To Lines.Length - 1

@@ -175,6 +175,50 @@
           <source>Default Language</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Limbă implicită</target>
         </trans-unit>
+        <trans-unit id="AddBookmark.Text" translate="yes" xml:space="preserve">
+          <source>Add Bookmark</source>
+          <target state="new">Add Bookmark</target>
+        </trans-unit>
+        <trans-unit id="Bookmarks.Text" translate="yes" xml:space="preserve">
+          <source>Bookmarks</source>
+          <target state="new">Bookmarks</target>
+        </trans-unit>
+        <trans-unit id="CopyToClipboard.Text" translate="yes" xml:space="preserve">
+          <source>Copy to Clipboard</source>
+          <target state="new">Copy to Clipboard</target>
+        </trans-unit>
+        <trans-unit id="GoToVerse.Label" translate="yes" xml:space="preserve">
+          <source>Go to Verse</source>
+          <target state="new">Go to Verse</target>
+        </trans-unit>
+        <trans-unit id="Pause.Label" translate="yes" xml:space="preserve">
+          <source>Pause</source>
+          <target state="new">Pause</target>
+        </trans-unit>
+        <trans-unit id="Play.Label" translate="yes" xml:space="preserve">
+          <source>Play</source>
+          <target state="new">Play</target>
+        </trans-unit>
+        <trans-unit id="Reciter.Text" translate="yes" xml:space="preserve">
+          <source>Reciter</source>
+          <target state="new">Reciter</target>
+        </trans-unit>
+        <trans-unit id="RemoveBookmark.Text" translate="yes" xml:space="preserve">
+          <source>Remove Bookmark</source>
+          <target state="new">Remove Bookmark</target>
+        </trans-unit>
+        <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
+          <source>Set Playback Verse </source>
+          <target state="new">Set Playback Verse </target>
+        </trans-unit>
+        <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
+          <source>Show Exegesis</source>
+          <target state="new">Show Exegesis</target>
+        </trans-unit>
+        <trans-unit id="ShowMorphologyInfo.Text" translate="yes" xml:space="preserve">
+          <source>Show Morphology Information</source>
+          <target state="new">Show Morphology Information</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -241,20 +241,20 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Share.
+        /// </summary>
+        internal static string Share_Text {
+            get {
+                return ResourceManager.GetString("Share.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Exegesis.
         /// </summary>
         internal static string ShowExegesis_Text {
             get {
                 return ResourceManager.GetString("ShowExegesis.Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Show Morphology Information.
-        /// </summary>
-        internal static string ShowMorphologyInfo_Text {
-            get {
-                return ResourceManager.GetString("ShowMorphologyInfo.Text", resourceCulture);
             }
         }
         

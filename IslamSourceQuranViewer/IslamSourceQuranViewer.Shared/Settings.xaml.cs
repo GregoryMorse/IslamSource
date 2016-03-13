@@ -88,7 +88,7 @@ namespace IslamSourceQuranViewer
                 iSelectedReciter = IslamMetadata.AudioRecitation.GetReciterIndex(String.Empty);
             }
         }
-        public static int[][] Bookmarks { get { return System.Linq.Enumerable.Select(((string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"]).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"] = string.Join('|', System.Linq.Enumerable.Select(value, (Bookmark) => Bookmark.ToString())); } }
+        public static int[][] Bookmarks { get { return System.Linq.Enumerable.Select(((string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"]).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"] = string.Join("|", System.Linq.Enumerable.Select(value, (Bookmark) => Bookmark.ToString())); } }
         public static string strSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"] = value; } }
         public static string strOtherSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"] = value; } }
         public string SelectedFont { get { return strSelectedFont; } set { strSelectedFont = value; } }

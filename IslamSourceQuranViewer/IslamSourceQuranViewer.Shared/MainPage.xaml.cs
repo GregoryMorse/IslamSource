@@ -317,6 +317,22 @@ namespace IslamSourceQuranViewer
         {
             this.Frame.Navigate(typeof(Settings));
         }
+        private void RemoveBookmark_Click(object sender, RoutedEventArgs e)
+        {
+            List<int[]> marks = AppSettings.Bookmarks.ToList();
+            marks.RemoveAt(((sender as TextBlock).DataContext as MyListItem).Index);
+            AppSettings.Bookmarks = marks.ToArray();
+            ViewModel.ListItems = ViewModel.SelectedItem.Items;
+        }
+
+        private void TextBlock_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+            if (ViewModel.SelectedItem.IsBookmarks)
+            {
+                FlyoutBase.ShowAttachedFlyout(sender as TextBlock);
+                e.Handled = true;
+            }
+        }
     }
     public static class ListFormattedTextBehavior
     {
@@ -382,7 +398,7 @@ namespace IslamSourceQuranViewer
             {
                 return _ListItems;
             }
-            private set
+            set
             {
                 _ListItems = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("ListItems"));

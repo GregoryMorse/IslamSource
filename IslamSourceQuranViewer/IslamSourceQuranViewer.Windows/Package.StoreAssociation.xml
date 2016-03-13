@@ -361,6 +361,16 @@
     <MainPackageIdentityName>35516GMorseCode.QuranWordByWord</MainPackageIdentityName>
     <ReservedNames>
       <ReservedName>Quran Word By Word</ReservedName>
+      <ReservedName>Коран слово в слово</ReservedName>
+      <ReservedName>古兰经 》 词对词</ReservedName>
+      <ReservedName>古蘭經 》 詞對詞</ReservedName>
+      <ReservedName>Coran mot par mot</ReservedName>
+      <ReservedName>Koran Wort für Wort</ReservedName>
+      <ReservedName>Corán palabra por palabra</ReservedName>
+      <ReservedName>Korán szó szerint</ReservedName>
+      <ReservedName>Quran kata demi kata</ReservedName>
+      <ReservedName>Al-Quran perkataan demi perkataan</ReservedName>
+      <ReservedName>قرآن لفظ سے لفظ</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -371,7 +381,7 @@
     <PackageInfo>
       <OsMinVersion>6.3.0.0</OsMinVersion>
       <PackageArchitecture>neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.23</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.25</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>

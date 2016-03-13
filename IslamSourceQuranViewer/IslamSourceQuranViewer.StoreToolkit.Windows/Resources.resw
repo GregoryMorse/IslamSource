@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Add Bookmark</value>
+  </data>
   <data name="ArabicFont.Text" xml:space="preserve">
     <value>Arabic Font</value>
   </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Back</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Bookmarks</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Copy to Clipboard</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>Decrease Font Size</value>
@@ -138,17 +147,41 @@
   <data name="DisplayName" xml:space="preserve">
     <value>Quran Word By Word</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Go to Verse</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Increase Font Size</value>
   </data>
   <data name="OtherTextFont.Text" xml:space="preserve">
     <value>Other Text Font</value>
   </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Remove Bookmark</value>
+  </data>
   <data name="Render.Label" xml:space="preserve">
     <value>Render</value>
   </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set Playback Verse </value>
+  </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Show Exegesis</value>
+  </data>
+  <data name="ShowMorphologyInfo.Text" xml:space="preserve">
+    <value>Show Morphology Information</value>
   </data>
   <data name="ShowTranslation.Text" xml:space="preserve">
     <value>Show Translation</value>

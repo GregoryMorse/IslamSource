@@ -7,6 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Page.Resources>
+        <MenuFlyout x:Key="ContextFlyout">
+            <MenuFlyoutItem x:Uid="RemoveBookmark" Click="RemoveBookmark_Click"></MenuFlyoutItem>
+        </MenuFlyout>
         <Style x:Key="TitleStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Global User Interface"/>
@@ -47,7 +50,7 @@
                 <DataTemplate>
                     <Viewbox StretchDirection="DownOnly">
                         <TextBlock Margin="5" local:ListFormattedTextBehavior.FormattedText="{Binding TextItems}" 
-                            Style="{StaticResource TitleStyle}">
+                            Style="{StaticResource TitleStyle}" FlyoutBase.AttachedFlyout="{StaticResource ContextFlyout}" Holding="TextBlock_Holding">
                         </TextBlock>
                     </Viewbox>
                 </DataTemplate>

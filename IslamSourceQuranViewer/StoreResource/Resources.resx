@@ -177,11 +177,11 @@
   <data name="Settings.Label" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Share</value>
+  </data>
   <data name="ShowExegesis.Text" xml:space="preserve">
     <value>Show Exegesis</value>
-  </data>
-  <data name="ShowMorphologyInfo.Text" xml:space="preserve">
-    <value>Show Morphology Information</value>
   </data>
   <data name="ShowTranslation.Text" xml:space="preserve">
     <value>Show Translation</value>

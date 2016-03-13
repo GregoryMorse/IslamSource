@@ -168,6 +168,9 @@
     <Content Include="..\..\metadata\ur.*">
       <Link>metadata\ur\%(FileName)%(Extension)</Link>
     </Content>
+    <Content Include="..\..\metadata\quranic-corpus-morphology-0.4.txt">
+      <Link>metadata\quranic-corpus-morphology-0.4.txt</Link>
+    </Content>
     <Content Include="..\..\metadata\islaminfo.xml">
       <Link>metadata\islaminfo.xml</Link>
     </Content>

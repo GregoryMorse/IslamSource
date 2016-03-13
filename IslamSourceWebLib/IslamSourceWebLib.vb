@@ -1197,16 +1197,16 @@ Public Class TanzilReaderWeb
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
     Public Shared Function GetDivisionChangeJS() As String()
-        Dim JSArrays As String = UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNamesByRevelationOrder(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetPartNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetGroupNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetStationNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSectionNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetPageNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSajdaNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetImportantNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Arabic.GetRecitationSymbols(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True), _
+        Dim JSArrays As String = UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNamesByRevelationOrder(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetPartNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetGroupNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetStationNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSectionNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetPageNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetSajdaNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetImportantNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Arabic.GetRecitationSymbols(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
             UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReader.GetRecitationRules(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True)}, True)
         Return New String() {"javascript: changeQuranDivision(this.selectedIndex);", String.Empty, UtilityWeb.GetClearOptionListJS(), _
         "function changeQuranDivision(index) { var iCount; var qurandata = " + JSArrays + "; var eSelect = $('#quranselection').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < qurandata[index].length; iCount++) { eSelect.options.add(new Option(qurandata[index][iCount][0], qurandata[index][iCount][1])); } }"}
@@ -1236,6 +1236,9 @@ Public Class TanzilReaderWeb
     End Function
     Public Shared Function GetChapterNamesByRevelationOrder() As Array()
         Return TanzilReader.GetChapterNamesByRevelationOrder(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme())
+    End Function
+    Public Shared Function GetPartNames() As Array()
+        Return TanzilReader.GetPartNames(ArabicWeb.DecodeTranslitSchemeType(), ArabicWeb.DecodeTranslitScheme())
     End Function
 End Class
 Public Class HadithReaderWeb

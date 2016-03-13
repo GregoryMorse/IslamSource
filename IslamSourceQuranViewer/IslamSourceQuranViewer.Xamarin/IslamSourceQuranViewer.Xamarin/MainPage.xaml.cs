@@ -19,6 +19,9 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
 #if __ANDROID__
         return ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).Assets.Open(FilePath.Trim('/'));
 #endif
+#if __IOS__
+        return null;
+#endif
         //return File.Open(FilePath, FileMode.Open, FileAccess.Read);
     }
     public /*async*/ void SaveStream(string FilePath, Stream Stream)
@@ -69,6 +72,9 @@ public class AndroidiOSSettings : XMLRender.PortableSettings
         {
 #if __ANDROID__
             return ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).CacheDir.Path;
+#endif
+#if __IOS__
+            return string.Empty;
 #endif
         }
     }

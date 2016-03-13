@@ -1,110 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -112,70 +7,70 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Acct_AccountActivateSuccess" xml:space="preserve">
-    <value>Fiók sikeresen aktiválva.</value>
+    <value>Számla sikeresen aktivált.</value>
   </data>
   <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
-    <value>Fiók már aktiválva van.</value>
+    <value>Regisztrációdat már aktiváltuk.</value>
   </data>
   <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
-    <value>Fiók sikeresen törölve.</value>
+    <value>Számla törlése sikeresen megtörtént.</value>
   </data>
   <data name="Acct_AccountNotActivated" xml:space="preserve">
-    <value>A fiók még nincs aktiválva, kérjük ellenőrizze az e-mail első, vagy kérjen további aktiváló kódot.</value>
+    <value>Számla nem, mégis aktivált legyen szíves ellenőrizze az e-mail első, vagy kérheti egy további aktiválás kód.</value>
   </data>
   <data name="Acct_ActivateAccount" xml:space="preserve">
     <value>Fiók aktiválása</value>
   </data>
   <data name="Acct_ActivationAccountBody" xml:space="preserve">
-    <value>Ez az e-mail kér aktiválására a {0} címre: {1}.</value>
+    <value>E-mailben kéri a {0} fiók aktiválás: {1}. Kérjük használja a következő link: (2) vagy hogy az oldal {3}, és beírja a felhasználónevét és a következő aktiválás kód: {4}</value>
   </data>
   <data name="Acct_ActivationAccountSubject" xml:space="preserve">
-    <value>Aktiválása fiókot {0}</value>
+    <value>A(z) {0} fiók aktiválás</value>
   </data>
   <data name="Acct_ActivationCode" xml:space="preserve">
     <value>Aktiváló kód</value>
   </data>
   <data name="Acct_BadEmailFormat" xml:space="preserve">
-    <value>E-mail cím nem megfelelő formátumú.</value>
+    <value>E-mail cím nem egy érvényes formátum.</value>
   </data>
   <data name="Acct_Certain" xml:space="preserve">
     <value>Biztos?</value>
   </data>
   <data name="Acct_ChangeEmailAddress" xml:space="preserve">
-    <value>Email cím megváltoztatása</value>
+    <value>E-mail cím módosítása</value>
   </data>
   <data name="Acct_ChangePassword" xml:space="preserve">
-    <value>Változtass jelszót</value>
+    <value>Jelszó módosítása</value>
   </data>
   <data name="Acct_ChangeUsername" xml:space="preserve">
-    <value>Felhasználónév módosítása</value>
+    <value>Változás Felhasználónév</value>
   </data>
   <data name="Acct_CheckEmailNotice" xml:space="preserve">
-    <value>Az aktiválás küldött címre.</value>
+    <value>Aktiválás küldeni a megadott címre.  Kérjük, ellenőrizze az e-mail, hogy aktiválja fiókját, amely lezárja a regisztráció.</value>
   </data>
   <data name="Acct_CleanupStale" xml:space="preserve">
-    <value>Razzia Elévült</value>
+    <value>Razzia állott</value>
   </data>
   <data name="Acct_ClearCache" xml:space="preserve">
-    <value>A gyorsítótár törlése</value>
+    <value>Gyorsítótár kiürítése</value>
   </data>
   <data name="Acct_ClearDiskCache" xml:space="preserve">
-    <value>Lemez-gyorsítótár törlése</value>
+    <value>Clear Disk Cache</value>
   </data>
   <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
-    <value>Email cím megerősítése</value>
+    <value>E-mail cím megerősítése</value>
   </data>
   <data name="Acct_ConfirmPassword" xml:space="preserve">
-    <value>jelszó megerősítése</value>
+    <value>A jelszó megerősítése</value>
   </data>
   <data name="Acct_ControlPanel" xml:space="preserve">
-    <value>Kezelőpanel</value>
+    <value>Vezérlőpult</value>
   </data>
   <data name="Acct_CreateDatabase" xml:space="preserve">
     <value>Adatbázis létrehozása</value>
@@ -184,40 +79,40 @@
     <value>Fiók törlése</value>
   </data>
   <data name="Acct_DotNetVersion" xml:space="preserve">
-    <value>Dot Net verzió</value>
+    <value>Dot Net változat</value>
   </data>
   <data name="Acct_DuplicateUser" xml:space="preserve">
-    <value>Felhasználói ezzel a névvel már létezik, válassz másikat.</value>
+    <value>Már létezik ilyen nevű felhasználó kérjük, válasszon egy másik.</value>
   </data>
   <data name="Acct_EmailAddress" xml:space="preserve">
-    <value>Email cím</value>
+    <value>E-mail cím</value>
   </data>
   <data name="Acct_EmailChangeReactivate" xml:space="preserve">
-    <value>E-mail cím megváltozott és aktiváló e-mailt, hogy újra venni.</value>
+    <value>E-mail címe megváltozott, és az aktivációs e-mailt küldött-hoz életre kelt a számla.</value>
   </data>
   <data name="Acct_EmailInUse" xml:space="preserve">
-    <value>E-mail már használatban, kérjük jelentkezzen be a meglévő adatait.</value>
+    <value>E-mailben már használatban legyen szíves meglévő hitelesítő adatokkal logika.</value>
   </data>
   <data name="Acct_EmailsNotMatch" xml:space="preserve">
-    <value>E-mail címek nem egyeznek</value>
+    <value>E-mail cím nem felel meg</value>
   </data>
   <data name="Acct_ForgotPassword" xml:space="preserve">
-    <value>Elfelejtette a jelszót</value>
+    <value>Elfelejtett jelszó</value>
   </data>
   <data name="Acct_ForgotUsername" xml:space="preserve">
-    <value>Elfelejtett felhasználónév</value>
+    <value>Elfelejtett Felhasználónév</value>
   </data>
   <data name="Acct_Home" xml:space="preserve">
-    <value>Otthon</value>
+    <value>Kezdőlap</value>
   </data>
   <data name="Acct_IncorrectActivationCode" xml:space="preserve">
-    <value>Hibás aktiválási kódot.</value>
+    <value>Helytelen aktiváló kódot.</value>
   </data>
   <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
-    <value>Hibás jelszó kódot.</value>
+    <value>Helytelen jelszó-visszaállító kód.</value>
   </data>
   <data name="Acct_InvalidInput" xml:space="preserve">
-    <value>Hibás bemenet.</value>
+    <value>Hibás belépési.</value>
   </data>
   <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
     <value>Érvénytelen felhasználónév vagy jelszó.</value>
@@ -229,115 +124,115 @@
     <value>Sikeres bejelentkezés.</value>
   </data>
   <data name="Acct_Logoff" xml:space="preserve">
-    <value>Kijelentkezés</value>
+    <value>Kilépés</value>
   </data>
   <data name="Acct_LogoffSuccess" xml:space="preserve">
-    <value>Logoff sikeres.</value>
+    <value>Sikeres kijelentkezés.</value>
   </data>
   <data name="Acct_MinimumPassword" xml:space="preserve">
-    <value>Jelszó legalább 8 karakter.</value>
+    <value>Jelszó legalább 8 karakterből állhatnak.</value>
   </data>
   <data name="Acct_MinimumUsername" xml:space="preserve">
-    <value>Felhasználónév legalább 4 karakter.</value>
+    <value>Username kell lenni legalább 4 karakter.</value>
   </data>
   <data name="Acct_No" xml:space="preserve">
     <value>Nem</value>
   </data>
   <data name="Acct_NotConfirmDelete" xml:space="preserve">
-    <value>Meg kell erősítenie a fiók törlését.</value>
+    <value>Meg kell erősítenie a számla törlése.</value>
   </data>
   <data name="Acct_NoUserExists" xml:space="preserve">
-    <value>Nincs felhasználó létezik a megadott e-mail címre.</value>
+    <value>Felhasználó nem létezik a megadott e-mail címre.</value>
   </data>
   <data name="Acct_Password" xml:space="preserve">
-    <value>Jelszó</value>
+    <value>Password</value>
   </data>
   <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
-    <value>Jelszó már vissza, vagy a folyamat nem indul meg.</value>
+    <value>Jelszókiadási már, vagy a folyamat nem kezdeményezett.</value>
   </data>
   <data name="Acct_PasswordChangedBody" xml:space="preserve">
-    <value>Ez az e-mail, hogy tájékoztassa a jelszó megváltoztatása {0} címre: {1}.</value>
+    <value>Ez az e-mail, hogy tájékoztassa a jelszó-változás a {0} fiók: {1}.</value>
   </data>
   <data name="Acct_PasswordChangedSubject" xml:space="preserve">
-    <value>Jelszó megváltozott fiókot {0}</value>
+    <value>Jelszó megváltozott: a(z) {0} fiók</value>
   </data>
   <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
-    <value>Jelszó sikeresen megváltoztatva.</value>
+    <value>A jelszó módosítása sikerült.</value>
   </data>
   <data name="Acct_PasswordEmailSent" xml:space="preserve">
-    <value>Egy e-mail küldtünk a címre, hogy a jelszó-visszaállítási folyamat.</value>
+    <value>Egy e-mailt küldtek a címét a reszelő-hoz elindít a jelszó-visszaállítási folyamat.</value>
   </data>
   <data name="Acct_PasswordResetBody" xml:space="preserve">
-    <value>Ez az e-mail, hogy a jelszót a {0} címre: {1}.</value>
+    <value>E-mailben, hogy a {0} fiók jelszavának alaphelyzetbe állítása: {1}. Kérjük használja a következő link: {3} vagy eljárásban oldalára {4}, és beírja a felhasználónevét és a következő jelszó orrgazdaság kód: {5}</value>
   </data>
   <data name="Acct_PasswordResetCode" xml:space="preserve">
-    <value>Jelszó visszaállítása Code</value>
+    <value>Jelszó alaphelyzetbe állító kódot</value>
   </data>
   <data name="Acct_PasswordResetSubject" xml:space="preserve">
-    <value>Jelszó-visszaállítás fiókot {0}</value>
+    <value>A(z) {0} fiókhoz jelszókiadási</value>
   </data>
   <data name="Acct_PasswordResetSuccess" xml:space="preserve">
-    <value>Jelszó visszaállítása sikerült.</value>
+    <value>Jelszó sikeresen orrgazdaság.</value>
   </data>
   <data name="Acct_PasswordsNotMatch" xml:space="preserve">
-    <value>A jelszavak nem egyeznek</value>
+    <value>Nem egyező jelszavak</value>
   </data>
   <data name="Acct_Register" xml:space="preserve">
-    <value>Nyilvántartás</value>
+    <value>Regisztrálás</value>
   </data>
   <data name="Acct_Remember" xml:space="preserve">
-    <value>Emlékezik?</value>
+    <value>Emlékszel?</value>
   </data>
   <data name="Acct_RemoveDatabase" xml:space="preserve">
-    <value>Távolítsuk Database</value>
+    <value>-Adatbázis eltávolítása</value>
   </data>
   <data name="Acct_ResendActivationEmail" xml:space="preserve">
-    <value>Újraküldése E-mail</value>
+    <value>Aktivációs E-mail újraküldése</value>
   </data>
   <data name="Acct_ResetPassword" xml:space="preserve">
-    <value>Jelszó visszaállítása</value>
+    <value>Jelszó alaphelyzetbe állítása</value>
   </data>
   <data name="Acct_RetrievePassword" xml:space="preserve">
-    <value>Elfelejtett jelszó</value>
+    <value>Elhoz jelszó</value>
   </data>
   <data name="Acct_RetrieveUsername" xml:space="preserve">
-    <value>lekérése Felhasználónév</value>
+    <value>Lekérni a felhasználónevet</value>
   </data>
   <data name="Acct_SendActivationCode" xml:space="preserve">
-    <value>Regisztrálok</value>
+    <value>Küld aktiválás kód</value>
   </data>
   <data name="Acct_Username" xml:space="preserve">
-    <value>Felhasználónév</value>
+    <value>Username</value>
   </data>
   <data name="Acct_UsernameChangedBody" xml:space="preserve">
-    <value>Ez az e-mail, hogy tájékoztassa a számla névváltoztatást a {0} címre: {1}.</value>
+    <value>E-mailben is értesítjük a fiók nevét változtatni a {0} fiók: {1}.</value>
   </data>
   <data name="Acct_UsernameChangedSubject" xml:space="preserve">
-    <value>Felhasználónév megváltozott fiókot {0}</value>
+    <value>Felhasználónév: a(z) {0} fiók megváltozott</value>
   </data>
   <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
-    <value>Felhasználónév sikeresen megváltozott.</value>
+    <value>Felhasználónév: sikeresen változtatott.</value>
   </data>
   <data name="Acct_UsernameEmailSent" xml:space="preserve">
-    <value>Egy e-mail küldtünk a címre a felhasználóneveddel.</value>
+    <value>Egy e-mailt küldtek a címét a reszelő-val a username.</value>
   </data>
   <data name="Acct_UsernameReminderBody" xml:space="preserve">
-    <value>Ez az e-mail egy emlékeztető a {0} címre: {1}.</value>
+    <value>Ez az e-mail egy figyelmeztetés a {0} fiók: {1}.</value>
   </data>
   <data name="Acct_UsernameReminderSubject" xml:space="preserve">
-    <value>Felhasználónév emlékeztetőt fiókot {0}</value>
+    <value>A(z) {0} fiók felhasználónevét emlékeztető</value>
   </data>
   <data name="Acct_UserNotFound" xml:space="preserve">
-    <value>A felhasználó nem létezik.</value>
+    <value>Felhasználó nem létezik.</value>
   </data>
   <data name="Acct_ViewCache" xml:space="preserve">
-    <value>Részletek gyorsítótár</value>
+    <value>View Cache</value>
   </data>
   <data name="Acct_ViewDiskCache" xml:space="preserve">
-    <value>Részletek lemezgyorsító</value>
+    <value>Kilátás korong elrejt</value>
   </data>
   <data name="Acct_ViewHeaders" xml:space="preserve">
-    <value>Részletek fejlécek</value>
+    <value>Nézd fejlécek</value>
   </data>
   <data name="Acct_Yes" xml:space="preserve">
     <value>Igen</value>
@@ -349,13 +244,13 @@
     <value>العربية</value>
   </data>
   <data name="lang_az" xml:space="preserve">
-    <value>Azərbaycan Dili</value>
+    <value>Azərbaycan dili</value>
   </data>
   <data name="lang_ber" xml:space="preserve">
-    <value>tamazight</value>
+    <value>tamazigt</value>
   </data>
   <data name="lang_bg" xml:space="preserve">
-    <value>български</value>
+    <value>БЪЛГАРСКИ</value>
   </data>
   <data name="lang_bn" xml:space="preserve">
     <value>বাংলা</value>
@@ -364,7 +259,7 @@
     <value>Bosanski</value>
   </data>
   <data name="lang_cs" xml:space="preserve">
-    <value>čeština</value>
+    <value>Čeština</value>
   </data>
   <data name="lang_de" xml:space="preserve">
     <value>Deutsch</value>
@@ -373,20 +268,636 @@
     <value>ދިވެހި</value>
   </data>
   <data name="lang_en" xml:space="preserve">
-    <value>angol</value>
+    <value>Angol</value>
+  </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>español</value>
   </data>
   <data name="lang_fa" xml:space="preserve">
     <value>فارسى</value>
   </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>Français</value>
+  </data>
   <data name="lang_ha" xml:space="preserve">
-    <value>ḥawsa</value>
+    <value>Ḥawsa</value>
   </data>
   <data name="lang_hi" xml:space="preserve">
     <value>हिन्दी</value>
   </data>
   <data name="lang_id" xml:space="preserve">
-    <value>indonéz</value>
+    <value>Bahasa Indonesia</value>
   </data>
   <data name="lang_it" xml:space="preserve">
     <value>italiano</value>
-  </d
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Fontoskodó személy melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>РУССКИЙ ЯЗЫК</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>AF Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
+  <data name="lang_sw" xml:space="preserve">
+    <value>Szuahéli</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>ТОҶИКИ</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษาไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>ТАТАРЧА</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>nyelv Andrea ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="lang_localam" xml:space="preserve">
+    <value>amhara</value>
+  </data>
+  <data name="lang_localar" xml:space="preserve">
+    <value>arab</value>
+  </data>
+  <data name="lang_localaz" xml:space="preserve">
+    <value>Azerbajdzsáni</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
+  <data name="lang_localbg" xml:space="preserve">
+    <value>bolgár</value>
+  </data>
+  <data name="lang_localbn" xml:space="preserve">
+    <value>Bengáli</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosnyák</value>
+  </data>
+  <data name="lang_localcs" xml:space="preserve">
+    <value>cseh</value>
+  </data>
+  <data name="lang_localde" xml:space="preserve">
+    <value>Német</value>
+  </data>
+  <data name="lang_localdv" xml:space="preserve">
+    <value>divehi</value>
+  </data>
+  <data name="lang_localen" xml:space="preserve">
+    <value>Angol</value>
+  </data>
+  <data name="lang_locales" xml:space="preserve">
+    <value>spanyol</value>
+  </data>
+  <data name="lang_localfa" xml:space="preserve">
+    <value>Perzsa</value>
+  </data>
+  <data name="lang_localfr" xml:space="preserve">
+    <value>Francia</value>
+  </data>
+  <data name="lang_localha" xml:space="preserve">
+    <value>Hausza</value>
+  </data>
+  <data name="lang_localhi" xml:space="preserve">
+    <value>hindi</value>
+  </data>
+  <data name="lang_localid" xml:space="preserve">
+    <value>indonéz</value>
+  </data>
+  <data name="lang_localit" xml:space="preserve">
+    <value>Olasz</value>
+  </data>
+  <data name="lang_localja" xml:space="preserve">
+    <value>japán</value>
+  </data>
+  <data name="lang_localko" xml:space="preserve">
+    <value>koreai</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Kurd</value>
+  </data>
+  <data name="lang_localml" xml:space="preserve">
+    <value>Malajálam</value>
+  </data>
+  <data name="lang_localms" xml:space="preserve">
+    <value>maláj</value>
+  </data>
+  <data name="lang_localnl" xml:space="preserve">
+    <value>holland</value>
+  </data>
+  <data name="lang_localno" xml:space="preserve">
+    <value>Norvég</value>
+  </data>
+  <data name="lang_localpl" xml:space="preserve">
+    <value>lengyel</value>
+  </data>
+  <data name="lang_localpt" xml:space="preserve">
+    <value>Portugál</value>
+  </data>
+  <data name="lang_localro" xml:space="preserve">
+    <value>román</value>
+  </data>
+  <data name="lang_localru" xml:space="preserve">
+    <value>orosz</value>
+  </data>
+  <data name="lang_localsd" xml:space="preserve">
+    <value>szindhi</value>
+  </data>
+  <data name="lang_localso" xml:space="preserve">
+    <value>Szomáli</value>
+  </data>
+  <data name="lang_localsq" xml:space="preserve">
+    <value>Albán</value>
+  </data>
+  <data name="lang_localsv" xml:space="preserve">
+    <value>svéd</value>
+  </data>
+  <data name="lang_localsw" xml:space="preserve">
+    <value>Szuahéli</value>
+  </data>
+  <data name="lang_localta" xml:space="preserve">
+    <value>Tamil</value>
+  </data>
+  <data name="lang_localtg" xml:space="preserve">
+    <value>Tádzsik</value>
+  </data>
+  <data name="lang_localth" xml:space="preserve">
+    <value>thai</value>
+  </data>
+  <data name="lang_localtr" xml:space="preserve">
+    <value>török</value>
+  </data>
+  <data name="lang_localtt" xml:space="preserve">
+    <value>Tatár</value>
+  </data>
+  <data name="lang_localug" xml:space="preserve">
+    <value>ujgur</value>
+  </data>
+  <data name="lang_localur" xml:space="preserve">
+    <value>urdu</value>
+  </data>
+  <data name="lang_localuz" xml:space="preserve">
+    <value>Üzbég</value>
+  </data>
+  <data name="lang_localzh" xml:space="preserve">
+    <value>kínai</value>
+  </data>
+  <data name="Acct_Download" xml:space="preserve">
+    <value>A(z) {0} letöltése</value>
+  </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabic Comma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabic Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabic Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arabic Empty Centre High Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arabic Empty Centre Low Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabic End Of Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabic Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabic Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabic Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabic Hamza Below</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arabic-Indic Digit Eight</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arabic-Indic Digit Five</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arabic-Indic Digit Four</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arabic-Indic Digit Nine</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arabic-Indic Digit One</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arabic-Indic Digit Seven</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arabic-Indic Digit Six</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arabic-Indic Digit Three</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arabic-Indic Digit Two</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arabic-Indic Digit Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabic Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabic Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arabic Letter Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arabic Letter Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabic Letter Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabic Letter Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arabic Letter Alef With Hamza Below</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef With Madda Above</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arabic Letter Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arabic Letter Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arabic Letter Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arabic Letter Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arabic Letter Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arabic Letter Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arabic Letter Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arabic Letter Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arabic Letter Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arabic Letter Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arabic Letter Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arabic Letter Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arabic Letter Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arabic Letter Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabic Letter Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arabic Letter Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arabic Letter Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arabic Letter Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Arabic Letter Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arabic Letter Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arabic Letter Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabic Letter Superscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arabic Letter Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arabic Letter Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arabic Letter Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabic Letter Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arabic Letter Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arabic Letter Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arabic Letter Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arabic Letter Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Waw With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arabic Letter Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Yeh With Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arabic Letter Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arabic Letter Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Akbar Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Alayhe Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Allah Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabic Ligature Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arabic Ligature Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Mohammad Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Qala Used As Koranic Stop Sign Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Rasoul Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salam Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salla Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabic Ligature Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Salla Used As Koranic Stop Sign Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arabic Ligature Wasallam Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabic Maddah Above</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabic Place Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabic Question Mark</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabic Rounded High Stop With Filled Centre</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabic Semicolon</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabic Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabic Small High Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabic Small High Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High Ligature Qaf With Lam With Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High Ligature Sad With Lam With Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arabic Small High Meem Initial Form</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arabic Small High Meem Isolated Form</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabic Small High Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabic Small High Rounded Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arabic Small High Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabic Small High Three Dots</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabic Small High Upright Rectangular Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabic Small Low Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arabic Small Low Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabic Small Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabic Small Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabic Start Of Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabic Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabic Tatweel</value>
+  </data>
+  <data name="unicode_Colon" xml:space="preserve">
+    <value>Kettőspont</value>
+  </data>
+  <data name="unicode_Comma" xml:space="preserve">
+    <value>Vessző</value>
+  </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Exclamation Mark</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Full Stop</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Hyphen-Minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Left Curly Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Nyitó francia idézőjel</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Left Square Bracket</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Ornate Left Parenthesis</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Ornate Right Parenthesis</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Quotation Mark</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Sign</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Right Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Záró francia idézőjel</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Right Square Bracket</value>
+  </data>
+  <data name="unicode_Space" xml:space="preserve">
+    <value>Szóköz</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Tanúsítványkérelem</value>
+  </data>
+  <data name="Acct_Certificate" xml:space="preserve">
+    <value>Oklevél</value>
+  </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Tanúsítvány telepítése</value>
+  </data>
+  <data name="Acct_CurrentUser" xml:space="preserve">
+    <value>Aktuális felhasználó</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Tanúsítvány-kérés törlése</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>SSL engedélyezése</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Személyes kulcs</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Nézd tanúsítványkérelmek</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Helyek megtekintése</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Középszintű tanúsítványok telepítése</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Left-To-Right Embedding</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Right-To-Left Embedding</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Left-To-Right Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Left-To-Right Override</value>
+  </data>
+  <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
+    <value>Pop Directional Formatting</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Right-To-Left Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Right-To-Left Override</value>
+  </data>
+</root>
