@@ -208,16 +208,16 @@
           <target state="new">Remove Bookmark</target>
         </trans-unit>
         <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
-          <source>Set Playback Verse </source>
-          <target state="new">Set Playback Verse </target>
+          <source>Set Playback Verse</source>
+          <target state="new">Set Playback Verse</target>
         </trans-unit>
         <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
           <source>Show Exegesis</source>
           <target state="new">Show Exegesis</target>
         </trans-unit>
-        <trans-unit id="ShowMorphologyInfo.Text" translate="yes" xml:space="preserve">
-          <source>Show Morphology Information</source>
-          <target state="new">Show Morphology Information</target>
+        <trans-unit id="Share.Text" translate="yes" xml:space="preserve">
+          <source>Share</source>
+          <target state="new">Share</target>
         </trans-unit>
       </group>
     </body>

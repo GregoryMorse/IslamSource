@@ -140,6 +140,38 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.sr-Latn.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.sv.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.sw.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.sw.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ta.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.th.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.th.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.tr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.tr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.tt-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.tt-RU.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ug.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ug.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.uz-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.uz-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuranResources.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.zh-Hans.Designer.vb</LastGenOutput>
@@ -283,6 +315,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuranResources.sr-Latn.resx</DependentUpon>
     </Compile>
+    <Compile Include="QuranResources.sv.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.sw.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.sw.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ta.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ta.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.th.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.th.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.tr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.tt-RU.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.tt-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ug.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ug.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.uz-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.uz-Latn.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuranResources.zh-Hans.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -315,6 +387,14 @@
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.sl.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.sr-Cyrl.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.sr-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.sv.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.sw.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.ta.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.th.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.tr.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.tt-RU.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.ug.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitTemp.uz-Latn.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.zh-Hans.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkitTemp.zh-Hant.xlf" />
   </ItemGroup>

@@ -87,8 +87,12 @@ namespace IslamSourceQuranViewer
             {
                 iSelectedReciter = IslamMetadata.AudioRecitation.GetReciterIndex(String.Empty);
             }
+            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("Bookmarks"))
+            {
+                Bookmarks = new int[][] { };
+            }
         }
-        public static int[][] Bookmarks { get { return System.Linq.Enumerable.Select(((string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"]).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"] = string.Join("|", System.Linq.Enumerable.Select(value, (Bookmark) => Bookmark.ToString())); } }
+        public static int[][] Bookmarks { get { return !((string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"]).Contains('|') ? new int[][] { } : System.Linq.Enumerable.Select(((string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"]).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"] = string.Join("|", System.Linq.Enumerable.Select(value, (Bookmark) => Bookmark.ToString())); } }
         public static string strSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"] = value; } }
         public static string strOtherSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"] = value; } }
         public string SelectedFont { get { return strSelectedFont; } set { strSelectedFont = value; } }
@@ -170,9 +174,9 @@ namespace IslamSourceQuranViewer
                 if (Windows.UI.Xaml.Window.Current != null && Windows.UI.Xaml.Window.Current.CoreWindow != null) Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
                 Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
                 Windows.ApplicationModel.Resources.Core.ResourceContext.ResetGlobalQualifierValues();
-                System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo(value);
-                System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo(value);
-                while (System.Globalization.CultureInfo.CurrentUICulture.Name != value)
+                System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo(value == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : value);
+                System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo(value == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : value);
+                while (System.Globalization.CultureInfo.CurrentUICulture.Name != (value == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : value))
                 {
                     System.Threading.Tasks.Task.Delay(100);
                 }

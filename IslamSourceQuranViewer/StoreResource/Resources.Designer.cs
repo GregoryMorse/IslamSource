@@ -223,7 +223,7 @@ namespace StoreResource {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Set Playback Verse .
+        ///   Looks up a localized string similar to Set Playback Verse.
         /// </summary>
         internal static string SetPlaybackVerse_Text {
             get {

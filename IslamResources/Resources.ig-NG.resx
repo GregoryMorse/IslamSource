@@ -12,4 +12,1804 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Akwụkwọ</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Akwụkwọ gasị</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Indeksị</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Ntụghari</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Vọlum</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>N'elụ</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Zuru oke</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>Akaùnt</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Chidi</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Emesịa</value>
+  </data>
+  <data name="IslamInfo_Airplane" xml:space="preserve">
+    <value>Ụgbọelu</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>Ọjirịa</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>Ha niile</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>E nyere ohere </value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>Ọfọrọ obere maọbụ ọpụtara ka ọ pụta</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>Mgbe ọbụla</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>ebenkòdo</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Mmụọ</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Angụl</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>Iwe=:-@</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>Iyi àgbà</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>Na-erụ Na Njedebe</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>Apprọximatili Pụtara</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arabiki</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Aàk</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>Agụmentị</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Gburugburu</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>Asenshọn</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>Akàràmmùke</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Iheọrụ Asịteriskị</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Asimptọtikalị Pụtara</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Mjirimara gasị:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Àzụ</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>nhatanha</value>
+  </data>
+  <data name="IslamInfo_Because" xml:space="preserve">
+    <value>Maka na</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Tupu:</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>Kandị-ọzọ-mma</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>n'etiti...</value>
+  </data>
+  <data name="IslamInfo_Big" xml:space="preserve">
+    <value>Buru ibu</value>
+  </data>
+  <data name="IslamInfo_Bigger" xml:space="preserve">
+    <value>Bukarịrị nụ</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Ojii</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Okirikiri Ojii</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>Suut Obi Ojii</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>Ahụ</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>Akwụkwọ</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Akụ̀kụ̀ Àlà Aka-èkpè</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Akụ̀kụ̀ Àlà Aka-nri</value>
+  </data>
+  <data name="IslamInfo_Bread" xml:space="preserve">
+    <value>Achịcha</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Brìv</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Ndịnàòtù</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Onyinye</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Ọnọdụ gasi</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Mgbọ</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Iheọrụ Akarankewapụta</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Zụọ</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Kpọọ</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>Kanada</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Ụgbọala</value>
+  </data>
+  <data name="IslamInfo_Chain" xml:space="preserve">
+    <value>Cheenụ</value>
+  </data>
+  <data name="IslamInfo_Chair" xml:space="preserve">
+    <value>Oche</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Isi-nke ! !!!!!!!!!!!!!!!!</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>Chaamụ gasị</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>Chayịna</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Operetọ Asịterịsịkị Okirikiri</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Daashị Okirikiri</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Akara-nkewa okirikiri</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Ọperetọ Dọọtụ̀ Okirikiri</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Akara-mwepụ̀ okirikiri</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Akara-mgbakọ okirikiri</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Ọperetọ Rịngị Okirikiri</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Akara-mmụbanye okirikiri</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Intinye n'udi udi</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Hichaa</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Integaralụ̀ Kọntọọ Akanri gaa akaèkpè</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Integaralụ̀ Akanri gaa Akaèkpè</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Si akanri gaa akaèkpè Elu Uta Okara Okirikiri</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>Mmechi...</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>Urùkpuru</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>Mkpokọta</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>Kpọm-kpọm</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>Rịkọm</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Ogbè</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Ụlọorụ</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>Kọmlementị</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Mmecha</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Ọnọdụ</value>
+  </data>
+  <data name="IslamInfo_Confirmed" xml:space="preserve">
+    <value>Ekwènyerè</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Nara aka!</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Na-ejikọ</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>Enwere ya dị ka Nwaòtù etu-ọkwesịrị</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>Nwere dịka Nwaòtù etuọkwesịrị maọbụ Pụtara</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>Ndinà gasị</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Integaralụ̀ Kọntọọ</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Kọpị</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>Akara Nwebisinka</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>Mkpụchị</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Rootu Kuubu</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Kọyịlịị Lọjikaalụ̀ Na</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>Kọyịlịị Lọjikaalụ̀ Maọbụ</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Kọstọm</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Daga</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Deètì</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>Devid</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Ụbọchị</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Sọǹdè</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Mọ̀ndè</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Tụụzìdeè</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Wenezdeè</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Tọọzdeè</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Fraịdeè</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Satọ̀de</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Mbụpụta</value>
+  </data>
+  <data name="IslamInfo_DegreeCelsius" xml:space="preserve">
+    <value>Digrii Selsịọs</value>
+  </data>
+  <data name="IslamInfo_DegreeFahrenheit" xml:space="preserve">
+    <value>Digrii Farenhaịt</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>Gbuo-oge:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Nyefe</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>Deltà Ha-ka</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Nkọwa n'uju</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>Njìmarantà</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Ihe-ọrụ Dayamọndụ</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>Ndiiche dị na</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>Enwemike ime ihe</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Okikè</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Njìmara Okike</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Slaashị Nkewa</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Nkewa Mmụbanye</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>Onweghị dịka onye otu</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Ọnaghị Ekwe Nkewa</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Anaghị È mé</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Obuteghị ụzọ</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>Obuteghị ụzọ maọbụ Ọhaghị</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>O gosighị Na</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Osoteghị nààzụ</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>Osoghị ya nààzụ maọbụ Ọhaghị</value>
+  </data>
+  <data name="IslamInfo_Dog" xml:space="preserve">
+    <value>Nkịta</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Ihe-ọrụ Dọọtụ̀</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Mgbakọ Dọọtụ̀</value>
+  </data>
+  <data name="IslamInfo_DoubleDagger" xml:space="preserve">
+    <value>Dagg Abụọ</value>
+  </data>
+  <data name="IslamInfo_DoubleIntegral" xml:space="preserve">
+    <value>Intigralụ Abụọ</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Ịntasekịshịọnụ̀ Abụọ</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Sọbseetị Abụọ</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Supaseetị Abụọ</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Njikọta Abụọ</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>Elịpsịịsị Dayagọnaalụ̀ Aka-nri Ala</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>Na-adọkpụ</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>Nrọ</value>
+  </data>
+  <data name="IslamInfo_Drill" xml:space="preserve">
+    <value>Gwuo</value>
+  </data>
+  <data name="IslamInfo_Drink" xml:space="preserve">
+    <value>Ihe ọṅụṅụ</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>Uwa</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>Egyptì</value>
+  </data>
+  <data name="IslamInfo_ElementOf" xml:space="preserve">
+    <value>Elementị Nke</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Mbugo:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>Akarauhie Em</value>
+  </data>
+  <data name="IslamInfo_EmptySet" xml:space="preserve">
+    <value>Seetị nọ N'efù</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value>Ohere Em</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>kwụsị</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>–	Akàrauhie Èn</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value>Ohere En</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Tinye</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Àkpamobiụtọ</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Envelopụ</value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>Pụtara ma nonye N'akụkụ</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>Ịha-ka Sitena Nkọwa</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>Ọhà maọbụ obutere-ụzọ</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>Ọhà maọbụ ọ sò nààzụ</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Ya na, Hà</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>Mwezuga:</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>Kọwaá...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Nkọwa ọma</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>Ihu</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>Asị</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Nwanyị</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>Namị-amị</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Ọkụ́</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>Nke mbụ:</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>Ọnwa Mbụ nke Mmalite-afọ</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>E tibanyere</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>Ọkụ</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>Na aga</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>Fụ̀lawa</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Nri</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>Ụkwụ</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>Maka:</value>
+  </data>
+  <data name="IslamInfo_ForAll" xml:space="preserve">
+    <value>Maka ha Niile</value>
+  </data>
+  <data name="IslamInfo_Forces" xml:space="preserve">
+    <value>Fọọsịịsị</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>Fountaịnụ</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Ruutu nke Anọ</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>Fụransị</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Fraịdeè</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>Site na</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Ihu</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>Blọọkụ̀ n'uju</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>Nke dị n'ihu</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>Ubì</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>Gịa</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>Oke na Nwunye</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Izugbe</value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>Jenereshịọnụ̀</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>Jeometrikallị Ekwịvalent Na</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>Jeometrikallị Ekwịvalent Na</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>Jamanị</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Ọla-edo</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Ezigbo</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Amara</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Ụtọasụsụ</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Ìnì</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>Àkàra Olujụụ</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>United Kingdom</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>Karịrị Maọbụ Haa Ka</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Ọkarịrị nke ahụ pụtara</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>Akàraokịịka</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Ọgbakọ</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Òtù gasi</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Ntùtù</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Aka</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>Isi</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Obi</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>Zoro ezo</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Alò:</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>Ellipsis dinara ala</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>Awa</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>Ụlọ</value>
+  </data>
+  <data name="IslamInfo_How" xml:space="preserve">
+    <value>Otu ole?</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Oyìrì</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>If</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>Foto nke maọbụ ọ fọrọ obere ka ọ pụta</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Mmetụta</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>Na</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Ezughị oke</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Nwelite</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Indeksị</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>Indiya</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>Indonesià</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>N'enweghị-ngwụcha</value>
+  </data>
+  <data name="IslamInfo_Inspiration" xml:space="preserve">
+    <value>Ịgba ume</value>
+  </data>
+  <data name="IslamInfo_Integral" xml:space="preserve">
+    <value>Intigralụ</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>Intakaletị</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Ngafekọ</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Okwu mmalite</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Okwu mmalite</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>Akara Mkpu Atụgharịrị</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Mjirimara Ohm e mere ntụgharị</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>Akara Njụajụjụ Atụgharịrị</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>Iraakị</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>Izireelụ̀</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Jikọọ</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>Jọdan</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Jupita</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>Kenyà</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>Ụgbọọtụgwo</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>Kuweyiiti</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>Ikpeazụ</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>Ọnwa Ikpeazu nke Ọgwụgwụ-afọ</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Isi</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>Hapụ</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>Lebanọn</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>Akaekpe</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Akaèkpè Faktọ etuọkwesịrị Prodọkụtụ Semidayịrekịtị</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>Akàrà Ngụ̀chi akaèkpè</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>Left-Right Arrow</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Ụta Abụọ Akaèkpè-Akanri</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Ụta Akaèkpè Akanri</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Prodọkụtụ Semịdayịrekịtị Akaèkpè</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>Pekarịrị maọbụ hà ka</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Ọpekarịrị nke ahụ Ọpụtara</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Leta gasị</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>làrìì</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Ọba-akwụkwọ</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Mfe</value>
+  </data>
+  <data name="IslamInfo_Lightning" xml:space="preserve">
+    <value>Amụma-igwe</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Ógó</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>Na-ejikọ</value>
+  </data>
+  <data name="IslamInfo_LogicalAnd" xml:space="preserve">
+    <value>Lọjikaalụ̀ Na</value>
+  </data>
+  <data name="IslamInfo_LogicalOr" xml:space="preserve">
+    <value>Lọjikaalụ̀ Maọbụ</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Ogologo</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Ụta Akanri Ogologo Akaèkpè</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Ụta abụọ Ogologo Akanri-Akaèkpè</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Óke</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Mmadụ</value>
+  </data>
+  <data name="IslamInfo_Market" xml:space="preserve">
+    <value>Ahịa</value>
+  </data>
+  <data name="IslamInfo_Mary" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Nne</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Ihe</value>
+  </data>
+  <data name="IslamInfo_Measure" xml:space="preserve">
+    <value>Tụọ</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Mgbà Esìrì-èsì</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Ìsì-ihe Sitena</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>Nzukọ</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Elịpsịịsị Uhie nke Midlayịnụ̀</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Nkeji</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>Nzioyiriga</value>
+  </data>
+  <data name="IslamInfo_Money" xml:space="preserve">
+    <value>Ego</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Ọnwa</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Ọnwaga</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Ọnwà</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Ụtụtụ</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>Moroko</value>
+  </data>
+  <data name="IslamInfo_Mountain" xml:space="preserve">
+    <value>Ugwu</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Ọkarịchara</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Ọpekarịchara</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>Ọtụtụmaàpụ</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>Njìmara Mmụbanye</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Njikọta Mọọtịseetị</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Okwu mmalite</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Nabụla</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Aha gasị</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>N-arì Operetọ Dọọtụ̀ okirikiri</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>N-arì Operetọ Plọọsụ̀ okirikiri</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>N-arì Operetọ̀ Mmụbanyé okirikiri</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>N-arị Intasekịshịọn</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>N-arị Lọjikaalụ Na</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>N-arị Lọjikaalụ Maọbụ</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-arì Swkiaa Intasekshiọn Operetọ</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>N-arì Swkiaa Njikọta Operetọ</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>Mgbakọta N-Ary</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>N-arị Njikọta</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>N-arì Njikọta Operetọ̀ nwere Dọọtụ̀</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-arì Njikọta Operetọ̀ nwere Plọọsụ̀</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Ogwe Kwụọtọ Abụọ achọghị Tọnstaịl Akanri Abụọ</value>
+  </data>
+  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
+    <value>Ọbụghị Sọbseetị Nkè maọbụ nke Pụtara</value>
+  </data>
+  <data name="IslamInfo_NeitherA SupersetOfNorEqualTo" xml:space="preserve">
+    <value>Ọbụghị Supaseetị Nkè maọbụ Pụtara</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>Ọ bụghị Myìrì maọbụ Nhatanha Ya</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Nnọnetiti</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Ọhụrụ</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Akụkọ</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>Ihuakwụkwọ Ọzọ</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Nwaòtù etuọkwesịrị Nke</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Nwaòtù etuọkwesịrị Nke maọbụ nke Pụtara</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Abụghị</value>
+  </data>
+  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
+    <value>Ọbụghị Sọbseetị Nkè</value>
+  </data>
+  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
+    <value>Ọbụghị Supaseetị Nkè</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Ọfọghị obere ka ọ pụta</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Asimptọtikalị Apụtaghị</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Ahaghị ka</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Ọhaghị ka</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Ọkarịrịghị</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Oyighị</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Ọpekarịrịghị</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Ọbụghị Nwaotù kwesịrị-ekwesị Nke</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Ọbụghị Nwaotù kwesịrị-ekwesị Nke maọbụ Pụtara</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Akwụghị N'akụ̀kụ̀</value>
+  </data>
+  <data name="IslamInfo_NotSign" xml:space="preserve">
+    <value>Abịànyeghi-akā</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Ọbụghị Foto Skwịaa Nke maọbụ Ọ Pụtara</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Ọbụghị Skwịaa Nsiripụta Nke maọbụ ọ Pụtara</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Abụghị Tìlde</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Abụghị Eziokwu</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>H</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Ụmá</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Ụlọ-ọrụ</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Otu</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>Mmepe</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>Maọbụ</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>Na-enweghị nne na nna</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Ọzọ</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>Ihuakwụkwọ</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Ihuakwụkwọ gasị</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>Pakistan</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Kwụ̀rụ̀ N'akụ̀kụ̀</value>
+  </data>
+  <data name="IslamInfo_PartialDifferential" xml:space="preserve">
+    <value>Passhịalụ Diferenshịalụ̀</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>Mkpụrụ</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>Ndịnàòtù</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>Ndịnàòtù</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>Oriri na ọṅụṅụ</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>Adịghị arụ ọrụ</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Ụzọ</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>Udo</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>Mkpịsiodee</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>Pensụl</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Ndị mmadụ</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>Akàrà Pàsenti</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Ikike</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Nsìrìhụta</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>Filipiinụ̀</value>
+  </data>
+  <data name="IslamInfo_Pillar" xml:space="preserve">
+    <value>Ngidi aja</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Pichfọọk</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Ebe</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Ebe ga</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Plọt</value>
+  </data>
+  <data name="IslamInfo_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Nhazi Nchedoanya Pọp</value>
+  </data>
+  <data name="IslamInfo_Pound" xml:space="preserve">
+    <value>Paụnd</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Ehihe</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Ọdịda-anyanwụ</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Ọwịwa-anyawụ</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>Mbuteụ̀zọ̀</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>O butere ụzọ mana ọhaghị ka</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>Mbuteụ̀zọ̀ maọbụ nke Pụtara</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEquivalentTo" xml:space="preserve">
+    <value>Mbuteụ̀zọ̀ maọbụ nke Ha ka</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>Nganihu</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>Ihuakwụkwọ Ikpeazụ</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>Nke bu ụzọ</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Prọpọshọn</value>
+  </data>
+  <data name="IslamInfo_ProportionalTo" xml:space="preserve">
+    <value>Ọha ka</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Nchèdo</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Kwọta</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Ịsọ mpi</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Fraịdeè</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Mmadụ</value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Rechio</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>Ngụpụ̀ta</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>A kwadoro</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>Akara Edebanyere</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>Ihe achọrọ</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Oziza</value>
+  </data>
+  <data name="IslamInfo_ReversedTilde" xml:space="preserve">
+    <value>Tìlde E megharịrị</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Tayịde Rịvaasị Pụtara</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>Akanri</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>Mgbà Akanri</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>Akọmgba-Akanri nwere Aakị</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Aka-nri Faktọ etuọkwesịrị Prodọkụtụ Semidayịrekịtị</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>Akàrà Ngụ̀chi aka-nri</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Prodọkụtụ Semịdayịrekịtị Aka-nri</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>Otu Akàra Ajụjụ Akanrị</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>Nkomgbàatọ Akanri</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Mgbàdo Nhatanha</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>Mgbàdo n'ime Nhatanha</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Nchedo</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Satọn</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>Sawụdi Arebiya</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Oke</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Nsialọ gasị</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Ụlọ Akwụkwọ</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>Skripụtụ Kapital P</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>Oshimiri</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>nke abụọ</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Àgbà gasị</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>Sèmikolon</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>Ezi nghọta;Sense</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Nwepụ̀ Seetị</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>Shamrockụ</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Nkenke</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Mbiaka</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Ọla-ọcha</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>Weevu Saịnụ</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>Akpụkpọ</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Elu-igwe</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>Nhudà</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Ọ̀chị</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Na akụ:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>Abụ arịrị</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>Ụda...</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Ohere</value>
+  </data>
+  <data name="IslamInfo_Specific" xml:space="preserve">
+    <value>akpọrọ aha</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Okwu</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Mgbà dị Sụferịkaalụ̀</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>Skwịaa Kaap</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Skwịaa kọọpụ̀</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Ọperetọ Dọọtụ̀ Skwịaad</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Mwepụ̀ Skwịaa</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Mgbakọ Skwịaa</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Mmụbanye Skwịaad</value>
+  </data>
+  <data name="IslamInfo_SquareFoot" xml:space="preserve">
+    <value>Nzọụkwu Keakụ̀kụ̀ anọ</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Foto Skwịaa Nke</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Skwịaa Foto Nke maọbụ Pụtara</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Skwịaa Nsirinambụ Nke</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Skwịaa Nsiripụta Nke maọbụ Pụtara</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Skwia Rutu</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>Sri Lankà</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>Kpakpando</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Iheọrụ Stàà</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Ọnọdụ</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>Na-akwụsị...</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>Ike</value>
+  </data>
+  <data name="IslamInfo_Student" xml:space="preserve">
+    <value>Nwa akwụ̀kwọ</value>
+  </data>
+  <data name="IslamInfo_SubsetOf" xml:space="preserve">
+    <value>Sọbseetị Nkè</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>Sọbseetị Nkè nwere nke n'abụghị Pụtara</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Aghụghọ</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>Nsotenààzụ</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>Osò nààzụ mana ọhaghị ka</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>Nsotenààzụ maọbụ Pụtara</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>Nsotenààzụ maọbụ nke Ha ka</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>Sudan</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Nsònaazụ</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>Alò</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>Sọǹ</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Ọwịwa-anyawụ</value>
+  </data>
+  <data name="IslamInfo_SupersetOf" xml:space="preserve">
+    <value>Supaseetị Nkè</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>Supaseetị Nkè nwere nke n'abụghị Pụtara</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Integaralụ̀ Sọọfeesi</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>Tebùlù</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>Ogologo</value>
+  </data>
+  <data name="IslamInfo_TapeDrive" xml:space="preserve">
+    <value>Ọdọnnyà teèpù</value>
+  </data>
+  <data name="IslamInfo_Term" xml:space="preserve">
+    <value>Okwu</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>Ederede</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>Ahụ</value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Onweghị</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Onwere</value>
+  </data>
+  <data name="IslamInfo_Therefore" xml:space="preserve">
+    <value>Yamerè</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>Nke mbụ:</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>nke anọ</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>nke abụọ</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Nke a</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Tìld</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Oge</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>Ntịntị</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>Taa</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Akụkụ Elu Akaekpe</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Akụ̀kụ̀ Elu Aka-nri</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>Mkpatụ</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>Obodo</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>Obodo/Obodo</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>Sòro</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>Akara Ụghalahịa</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Ntụghari</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Njem</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Integaralụ̀ Atọ</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Ogwè Kwụọtọ Atọ Tọnstaịl Akanri</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>Ezigbo</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>Tunishiya</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>Mkpụrụ-ede Giriiki mere ntụgharị Iota</value>
+  </data>
+  <data name="IslamInfo_Umbrella" xml:space="preserve">
+    <value>Nche anwụ̀</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>Kpupee</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Njikọta</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Amaghị</value>
+  </data>
+  <data name="IslamInfo_Until" xml:space="preserve">
+    <value>Rụe mgbe: </value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>Up-Down Arrow</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>Ụta Abụọ Elu-Ala</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>Elịpsịịsị Dayagọnaalụ̀ Aka-nri Elu</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>Ụwa-Yurenus</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>Ngwaa</value>
+  </data>
+  <data name="IslamInfo_VerticalEllipsis" xml:space="preserve">
+    <value>Elịpsịịsị Kwụọtọ</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Ahịrị Ọtọ</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Ọkarịchara</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Ọpekarịchara</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>Olu</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Intigralụ Vọlum</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Elekere</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Mmiri</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>Bọlìì</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>Izu</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Mgbe</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Ebee:</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Okirikiri Ọcha</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>Ihu Ọchị Ọcha</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Trayangụlụ n'atụni-elu dị Ọcha</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>Maka gịnị?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value>Nwere:</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Mkpụrụokwu gasị:</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Ihe Nkechi</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Mgbadò Ngwaọrụ</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>Afọ̀</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Eee</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>Gị</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Gbakwụnye</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Tinye</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Akwụkwọ</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>Ụmụ Mgbakọta</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Mkpokọta</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Deètì</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Digrị gasị</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Ọkọwa-okwu:</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Nduzị</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Mee ka a ghara ịdị ìrè</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Gosipụta</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Okikè</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Ọnụndèe</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Ụtọasụsụ</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Kalenda nke Grigọrị</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Kalenda Hijiri</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Be</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Ozi</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Okwu mmalite</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Ndesịta gasị</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Na-ebugo...</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Nkewapụta</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Nkeji gasị</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Mba</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Mgbanyụ</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Mwepụta</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Ihe omume</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Bipụta</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Ka o kwuru</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Wepụ</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Ụdịdị àgwà</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>Tim-tim</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Nhọpụta</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Ederede</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Ntụghari</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Otù gasị</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>+Ngwanhụrụ</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Eee</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Ndị na-abaghị uru</value>
+  </data>
+  <data name="IslamInfo_Sweep" xml:space="preserve">
+    <value>Nzapụozi</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Njọ</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>ǹnyà</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Gara nkeọma</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Nke achọrọ</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Mbido</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Soro</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Kewara</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>mgbanwe()</value>
+  </data>
 </root>

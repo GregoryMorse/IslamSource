@@ -19,7 +19,9 @@
     <PackageCertificateThumbprint>BFEAC8A0C6BDC08641C82BC2B8E5DFDEDC73B37B</PackageCertificateThumbprint>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <AppxBundle>Always</AppxBundle>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -124,10 +126,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources*.Designer.cs">
+    <Compile Include="Resources.*.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>$([System.String]::Copy('%(FileName)').Replace('.Designer','')).resw</DependentUpon>
+      <DependentUpon>$([System.String]::Copy('%(FileName)').Replace('.Designer.cs','').Replace('Resources.',''))\Resources.resw</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -138,8 +140,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\StoreResource\Resources*.resx">
-      <Link>%(FileName).resw</Link>
+    <Content Include="..\StoreResource\Resources.resx">
+      <Link>en\%(FileName).resw</Link>
+    </Content>
+    <Content Include="..\StoreResource\Resources.*.resx">
+      <Link>$([System.String]::Copy('%(FileName)').Replace('.resx','').Replace('Resources.', ''))\Resources.resw</Link>
     </Content>
     <Content Include="..\..\metadata\en.*">
       <Link>metadata\en\%(FileName)%(Extension)</Link>
@@ -169,7 +174,7 @@
       <Link>metadata\es\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\ru.*">
-      <Link>metadata\ru\%(FileName)%(Extension)</Link>
+      <Link>metadata\ru\$([System.String]::Copy('%(FileName)').Replace('-','.'))%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\de.*">
       <Link>metadata\de\%(FileName)%(Extension)</Link>
@@ -243,8 +248,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Resources*.resw">
-      <LastGenOutput>%(FileName).Designer.cs</LastGenOutput>
+    <PRIResource Include=".\**\Resources.resw">
+      <LastGenOutput>%(FileName).$([System.String]::Copy('%(PRIResource.RecursiveDir)').TrimEnd('\\')).Designer.cs</LastGenOutput>
     </PRIResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

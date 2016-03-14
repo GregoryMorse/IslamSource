@@ -208,16 +208,17 @@
           <target state="needs-review-translation" state-qualifier="tm-suggestion">بک مارک ہٹا دیں</target>
         </trans-unit>
         <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
-          <source>Set Playback Verse </source>
+          <source>Set Playback Verse</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">پلے بیک آیت سیٹ کریں</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
           <source>Show Exegesis</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">دکھائیں تفسیر</target>
         </trans-unit>
-        <trans-unit id="ShowMorphologyInfo.Text" translate="yes" xml:space="preserve">
-          <source>Show Morphology Information</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">دکھائیں Morphology کی معلومات</target>
+        <trans-unit id="Share.Text" translate="yes" xml:space="preserve">
+          <source>Share</source>
+          <target state="new">Share</target>
         </trans-unit>
       </group>
     </body>

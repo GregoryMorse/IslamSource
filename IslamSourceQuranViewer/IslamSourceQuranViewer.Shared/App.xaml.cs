@@ -44,7 +44,7 @@ namespace IslamSourceQuranViewer
 #endif
             AppSettings.InitDefaultSettings();
 #if STORETOOLKIT
-            AppSettings.strAppLanguage = "ms";
+            AppSettings.strAppLanguage = "";
 #endif
         }
 

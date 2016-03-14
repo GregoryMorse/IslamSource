@@ -12,19 +12,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>عربی فونٹ</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>واپس</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>فانٹ سائز گھٹائيں</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>پہلے سے طے شدہ فونٹ سائز</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>اس کے عربی، سیکھنے، تعلیم حاصل کرنے، تحقیق، حفظ، فکر اور تجوید کی مہارت کے لئے لفظ اور آیت کی طرف سے نقل حرفی اور ترجمہ لفظ آیت کی طرف سے قرآن.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>قرآن لفظ سے لفظ</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>فانٹ سائز بڑھائيں</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>دوسرے متن فونٹ</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>رینڈر</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>سیٹنگیں</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>ترجمہ میں دکھائیں</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>حرفی دکھائیں</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>لفظ سے لفظ دکھائیں</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>‏‏حجم</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>قرآن قاعدہ رنگ کاری استعمال کریں</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>ڈیفالٹ لینگوئج</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;نشانی شامل کریں</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>نشانياں</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>‏‏کلپ بورڈ میں کاپی کریں</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>آیت جاؤ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>توقف</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>چلائيں</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>قاری</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>بک مارک ہٹا دیں</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>پلے بیک آیت سیٹ کریں</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>دکھائیں تفسیر</value>
   </data>
 </root>

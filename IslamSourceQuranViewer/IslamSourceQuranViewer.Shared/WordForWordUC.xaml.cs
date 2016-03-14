@@ -218,7 +218,7 @@ namespace IslamSourceQuranViewer
         }
         private void PlayPause_Click(object sender, RoutedEventArgs e)
         {
-            VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Source, IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Name, CurrentPlayingChapter, CurrentPlayingVerse));
+            VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Source, IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Name, CurrentPlayingModel, CurrentPlayingModel));
         }
         private void GoToVerse_Click(object sender, RoutedEventArgs e)
         {
@@ -277,7 +277,7 @@ namespace IslamSourceQuranViewer
             Flyout ContextFlyout = new Flyout();
             StackPanel Panel = new StackPanel();
             ContextFlyout.Content = Panel;
-            Panel.Children.Add(new TextBlock() { Text = GetMorphologyInfo() });
+            Panel.Children.Add(new TextBlock() { Text = IslamMetadata.CachedData.GetMorphologicalDataForWord(1, 1, 1) });
             Panel.Children.Add(new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("CopyToClipboard/Text") });
             Panel.Children.Add(new Button());
             (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) => {
@@ -288,7 +288,7 @@ namespace IslamSourceQuranViewer
                 options.PreferredApplicationDisplayName = "Clipboarder"; 
                 options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
                 options.DisplayApplicationPicker = false; 
-                global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(text))), options); 
+                global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
 #endif
             };
             Panel.Children.Add(new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") });
@@ -297,7 +297,7 @@ namespace IslamSourceQuranViewer
 #if WINDOWS_APP
                 Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
                 package.SetText(string.Empty);
-                Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested += (Windows.ApplicationModel.DataTransfer.DataTransferManager __sender, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs __e) {
+                Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested += (Windows.ApplicationModel.DataTransfer.DataTransferManager __sender, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs __e) => {
                     __e.Request.Data.Properties.Title = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("DisplayName");
                     __e.Request.Data.Properties.Description = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Description");
                     __e.Request.Data.SetText(string.Empty);

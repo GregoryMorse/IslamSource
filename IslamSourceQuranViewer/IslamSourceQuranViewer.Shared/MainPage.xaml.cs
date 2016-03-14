@@ -28,6 +28,7 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
     }
     public /*async*/ Stream LoadStream(string FilePath)
     {
+        FilePath = FilePath.Replace("ru.kuliev-", "ru.kuliev.");
         Windows.ApplicationModel.Resources.Core.ResourceCandidate rc = null;
         if (IslamSourceQuranViewer.App._resourceContext == null && Windows.UI.Xaml.Window.Current != null && Windows.UI.Xaml.Window.Current.CoreWindow != null) { IslamSourceQuranViewer.App._resourceContext = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView(); } else { IslamSourceQuranViewer.App._resourceContext = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse(); }
         if (IslamSourceQuranViewer.App._resourceContext != null) { rc = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetValue(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"), IslamSourceQuranViewer.App._resourceContext); }
@@ -425,7 +426,7 @@ namespace IslamSourceQuranViewer
                 _selectedItem = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
                 ListItems = _selectedItem.Items;
-                ListSelectedItem = ListItems.First();
+                ListSelectedItem = ListItems.Count() == 0 ? null : ListItems.First();
             }
         }
 
@@ -447,7 +448,7 @@ namespace IslamSourceQuranViewer
             get
             {
                 if (IsBookmarks) return System.Linq.Enumerable.Select(AppSettings.Bookmarks, (Bookmark, Idx) => new MyListItem { TextItems = { IslamMetadata.TanzilReader.GetSelectionName(Bookmark[0], Bookmark[1], XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty) }, Index = Idx });
-                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames(Index.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() }); }
+                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames((Index - 1).ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() }); }
                 return _Items;
             }
         }

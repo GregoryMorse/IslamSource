@@ -27609,4 +27609,7 @@
   <data name="IslamInfo_Verses" xml:space="preserve">
     <value>Versos</value>
   </data>
+  <data name="IslamInfo_RecitationRules" xml:space="preserve">
+    <value>Reglas de recitación</value>
+  </data>
 </root>
