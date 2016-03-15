@@ -750,6 +750,12 @@
   <data name="AtTheStartOfPrayer4.2" xml:space="preserve">
     <value>رب</value>
   </data>
+  <data name="AtTheStartOfPrayer4.3" xml:space="preserve">
+    <value>جبرئیل کی،</value>
+  </data>
+  <data name="AtTheStartOfPrayer4.4" xml:space="preserve">
+    <value>Mika'il</value>
+  </data>
   <data name="AtTheStartOfPrayer4.5" xml:space="preserve">
     <value>اور اسرافیل.</value>
   </data>
@@ -2700,6 +2706,9 @@
   <data name="IhramPrayerSupplication.39" xml:space="preserve">
     <value>یہ</value>
   </data>
+  <data name="IhramPrayerSupplication.40" xml:space="preserve">
+    <value>اور ہمیں چاہیئے کہ اس کا احاطہ دوری ہے</value>
+  </data>
   <data name="IhramPrayerSupplication.41" xml:space="preserve">
     <value>صحیح معنوں میں</value>
   </data>
@@ -3023,6 +3032,9 @@
   </data>
   <data name="InTheEvening1.3" xml:space="preserve">
     <value>تمام بادشاہی</value>
+  </data>
+  <data name="InTheEvening1.4" xml:space="preserve">
+    <value>خدا ہی کا ہے.</value>
   </data>
   <data name="InTheEvening1.5" xml:space="preserve">
     <value>الحمد</value>
@@ -3626,6 +3638,9 @@
   </data>
   <data name="InTheMorning1.3" xml:space="preserve">
     <value>تمام بادشاہی</value>
+  </data>
+  <data name="InTheMorning1.4" xml:space="preserve">
+    <value>خدا ہی کا ہے.</value>
   </data>
   <data name="InTheMorning1.5" xml:space="preserve">
     <value>الحمد</value>
@@ -8666,6 +8681,9 @@
   </data>
   <data name="WhenWakingUp2.32" xml:space="preserve">
     <value>سوائے</value>
+  </data>
+  <data name="WhenWakingUp2.33" xml:space="preserve">
+    <value>اللہ کے حکم سے</value>
   </data>
   <data name="WhenWakingUp2.34" xml:space="preserve">
     <value>غالب</value>
@@ -15195,6 +15213,9 @@
   <data name="GreatMasterpiece1.48" xml:space="preserve">
     <value>کونسا</value>
   </data>
+  <data name="GreatMasterpiece1.49" xml:space="preserve">
+    <value>چلو ایک سمجھ</value>
+  </data>
   <data name="GreatMasterpiece1.50" xml:space="preserve">
     <value>اس کے ساتھ</value>
   </data>
@@ -15311,6 +15332,9 @@
   </data>
   <data name="GreatMasterpiece1.88" xml:space="preserve">
     <value>اور تفہیم</value>
+  </data>
+  <data name="GreatMasterpiece1.89" xml:space="preserve">
+    <value>قرآن</value>
   </data>
   <data name="GreatMasterpiece1.90" xml:space="preserve">
     <value>عظیم</value>
@@ -81548,6 +81572,9 @@
   </data>
   <data name="GreatMasterpiece60.172" xml:space="preserve">
     <value>(میں حفظ</value>
+  </data>
+  <data name="GreatMasterpiece60.173" xml:space="preserve">
+    <value>قرآن</value>
   </data>
   <data name="GreatMasterpiece60.174" xml:space="preserve">
     <value>یہ سب کے سب / پورے)</value>

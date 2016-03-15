@@ -96,10 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources*.Designer.cs">
+    <Compile Include="Resources.*.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>$([System.String]::Copy('%(FileName)').Replace('.Designer','')).resw</DependentUpon>
+      <DependentUpon>$([System.String]::Copy('%(FileName)').Replace('.Designer.cs','').Replace('Resources.',''))\Resources.resw</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -108,8 +108,11 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\StoreResource\Resources*.resx">
-      <Link>%(FileName).resw</Link>
+    <Content Include="..\StoreResource\Resources.resx">
+      <Link>en\%(FileName).resw</Link>
+    </Content>
+    <Content Include="..\StoreResource\Resources.*.resx">
+      <Link>$([System.String]::Copy('%(FileName)').Replace('.resx','').Replace('Resources.', ''))\Resources.resw</Link>
     </Content>
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\SplashScreen.scale-140.png" />
@@ -157,7 +160,7 @@
       <Link>metadata\es\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\ru.*">
-      <Link>metadata\ru\%(FileName)%(Extension)</Link>
+      <Link>metadata\ru\$([System.String]::Copy('%(FileName)').Replace('-','.'))%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\de.*">
       <Link>metadata\de\%(FileName)%(Extension)</Link>
@@ -185,8 +188,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Resources*.resw">
-      <LastGenOutput>%(FileName).Designer.cs</LastGenOutput>
+    <PRIResource Include=".\**\Resources.resw">
+      <LastGenOutput>%(FileName).$([System.String]::Copy('%(PRIResource.RecursiveDir)').TrimEnd('\\')).Designer.cs</LastGenOutput>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>

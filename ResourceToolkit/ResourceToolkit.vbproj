@@ -244,9 +244,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.ku-Arab.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="W4WResources.ky.resx">
+    <EmbeddedResource Include="W4WResources.ky-KG.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>W4WResources.ky.Designer.vb</LastGenOutput>
+      <LastGenOutput>W4WResources.ky-KG.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.lb.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -336,17 +336,125 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.pt.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.quz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.quz.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.ro.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.ru.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.rw.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.rw.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sd-Arab.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sd-Arab.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.si.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.si.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sk.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sq.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sq.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sr-Cyrl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sr-Cyrl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sr-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sr-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sv.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.sw.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.sw.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.ta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.ta.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.te.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.te.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.tg-Cyrl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.tg-Cyrl.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.th.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.th.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.ti.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.ti.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.tk-TM.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.tk-TM.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.tn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.tn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.tr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.tr.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.tt-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.tt-RU.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.ug-CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.ug-CN.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.uk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.uk.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.ur.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.ur.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.uz-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.uz-Latn.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.vi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.vi.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.wo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.wo.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.yo-NG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.yo-NG.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -626,10 +734,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.ku-Arab.resx</DependentUpon>
     </Compile>
-    <Compile Include="W4WResources.ky.Designer.vb">
+    <Compile Include="W4WResources.ky-KG.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>W4WResources.ky.resx</DependentUpon>
+      <DependentUpon>W4WResources.ky-KG.resx</DependentUpon>
     </Compile>
     <Compile Include="W4WResources.lb.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -741,15 +849,150 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.pt.resx</DependentUpon>
     </Compile>
+    <Compile Include="W4WResources.quz.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.quz.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.ro.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.ro.resx</DependentUpon>
+    </Compile>
     <Compile Include="W4WResources.ru.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.ru.resx</DependentUpon>
     </Compile>
+    <Compile Include="W4WResources.rw.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.rw.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sd-Arab.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sd-Arab.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.si.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.si.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sk.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sq.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sq.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sr-Cyrl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sr-Cyrl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sr-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sr-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sv.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.sw.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.sw.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.ta.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.ta.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.te.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.te.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.tg-Cyrl.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.tg-Cyrl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.th.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.th.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.ti.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.ti.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.tk-TM.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.tk-TM.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.tn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.tn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.tr.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.tr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.tt-RU.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.tt-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.ug-CN.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.ug-CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.uk.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.uk.resx</DependentUpon>
+    </Compile>
     <Compile Include="W4WResources.ur.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.ur.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.uz-Latn.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.uz-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.vi.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.vi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.wo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.wo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.yo-NG.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.yo-NG.resx</DependentUpon>
     </Compile>
     <Compile Include="W4WResources.zh-Hans.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -810,7 +1053,7 @@
     <XliffResource Include="MultilingualResources\ResourceToolkit.ko.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.kok.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.ku-Arab.xlf" />
-    <XliffResource Include="MultilingualResources\ResourceToolkit.ky.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.ky-KG.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.lb.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.lo.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.lt.xlf" />
@@ -833,8 +1076,35 @@
     <XliffResource Include="MultilingualResources\ResourceToolkit.pl.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.prs.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.pt.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.quz.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.ro.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.ru.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.rw.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sd-Arab.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.si.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sk.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sl.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sq.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sr-Cyrl.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sr-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sv.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.sw.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.ta.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.te.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.tg-Cyrl.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.th.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.ti.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.tk-TM.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.tn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.tr.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.tt-RU.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.ug-CN.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.uk.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.ur.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.uz-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.vi.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.wo.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.yo-NG.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.zh-Hans.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.zh-Hant.xlf" />
   </ItemGroup>
