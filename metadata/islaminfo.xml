@@ -7749,4 +7749,85 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<pos symbol="VOC" id="VocativeParticle" color="29,105,20"></pos>
 		<pos symbol="INL" id="DisjointedLettersQuranicInitials" color="227,112,16"></pos>
 	</partsofspeech>
+	<featuresofspeech>
+		<feature symbol="ROOT" id="Root"></feature>
+		<feature symbol="LEM" id="Lemma"></feature>
+		<feature symbol="SP" id="SpecialGroup"></feature>
+
+		<feature symbol="POS" id="PartOfSpeech"></feature>
+		<feature symbol="PRON" id="AttachedPronoun"></feature>
+
+		<feature symbol="Al+" id="Determiner"></feature>
+		<feature symbol="bi+" id="ByWithOrInPreposition"></feature>
+		<feature symbol="ka+" id="LikeOrThusPreposition"></feature>
+		<feature symbol="ta+" id="ParticleOfOathUsedAsPreposition"></feature>
+		<feature symbol="sa+" id="PrefixedParticleIndicatingFuture"></feature>
+		<feature symbol="ya+" id="CallingVocative"></feature>
+		<feature symbol="ha+" id="PointingVocative"></feature>
+
+		<feature symbol="A:INTG+" id="PrefixedInterrogativeParticle"></feature>
+		<feature symbol="A:EQ+" id="PrefixedEqualizationParticle"></feature>
+
+		<feature symbol="w:CONJ+" id="Conjunction"></feature>
+		<feature symbol="w:REM+" id="Resumption"></feature>
+		<feature symbol="w:CIRC+" id="Circumstantial"></feature>
+		<feature symbol="w:SUP+" id="Supplemental"></feature>
+		<feature symbol="w:P+" id="ParticleOfOathUsedAsPreposition"></feature>
+		<feature symbol="w:COM+" id="Comitative"></feature>
+
+		<feature symbol="f:REM+" id="Resumption"></feature>
+		<feature symbol="f:CONJ+" id="Conjunction"></feature>
+		<feature symbol="f:RSLT+" id="Result"></feature>
+		<feature symbol="f:SUP+" id="Supplemental"></feature>
+		<feature symbol="f:CAUS+" id="Cause"></feature>
+
+		<feature symbol="l:P+" id="PrefixedPreposition"></feature>
+		<feature symbol="l:EMPH+" id="PrefixedParticleIndicatingEmphasis"></feature>
+		<feature symbol="l:PRP+" id="PrefixedParticleIndicatingPurpose"></feature>
+		<feature symbol="l:IMPV+" id="PrefixedParticleUsedToFormImperative"></feature>
+
+		<feature symbol="+VOC" id="VocativeWordForm"></feature>
+		<feature symbol="+n:EMPH" id="Emphatic"></feature>
+				
+		<feature symbol="MOOD:IND" id="IndicativeMood"></feature>
+		<feature symbol="MOOD:SUBJ" id="SubjunctiveMood"></feature>
+		<feature symbol="MOOD:JUS" id="JussiveMood"></feature>
+
+		<feature symbol="DEF" id="Definite"></feature>
+		<feature symbol="INDEF" id="Indefinite"></feature>
+
+		<feature symbol="PREFIX" id="Prefix"></feature>
+		<feature symbol="SUFFIX" id="Suffix"></feature>
+		<feature symbol="STEM" id="Stem"></feature>
+		<feature symbol="PCPL" id="Participle"></feature>
+		<feature symbol="VN" id="VerbalNoun"></feature>
+		<feature symbol="(I)" id="TypeOne"></feature>
+		<feature symbol="(II)" id="TypeTwo"></feature>
+		<feature symbol="(III)" id="TypeThree"></feature>
+		<feature symbol="(IV)" id="TypeFour"></feature>
+		<feature symbol="(V)" id="TypeFive"></feature>
+		<feature symbol="(VI)" id="TypeSix"></feature>
+		<feature symbol="(VII)" id="TypeSeven"></feature>
+		<feature symbol="(VIII)" id="TypeEight"></feature>
+		<feature symbol="(IX)" id="TypeNine"></feature>
+		<feature symbol="(X)" id="TypeTen"></feature>
+		<feature symbol="(XI)" id="TypeEleven"></feature>
+		<feature symbol="(XII)" id="TypeTwelve"></feature>
+		<feature symbol="ACT" id="Active"></feature>
+		<feature symbol="PASS" id="Passive"></feature>
+		<feature symbol="PERF" id="Perfect"></feature>
+		<feature symbol="IMPF" id="Imperfect"></feature>
+		<feature symbol="IMPV" id="Imperative"></feature>
+		<feature symbol="NOM" id="NominativeCase"></feature>
+		<feature symbol="GEN" id="GenitiveCase"></feature>
+		<feature symbol="ACC" id="AccusativeCase"></feature>
+		<feature symbol="1" id="FirstPerson"></feature>
+		<feature symbol="2" id="SecondPerson"></feature>
+		<feature symbol="3" id="ThirdPerson"></feature>
+		<feature symbol="M" id="Masculine"></feature>
+		<feature symbol="F" id="Feminine"></feature>
+		<feature symbol="S" id="Singular"></feature>
+		<feature symbol="D" id="Dual"></feature>
+		<feature symbol="P" id="Plural"></feature>
+	</featuresofspeech>
 </islamdata>

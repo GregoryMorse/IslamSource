@@ -2070,6 +2070,15 @@ Public Class IslamData
     <Xml.Serialization.XmlArray("partsofspeech")>
     <Xml.Serialization.XmlArrayItem("pos")>
     Public PartsOfSpeech() As PartOfSpeechInfo
+    Structure FeatureOfSpeechInfo
+        <Xml.Serialization.XmlAttribute("symbol")>
+        Public Symbol As String
+        <Xml.Serialization.XmlAttribute("id")>
+        Public Id As String
+    End Structure
+    <Xml.Serialization.XmlArray("featuresofspeech")>
+    <Xml.Serialization.XmlArrayItem("feature")>
+    Public FeaturesOfSpeech() As FeatureOfSpeechInfo
 End Class
 Public Class CachedData
     'need disk and memory cache as time consuming to read or build
@@ -2808,21 +2817,76 @@ Public Class CachedData
     Shared _TotalUniqueWordsInStations As Integer = 0
     Shared _TotalWordsInStations As Integer = 0
     Shared _MorphDataToLineNumber As Dictionary(Of Integer(), Integer)
-    Public Shared Function GetMorphologicalDataForWord(Chapter As Integer, Verse As Integer, Word As Integer) As String
+    Public Shared Function GetPartOfSpeech(POS As String) As IslamData.PartOfSpeechInfo
+        For Count As Integer = 0 To CachedData.IslamData.PartsOfSpeech.Length - 1
+            If CachedData.IslamData.PartsOfSpeech(Count).Symbol = POS Then Return CachedData.IslamData.PartsOfSpeech(Count)
+        Next
+        Return Nothing
+    End Function
+    Public Shared Function GetFeatureOfSpeech(FOS As String) As Nullable(Of IslamData.FeatureOfSpeechInfo)
+        For Count As Integer = 0 To CachedData.IslamData.FeaturesOfSpeech.Length - 1
+            If CachedData.IslamData.FeaturesOfSpeech(Count).Symbol = FOS Then Return CachedData.IslamData.FeaturesOfSpeech(Count)
+        Next
+        Return Nothing
+    End Function
+    Public Class ByteArrayComparer
+        Inherits EqualityComparer(Of Integer())
+        Public Overrides Function Equals(x() As Integer, y() As Integer) As Boolean
+            If x Is Nothing Or y Is Nothing Then Return (x Is Nothing) = (y Is Nothing)
+            If ReferenceEquals(x, y) Then Return True
+            If x.Length <> y.Length Then Return False
+            Return Linq.Enumerable.SequenceEqual(x, y)
+        End Function
+        Public Overrides Function GetHashCode(obj() As Integer) As Integer
+            'Maximum chapter Is 7 bits, verse Is 9 bits, word Is 8 bits and sub-word is 2 bits
+            Return obj(0) + (obj(1) << 7) + (obj(2) << 16) + (obj(3) << 24)
+        End Function
+    End Class
+    Public Shared Function GetMorphologicalDataForWord(Chapter As Integer, Verse As Integer, Word As Integer) As RenderArray
         Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
         If _MorphDataToLineNumber Is Nothing Then
-            _MorphDataToLineNumber = New Dictionary(Of Integer(), Integer)
+            _MorphDataToLineNumber = New Dictionary(Of Integer(), Integer)(New ByteArrayComparer())
             For Count As Integer = 0 To Lines.Length - 1
                 If Lines(Count).Length <> 0 AndAlso Lines(Count).Chars(0) <> "#" Then
                     Dim Pieces As String() = Lines(Count).Split(CChar(vbTab))
-                    Dim Location As Integer() = New List(Of Integer)(Linq.Enumerable.Select(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))).ToArray()
-                    _MorphDataToLineNumber.Add(Location, Count)
+                    If Pieces(0).Chars(0) = "(" Then
+                        Dim Location As Integer() = New List(Of Integer)(Linq.Enumerable.Select(Pieces(0).TrimStart("("c).TrimEnd(")"c).Split(":"c), Function(Str As String) CInt(Str))).ToArray()
+                        _MorphDataToLineNumber.Add(Location, Count)
+                    End If
                 End If
             Next
         End If
+        Dim Renderer As New RenderArray(String.Empty)
         Dim LineTest As Integer = 1
-
-        Return Lines(_MorphDataToLineNumber(New Integer() {Chapter, Verse, Word, 1}))
+        Do
+            Dim Pieces As String() = Lines(_MorphDataToLineNumber(New Integer() {Chapter, Verse, Word, 1})).Split(CChar(vbTab))
+            Dim Renderers As New List(Of RenderArray.RenderText)
+            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Pieces(1))))
+            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetPartOfSpeech(Pieces(2)).Id)) With {.Clr = GetPartOfSpeech(Pieces(2)).Color})
+            Dim Parts As String() = Pieces(3).Split("|"c)
+            Dim bNotDefaultPresent As Boolean = False
+            For Count As Integer = 0 To Parts.Length - 1
+                Dim Types As String() = Parts(Count).Split(":"c)
+                If Types(0) = "ROOT" Or Types(0) = "LEM" Or Types(0) = "SP" Then
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Types(1)))})}))
+                ElseIf Types(0) = "POS" Then
+                ElseIf Types(0) = "PRON" Then
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Types(1).ToCharArray(), Function(Ch) Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id))))})}))
+                ElseIf Text.RegularExpressions.Regex.IsMatch(Parts(Count), "^[123]?(?:[MF]|[MF]?[SDP])$") Then
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Parts(Count).ToCharArray(), Function(Ch) Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id)))))
+                Else
+                    'If Not GetFeatureOfSpeech(Parts(Count)).HasValue Then Debug.WriteLine("Not found: " + Parts(Count))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Parts(Count)).Value.Id)))
+                End If
+                If Parts(Count).StartsWith("MOOD:") Or Parts(Count) = "INDEF" Then bNotDefaultPresent = True
+            Next
+            If Pieces(2) = "V" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("MOOD:IND").Value.Id)))
+            If Pieces(2) = "N" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("DEF").Value.Id)))
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Renderers.ToArray()))
+            LineTest += 1
+        Loop While _MorphDataToLineNumber.ContainsKey(New Integer() {Chapter, Verse, Word, LineTest})
+        Return Renderer
+        'Return Lines(_MorphDataToLineNumber(New Integer() {Chapter, Verse, Word, 1}))
     End Function
     Public Shared Sub GetMorphologicalData()
         Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))

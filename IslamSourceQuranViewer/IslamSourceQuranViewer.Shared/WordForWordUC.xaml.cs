@@ -553,8 +553,8 @@ namespace IslamSourceQuranViewer
                 GroupIndexes.Add(new int[] { groupIndex, GroupIndexes.Count }); return false; });
             return GroupIndexes.GroupBy((Item) => Item[0], (Item) => value.ElementAt(Item[1])).Select((Item) => new MyRenderModel(Item.ToList())).ToList();
         }
-        public List<MyRenderModel> VerseReferences;
-        public MyRenderModel CurrentVerse;
+        public List<MyRenderModel> VerseReferences { get; set; }
+        public MyRenderModel CurrentVerse { get; set; }
 #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -452,6 +452,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.wo.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.xh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.xh.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="W4WResources.yo-NG.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.yo-NG.Designer.vb</LastGenOutput>
@@ -463,6 +467,10 @@
     <EmbeddedResource Include="W4WResources.zh-Hant.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>W4WResources.zh-Hant.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="W4WResources.zu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>W4WResources.zu.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -989,6 +997,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.wo.resx</DependentUpon>
     </Compile>
+    <Compile Include="W4WResources.xh.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.xh.resx</DependentUpon>
+    </Compile>
     <Compile Include="W4WResources.yo-NG.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1003,6 +1016,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>W4WResources.zh-Hant.resx</DependentUpon>
+    </Compile>
+    <Compile Include="W4WResources.zu.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>W4WResources.zu.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1104,9 +1122,11 @@
     <XliffResource Include="MultilingualResources\ResourceToolkit.uz-Latn.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.vi.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.wo.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.xh.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.yo-NG.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.zh-Hans.xlf" />
     <XliffResource Include="MultilingualResources\ResourceToolkit.zh-Hant.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkit.zu.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />

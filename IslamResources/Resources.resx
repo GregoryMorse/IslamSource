@@ -804,7 +804,7 @@
   <data name="IslamInfo_Angle" xml:space="preserve">
     <value>Angle</value>
   </data>
-  <data name="IslamInfo_AngleWithS Inside" xml:space="preserve">
+  <data name="IslamInfo_AngleWithSInside" xml:space="preserve">
     <value>Angle With S  Inside</value>
   </data>
   <data name="IslamInfo_AngleWithUnderbar" xml:space="preserve">
@@ -1113,13 +1113,13 @@
   <data name="IslamInfo_ArabicLetterBehWithHamzaAbove" xml:space="preserve">
     <value>Arabic Letter Beh With Hamza Above</value>
   </data>
-  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallV Below" xml:space="preserve">
+  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallVBelow" xml:space="preserve">
     <value>Arabic Letter Beh With Inverted Small V  Below</value>
   </data>
   <data name="IslamInfo_ArabicLetterBehWithSmallV" xml:space="preserve">
     <value>Arabic Letter Beh With Small V</value>
   </data>
-  <data name="IslamInfo_ArabicLetterBehWithSmallV Below" xml:space="preserve">
+  <data name="IslamInfo_ArabicLetterBehWithSmallVBelow" xml:space="preserve">
     <value>Arabic Letter Beh With Small V  Below</value>
   </data>
   <data name="IslamInfo_ArabicLetterBehWithThreeDotsHorizontallyBelow" xml:space="preserve">
@@ -1155,7 +1155,7 @@
   <data name="IslamInfo_ArabicLetterDalWithFourDotsAbove" xml:space="preserve">
     <value>Arabic Letter Dal With Four Dots Above</value>
   </data>
-  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallV Below" xml:space="preserve">
+  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallVBelow" xml:space="preserve">
     <value>Arabic Letter Dal With Inverted Small V  Below</value>
   </data>
   <data name="IslamInfo_ArabicLetterDalWithInvertedV" xml:space="preserve">
@@ -1503,7 +1503,7 @@
   <data name="IslamInfo_ArabicLetterRehWithSmallV" xml:space="preserve">
     <value>Arabic Letter Reh With Small V</value>
   </data>
-  <data name="IslamInfo_ArabicLetterRehWithSmallV Below" xml:space="preserve">
+  <data name="IslamInfo_ArabicLetterRehWithSmallVBelow" xml:space="preserve">
     <value>Arabic Letter Reh With Small V  Below</value>
   </data>
   <data name="IslamInfo_ArabicLetterRehWithStroke" xml:space="preserve">
@@ -1629,7 +1629,7 @@
   <data name="IslamInfo_ArabicLetterU" xml:space="preserve">
     <value>Arabic Letter U</value>
   </data>
-  <data name="IslamInfo_ArabicLetterU WithHamzaAbove" xml:space="preserve">
+  <data name="IslamInfo_ArabicLetterUWithHamzaAbove" xml:space="preserve">
     <value>Arabic Letter U  With Hamza Above</value>
   </data>
   <data name="IslamInfo_ArabicLetterVe" xml:space="preserve">
@@ -1704,7 +1704,7 @@
   <data name="IslamInfo_ArabicLetterZain" xml:space="preserve">
     <value>Arabic Letter Zain</value>
   </data>
-  <data name="IslamInfo_ArabicLetterZainWithInvertedV Above" xml:space="preserve">
+  <data name="IslamInfo_ArabicLetterZainWithInvertedVAbove" xml:space="preserve">
     <value>Arabic Letter Zain With Inverted V  Above</value>
   </data>
   <data name="IslamInfo_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
@@ -1950,10 +1950,10 @@
   <data name="IslamInfo_ArabicVowelSignDotBelow" xml:space="preserve">
     <value>Arabic Vowel Sign Dot Below</value>
   </data>
-  <data name="IslamInfo_ArabicVowelSignInvertedSmallV Above" xml:space="preserve">
+  <data name="IslamInfo_ArabicVowelSignInvertedSmallVAbove" xml:space="preserve">
     <value>Arabic Vowel Sign Inverted Small V  Above</value>
   </data>
-  <data name="IslamInfo_ArabicVowelSignSmallV Above" xml:space="preserve">
+  <data name="IslamInfo_ArabicVowelSignSmallVAbove" xml:space="preserve">
     <value>Arabic Vowel Sign Small V  Above</value>
   </data>
   <data name="IslamInfo_ArabicWavyHamzaBelow" xml:space="preserve">
@@ -2331,7 +2331,7 @@
   <data name="IslamInfo_BatakVowelSignPakpakE" xml:space="preserve">
     <value>Batak Vowel Sign Pakpak E</value>
   </data>
-  <data name="IslamInfo_BatakVowelSignU ForSimalungunSa" xml:space="preserve">
+  <data name="IslamInfo_BatakVowelSignUForSimalungunSa" xml:space="preserve">
     <value>Batak Vowel Sign U  For Simalungun Sa</value>
   </data>
   <data name="IslamInfo_Battles" xml:space="preserve">
@@ -5814,7 +5814,7 @@
   <data name="IslamInfo_CombiningLatinSmallLetterA" xml:space="preserve">
     <value>Combining Latin Small Letter A</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterA WithDiaeresis" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterAWithDiaeresis" xml:space="preserve">
     <value>Combining Latin Small Letter A  With Diaeresis</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterAe" xml:space="preserve">
@@ -5838,7 +5838,7 @@
   <data name="IslamInfo_CombiningLatinSmallLetterC" xml:space="preserve">
     <value>Combining Latin Small Letter C</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterC Cedilla" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterCCedilla" xml:space="preserve">
     <value>Combining Latin Small Letter C  Cedilla</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterD" xml:space="preserve">
@@ -5856,7 +5856,7 @@
   <data name="IslamInfo_CombiningLatinSmallLetterF" xml:space="preserve">
     <value>Combining Latin Small Letter F</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenA Above" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenAAbove" xml:space="preserve">
     <value>Combining Latin Small Letter Flattened Open A  Above</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterG" xml:space="preserve">
@@ -5877,7 +5877,7 @@
   <data name="IslamInfo_CombiningLatinSmallLetterL" xml:space="preserve">
     <value>Combining Latin Small Letter L</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterL WithDoubleMiddleTilde" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterLWithDoubleMiddleTilde" xml:space="preserve">
     <value>Combining Latin Small Letter L  With Double Middle Tilde</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterLongS" xml:space="preserve">
@@ -5892,10 +5892,10 @@
   <data name="IslamInfo_CombiningLatinSmallLetterO" xml:space="preserve">
     <value>Combining Latin Small Letter O</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithDiaeresis" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithDiaeresis" xml:space="preserve">
     <value>Combining Latin Small Letter O  With Diaeresis</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithLightCentralizationStroke" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithLightCentralizationStroke" xml:space="preserve">
     <value>Combining Latin Small Letter O  With Light Centralization Stroke</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterP" xml:space="preserve">
@@ -5904,10 +5904,10 @@
   <data name="IslamInfo_CombiningLatinSmallLetterR" xml:space="preserve">
     <value>Combining Latin Small Letter R</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Below" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterRBelow" xml:space="preserve">
     <value>Combining Latin Small Letter R  Below</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Rotunda" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterRRotunda" xml:space="preserve">
     <value>Combining Latin Small Letter R  Rotunda</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterS" xml:space="preserve">
@@ -5922,10 +5922,10 @@
   <data name="IslamInfo_CombiningLatinSmallLetterU" xml:space="preserve">
     <value>Combining Latin Small Letter U</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithDiaeresis" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithDiaeresis" xml:space="preserve">
     <value>Combining Latin Small Letter U  With Diaeresis</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithLightCentralizationStroke" xml:space="preserve">
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithLightCentralizationStroke" xml:space="preserve">
     <value>Combining Latin Small Letter U  With Light Centralization Stroke</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterV" xml:space="preserve">
@@ -6204,13 +6204,13 @@
   <data name="IslamInfo_CombiningWigglyLineBelow" xml:space="preserve">
     <value>Combining Wiggly Line Below</value>
   </data>
-  <data name="IslamInfo_CombiningX Above" xml:space="preserve">
+  <data name="IslamInfo_CombiningXAbove" xml:space="preserve">
     <value>Combining X  Above</value>
   </data>
-  <data name="IslamInfo_CombiningX Below" xml:space="preserve">
+  <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Combining X  Below</value>
   </data>
-  <data name="IslamInfo_CombiningX-X Below" xml:space="preserve">
+  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
     <value>Combining X- X  Below</value>
   </data>
   <data name="IslamInfo_CombiningZigzagAbove" xml:space="preserve">
@@ -7458,7 +7458,7 @@
   <data name="IslamInfo_DoubleExclamationMark" xml:space="preserve">
     <value>Double Exclamation Mark</value>
   </data>
-  <data name="IslamInfo_DoubleHighReversed9 QuotationMark" xml:space="preserve">
+  <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Double High Reversed9  Quotation Mark</value>
   </data>
   <data name="IslamInfo_DoubleHyphen" xml:space="preserve">
@@ -7497,13 +7497,13 @@
   <data name="IslamInfo_DoubleLogicalOr" xml:space="preserve">
     <value>Double Logical Or</value>
   </data>
-  <data name="IslamInfo_DoubleLow9 QuotationMark" xml:space="preserve">
+  <data name="IslamInfo_DoubleLow9QuotationMark" xml:space="preserve">
     <value>Double Low9  Quotation Mark</value>
   </data>
   <data name="IslamInfo_DoubleLowLine" xml:space="preserve">
     <value>Double Low Line</value>
   </data>
-  <data name="IslamInfo_DoubleLowReversed9 QuotationMark" xml:space="preserve">
+  <data name="IslamInfo_DoubleLowReversed9QuotationMark" xml:space="preserve">
     <value>Double Low Reversed9  Quotation Mark</value>
   </data>
   <data name="IslamInfo_DoubleNestedGreaterThan" xml:space="preserve">
@@ -10911,7 +10911,7 @@
   <data name="IslamInfo_Integral" xml:space="preserve">
     <value>Integral</value>
   </data>
-  <data name="IslamInfo_IntegralAroundA PointOperator" xml:space="preserve">
+  <data name="IslamInfo_IntegralAroundAPointOperator" xml:space="preserve">
     <value>Integral Around A  Point Operator</value>
   </data>
   <data name="IslamInfo_IntegralAverageWithSlash" xml:space="preserve">
@@ -12492,7 +12492,7 @@
   <data name="IslamInfo_Kuwait" xml:space="preserve">
     <value>Kuwait</value>
   </data>
-  <data name="IslamInfo_L B BarSymbol" xml:space="preserve">
+  <data name="IslamInfo_LBBarSymbol" xml:space="preserve">
     <value>L  B  Bar Symbol</value>
   </data>
   <data name="IslamInfo_LaamHeaviness" xml:space="preserve">
@@ -12816,7 +12816,7 @@
   <data name="IslamInfo_LeftSideArcAnticlockwiseArrow" xml:space="preserve">
     <value>Left Side Arc Anticlockwise Arrow</value>
   </data>
-  <data name="IslamInfo_LeftSidewaysU Bracket" xml:space="preserve">
+  <data name="IslamInfo_LeftSidewaysUBracket" xml:space="preserve">
     <value>Left Sideways U  Bracket</value>
   </data>
   <data name="IslamInfo_LeftSingleQuotationMark" xml:space="preserve">
@@ -15120,7 +15120,7 @@
   <data name="IslamInfo_MyanmarVowelSignAitonAi" xml:space="preserve">
     <value>Myanmar Vowel Sign Aiton Ai</value>
   </data>
-  <data name="IslamInfo_MyanmarVowelSignE Above" xml:space="preserve">
+  <data name="IslamInfo_MyanmarVowelSignEAbove" xml:space="preserve">
     <value>Myanmar Vowel Sign E  Above</value>
   </data>
   <data name="IslamInfo_MyanmarVowelSignGebaKarenI" xml:space="preserve">
@@ -15147,7 +15147,7 @@
   <data name="IslamInfo_MyanmarVowelSignMonO" xml:space="preserve">
     <value>Myanmar Vowel Sign Mon O</value>
   </data>
-  <data name="IslamInfo_MyanmarVowelSignShanE Above" xml:space="preserve">
+  <data name="IslamInfo_MyanmarVowelSignShanEAbove" xml:space="preserve">
     <value>Myanmar Vowel Sign Shan E  Above</value>
   </data>
   <data name="IslamInfo_MyanmarVowelSignShanFinalY" xml:space="preserve">
@@ -15375,10 +15375,10 @@
   <data name="IslamInfo_NegativeSquaredCrossMark" xml:space="preserve">
     <value>Negative Squared Cross Mark</value>
   </data>
-  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
     <value>Neither A  Subset Of Nor Equal To</value>
   </data>
-  <data name="IslamInfo_NeitherA SupersetOfNorEqualTo" xml:space="preserve">
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
     <value>Neither A  Superset Of Nor Equal To</value>
   </data>
   <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
@@ -15606,10 +15606,10 @@
   <data name="IslamInfo_Not" xml:space="preserve">
     <value>Not</value>
   </data>
-  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
     <value>Not A  Subset Of</value>
   </data>
-  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
     <value>Not A  Superset Of</value>
   </data>
   <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
@@ -16257,7 +16257,7 @@
   <data name="IslamInfo_ParenthesizedDigitTwo" xml:space="preserve">
     <value>Parenthesized Digit Two</value>
   </data>
-  <data name="IslamInfo_ParenthesizedKoreanCharacterO Hu" xml:space="preserve">
+  <data name="IslamInfo_ParenthesizedKoreanCharacterOHu" xml:space="preserve">
     <value>Parenthesized Korean Character O  Hu</value>
   </data>
   <data name="IslamInfo_ParenthesizedKoreanCharacterOjeon" xml:space="preserve">
@@ -17895,25 +17895,25 @@
   <data name="IslamInfo_RecyclingSymbolForGenericMaterials" xml:space="preserve">
     <value>Recycling Symbol For Generic Materials</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType1 Plastics" xml:space="preserve">
+  <data name="IslamInfo_RecyclingSymbolForType1Plastics" xml:space="preserve">
     <value>Recycling Symbol For Type1  Plastics</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType2 Plastics" xml:space="preserve">
+  <data name="IslamInfo_RecyclingSymbolForType2Plastics" xml:space="preserve">
     <value>Recycling Symbol For Type2  Plastics</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType3 Plastics" xml:space="preserve">
+  <data name="IslamInfo_RecyclingSymbolForType3Plastics" xml:space="preserve">
     <value>Recycling Symbol For Type3  Plastics</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType4 Plastics" xml:space="preserve">
+  <data name="IslamInfo_RecyclingSymbolForType4Plastics" xml:space="preserve">
     <value>Recycling Symbol For Type4  Plastics</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType5 Plastics" xml:space="preserve">
+  <data name="IslamInfo_RecyclingSymbolForType5Plastics" xml:space="preserve">
     <value>Recycling Symbol For Type5  Plastics</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType6 Plastics" xml:space="preserve">
+  <data name="IslamInfo_RecyclingSymbolForType6Plastics" xml:space="preserve">
     <value>Recycling Symbol For Type6  Plastics</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType7 Plastics" xml:space="preserve">
+  <data name="IslamInfo_RecyclingSymbolForType7Plastics" xml:space="preserve">
     <value>Recycling Symbol For Type7  Plastics</value>
   </data>
   <data name="IslamInfo_ReferenceMark" xml:space="preserve">
@@ -18531,7 +18531,7 @@
   <data name="IslamInfo_RightSideArcClockwiseArrow" xml:space="preserve">
     <value>Right Side Arc Clockwise Arrow</value>
   </data>
-  <data name="IslamInfo_RightSidewaysU Bracket" xml:space="preserve">
+  <data name="IslamInfo_RightSidewaysUBracket" xml:space="preserve">
     <value>Right Sideways U  Bracket</value>
   </data>
   <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
@@ -18927,7 +18927,7 @@
   <data name="IslamInfo_RuqayyahBintiMuhammad" xml:space="preserve">
     <value>Ruqayyah Binti Muhammad</value>
   </data>
-  <data name="IslamInfo_S InTriangle" xml:space="preserve">
+  <data name="IslamInfo_SInTriangle" xml:space="preserve">
     <value>S  In Triangle</value>
   </data>
   <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
@@ -19470,13 +19470,13 @@
   <data name="IslamInfo_SineWave" xml:space="preserve">
     <value>Sine Wave</value>
   </data>
-  <data name="IslamInfo_SingleHighReversed9 QuotationMark" xml:space="preserve">
+  <data name="IslamInfo_SingleHighReversed9QuotationMark" xml:space="preserve">
     <value>Single High Reversed9  Quotation Mark</value>
   </data>
   <data name="IslamInfo_SingleLeftPointingAngleQuotationMark" xml:space="preserve">
     <value>Single Left Pointing Angle Quotation Mark</value>
   </data>
-  <data name="IslamInfo_SingleLow9 QuotationMark" xml:space="preserve">
+  <data name="IslamInfo_SingleLow9QuotationMark" xml:space="preserve">
     <value>Single Low9  Quotation Mark</value>
   </data>
   <data name="IslamInfo_SingleRightPointingAngleQuotationMark" xml:space="preserve">
@@ -19911,7 +19911,7 @@
   <data name="IslamInfo_Sporadic" xml:space="preserve">
     <value>Sporadic</value>
   </data>
-  <data name="IslamInfo_SquareA OverM" xml:space="preserve">
+  <data name="IslamInfo_SquareAOverM" xml:space="preserve">
     <value>Square A  Over M</value>
   </data>
   <data name="IslamInfo_SquareCap" xml:space="preserve">
@@ -20025,7 +20025,7 @@
   <data name="IslamInfo_SquareRoot" xml:space="preserve">
     <value>Square Root</value>
   </data>
-  <data name="IslamInfo_SquareV OverM" xml:space="preserve">
+  <data name="IslamInfo_SquareVOverM" xml:space="preserve">
     <value>Square V  Over M</value>
   </data>
   <data name="IslamInfo_SquareWithBottomHalfBlack" xml:space="preserve">
@@ -22446,22 +22446,22 @@
   <data name="IslamInfo_ThreeConsecutiveEqualsSigns" xml:space="preserve">
     <value>Three Consecutive Equals Signs</value>
   </data>
-  <data name="IslamInfo_ThreeD BottomLightedRightwardsArrowhead" xml:space="preserve">
+  <data name="IslamInfo_ThreeDBottomLightedRightwardsArrowhead" xml:space="preserve">
     <value>Three D  Bottom Lighted Rightwards Arrowhead</value>
   </data>
-  <data name="IslamInfo_ThreeD LeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
+  <data name="IslamInfo_ThreeDLeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
     <value>Three D  Left Lighted Downwards Equilateral Arrowhead</value>
   </data>
-  <data name="IslamInfo_ThreeD RightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
+  <data name="IslamInfo_ThreeDRightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
     <value>Three D  Right Lighted Upwards Equilateral Arrowhead</value>
   </data>
-  <data name="IslamInfo_ThreeD TopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
+  <data name="IslamInfo_ThreeDTopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
     <value>Three D  Top Lighted Leftwards Equilateral Arrowhead</value>
   </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsArrowhead" xml:space="preserve">
+  <data name="IslamInfo_ThreeDTopLightedRightwardsArrowhead" xml:space="preserve">
     <value>Three D  Top Lighted Rightwards Arrowhead</value>
   </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
+  <data name="IslamInfo_ThreeDTopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
     <value>Three D  Top Lighted Rightwards Equilateral Arrowhead</value>
   </data>
   <data name="IslamInfo_ThreeDimensionalAngle" xml:space="preserve">
@@ -23367,7 +23367,7 @@
   <data name="IslamInfo_UpArrowheadBetweenTwoHorizontalBars" xml:space="preserve">
     <value>Up Arrowhead Between Two Horizontal Bars</value>
   </data>
-  <data name="IslamInfo_UpArrowheadInA RectangleBox" xml:space="preserve">
+  <data name="IslamInfo_UpArrowheadInARectangleBox" xml:space="preserve">
     <value>Up Arrowhead In A  Rectangle Box</value>
   </data>
   <data name="IslamInfo_UpArrowThroughCircle" xml:space="preserve">
@@ -25299,7 +25299,7 @@
   <data name="IslamInfo_Wrong" xml:space="preserve">
     <value>Wrong</value>
   </data>
-  <data name="IslamInfo_X InA RectangleBox" xml:space="preserve">
+  <data name="IslamInfo_XInARectangleBox" xml:space="preserve">
     <value>X  In A  Rectangle Box</value>
   </data>
   <data name="IslamInfo_Xor" xml:space="preserve">
@@ -25542,43 +25542,43 @@
   <data name="IslamInfo_YouTwo" xml:space="preserve">
     <value>You Two</value>
   </data>
-  <data name="IslamInfo_Z NotationBagMembership" xml:space="preserve">
+  <data name="IslamInfo_ZNotationBagMembership" xml:space="preserve">
     <value>Z  Notation Bag Membership</value>
   </data>
-  <data name="IslamInfo_Z NotationDomainAntirestriction" xml:space="preserve">
+  <data name="IslamInfo_ZNotationDomainAntirestriction" xml:space="preserve">
     <value>Z  Notation Domain Antirestriction</value>
   </data>
-  <data name="IslamInfo_Z NotationLeftBindingBracket" xml:space="preserve">
+  <data name="IslamInfo_ZNotationLeftBindingBracket" xml:space="preserve">
     <value>Z  Notation Left Binding Bracket</value>
   </data>
-  <data name="IslamInfo_Z NotationLeftImageBracket" xml:space="preserve">
+  <data name="IslamInfo_ZNotationLeftImageBracket" xml:space="preserve">
     <value>Z  Notation Left Image Bracket</value>
   </data>
-  <data name="IslamInfo_Z NotationRangeAntirestriction" xml:space="preserve">
+  <data name="IslamInfo_ZNotationRangeAntirestriction" xml:space="preserve">
     <value>Z  Notation Range Antirestriction</value>
   </data>
-  <data name="IslamInfo_Z NotationRelationalComposition" xml:space="preserve">
+  <data name="IslamInfo_ZNotationRelationalComposition" xml:space="preserve">
     <value>Z  Notation Relational Composition</value>
   </data>
-  <data name="IslamInfo_Z NotationRightBindingBracket" xml:space="preserve">
+  <data name="IslamInfo_ZNotationRightBindingBracket" xml:space="preserve">
     <value>Z  Notation Right Binding Bracket</value>
   </data>
-  <data name="IslamInfo_Z NotationRightImageBracket" xml:space="preserve">
+  <data name="IslamInfo_ZNotationRightImageBracket" xml:space="preserve">
     <value>Z  Notation Right Image Bracket</value>
   </data>
-  <data name="IslamInfo_Z NotationSchemaComposition" xml:space="preserve">
+  <data name="IslamInfo_ZNotationSchemaComposition" xml:space="preserve">
     <value>Z  Notation Schema Composition</value>
   </data>
-  <data name="IslamInfo_Z NotationSchemaPiping" xml:space="preserve">
+  <data name="IslamInfo_ZNotationSchemaPiping" xml:space="preserve">
     <value>Z  Notation Schema Piping</value>
   </data>
-  <data name="IslamInfo_Z NotationSchemaProjection" xml:space="preserve">
+  <data name="IslamInfo_ZNotationSchemaProjection" xml:space="preserve">
     <value>Z  Notation Schema Projection</value>
   </data>
-  <data name="IslamInfo_Z NotationSpot" xml:space="preserve">
+  <data name="IslamInfo_ZNotationSpot" xml:space="preserve">
     <value>Z  Notation Spot</value>
   </data>
-  <data name="IslamInfo_Z NotationTypeColon" xml:space="preserve">
+  <data name="IslamInfo_ZNotationTypeColon" xml:space="preserve">
     <value>Z  Notation Type Colon</value>
   </data>
   <data name="IslamInfo_Zaahiree" xml:space="preserve">
@@ -27716,5 +27716,152 @@
   </data>
   <data name="IslamInfo_RecitationRules" xml:space="preserve">
     <value>Recitation Rules</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Root</value>
+  </data>
+  <data name="IslamInfo_Lemma" xml:space="preserve">
+    <value>Lemma</value>
+  </data>
+  <data name="IslamInfo_SpecialGroup" xml:space="preserve">
+    <value>Special Group</value>
+  </data>
+  <data name="IslamInfo_PartOfSpeech" xml:space="preserve">
+    <value>Part Of Speech</value>
+  </data>
+  <data name="IslamInfo_AttachedPronoun" xml:space="preserve">
+    <value>Attached Pronoun</value>
+  </data>
+  <data name="IslamInfo_Determiner" xml:space="preserve">
+    <value>Determiner</value>
+  </data>
+  <data name="IslamInfo_ByWithOrInPreposition" xml:space="preserve">
+    <value>By With Or In Preposition</value>
+  </data>
+  <data name="IslamInfo_LikeOrThusPreposition" xml:space="preserve">
+    <value>Like Or Thus Preposition</value>
+  </data>
+  <data name="IslamInfo_ParticleOfOathUsedAsPreposition" xml:space="preserve">
+    <value>Particle Of Oath Used As Preposition</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingFuture" xml:space="preserve">
+    <value>Prefixed Particle Indicating Future</value>
+  </data>
+  <data name="IslamInfo_CallingVocative" xml:space="preserve">
+    <value>Calling Vocative</value>
+  </data>
+  <data name="IslamInfo_PointingVocative" xml:space="preserve">
+    <value>Pointing Vocative</value>
+  </data>
+  <data name="IslamInfo_PrefixedInterrogativeParticle" xml:space="preserve">
+    <value>Prefixed Interrogative Particle</value>
+  </data>
+  <data name="IslamInfo_PrefixedEqualizationParticle" xml:space="preserve">
+    <value>Prefixed Equalization Particle</value>
+  </data>
+  <data name="IslamInfo_Resumption" xml:space="preserve">
+    <value>Resumption</value>
+  </data>
+  <data name="IslamInfo_Circumstantial" xml:space="preserve">
+    <value>Circumstantial</value>
+  </data>
+  <data name="IslamInfo_Comitative" xml:space="preserve">
+    <value>Comitative</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="IslamInfo_Supplemental" xml:space="preserve">
+    <value>Supplemental</value>
+  </data>
+  <data name="IslamInfo_Cause" xml:space="preserve">
+    <value>Cause</value>
+  </data>
+  <data name="IslamInfo_PrefixedPreposition" xml:space="preserve">
+    <value>Prefixed Preposition</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingEmphasis" xml:space="preserve">
+    <value>Prefixed Particle Indicating Emphasis</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingPurpose" xml:space="preserve">
+    <value>Prefixed Particle Indicating Purpose</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleUsedToFormImperative" xml:space="preserve">
+    <value>Prefixed Particle Used To Form Imperative</value>
+  </data>
+  <data name="IslamInfo_VocativeWordForm" xml:space="preserve">
+    <value>Vocative Word Form</value>
+  </data>
+  <data name="IslamInfo_Emphatic" xml:space="preserve">
+    <value>Emphatic</value>
+  </data>
+  <data name="IslamInfo_IndicativeMood" xml:space="preserve">
+    <value>Indicative Mood</value>
+  </data>
+  <data name="IslamInfo_SubjunctiveMood" xml:space="preserve">
+    <value>Subjunctive Mood</value>
+  </data>
+  <data name="IslamInfo_JussiveMood" xml:space="preserve">
+    <value>Jussive Mood</value>
+  </data>
+  <data name="IslamInfo_Stem" xml:space="preserve">
+    <value>Stem</value>
+  </data>
+  <data name="IslamInfo_Participle" xml:space="preserve">
+    <value>Participle</value>
+  </data>
+  <data name="IslamInfo_TypeOne" xml:space="preserve">
+    <value>Type One</value>
+  </data>
+  <data name="IslamInfo_TypeTwo" xml:space="preserve">
+    <value>Type Two</value>
+  </data>
+  <data name="IslamInfo_TypeThree" xml:space="preserve">
+    <value>Type Three</value>
+  </data>
+  <data name="IslamInfo_TypeFour" xml:space="preserve">
+    <value>Type Four</value>
+  </data>
+  <data name="IslamInfo_TypeFive" xml:space="preserve">
+    <value>Type Five</value>
+  </data>
+  <data name="IslamInfo_TypeSix" xml:space="preserve">
+    <value>Type Six</value>
+  </data>
+  <data name="IslamInfo_TypeSeven" xml:space="preserve">
+    <value>Type Seven</value>
+  </data>
+  <data name="IslamInfo_TypeEight" xml:space="preserve">
+    <value>Type Eight</value>
+  </data>
+  <data name="IslamInfo_TypeNine" xml:space="preserve">
+    <value>Type Nine</value>
+  </data>
+  <data name="IslamInfo_TypeTen" xml:space="preserve">
+    <value>Type Ten</value>
+  </data>
+  <data name="IslamInfo_TypeEleven" xml:space="preserve">
+    <value>Type Eleven</value>
+  </data>
+  <data name="IslamInfo_TypeTwelve" xml:space="preserve">
+    <value>Type Twelve</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="IslamInfo_Perfect" xml:space="preserve">
+    <value>Perfect</value>
+  </data>
+  <data name="IslamInfo_Imperfect" xml:space="preserve">
+    <value>Imperfect</value>
+  </data>
+  <data name="IslamInfo_Imperative" xml:space="preserve">
+    <value>Imperative</value>
+  </data>
+  <data name="IslamInfo_GenitiveCase" xml:space="preserve">
+    <value>Genitive Case</value>
+  </data>
+  <data name="IslamInfo_Singular" xml:space="preserve">
+    <value>Singular</value>
   </data>
 </root>

@@ -79,13 +79,30 @@ Public Class frmMain
     '    End Try
     '    Return Nothing
     'End Function
+    Private Sub CheckMorphology()
+        For TestCount = 0 To CachedData.IslamData.PartsOfSpeech.Length - 1
+            Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PartsOfSpeech(TestCount).Id)
+        Next
+        For TestCount = 0 To CachedData.IslamData.FeaturesOfSpeech.Length - 1
+            Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.FeaturesOfSpeech(TestCount).Id)
+        Next
+        Dim Text As List(Of String()) = TanzilReader.GetQuranText(CachedData.XMLDocMain, 1, 1, 114, 6)
+        For Count As Integer = 0 To 113
+            For VerseCount = 0 To Text(Count).Length - 1
+                Dim Words As String() = New List(Of String)(Linq.Enumerable.Where(Text(Count)(VerseCount).Split(" "c), Function(It) It.Length <> 1)).ToArray()
+                For WordCount = 0 To Words.Length - 1
+                    CachedData.GetMorphologicalDataForWord(Count + 1, VerseCount + 1, WordCount + 1)
+                Next
+            Next
+        Next
+    End Sub
     Private Sub CompareWordCounts()
         Dim Text As List(Of String()) = TanzilReader.GetQuranText(CachedData.XMLDocMain, 1, 1, 114, 6)
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.corpus.txt")
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.qurandev.txt")
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.shehnazshaikh.txt")
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\id.w4w.terjemah.txt")
-        Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\ur.w4w.hafiznazarmuhammad.txt") '150 errors needs fixing
+        Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\ur.w4w.hafiznazarmuhammad.txt")
         Dim LineCount As Integer = 0
         For Count As Integer = 0 To 113
             For VerseCount = 0 To Text(Count).Length - 1
@@ -107,6 +124,7 @@ Public Class frmMain
         Next
     End Sub
     Private Sub UtilityTestCode()
+        CheckMorphology()
         'Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
         'dataroot -> ayat -> TarjumaLafziDrFarhatHashmi, TarjumaLafziFahmulQuran, TarjumaLafziNazarAhmad
         'CompareWordCounts()
@@ -183,6 +201,7 @@ Public Class frmMain
         'TanzilReader.CheckSequentialRules()
         'TanzilReader.CheckMutualExclusiveRules(False, 4)
         'TanzilReader.CheckMutualExclusiveRules(True, 4)
+
         Dim IndexToVerse As Integer()() = Nothing
         'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 18, 13)
         'Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
