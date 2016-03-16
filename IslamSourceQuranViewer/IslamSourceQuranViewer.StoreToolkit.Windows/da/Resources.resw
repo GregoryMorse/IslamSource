@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabisk skrift</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Tilbage</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Formindsk skriftstørrelse</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Standardskriftstørrelse</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Koranen arabisk, omskrivning og oversættelse ord for ord og vers af vers for at lære, studere, forskning, memorization, refleksion og beherskelse af tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Koranen ord for ord.</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Forøg skriftstørrelse</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Andre skrifttype</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Gengiv</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Indstillinger</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Vis Oversættelse</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Vis translitteration</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Vis ord for ord.</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Størrelse</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Brug Recitation regel farve</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Standardsprog</value>
+  </data>
+</root>

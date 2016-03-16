@@ -699,9 +699,6 @@
   <data name="IslamInfo_Angle" xml:space="preserve">
     <value>Angle</value>
   </data>
-  <data name="IslamInfo_AngleWithS Inside" xml:space="preserve">
-    <value>Szög a belülről s</value>
-  </data>
   <data name="IslamInfo_AngleWithUnderbar" xml:space="preserve">
     <value>Angle With Underbar</value>
   </data>
@@ -1008,14 +1005,8 @@
   <data name="IslamInfo_ArabicLetterBehWithHamzaAbove" xml:space="preserve">
     <value>A fenti Hamza Arab levelet Beh</value>
   </data>
-  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallV Below" xml:space="preserve">
-    <value>Arab levelet Beh fordított kis v alatt</value>
-  </data>
   <data name="IslamInfo_ArabicLetterBehWithSmallV" xml:space="preserve">
     <value>Arabic Letter Beh With Small V</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterBehWithSmallV Below" xml:space="preserve">
-    <value>Arab levelet Beh kis v alatt</value>
   </data>
   <data name="IslamInfo_ArabicLetterBehWithThreeDotsHorizontallyBelow" xml:space="preserve">
     <value>Arabic Letter Beh With Three Dots Horizontally Below</value>
@@ -1049,9 +1040,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterDalWithFourDotsAbove" xml:space="preserve">
     <value>Arabic Letter Dal With Four Dots Above</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallV Below" xml:space="preserve">
-    <value>Arab levelet Dal a fordított kis V alatt</value>
   </data>
   <data name="IslamInfo_ArabicLetterDalWithInvertedV" xml:space="preserve">
     <value>Arabic Letter Dal With Inverted V</value>
@@ -1398,9 +1386,6 @@
   <data name="IslamInfo_ArabicLetterRehWithSmallV" xml:space="preserve">
     <value>Arabic Letter Reh With Small V</value>
   </data>
-  <data name="IslamInfo_ArabicLetterRehWithSmallV Below" xml:space="preserve">
-    <value>Arab levelet Reh kis v alatt</value>
-  </data>
   <data name="IslamInfo_ArabicLetterRehWithStroke" xml:space="preserve">
     <value>Arabic Letter Reh With Stroke</value>
   </data>
@@ -1524,9 +1509,6 @@
   <data name="IslamInfo_ArabicLetterU" xml:space="preserve">
     <value>Arabic Letter U</value>
   </data>
-  <data name="IslamInfo_ArabicLetterU WithHamzaAbove" xml:space="preserve">
-    <value>Hamza fenti Arab betű U</value>
-  </data>
   <data name="IslamInfo_ArabicLetterVe" xml:space="preserve">
     <value>Arabic Letter Ve</value>
   </data>
@@ -1598,9 +1580,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterZain" xml:space="preserve">
     <value>Arabic Letter Zain</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterZainWithInvertedV Above" xml:space="preserve">
-    <value>A fenti fordított V Arab levelet Attila</value>
   </data>
   <data name="IslamInfo_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
     <value>Arabic Ligature Akbar Isolated Form</value>
@@ -1844,12 +1823,6 @@
   </data>
   <data name="IslamInfo_ArabicVowelSignDotBelow" xml:space="preserve">
     <value>Arabic Vowel Sign Dot Below</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignInvertedSmallV Above" xml:space="preserve">
-    <value>Arab magánhangzó jele fordított kis V fenti</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignSmallV Above" xml:space="preserve">
-    <value>Arab magánhangzó jele kis V fenti</value>
   </data>
   <data name="IslamInfo_ArabicWavyHamzaBelow" xml:space="preserve">
     <value>Arabic Wavy Hamza Below</value>
@@ -2225,9 +2198,6 @@
   </data>
   <data name="IslamInfo_BatakVowelSignPakpakE" xml:space="preserve">
     <value>Batak Vowel Sign Pakpak E</value>
-  </data>
-  <data name="IslamInfo_BatakVowelSignU ForSimalungunSa" xml:space="preserve">
-    <value>Batak magánhangzó jele U SA Simalungun</value>
   </data>
   <data name="IslamInfo_Battles" xml:space="preserve">
     <value>Csaták</value>
@@ -5709,9 +5679,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterA" xml:space="preserve">
     <value>Combining Latin Small Letter A</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterA WithDiaeresis" xml:space="preserve">
-    <value>Latin apró betűs A Diairetikus módszer kombinálása</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterAe" xml:space="preserve">
     <value>Combining Latin Small Letter Ae</value>
   </data>
@@ -5733,9 +5700,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterC" xml:space="preserve">
     <value>Combining Latin Small Letter C</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterC Cedilla" xml:space="preserve">
-    <value>Ötvözi a Latin apró betűs C Cedilla</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterD" xml:space="preserve">
     <value>Combining Latin Small Letter D</value>
   </data>
@@ -5750,9 +5714,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterF" xml:space="preserve">
     <value>Latin apró betűs F kombinálása</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenA Above" xml:space="preserve">
-    <value>Ötvözi a Latin apró betűs lapított nyissa meg A fenti</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterG" xml:space="preserve">
     <value>Combining Latin Small Letter G</value>
@@ -5772,9 +5733,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterL" xml:space="preserve">
     <value>Combining Latin Small Letter L</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterL WithDoubleMiddleTilde" xml:space="preserve">
-    <value>Latin kis L betű a kettős középső Tilde kombinálása</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterLongS" xml:space="preserve">
     <value>Combining Latin Small Letter Long S</value>
   </data>
@@ -5787,23 +5745,11 @@
   <data name="IslamInfo_CombiningLatinSmallLetterO" xml:space="preserve">
     <value>Combining Latin Small Letter O</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithDiaeresis" xml:space="preserve">
-    <value>Latin apró betűs O Diairetikus módszer kombinálása</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithLightCentralizationStroke" xml:space="preserve">
-    <value>Latin apró betűs O könnyű Központosítás stroke kombinálása</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterP" xml:space="preserve">
     <value>Latin apró betűs P kombinálása</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterR" xml:space="preserve">
     <value>Combining Latin Small Letter R</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Below" xml:space="preserve">
-    <value>Latin apró betűs következő R kombinálása</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Rotunda" xml:space="preserve">
-    <value>Latin apró betűs R Rotunda kombinálása</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterS" xml:space="preserve">
     <value>Combining Latin Small Letter S</value>
@@ -5816,12 +5762,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterU" xml:space="preserve">
     <value>Combining Latin Small Letter U</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithDiaeresis" xml:space="preserve">
-    <value>Latin apró betűs U-val Diairetikus módszer kombinálása</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithLightCentralizationStroke" xml:space="preserve">
-    <value>Latin apró betűs U-könnyű Központosítás stroke kombinálása</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterV" xml:space="preserve">
     <value>Combining Latin Small Letter V</value>
@@ -6098,15 +6038,6 @@
   </data>
   <data name="IslamInfo_CombiningWigglyLineBelow" xml:space="preserve">
     <value>Combining Wiggly vonal alul</value>
-  </data>
-  <data name="IslamInfo_CombiningX Above" xml:space="preserve">
-    <value>Ötvözi a fenti X</value>
-  </data>
-  <data name="IslamInfo_CombiningX Below" xml:space="preserve">
-    <value>Kombinálása X alatt</value>
-  </data>
-  <data name="IslamInfo_CombiningX-X Below" xml:space="preserve">
-    <value>X - X alább kombinálása</value>
   </data>
   <data name="IslamInfo_CombiningZigzagAbove" xml:space="preserve">
     <value>Combining Zigzag Above</value>
@@ -7353,9 +7284,6 @@
   <data name="IslamInfo_DoubleExclamationMark" xml:space="preserve">
     <value>Double Exclamation Mark</value>
   </data>
-  <data name="IslamInfo_DoubleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>Kettős magas Reversed9 idézőjel</value>
-  </data>
   <data name="IslamInfo_DoubleHyphen" xml:space="preserve">
     <value>Dupla kötőjel</value>
   </data>
@@ -7392,14 +7320,8 @@
   <data name="IslamInfo_DoubleLogicalOr" xml:space="preserve">
     <value>Double Logical Or</value>
   </data>
-  <data name="IslamInfo_DoubleLow9 QuotationMark" xml:space="preserve">
-    <value>Low9 dupla idézőjel</value>
-  </data>
   <data name="IslamInfo_DoubleLowLine" xml:space="preserve">
     <value>Double Low Line</value>
-  </data>
-  <data name="IslamInfo_DoubleLowReversed9 QuotationMark" xml:space="preserve">
-    <value>Dupla alacsony Reversed9 idézőjel</value>
   </data>
   <data name="IslamInfo_DoubleNestedGreaterThan" xml:space="preserve">
     <value>Dupla, egymásba nagyobb, mint</value>
@@ -10806,9 +10728,6 @@
   <data name="IslamInfo_Integral" xml:space="preserve">
     <value>Integrál</value>
   </data>
-  <data name="IslamInfo_IntegralAroundA PointOperator" xml:space="preserve">
-    <value>Szerves, ezen a környéken: pont-üzemeltető</value>
-  </data>
   <data name="IslamInfo_IntegralAverageWithSlash" xml:space="preserve">
     <value>Integral Average With Slash</value>
   </data>
@@ -12381,9 +12300,6 @@
   <data name="IslamInfo_Kuwait" xml:space="preserve">
     <value>Kuvait</value>
   </data>
-  <data name="IslamInfo_L B BarSymbol" xml:space="preserve">
-    <value>L B Bar szimbólum</value>
-  </data>
   <data name="IslamInfo_LaamHeaviness" xml:space="preserve">
     <value>Nehézség Andrea</value>
   </data>
@@ -12704,9 +12620,6 @@
   </data>
   <data name="IslamInfo_LeftSideArcAnticlockwiseArrow" xml:space="preserve">
     <value>Bal oldali Arc ellentétes irányba mutató nyílra</value>
-  </data>
-  <data name="IslamInfo_LeftSidewaysU Bracket" xml:space="preserve">
-    <value>Konzol bal oldalra U</value>
   </data>
   <data name="IslamInfo_LeftSingleQuotationMark" xml:space="preserve">
     <value>Left Single Quotation Mark</value>
@@ -15003,9 +14916,6 @@
   <data name="IslamInfo_MyanmarVowelSignAitonAi" xml:space="preserve">
     <value>Myanmar Vowel Sign Aiton Ai</value>
   </data>
-  <data name="IslamInfo_MyanmarVowelSignE Above" xml:space="preserve">
-    <value>Mianmar magánhangzó jele E felett</value>
-  </data>
   <data name="IslamInfo_MyanmarVowelSignGebaKarenI" xml:space="preserve">
     <value>Myanmar Vowel Sign Geba Karen I</value>
   </data>
@@ -15029,9 +14939,6 @@
   </data>
   <data name="IslamInfo_MyanmarVowelSignMonO" xml:space="preserve">
     <value>Myanmar Vowel Sign Mon O</value>
-  </data>
-  <data name="IslamInfo_MyanmarVowelSignShanE Above" xml:space="preserve">
-    <value>Mianmar magánhangzó jele Shan E felett</value>
   </data>
   <data name="IslamInfo_MyanmarVowelSignShanFinalY" xml:space="preserve">
     <value>Myanmar Vowel Sign Shan Final Y</value>
@@ -15258,12 +15165,6 @@
   <data name="IslamInfo_NegativeSquaredCrossMark" xml:space="preserve">
     <value>Negative Squared Cross Mark</value>
   </data>
-  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
-    <value>Egy részét sem az egyenlő</value>
-  </data>
-  <data name="IslamInfo_NeitherA SupersetOfNorEqualTo" xml:space="preserve">
-    <value>Egy feleslegessé tesz-ból sem egyenlő</value>
-  </data>
   <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
     <value>Nem egybevágó</value>
   </data>
@@ -15488,12 +15389,6 @@
   </data>
   <data name="IslamInfo_Not" xml:space="preserve">
     <value>Nem</value>
-  </data>
-  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
-    <value>Nem egy részét</value>
-  </data>
-  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
-    <value>A nem valódi bővítése</value>
   </data>
   <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
     <value>Nem ekvivalens</value>
@@ -16115,9 +16010,6 @@
   </data>
   <data name="IslamInfo_ParenthesizedDigitTwo" xml:space="preserve">
     <value>Parenthesized Digit Two</value>
-  </data>
-  <data name="IslamInfo_ParenthesizedKoreanCharacterO Hu" xml:space="preserve">
-    <value>Zárójelezett koreai karakter O Hu</value>
   </data>
   <data name="IslamInfo_ParenthesizedKoreanCharacterOjeon" xml:space="preserve">
     <value>Parenthesized Korean Character Ojeon</value>
@@ -17754,27 +17646,6 @@
   <data name="IslamInfo_RecyclingSymbolForGenericMaterials" xml:space="preserve">
     <value>Recycling Symbol For Generic Materials</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType1 Plastics" xml:space="preserve">
-    <value>Újrahasznosítási szimbólum Type1 műanyagokhoz</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType2 Plastics" xml:space="preserve">
-    <value>Újrahasznosítási szimbólum Type2 műanyagokhoz</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType3 Plastics" xml:space="preserve">
-    <value>Újrahasznosítási szimbólum Type3 műanyagokhoz</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType4 Plastics" xml:space="preserve">
-    <value>Type4 műanyag újrafeldolgozás szimbólum</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType5 Plastics" xml:space="preserve">
-    <value>Type5 műanyag újrafeldolgozás szimbólum</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType6 Plastics" xml:space="preserve">
-    <value>Type6 műanyag újrafeldolgozás szimbólum</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType7 Plastics" xml:space="preserve">
-    <value>Type7 műanyag újrafeldolgozás szimbólum</value>
-  </data>
   <data name="IslamInfo_ReferenceMark" xml:space="preserve">
     <value>Reference Mark</value>
   </data>
@@ -18390,9 +18261,6 @@
   <data name="IslamInfo_RightSideArcClockwiseArrow" xml:space="preserve">
     <value>Jobb oldalon Arc jobbra nyíl</value>
   </data>
-  <data name="IslamInfo_RightSidewaysU Bracket" xml:space="preserve">
-    <value>Jobb oldalra U zárójel</value>
-  </data>
   <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
     <value>Right Single Quotation Mark</value>
   </data>
@@ -18785,9 +18653,6 @@
   </data>
   <data name="IslamInfo_RuqayyahBintiMuhammad" xml:space="preserve">
     <value>Ruqayyah meg Muhammad</value>
-  </data>
-  <data name="IslamInfo_S InTriangle" xml:space="preserve">
-    <value>S a háromszög</value>
   </data>
   <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
     <value>Somogyi bin Gábor</value>
@@ -19329,14 +19194,8 @@
   <data name="IslamInfo_SineWave" xml:space="preserve">
     <value>Szinusz</value>
   </data>
-  <data name="IslamInfo_SingleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>Egyetlen magas Reversed9 idézőjel</value>
-  </data>
   <data name="IslamInfo_SingleLeftPointingAngleQuotationMark" xml:space="preserve">
     <value>Egy balra mutató szög idézőjel</value>
-  </data>
-  <data name="IslamInfo_SingleLow9 QuotationMark" xml:space="preserve">
-    <value>Egyetlen Low9 idézőjel</value>
   </data>
   <data name="IslamInfo_SingleRightPointingAngleQuotationMark" xml:space="preserve">
     <value>Egy jobbra mutató szög idézőjel</value>
@@ -19770,9 +19629,6 @@
   <data name="IslamInfo_Sporadic" xml:space="preserve">
     <value>Szórványos</value>
   </data>
-  <data name="IslamInfo_SquareA OverM" xml:space="preserve">
-    <value>Tér A át M</value>
-  </data>
   <data name="IslamInfo_SquareCap" xml:space="preserve">
     <value>Négyzetes kapu</value>
   </data>
@@ -19883,9 +19739,6 @@
   </data>
   <data name="IslamInfo_SquareRoot" xml:space="preserve">
     <value>Négyzetgyök kitevő nélkül</value>
-  </data>
-  <data name="IslamInfo_SquareV OverM" xml:space="preserve">
-    <value>Négyzet alakú V M felett</value>
   </data>
   <data name="IslamInfo_SquareWithBottomHalfBlack" xml:space="preserve">
     <value>Square With Bottom Half Black</value>
@@ -22293,24 +22146,6 @@
   <data name="IslamInfo_ThreeConsecutiveEqualsSigns" xml:space="preserve">
     <value>Three Consecutive Equals Signs</value>
   </data>
-  <data name="IslamInfo_ThreeD BottomLightedRightwardsArrowhead" xml:space="preserve">
-    <value>Alsó három D betű világított Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD LeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
-    <value>Három D bal világított lefelé oldalú Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD RightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
-    <value>Három D jobb világított felfelé egyenlő oldalú Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
-    <value>Top három D világított lekerekítésre oldalú Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsArrowhead" xml:space="preserve">
-    <value>Top három D betű világított Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
-    <value>Top három D betű egyenlő oldalú nyílhegy világított</value>
-  </data>
   <data name="IslamInfo_ThreeDimensionalAngle" xml:space="preserve">
     <value>Three Dimensional Angle</value>
   </data>
@@ -23213,9 +23048,6 @@
   </data>
   <data name="IslamInfo_UpArrowheadBetweenTwoHorizontalBars" xml:space="preserve">
     <value>Up Arrowhead Between Two Horizontal Bars</value>
-  </data>
-  <data name="IslamInfo_UpArrowheadInA RectangleBox" xml:space="preserve">
-    <value>Fel Arrowhead, a egy téglalap alakú doboz</value>
   </data>
   <data name="IslamInfo_UpArrowThroughCircle" xml:space="preserve">
     <value>Up Arrow Through Circle</value>
@@ -25143,9 +24975,6 @@
   <data name="IslamInfo_Wrong" xml:space="preserve">
     <value>HELYTELEN</value>
   </data>
-  <data name="IslamInfo_X InA RectangleBox" xml:space="preserve">
-    <value>X betű-ban egy téglalap alakú doboz</value>
-  </data>
   <data name="IslamInfo_Xor" xml:space="preserve">
     <value>XOR</value>
   </data>
@@ -25385,45 +25214,6 @@
   </data>
   <data name="IslamInfo_YouTwo" xml:space="preserve">
     <value>Ti ketten</value>
-  </data>
-  <data name="IslamInfo_Z NotationBagMembership" xml:space="preserve">
-    <value>Z jelölés táska tagság</value>
-  </data>
-  <data name="IslamInfo_Z NotationDomainAntirestriction" xml:space="preserve">
-    <value>Z jelölés Domain Antirestriction</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftBindingBracket" xml:space="preserve">
-    <value>Z jelölés bal kötelező zárójel</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftImageBracket" xml:space="preserve">
-    <value>Z jelölés kép bal zárójel</value>
-  </data>
-  <data name="IslamInfo_Z NotationRangeAntirestriction" xml:space="preserve">
-    <value>Z az jelölési tartomány Antirestriction</value>
-  </data>
-  <data name="IslamInfo_Z NotationRelationalComposition" xml:space="preserve">
-    <value>Z jelölés relációs összetétele</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightBindingBracket" xml:space="preserve">
-    <value>Z jelölési jog kötelező zárójel</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightImageBracket" xml:space="preserve">
-    <value>Z jelölés kép jobb szögletes zárójel</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaComposition" xml:space="preserve">
-    <value>Z jelölés séma összetétele</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaPiping" xml:space="preserve">
-    <value>Z jelölés séma csővezeték</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaProjection" xml:space="preserve">
-    <value>Z jelölés séma vetítés</value>
-  </data>
-  <data name="IslamInfo_Z NotationSpot" xml:space="preserve">
-    <value>Z az jelölési helyszínen</value>
-  </data>
-  <data name="IslamInfo_Z NotationTypeColon" xml:space="preserve">
-    <value>Z Notation típusú vastagbél</value>
   </data>
   <data name="IslamInfo_Zaahiree" xml:space="preserve">
     <value>Zaahiree</value>

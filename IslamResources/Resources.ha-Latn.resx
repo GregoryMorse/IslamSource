@@ -996,9 +996,6 @@
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>Ya daina Baa a Tsaye Biyu Dama Turnstil Biyu</value>
   </data>
-  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
-    <value>Ko Ɗansaiti ko Daidai Ma</value>
-  </data>
   <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
     <value>Ko Bisa ga misali ko Daidai Gaskiya Zuwa</value>
   </data>
@@ -1025,12 +1022,6 @@
   </data>
   <data name="IslamInfo_Not" xml:space="preserve">
     <value>Ba</value>
-  </data>
-  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
-    <value>Ba Ɗansaiti ba</value>
-  </data>
-  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
-    <value>Ba Mafisaiti ba</value>
   </data>
   <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
     <value>Ba Kusa Daidai Zuwa</value>

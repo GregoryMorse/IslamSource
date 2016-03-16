@@ -699,9 +699,6 @@
   <data name="IslamInfo_Angle" xml:space="preserve">
     <value>Sudut</value>
   </data>
-  <data name="IslamInfo_AngleWithS Inside" xml:space="preserve">
-    <value>Sudut dengan S di dalam</value>
-  </data>
   <data name="IslamInfo_AngleWithUnderbar" xml:space="preserve">
     <value>Sudut dengan Underbar</value>
   </data>
@@ -1008,14 +1005,8 @@
   <data name="IslamInfo_ArabicLetterBehWithHamzaAbove" xml:space="preserve">
     <value>Beh huruf Arab dengan Hamza di atas</value>
   </data>
-  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallV Below" xml:space="preserve">
-    <value>Beh Arab huruf dengan terbalik V yang kecil di bawah</value>
-  </data>
   <data name="IslamInfo_ArabicLetterBehWithSmallV" xml:space="preserve">
     <value>Beh huruf Arab dengan V kecil</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterBehWithSmallV Below" xml:space="preserve">
-    <value>Beh huruf Arab dengan kecil V di bawah</value>
   </data>
   <data name="IslamInfo_ArabicLetterBehWithThreeDotsHorizontallyBelow" xml:space="preserve">
     <value>Beh huruf Arab dengan tiga titik melintang di bawah</value>
@@ -1049,9 +1040,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterDalWithFourDotsAbove" xml:space="preserve">
     <value>Bahasa Arab huruf Dal dengan empat titik di atas</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallV Below" xml:space="preserve">
-    <value>Bahasa Arab huruf Dal dengan terbalik V yang kecil di bawah</value>
   </data>
   <data name="IslamInfo_ArabicLetterDalWithInvertedV" xml:space="preserve">
     <value>Bahasa Arab huruf Dal dengan V terbalik</value>
@@ -1398,9 +1386,6 @@
   <data name="IslamInfo_ArabicLetterRehWithSmallV" xml:space="preserve">
     <value>Bahasa Arab Reh dengan V kecil</value>
   </data>
-  <data name="IslamInfo_ArabicLetterRehWithSmallV Below" xml:space="preserve">
-    <value>Bahasa Arab Reh dengan kecil V di bawah</value>
-  </data>
   <data name="IslamInfo_ArabicLetterRehWithStroke" xml:space="preserve">
     <value>Bahasa Arab Reh dengan angin ahmar</value>
   </data>
@@ -1524,9 +1509,6 @@
   <data name="IslamInfo_ArabicLetterU" xml:space="preserve">
     <value>U Bahasa Arab</value>
   </data>
-  <data name="IslamInfo_ArabicLetterU WithHamzaAbove" xml:space="preserve">
-    <value>Bahasa Arab huruf U dengan Hamza di atas</value>
-  </data>
   <data name="IslamInfo_ArabicLetterVe" xml:space="preserve">
     <value>Ve Bahasa Arab</value>
   </data>
@@ -1598,9 +1580,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterZain" xml:space="preserve">
     <value>Zain Bahasa Arab</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterZainWithInvertedV Above" xml:space="preserve">
-    <value>Zain Arab huruf dengan terbalik V di atas</value>
   </data>
   <data name="IslamInfo_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
     <value>Akbar Ligature Arab diasingkan borang</value>
@@ -1844,12 +1823,6 @@
   </data>
   <data name="IslamInfo_ArabicVowelSignDotBelow" xml:space="preserve">
     <value>Vokal Bahasa Arab tanda titik di bawah</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignInvertedSmallV Above" xml:space="preserve">
-    <value>Vokal Bahasa Arab tanda terbalik kecil V di atas</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignSmallV Above" xml:space="preserve">
-    <value>Vokal Bahasa Arab tanda kecil V di atas</value>
   </data>
   <data name="IslamInfo_ArabicWavyHamzaBelow" xml:space="preserve">
     <value>Hamza kecoklatannya Arab di bawah</value>
@@ -2225,9 +2198,6 @@
   </data>
   <data name="IslamInfo_BatakVowelSignPakpakE" xml:space="preserve">
     <value>E Pakpak tanda vokal Batak</value>
-  </data>
-  <data name="IslamInfo_BatakVowelSignU ForSimalungunSa" xml:space="preserve">
-    <value>Tanda vokal Batak U untuk Simalungun Sa</value>
   </data>
   <data name="IslamInfo_Battles" xml:space="preserve">
     <value>Pertempuran</value>
@@ -5709,9 +5679,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterA" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin A</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterA WithDiaeresis" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin A dengan Diaeresis</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterAe" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin Ae</value>
   </data>
@@ -5733,9 +5700,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterC" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin C</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterC Cedilla" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin C Cedilla</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterD" xml:space="preserve">
     <value>Menggabungkan huruf Latin kecil D</value>
   </data>
@@ -5750,9 +5714,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterF" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin F</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenA Above" xml:space="preserve">
-    <value>Surat kecil Latin menggabungkan dileperkan membuka A di atas</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterG" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin G</value>
@@ -5772,9 +5733,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterL" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin L</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterL WithDoubleMiddleTilde" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin L dengan Tilde tengah Double</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterLongS" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin panjang S</value>
   </data>
@@ -5787,23 +5745,11 @@
   <data name="IslamInfo_CombiningLatinSmallLetterO" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin O</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithDiaeresis" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin O dengan Diaeresis</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithLightCentralizationStroke" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin O dengan strok ringan Centralization</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterP" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin P</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterR" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin R</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Below" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin R di bawah</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Rotunda" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin R Rotunda</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterS" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin S</value>
@@ -5816,12 +5762,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterU" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin U</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithDiaeresis" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin U dengan Diaeresis</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithLightCentralizationStroke" xml:space="preserve">
-    <value>Menggabungkan huruf kecil Latin U dengan strok ringan Centralization</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterV" xml:space="preserve">
     <value>Menggabungkan huruf kecil Latin V</value>
@@ -6098,15 +6038,6 @@
   </data>
   <data name="IslamInfo_CombiningWigglyLineBelow" xml:space="preserve">
     <value>Menggabungkan Wiggly talian di bawah</value>
-  </data>
-  <data name="IslamInfo_CombiningX Above" xml:space="preserve">
-    <value>Menggabungkan X di atas</value>
-  </data>
-  <data name="IslamInfo_CombiningX Below" xml:space="preserve">
-    <value>Menggabungkan X di bawah</value>
-  </data>
-  <data name="IslamInfo_CombiningX-X Below" xml:space="preserve">
-    <value>Menggabungkan X - X di bawah</value>
   </data>
   <data name="IslamInfo_CombiningZigzagAbove" xml:space="preserve">
     <value>Menggabungkan Zigzag di atas</value>
@@ -7353,9 +7284,6 @@
   <data name="IslamInfo_DoubleExclamationMark" xml:space="preserve">
     <value>Double tanda seru</value>
   </data>
-  <data name="IslamInfo_DoubleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>Tanda petikan berganda Reversed9 tinggi</value>
-  </data>
   <data name="IslamInfo_DoubleHyphen" xml:space="preserve">
     <value>Sengkang Double</value>
   </data>
@@ -7392,14 +7320,8 @@
   <data name="IslamInfo_DoubleLogicalOr" xml:space="preserve">
     <value>Double logik atau</value>
   </data>
-  <data name="IslamInfo_DoubleLow9 QuotationMark" xml:space="preserve">
-    <value>Tanda petikan berganda Low9</value>
-  </data>
   <data name="IslamInfo_DoubleLowLine" xml:space="preserve">
     <value>Garisan berkembar yang rendah</value>
-  </data>
-  <data name="IslamInfo_DoubleLowReversed9 QuotationMark" xml:space="preserve">
-    <value>Tanda petikan berganda Reversed9 rendah</value>
   </data>
   <data name="IslamInfo_DoubleNestedGreaterThan" xml:space="preserve">
     <value>Double bersarang lebih besar daripada</value>
@@ -10806,9 +10728,6 @@
   <data name="IslamInfo_Integral" xml:space="preserve">
     <value>Integral</value>
   </data>
-  <data name="IslamInfo_IntegralAroundA PointOperator" xml:space="preserve">
-    <value>Kamiran sekitar sebuah pengendali tempat</value>
-  </data>
   <data name="IslamInfo_IntegralAverageWithSlash" xml:space="preserve">
     <value>Purata penting dengan Slash</value>
   </data>
@@ -12387,9 +12306,6 @@
   <data name="IslamInfo_Kuwait" xml:space="preserve">
     <value>Kuwait</value>
   </data>
-  <data name="IslamInfo_L B BarSymbol" xml:space="preserve">
-    <value>L B Bar simbol</value>
-  </data>
   <data name="IslamInfo_LaamHeaviness" xml:space="preserve">
     <value>Period Laam</value>
   </data>
@@ -12710,9 +12626,6 @@
   </data>
   <data name="IslamInfo_LeftSideArcAnticlockwiseArrow" xml:space="preserve">
     <value>Sebelah kiri Arc anak panah mengikut arah lawan jam</value>
-  </data>
-  <data name="IslamInfo_LeftSidewaysU Bracket" xml:space="preserve">
-    <value>Tanda kurung kiri U sisi</value>
   </data>
   <data name="IslamInfo_LeftSingleQuotationMark" xml:space="preserve">
     <value>Tanda petikan tunggal kiri</value>
@@ -15015,9 +14928,6 @@
   <data name="IslamInfo_MyanmarVowelSignAitonAi" xml:space="preserve">
     <value>Myanmar vokal tanda Aiton Ai</value>
   </data>
-  <data name="IslamInfo_MyanmarVowelSignE Above" xml:space="preserve">
-    <value>Myanmar tanda vokal E di atas</value>
-  </data>
   <data name="IslamInfo_MyanmarVowelSignGebaKarenI" xml:space="preserve">
     <value>Vokal Myanmar menandatangani Geba Karen aku</value>
   </data>
@@ -15041,9 +14951,6 @@
   </data>
   <data name="IslamInfo_MyanmarVowelSignMonO" xml:space="preserve">
     <value>Tanda vokal Myanmar Mon O</value>
-  </data>
-  <data name="IslamInfo_MyanmarVowelSignShanE Above" xml:space="preserve">
-    <value>Myanmar vokal tanda Shan E di atas</value>
   </data>
   <data name="IslamInfo_MyanmarVowelSignShanFinalY" xml:space="preserve">
     <value>Myanmar vokal tanda Shan akhir Y</value>
@@ -15270,12 +15177,6 @@
   <data name="IslamInfo_NegativeSquaredCrossMark" xml:space="preserve">
     <value>Kuasa dua negatif Cross Mark</value>
   </data>
-  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
-    <value>Satu Subset mahupun yang sama dengan</value>
-  </data>
-  <data name="IslamInfo_NeitherA SupersetOfNorEqualTo" xml:space="preserve">
-    <value>Bukanlah Superset kepada atau yang sama dengan</value>
-  </data>
   <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
     <value>Sama Ada Bukan Anggaran atau Bukan Sama Dengan</value>
   </data>
@@ -15500,12 +15401,6 @@
   </data>
   <data name="IslamInfo_Not" xml:space="preserve">
     <value>Bukan</value>
-  </data>
-  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
-    <value>Tidak sebahagian daripada</value>
-  </data>
-  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
-    <value>Tidak Superset kepada</value>
   </data>
   <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
     <value>Tidak Hampir Sama Dengan</value>
@@ -16151,9 +16046,6 @@
   </data>
   <data name="IslamInfo_ParenthesizedDigitTwo" xml:space="preserve">
     <value>Angka Parenthesized dua</value>
-  </data>
-  <data name="IslamInfo_ParenthesizedKoreanCharacterO Hu" xml:space="preserve">
-    <value>Parenthesized ciri-ciri Korea O Hu</value>
   </data>
   <data name="IslamInfo_ParenthesizedKoreanCharacterOjeon" xml:space="preserve">
     <value>Parenthesized ciri-ciri Korea Ojeon</value>
@@ -17790,27 +17682,6 @@
   <data name="IslamInfo_RecyclingSymbolForGenericMaterials" xml:space="preserve">
     <value>Simbol kitar semula bagi bahan-bahan generik</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType1 Plastics" xml:space="preserve">
-    <value>Simbol kitar semula bagi Type1 plastik</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType2 Plastics" xml:space="preserve">
-    <value>Simbol kitar semula bagi Type2 plastik</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType3 Plastics" xml:space="preserve">
-    <value>Simbol kitar semula bagi plastik Type3</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType4 Plastics" xml:space="preserve">
-    <value>Simbol kitar semula bagi plastik Type4</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType5 Plastics" xml:space="preserve">
-    <value>Simbol kitar semula bagi plastik Type5</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType6 Plastics" xml:space="preserve">
-    <value>Simbol kitar semula bagi plastik Type6</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType7 Plastics" xml:space="preserve">
-    <value>Simbol kitar semula bagi plastik Type7</value>
-  </data>
   <data name="IslamInfo_ReferenceMark" xml:space="preserve">
     <value>Tanda rujukan</value>
   </data>
@@ -18426,9 +18297,6 @@
   <data name="IslamInfo_RightSideArcClockwiseArrow" xml:space="preserve">
     <value>Anak panah mengikut arah jam Arc sebelah kanan</value>
   </data>
-  <data name="IslamInfo_RightSidewaysU Bracket" xml:space="preserve">
-    <value>Tanda kurung kanan sisi U</value>
-  </data>
   <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
     <value>Tanda Petikan Tunggal Kanan</value>
   </data>
@@ -18821,9 +18689,6 @@
   </data>
   <data name="IslamInfo_RuqayyahBintiMuhammad" xml:space="preserve">
     <value>Ruqayyah Binti Muhammad</value>
-  </data>
-  <data name="IslamInfo_S InTriangle" xml:space="preserve">
-    <value>Dalam segi tiga</value>
   </data>
   <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
     <value>Saad bin Waad</value>
@@ -19365,14 +19230,8 @@
   <data name="IslamInfo_SineWave" xml:space="preserve">
     <value>Gelombang Sinus</value>
   </data>
-  <data name="IslamInfo_SingleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>Tanda petikan tunggal Reversed9 tinggi</value>
-  </data>
   <data name="IslamInfo_SingleLeftPointingAngleQuotationMark" xml:space="preserve">
     <value>Kiri tunggal yang menunjuk tanda petikan sudut</value>
-  </data>
-  <data name="IslamInfo_SingleLow9 QuotationMark" xml:space="preserve">
-    <value>Tanda petikan tunggal Low9</value>
   </data>
   <data name="IslamInfo_SingleRightPointingAngleQuotationMark" xml:space="preserve">
     <value>Betul-betul menunjuk sudut tanda petikan tunggal</value>
@@ -19806,9 +19665,6 @@
   <data name="IslamInfo_Sporadic" xml:space="preserve">
     <value>Sekala</value>
   </data>
-  <data name="IslamInfo_SquareA OverM" xml:space="preserve">
-    <value>Persegi A atas M</value>
-  </data>
   <data name="IslamInfo_SquareCap" xml:space="preserve">
     <value>Topi Empat Segi</value>
   </data>
@@ -19919,9 +19775,6 @@
   </data>
   <data name="IslamInfo_SquareRoot" xml:space="preserve">
     <value>Punca Kuasa Dua</value>
-  </data>
-  <data name="IslamInfo_SquareV OverM" xml:space="preserve">
-    <value>V persegi ke atas M</value>
   </data>
   <data name="IslamInfo_SquareWithBottomHalfBlack" xml:space="preserve">
     <value>Petak hitam separuh bawah</value>
@@ -22341,24 +22194,6 @@
   <data name="IslamInfo_ThreeConsecutiveEqualsSigns" xml:space="preserve">
     <value>Tiga berturut-turut sama dengan tanda-tanda</value>
   </data>
-  <data name="IslamInfo_ThreeD BottomLightedRightwardsArrowhead" xml:space="preserve">
-    <value>Bawah tiga D menyala Rightwards Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD LeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
-    <value>D tiga kiri menyala menurunkan sekata Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD RightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
-    <value>D tiga kanan menyala dinaikkan sekata Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
-    <value>Menyala atas tiga D Leftwards sekata Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsArrowhead" xml:space="preserve">
-    <value>Atas tiga D menyala Rightwards Arrowhead</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
-    <value>Menyala atas tiga D Rightwards sekata Arrowhead</value>
-  </data>
   <data name="IslamInfo_ThreeDimensionalAngle" xml:space="preserve">
     <value>Tiga sudut dimensi</value>
   </data>
@@ -23261,9 +23096,6 @@
   </data>
   <data name="IslamInfo_UpArrowheadBetweenTwoHorizontalBars" xml:space="preserve">
     <value>Sehingga Arrowhead antara dua Bar mendatar</value>
-  </data>
-  <data name="IslamInfo_UpArrowheadInA RectangleBox" xml:space="preserve">
-    <value>Sehingga Arrowhead dalam kotak segi empat tepat</value>
   </data>
   <data name="IslamInfo_UpArrowThroughCircle" xml:space="preserve">
     <value>Sehingga anak panah melalui bulatan</value>
@@ -25194,9 +25026,6 @@
   <data name="IslamInfo_Wrong" xml:space="preserve">
     <value>Salah</value>
   </data>
-  <data name="IslamInfo_X InA RectangleBox" xml:space="preserve">
-    <value>X di dalam kotak segi empat tepat</value>
-  </data>
   <data name="IslamInfo_Xor" xml:space="preserve">
     <value>Xor</value>
   </data>
@@ -25436,45 +25265,6 @@
   </data>
   <data name="IslamInfo_YouTwo" xml:space="preserve">
     <value>Anda dua</value>
-  </data>
-  <data name="IslamInfo_Z NotationBagMembership" xml:space="preserve">
-    <value>Z notasi beg keahlian</value>
-  </data>
-  <data name="IslamInfo_Z NotationDomainAntirestriction" xml:space="preserve">
-    <value>Z notasi Domain Antirestriction</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftBindingBracket" xml:space="preserve">
-    <value>Z notasi kiri mengikat pendakap</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftImageBracket" xml:space="preserve">
-    <value>Tanda kurung kiri imej Z notasi</value>
-  </data>
-  <data name="IslamInfo_Z NotationRangeAntirestriction" xml:space="preserve">
-    <value>Z notasi pelbagai Antirestriction</value>
-  </data>
-  <data name="IslamInfo_Z NotationRelationalComposition" xml:space="preserve">
-    <value>Z notasi hubungan komposisi</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightBindingBracket" xml:space="preserve">
-    <value>Z notasi betul mengikat pendakap</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightImageBracket" xml:space="preserve">
-    <value>Tanda kurung kanan imej Z notasi</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaComposition" xml:space="preserve">
-    <value>Z notasi skema komposisi</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaPiping" xml:space="preserve">
-    <value>Z notasi skema paip</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaProjection" xml:space="preserve">
-    <value>Z notasi skema unjuran</value>
-  </data>
-  <data name="IslamInfo_Z NotationSpot" xml:space="preserve">
-    <value>Z notasi Spot</value>
-  </data>
-  <data name="IslamInfo_Z NotationTypeColon" xml:space="preserve">
-    <value>Usus besar jenis Z notasi</value>
   </data>
   <data name="IslamInfo_Zaahiree" xml:space="preserve">
     <value>Zaahiree</value>

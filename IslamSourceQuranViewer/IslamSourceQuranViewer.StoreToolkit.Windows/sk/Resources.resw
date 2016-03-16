@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabčina písmo</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Späť</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Zmenšiť veľkosť písma</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Predvolená veľkosť písma</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Korán arabčina, prepis a preklad slovo po slove, a verš po verši učenie, štúdia, výskumu, memorovanie, reflexie a zvládnutie tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Slovo za slovom Korán</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Zväčšiť veľkosť písma</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Ďalšie písma</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Vykresliť</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Nastavenie</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Zobraziť preklad</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Zobraziť prepis</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Zobraziť slovo za slovom</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Veľkosť</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Použitie recitácie pravidlo sfarbenie</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Predvolený jazyk</value>
+  </data>
+</root>

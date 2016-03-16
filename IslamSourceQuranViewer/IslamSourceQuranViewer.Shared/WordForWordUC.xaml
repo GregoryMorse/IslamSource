@@ -19,7 +19,7 @@
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <!--<local:MyWrapPanel FlowDirection="RightToLeft"></local:MyWrapPanel>-->
-                        <VirtualizingStackPanel FlowDirection="RightToLeft" Holding="WordStackPanel_Holding"/>
+                        <VirtualizingStackPanel FlowDirection="RightToLeft"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -52,7 +52,7 @@
             <ItemsControl ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}" MaxWidth="{Binding MaxWidth, Converter={StaticResource WidthLimiter}, Mode=OneWay}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Vertical" Width="auto" Height="auto"></StackPanel>
+                        <StackPanel Orientation="Vertical" Width="auto" Height="auto" Holding="StackPanel_Holding"></StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -61,7 +61,7 @@
             <ItemsControl ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" Height="auto" Holding="StackPanel_Holding"></StackPanel>
+                        <StackPanel Orientation="Horizontal" Height="auto"></StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.Template>

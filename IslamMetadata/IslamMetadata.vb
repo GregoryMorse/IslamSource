@@ -5483,6 +5483,7 @@ Public Class TanzilReader
                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
                 Texts.Clear()
             ElseIf If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) <> 0 Then
+                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eReference, New Integer() {BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks + 1}))
                 If Not NoArabic Then
                     If Colorize Then
                         Texts.AddRange(WordColors(Count))
@@ -5549,12 +5550,12 @@ Public Class TanzilReader
                     Texts.Clear()
                 End If
                 For Verse = 0 To QuranText(Chapter).Length - 1
-                    Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
                     'hizb symbols not needed as Quranic text already contains them
                     'If BaseChapter + Chapter <> 1 AndAlso TanzilReader.IsQuarterStart(BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse) Then
                     '    Text += Arabic.TransliterateFromBuckwalter("B")
                     '    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("B"))}))
                     'End If
+                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eReference, New Integer() {BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse}))
                     If CInt(If(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
                         Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attribute("bismillah")
                         If Not Node Is Nothing Then

@@ -2302,7 +2302,7 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Angle With S  Inside.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_AngleWithS_Inside() As String
+        Friend Shared ReadOnly Property IslamInfo_AngleWithSInside() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AngleWithS Inside", resourceCulture)
             End Get
@@ -3247,7 +3247,7 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Arabic Letter Beh With Inverted Small V  Below.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_ArabicLetterBehWithInvertedSmallV_Below() As String
+        Friend Shared ReadOnly Property IslamInfo_ArabicLetterBehWithInvertedSmallVBelow() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_ArabicLetterBehWithInvertedSmallV Below", resourceCulture)
             End Get

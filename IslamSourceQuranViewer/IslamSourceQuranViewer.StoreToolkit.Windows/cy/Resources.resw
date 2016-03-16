@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Ffont Arabeg</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Yn ôl</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Lleihau Maint y Ffont</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Maint ffont diofyn</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Qur'an gyda ei Arabeg, trawslythreniad a cyfieithu fesul gair ac adnod gan adnod ar gyfer dysgu, sy'n astudio, ymchwil, memorization, myfyrio a meistrolaeth o tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Cŵran fesul gair</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Cynyddu Maint y Ffont</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Eraill ffont testun</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Rendr</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Gosodiadau</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Dangos cyfieithu</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Dangos trawslythreniad</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Dangos gair gan</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Maint</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Defnyddio'r rheol lefaru lliwio</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Iaith Ddiofyn</value>
+  </data>
+</root>

@@ -699,9 +699,6 @@
   <data name="IslamInfo_Angle" xml:space="preserve">
     <value>角度</value>
   </data>
-  <data name="IslamInfo_AngleWithS Inside" xml:space="preserve">
-    <value>內部有 S 角</value>
-  </data>
   <data name="IslamInfo_AngleWithUnderbar" xml:space="preserve">
     <value>Angle With Underbar</value>
   </data>
@@ -1008,14 +1005,8 @@
   <data name="IslamInfo_ArabicLetterBehWithHamzaAbove" xml:space="preserve">
     <value>阿拉伯文字母 Beh 隨以上喉塞音符</value>
   </data>
-  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallV Below" xml:space="preserve">
-    <value>下面的豎翻小型 V 的阿拉伯文字母 Beh</value>
-  </data>
   <data name="IslamInfo_ArabicLetterBehWithSmallV" xml:space="preserve">
     <value>Arabic Letter Beh With Small V</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterBehWithSmallV Below" xml:space="preserve">
-    <value>下面的小型 V 的阿拉伯文字母 Beh</value>
   </data>
   <data name="IslamInfo_ArabicLetterBehWithThreeDotsHorizontallyBelow" xml:space="preserve">
     <value>Arabic Letter Beh With Three Dots Horizontally Below</value>
@@ -1049,9 +1040,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterDalWithFourDotsAbove" xml:space="preserve">
     <value>Arabic Letter Dal With Four Dots Above</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallV Below" xml:space="preserve">
-    <value>與下面的豎翻小型 V 的阿拉伯文字母 Dal</value>
   </data>
   <data name="IslamInfo_ArabicLetterDalWithInvertedV" xml:space="preserve">
     <value>Arabic Letter Dal With Inverted V</value>
@@ -1398,9 +1386,6 @@
   <data name="IslamInfo_ArabicLetterRehWithSmallV" xml:space="preserve">
     <value>Arabic Letter Reh With Small V</value>
   </data>
-  <data name="IslamInfo_ArabicLetterRehWithSmallV Below" xml:space="preserve">
-    <value>阿拉伯文字母 Reh 隨以下小型 V</value>
-  </data>
   <data name="IslamInfo_ArabicLetterRehWithStroke" xml:space="preserve">
     <value>Arabic Letter Reh With Stroke</value>
   </data>
@@ -1524,9 +1509,6 @@
   <data name="IslamInfo_ArabicLetterU" xml:space="preserve">
     <value>Arabic Letter U</value>
   </data>
-  <data name="IslamInfo_ArabicLetterU WithHamzaAbove" xml:space="preserve">
-    <value>阿拉伯文字母 U 隨以上喉塞音符</value>
-  </data>
   <data name="IslamInfo_ArabicLetterVe" xml:space="preserve">
     <value>Arabic Letter Ve</value>
   </data>
@@ -1598,9 +1580,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterZain" xml:space="preserve">
     <value>Arabic Letter Zain</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterZainWithInvertedV Above" xml:space="preserve">
-    <value>阿拉伯文字母 Zain 倒 v 以上</value>
   </data>
   <data name="IslamInfo_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
     <value>Arabic Ligature Akbar Isolated Form</value>
@@ -1844,12 +1823,6 @@
   </data>
   <data name="IslamInfo_ArabicVowelSignDotBelow" xml:space="preserve">
     <value>Arabic Vowel Sign Dot Below</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignInvertedSmallV Above" xml:space="preserve">
-    <value>阿拉伯文母音倒上小型 V</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignSmallV Above" xml:space="preserve">
-    <value>阿拉伯文母音標記標誌小 V 以上</value>
   </data>
   <data name="IslamInfo_ArabicWavyHamzaBelow" xml:space="preserve">
     <value>Arabic Wavy Hamza Below</value>
@@ -2225,9 +2198,6 @@
   </data>
   <data name="IslamInfo_BatakVowelSignPakpakE" xml:space="preserve">
     <value>Batak Vowel Sign Pakpak E</value>
-  </data>
-  <data name="IslamInfo_BatakVowelSignU ForSimalungunSa" xml:space="preserve">
-    <value>巴達克語母音標記 U Simalungun Sa</value>
   </data>
   <data name="IslamInfo_Battles" xml:space="preserve">
     <value>戰鬥</value>
@@ -5709,9 +5679,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterA" xml:space="preserve">
     <value>Combining Latin Small Letter A</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterA WithDiaeresis" xml:space="preserve">
-    <value>結合拉丁文小寫字母 A 隨以分音符</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterAe" xml:space="preserve">
     <value>Combining Latin Small Letter A</value>
   </data>
@@ -5733,9 +5700,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterC" xml:space="preserve">
     <value>Combining Latin Small Letter C</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterC Cedilla" xml:space="preserve">
-    <value>結合下加符的拉丁文小寫字母 C</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterD" xml:space="preserve">
     <value>Combining Latin Small Letter D</value>
   </data>
@@ -5750,9 +5714,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterF" xml:space="preserve">
     <value>組合用拉丁文小寫字母 F</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenA Above" xml:space="preserve">
-    <value>扁平的結合拉丁文小寫字母打開上文 A</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterG" xml:space="preserve">
     <value>Combining Latin Small Letter I</value>
@@ -5772,9 +5733,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterL" xml:space="preserve">
     <value>Combining Latin Small Letter D</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterL WithDoubleMiddleTilde" xml:space="preserve">
-    <value>結合帶雙中間顎化符的拉丁文小寫字母 L</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterLongS" xml:space="preserve">
     <value>Combining Latin Small Letter Long S</value>
   </data>
@@ -5787,23 +5745,11 @@
   <data name="IslamInfo_CombiningLatinSmallLetterO" xml:space="preserve">
     <value>Combining Latin Small Letter O</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithDiaeresis" xml:space="preserve">
-    <value>結合帶分音符的拉丁文小寫字母 O</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithLightCentralizationStroke" xml:space="preserve">
-    <value>結合與光集權中風的拉丁文小寫字母 O</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterP" xml:space="preserve">
     <value>組合用拉丁文小寫字母 P</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterR" xml:space="preserve">
     <value>Combining Latin Small Letter R</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Below" xml:space="preserve">
-    <value>組合用拉丁文小寫字母 R 下面</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Rotunda" xml:space="preserve">
-    <value>拉丁文小寫字母 R 圓形建築相結合</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterS" xml:space="preserve">
     <value>Combining Latin Small Letter X</value>
@@ -5816,12 +5762,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterU" xml:space="preserve">
     <value>Combining Latin Small Letter U</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithDiaeresis" xml:space="preserve">
-    <value>結合帶分音符的拉丁文小寫字母 U</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithLightCentralizationStroke" xml:space="preserve">
-    <value>結合與光集權中風的拉丁文小寫字母 U</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterV" xml:space="preserve">
     <value>Combining Latin Small Letter V</value>
@@ -6098,15 +6038,6 @@
   </data>
   <data name="IslamInfo_CombiningWigglyLineBelow" xml:space="preserve">
     <value>結合下面的扭來扭去行</value>
-  </data>
-  <data name="IslamInfo_CombiningX Above" xml:space="preserve">
-    <value>結合上面的 X</value>
-  </data>
-  <data name="IslamInfo_CombiningX Below" xml:space="preserve">
-    <value>組合用下 X</value>
-  </data>
-  <data name="IslamInfo_CombiningX-X Below" xml:space="preserve">
-    <value>組合用下 X X-</value>
   </data>
   <data name="IslamInfo_CombiningZigzagAbove" xml:space="preserve">
     <value>Combining Zigzag Above</value>
@@ -7353,9 +7284,6 @@
   <data name="IslamInfo_DoubleExclamationMark" xml:space="preserve">
     <value>Double Exclamation Mark</value>
   </data>
-  <data name="IslamInfo_DoubleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>雙高 Reversed9 引號</value>
-  </data>
   <data name="IslamInfo_DoubleHyphen" xml:space="preserve">
     <value>雙連字號</value>
   </data>
@@ -7392,14 +7320,8 @@
   <data name="IslamInfo_DoubleLogicalOr" xml:space="preserve">
     <value>Double Logical Or</value>
   </data>
-  <data name="IslamInfo_DoubleLow9 QuotationMark" xml:space="preserve">
-    <value>雙 Low9 引號</value>
-  </data>
   <data name="IslamInfo_DoubleLowLine" xml:space="preserve">
     <value>Double Low Line</value>
-  </data>
-  <data name="IslamInfo_DoubleLowReversed9 QuotationMark" xml:space="preserve">
-    <value>雙低 Reversed9 引號</value>
   </data>
   <data name="IslamInfo_DoubleNestedGreaterThan" xml:space="preserve">
     <value>雙嵌套大於</value>
@@ -10806,9 +10728,6 @@
   <data name="IslamInfo_Integral" xml:space="preserve">
     <value>積分</value>
   </data>
-  <data name="IslamInfo_IntegralAroundA PointOperator" xml:space="preserve">
-    <value>圍繞點運算子積分</value>
-  </data>
   <data name="IslamInfo_IntegralAverageWithSlash" xml:space="preserve">
     <value>Integral Average With Slash</value>
   </data>
@@ -12387,9 +12306,6 @@
   <data name="IslamInfo_Kuwait" xml:space="preserve">
     <value>科威特</value>
   </data>
-  <data name="IslamInfo_L B BarSymbol" xml:space="preserve">
-    <value>L B 欄符號</value>
-  </data>
   <data name="IslamInfo_LaamHeaviness" xml:space="preserve">
     <value>Laam 沉重</value>
   </data>
@@ -12710,9 +12626,6 @@
   </data>
   <data name="IslamInfo_LeftSideArcAnticlockwiseArrow" xml:space="preserve">
     <value>左側弧逆時針箭頭</value>
-  </data>
-  <data name="IslamInfo_LeftSidewaysU Bracket" xml:space="preserve">
-    <value>左橫盤 U 支架</value>
   </data>
   <data name="IslamInfo_LeftSingleQuotationMark" xml:space="preserve">
     <value>左單引號</value>
@@ -15015,9 +14928,6 @@
   <data name="IslamInfo_MyanmarVowelSignAitonAi" xml:space="preserve">
     <value>Myanmar Vowel Sign Aiton Ai</value>
   </data>
-  <data name="IslamInfo_MyanmarVowelSignE Above" xml:space="preserve">
-    <value>緬甸文母音 E 以上</value>
-  </data>
   <data name="IslamInfo_MyanmarVowelSignGebaKarenI" xml:space="preserve">
     <value>Myanmar Vowel Sign Geba Karen I</value>
   </data>
@@ -15041,9 +14951,6 @@
   </data>
   <data name="IslamInfo_MyanmarVowelSignMonO" xml:space="preserve">
     <value>Myanmar Vowel Sign Mon O</value>
-  </data>
-  <data name="IslamInfo_MyanmarVowelSignShanE Above" xml:space="preserve">
-    <value>緬甸文母音標記標誌山 E 以上</value>
   </data>
   <data name="IslamInfo_MyanmarVowelSignShanFinalY" xml:space="preserve">
     <value>Myanmar Vowel Sign Shan Final Y</value>
@@ -15270,12 +15177,6 @@
   <data name="IslamInfo_NegativeSquaredCrossMark" xml:space="preserve">
     <value>Negative Squared Cross Mark</value>
   </data>
-  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
-    <value>非子集也不等於</value>
-  </data>
-  <data name="IslamInfo_NeitherA SupersetOfNorEqualTo" xml:space="preserve">
-    <value>非超集合的也不等於</value>
-  </data>
   <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
     <value>不近似且不等於</value>
   </data>
@@ -15500,12 +15401,6 @@
   </data>
   <data name="IslamInfo_Not" xml:space="preserve">
     <value>Not</value>
-  </data>
-  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
-    <value>不是的一個子集</value>
-  </data>
-  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
-    <value>不是它的超集合</value>
   </data>
   <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
     <value>不幾乎等於</value>
@@ -16151,9 +16046,6 @@
   </data>
   <data name="IslamInfo_ParenthesizedDigitTwo" xml:space="preserve">
     <value>Parenthesized Digit Two</value>
-  </data>
-  <data name="IslamInfo_ParenthesizedKoreanCharacterO Hu" xml:space="preserve">
-    <value>帶圓括弧朝鮮文字 O 胡</value>
   </data>
   <data name="IslamInfo_ParenthesizedKoreanCharacterOjeon" xml:space="preserve">
     <value>Parenthesized Korean Character Ojeon</value>
@@ -17790,27 +17682,6 @@
   <data name="IslamInfo_RecyclingSymbolForGenericMaterials" xml:space="preserve">
     <value>Recycling Symbol For Generic Materials</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType1 Plastics" xml:space="preserve">
-    <value>Type1 塑膠再迴圈符號</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType2 Plastics" xml:space="preserve">
-    <value>2 型塑膠再迴圈符號</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType3 Plastics" xml:space="preserve">
-    <value>Type3 塑膠再迴圈符號</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType4 Plastics" xml:space="preserve">
-    <value>Type4 塑膠再迴圈符號</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType5 Plastics" xml:space="preserve">
-    <value>Type5 塑膠再迴圈符號</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType6 Plastics" xml:space="preserve">
-    <value>Type6 塑膠再迴圈符號</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType7 Plastics" xml:space="preserve">
-    <value>7 型塑膠再迴圈符號</value>
-  </data>
   <data name="IslamInfo_ReferenceMark" xml:space="preserve">
     <value>Reference Mark</value>
   </data>
@@ -18426,9 +18297,6 @@
   <data name="IslamInfo_RightSideArcClockwiseArrow" xml:space="preserve">
     <value>右側弧順時針箭頭</value>
   </data>
-  <data name="IslamInfo_RightSidewaysU Bracket" xml:space="preserve">
-    <value>右斜向一邊 U 支架</value>
-  </data>
   <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
     <value>右單引號</value>
   </data>
@@ -18821,9 +18689,6 @@
   </data>
   <data name="IslamInfo_RuqayyahBintiMuhammad" xml:space="preserve">
     <value>Ruqayyah 賓默罕默德</value>
-  </data>
-  <data name="IslamInfo_S InTriangle" xml:space="preserve">
-    <value>在三角形 S</value>
   </data>
   <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
     <value>薩阿德 bin Waad</value>
@@ -19365,14 +19230,8 @@
   <data name="IslamInfo_SineWave" xml:space="preserve">
     <value>正弦波</value>
   </data>
-  <data name="IslamInfo_SingleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>單一的高 Reversed9 引號</value>
-  </data>
   <data name="IslamInfo_SingleLeftPointingAngleQuotationMark" xml:space="preserve">
     <value>單左指向角引號</value>
-  </data>
-  <data name="IslamInfo_SingleLow9 QuotationMark" xml:space="preserve">
-    <value>單 Low9 引號</value>
   </data>
   <data name="IslamInfo_SingleRightPointingAngleQuotationMark" xml:space="preserve">
     <value>單右指角引號</value>
@@ -19806,9 +19665,6 @@
   <data name="IslamInfo_Sporadic" xml:space="preserve">
     <value>零星</value>
   </data>
-  <data name="IslamInfo_SquareA OverM" xml:space="preserve">
-    <value>在 M 方塊 A</value>
-  </data>
   <data name="IslamInfo_SquareCap" xml:space="preserve">
     <value>方形蓋</value>
   </data>
@@ -19919,9 +19775,6 @@
   </data>
   <data name="IslamInfo_SquareRoot" xml:space="preserve">
     <value>平方根</value>
-  </data>
-  <data name="IslamInfo_SquareV OverM" xml:space="preserve">
-    <value>方形 V/M</value>
   </data>
   <data name="IslamInfo_SquareWithBottomHalfBlack" xml:space="preserve">
     <value>Square With Bottom Half Black</value>
@@ -22341,24 +22194,6 @@
   <data name="IslamInfo_ThreeConsecutiveEqualsSigns" xml:space="preserve">
     <value>Three Consecutive Equals Signs</value>
   </data>
-  <data name="IslamInfo_ThreeD BottomLightedRightwardsArrowhead" xml:space="preserve">
-    <value>三 D 底部光向右箭頭</value>
-  </data>
-  <data name="IslamInfo_ThreeD LeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
-    <value>三 D 左點燃等邊向下箭頭</value>
-  </data>
-  <data name="IslamInfo_ThreeD RightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
-    <value>三 D 權利點燃等邊向上箭號</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
-    <value>三 D 頂部點燃等邊向左箭頭</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsArrowhead" xml:space="preserve">
-    <value>三 D 頂光向右箭頭</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
-    <value>三 D 頂部點燃等邊向右箭頭</value>
-  </data>
   <data name="IslamInfo_ThreeDimensionalAngle" xml:space="preserve">
     <value>Three Dimensional Angle</value>
   </data>
@@ -23261,9 +23096,6 @@
   </data>
   <data name="IslamInfo_UpArrowheadBetweenTwoHorizontalBars" xml:space="preserve">
     <value>Up Arrowhead Between Two Horizontal Bars</value>
-  </data>
-  <data name="IslamInfo_UpArrowheadInA RectangleBox" xml:space="preserve">
-    <value>上一個矩形框中的箭頭</value>
   </data>
   <data name="IslamInfo_UpArrowThroughCircle" xml:space="preserve">
     <value>Up Arrow Through Circle</value>
@@ -25194,9 +25026,6 @@
   <data name="IslamInfo_Wrong" xml:space="preserve">
     <value>錯了</value>
   </data>
-  <data name="IslamInfo_X InA RectangleBox" xml:space="preserve">
-    <value>在一個矩形框 X</value>
-  </data>
   <data name="IslamInfo_Xor" xml:space="preserve">
     <value>XOR</value>
   </data>
@@ -25436,45 +25265,6 @@
   </data>
   <data name="IslamInfo_YouTwo" xml:space="preserve">
     <value>你們兩個</value>
-  </data>
-  <data name="IslamInfo_Z NotationBagMembership" xml:space="preserve">
-    <value>Z 符號包成員</value>
-  </data>
-  <data name="IslamInfo_Z NotationDomainAntirestriction" xml:space="preserve">
-    <value>Z 符號域反限制</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftBindingBracket" xml:space="preserve">
-    <value>Z 符號左的綁定括弧</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftImageBracket" xml:space="preserve">
-    <value>Z 符號左的圖像支架</value>
-  </data>
-  <data name="IslamInfo_Z NotationRangeAntirestriction" xml:space="preserve">
-    <value>Z 符號範圍反限制</value>
-  </data>
-  <data name="IslamInfo_Z NotationRelationalComposition" xml:space="preserve">
-    <value>Z 符號關係成分</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightBindingBracket" xml:space="preserve">
-    <value>Z 符號右綁定括弧</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightImageBracket" xml:space="preserve">
-    <value>Z 符號右圖像支架</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaComposition" xml:space="preserve">
-    <value>Z 符號圖解成分</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaPiping" xml:space="preserve">
-    <value>Z 符號架構管道</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaProjection" xml:space="preserve">
-    <value>Z 符號圖解投影</value>
-  </data>
-  <data name="IslamInfo_Z NotationSpot" xml:space="preserve">
-    <value>Z 符號點</value>
-  </data>
-  <data name="IslamInfo_Z NotationTypeColon" xml:space="preserve">
-    <value>Z 符號類型冒號</value>
   </data>
   <data name="IslamInfo_Zaahiree" xml:space="preserve">
     <value>Zaahiree</value>

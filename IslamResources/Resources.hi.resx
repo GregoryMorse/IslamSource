@@ -699,9 +699,6 @@
   <data name="IslamInfo_Angle" xml:space="preserve">
     <value>कोण</value>
   </data>
-  <data name="IslamInfo_AngleWithS Inside" xml:space="preserve">
-    <value>S के अंदर के साथ कोण</value>
-  </data>
   <data name="IslamInfo_AngleWithUnderbar" xml:space="preserve">
     <value>कोण साथ अंडरबार</value>
   </data>
@@ -1008,14 +1005,8 @@
   <data name="IslamInfo_ArabicLetterBehWithHamzaAbove" xml:space="preserve">
     <value>अरबी अक्षर Beh हमजा इसके बाद के संस्करण के साथ</value>
   </data>
-  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallV Below" xml:space="preserve">
-    <value>अरबी अक्षर Beh उल्टे छोटे V नीचे के साथ</value>
-  </data>
   <data name="IslamInfo_ArabicLetterBehWithSmallV" xml:space="preserve">
     <value>अरबी अक्षर Beh छोटे V के साथ</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterBehWithSmallV Below" xml:space="preserve">
-    <value>अरबी अक्षर Beh छोटे V नीचे के साथ</value>
   </data>
   <data name="IslamInfo_ArabicLetterBehWithThreeDotsHorizontallyBelow" xml:space="preserve">
     <value>अरबी अक्षर Beh तीन क्षैतिज नीचे डॉट्स के साथ</value>
@@ -1049,9 +1040,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterDalWithFourDotsAbove" xml:space="preserve">
     <value>उपरोक्त चार बिंदुओं के साथ अरबी पत्र दाल</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallV Below" xml:space="preserve">
-    <value>उल्टे छोटे V नीचे के साथ अरबी पत्र दाल</value>
   </data>
   <data name="IslamInfo_ArabicLetterDalWithInvertedV" xml:space="preserve">
     <value>अरबी अक्षर दाल औंधा वी के साथ</value>
@@ -1398,9 +1386,6 @@
   <data name="IslamInfo_ArabicLetterRehWithSmallV" xml:space="preserve">
     <value>अरबी अक्षर जिन्दगी छोटी V के साथ</value>
   </data>
-  <data name="IslamInfo_ArabicLetterRehWithSmallV Below" xml:space="preserve">
-    <value>छोटे V नीचे के साथ अरबी पत्र जिन्दगी</value>
-  </data>
   <data name="IslamInfo_ArabicLetterRehWithStroke" xml:space="preserve">
     <value>स्ट्रोक के साथ अरबी पत्र जिन्दगी</value>
   </data>
@@ -1524,9 +1509,6 @@
   <data name="IslamInfo_ArabicLetterU" xml:space="preserve">
     <value>अरबी अक्षर U</value>
   </data>
-  <data name="IslamInfo_ArabicLetterU WithHamzaAbove" xml:space="preserve">
-    <value>उपरोक्त, हम्ज़ा के साथ अरबी अक्षर U</value>
-  </data>
   <data name="IslamInfo_ArabicLetterVe" xml:space="preserve">
     <value>अरबी अक्षर Ve</value>
   </data>
@@ -1598,9 +1580,6 @@
   </data>
   <data name="IslamInfo_ArabicLetterZain" xml:space="preserve">
     <value>अरबी अक्षर Zain</value>
-  </data>
-  <data name="IslamInfo_ArabicLetterZainWithInvertedV Above" xml:space="preserve">
-    <value>अरबी अक्षर Zain औंधा वी इसके बाद के संस्करण के साथ</value>
   </data>
   <data name="IslamInfo_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
     <value>अरबी संयुक्ताक्षर अकबर प्रपत्र अलग-थलग</value>
@@ -1844,12 +1823,6 @@
   </data>
   <data name="IslamInfo_ArabicVowelSignDotBelow" xml:space="preserve">
     <value>अरबी स्वर डॉट नीचे साइन इन करें</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignInvertedSmallV Above" xml:space="preserve">
-    <value>अरबी स्वर चिह्न छोटे V ऊपर औंधा</value>
-  </data>
-  <data name="IslamInfo_ArabicVowelSignSmallV Above" xml:space="preserve">
-    <value>अरबी स्वर चिह्न छोटे V ऊपर</value>
   </data>
   <data name="IslamInfo_ArabicWavyHamzaBelow" xml:space="preserve">
     <value>अरबी लहराती नीचे हमजा</value>
@@ -2225,9 +2198,6 @@
   </data>
   <data name="IslamInfo_BatakVowelSignPakpakE" xml:space="preserve">
     <value>Batak स्वर साइन Pakpak E</value>
-  </data>
-  <data name="IslamInfo_BatakVowelSignU ForSimalungunSa" xml:space="preserve">
-    <value>Simalungun Sa के लिए Batak स्वर चिह्न U</value>
   </data>
   <data name="IslamInfo_Battles" xml:space="preserve">
     <value>लड़ाइयों</value>
@@ -5709,9 +5679,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterA" xml:space="preserve">
     <value>लैटिन छोटा अक्षर A संयोजन</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterA WithDiaeresis" xml:space="preserve">
-    <value>लैटिन छोटा अक्षर A Diaeresis साथ संयोजन</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterAe" xml:space="preserve">
     <value>लैटिन छोटा अक्षर Ae संयोजन</value>
   </data>
@@ -5733,9 +5700,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterC" xml:space="preserve">
     <value>लैटिन छोटा अक्षर C के संयोजन</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterC Cedilla" xml:space="preserve">
-    <value>लैटिन छोटा अक्षर C Cedilla के संयोजन</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterD" xml:space="preserve">
     <value>लैटिन छोटा अक्षर D संयोजन</value>
   </data>
@@ -5750,9 +5714,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterF" xml:space="preserve">
     <value>लैटिन छोटा अक्षर F संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenA Above" xml:space="preserve">
-    <value>संयोजन लैटिन छोटा अक्षर चपटा एक ऊपर खोलें</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterG" xml:space="preserve">
     <value>लैटिन छोटा अक्षर G संयोजन</value>
@@ -5772,9 +5733,6 @@
   <data name="IslamInfo_CombiningLatinSmallLetterL" xml:space="preserve">
     <value>लैटिन छोटा अक्षर L के संयोजन</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterL WithDoubleMiddleTilde" xml:space="preserve">
-    <value>संयोजन के साथ डबल मध्य टिल्ड लैटिन छोटा अक्षर L</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterLongS" xml:space="preserve">
     <value>लैटिन छोटा अक्षर लंबा S संयोजन</value>
   </data>
@@ -5787,23 +5745,11 @@
   <data name="IslamInfo_CombiningLatinSmallLetterO" xml:space="preserve">
     <value>लैटिन छोटा अक्षर O संयोजन</value>
   </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithDiaeresis" xml:space="preserve">
-    <value>लैटिन छोटा अक्षर Diaeresis साथ O संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterO WithLightCentralizationStroke" xml:space="preserve">
-    <value>संयोजन प्रकाश केंद्रीकरण स्ट्रोक के साथ लैटिन छोटा अक्षर O</value>
-  </data>
   <data name="IslamInfo_CombiningLatinSmallLetterP" xml:space="preserve">
     <value>लैटिन छोटा अक्षर P संयोजन</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterR" xml:space="preserve">
     <value>लैटिन छोटा अक्षर R संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Below" xml:space="preserve">
-    <value>लैटिन छोटा अक्षर R नीचे संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterR Rotunda" xml:space="preserve">
-    <value>लैटिन छोटा अक्षर R रोटोंडा संयोजन</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterS" xml:space="preserve">
     <value>लैटिन छोटा अक्षर S संयोजन</value>
@@ -5816,12 +5762,6 @@
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterU" xml:space="preserve">
     <value>लैटिन छोटा अक्षर U संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithDiaeresis" xml:space="preserve">
-    <value>लैटिन छोटा अक्षर Diaeresis साथ U संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningLatinSmallLetterU WithLightCentralizationStroke" xml:space="preserve">
-    <value>संयोजन प्रकाश केंद्रीकरण स्ट्रोक के साथ लैटिन छोटा अक्षर U</value>
   </data>
   <data name="IslamInfo_CombiningLatinSmallLetterV" xml:space="preserve">
     <value>लैटिन छोटा अक्षर V संयोजन</value>
@@ -6098,15 +6038,6 @@
   </data>
   <data name="IslamInfo_CombiningWigglyLineBelow" xml:space="preserve">
     <value>संयोजन Wiggly रेखा नीचे</value>
-  </data>
-  <data name="IslamInfo_CombiningX Above" xml:space="preserve">
-    <value>इसके बाद के संस्करण X के संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningX Below" xml:space="preserve">
-    <value>नीचे दिए गए X संयोजन</value>
-  </data>
-  <data name="IslamInfo_CombiningX-X Below" xml:space="preserve">
-    <value>X - X नीचे संयोजन</value>
   </data>
   <data name="IslamInfo_CombiningZigzagAbove" xml:space="preserve">
     <value>ऊपर वक्र संयोजन</value>
@@ -7353,9 +7284,6 @@
   <data name="IslamInfo_DoubleExclamationMark" xml:space="preserve">
     <value>डबल विस्मय बोधक चिह्न</value>
   </data>
-  <data name="IslamInfo_DoubleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>डबल उच्च Reversed9 उद्धरण चिह्न</value>
-  </data>
   <data name="IslamInfo_DoubleHyphen" xml:space="preserve">
     <value>डबल हैफ़ेन</value>
   </data>
@@ -7392,14 +7320,8 @@
   <data name="IslamInfo_DoubleLogicalOr" xml:space="preserve">
     <value>डबल तार्किक या</value>
   </data>
-  <data name="IslamInfo_DoubleLow9 QuotationMark" xml:space="preserve">
-    <value>डबल Low9 उद्धरण चिह्न</value>
-  </data>
   <data name="IslamInfo_DoubleLowLine" xml:space="preserve">
     <value>डबल कम लाइन</value>
-  </data>
-  <data name="IslamInfo_DoubleLowReversed9 QuotationMark" xml:space="preserve">
-    <value>डबल कम Reversed9 उद्धरण चिह्न</value>
   </data>
   <data name="IslamInfo_DoubleNestedGreaterThan" xml:space="preserve">
     <value>डबल से अधिक नेस्टेड</value>
@@ -10806,9 +10728,6 @@
   <data name="IslamInfo_Integral" xml:space="preserve">
     <value>समाकलन</value>
   </data>
-  <data name="IslamInfo_IntegralAroundA PointOperator" xml:space="preserve">
-    <value>समाकलन बिंदु ऑपरेटर के आसपास</value>
-  </data>
   <data name="IslamInfo_IntegralAverageWithSlash" xml:space="preserve">
     <value>स्लैश के साथ अभिन्न औसत</value>
   </data>
@@ -12387,9 +12306,6 @@
   <data name="IslamInfo_Kuwait" xml:space="preserve">
     <value>कुवैत</value>
   </data>
-  <data name="IslamInfo_L B BarSymbol" xml:space="preserve">
-    <value>L B बार प्रतीक</value>
-  </data>
   <data name="IslamInfo_LaamHeaviness" xml:space="preserve">
     <value>Laam भारीपन</value>
   </data>
@@ -12710,9 +12626,6 @@
   </data>
   <data name="IslamInfo_LeftSideArcAnticlockwiseArrow" xml:space="preserve">
     <value>बाईं ओर चाप Anticlockwise तीर</value>
-  </data>
-  <data name="IslamInfo_LeftSidewaysU Bracket" xml:space="preserve">
-    <value>बाएँ बग़ल में U ब्रैकेट</value>
   </data>
   <data name="IslamInfo_LeftSingleQuotationMark" xml:space="preserve">
     <value>बायाँ एकल उद्धरण चिह्न</value>
@@ -15015,9 +14928,6 @@
   <data name="IslamInfo_MyanmarVowelSignAitonAi" xml:space="preserve">
     <value>म्यांमार स्वर चिह्न Aiton एअर इंडिया</value>
   </data>
-  <data name="IslamInfo_MyanmarVowelSignE Above" xml:space="preserve">
-    <value>म्यांमार स्वर चिह्न E ऊपर</value>
-  </data>
   <data name="IslamInfo_MyanmarVowelSignGebaKarenI" xml:space="preserve">
     <value>म्यांमार स्वर साइन Geba करेन मैं</value>
   </data>
@@ -15041,9 +14951,6 @@
   </data>
   <data name="IslamInfo_MyanmarVowelSignMonO" xml:space="preserve">
     <value>म्यांमार स्वर चिह्न सोम O</value>
-  </data>
-  <data name="IslamInfo_MyanmarVowelSignShanE Above" xml:space="preserve">
-    <value>म्यांमार स्वर चिह्न शान E ऊपर</value>
   </data>
   <data name="IslamInfo_MyanmarVowelSignShanFinalY" xml:space="preserve">
     <value>म्यांमार स्वर चिह्न शान अंतिम Y</value>
@@ -15270,12 +15177,6 @@
   <data name="IslamInfo_NegativeSquaredCrossMark" xml:space="preserve">
     <value>नकारात्मक चुकता पार मार्क</value>
   </data>
-  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
-    <value>न तो इसका कोई सबसेट या बराबर करने के लिए</value>
-  </data>
-  <data name="IslamInfo_NeitherA SupersetOfNorEqualTo" xml:space="preserve">
-    <value>न एक Superset के न के बराबर</value>
-  </data>
   <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
     <value>न अनुमानित रूप से न वास्तविक रूप से इसके बराबर</value>
   </data>
@@ -15500,12 +15401,6 @@
   </data>
   <data name="IslamInfo_Not" xml:space="preserve">
     <value>नहीं</value>
-  </data>
-  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
-    <value>इसका कोई सबसेट नहीं</value>
-  </data>
-  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
-    <value>इसका कोई सुपरसेट नहीं</value>
   </data>
   <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
     <value>लगभग इसके बराबर नहीं</value>
@@ -16151,9 +16046,6 @@
   </data>
   <data name="IslamInfo_ParenthesizedDigitTwo" xml:space="preserve">
     <value>Parenthesized अंक दो</value>
-  </data>
-  <data name="IslamInfo_ParenthesizedKoreanCharacterO Hu" xml:space="preserve">
-    <value>Parenthesized कोरियाई वर्ण O हू</value>
   </data>
   <data name="IslamInfo_ParenthesizedKoreanCharacterOjeon" xml:space="preserve">
     <value>Parenthesized कोरियाई वर्ण Ojeon</value>
@@ -17790,27 +17682,6 @@
   <data name="IslamInfo_RecyclingSymbolForGenericMaterials" xml:space="preserve">
     <value>सामान्य सामग्री के लिए रिसाइकिलिंग प्रतीक</value>
   </data>
-  <data name="IslamInfo_RecyclingSymbolForType1 Plastics" xml:space="preserve">
-    <value>प्रतीक Type1 प्लास्टिक के पुनर्चक्रण</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType2 Plastics" xml:space="preserve">
-    <value>प्रतीक Type2 प्लास्टिक के पुनर्चक्रण</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType3 Plastics" xml:space="preserve">
-    <value>प्रतीक Type3 प्लास्टिक के पुनर्चक्रण</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType4 Plastics" xml:space="preserve">
-    <value>प्रतीक Type4 प्लास्टिक के पुनर्चक्रण</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType5 Plastics" xml:space="preserve">
-    <value>प्रतीक Type5 प्लास्टिक के पुनर्चक्रण</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType6 Plastics" xml:space="preserve">
-    <value>प्रतीक Type6 प्लास्टिक के पुनर्चक्रण</value>
-  </data>
-  <data name="IslamInfo_RecyclingSymbolForType7 Plastics" xml:space="preserve">
-    <value>प्रतीक Type7 प्लास्टिक के पुनर्चक्रण</value>
-  </data>
   <data name="IslamInfo_ReferenceMark" xml:space="preserve">
     <value>संदर्भ चिह्न</value>
   </data>
@@ -18426,9 +18297,6 @@
   <data name="IslamInfo_RightSideArcClockwiseArrow" xml:space="preserve">
     <value>दाईं ओर चाप दक्षिणावर्त तीर</value>
   </data>
-  <data name="IslamInfo_RightSidewaysU Bracket" xml:space="preserve">
-    <value>ठीक बग़ल में U ब्रैकेट</value>
-  </data>
   <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
     <value>दाँया सिंगल कोटेशन चिह्न</value>
   </data>
@@ -18821,9 +18689,6 @@
   </data>
   <data name="IslamInfo_RuqayyahBintiMuhammad" xml:space="preserve">
     <value>Ruqayyah Binti मुहम्मद</value>
-  </data>
-  <data name="IslamInfo_S InTriangle" xml:space="preserve">
-    <value>त्रिकोण में S</value>
   </data>
   <data name="IslamInfo_SaadBinWaad" xml:space="preserve">
     <value>साद बिन Waad</value>
@@ -19365,14 +19230,8 @@
   <data name="IslamInfo_SineWave" xml:space="preserve">
     <value>साइन लहर</value>
   </data>
-  <data name="IslamInfo_SingleHighReversed9 QuotationMark" xml:space="preserve">
-    <value>उच्च Reversed9 एकल उद्धरण चिह्न</value>
-  </data>
   <data name="IslamInfo_SingleLeftPointingAngleQuotationMark" xml:space="preserve">
     <value>एकल बाईं ओर इशारा करते हुए कोण उद्धरण चिह्न</value>
-  </data>
-  <data name="IslamInfo_SingleLow9 QuotationMark" xml:space="preserve">
-    <value>एकल Low9 उद्धरण चिह्न</value>
   </data>
   <data name="IslamInfo_SingleRightPointingAngleQuotationMark" xml:space="preserve">
     <value>एकल अधिकार कोण उद्धरण चिह्न की ओर इशारा करते</value>
@@ -19806,9 +19665,6 @@
   <data name="IslamInfo_Sporadic" xml:space="preserve">
     <value>छिटपुट</value>
   </data>
-  <data name="IslamInfo_SquareA OverM" xml:space="preserve">
-    <value>वर्ग A M पर</value>
-  </data>
   <data name="IslamInfo_SquareCap" xml:space="preserve">
     <value>वर्ग कैप</value>
   </data>
@@ -19919,9 +19775,6 @@
   </data>
   <data name="IslamInfo_SquareRoot" xml:space="preserve">
     <value>वर्गमूल</value>
-  </data>
-  <data name="IslamInfo_SquareV OverM" xml:space="preserve">
-    <value>वर्ग V M पर</value>
   </data>
   <data name="IslamInfo_SquareWithBottomHalfBlack" xml:space="preserve">
     <value>नीचे आधे काले के साथ वर्ग</value>
@@ -22341,24 +22194,6 @@
   <data name="IslamInfo_ThreeConsecutiveEqualsSigns" xml:space="preserve">
     <value>तीन लगातार संकेत के बराबर होती है</value>
   </data>
-  <data name="IslamInfo_ThreeD BottomLightedRightwardsArrowhead" xml:space="preserve">
-    <value>तीन घ तल दक्षिणपंथ Arrowhead जलाई</value>
-  </data>
-  <data name="IslamInfo_ThreeD LeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
-    <value>तीन D बाईं ओर नीचे की तरफ समभुज Arrowhead जलाई</value>
-  </data>
-  <data name="IslamInfo_ThreeD RightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
-    <value>तीन D दाईं ओर ऊपर की तरफ समभुज Arrowhead जलाई</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
-    <value>तीन D शीर्ष बाईं ओर समभुज Arrowhead जलाई</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsArrowhead" xml:space="preserve">
-    <value>तीन D शीर्ष दक्षिणपंथ Arrowhead जलाई</value>
-  </data>
-  <data name="IslamInfo_ThreeD TopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
-    <value>तीन D शीर्ष दक्षिणपंथ समभुज Arrowhead जलाई</value>
-  </data>
   <data name="IslamInfo_ThreeDimensionalAngle" xml:space="preserve">
     <value>तीन आयामी कोण</value>
   </data>
@@ -23261,9 +23096,6 @@
   </data>
   <data name="IslamInfo_UpArrowheadBetweenTwoHorizontalBars" xml:space="preserve">
     <value>अप Arrowhead दो क्षैतिज पट्टियों के बीच</value>
-  </data>
-  <data name="IslamInfo_UpArrowheadInA RectangleBox" xml:space="preserve">
-    <value>एक आयत बॉक्स में ऊपर Arrowhead</value>
   </data>
   <data name="IslamInfo_UpArrowThroughCircle" xml:space="preserve">
     <value>चक्र के माध्यम से ऊपर तीर</value>
@@ -25194,9 +25026,6 @@
   <data name="IslamInfo_Wrong" xml:space="preserve">
     <value>गलत</value>
   </data>
-  <data name="IslamInfo_X InA RectangleBox" xml:space="preserve">
-    <value>एक आयत बॉक्स में X</value>
-  </data>
   <data name="IslamInfo_Xor" xml:space="preserve">
     <value>Xor</value>
   </data>
@@ -25436,45 +25265,6 @@
   </data>
   <data name="IslamInfo_YouTwo" xml:space="preserve">
     <value>आप दो</value>
-  </data>
-  <data name="IslamInfo_Z NotationBagMembership" xml:space="preserve">
-    <value>Z संकेतन बैग सदस्यता</value>
-  </data>
-  <data name="IslamInfo_Z NotationDomainAntirestriction" xml:space="preserve">
-    <value>Z संकेतन डोमेन Antirestriction</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftBindingBracket" xml:space="preserve">
-    <value>Z संकेतन बाएँ बाइंडिंग ब्रैकेट</value>
-  </data>
-  <data name="IslamInfo_Z NotationLeftImageBracket" xml:space="preserve">
-    <value>Z संकेतन बाईं छवि ब्रैकेट</value>
-  </data>
-  <data name="IslamInfo_Z NotationRangeAntirestriction" xml:space="preserve">
-    <value>Z संकेतन सीमा Antirestriction</value>
-  </data>
-  <data name="IslamInfo_Z NotationRelationalComposition" xml:space="preserve">
-    <value>Z संकेतन आनुपतिक संरचना</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightBindingBracket" xml:space="preserve">
-    <value>Z संकेतन सही बाइंडिंग ब्रैकेट</value>
-  </data>
-  <data name="IslamInfo_Z NotationRightImageBracket" xml:space="preserve">
-    <value>Z संकेतन सही छवि ब्रैकेट</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaComposition" xml:space="preserve">
-    <value>Z संकेतन स्कीमा संरचना</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaPiping" xml:space="preserve">
-    <value>Z संकेतन स्कीमा पाइपिंग</value>
-  </data>
-  <data name="IslamInfo_Z NotationSchemaProjection" xml:space="preserve">
-    <value>Z संकेतन स्कीमा प्रक्षेपण</value>
-  </data>
-  <data name="IslamInfo_Z NotationSpot" xml:space="preserve">
-    <value>Z संकेतन स्पॉट</value>
-  </data>
-  <data name="IslamInfo_Z NotationTypeColon" xml:space="preserve">
-    <value>Z संकेतन प्रकार बृहदान्त्र</value>
   </data>
   <data name="IslamInfo_Zaahiree" xml:space="preserve">
     <value>Zaahiree</value>

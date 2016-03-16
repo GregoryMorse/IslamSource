@@ -990,12 +990,6 @@
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>ਅਸਵੀਕਰਿਤ ਦੁੱਗਣੀ ਲੰਬਵਤ ਪੱਟੀ ਸੱਜਾ ਟਰਨਸਟਾਈਲ</value>
   </data>
-  <data name="IslamInfo_NeitherA SubsetOfNorEqualTo" xml:space="preserve">
-    <value>ਇਸਦਾ ਕੋਈ ਸਬਸੈਟ ਜਾਂ ਬਰਾਬਰ ਨਹੀਂ</value>
-  </data>
-  <data name="IslamInfo_NeitherA SupersetOfNorEqualTo" xml:space="preserve">
-    <value>ਇਸਦਾ ਕੋਈ ਸੁਪਰਸੈਟ ਜਾਂ ਬਰਾਬਰ ਨਹੀਂ</value>
-  </data>
   <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
     <value>ਨ ਅਨੁਮਾਨਿਤ ਰੂਪ ਤੋਂ ਨ ਵਾਸਤਵਿਕ ਰੂਪ ਤੋਂ ਇਸਦੇ ਬਰਾਬਰ</value>
   </data>
@@ -1019,12 +1013,6 @@
   </data>
   <data name="IslamInfo_Not" xml:space="preserve">
     <value>ਨਹੀਂ</value>
-  </data>
-  <data name="IslamInfo_NotA SubsetOf" xml:space="preserve">
-    <value>ਇਸਦਾ ਕੋਈ ਸਬਸੈਟ ਨਹੀਂ</value>
-  </data>
-  <data name="IslamInfo_NotA SupersetOf" xml:space="preserve">
-    <value>ਇਸਦਾ ਕੋਈ ਸੁਪਰਸੈਟ ਨਹੀਂ</value>
   </data>
   <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
     <value>ਲਗਭਗ ਇਸਦੇ ਬਰਾਬਰ ਨਹੀਂ</value>
