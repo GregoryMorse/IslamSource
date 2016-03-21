@@ -171,7 +171,7 @@ namespace IslamSourceQuranViewer
         {
             get
             {
-                return new List<ComboPair>(IslamMetadata.CachedData.IslamData.ReciterList.Reciters.Select((Reciter) => { return new ComboPair() { KeyString = Reciter.Name, ValueString = Reciter.Reciter }; }));
+                return new List<ComboPair>(IslamMetadata.CachedData.IslamData.ReciterList.Reciters.Select((Reciter) => { return new ComboPair() { KeyString = Reciter.Name, ValueString = Reciter.Reciter + (Reciter.BitRate == - 1 ? string.Empty : ("[" +  Reciter.BitRate.ToString() + "kbps]")) }; }));
             }
         }
 

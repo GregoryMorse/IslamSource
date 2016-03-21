@@ -1270,6 +1270,9 @@ Public Class IslamData
             Public Reciter As String
             <Xml.Serialization.XmlAttribute("source")>
             Public Source As String
+            <Xml.Serialization.XmlAttribute("bitrate")>
+            <ComponentModel.DefaultValueAttribute(-1)>
+            Public BitRate As Integer
         End Structure
         <Xml.Serialization.XmlElement("reciter")>
         Public Reciters() As Reciter
@@ -2859,7 +2862,7 @@ Public Class CachedData
         Dim Renderer As New RenderArray(String.Empty)
         Dim LineTest As Integer = 1
         Do
-            Dim Pieces As String() = Lines(_MorphDataToLineNumber(New Integer() {Chapter, Verse, Word, 1})).Split(CChar(vbTab))
+            Dim Pieces As String() = Lines(_MorphDataToLineNumber(New Integer() {Chapter, Verse, Word, LineTest})).Split(CChar(vbTab))
             Dim Renderers As New List(Of RenderArray.RenderText)
             Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Pieces(1))))
             Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetPartOfSpeech(Pieces(2)).Id)) With {.Clr = GetPartOfSpeech(Pieces(2)).Color})
@@ -2868,20 +2871,20 @@ Public Class CachedData
             For Count As Integer = 0 To Parts.Length - 1
                 Dim Types As String() = Parts(Count).Split(":"c)
                 If Types(0) = "ROOT" Or Types(0) = "LEM" Or Types(0) = "SP" Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Types(1)))})}))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Types(1)))})}))
                 ElseIf Types(0) = "POS" Then
                 ElseIf Types(0) = "PRON" Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id)), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Types(1).ToCharArray(), Function(Ch) Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id))))})}))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New RenderArray.RenderItem() {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Types(1).ToCharArray(), Function(Ch) Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id))) + " ")})}))
                 ElseIf Text.RegularExpressions.Regex.IsMatch(Parts(Count), "^[123]?(?:[MF]|[MF]?[SDP])$") Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Parts(Count).ToCharArray(), Function(Ch) Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id)))))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Parts(Count).ToCharArray(), Function(Ch) Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id))) + " "))
                 Else
                     'If Not GetFeatureOfSpeech(Parts(Count)).HasValue Then Debug.WriteLine("Not found: " + Parts(Count))
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Parts(Count)).Value.Id)))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Parts(Count)).Value.Id) + " "))
                 End If
                 If Parts(Count).StartsWith("MOOD:") Or Parts(Count) = "INDEF" Then bNotDefaultPresent = True
             Next
-            If Pieces(2) = "V" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("MOOD:IND").Value.Id)))
-            If Pieces(2) = "N" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("DEF").Value.Id)))
+            If Pieces(2) = "V" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("MOOD:IND").Value.Id) + " "))
+            If Pieces(2) = "N" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("DEF").Value.Id) + " "))
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Renderers.ToArray()))
             LineTest += 1
         Loop While _MorphDataToLineNumber.ContainsKey(New Integer() {Chapter, Verse, Word, LineTest})

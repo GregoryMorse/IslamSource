@@ -129,8 +129,47 @@ namespace IslamSourceQuranViewer
             RenderButton.Click += RenderPngs_Click;
             (this.BottomAppBar as CommandBar).PrimaryCommands.Add(RenderButton);
 #endif
+            gestRec = new Windows.UI.Input.GestureRecognizer();
+            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse;
+            gestRec.Holding += OnHolding;
         }
-
+        private Windows.UI.Input.GestureRecognizer gestRec;
+        private object _holdObj;
+        void OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            var ps = e.GetIntermediatePoints(null);
+            if (ps != null && ps.Count > 0)
+            {
+                _holdObj = null;
+                gestRec.ProcessUpEvent(ps[0]);
+                e.Handled = true;
+                gestRec.CompleteGesture();
+            }
+        }
+        void OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            var ps = e.GetIntermediatePoints(null);
+            if (ps != null && ps.Count > 0)
+            {
+                _holdObj = sender;
+                gestRec.ProcessDownEvent(ps[0]);
+                e.Handled = true;
+            }
+        }
+        void OnPointerMoved(object sender, PointerRoutedEventArgs e)
+        {
+            _holdObj = sender;
+            gestRec.ProcessMoveEvents(e.GetIntermediatePoints(null));
+            e.Handled = true;
+        }
+        void OnHolding(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.HoldingEventArgs args)
+        {
+            if (args.HoldingState == Windows.UI.Input.HoldingState.Started)
+            {
+                DoHolding(_holdObj);
+                gestRec.CompleteGesture();
+            }
+        }
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
             UIChanger.MaxWidth = MainGrid.ActualWidth;
@@ -294,33 +333,39 @@ namespace IslamSourceQuranViewer
         }
         private void StackPanel_Holding(object sender, HoldingRoutedEventArgs e)
         {
-            e.Handled = true;
+            if (e.HoldingState == Windows.UI.Input.HoldingState.Started)
+            {
+                e.Handled = true;
+                DoHolding(sender);
+            }
+        }
+        void DoHolding(object sender)
+        {
             if (((sender as StackPanel).DataContext as MyRenderItem).Word != -1)
             {
                 Flyout ContextFlyout = new Flyout();
                 StackPanel Panel = new StackPanel();
                 ContextFlyout.Content = Panel;
-                Panel.Children.Add(new ItemsControl() { ItemsPanel = Resources["VirtualPanelTemplate"] as ItemsPanelTemplate, ItemTemplate = Resources["WrapTemplate"] as DataTemplate, ItemsSource = IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word) });
+                Panel.Children.Add(new ItemsControl() { ItemsPanel = Resources["VirtualPanelTemplate"] as ItemsPanelTemplate, ItemTemplate = Resources["WrapTemplate"] as DataTemplate, ItemsSource = VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word).Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), UIChanger.MaxWidth) });
                 VirtualizingStackPanel.SetVirtualizationMode((Panel.Children.Last() as ItemsControl), VirtualizationMode.Recycling);
-                VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word).Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), UIChanger.MaxWidth);
                 Panel.Children.Add(new Button() { Content = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("CopyToClipboard/Text") });
                 (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) =>
                 {
 #if WINDOWS_APP || WINDOWS_UWP
-                    Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
+                Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
 #else
-                global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
-                options.PreferredApplicationDisplayName = "Clipboarder"; 
-                options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
-                options.DisplayApplicationPicker = false; 
-                global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
+            global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
+            options.PreferredApplicationDisplayName = "Clipboarder"; 
+            options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
+            options.DisplayApplicationPicker = false; 
+            global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
 #endif
-                };
+            };
                 Panel.Children.Add(new Button() { Content = new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") } });
                 (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) =>
                 {
 #if WINDOWS_APP
-                    Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
+                Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
                     package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested += (Windows.ApplicationModel.DataTransfer.DataTransferManager __sender, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs __e) =>
                     {
@@ -331,40 +376,47 @@ namespace IslamSourceQuranViewer
                     };
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
 #else
-                Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
-                shareStatusTask.Status = string.Empty;
-                shareStatusTask.Show(); 
+            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
+            shareStatusTask.Status = string.Empty;
+            shareStatusTask.Show(); 
 #endif
-                };
+            };
                 FlyoutBase.SetAttachedFlyout(sender as StackPanel, ContextFlyout);
                 FlyoutBase.ShowAttachedFlyout(sender as StackPanel);
-            } else if(((sender as StackPanel).DataContext as MyRenderItem).Chapter != -1) {
+            }
+            else if (((sender as StackPanel).DataContext as MyRenderItem).Chapter != -1)
+            {
                 MenuFlyout ContextFlyout = new MenuFlyout();
                 int idxMark = Array.FindIndex(AppSettings.Bookmarks, (Item) => Item[0] == Division && Item[1] == Selection && Item[2] == ((sender as StackPanel).DataContext as MyRenderItem).Chapter && Item[3] == ((sender as StackPanel).DataContext as MyRenderItem).Verse);
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString((idxMark == -1 ? "AddBookmark" : "RemoveBookmark") + "/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
+                {
                     List<int[]> marks = AppSettings.Bookmarks.ToList();
-                    if (idxMark != -1) {
+                    if (idxMark != -1)
+                    {
                         marks.RemoveAt(idxMark);
-                    } else {
+                    }
+                    else {
                         marks.Add(new int[] { Division, Selection, ((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse });
                     }
                     AppSettings.Bookmarks = marks.ToArray();
                 };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("CopyToClipboard/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
+                {
 #if WINDOWS_APP || WINDOWS_UWP
                     Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
 #else
-                global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
-                options.PreferredApplicationDisplayName = "Clipboarder"; 
-                options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
-                options.DisplayApplicationPicker = false; 
-                global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
+            global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
+            options.PreferredApplicationDisplayName = "Clipboarder"; 
+            options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
+            options.DisplayApplicationPicker = false; 
+            global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
 #endif
                 };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
+                {
 #if WINDOWS_APP
                     Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
                     package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
@@ -377,13 +429,14 @@ namespace IslamSourceQuranViewer
                     };
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
 #else
-                Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
-                shareStatusTask.Status = string.Empty;
-                shareStatusTask.Show(); 
+            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
+            shareStatusTask.Status = string.Empty;
+            shareStatusTask.Show(); 
 #endif
                 };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("SetPlaybackVerse/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
+                {
                     ViewModel.CurrentVerse = (sender as StackPanel).DataContext as MyRenderItem;
                     for (int count = 0; count < ViewModel.VerseReferences.Count() - 1; count++)
                     {
