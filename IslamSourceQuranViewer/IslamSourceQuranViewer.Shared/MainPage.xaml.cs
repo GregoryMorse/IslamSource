@@ -307,7 +307,7 @@ namespace IslamSourceQuranViewer
         private void sectionListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if (ViewModel.ListSelectedItem == null) return;
-            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index});
+            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index - 1, Selection = ViewModel.ListSelectedItem.Index});
         }
 
         private void RenderPngs_Click(object sender, RoutedEventArgs e)
@@ -389,6 +389,7 @@ namespace IslamSourceQuranViewer
             {
                 _Items = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("Items"));
+                SelectedItem = Items.ElementAt(AppSettings.iDefaultStartTab);
             }
         }
 

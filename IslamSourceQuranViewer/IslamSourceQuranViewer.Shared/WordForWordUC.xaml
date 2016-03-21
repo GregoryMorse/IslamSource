@@ -13,7 +13,11 @@
         </Style>
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
         <local:ArabicFlowConverter x:Key="ArabicFlow"/>
+        <local:BackgroundSelectedConverter x:Key="BackgroundSelected"/>
         <CollectionViewSource x:Name="VerseNumbers" Source="{Binding Path=ViewModel.VerseReferences, Mode=OneWay}"></CollectionViewSource>
+        <ItemsPanelTemplate x:Key="VirtualPanelTemplate">
+            <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>
+        </ItemsPanelTemplate>
         <DataTemplate x:Key="WordTemplate">
             <ItemsControl ItemsSource="{Binding Mode=OneWay, Path=RenderSource}" ItemTemplate="{StaticResource WrapTemplate}">
                 <ItemsControl.ItemsPanel>
@@ -48,15 +52,17 @@
                 </TextBlock>
             </Grid>
         </DataTemplate>
+        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}"></local:NormalWordTemplateSelector>
         <DataTemplate x:Key="MyTemplate">
             <ItemsControl ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}" MaxWidth="{Binding MaxWidth, Converter={StaticResource WidthLimiter}, Mode=OneWay}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Vertical" Width="auto" Height="auto" Holding="StackPanel_Holding"></StackPanel>
+                        <StackPanel Background="{Binding IsSelected, Converter={StaticResource BackgroundSelected}, Mode=OneWay}" Orientation="Vertical" Width="auto" Height="auto" Holding="StackPanel_Holding"></StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
         </DataTemplate>
+        <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector" MyTemplate="{StaticResource MyTemplate}"></local:MyDataTemplateSelector>
         <DataTemplate x:Key="WrapTemplate">
             <ItemsControl ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
                 <ItemsControl.ItemsPanel>
@@ -71,8 +77,6 @@
                 </ItemsControl.Template>
             </ItemsControl>
         </DataTemplate>
-        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}"></local:NormalWordTemplateSelector>
-        <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector" MyTemplate="{StaticResource MyTemplate}"></local:MyDataTemplateSelector>
     </Page.Resources>
     <Grid Background="White" x:Name="MainGrid">
         <Grid.RowDefinitions>
@@ -93,7 +97,7 @@
             </ItemsControl.Template>
         </ItemsControl>
         <ProgressRing Name="LoadingRing" IsActive="True" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"></ProgressRing>
-        <MediaElement Name="VersePlayer" CurrentStateChanged="MediaElement_CurrentStateChanged" AreTransportControlsEnabled="False" AutoPlay="False"></MediaElement>
+        <MediaElement Name="VersePlayer" CurrentStateChanged="MediaElement_CurrentStateChanged" AreTransportControlsEnabled="False" AutoPlay="True"></MediaElement>
         <Popup x:Name="GoToVersePopup">
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                 Background="{StaticResource ApplicationPageBackgroundThemeBrush}">

@@ -145,6 +145,8 @@ namespace IslamSourceQuranViewer
             Selection = c.Selection;
             this.ViewModel.RenderModels = await System.Threading.Tasks.Task.Run(() => VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), curWidth));
             if (curWidth == 0 && UIChanger.MaxWidth != 0) OnSizeChanged(this, null);
+            while (ViewModel.VerseReferences.Count() != CurrentPlayingItem && ViewModel.VerseReferences[CurrentPlayingItem].Chapter == -1) { CurrentPlayingItem++; if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) CurrentPlayingItem = 0; }
+            ViewModel.CurrentVerse = ViewModel.VerseReferences[CurrentPlayingItem];
             LoadingRing.IsActive = false;
         }
         public MyUIChanger UIChanger { get; set; }
@@ -218,7 +220,20 @@ namespace IslamSourceQuranViewer
         }
         private void PlayPause_Click(object sender, RoutedEventArgs e)
         {
-            VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Source, IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Name, ViewModel.VerseReferences[CurrentPlayingItem].Chapter, ViewModel.VerseReferences[CurrentPlayingItem].Verse));
+            if ((PlayPause.Icon as SymbolIcon).Symbol == Symbol.Pause)
+            {
+                PlayPause.Icon = new SymbolIcon(Symbol.Play);
+                PlayPause.Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Play/Label");
+                VersePlayer.Pause();
+            }
+            else {
+                PlayPause.Icon = new SymbolIcon(Symbol.Pause);
+                PlayPause.Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Pause/Label");
+                if (VersePlayer.Source != null) { VersePlayer.Play(); }
+                else {
+                    VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Source, IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Name, ViewModel.VerseReferences[CurrentPlayingItem].Chapter, ViewModel.VerseReferences[CurrentPlayingItem].Verse));
+                }
+            }
         }
         private void GoToVerse_Click(object sender, RoutedEventArgs e)
         {
@@ -243,33 +258,39 @@ namespace IslamSourceQuranViewer
         }
         private void ScrollToVerse(MyRenderItem Item)
         {
-            ScrollViewer sv = VisualTreeHelper.GetChild(VisualTreeHelper.GetChild(MainControl, 0), 0) as ScrollViewer;
+            ScrollViewer sv = VisualTreeHelper.GetChild(MainControl, 0) as ScrollViewer;
             //ScrollViewer sv = WinRTXamlToolkit.Controls.Extensions.ItemsControlExtensions.GetScrollViewer(MainControl);
-            FrameworkElement ItemContainer = MainControl.ContainerFromItem(Item) as FrameworkElement;
-            Point pos = ItemContainer.TransformToVisual(sv).TransformPoint(new Point());
-            sv.ChangeView(null, sv.VerticalOffset + pos.Y, null);
+            int count;
+            for (count = 0; count < ViewModel.RenderModels.Count - 1; count++)
+            {
+                if (ViewModel.RenderModels[count].RenderItems.Contains(Item)) { break; }
+            }
+            FrameworkElement ItemContainer = MainControl.ContainerFromItem(ViewModel.RenderModels[count]) as FrameworkElement;
+            //Point pos = ItemContainer.TransformToVisual(sv).TransformPoint(new Point());
+            sv.ChangeView(null, count/*sv.VerticalOffset + pos.Y*/, null);
         }
         private int CurrentPlayingItem;
         private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
         {
             MediaElement mediaElement = sender as MediaElement;
             if (mediaElement != null) {
-                if (mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Playing) {
-                    PlayPause.Icon = new SymbolIcon(Symbol.Pause);
-                    PlayPause.Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Pause/Label");
-                } else {
-                    if (mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Stopped) {
-                        CurrentPlayingItem += 1;
-                        ScrollToVerse(ViewModel.VerseReferences[CurrentPlayingItem]);
-                    } 
+                //if (mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Opening) { mediaElement.Play(); }
+                if (mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Opening || mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Playing || mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Buffering) {
+                } else if (mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Closed || mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Stopped)
+                {
+                    PlayPause.Icon = new SymbolIcon(Symbol.Play);
+                    PlayPause.Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Play/Label");
+                } else if (((PlayPause.Icon as SymbolIcon).Symbol == Symbol.Pause) && mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Paused) {
+                    do
+                    {
+                        CurrentPlayingItem++;
+                        if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) CurrentPlayingItem = 0;
+                    } while (ViewModel.VerseReferences.Count() != CurrentPlayingItem && ViewModel.VerseReferences[CurrentPlayingItem].Chapter == -1);
+                    ViewModel.CurrentVerse = ViewModel.VerseReferences[CurrentPlayingItem];
+                    ScrollToVerse(ViewModel.VerseReferences[CurrentPlayingItem]);
+                    VersePlayer.Source = new Uri(IslamMetadata.AudioRecitation.GetURL(IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Source, IslamMetadata.CachedData.IslamData.ReciterList.Reciters[AppSettings.iSelectedReciter].Name, ViewModel.VerseReferences[CurrentPlayingItem].Chapter, ViewModel.VerseReferences[CurrentPlayingItem].Verse));
                 }
             }
-        }
-        private void RemoveBookmark_Click(object sender, RoutedEventArgs e)
-        {
-            List<int[]> marks = AppSettings.Bookmarks.ToList();
-            marks.RemoveAt(((sender as TextBlock).DataContext as MyListItem).Index);
-            AppSettings.Bookmarks = marks.ToArray();
         }
         private void StackPanel_Holding(object sender, HoldingRoutedEventArgs e)
         {
@@ -279,13 +300,14 @@ namespace IslamSourceQuranViewer
                 Flyout ContextFlyout = new Flyout();
                 StackPanel Panel = new StackPanel();
                 ContextFlyout.Content = Panel;
-                //Panel.Children.Add(new TextBlock() { Text = IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word) });
-                Panel.Children.Add(new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("CopyToClipboard/Text") });
-                Panel.Children.Add(new Button());
+                Panel.Children.Add(new ItemsControl() { ItemsPanel = Resources["VirtualPanelTemplate"] as ItemsPanelTemplate, ItemTemplate = Resources["WrapTemplate"] as DataTemplate, ItemsSource = IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word) });
+                VirtualizingStackPanel.SetVirtualizationMode((Panel.Children.Last() as ItemsControl), VirtualizationMode.Recycling);
+                VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word).Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), UIChanger.MaxWidth);
+                Panel.Children.Add(new Button() { Content = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("CopyToClipboard/Text") });
                 (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) =>
                 {
 #if WINDOWS_APP || WINDOWS_UWP
-                    Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(string.Empty); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
+                    Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
 #else
                 global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
                 options.PreferredApplicationDisplayName = "Clipboarder"; 
@@ -294,18 +316,17 @@ namespace IslamSourceQuranViewer
                 global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
 #endif
                 };
-                Panel.Children.Add(new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") });
-                Panel.Children.Add(new Button());
+                Panel.Children.Add(new Button() { Content = new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") } });
                 (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) =>
                 {
 #if WINDOWS_APP
                     Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
-                    package.SetText(string.Empty);
+                    package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested += (Windows.ApplicationModel.DataTransfer.DataTransferManager __sender, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs __e) =>
                     {
                         __e.Request.Data.Properties.Title = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("DisplayName");
                         __e.Request.Data.Properties.Description = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Description");
-                        __e.Request.Data.SetText(string.Empty);
+                        __e.Request.Data.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
                         Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested -= null;
                     };
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
@@ -315,18 +336,61 @@ namespace IslamSourceQuranViewer
                 shareStatusTask.Show(); 
 #endif
                 };
-                FlyoutBase.SetAttachedFlyout(sender as VirtualizingStackPanel, ContextFlyout);
-                FlyoutBase.ShowAttachedFlyout(sender as VirtualizingStackPanel);
+                FlyoutBase.SetAttachedFlyout(sender as StackPanel, ContextFlyout);
+                FlyoutBase.ShowAttachedFlyout(sender as StackPanel);
             } else if(((sender as StackPanel).DataContext as MyRenderItem).Chapter != -1) {
                 MenuFlyout ContextFlyout = new MenuFlyout();
-                ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString((true ? "AddBookmark" : "RemoveBookmark") + "/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => { };
+                int idxMark = Array.FindIndex(AppSettings.Bookmarks, (Item) => Item[0] == Division && Item[1] == Selection && Item[2] == ((sender as StackPanel).DataContext as MyRenderItem).Chapter && Item[3] == ((sender as StackPanel).DataContext as MyRenderItem).Verse);
+                ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString((idxMark == -1 ? "AddBookmark" : "RemoveBookmark") + "/Text") });
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+                    List<int[]> marks = AppSettings.Bookmarks.ToList();
+                    if (idxMark != -1) {
+                        marks.RemoveAt(idxMark);
+                    } else {
+                        marks.Add(new int[] { Division, Selection, ((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse });
+                    }
+                    AppSettings.Bookmarks = marks.ToArray();
+                };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("CopyToClipboard/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => { };
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+#if WINDOWS_APP || WINDOWS_UWP
+                    Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
+#else
+                global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
+                options.PreferredApplicationDisplayName = "Clipboarder"; 
+                options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
+                options.DisplayApplicationPicker = false; 
+                global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
+#endif
+                };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => { };
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+#if WINDOWS_APP
+                    Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
+                    package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
+                    Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested += (Windows.ApplicationModel.DataTransfer.DataTransferManager __sender, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs __e) =>
+                    {
+                        __e.Request.Data.Properties.Title = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("DisplayName");
+                        __e.Request.Data.Properties.Description = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Description");
+                        __e.Request.Data.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
+                        Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested -= null;
+                    };
+                    Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
+#else
+                Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
+                shareStatusTask.Status = string.Empty;
+                shareStatusTask.Show(); 
+#endif
+                };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("SetPlaybackVerse/Text") });
-                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => { };
+                (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => {
+                    ViewModel.CurrentVerse = (sender as StackPanel).DataContext as MyRenderItem;
+                    for (int count = 0; count < ViewModel.VerseReferences.Count() - 1; count++)
+                    {
+                        if (ViewModel.VerseReferences[count] == ViewModel.CurrentVerse) { CurrentPlayingItem = count; break; }
+                        VersePlayer.Source = null;
+                    }
+                };
                 //ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("ShowExegesis/Text") });
                 //(ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) => { };
                 FlyoutBase.SetAttachedFlyout(sender as StackPanel, ContextFlyout);
@@ -513,10 +577,14 @@ namespace IslamSourceQuranViewer
         }
         private List<object> _Items;
         public List<object> Items { get { return _Items; } set { _Items = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Items")); } }
+        private bool _IsSelected;
+        public bool IsSelected { get { return _IsSelected; } set { _IsSelected = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsSelected")); } }
         public int Chapter;
         public int Verse;
         public int Word;
         public string VerseText { get { return Chapter.ToString() + ":" + Verse.ToString(); } }
+        public string VerseWordText { get { return Chapter.ToString() + ":" + Verse.ToString() + (Word == -1 ? string.Empty : (":" + Word.ToString())); } }
+        public string GetText { get { return String.Join(" ", _Items.Select((Item) => Item.GetType() == typeof(MyChildRenderItem) ? ((MyChildRenderItem)Item).GetText : String.Join(string.Empty, ((VirtualizingWrapPanelAdapter)Item).RenderModels.Select((It) => String.Join(string.Empty, It.RenderItems.Select((RecIt) => RecIt.GetText)))))) + " " + VerseWordText; } }
 #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -562,8 +630,10 @@ namespace IslamSourceQuranViewer
                 GroupIndexes.Add(new int[] { groupIndex, GroupIndexes.Count }); return false; });
             return GroupIndexes.GroupBy((Item) => Item[0], (Item) => value.ElementAt(Item[1])).Select((Item) => new MyRenderModel(Item.ToList())).ToList();
         }
-        public List<MyRenderItem> VerseReferences { get; set; }
-        public MyRenderItem CurrentVerse { get; set; }
+        private List<MyRenderItem> _VerseReferences;
+        public List<MyRenderItem> VerseReferences { get { return _VerseReferences; } set { _VerseReferences = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("VerseReferences")); } }
+        private MyRenderItem _CurrentVerse;
+        public MyRenderItem CurrentVerse { get { return _CurrentVerse; } set { if (_CurrentVerse != null) _CurrentVerse.IsSelected = false; _CurrentVerse = value; _CurrentVerse.IsSelected = true; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("CurrentVerse")); } }
 #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -621,6 +691,7 @@ public static class FormattedTextBehavior
             //5 margin on both sides
             return 5 + 5 + 1 + 1 + CalculateWidth(string.Join(String.Empty, ItemRuns.Select((Item) => Item.ItemText)), IsArabic, (float)float.MaxValue, float.MaxValue);
         }
+        public string GetText { get { return String.Join(string.Empty, _ItemRuns.Select((Item) => Item.ItemText)); } }
 #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -1109,6 +1180,18 @@ public static class FormattedTextBehavior
         }
         public bool IsArabic { get; set; }
         public bool IsRTL { get; set; }
+    }
+    public class BackgroundSelectedConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return new SolidColorBrush((bool)value ? Windows.UI.Colors.Beige : Windows.UI.Colors.White);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class ArabicFlowConverter : IValueConverter
     {

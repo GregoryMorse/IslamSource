@@ -53,7 +53,19 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock x:Uid="Reciter" VerticalAlignment="Center"></TextBlock>
-                <ComboBox ItemsSource="{Binding Source={StaticResource RecitersSource}}" SelectedItem="{Binding Path=MyAppSettings.Reciter, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
+                <ComboBox ItemsSource="{Binding Source={StaticResource RecitersSource}}" DisplayMemberPath="ValueString" SelectedValuePath="KeyString" SelectedItem="{Binding Path=MyAppSettings.Reciter, Mode=TwoWay}" VerticalAlignment="Center"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Uid="AutomaticAdvanceVerse" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding Path=MyAppSettings.AutomaticAdvanceVerse, Mode=TwoWay}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Uid="DelayVerseLengthBeforeAdvancing" VerticalAlignment="Center"></TextBlock>
+                <CheckBox IsChecked="{Binding Path=MyAppSettings.DelayVerseLengthBeforeAdvancing, Mode=TwoWay}" VerticalAlignment="Center"></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Uid="AdditionalVerseAdvanceDelay" VerticalAlignment="Center"></TextBlock>
+                <TextBox Text="{Binding Path=MyAppSettings.AdditionalVerseAdvanceDelay}"></TextBox>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -1253,7 +1253,7 @@ Public Class AudioRecitation
     Public Shared Function GetReciterIndex(ReciterName As String) As Integer
         If ReciterName = String.Empty Then ReciterName = CachedData.IslamData.ReciterList.DefaultReciter
         For Count As Integer = 0 To CachedData.IslamData.ReciterList.Reciters.Length - 1
-            If CachedData.IslamData.ReciterList.Reciters(Count).Reciter = ReciterName Then
+            If CachedData.IslamData.ReciterList.Reciters(Count).Name = ReciterName Then
                 Return Count
             End If
         Next
