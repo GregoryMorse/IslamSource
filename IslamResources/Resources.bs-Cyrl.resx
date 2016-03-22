@@ -417,6 +417,9 @@
   <data name="IslamInfo_EnSpace" xml:space="preserve">
     <value> 	Кратки размак</value>
   </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value> &lt;Enter&gt;</value>
+  </data>
   <data name="IslamInfo_Entertainment" xml:space="preserve">
     <value>Забава</value>
   </data>

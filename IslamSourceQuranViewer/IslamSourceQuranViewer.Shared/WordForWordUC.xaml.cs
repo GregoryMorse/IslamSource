@@ -408,7 +408,7 @@ namespace IslamSourceQuranViewer
                 Panel.Children.Add(new Button() { Content = new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") } });
                 (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) =>
                 {
-#if WINDOWS_APP
+//#if WINDOWS_APP
                 Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
                     package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested += (Windows.ApplicationModel.DataTransfer.DataTransferManager __sender, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs __e) =>
@@ -419,11 +419,11 @@ namespace IslamSourceQuranViewer
                         Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested -= null;
                     };
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
-#else
-            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
-            shareStatusTask.Status = string.Empty;
-            shareStatusTask.Show(); 
-#endif
+//#else
+//            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
+//            shareStatusTask.Status = string.Empty;
+//            shareStatusTask.Show(); 
+//#endif
             };
                 FlyoutBase.SetAttachedFlyout(sender as StackPanel, ContextFlyout);
                 FlyoutBase.ShowAttachedFlyout(sender as StackPanel);
@@ -461,7 +461,7 @@ namespace IslamSourceQuranViewer
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") });
                 (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
                 {
-#if WINDOWS_APP
+//#if WINDOWS_APP
                     Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage();
                     package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText);
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested += (Windows.ApplicationModel.DataTransfer.DataTransferManager __sender, Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs __e) =>
@@ -472,11 +472,11 @@ namespace IslamSourceQuranViewer
                         Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested -= null;
                     };
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
-#else
-            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
-            shareStatusTask.Status = string.Empty;
-            shareStatusTask.Show(); 
-#endif
+//#else
+//            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
+//            shareStatusTask.Status = string.Empty;
+//            shareStatusTask.Show(); 
+//#endif
                 };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("SetPlaybackVerse/Text") });
                 (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
