@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Kurani fjalë për fjalë Përkthimi</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>transliterim</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Arabisht</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Vargu nga ajeti</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Fjalë për fjalë</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>quran</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>viewer quran</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Texhvidit</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kur'ani me arabe e saj, transliterimit dhe fjala e përkthimit me fjalë dhe varg nga vargu për të mësuarit, studimin, kërkimin, mësimin përmendësh, reflektim dhe zotërim të Texhvid.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Main shikues Kur'ani.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>quran</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Përkthimi</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>transliterim</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Arabisht</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Kurani</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Kuran</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al-Quran</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Main shikues Kur'ani.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Version fillestar.</value>
   </data>
 </root>

@@ -27402,4 +27402,541 @@
   <data name="IslamInfo_RecitationRules" xml:space="preserve">
     <value>אמירת כללים</value>
   </data>
+  <data name="IslamInfo_AngleWithSInside" xml:space="preserve">
+    <value>זווית עם S בפנים</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallVBelow" xml:space="preserve">
+    <value>מכתב בערבית חוף עם V הפוך קטן למטה</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithSmallVBelow" xml:space="preserve">
+    <value>מכתב בערבית חוף עם V קטן למטה</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallVBelow" xml:space="preserve">
+    <value>דאל מכתב בערבית עם V הפוך קטן למטה</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterRehWithSmallVBelow" xml:space="preserve">
+    <value>מכתב בערבית Reh עם V קטן למטה</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterUWithHamzaAbove" xml:space="preserve">
+    <value>מכתב בערבית U עם חמזה לעיל</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterZainWithInvertedVAbove" xml:space="preserve">
+    <value>' ז אות ערבית עם V הפוכה מעל</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignInvertedSmallVAbove" xml:space="preserve">
+    <value>תנועה ערבית סימן הפוך קטן V הנ</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignSmallVAbove" xml:space="preserve">
+    <value>תנועה ערבית סימן קטן V הנ</value>
+  </data>
+  <data name="IslamInfo_BatakVowelSignUForSimalungunSa" xml:space="preserve">
+    <value>בטק תנועה סימן U Simalungun Sa</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterAWithDiaeresis" xml:space="preserve">
+    <value>שילוב של האות הלטינית קטנה A עם Diaeresis</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterCCedilla" xml:space="preserve">
+    <value>שילוב של האות הלטינית קטן C סדיליה</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenAAbove" xml:space="preserve">
+    <value>שילוב של האות הלטינית קטן משוטחים לפתוח לעיל</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterLWithDoubleMiddleTilde" xml:space="preserve">
+    <value>שילוב של האות קטן הלטינית L עם טילדה האמצעי כפול</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithDiaeresis" xml:space="preserve">
+    <value>שילוב של האות קטן הלטינית O עם Diaeresis</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithLightCentralizationStroke" xml:space="preserve">
+    <value>שילוב של האות קטן הלטינית O עם ריכוז אור שבץ</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRBelow" xml:space="preserve">
+    <value>שילוב של האות הלטינית קטן R להלן</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRRotunda" xml:space="preserve">
+    <value>שילוב של האות הלטינית קטן R רוטונדה</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithDiaeresis" xml:space="preserve">
+    <value>שילוב של אות קטנה לטינית U עם Diaeresis</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithLightCentralizationStroke" xml:space="preserve">
+    <value>שילוב של האות קטן הלטינית U עם ריכוז אור שבץ</value>
+  </data>
+  <data name="IslamInfo_CombiningXAbove" xml:space="preserve">
+    <value>שילוב של X מעל</value>
+  </data>
+  <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
+    <value>שילוב של X מתחת</value>
+  </data>
+  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
+    <value>שילוב של X - X להלן</value>
+  </data>
+  <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
+    <value>סימן מרכאות כפולות Reversed9 גבוהה</value>
+  </data>
+  <data name="IslamInfo_DoubleLow9QuotationMark" xml:space="preserve">
+    <value>סימן מרכאות כפולות Low9</value>
+  </data>
+  <data name="IslamInfo_DoubleLowReversed9QuotationMark" xml:space="preserve">
+    <value>סימן מרכאות כפולות Reversed9 נמוך</value>
+  </data>
+  <data name="IslamInfo_IntegralAroundAPointOperator" xml:space="preserve">
+    <value>אינטגרל סביב אופרטור נקודה</value>
+  </data>
+  <data name="IslamInfo_LBBarSymbol" xml:space="preserve">
+    <value>L B בר סמל</value>
+  </data>
+  <data name="IslamInfo_LeftSidewaysUBracket" xml:space="preserve">
+    <value>הכן U מהצד השמאלי</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignEAbove" xml:space="preserve">
+    <value>מיאנמר אהו י סימן E מעל</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignShanEAbove" xml:space="preserve">
+    <value>מיאנמר אהו י סימן שן E מעל</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>לא משנה של ולא שווה ל-</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>קבוצת-על של וגם שווה ל-</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>לא תת-ערכה של</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>לא ערכת-על של</value>
+  </data>
+  <data name="IslamInfo_ParenthesizedKoreanCharacterOHu" xml:space="preserve">
+    <value>והסיום קוריאני תו O Hu</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType1Plastics" xml:space="preserve">
+    <value>סמל מיחזור פלסטיק Type1</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType2Plastics" xml:space="preserve">
+    <value>סמל מיחזור פלסטיק Type2</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType3Plastics" xml:space="preserve">
+    <value>סמל מיחזור פלסטיק Type3</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType4Plastics" xml:space="preserve">
+    <value>סמל מיחזור פלסטיק Type4</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType5Plastics" xml:space="preserve">
+    <value>סמל מיחזור פלסטיק Type5</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType6Plastics" xml:space="preserve">
+    <value>סמל מיחזור פלסטיק Type6</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType7Plastics" xml:space="preserve">
+    <value>סמל מיחזור פלסטיק Type7</value>
+  </data>
+  <data name="IslamInfo_RightSidewaysUBracket" xml:space="preserve">
+    <value>הכן U לצדדים.</value>
+  </data>
+  <data name="IslamInfo_SInTriangle" xml:space="preserve">
+    <value>S במשולש</value>
+  </data>
+  <data name="IslamInfo_SingleHighReversed9QuotationMark" xml:space="preserve">
+    <value>מרכאות בודד Reversed9 גבוהה</value>
+  </data>
+  <data name="IslamInfo_SingleLow9QuotationMark" xml:space="preserve">
+    <value>מרכאות בודד Low9</value>
+  </data>
+  <data name="IslamInfo_SquareAOverM" xml:space="preserve">
+    <value>א ר פני M</value>
+  </data>
+  <data name="IslamInfo_SquareVOverM" xml:space="preserve">
+    <value>V מרובע פני M</value>
+  </data>
+  <data name="IslamInfo_ThreeDBottomLightedRightwardsArrowhead" xml:space="preserve">
+    <value>D שלוש התחתון מודלק Rightwards ראש חץ</value>
+  </data>
+  <data name="IslamInfo_ThreeDLeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
+    <value>שמאלה D שלוש מודלק ראש חץ כלפי מטה שווה-צלעות</value>
+  </data>
+  <data name="IslamInfo_ThreeDRightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
+    <value>נכון D שלוש מודלק ראש חץ כלפי מעלה שווה-צלעות</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
+    <value>שלושה ש העליון מודלק Leftwards שווה צלעות ראש חץ</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsArrowhead" xml:space="preserve">
+    <value>שלושה ש העליון מודלק Rightwards ראש חץ</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
+    <value>שלושה ש העליון מודלק Rightwards שווה צלעות ראש חץ</value>
+  </data>
+  <data name="IslamInfo_UpArrowheadInARectangleBox" xml:space="preserve">
+    <value>את ראש החץ בתיבת מלבן</value>
+  </data>
+  <data name="IslamInfo_XInARectangleBox" xml:space="preserve">
+    <value>X בתיבה מלבן</value>
+  </data>
+  <data name="IslamInfo_ZNotationBagMembership" xml:space="preserve">
+    <value>Z בסימון תיק חברות</value>
+  </data>
+  <data name="IslamInfo_ZNotationDomainAntirestriction" xml:space="preserve">
+    <value>Z בסימון תחום Antirestriction</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftBindingBracket" xml:space="preserve">
+    <value>הכן כריכה שמאלה בסימון Z</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftImageBracket" xml:space="preserve">
+    <value>Z בסימון תמונה משמאל סוגר</value>
+  </data>
+  <data name="IslamInfo_ZNotationRangeAntirestriction" xml:space="preserve">
+    <value>Z בסימון טווח Antirestriction</value>
+  </data>
+  <data name="IslamInfo_ZNotationRelationalComposition" xml:space="preserve">
+    <value>Z בסימון יחסי קומפוזיציה</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightBindingBracket" xml:space="preserve">
+    <value>Z בסימון הנכון מחייב סוגר</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightImageBracket" xml:space="preserve">
+    <value>Z בסימון תמונה מימין סוגר</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaComposition" xml:space="preserve">
+    <value>Z בסימון הסכימה קומפוזיציה</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaPiping" xml:space="preserve">
+    <value>Z בסימון הסכימה צנרת</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaProjection" xml:space="preserve">
+    <value>Z בסימון הסכימה הקרנה</value>
+  </data>
+  <data name="IslamInfo_ZNotationSpot" xml:space="preserve">
+    <value>Z בסימון ספוט</value>
+  </data>
+  <data name="IslamInfo_ZNotationTypeColon" xml:space="preserve">
+    <value>Z בסימון סוג קולון</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>‏‏בסיס</value>
+  </data>
+  <data name="IslamInfo_Lemma" xml:space="preserve">
+    <value>הלמה</value>
+  </data>
+  <data name="IslamInfo_SpecialGroup" xml:space="preserve">
+    <value>קבוצת המיוחדת</value>
+  </data>
+  <data name="IslamInfo_PartOfSpeech" xml:space="preserve">
+    <value>חלקי הדיבר</value>
+  </data>
+  <data name="IslamInfo_AttachedPronoun" xml:space="preserve">
+    <value>כינוי גוף צמוד</value>
+  </data>
+  <data name="IslamInfo_Determiner" xml:space="preserve">
+    <value>Determiner</value>
+  </data>
+  <data name="IslamInfo_ByWithOrInPreposition" xml:space="preserve">
+    <value>מאת עם או מילת-יחס</value>
+  </data>
+  <data name="IslamInfo_LikeOrThusPreposition" xml:space="preserve">
+    <value>כמו או ובכך כבר נהיה ממוקמים</value>
+  </data>
+  <data name="IslamInfo_ParticleOfOathUsedAsPreposition" xml:space="preserve">
+    <value>חלקיק של שבועה משמש מילת-יחס</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingFuture" xml:space="preserve">
+    <value>חלקיק כנסיעה המציינת את העתיד</value>
+  </data>
+  <data name="IslamInfo_CallingVocative" xml:space="preserve">
+    <value>קורא Vocative</value>
+  </data>
+  <data name="IslamInfo_PointingVocative" xml:space="preserve">
+    <value>הצבעה Vocative</value>
+  </data>
+  <data name="IslamInfo_PrefixedInterrogativeParticle" xml:space="preserve">
+    <value>קידומת חלקיקים מברר</value>
+  </data>
+  <data name="IslamInfo_PrefixedEqualizationParticle" xml:space="preserve">
+    <value>קיזוז כנסיעה חלקיקים</value>
+  </data>
+  <data name="IslamInfo_Resumption" xml:space="preserve">
+    <value>חידוש</value>
+  </data>
+  <data name="IslamInfo_Circumstantial" xml:space="preserve">
+    <value>נסיבתי</value>
+  </data>
+  <data name="IslamInfo_Comitative" xml:space="preserve">
+    <value>Comitative</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>תוצאה</value>
+  </data>
+  <data name="IslamInfo_Supplemental" xml:space="preserve">
+    <value>משלימה</value>
+  </data>
+  <data name="IslamInfo_Cause" xml:space="preserve">
+    <value>סיבה</value>
+  </data>
+  <data name="IslamInfo_PrefixedPreposition" xml:space="preserve">
+    <value>כנסיעה מילת-יחס</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingEmphasis" xml:space="preserve">
+    <value>חלקיק כנסיעה המציין דגש</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingPurpose" xml:space="preserve">
+    <value>חלקיק כנסיעה המציינת תכלית</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleUsedToFormImperative" xml:space="preserve">
+    <value>קידומת חלקיקים השתמשו בידיות ציווי</value>
+  </data>
+  <data name="IslamInfo_VocativeWordForm" xml:space="preserve">
+    <value>בצורת המילה vocative</value>
+  </data>
+  <data name="IslamInfo_Emphatic" xml:space="preserve">
+    <value>נחציים</value>
+  </data>
+  <data name="IslamInfo_IndicativeMood" xml:space="preserve">
+    <value>מעיד על מצב הרוח</value>
+  </data>
+  <data name="IslamInfo_SubjunctiveMood" xml:space="preserve">
+    <value>רוח מותנת</value>
+  </data>
+  <data name="IslamInfo_JussiveMood" xml:space="preserve">
+    <value>Jussive רוח</value>
+  </data>
+  <data name="IslamInfo_Stem" xml:space="preserve">
+    <value>גזע</value>
+  </data>
+  <data name="IslamInfo_Participle" xml:space="preserve">
+    <value>קרובים:</value>
+  </data>
+  <data name="IslamInfo_TypeOne" xml:space="preserve">
+    <value>הקלד אחת</value>
+  </data>
+  <data name="IslamInfo_TypeTwo" xml:space="preserve">
+    <value>סוג 2</value>
+  </data>
+  <data name="IslamInfo_TypeThree" xml:space="preserve">
+    <value>סוג 3</value>
+  </data>
+  <data name="IslamInfo_TypeFour" xml:space="preserve">
+    <value>סוג 4</value>
+  </data>
+  <data name="IslamInfo_TypeFive" xml:space="preserve">
+    <value>סוג 5</value>
+  </data>
+  <data name="IslamInfo_TypeSix" xml:space="preserve">
+    <value>סוג 6</value>
+  </data>
+  <data name="IslamInfo_TypeSeven" xml:space="preserve">
+    <value>הקלד שבע</value>
+  </data>
+  <data name="IslamInfo_TypeEight" xml:space="preserve">
+    <value>סוג 8</value>
+  </data>
+  <data name="IslamInfo_TypeNine" xml:space="preserve">
+    <value>סוג תשע</value>
+  </data>
+  <data name="IslamInfo_TypeTen" xml:space="preserve">
+    <value>סוג 10</value>
+  </data>
+  <data name="IslamInfo_TypeEleven" xml:space="preserve">
+    <value>סוג 11</value>
+  </data>
+  <data name="IslamInfo_TypeTwelve" xml:space="preserve">
+    <value>סוג שתים עשרה</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>‏‏פעיל</value>
+  </data>
+  <data name="IslamInfo_Perfect" xml:space="preserve">
+    <value>מושלם</value>
+  </data>
+  <data name="IslamInfo_Imperfect" xml:space="preserve">
+    <value>אימפרפקטום</value>
+  </data>
+  <data name="IslamInfo_Imperative" xml:space="preserve">
+    <value>ציווי</value>
+  </data>
+  <data name="IslamInfo_GenitiveCase" xml:space="preserve">
+    <value>תיק genitive</value>
+  </data>
+  <data name="IslamInfo_Singular" xml:space="preserve">
+    <value>יחיד</value>
+  </data>
+  <data name="IslamInfo_NumberSpelling" xml:space="preserve">
+    <value>איות מספר</value>
+  </data>
+  <data name="IslamInfo_HeadingNumberSpelling" xml:space="preserve">
+    <value>כותרת מספר איות</value>
+  </data>
+  <data name="IslamInfo_StoppingEndowment" xml:space="preserve">
+    <value>עצירת הקדש</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaStoppingEndowment" xml:space="preserve">
+    <value>טה Marbuta עצירה הקדש</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaJoiningContinuing" xml:space="preserve">
+    <value>טה Marbuta מצטרף המשך</value>
+  </data>
+  <data name="IslamInfo_JoiningContinuing" xml:space="preserve">
+    <value>הצטרפות המשך</value>
+  </data>
+  <data name="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>עומד המוארך אפס קטן גבוהה אפס מלבני זקוף</value>
+  </data>
+  <data name="IslamInfo_EmptyCentreLowStop" xml:space="preserve">
+    <value>עצירה נמוך מרכז ריק</value>
+  </data>
+  <data name="IslamInfo_RoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>עצירה גבוהה מעוגל עם מרכז מילוי</value>
+  </data>
+  <data name="IslamInfo_SmallNoon" xml:space="preserve">
+    <value>בצהריים קטן</value>
+  </data>
+  <data name="IslamInfo_SmallHighSeen" xml:space="preserve">
+    <value>תיכון קטן ראיתי</value>
+  </data>
+  <data name="IslamInfo_SmallLowSeen" xml:space="preserve">
+    <value>נמוך קטן ראיתי</value>
+  </data>
+  <data name="IslamInfo_Sukun" xml:space="preserve">
+    <value>Sukun</value>
+  </data>
+  <data name="IslamInfo_EmptyShadda" xml:space="preserve">
+    <value>Shadda ריק</value>
+  </data>
+  <data name="IslamInfo_ShaddaResolve" xml:space="preserve">
+    <value>פתרון Shadda</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaFatha" xml:space="preserve">
+    <value>המשך Fatha חמזה</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaKasra" xml:space="preserve">
+    <value>המשך כסרא חמזה</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaDamma" xml:space="preserve">
+    <value>המשך Damma חמזה</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaEmpty" xml:space="preserve">
+    <value>המשך ריק חמזה</value>
+  </data>
+  <data name="IslamInfo_LaamAssimilation" xml:space="preserve">
+    <value>הטמעה Laam</value>
+  </data>
+  <data name="IslamInfo_RaaAssimilation" xml:space="preserve">
+    <value>הטמעה אטול ראה</value>
+  </data>
+  <data name="IslamInfo_RaaHeavinessOrLightness" xml:space="preserve">
+    <value>אטול ראה כבדות או הקלות</value>
+  </data>
+  <data name="IslamInfo_SmallWaw" xml:space="preserve">
+    <value>וואו הקטן</value>
+  </data>
+  <data name="IslamInfo_SmallYeh" xml:space="preserve">
+    <value>יה קטן</value>
+  </data>
+  <data name="IslamInfo_FathaSilentLetterSuperscriptAlef" xml:space="preserve">
+    <value>Fatha הדממה אות א כתב עילי</value>
+  </data>
+  <data name="IslamInfo_DipthongZeroLength" xml:space="preserve">
+    <value>אורך אפס Dipthong</value>
+  </data>
+  <data name="IslamInfo_OriginalLengtheningZeroCapture" xml:space="preserve">
+    <value>המקורי הארכת לכידת אפס</value>
+  </data>
+  <data name="IslamInfo_AssimilateGreatIdenticalDammaMerge" xml:space="preserve">
+    <value>להטמיע מיזוג נהדר Damma זהה</value>
+  </data>
+  <data name="IslamInfo_AssimilateSmallIdenticalHaaSakinah" xml:space="preserve">
+    <value>להטמיע סקינה האא זהים קטן</value>
+  </data>
+  <data name="IslamInfo_MostCompleteNasalization" xml:space="preserve">
+    <value>Nasalization השלם ביותר</value>
+  </data>
+  <data name="IslamInfo_CompleteNasalization" xml:space="preserve">
+    <value>Nasalization שלמה</value>
+  </data>
+  <data name="IslamInfo_IncompleteNasalization" xml:space="preserve">
+    <value>Nasalization לא שלם</value>
+  </data>
+  <data name="IslamInfo_MostIncompleteNasalization" xml:space="preserve">
+    <value>Nasalization הכי שלם</value>
+  </data>
+  <data name="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" xml:space="preserve">
+    <value>לא הושלמה הטמעת Nasalization vowelless בצהריים</value>
+  </data>
+  <data name="IslamInfo_UnwrittenHelperKasra" xml:space="preserve">
+    <value>לא כתוב עוזר כסרא</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaWawHamza" xml:space="preserve">
+    <value>א Wasla וואו חמזה</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaAlefMaksuraHamza" xml:space="preserve">
+    <value>א Wasla Maksura אלף-המזה</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaHamza" xml:space="preserve">
+    <value>Wasla באלף-המזה</value>
+  </data>
+  <data name="IslamInfo_SmallHamza" xml:space="preserve">
+    <value>חמזה קטן</value>
+  </data>
+  <data name="IslamInfo_LetterHamza" xml:space="preserve">
+    <value>מכתב חמזה</value>
+  </data>
+  <data name="IslamInfo_HamzaAbove" xml:space="preserve">
+    <value>חמזה לעיל</value>
+  </data>
+  <data name="IslamInfo_NotAlef" xml:space="preserve">
+    <value>לא אלף</value>
+  </data>
+  <data name="IslamInfo_MaddAlef" xml:space="preserve">
+    <value>א. מאד</value>
+  </data>
+  <data name="IslamInfo_NotWaw" xml:space="preserve">
+    <value>לא וואו</value>
+  </data>
+  <data name="IslamInfo_NotYeh" xml:space="preserve">
+    <value>לא יה</value>
+  </data>
+  <data name="IslamInfo_MaddWaw" xml:space="preserve">
+    <value>Madd וואו</value>
+  </data>
+  <data name="IslamInfo_LeenWaw" xml:space="preserve">
+    <value>וואו לין</value>
+  </data>
+  <data name="IslamInfo_StrongWaw" xml:space="preserve">
+    <value>וואו חזק</value>
+  </data>
+  <data name="IslamInfo_MaddYeh" xml:space="preserve">
+    <value>Madd יה</value>
+  </data>
+  <data name="IslamInfo_LeenYeh" xml:space="preserve">
+    <value>לין יה</value>
+  </data>
+  <data name="IslamInfo_StrongYeh" xml:space="preserve">
+    <value>יה חזק</value>
+  </data>
+  <data name="IslamInfo_DivisionMarkers" xml:space="preserve">
+    <value>חטיבת סמנים</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkers" xml:space="preserve">
+    <value>המשך עצירה סמנים</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkersAtEnding" xml:space="preserve">
+    <value>המשך עצירה סמני סוף</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryLightened" xml:space="preserve">
+    <value>עדי קלנג חובה התבהרו</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryWeighted" xml:space="preserve">
+    <value>עדי קלנג חובה משוקלל</value>
+  </data>
+  <data name="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" xml:space="preserve">
+    <value>מחובר ההארכה Sukun הציג חיוני</value>
+  </data>
+  <data name="IslamInfo_SoftLengtheningLetters" xml:space="preserve">
+    <value>אותיות ההארכה רך</value>
+  </data>
+  <data name="IslamInfo_LetterSpelling" xml:space="preserve">
+    <value>מכתב איות</value>
+  </data>
+  <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
+    <value>הזיכרון לאחר התפילה</value>
+  </data>
 </root>

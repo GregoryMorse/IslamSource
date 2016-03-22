@@ -12,4 +12,1552 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Uqalimaagaq</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Uqalimaagat</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Nalunaiqsimavik</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Tukiliuriniq</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Tusaqsaujjutinga</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>Qulaa</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Asiqqusuittuq</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>Piqaut</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Kinguniani</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>Algeria</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>Tamarmik</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Pijunnaqtitaq</value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>Nalimukasaktuq Nalimutturluunniit Uumunga</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>Iittiaq</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>Kisarvik</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Iigangatigininga:</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>Ninngak</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>Inissaliurvik</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>Isunganuaqpalliajuq</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>Nalimukasaktuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Katannguaq</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>Aturniqarnirainiq</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Avalua</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>Ulluriannguaq</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Ulluriannguamik Aulattiji</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Isuqangittumuungajuq Nalimuttuq</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Piuluqqutitsait:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Utimut</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Makitattiarniq</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Sivuniagut</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>Piuniqsaq</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>akunningani...</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Qirniqtaq</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Qirniqtuq Ammaluqtuq</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>Timinga</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>Uqalimaagaq</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Ataani Saumiata Isua</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Taani Taliqpiata Isua</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Breve</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Katujjiqatigiinniq</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Tunniqqusiat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Qanuinniit</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Taqsannguaq</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Taqsannguarmik Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Niuvirli</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Uqaalagit</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Nunasiuti</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Saapta:</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>China</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Ammaluqsisimajuq Ulluriannguaq Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Ammaluqsisimajuq Titikallak</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Ammaluqsisimajuq Aviksijjut Sanningajuq</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Ammaluqsisimajuq Taqsaq Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Ammaluqsisimajuq Piiqsijjut</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Ammaluqsisimajuq Ilasijjut</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Ammaluqsisimajuq Nagguarmik Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Ammaluqsisimajut Ikarrat</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Nalunaiqtuqsimajut</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Piijarli</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Taliqpimmut Kigilinganut Iluitturuut</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Taliqpimmut Iluitturuut</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Tukimut Qulaani Nappaq ammaluqtuq Qarjunnguaq</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>Matuvalliajuq...</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>Nuvuja</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>Nuagat: </value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>Aliriik taqsaralaak</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>Nimiqtaannguaq</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Nunalik</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Kampani</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>Iluitturuijuq</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Pijariiqtuq</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Qanuinniq</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Alianaigusuutauvutit</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Kasuqpalliajuq</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>Iluliqaqtuq Uggianangittunik Katinngajukkannirnik</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>Iluliqaqtuq Uggianangittunik Katinngajukkannirnik uvvalu Nalimuttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>Ilulingit</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Iluitturuut Killinga</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Ijjuarli</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>Ulilli</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Cube Root</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Iqisulingajuq Logical Amma</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>Iqisulingjuq Logical Uvvalu</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Naammaksigiarut</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Savik</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Ulluq:</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>Taiviti</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Ulluq</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Naattiinguja</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Naggajjau</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Aippiq</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Pingatsiq</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Sitammiq</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Tallirmiq</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Sivataarvik</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Vagiiqtuq</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>Kinguvariaq:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Naksiutijaq</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>Delta Equal To</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Tukiliqqiit</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>Naaniit</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Qaksungaut Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>Ajjigiinginningik</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>Isumaqsurniq</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Piliriviit Avitsimaningit</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Avittijjut Naasautinik</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Aviksijjut Sanningajuq</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Aviksijjut Ikarrat</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>Iluliqangittuq Ilagijaujumik</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Avigunnangittuq</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Atuqtittingittuq</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Kingunianiingittuq</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>Sivuraaniingittuq uvvalu Nalimunga</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>Saqqiingittuq</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Sivuraaniingittuq</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>Kingunianiingittuq uvvalu Nalimunga</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Taqsaq Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Titiqtamut Amma</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Marruuk Apurviik</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Marruuk Ilagijaujuuk</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Marruuk Ilagijauvviujuuk</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Marruuk Union</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>Ammut Taliqpimmut Sanningajuq Kajusivik</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>Sinnattuq</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>Silarjuaq</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>Egypt</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Qummupallianinga:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>—	Em Titikallak</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value> 	Em Akunniq</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>Isulittuq</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>–	En Titikallak</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value> 	En Akunniq</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Naqittarli</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Suilaaqiniq</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Puuksaq</value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>Nalimuttuq Tukiliriitturlu Uumunga</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>Nalimugiittut Tukingitigut</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>Nalimuttuq uvvalu Sivuraani</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>Nalimuttuq uvvalu Kinguniani</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Nalimupaluttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>Pinngitatuaq:</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>Tukisititti...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Taassumungallarik</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>Sulingittuq</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Arnaq</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>Amittuq</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Ikuma</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>Sivulliq</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>Aaqqiksimajuq</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>Ikuma</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>Ingirraniq</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>Nunaraq</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Niqit</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>Uumunga:</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>Imaqaut</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Tisamangat Root</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>France</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Tallirmiq</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>Nakit:</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Saanga</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>Tamarmik pijjaiqt</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>Sivuniksami</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>Piruqsiivik</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>Arnaq/Angut</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Taimaatuinnaq</value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>Kinguvaariit</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>Kiktuatigut Nalimuttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>Kiktuatigut Nalimupaluttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Guulu</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Piujuq</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Grace</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Titiqqanik titirattiaqsimajuqsiurniq</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Grave</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>Saumimmut Tittaq</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>Amisuuniqsaq uvvalu taimaillualik</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Anginiqsaq amma Nalimuttuq</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Katinngajut:</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Katinngajut</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Nujaq</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Aggat</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>Niaquq</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Uummatinnguaq</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>Saqqijaangittuq</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Ikajuut:</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>Ikarraq</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>Iglu</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Ijjinga Uuma</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>Imaippat</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>Tarranga uvvalu Nalimupaluktuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Impact</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>Iluani</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Pijaiiqsimangittuq</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Ilavalliajuq</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Nalunaiqsimavik</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>India</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>Indonesia</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>Infinity</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>Ilasiviujuq</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Apurninga</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Pigiarut</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Pigiarut</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Killumut Ohm Nalunaikkut</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>Iraq</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>Israel</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Ilauvigili</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>Jordan</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Jupiter</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>Kenya</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>Naqittaut...</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>Kuwait</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>Kingulliqpaaq</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>Taqqiq nappalluaruqtuq</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Atuaqsijjut</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>Lebanon</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Left Normal Factor Semidirect Product</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>Saumik Aviksijjut</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>Saumik-Taliqpik Qarjunnguaq</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Saumik-Taliqpik Marruuk Qarjunnguak</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Saumik-Taliqpik Malik Qarjunnguaq</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Left Semidirect Product</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>Qattiinnauniqsaq uvvalu taimaillualik</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Mikinniqsaq Amma Nalimuttuq</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Titiqqat</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>Sukuttia</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Tukisiurivik</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Qakuangajuq</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Ungaqqujjaikkut</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>kasurniq</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Takijuq</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Takijuq Saumik-Taliqpik Qarjunnguaq</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Takijuuk Saumik-Taliqpik Marruuk Qarjunnguak</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Angut</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Angut</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Tarrijaatsaralaanut Iluliliurut</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Isumanaqtuq</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Uuttuqsimajuq Tiriqquq</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Uutturaqtaq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>Katimaniq</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Qitianit Sanimut Kajusivik</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Minat</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>Ilujjirngaq</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Taqqiq</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>taqqiit</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Taqqiq</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Ullaakkut</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>Morocco</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Anginiqsauluaqtuq</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Mikinniqsauluaqtuq</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>Multimap</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>Amisuliuruti</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Amisut katinngajut Union</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Pigiarut</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Nabla</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Atiq:</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Atiit</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>N-ary Ammaluqsisimajuq Taqsaq Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>N-ary Ammaluqsisimajuq Ilasijjut Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>N-ary Ammaluqsisimajuq Ikarranut Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>N-ary Apurvik</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>N-ary Logical Amma</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>N-ary Logical Uvvalu</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-ary Kipaarittuq Apurvik Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>N-ary Kippaarittuq Union Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>N-ary Union</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>N-ary Union Aulattijjut Taqsalik</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-ary Union Aulattijjut Katitittijjutilik</value>
+  </data>
+  <data name="IslamInfo_Near" xml:space="preserve">
+    <value>saniani</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Negated Double Vertical Bar Double Right Turnstile</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>Nalimukasangittuq Nalumingitturlu Uumunga</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Qakuangajuq</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Nutaaq...</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Pivalliajunuurut</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>Kingulliq Mappigaq</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Uggianangittuq Katinngajukkanniq</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Uggianangittuq Katinngajukkanniq uvvalu Nalimuttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Unaunngi</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Nalimulluakasangittuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Isuqangittumuungangittuq Nalimuttuq</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Taimailluangittuq</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Nalimupalungittuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Anginiqsaungittuq</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Ajjiginngitanga Uuma</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Mikinniqsaungittuq</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Uggianangittuungittuq Katinngajukkanniq Uumunga</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Uggianangittut Katinngajukkanniit uvvalu Nalimunga</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Tukiliriingittuuk</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Kippaaringittuq Sanannguaqsimajuq uvvalu Nalimuttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Kippaaringittuq Pigiarngaut uvvalu Nalimuttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Iqisuliungittuq</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Sulingittuq</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Naliraunngi</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Allavvik</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Atausiq</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>Matuiliqtuq...</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>Uvvalu</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>Nakatausimajuq</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Asia</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>Mappigaq</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Mappigat</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>Pakistan</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Tukiliriiktuuk</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>Particle</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>Katujjiqatigiinniq</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>Paati</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Aqqut:</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>Titirautinnguaq</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>Titiraut</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Kikkut</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>Pusanti</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Pijunnaqtitauniq</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Takunnarniq:</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>Philippines</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Kakiaqpak</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Ininga</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Namiivvit:</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Titirvik</value>
+  </data>
+  <data name="IslamInfo_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Saqqikallat Turaaqtanganik Aaqqigiariniq</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Unnuksaq</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Siqiniq Nipiliqtuq</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Siqiniq Nuijuq</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>Sivuraaniittuq</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>Sivuraaniittuq kisiani Nalimunnani Uumunga</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>Kingunianiittuq uvvalu Nalimuuttuq Uuminga</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEquivalentTo" xml:space="preserve">
+    <value>Kingunianiittuq uvvalu Nalimuttuq Uuminga</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>PREFIX</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>Mappigaurataaqtuq</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Anginirijanga</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Pijjaiqsimaniq</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Quarter</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Pijariiqsimaliqtillugu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Tallirmiq</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Angut</value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Ratio</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>Uqalimaarniq</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Atuqujaq</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Kiggusiq</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Kingummut Iqisulik Nalimuttuq</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>Taliqpik Tiriqquq</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>Taliqpik Sinarjuk Katannguaqaqtuni</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Right Normal Factor Semidirect Product</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>Taliqpik Avalusijjuti</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Right Semidirect Product</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>Taliqpik Iinnguaq</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Nagguarmik Nalimuuttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>Nagguarmik uvani Nalimuttuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Attarnannginniq</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Saturn</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>Saudi_Arabia</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Surragiarlugu angininga...</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Surragiarlugu anginingas</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Iliniarvik</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>Script Qullikkut P</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>Imavik</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>tugliq</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Sukuttiit</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>Siutinnguaq</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Aaqqilli Piiqsijjut</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>Uqaujannguat</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Naittuq</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Atiliurli</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Isuqtaq</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>Sine Malinnguaq</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>qaanga</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Qilak</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>Sivingajuq</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Qungattuq=:-)</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Socks:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>Soul</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>Tusaqsauninga</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Akunnia</value>
+  </data>
+  <data name="IslamInfo_Specific" xml:space="preserve">
+    <value>nalunaiqsimajuq</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Uqausitsalianguumajut</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Spherical Tiriqquq</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>Kippaarittuq Qaanga</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Kippaarittuq Irngusiq</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Kippaarissisimajuq Taqsaq Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Kippaarissisimajuq Piiqsijjut</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Kippaarissisimajuq Ilasijjut</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Kippaarissisimaju Ikarrat</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Kippaarittunnguaq Uumunga</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Kippaarittunnguaq uvvalu Nalimugijaujuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Kippaarittuurngaqtuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Kippaarittuurngaqtuq uvvalu Nalimugijaujuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Square Root</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>Sri Lanka</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>Ulluriaq</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Ulluriaq Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Naalaut</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>Nuqqaliqtuq</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>Ilagijaujuq Nalimunnani Uumunga</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Takussauluanngittuq</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>Kingunaaniittuq</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>Kingunianiittuq kisiani Nalimunnani Uumunga</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>Sivuraaniittuq uvvalu Nalimuttuq Uuminga</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>Sivuraaniittuq uvvalu Nalimuttuq Uuminga</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>Sudan</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Nunngunga</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>Inattigiarut</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>Nat</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Siqiniq Nuijuq</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>Ilagijauvviujuq Nalimugijaunani Uumunga</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Qaanganut Iluitturuut</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>Kipu</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>puqtujuq</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>Titiqqat</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>Una</value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Pitaqangittuq</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Pitalik</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>Sivulliq</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>sitamaat</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>tugliq</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Una</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Iqisulik</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Qattimuurninga Siqinngujaup</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>Mikijuannuk</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>Ullumi</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Qulaani Saumiata Isua</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Qulaani Taliqpiata Isua</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>Qinirli</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Tukiliuriniq</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Aullaqattarniit</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Pingasut Iluitturuutit</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Triple Vertical Bar Right Turnstile</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>Sulijuq</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>Tunisia</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>Sangusimajuq Greek Titiqqaralaaq Iota</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>Uliirli</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Union</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Qaujimannanngittuq</value>
+  </data>
+  <data name="IslamInfo_Until" xml:space="preserve">
+    <value>Tikillugu: </value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>Qummut-Ammut Qarjunnguaq</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>Qummut-Ammut Marruuk Qarjunnguak</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>Qummut Taliqpimmut Sanningajuq Kajusivik</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>Uranus</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>Sujjusiq</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Tukingajuq titikutaak</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Angiluarniqsaq</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Mililuarniqsaq</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Tuqquivimmut Iluitturuut</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Takunnarut</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Imiq</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>Pinasuarusiq</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Qanga:</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Nami:</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Qaulluqtuq Ammaluqtuq</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Qaulluqtuq Qummut Iinnguaq</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>Summat?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value> Ilaqaqtuni:</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Uqausiit:</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Immusiq</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Wreath Sanajaumajuq</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>Arraagu</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Ii</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Atuliqtilli</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Uqalimaagaq</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Nuagat: </value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Ulluq:</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Tikurii</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Ulirnaisigutit:</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Tukimuanniq</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Nuqqatilli</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Saqqijaarli</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Piliriviit Avitsimaningit</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Titirausiq</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Titiqqanik titirattiaqsimajuqsiurniq</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Gregorian ulluqsiutit</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri ulluqsiutit</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Pigiarvik</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Tukisigiarassat</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Pigiarut</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>una</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Titiqpalliagait</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Puuqsiliqtuq</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Saqqijaaqtittiniq</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Minatsi</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Aagga</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Qaminngajuq</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Nuutilli:</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Aulattiniq</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Paippaamuurli</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Uqaqtausimajuq</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Sanirvarli</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>Tigliqtaat</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Niruluksimajuq</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Titiqqat</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Tukiliuriniq</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Atauttimiittut</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>+Takunagut</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Ii</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Igitassaq</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Piungittuq</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Qarasaujalirijjut</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Pijariittiaqtuq</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Akaugijauniqsaq</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Pigialiqtuq</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Aviksimajuuk</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Ilagijaungittuq Nalimugijaunanilu</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Ilagijauvviungittuq Nalimugijaunanilu</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Ilakkanniungittuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Ilagijauvviujuq Uumunga</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Pigianngarvik</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Qanuilininga</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Pigiaqtisimajuq</value>
+  </data>
 </root>

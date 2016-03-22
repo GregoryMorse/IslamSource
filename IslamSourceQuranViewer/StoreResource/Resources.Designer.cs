@@ -61,6 +61,28 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string About_Label {
+            get {
+                return ResourceManager.GetString("About.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arabic Qur&apos;an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+        ///Hungarian Translation of Qur&apos;an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+        ///English Translation of Qu&apos;ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+        ///Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+        ///Indonesian wor [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AboutInfo_Text {
+            get {
+                return ResourceManager.GetString("AboutInfo.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Bookmark.
         /// </summary>
         internal static string AddBookmark_Text {
@@ -70,11 +92,29 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Additional Verse Advance Delay.
+        /// </summary>
+        internal static string AdditionalVerseAdvanceDelay_Text {
+            get {
+                return ResourceManager.GetString("AdditionalVerseAdvanceDelay.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arabic Font.
         /// </summary>
         internal static string ArabicFont_Text {
             get {
                 return ResourceManager.GetString("ArabicFont.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advance Verse Automatically.
+        /// </summary>
+        internal static string AutomaticAdvanceVerse_Text {
+            get {
+                return ResourceManager.GetString("AutomaticAdvanceVerse.Text", resourceCulture);
             }
         }
         
@@ -133,6 +173,15 @@ namespace StoreResource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delay Length of Verse Before Advancing.
+        /// </summary>
+        internal static string DelayVerseLengthBeforeAdvancing_Text {
+            get {
+                return ResourceManager.GetString("DelayVerseLengthBeforeAdvancing.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Qur&apos;an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed..
         /// </summary>
         internal static string Description {
@@ -165,6 +214,15 @@ namespace StoreResource {
         internal static string IncreaseFontSize_Label {
             get {
                 return ResourceManager.GetString("IncreaseFontSize.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Looping Mode.
+        /// </summary>
+        internal static string Looping_Text {
+            get {
+                return ResourceManager.GetString("Looping.Text", resourceCulture);
             }
         }
         

@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Alapértelmezett nyelv</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Könyvjelző felvétele</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Könyvjelzők</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Másolás a vágólapra</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Megy a vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Szünet</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Lejátszás</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Szavaló</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Könyvjelző eltávolítása</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set lejátszás vers</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Térkép Exegesis</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Megosztás</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>További vers előzetes késedelem</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>A vers automatikusan előre</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Késedelem hosszát vers előtt halad</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Körkörös lejátszás mód</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Névjegy</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arab korán metaadatok és néhány audio mozgássorozatokat kivéve felsorolt jóváírt Kálmán projekt (http://tanzil.net) és az összes fordítást. 
+Magyar fordítás a Korán által Kiss Zsuzsanna Halima jóváírásra Magyar Iszlam (http://magyariszlam.hu). 
+Angol fordítás liberalizálják által Maulana Muhammad Ali jóváírni a Lahore Ahmadiyya mozgalom az iszlám (http://www.aaiil.org). 
+Morfológiai adatok és angol szó szerint fordításban hitel korán Arab Corpus (http://corpus.quran.com). 
+Fordítás szóra hitel belefér Indonézia (http://www.alquran-indonesia.com/web/quran). 
+Ágnes Judit fordításában Urdu szó szerint jóváírásra könnyű korán Wa Hoang Zoli (http://www.easyquranwahadees.com). 
+Más szó szerint fordítások, valamint egyéb fordítások a program Microsoft fordítási szolgáltató (http://www.microsoft.com/en-us/translator) és a Google Translate (http://translate.google.com), és nem lehet pontos.  Maláj szó szerint korán a forrás az indonéz.  Az összes többi szó szerint korán a forrás az angol korán Arab Corpus. 
+Más audio mozgássorozatokat bitráta jelenik meg a jóváírt minden hindu dajka (http://www.everyayah.com). 
+Unicode-adatokat jóváírásra az Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

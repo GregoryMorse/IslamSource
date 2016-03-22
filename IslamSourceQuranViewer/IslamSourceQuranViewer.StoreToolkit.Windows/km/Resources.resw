@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>ទំហំ</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>បន្ថែ&amp;មទីចំណាំ</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>ចំណាំ</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>ចម្លងទៅឃ្លីបបត</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ការផ្អាក</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>ចាក់</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>&amp;ចែករំលែក...</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>អំពី</value>
+  </data>
 </root>

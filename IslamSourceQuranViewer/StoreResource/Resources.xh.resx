@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Isayizi</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Iziphawuli-ncwadi</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Khuphela kwiKlipbhodi</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Nqumamisa</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Dlala</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Yabelana</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Malunga</value>
+  </data>
 </root>

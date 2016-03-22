@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Koran woord vir woord vertaal</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>transliterasie</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Arabies</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Vers</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Woord vir woord</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>Koran</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>Koran kyker</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Koran met sy Arabiese, transliterasie en vertaling woord vir woord en vers vir vers vir leer, studeer, navorsing, memorisering, besinning en bemeestering van tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Main Koran kyker.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>Koran</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Vertaling</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>transliterasie</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Arabies</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Koran</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Koran</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al-Koran</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Main Koran kyker.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Aanvanklike weergawe.</value>
   </data>
 </root>

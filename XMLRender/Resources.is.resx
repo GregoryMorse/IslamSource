@@ -12,11 +12,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Reikningur gerð virk.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Reikningur þegar virkur.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Reikningur eytt.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Reikningur ekki enn virkjað athugaðu tölvupóstinn þinn fyrstur eða biðja um frekari örvun merkjamál.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>virkja reikning</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Þetta tölvupóstfang er biðja virkjun þinni {0} reikning: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Virkjun fyrir reikning á {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Virkjunarkóði</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-mail ekki á gildu sniði.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Ertu viss?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Breyta E-mail Address</value>
+  </data>
   <data name="Acct_ChangePassword" xml:space="preserve">
     <value>Breyta aðgangsorði</value>
   </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Breyta Notandanafn</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Virkjun sendur á netfangið veitt.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Hreinsun Stale</value>
+  </data>
   <data name="Acct_ClearCache" xml:space="preserve">
     <value>Hreinsa skyndiminni</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Clear Disk Cache</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Staðfesta netfang</value>
   </data>
   <data name="Acct_ConfirmPassword" xml:space="preserve">
     <value>Staðfesta aðgangsorð</value>
@@ -24,32 +72,107 @@
   <data name="Acct_ControlPanel" xml:space="preserve">
     <value>Stjórnborð</value>
   </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Búa Gagnagrunnur</value>
+  </data>
   <data name="Acct_DeleteAccount" xml:space="preserve">
     <value>Eyða reikningi</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net Version</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Notandi með þessu nafni er þegar til Vinsamlegast veldu annað.</value>
   </data>
   <data name="Acct_EmailAddress" xml:space="preserve">
     <value>Netfang</value>
   </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-mail breytt og virkjun e-póstur sendur til að virkja reikninginn.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail þegar í notkun skráðu þig inn með núverandi persónuskilríki.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>E-póstur viðtakandi passa ekki</value>
+  </data>
   <data name="Acct_ForgotPassword" xml:space="preserve">
     <value>Er aðgangsorðið gleymt?</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Gleymt notendanafn</value>
   </data>
   <data name="Acct_Home" xml:space="preserve">
     <value>Heim</value>
   </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Vitlaust örvun kóða.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Rangt lykilorð endurstilla kóða.</value>
+  </data>
   <data name="Acct_InvalidInput" xml:space="preserve">
     <value>Ógilt inntak</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>Rangt notandanafn eða lykilorð.</value>
   </data>
   <data name="Acct_Login" xml:space="preserve">
     <value>Innskr</value>
   </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Innskráning vel.</value>
+  </data>
   <data name="Acct_Logoff" xml:space="preserve">
     <value>Útskráning</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff vel.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Lykilorð verður að vera minnst 8 stafir.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Notandanafn verður að vera að minnsta kosti 4 stafir.</value>
   </data>
   <data name="Acct_No" xml:space="preserve">
     <value>Nei</value>
   </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Verður að staðfesta reikning eyðingu.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Enginn notandi er til fyrir valdri e-mail.</value>
+  </data>
   <data name="Acct_Password" xml:space="preserve">
     <value>Aðgangsorð:</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Lykilorð þegar endurstilla eða ferli ekki hafin.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Þetta tölvupóstfang er að upplýsa um breytingu lykilorð af þinn {0} reikning: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Lykilorð breyst til reikning á {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Lykilorð breytt.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>E-mail hefur verið sendur á netfangið þitt á skrá til að endurstilla lykilorð ferli.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Þetta tölvupóstfang er að endurstilla lykilorðið á þínu {0} reikning: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Lykilorð Endurstilla kóði</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Lykilorð endurstillt fyrir reikning á {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Lykilorð tókst endurstilla.</value>
   </data>
   <data name="Acct_PasswordsNotMatch" xml:space="preserve">
     <value>Aðgangsorðin passa ekki saman</value>
@@ -57,23 +180,191 @@
   <data name="Acct_Register" xml:space="preserve">
     <value>Skrá</value>
   </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Mundu?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>fjarlægja Gagnagrunnur</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Endursenda Virkjun E-mail</value>
+  </data>
   <data name="Acct_ResetPassword" xml:space="preserve">
     <value>Endurstilla lykilorð</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>sækja lykilorð</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>sækja Notandanafn</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Senda Activation Code</value>
   </data>
   <data name="Acct_Username" xml:space="preserve">
     <value>Notandanafn</value>
   </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Þetta tölvupóstfang er að upplýsa um nafn reikning breytingu á þinn {0} reikning: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Notandanafn breytt fyrir reikning á {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Notandanafn breytt.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>E-mail hefur verið sendur á netfangið þitt á skrá með notandanafninu þínu.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Þetta tölvupóstfang er áminning um þinn {0} reikning: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Notandanafn áminning fyrir reikning á {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Notandi er ekki til.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Skoða Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Skoða Disk Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>Skoða hausar</value>
+  </data>
   <data name="Acct_Yes" xml:space="preserve">
     <value>Já</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan dili</value>
   </data>
   <data name="lang_ber" xml:space="preserve">
     <value>Tamasight</value>
   </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>български</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
   <data name="lang_en" xml:space="preserve">
     <value>Enska</value>
   </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Bahasa Indonesia</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Bahasa Melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>Русский язык</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>AF Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Keyrt</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
   <data name="lang_sw" xml:space="preserve">
     <value>Kisvahílí</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>тоҷики</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษา ไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>татарча</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
   </data>
   <data name="lang_localam" xml:space="preserve">
     <value>Amharíska</value>
@@ -83,6 +374,9 @@
   </data>
   <data name="lang_localaz" xml:space="preserve">
     <value>Aserska</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
   </data>
   <data name="lang_localbg" xml:space="preserve">
     <value>Búlgarska</value>
@@ -204,25 +498,406 @@
   <data name="Acct_Download" xml:space="preserve">
     <value>Sækja {0}</value>
   </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Arabic Comma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Arabic Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Arabic Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Arabic Empty Centre High Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Arabic Empty Centre Low Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Arabic End Of Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Arabic Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Arabic Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Arabic Hamza ofan</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Arabic Hamza neðan</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Arabic-Indic Digit Eight</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Arabic-Indic Digit Fimm</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Arabic-Indic Digit Four</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Arabic-Indic Digit Nine</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Arabic-Indic Digit One</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Arabic-Indic Digit Seven</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Arabic-Indic Digit Six</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Arabic-Indic Digit þriggja</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Arabic-Indic Digit Two</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Arabic-Indic Digit Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Arabic Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Arabic Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Arabic Letter Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Arabic Letter Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Arabic Letter Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Arabic Letter Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef Með Hamza Umfram</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Arabic Letter Alef Með Hamza neðan</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Arabic Letter Alef Með Madda Umfram</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Arabic Letter Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Arabic Letter Pabbi</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Arabic Letter Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Arabic Letter Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Arabic Letter Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Arabic Letter Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Arabic Letter Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Arabic Letter Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Arabic Letter Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Arabic Letter Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Arabic Letter Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Arabic Letter Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Arabic Letter Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Arabic Letter Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Arabic Letter Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Arabic Letter PEH</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Arabic Letter Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Arabic Letter Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Arabic Letter Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Arabic Letter Séð</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Arabic Letter Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Arabic Letter Uppskrift Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Arabic Letter Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Arabic Letter Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Arabic Letter Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Arabic Letter Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Arabic Letter Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Arabic Letter Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Arabic Letter Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Arabic Letter Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Waw Með Hamza Umfram</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Arabic Letter Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Arabic Letter Yeh Með Hamza Umfram</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Arabic Letter Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Arabic Letter Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Akbar einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Alayhe einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Allah einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Arabic límingur Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Arabic límingur Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Mohammad einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Qala notað sem Kóraninum Stop Skráðu einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Rasoul einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Salam einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Salla einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Arabic límingur Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Salla notað sem Kóraninum Stop Sign einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Arabic límingur Wasallam einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Arabic Maddah ofan</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Arabic Place Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Arabic Spurningarmerki</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Arabic Ávalur High Stop Með Fylltur Centre</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Arabic Semíkomma</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Arabic Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Arabic Small High Jeem</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Arabic Small High Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High límingur Qaf Með Lam, Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Arabic Small High límingur Sad Með Lam, Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Arabic Small High Meem Initial Form</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Arabic Small High Meem einangruðu formi</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Arabic Small High Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Arabic Small High Ávalur Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Arabic Small High Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Arabískur Lítil High Þrjár Dots</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Arabic Small High Uppréttur Rétthyrnd Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Arabic Small Low Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Arabic Small Low Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Arabic Small Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Arabic Small Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Arabic Start RUB El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Arabic Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Arabic Tatweel</value>
+  </data>
   <data name="unicode_Colon" xml:space="preserve">
     <value>Tvípunktur</value>
   </data>
   <data name="unicode_Comma" xml:space="preserve">
     <value>Komma</value>
   </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Upphrópunarmerki</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Full Stop</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Bandstrik-Minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Vinstri Curly Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Vinstri-Bendir Double Horn gæsalappir</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Vinstri Square Bracket</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Íburðarmikill Vinstri svigi</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Íburðarmikill Hægri svigi</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Tilvitnun Mark</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Sign</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Hægri Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Hægri-Bendir Double Horn gæsalappir</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Hægri hornklofi</value>
+  </data>
   <data name="unicode_Space" xml:space="preserve">
     <value>Bil</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>vottorð Beiðni</value>
   </data>
   <data name="Acct_Certificate" xml:space="preserve">
     <value>Vottorð</value>
   </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>setja Vottorð</value>
+  </data>
   <data name="Acct_CurrentUser" xml:space="preserve">
     <value>Núverandi notandi</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Eyða skilríkja</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Virkja SSL</value>
   </data>
   <data name="Acct_PrivateKey" xml:space="preserve">
     <value>Einkalykill</value>
   </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Skoða vottorð Beiðnir</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Skoða Sites</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Setja Intermediate Vottorð</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Vinstri til hægri Íforrit</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Hægri-til-vinstri Embedding</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Vinstri til hægri Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Vinstri til hægri Hnekkja</value>
+  </data>
   <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
     <value>‬	Endurheimta stefnusnið</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Hægri-til-vinstri Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Hægri-til-vinstri Hnekkja</value>
   </data>
 </root>

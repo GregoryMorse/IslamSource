@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Domyślny język</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Dodawanie zakładki</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Zakładki</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopiuj do Schowka</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Przejdź do wiersza</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Wstrzymaj</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Odtwórz</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Recytator</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Usuń zakładkę</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Werset ustawić odtwarzanie</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Pokaż egzegeza</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Udostępnij</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Dodatkowe werset z góry opóźnienie</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Z góry werset automatycznie</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Długość opóźnienia werset przed pogłębianie</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Tryb pętli</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>informacje</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabski Koran z metadane i wszystkie tłumaczenia i niektóre audio recytacji, z wyjątkiem tych wymienionych dopisane do projektu Tanzil (http://tanzil.net). 
+Węgierski tłumaczenia Koranu przez pocałunek Zsuzsanna Halima zasili Magyar Iszlam (http://magyariszlam.hu). 
+Angielski tłumaczenie Qu'ran przez Maulana Muhammad Ali dobro The Lahore Ahmadiyya ruch w islamie (http://www.aaiil.org). Dane 
+morfologii i tłumaczenie na język angielski-słowo kredyt do Koranu arabskiego Corpus (http://corpus.quran.com). 
+Indonezyjski Tłumacz słowo kredyt do Indonezji Al-Koran (http://www.alquran-indonesia.com/web/quran). 
+Urdu tłumaczenia słowo po słowie Hafiz Nazar Muhammad dobro łatwe Koran Wa Hadees (http://www.easyquranwahadees.com). 
+Inne tłumaczenia słowo po słowie, a także innych tłumaczenia w programie Microsoft dostawca tłumaczeń (http://www.microsoft.com/en-us/translator) i Google Translate (http://translate.google.com) i może nie być dokładne.  Dla Malezji-słowo Koran źródła jest indonezyjski.  Dla wszystkich innych-słowo Koran źródła jest angielski Koranu arabskiego Corpus. 
+Innych audio recytacje z bitrate się dobro każdego Ayah (http://www.everyayah.com). 
+Danych Unicode zasili The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

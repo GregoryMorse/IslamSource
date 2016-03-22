@@ -50,7 +50,7 @@
                 <DataTemplate>
                     <Viewbox StretchDirection="DownOnly">
                         <TextBlock Margin="5" local:ListFormattedTextBehavior.FormattedText="{Binding TextItems}" 
-                            Style="{StaticResource TitleStyle}" FlyoutBase.AttachedFlyout="{StaticResource ContextFlyout}" Holding="TextBlock_Holding">
+                            Style="{StaticResource TitleStyle}" FlyoutBase.AttachedFlyout="{StaticResource ContextFlyout}" Holding="TextBlock_Holding" PointerPressed="OnPointerPressed" PointerMoved="OnPointerMoved" PointerReleased="OnPointerReleased" PointerCanceled="OnPointerCanceled" PointerExited="OnPointerExited" PointerCaptureLost="OnPointerCaptureLost">
                         </TextBlock>
                     </Viewbox>
                 </DataTemplate>
@@ -61,6 +61,7 @@
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
+            <AppBarButton Name="About" Click="About_Click" x:Uid="About" Icon="ContactInfo"></AppBarButton>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

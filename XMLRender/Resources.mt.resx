@@ -12,11 +12,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Kont attivat b'suċċess.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Kont diġà attivat.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Kont imħassar b'suċċess.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Kont għadha mhijiex attivata jekk jogħġbok iċċekkja email tiegħek ewwel jew titlob kodiċi ta 'attivazzjoni addizzjonali.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>jattiva Kont</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Din l-email qed titlob l-attivazzjoni tal tiegħek {0} kont: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Attivazzjoni għall-kont fi {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Kodiċi attivazzjoni</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-mail ma f'format validu.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Inti ċert?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Bidla fil-E-mail Indirizz</value>
+  </data>
   <data name="Acct_ChangePassword" xml:space="preserve">
     <value>Ibdel il-Password</value>
   </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Bidla fil-Username</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Attivazzjoni mibgħuta fl-indirizz ipprovdut.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>cleanup Stale</value>
+  </data>
   <data name="Acct_ClearCache" xml:space="preserve">
     <value>Neħħi l-Cache</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Ċar Disk Cache</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Ikkonferma l-Indirizz Elettroniku</value>
   </data>
   <data name="Acct_ConfirmPassword" xml:space="preserve">
     <value>Ikkonferma l-Password</value>
@@ -24,32 +72,107 @@
   <data name="Acct_ControlPanel" xml:space="preserve">
     <value>Panew tal-Kontroll</value>
   </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Oħloq Database</value>
+  </data>
   <data name="Acct_DeleteAccount" xml:space="preserve">
     <value>Ħassar il-Kont</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Verżjoni Net</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Utent ma dan l-isem diġà jeżisti jekk jogħġbok agħżel ieħor.</value>
   </data>
   <data name="Acct_EmailAddress" xml:space="preserve">
     <value>Indirizz Elettroniku</value>
   </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-mail nbidlu u l-attivazzjoni tal-posta elettronika mibgħuta lil jattivaw kont.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail li diġà qegħdin jintużaw jogħġbok login ma 'kredenzjali eżistenti.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>indirizzi E-mail ma jaqblux</value>
+  </data>
   <data name="Acct_ForgotPassword" xml:space="preserve">
     <value>Insejt il-password?</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Username Insejt</value>
   </data>
   <data name="Acct_Home" xml:space="preserve">
     <value>Paġna Ewlenija</value>
   </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>kodiċi ta 'attivazzjoni mhux korrett.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Żbaljata kodiċi reset password.</value>
+  </data>
   <data name="Acct_InvalidInput" xml:space="preserve">
     <value>Input invalidu</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>username invalida jew il-password.</value>
   </data>
   <data name="Acct_Login" xml:space="preserve">
     <value>I&amp;lloggja</value>
   </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Login suċċess.</value>
+  </data>
   <data name="Acct_Logoff" xml:space="preserve">
     <value>Ħruġ</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff suċċess.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Password trid tkun mill-inqas 8 karattri.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Username għandu jkun mill-inqas 4 karattri.</value>
   </data>
   <data name="Acct_No" xml:space="preserve">
     <value>Le</value>
   </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Għandu jikkonferma kont tħassir.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>jeżisti l-ebda utent għall-indirizz daħlet e-mail.</value>
+  </data>
   <data name="Acct_Password" xml:space="preserve">
     <value>Password:</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Password diġà reset jew proċess ma jinbdewx.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Din l-email huwa li jinforma tal-bidla password tal tiegħek {0} kont: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Password inbidlitilhom għall-kont fi {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Password inbidlet b'suċċess.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>E-mail tkun intbagħtet lill-indirizz tiegħek fuq il-fajl li tibda l-proċess reset password.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Dan le-mail huwa għal reset l-password ta 'tiegħek {0} kont: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Password Irrisettja Kodiċi</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Password reset għal kont fil {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Password b'suċċess reset.</value>
   </data>
   <data name="Acct_PasswordsNotMatch" xml:space="preserve">
     <value>Il-passwords ma jaqblux:</value>
@@ -57,23 +180,191 @@
   <data name="Acct_Register" xml:space="preserve">
     <value>REGISTER</value>
   </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Ftakar?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Neħħi Database</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Resend Attivazzjoni E-mail</value>
+  </data>
   <data name="Acct_ResetPassword" xml:space="preserve">
     <value>Irrisettja l-password...</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>irkuprata Password</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>irkuprata Username</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Ibgħat Kodiċi Attivazzjoni</value>
   </data>
   <data name="Acct_Username" xml:space="preserve">
     <value>Isem l-utent</value>
   </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Din l-email huwa li jinforma tal-bidla fl-isem kont ta 'tiegħek {0} kont: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Username inbidlitilhom għall-kont fi {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Username inbidlet b'suċċess.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>E-mail tkun intbagħtet lill-indirizz tiegħek fuq il-fajl bil-username tiegħek.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Din l-email hija tifkira ta tiegħek {0} kont: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>tifkira username għall-kont fi {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Utent ma teżistix.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Cache View</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>View Disk Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>View Headers</value>
+  </data>
   <data name="Acct_Yes" xml:space="preserve">
     <value>Iva</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Dili Azərbaycan</value>
   </data>
   <data name="lang_ber" xml:space="preserve">
     <value>Tamazit</value>
   </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>български</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
   <data name="lang_en" xml:space="preserve">
     <value>Ingliż</value>
   </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Bahasa Indonesia</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Bahasa Melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>Русский язык</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>AF Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>svenska</value>
+  </data>
   <data name="lang_sw" xml:space="preserve">
     <value>Kiswaħili</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>тоҷики</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษา ไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>татарча</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
   </data>
   <data name="lang_localam" xml:space="preserve">
     <value>Amħariku</value>
@@ -84,11 +375,17 @@
   <data name="lang_localaz" xml:space="preserve">
     <value>Azerbajġani</value>
   </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
   <data name="lang_localbg" xml:space="preserve">
     <value>Bulgaru</value>
   </data>
   <data name="lang_localbn" xml:space="preserve">
     <value>Bengali</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Bosnijan</value>
   </data>
   <data name="lang_localcs" xml:space="preserve">
     <value>Ċek</value>
@@ -128,6 +425,9 @@
   </data>
   <data name="lang_localko" xml:space="preserve">
     <value>Korean</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Kurd</value>
   </data>
   <data name="lang_localml" xml:space="preserve">
     <value>Malajalam</value>
@@ -198,22 +498,406 @@
   <data name="Acct_Download" xml:space="preserve">
     <value>Niżżel {0}</value>
   </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Comma Għarbi</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Għarbi Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Għarbi Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Għarbi vojta Ċentru Għoli Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Ċentru vojta Għarbi baxx Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Għarbi Tmiem Ta Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Għarbi Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Għarbi Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Għarbi Hamza Fuq</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Għarbi Hamza Hawn taħt</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>DIGIT Għarbi-indic Tmienja</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>DIGIT Għarbi-indic ħames</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Għarbi-indic DIGIT Erba</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>DIGIT Għarbi-indic Disa</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Għarbi-indic One DIGIT</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Għarbi-indic DIGIT Seba</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>DIGIT Għarbi-indic Sitt</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>DIGIT Għarbi-indic Tlieta</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Għarbi-indic DIGIT Tnejn</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Għarbi-indic DIGIT Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Għarbi Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Għarbi Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Għarbi Ittra Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Għarbi Ittra Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Għarbi Ittra Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Għarbi Ittra Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Għarbi Ittra Alef Bil Hamza Fuq</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Għarbi Ittra Alef Bil Hamza Hawn taħt</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Għarbi Ittra Alef Bil Madda Fuq</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Għarbi Ittra beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Għarbi Ittra Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Għarbi Ittra Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Għarbi Ittra Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Għarbi Ittra GAF</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Għarbi Ittra Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Għarbi Ittra Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Għarbi Ittra Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Għarbi Ittra Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Għarbi Ittra Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Għarbi Ittra KAF</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Għarbi Ittra Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Għarbi Ittra Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Għarbi Ittra Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Għarbi nofsinhar Ittra</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Għarbi Ittra Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Għarbi Ittra Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Għarbi Ittra ReH</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Ittra Għarbi Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Ittra Għarbi Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Għarbi Ittra Ileqq</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Għarbi Ittra superscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Għarbi Ittra Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Għarbi Ittra Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Għarbi Ittra Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Għarbi Ittra Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Għarbi Ittra Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Għarbi Ittra Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Għarbi Ittra VEH</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Għarbi Ittra WAW</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Għarbi Ittra WAW Bil Hamza Fuq</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Għarbi Ittra Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Għarbi Ittra Yeh Bil Hamza Fuq</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Għarbi Ittra Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Għarbi Ittra Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Akbar f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Alayhe f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Allah f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Għarbi Ligature Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Għarbi Ligature Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Mohammad f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Qala Użati Bħala Koranic Stop Sign f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Rasoul f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Salam f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Salla f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Għarbi Ligature Sallallahou Alayhe wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature Salla Użati Bħala Koranic Stop Sign Iżolati Formola</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Għarbi Ligature wasallam f'forma iżolata</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Għarbi Maddah Fuq</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Post Għarbi Ta Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Għarbi Mistoqsija Mark</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Għarbi mqarrba Għoli Stop Bil Ċentru Mimlijin</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Għarbi virgola</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Għarbi Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Għarbi Jeem Għoli Żgħar</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Għarbi Għoli Żgħar Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Għarbi Għoli Żgħar Ligature Qaf Bil Lam Bil Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Għarbi Żgħar Ligature Għoli Sad Bil Lam Bil Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Għarbi Żgħar Meem Għoli Formola inizjali</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Għarbi Formola Żgħar Għoli Meem Iżolati</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Għarbi nofsinhar Għoli Żgħar</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Għarbi Għoli Żgħar mqarrba Żero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Għarbi Għoli Żgħar Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Għarbi Żgħar Għoli Tliet Tikek</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Għarbi Għoli Żgħar Wieqfa rettangolari Żero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Għarbi Żgħar Baxxa Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Għarbi Baxxa Żgħar Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Għarbi WAW Żgħar</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Għarbi Yeh Żgħar</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Għarbi Bidu Ta Għorok El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Għarbi Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Għarbi Tatweel</value>
+  </data>
   <data name="unicode_Colon" xml:space="preserve">
     <value>Kowlin</value>
   </data>
   <data name="unicode_Comma" xml:space="preserve">
     <value>Virgola</value>
   </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>exclamation Mark</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>full Stop</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Sing-Minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Xellug Kaboċċa Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Xellug-Identifikazzjoni Double Angolu Kwotazzjoni Mark</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Xellug Pjazza Bracket</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Jeronimo Xellug parentesi</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Jeronimo parentesi Dritt</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>kwotazzjoni Mark</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Sinjal Rial</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Bracket Kaboċċa Dritt</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Right-Identifikazzjoni Double Angolu Kwotazzjoni Mark</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Bracket Pjazza Dritt</value>
+  </data>
   <data name="unicode_Space" xml:space="preserve">
     <value>Spazju</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Talba ċertifikat</value>
   </data>
   <data name="Acct_Certificate" xml:space="preserve">
     <value>Ċertifikat</value>
   </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Installa Ċertifikat</value>
+  </data>
   <data name="Acct_CurrentUser" xml:space="preserve">
     <value>L-Utent Attwali</value>
   </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Ħassar Talba Ċertifikat</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>jippermettu SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Ċavetta privata</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Talbiet View Ċertifikat</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>View Siti</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Installa Ċertifikat Intermediate</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>-Xellug To-Dritt Embedding</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Right-To-xellug Embedding</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>-Xellug To-Dritt tat-trade</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>-Xellug To-Dritt Jwarrab</value>
+  </data>
   <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
     <value>‬	Tmiem l-Ifformattjar Biderezzjonali</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Right-To-xellug Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Jwarrab-lemin għax-xellug</value>
   </data>
 </root>

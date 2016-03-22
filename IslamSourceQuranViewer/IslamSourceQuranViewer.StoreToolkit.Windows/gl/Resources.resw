@@ -12,22 +12,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>árabe Font</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Atrás</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>Diminuír tamaño do tipo de letra</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Tamaño estándar do tipo de letra</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Corán co seu Árabe, transliteración e tradución da palabra por palabra e verso por verso para a aprendizaxe, estudo, investigación, memorización, reflexión e dominio de tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran palabra por palabra</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Aumentar tamaño do tipo de letra</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Outra fonte de texto</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>render</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Configuración</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Mostra a tradución</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>amosar transliteración</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Amosar palabra por palabra</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>Tamaño</value>
   </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Use recitación Regra Coloring</value>
+  </data>
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Idioma predefinido</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Engadir &amp;marcador</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Marcadores</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Copiar no portapapeis</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Vaia co versículo</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Reproducir</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>recitador</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>eliminar Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Establecer Reprodución Verse</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>amosar Exegese</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Compartir</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Verso adicional Avance Demora</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Antelación Verso Automaticamente</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Atraso Duración do verso antes de avanzar</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Modo looping</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Corán árabe con metadatos e todas as traducións e algunhas recitações de audio excepto aqueles listados imputado na Tanzil Proxecto (http://tanzil.net).&lt;br&gt;</value>
   </data>
 </root>

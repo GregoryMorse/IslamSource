@@ -287,6 +287,61 @@ namespace IslamSourceQuranViewer
 #if WINDOWS_PHONE_APP
             this.NavigationCacheMode = NavigationCacheMode.Required;
 #endif
+            gestRec = new Windows.UI.Input.GestureRecognizer();
+            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse;
+            gestRec.Holding += OnHolding;
+        }
+        private Windows.UI.Input.GestureRecognizer gestRec;
+        private object _holdObj;
+        void OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            var ps = e.GetIntermediatePoints(null);
+            if (ps != null && ps.Count > 0)
+            {
+                _holdObj = null;
+                gestRec.ProcessUpEvent(ps[0]);
+                e.Handled = true;
+                gestRec.CompleteGesture();
+            }
+        }
+        void OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            var ps = e.GetIntermediatePoints(null);
+            if (ps != null && ps.Count > 0)
+            {
+                _holdObj = sender;
+                gestRec.ProcessDownEvent(ps[0]);
+                e.Handled = true;
+            }
+        }
+        void OnPointerMoved(object sender, PointerRoutedEventArgs e)
+        {
+            _holdObj = sender;
+            gestRec.ProcessMoveEvents(e.GetIntermediatePoints(null));
+            e.Handled = true;
+        }
+        void OnPointerCanceled(object sender, PointerRoutedEventArgs e)
+        {
+            gestRec.CompleteGesture();
+            e.Handled = true;
+        }
+        void OnPointerCaptureLost(object sender, PointerRoutedEventArgs e)
+        {
+            gestRec.CompleteGesture();
+            e.Handled = true;
+        }
+        void OnPointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            gestRec.CompleteGesture();
+            e.Handled = true;
+        }
+        void OnHolding(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.HoldingEventArgs args)
+        {
+            if (args.HoldingState == Windows.UI.Input.HoldingState.Started)
+            {
+                DoHolding(_holdObj);
+                gestRec.CompleteGesture();
+            }
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -307,7 +362,7 @@ namespace IslamSourceQuranViewer
         private void sectionListBox_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             if (ViewModel.ListSelectedItem == null) return;
-            this.Frame.Navigate(typeof(WordForWordUC), new {Division = ViewModel.SelectedItem.Index - 1, Selection = ViewModel.ListSelectedItem.Index});
+            this.Frame.Navigate(typeof(WordForWordUC), ViewModel.SelectedItem.IsBookmarks ? new { Division = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][0], Selection = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][1], JumpToChapter = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][2], JumpToVerse = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][3], StartPlaying = false } : new {Division = ViewModel.SelectedItem.Index - 1, Selection = ViewModel.ListSelectedItem.Index, JumpToChapter = -1, JumpToVerse = -1, StartPlaying = false });
         }
 
         private void RenderPngs_Click(object sender, RoutedEventArgs e)
@@ -318,20 +373,29 @@ namespace IslamSourceQuranViewer
         {
             this.Frame.Navigate(typeof(Settings));
         }
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(About));
+        }
         private void RemoveBookmark_Click(object sender, RoutedEventArgs e)
         {
             List<int[]> marks = AppSettings.Bookmarks.ToList();
-            marks.RemoveAt(((sender as TextBlock).DataContext as MyListItem).Index);
+            marks.RemoveAt(((sender as MenuFlyoutItem).DataContext as MyListItem).Index);
             AppSettings.Bookmarks = marks.ToArray();
+            ViewModel.SelectedItem.RefreshItems();
             ViewModel.ListItems = ViewModel.SelectedItem.Items;
         }
 
         private void TextBlock_Holding(object sender, HoldingRoutedEventArgs e)
         {
+            DoHolding(sender);
+            e.Handled = true;
+        }
+        private void DoHolding(object sender)
+        {
             if (ViewModel.SelectedItem.IsBookmarks)
             {
                 FlyoutBase.ShowAttachedFlyout(sender as TextBlock);
-                e.Handled = true;
             }
         }
     }
@@ -380,20 +444,21 @@ namespace IslamSourceQuranViewer
         public MyTabViewModel()
         {
         }
-        private IEnumerable<MyTabItem> _Items;
+        private List<MyTabItem> _Items;
         public IEnumerable<MyTabItem> Items { get
             {
                 return _Items;
             }
             set
             {
-                _Items = value;
+                _Items = value.ToList();
+                int iDefault = AppSettings.iDefaultStartTab;
                 PropertyChanged(this, new PropertyChangedEventArgs("Items"));
-                SelectedItem = Items.ElementAt(AppSettings.iDefaultStartTab);
+                SelectedItem = _Items.ElementAt(iDefault);
             }
         }
 
-        private IEnumerable<MyListItem> _ListItems;
+        private List<MyListItem> _ListItems;
         public IEnumerable<MyListItem> ListItems
         {
             get
@@ -402,8 +467,8 @@ namespace IslamSourceQuranViewer
             }
             set
             {
-                _ListItems = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("ListItems"));
+                _ListItems = value.ToList();
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("ListItems"));
             }
         }
 
@@ -425,6 +490,7 @@ namespace IslamSourceQuranViewer
             set
             {
                 _selectedItem = value;
+                AppSettings.iDefaultStartTab = _selectedItem.Index;
                 PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
                 ListItems = _selectedItem.Items;
                 ListSelectedItem = ListItems.Count() == 0 ? null : ListItems.First();
@@ -448,11 +514,17 @@ namespace IslamSourceQuranViewer
         {
             get
             {
-                if (IsBookmarks) return System.Linq.Enumerable.Select(AppSettings.Bookmarks, (Bookmark, Idx) => new MyListItem { TextItems = { IslamMetadata.TanzilReader.GetSelectionName(Bookmark[0], Bookmark[1], XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty) }, Index = Idx });
-                if (_Items == null) { _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames((Index - 1).ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() }); }
+                if (_Items == null) {
+                    if (IsBookmarks) {
+                        _Items = System.Linq.Enumerable.Select(AppSettings.Bookmarks, (Bookmark, Idx) => new MyListItem { TextItems = new List<string>() { IslamMetadata.TanzilReader.GetSelectionName(Bookmark[0], Bookmark[1], XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty) + " " + Bookmark[2].ToString() + ":" + Bookmark[3].ToString() }, Index = Idx });
+                    } else {
+                        _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames((Index - 1).ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() });
+                    }
+                }
                 return _Items;
             }
         }
+        public void RefreshItems() { _Items = null; }
 
         private MyListItem _selectedItem;
 

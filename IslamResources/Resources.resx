@@ -27864,4 +27864,184 @@
   <data name="IslamInfo_Singular" xml:space="preserve">
     <value>Singular</value>
   </data>
+  <data name="IslamInfo_NumberSpelling" xml:space="preserve">
+    <value>Number Spelling</value>
+  </data>
+  <data name="IslamInfo_HeadingNumberSpelling" xml:space="preserve">
+    <value>Heading Number Spelling</value>
+  </data>
+  <data name="IslamInfo_StoppingEndowment" xml:space="preserve">
+    <value>Stopping Endowment</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaStoppingEndowment" xml:space="preserve">
+    <value>Teh Marbuta Stopping Endowment</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaJoiningContinuing" xml:space="preserve">
+    <value>Teh Marbuta Joining Continuing</value>
+  </data>
+  <data name="IslamInfo_JoiningContinuing" xml:space="preserve">
+    <value>Joining Continuing</value>
+  </data>
+  <data name="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Standing Oblong Zero Small High Upright Rectangular Zero</value>
+  </data>
+  <data name="IslamInfo_EmptyCentreLowStop" xml:space="preserve">
+    <value>Empty Centre Low Stop</value>
+  </data>
+  <data name="IslamInfo_RoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Rounded High Stop With Filled Centre</value>
+  </data>
+  <data name="IslamInfo_SmallNoon" xml:space="preserve">
+    <value>Small Noon</value>
+  </data>
+  <data name="IslamInfo_SmallHighSeen" xml:space="preserve">
+    <value>Small High Seen</value>
+  </data>
+  <data name="IslamInfo_SmallLowSeen" xml:space="preserve">
+    <value>Small Low Seen</value>
+  </data>
+  <data name="IslamInfo_Sukun" xml:space="preserve">
+    <value>Sukun</value>
+  </data>
+  <data name="IslamInfo_EmptyShadda" xml:space="preserve">
+    <value>Empty Shadda</value>
+  </data>
+  <data name="IslamInfo_ShaddaResolve" xml:space="preserve">
+    <value>Shadda Resolve</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaFatha" xml:space="preserve">
+    <value>Continuing Hamza Fatha</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaKasra" xml:space="preserve">
+    <value>Continuing Hamza Kasra</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaDamma" xml:space="preserve">
+    <value>Continuing Hamza Damma</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaEmpty" xml:space="preserve">
+    <value>Continuing Hamza Empty</value>
+  </data>
+  <data name="IslamInfo_LaamAssimilation" xml:space="preserve">
+    <value>Laam Assimilation</value>
+  </data>
+  <data name="IslamInfo_RaaAssimilation" xml:space="preserve">
+    <value>Raa Assimilation</value>
+  </data>
+  <data name="IslamInfo_RaaHeavinessOrLightness" xml:space="preserve">
+    <value>Raa Heaviness Or Lightness</value>
+  </data>
+  <data name="IslamInfo_SmallWaw" xml:space="preserve">
+    <value>Small Waw</value>
+  </data>
+  <data name="IslamInfo_SmallYeh" xml:space="preserve">
+    <value>Small Yeh</value>
+  </data>
+  <data name="IslamInfo_FathaSilentLetterSuperscriptAlef" xml:space="preserve">
+    <value>Fatha Silent Letter Superscript Alef</value>
+  </data>
+  <data name="IslamInfo_DipthongZeroLength" xml:space="preserve">
+    <value>Dipthong Zero Length</value>
+  </data>
+  <data name="IslamInfo_OriginalLengtheningZeroCapture" xml:space="preserve">
+    <value>Original Lengthening Zero Capture</value>
+  </data>
+  <data name="IslamInfo_AssimilateGreatIdenticalDammaMerge" xml:space="preserve">
+    <value>Assimilate Great Identical Damma Merge</value>
+  </data>
+  <data name="IslamInfo_AssimilateSmallIdenticalHaaSakinah" xml:space="preserve">
+    <value>Assimilate Small Identical Haa Sakinah</value>
+  </data>
+  <data name="IslamInfo_MostCompleteNasalization" xml:space="preserve">
+    <value>Most Complete Nasalization</value>
+  </data>
+  <data name="IslamInfo_CompleteNasalization" xml:space="preserve">
+    <value>Complete Nasalization</value>
+  </data>
+  <data name="IslamInfo_IncompleteNasalization" xml:space="preserve">
+    <value>Incomplete Nasalization</value>
+  </data>
+  <data name="IslamInfo_MostIncompleteNasalization" xml:space="preserve">
+    <value>Most Incomplete Nasalization</value>
+  </data>
+  <data name="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" xml:space="preserve">
+    <value>Vowelless Noon Incomplete Assimilating Nasalization</value>
+  </data>
+  <data name="IslamInfo_UnwrittenHelperKasra" xml:space="preserve">
+    <value>Unwritten Helper Kasra</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaWawHamza" xml:space="preserve">
+    <value>Alef Wasla Waw Hamza</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaAlefMaksuraHamza" xml:space="preserve">
+    <value>Alef Wasla Alef Maksura Hamza</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaHamza" xml:space="preserve">
+    <value>Alef Wasla Hamza</value>
+  </data>
+  <data name="IslamInfo_SmallHamza" xml:space="preserve">
+    <value>Small Hamza</value>
+  </data>
+  <data name="IslamInfo_LetterHamza" xml:space="preserve">
+    <value>Letter Hamza</value>
+  </data>
+  <data name="IslamInfo_HamzaAbove" xml:space="preserve">
+    <value>Hamza Above</value>
+  </data>
+  <data name="IslamInfo_NotAlef" xml:space="preserve">
+    <value>Not Alef</value>
+  </data>
+  <data name="IslamInfo_MaddAlef" xml:space="preserve">
+    <value>Madd Alef</value>
+  </data>
+  <data name="IslamInfo_NotWaw" xml:space="preserve">
+    <value>Not Waw</value>
+  </data>
+  <data name="IslamInfo_NotYeh" xml:space="preserve">
+    <value>Not Yeh</value>
+  </data>
+  <data name="IslamInfo_MaddWaw" xml:space="preserve">
+    <value>Madd Waw</value>
+  </data>
+  <data name="IslamInfo_LeenWaw" xml:space="preserve">
+    <value>Leen Waw</value>
+  </data>
+  <data name="IslamInfo_StrongWaw" xml:space="preserve">
+    <value>Strong Waw</value>
+  </data>
+  <data name="IslamInfo_MaddYeh" xml:space="preserve">
+    <value>Madd Yeh</value>
+  </data>
+  <data name="IslamInfo_LeenYeh" xml:space="preserve">
+    <value>Leen Yeh</value>
+  </data>
+  <data name="IslamInfo_StrongYeh" xml:space="preserve">
+    <value>Strong Yeh</value>
+  </data>
+  <data name="IslamInfo_DivisionMarkers" xml:space="preserve">
+    <value>Division Markers</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkers" xml:space="preserve">
+    <value>Continue Stop Markers</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkersAtEnding" xml:space="preserve">
+    <value>Continue Stop Markers At Ending</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryLightened" xml:space="preserve">
+    <value>Maddah Obligatory Lightened</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryWeighted" xml:space="preserve">
+    <value>Maddah Obligatory Weighted</value>
+  </data>
+  <data name="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" xml:space="preserve">
+    <value>Connected Lengthening Essential Presented Sukun</value>
+  </data>
+  <data name="IslamInfo_SoftLengtheningLetters" xml:space="preserve">
+    <value>Soft Lengthening Letters</value>
+  </data>
+  <data name="IslamInfo_LetterSpelling" xml:space="preserve">
+    <value>Letter Spelling</value>
+  </data>
+  <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
+    <value>Remembrance After Prayer</value>
+  </data>
 </root>

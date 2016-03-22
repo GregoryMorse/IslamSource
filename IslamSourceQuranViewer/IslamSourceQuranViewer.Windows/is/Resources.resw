@@ -12,19 +12,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabic Font</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Til baka</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>Minnka leturstærð</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Sjálfgefið Leturstærð</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kóraninn með sína arabíska, umritun og þýðingar orð með orði og vers eftir vers til náms, nám, rannsóknir, memorization, íhugun og leikni tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Kóraninn orð af orði</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Auka leturstærð</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Annað Textaletur</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Render</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Stillingar</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Sýna Þýðing</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Sýna Umritun</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Sýna orð af orði</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>Stærð</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Nota leiklestur reglu litarefni</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Sjálfgefið tungumál</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Bæta við &amp;bókamerki</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Bókamerki</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Afrita yfir á klippiborð</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Fara á Vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Hlé</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Spila</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>upplesari</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>fjarlægja bókamerki</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Setja spilun Verse</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Sýna sönnum</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Samnýtt svæði</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Viðbótarupplýsingar Verse Advance Töf</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance Verse sjálfkrafa</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Seinkun Lengd Verse áður en lengra</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>lykkja Mode</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Um</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabic Kóraninn með lýsigögnum og öllum þýðingum og sumir hljómflutnings recitations nema þau sem talin eru lögð til Tanzil Project (http://tanzil.net).&lt;br&gt;</value>
   </data>
 </root>

@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Sayaynin</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Chimpuq &amp;Yapay</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Chinpuqkuna</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Raphi-apaykachaqman mirachiy</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Samay</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Purichiy</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Qunakuy</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Willakuy</value>
+  </data>
 </root>

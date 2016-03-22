@@ -7489,6 +7489,19 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<part index="29" name="tabaAraka {l~a*iY" id="BlessedBeThose"></part>
 		<part index="30" name="Eam~a yatasaA^&apos;aluwna" id="WithWonder"></part>
 	</quranparts>
+	<displaymodes default="wordbywordverse">
+		<displaymode name="wordbywordonly"></displaymode>
+		<displaymode name="verseonly"></displaymode>
+		<displaymode name="wordbywordverse"></displaymode>
+		<displaymode name="wordbywordnumberedonly"></displaymode>
+		<displaymode name="wordbywordnumberedverse"></displaymode>
+	</displaymodes>
+	<loopingmodes default="none">
+		<loopingmode name="none"></loopingmode>
+		<loopingmode name="verse"></loopingmode>
+		<loopingmode name="collection"></loopingmode>
+		<loopingmode name="all"></loopingmode>
+	</loopingmodes>
 	<reciters default="afasy">
 		<reciter name="abdulbasit" reciter="AbdulBasit AbdusSamad" source="tanzil"></reciter>
 		<reciter name="abdulbasit-mjwd" reciter="AbdulBasit AbdusSamad (Mujawwad)" source="tanzil"></reciter>

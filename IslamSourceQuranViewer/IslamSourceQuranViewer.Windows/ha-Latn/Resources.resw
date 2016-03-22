@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Girma</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Ƙara &amp;Ma'ajiyar rubutu</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Makinlittattafai</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>rubuta zuwa ga Clipboard</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Dakata</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Wasa</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Raba</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Game da</value>
+  </data>
 </root>

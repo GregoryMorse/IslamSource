@@ -1797,4 +1797,25 @@
   <data name="IslamInfo_Exchange" xml:space="preserve">
     <value>Exchange</value>
   </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>ਇਸਦਾ ਕੋਈ ਸਬਸੈਟ ਜਾਂ ਬਰਾਬਰ ਨਹੀਂ</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>ਇਸਦਾ ਕੋਈ ਸੁਪਰਸੈਟ ਜਾਂ ਬਰਾਬਰ ਨਹੀਂ</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>ਇਸਦਾ ਕੋਈ ਸਬਸੈਟ ਨਹੀਂ</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>ਇਸਦਾ ਕੋਈ ਸੁਪਰਸੈਟ ਨਹੀਂ</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>ਰੂਟ</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>ਪਰਿਣਾਮ</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>ਸਕ੍ਰਿਆ</value>
+  </data>
 </root>

@@ -12,4 +12,1579 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Leabhar</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Leabhraichean</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Clàr-amais</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Eadar-theangachadh</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Àirde fuaime</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>Os a chionn</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Absaloideach</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>cunntas</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Àdhamh</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>An dèidh</value>
+  </data>
+  <data name="IslamInfo_Airplane" xml:space="preserve">
+    <value>Plèana</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>Aildiria</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>Na h-uile</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Ceadaichte</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>An-còmhnaidh</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>Acair</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Aingeal</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Ceàrn</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>&amp;Gealladh na h-uarach</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>A' teannadh dhan chrìoch</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>Mu cho-ionnan ri</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arabais</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Bogha</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>Argamaid</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Timcheall air:</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>Là na Deasghabhalach</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Gnìomharaiche reultaige</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Co-ionnan gu aisimtotach ri</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Buadhan:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Air ais</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Co-chothrom</value>
+  </data>
+  <data name="IslamInfo_Because" xml:space="preserve">
+    <value>Air an adhbhar sin</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Roimhe</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>Eadar</value>
+  </data>
+  <data name="IslamInfo_Big" xml:space="preserve">
+    <value>Mòr</value>
+  </data>
+  <data name="IslamInfo_Bigger" xml:space="preserve">
+    <value>Nas motha</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Dubh</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Cearcall dubh</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>Dath nan cridheachan dubha</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>(Bodhaig)</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>Leabhar</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Oisean clì aig a' bh&amp;onn</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Oisean &amp;deas aig a' bhonn</value>
+  </data>
+  <data name="IslamInfo_Bread" xml:space="preserve">
+    <value>Aran</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Mall-phuing</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Cumhaichean</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Peilear</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Gnìomharaiche peileir</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Ceannaich</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Còmhradh video</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Càr</value>
+  </data>
+  <data name="IslamInfo_Chair" xml:space="preserve">
+    <value>Sèithear</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Caibideil ! !!!!!!!!!!!!!!!!</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>Seudagan</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>An t-Sìn</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Gnìomharaiche reultaige ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Strìochag ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Slais roinnidh ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Gnìomharaiche dotaige ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Toirt air falbh ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Cur ris ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Gnìomharaiche cearcaill ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Iomadach ann an cearcall</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Seòrsachadh</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Falamhaich</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Innteagrail loidhne-àirde tuathail</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Innteagrail tuathail</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Saighead leth-chearcaill dheiseal uachdarach</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>Dùnadh</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>&amp;Neul</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>cruinneachadh</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>&amp;Còilean</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>&amp;Cromag</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>a' choimhearsnachd</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Companaidh</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>Co-shlànachadh</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Coileanta</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Cumha</value>
+  </data>
+  <data name="IslamInfo_Confirmed" xml:space="preserve">
+    <value>Dearbhte</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Meal do naidheachd!</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>A' dèanamh ceangal</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>susbaint</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Innteagrail contuir</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Dèan lethbhreac</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>Samhla na còrach-lethbhreac</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>Còmhdaich</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Freumh ciùba</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Agus loidigeach cam</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>No loidigeach cam</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>&amp;Gnàthaichte</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Biodag</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Ceann-là</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>Daibhidh</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Latha:</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>DiDòmhnaich</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>DiLuain</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>DiMàirt</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>DiCiadain</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>DiarDaoin</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>DihAoine</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>DiSathairne</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Bun-roghainn</value>
+  </data>
+  <data name="IslamInfo_DegreeCelsius" xml:space="preserve">
+    <value>Ceum Celsius</value>
+  </data>
+  <data name="IslamInfo_DegreeFahrenheit" xml:space="preserve">
+    <value>Ceum Fahrenheit</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>&amp;Dàil:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Libhrigeadh</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>Delta ionnan ri</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Mion-fhiosrachadh</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>C&amp;omharran-litreach</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Gnìomharaiche daoimein</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>Mar as roghnach</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Roinn</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Comharra an roinnidh</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Stràc roinnidh</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Roinneadh iomadachadh</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Cha ghabh co-roinneadh</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Gun sparradh</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Gun dol ro</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>Cha dearbhaichidh</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Gun dol an dèidh</value>
+  </data>
+  <data name="IslamInfo_Dog" xml:space="preserve">
+    <value>Cù</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Gnìomharaiche dotaige</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Dotag cuir ris</value>
+  </data>
+  <data name="IslamInfo_DoubleDagger" xml:space="preserve">
+    <value>Biodag dhùbailte</value>
+  </data>
+  <data name="IslamInfo_DoubleIntegral" xml:space="preserve">
+    <value>Innteagrail dhùbailte</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Eadar-ghearradh dùbailte</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Fo-sheata dùbailte</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Os-seata dùbailte</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Aonadh dùbailte</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>Eileaps sìos trastanach deas</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>Slaodadh</value>
+  </data>
+  <data name="IslamInfo_Drill" xml:space="preserve">
+    <value>Drilig</value>
+  </data>
+  <data name="IslamInfo_Drink" xml:space="preserve">
+    <value>Deoch</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>An Talamh</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>An Èiphit</value>
+  </data>
+  <data name="IslamInfo_ElementOf" xml:space="preserve">
+    <value>Eileamaid dhe</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Àr&amp;dachadh:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>Strìochag Em</value>
+  </data>
+  <data name="IslamInfo_EmptySet" xml:space="preserve">
+    <value>Seata falamh</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value>Beàrn Em</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>Deireadh</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>&amp;Strìochag En</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value>Beàrn En</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Dibhearsain</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Cèis</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>Ionnan le deifinisean</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Coimheasach ri</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>&amp;Mìnich...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Inbheach</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>Aodann</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>False</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Boireann</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Teine</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>A' chiad nì</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>&amp;Socraichte</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>Siùbhlach</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>Flùr</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Biadh</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>Troigh</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>Airson</value>
+  </data>
+  <data name="IslamInfo_ForAll" xml:space="preserve">
+    <value>Uile-choitcheann</value>
+  </data>
+  <data name="IslamInfo_Forces" xml:space="preserve">
+    <value>Sparraidh</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Ceathramh freumh</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>An Fhraing</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>DihAoine</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Toiseach</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>An t-àm ri &amp;teachd</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>gèaraichean</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>Gnè</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Coitcheann</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>Co-ionnan gu geomatrach ri</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>Coimheasach gu geomatrach ri</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>A' Ghearmailt</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Dath an òir</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Math</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Loinn</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Gràmar</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Stràc throm</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>An Rìoghachd Aonaichte</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>A tha nas motha na no co-ionann ri...</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Nas motha os cionn co-ionnan ri</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>Samhla airson "nas motha na"</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Buidheann</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Buidhnean</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Loidhne fhìnealta</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Làmh</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>&amp;Ceann</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Cridhe</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>&amp;Falaichte</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Leth-fhacal:</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>Trì-phuing còmhnard</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>Uair a thìde</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>Taigh</value>
+  </data>
+  <data name="IslamInfo_How" xml:space="preserve">
+    <value>Ciamar?</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Ionnannach ri</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>Ma</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Buaidh</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>&amp;Ann an</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Neo-choileanta</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Ioncramaid</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Clàr-amais</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>Na h-Innseachan</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>Na h-Innd-Innse</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>&amp;Neo-chrìochnach</value>
+  </data>
+  <data name="IslamInfo_Inspiration" xml:space="preserve">
+    <value>Deachdadh</value>
+  </data>
+  <data name="IslamInfo_Integral" xml:space="preserve">
+    <value>Innteagrail</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>Eadar-chur</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Trasnadh</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Ro-ràdh</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Ro-ràdh</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>Clisg-phuing chontrarra</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Samhla Ohm contrarra</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>Comharra-ceiste contrarra</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>Ioràc</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>Iosrael</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Ceangail</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>Iòrdan</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Iupatar</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>Ceinia</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>Meur-chlàr</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>Cuibhèit</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>Am fear mu dheireadh</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Tàlaidhear</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>Fàg an-seo</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>Leabanon</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>Clì</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Iomadachadh leth-dhìreach factair àbhaistich chlì</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>&amp;Camag chlì</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>&amp;Saighead chlì is dheas</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Saighead dhùbailte gu clì is deas</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Saighead thuinn gu clì is deas</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Iomadachadh leth-dhìreach clì</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>A tha nas lugha no co-ionann ri...</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Nas lugha os cionn co-ionnan ri</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Litrichean</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>Ìre</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Leabharlann</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Soilleir</value>
+  </data>
+  <data name="IslamInfo_Lightning" xml:space="preserve">
+    <value>Dealanaich</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Crìoch</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>A' ceangladh</value>
+  </data>
+  <data name="IslamInfo_LogicalAnd" xml:space="preserve">
+    <value>Agus loidigeach</value>
+  </data>
+  <data name="IslamInfo_LogicalOr" xml:space="preserve">
+    <value>No loidigeach</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Fada</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Saighead fhada gu clì is deas</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Saighead fhada dhùbailte gu clì is deas</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Fireann</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>A làimh</value>
+  </data>
+  <data name="IslamInfo_Market" xml:space="preserve">
+    <value>Margaid</value>
+  </data>
+  <data name="IslamInfo_Mary" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Prìomh-shleamhnag</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Cùis</value>
+  </data>
+  <data name="IslamInfo_Measure" xml:space="preserve">
+    <value>Tomhas</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Ceàrn tomhaiste</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Tomhas le</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>coinneamh</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Eileaps còmhnard (loidhne mheadhanach)</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Mionaid</value>
+  </data>
+  <data name="IslamInfo_Money" xml:space="preserve">
+    <value>Airgead</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Mìos:</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Mìosan</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Gealach</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Madainn</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>Moroco</value>
+  </data>
+  <data name="IslamInfo_Mountain" xml:space="preserve">
+    <value>Beinn</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Torr nas motha na</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Torr nas lugha na</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>Iomadh-mhapadh</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>&amp;Samhla iomadachaidh</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Aonadh iomadh-sheata</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Ro-ràdh</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Nabla</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Ainmean</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>Suimeachadh N-araidh</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Bàr inghearach dùbailte le bàr àichidh dùbailte gu deas</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Neodrach</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Ùr</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Naidheachdan</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>An ath dhuilleag</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Fo-bhuidheann àbhaisteach dhe</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Chan e</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Gun a bhith cha mhòr co-ionnan ri</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Gun a bhith co-ionnan gu aisimtotach ri</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Neo-cho-ionnan ri</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Neo-choimheasach ri</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Gun a bhith nas motha na</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Neo-ionnannach ri</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Gun a bhith nas lugha na</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Gun a bhith na fo-bhuidheann àbhaisteach dhe</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Neo-cho-shìnte ri</value>
+  </data>
+  <data name="IslamInfo_NotSign" xml:space="preserve">
+    <value>Samhla àichidh</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Tonn àichidh</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Nach eil True</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Corra</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Aon</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>Fosgladh</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>-No-</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Eile</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>&amp;Duilleag</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Duilleagan:</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>Pagastàn</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Co-shìnte ri</value>
+  </data>
+  <data name="IslamInfo_PartialDifferential" xml:space="preserve">
+    <value>Diofarail leth-phàirteach</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>Com-pàirtiche</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>Cuideachd</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>Neo-ghnìomhach</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Slighe:</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>Sìth</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>&amp;Peann</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>Peansail</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Daoine</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>&amp;Samhla a' cheudaid</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Cead</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Buaidh-astair</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>Na h-Eileanan Filipineach</value>
+  </data>
+  <data name="IslamInfo_Pillar" xml:space="preserve">
+    <value>Carragh</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Gràpa</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Àite</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Ionadan</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Plota</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Feasgar</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Dol fodha na grèine</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Èirigh na grèine</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>A' dol ro</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>- Ro-leasachan -</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>An duilleag roimhpe</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>Prìme</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Co-rèir</value>
+  </data>
+  <data name="IslamInfo_ProportionalTo" xml:space="preserve">
+    <value>Co-rèireach ri</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Dìon</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Ceathramh</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>DihAoine</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>A làimh</value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Co-mheas</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>&amp;Leughadh</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Mholamaid seo</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>Samhla comharra-malairt clàraichte</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>Riatanas</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Freagairt</value>
+  </data>
+  <data name="IslamInfo_ReversedTilde" xml:space="preserve">
+    <value>Tonn contrarra</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Co-ionnan tuinn contrarra</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>&amp;Ceàrn ceart</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Iomadachadh leth-dhìreach factair àbhaistich dheis</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>&amp;Camag dheas</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Iomadachadh leth-dhìreach deas</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>Cromag thurrach shingilte dheas</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>&amp;Triantan ceart-cheàrnach</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Fàinne os cionn co-ionnan ri</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Sàbhailteachd</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Satarn</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>Aràibia nan Sabhd</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Sgèile</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Sgèilean</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Sgoil</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>P mòr sgriobt</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>Diog</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>&amp;Earrannan</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>; (Leth-chòilean)</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>Sense</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Thoir air falbh seata</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Goirid</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Soidhnich</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Airgead</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>&amp;Tonn sìneis</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Speur</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>Fo-chearclach</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Gàire</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Socks:</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>&amp;Fuaim</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Àite bàn</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Cainnt</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Ceàrn cruinn</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>Ceàrn fosgailte air a bhonn</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Ceàrn fosgailte air a bharr</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Gnìomharaiche dotaige ceart-cheàrnaich</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Thoir air falbh ceart-cheàrnach</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Cuir ris ceart-cheàrnach</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Iomadachadh ceart-cheàrnach</value>
+  </data>
+  <data name="IslamInfo_SquareFoot" xml:space="preserve">
+    <value>Troigh cheàrnach</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Ìomhaigh cheart-cheàrnach dhe</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Tùs ceart-cheàrnach dhe</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Freumh ceàrnagach</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>Sri Lanca</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>Rionnag (*)</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Gnìomharaiche rionnaige</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>A' sgur dheth</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>Neart</value>
+  </data>
+  <data name="IslamInfo_Student" xml:space="preserve">
+    <value>Oileanach</value>
+  </data>
+  <data name="IslamInfo_SubsetOf" xml:space="preserve">
+    <value>Fo-sheata dhe</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Sèamhaidh</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>A' dol an dèidh</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>Sudàn</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Iar-leasachan</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>&amp;Moladh</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>DiD</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Èirigh na grèine</value>
+  </data>
+  <data name="IslamInfo_SupersetOf" xml:space="preserve">
+    <value>Os-seata dhe</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Innteagrail uachdair</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>&amp;Clàr</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>Àrd</value>
+  </data>
+  <data name="IslamInfo_Term" xml:space="preserve">
+    <value>Teirm</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>teacsa</value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Chan eil sam bith</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Sam bith</value>
+  </data>
+  <data name="IslamInfo_Therefore" xml:space="preserve">
+    <value>Mar sin dheth</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>A' chiad nì</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>Diog</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Tha</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Tonn</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Àm</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>Anabarrach beag</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>An-diugh</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Oisean clì aig a' &amp;bharr</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Oisean deas aig a' b&amp;harr</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>Suathadh</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>Baile</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>Baile/Cathair</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>&amp;Dèan lorgadh</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>Samhla comharra-malairt</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Eadar-theangachadh</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Siubhal</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Innteagrail thrìoblaichte</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Bàr inghearach le trì bàraichean gu deas</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>True</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>Tuinisea</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>Litir beag Ghreugach Iota cham</value>
+  </data>
+  <data name="IslamInfo_Umbrella" xml:space="preserve">
+    <value>Sgàilean-uisge</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>Neo-chòmhdaich</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Aonadh</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Neo-aithnichte</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Gun fhaicinn</value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>&amp;Saighead suas is sìos</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>Saighead dhùbailte suas is sìos</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>Eileaps suas trastanach deas</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>Ùranas</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>&amp;Gnìomhair</value>
+  </data>
+  <data name="IslamInfo_VerticalEllipsis" xml:space="preserve">
+    <value>Eileaps inghearach</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Loidhne &amp;inghearach</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Torr torr nas motha na</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Torr torr nas lugha na</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>Guth</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Innteagrail tomhais-lìonaidh</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Cum sùil</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Uisge</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>Ìosal</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>Seachdain</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Cuin</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Càite:</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Cearcall geal</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>Aodann geal le gàire</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Trì-cheàrnach geal a' tomhadh suas</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>Carson?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value>An rud seo</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Facal</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Faclan:</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Paisgear</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Iomadachadh figheachain</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>A' bhliadhna</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>Leatsa</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Cuir an sàs</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Leabhar</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>Àireamhachaidhean</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>cruinneachadh</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Ceann-là</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Ceuman</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Faclair</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Comhair:</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>&amp;Cuir à comas</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Uidheam-taisbeanaidh</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Roinn</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Cruth-clò</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Gràmar</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Am Mìosachan Griogarach</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Am Mìosachan Hijri</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Dachaigh</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Fiosrachadh</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Ro-ràdh</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Liostaichean</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Ga luchdadh...</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Mapachadh</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Mionaidean</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Na seall</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>&amp;Dheth</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Frìth-àireamh</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Gnìomhachd</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Clò-bhuail</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Às-earrann</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Thoir air falbh</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Sgeama</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>Diogan</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Roghainn</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>teacsa</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Eadar-theangachadh</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Aonadan</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Sealladair</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>An sgudal</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Dona</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Draibhear:</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>As fhearr</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>A' tòiseachadh...</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Air ballrachd fhaighinn</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>&amp;Sgaraichte</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>Exchange()</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Freumh</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Toradh</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
 </root>

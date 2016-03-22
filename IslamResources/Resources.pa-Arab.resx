@@ -1578,4 +1578,13 @@
   <data name="IslamInfo_Exchange" xml:space="preserve">
     <value>Exchange</value>
   </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>روٹ</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>نتیجہ</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
 </root>

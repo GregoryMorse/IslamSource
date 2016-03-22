@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Ingano</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Ubushyinguropaji</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Gukoporora mu bubikogateganyo</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Gusubika</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Gucuranga</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Gusangira</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Ibyerekeye</value>
+  </data>
 </root>

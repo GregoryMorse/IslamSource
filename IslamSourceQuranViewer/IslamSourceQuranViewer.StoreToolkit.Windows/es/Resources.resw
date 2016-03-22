@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Idioma predeterminado</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Añadir marcador</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Marcadores</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Copiar al Portapapeles</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Ir a verso</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Reproducir</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Recitador</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Eliminar marcador</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Verso de reproducción establecido</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Exégesis de mostrar</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Compartir</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Versículo adicional avance retraso</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Avanzar automáticamente en verso</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Longitud de retardo del verso antes de avanzar</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Modo de bucle</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Acerca de</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Corán árabe con metadatos y todas las traducciones y algunas recitaciones audio excepto los listados a proyecto Tanzil (http://tanzil.net). 
+Húngaro Traducción del Corán por Zsuzsanna Halima Kiss acreditado a Magyar Iszlam (http://magyariszlam.hu). 
+Traducción en Inglés de Qu'ran por Maulana Muhammad Ali acreditado para el movimiento de Lahore Ahmadiyya en Islam (http://www.aaiil.org). Datos 
+morfología y traducción en Inglés de la palabra por palabra crédito al Corpus de Árabe coránico (http://corpus.quran.com). 
+Crédito de la traducción palabra por palabra a Indonesia Al-Quran (http://www.alquran-indonesia.com/web/quran). 
+Urdu traducción palabra por palabra por Hafiz Nazar Muhammad acreditado a fácil Corán Wa Hadees (http://www.easyquranwahadees.com). 
+Otras traducciones palabra por palabra, así como otras traducciones en el programa acredita al proveedor de traducción de Microsoft (http://www.microsoft.com/en-us/translator) y Google Translate (http://translate.google.com) y puede no ser precisas.  Para Malasia Corán palabra por palabra, el origen es indonesio.  Para todas otras palabra por palabra Qur ' an, la fuente es el Corpus Inglés de Árabe coránico. 
+Otras recitaciones audio con bitrate aparecido acreditan a cada aleya (http://www.everyayah.com). 
+Datos de Unicode acreditados el consorcio de Unicode (http://www.unicode.org)</value>
+  </data>
 </root>

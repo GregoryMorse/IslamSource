@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>डिफ़ॉल्‍ट भाषा</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>बुकमार्क जोड़ें</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>बुकमार्क्स</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>क्लिपबोर्ड पर प्रतिलिपि बनाएँ</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>कविता के लिए जाओ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ठहरें</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>चलाएँ</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>पढ़नेवाला</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>बुकमार्क निकालें</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>सेट करें प्लेबैक कविता</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>टीका दिखाएँ</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>साझा करें</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>अतिरिक्त कविता अग्रिम देरी</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>कविता स्वचालित रूप से उन्नत</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>कविता में आगे बढ़ने से पहले के विलंब लंबाई</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>पाशन मोड</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>के बारे में</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>मेटाडेटा के साथ अरबी कुरान और सभी अनुवाद और कुछ ऑडियो recitations को छोड़कर उन सूचीबद्ध Tanzil प्रोजेक्ट (http://tanzil.net) के लिए श्रेय दिया जाता है। 
+Zsuzsanna रहने Halima चुंबन द्वारा कुरान की हंगरियन अनुवाद Magyar Iszlam (http://magyariszlam.hu) के लिए श्रेय दिया। 
+Qu'ran का अंग्रेजी अनुवाद मौलाना मुहम्मद अली द्वारा लाहौर अहमदिया धर्म इस्लाम (http://www.aaiil.org) में आंदोलन करने के लिए श्रेय दिया। 
+Morphology डेटा और हिंदी शब्द-शब्द अनुवाद Quranic अरबी Corpus (http://corpus.quran.com) के लिए क्रेडिट। 
+अल-कुरान इंडोनेशिया (http://www.alquran-indonesia.com/web/quran) के लिए क्रेडिट इंडोनेशियन शब्द-शब्द अनुवाद। 
+उर्दू शब्द-शब्द अनुवाद हफीज नज़र मुहम्मद द्वारा आसान कुरान वा Hadees (http://www.easyquranwahadees.com) के लिए श्रेय दिया। 
+अन्य शब्द-शब्द अनुवाद के रूप में अच्छी तरह से अन्य अनुवाद प्रोग्राम में Microsoft अनुवाद प्रदाता (http://www.microsoft.com/en-us/translator) और Google अनुवाद (http://translate.google.com) के लिए श्रेय और सटीक नहीं हो सकता है।  मलेशियाई शब्द-शब्द कुरान के लिए स्रोत इंडोनेशियन है।  सभी अन्य शब्द-शब्द कुरान के लिए, अंग्रेजी Quranic अरबी Corpus स्रोत है। 
+अन्य ऑडियो recitations दिखाया बिटरेट के साथ हर Ayah (http://www.everyayah.com) के लिए श्रेय दिया। 
+यूनिकोड डेटा जमा करने के लिए यूनिकोड Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

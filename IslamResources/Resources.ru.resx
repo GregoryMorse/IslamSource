@@ -27402,4 +27402,541 @@
   <data name="IslamInfo_RecitationRules" xml:space="preserve">
     <value>Чтение правил</value>
   </data>
+  <data name="IslamInfo_AngleWithSInside" xml:space="preserve">
+    <value>Угол с S внутри</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallVBelow" xml:space="preserve">
+    <value>Арабская буква Бех с Перевернутый малых V ниже</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithSmallVBelow" xml:space="preserve">
+    <value>Арабская буква Бех с небольшой V ниже</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallVBelow" xml:space="preserve">
+    <value>Арабская буква Dal с Перевернутый малых V ниже</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterRehWithSmallVBelow" xml:space="preserve">
+    <value>Арабская буква Reh с небольшой V ниже</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterUWithHamzaAbove" xml:space="preserve">
+    <value>Арабская буква U с Хамза выше</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterZainWithInvertedVAbove" xml:space="preserve">
+    <value>Арабская буква Заин с перевернутый V выше</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignInvertedSmallVAbove" xml:space="preserve">
+    <value>Арабский гласных знак перевернутой небольшие V выше</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignSmallVAbove" xml:space="preserve">
+    <value>Арабский гласных небольшой знак V выше</value>
+  </data>
+  <data name="IslamInfo_BatakVowelSignUForSimalungunSa" xml:space="preserve">
+    <value>Батак гласных знак U Simalungun Sa</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterAWithDiaeresis" xml:space="preserve">
+    <value>Сочетание латинских маленькой буквы Ӓ</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterCCedilla" xml:space="preserve">
+    <value>Сочетание латинских маленькая буква C Cedilla</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenAAbove" xml:space="preserve">
+    <value>Сочетание латинских маленькой буквы уплощенная открыть выше</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterLWithDoubleMiddleTilde" xml:space="preserve">
+    <value>Сочетание латинских маленькой буквы L с двойной средней тильда</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithDiaeresis" xml:space="preserve">
+    <value>Объединение мелких Латинская буква O ӧ</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithLightCentralizationStroke" xml:space="preserve">
+    <value>Сочетание латинских маленькая буква O с легкими централизации инсульта</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRBelow" xml:space="preserve">
+    <value>Объединение мелких Латинская буква R ниже</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRRotunda" xml:space="preserve">
+    <value>Сочетание малых Латинская буква R Ротонда</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithDiaeresis" xml:space="preserve">
+    <value>Объединение мелких Латинской буквы U ӧ</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithLightCentralizationStroke" xml:space="preserve">
+    <value>Объединение мелких Латинской буквы U с легкими централизации инсульта</value>
+  </data>
+  <data name="IslamInfo_CombiningXAbove" xml:space="preserve">
+    <value>Сочетая X выше</value>
+  </data>
+  <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
+    <value>Сочетая X ниже</value>
+  </data>
+  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
+    <value>Сочетая X - X ниже</value>
+  </data>
+  <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
+    <value>Одноместный высоких Reversed9 кавычка</value>
+  </data>
+  <data name="IslamInfo_DoubleLow9QuotationMark" xml:space="preserve">
+    <value>Двойной Low9 кавычка</value>
+  </data>
+  <data name="IslamInfo_DoubleLowReversed9QuotationMark" xml:space="preserve">
+    <value>Двухместный низкой Reversed9 кавычка</value>
+  </data>
+  <data name="IslamInfo_IntegralAroundAPointOperator" xml:space="preserve">
+    <value>Интеграл вокруг точки оператора</value>
+  </data>
+  <data name="IslamInfo_LBBarSymbol" xml:space="preserve">
+    <value>L B бар символ</value>
+  </data>
+  <data name="IslamInfo_LeftSidewaysUBracket" xml:space="preserve">
+    <value>Кронштейн левый боком U</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignEAbove" xml:space="preserve">
+    <value>Мьянма гласных знак Е выше</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignShanEAbove" xml:space="preserve">
+    <value>Мьянма на гласный знак Шань E выше</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Подмножество не равен</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Надмножество ни равным</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Не является подмножеством</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Не надмножество</value>
+  </data>
+  <data name="IslamInfo_ParenthesizedKoreanCharacterOHu" xml:space="preserve">
+    <value>Скобках корейских символов O Ху</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType1Plastics" xml:space="preserve">
+    <value>Переработка символ для Type1 пластмасс</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType2Plastics" xml:space="preserve">
+    <value>Переработка символ для пластмасс тип2</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType3Plastics" xml:space="preserve">
+    <value>Переработка символ для Type3 пластмасс</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType4Plastics" xml:space="preserve">
+    <value>Переработка символ для Type4 пластмасс</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType5Plastics" xml:space="preserve">
+    <value>Переработка символ для пластмасс Тип5</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType6Plastics" xml:space="preserve">
+    <value>Переработка символ для Type6 пластмасс</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType7Plastics" xml:space="preserve">
+    <value>Переработка символ для Type7 пластмасс</value>
+  </data>
+  <data name="IslamInfo_RightSidewaysUBracket" xml:space="preserve">
+    <value>Кронштейн правой обочине U</value>
+  </data>
+  <data name="IslamInfo_SInTriangle" xml:space="preserve">
+    <value>S в треугольник</value>
+  </data>
+  <data name="IslamInfo_SingleHighReversed9QuotationMark" xml:space="preserve">
+    <value>Один высокий Reversed9 кавычка</value>
+  </data>
+  <data name="IslamInfo_SingleLow9QuotationMark" xml:space="preserve">
+    <value>Один Low9 кавычка</value>
+  </data>
+  <data name="IslamInfo_SquareAOverM" xml:space="preserve">
+    <value>Квадратный A над M</value>
+  </data>
+  <data name="IslamInfo_SquareVOverM" xml:space="preserve">
+    <value>Квадратный V над M</value>
+  </data>
+  <data name="IslamInfo_ThreeDBottomLightedRightwardsArrowhead" xml:space="preserve">
+    <value>Три D нижней освещенные вправо стрелки</value>
+  </data>
+  <data name="IslamInfo_ThreeDLeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
+    <value>D три слева освещенные вниз равносторонний стрелки</value>
+  </data>
+  <data name="IslamInfo_ThreeDRightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
+    <value>Три D право освещенные вверх равносторонний Арроухед</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
+    <value>Топ 3 D освещенные влево равносторонний Арроухед</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsArrowhead" xml:space="preserve">
+    <value>D три Топ освещенные вправо стрелки</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
+    <value>Топ 3 D освещенные вправо равносторонний Арроухед</value>
+  </data>
+  <data name="IslamInfo_UpArrowheadInARectangleBox" xml:space="preserve">
+    <value>Вверх стрелку в поле прямоугольник</value>
+  </data>
+  <data name="IslamInfo_XInARectangleBox" xml:space="preserve">
+    <value>X в окне прямоугольник</value>
+  </data>
+  <data name="IslamInfo_ZNotationBagMembership" xml:space="preserve">
+    <value>Z нотации мешок членство</value>
+  </data>
+  <data name="IslamInfo_ZNotationDomainAntirestriction" xml:space="preserve">
+    <value>Z-нотация домен Antirestriction</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftBindingBracket" xml:space="preserve">
+    <value>Кронштейн левый привязки нотации Z</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftImageBracket" xml:space="preserve">
+    <value>Z нотации левое изображение кронштейн</value>
+  </data>
+  <data name="IslamInfo_ZNotationRangeAntirestriction" xml:space="preserve">
+    <value>Z-нотация диапазона Antirestriction</value>
+  </data>
+  <data name="IslamInfo_ZNotationRelationalComposition" xml:space="preserve">
+    <value>Z нотации реляционных композиция</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightBindingBracket" xml:space="preserve">
+    <value>Держатель Z нотации право привязки</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightImageBracket" xml:space="preserve">
+    <value>Кронштейн правый образ Z нотации</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaComposition" xml:space="preserve">
+    <value>Z нотации схемы состав</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaPiping" xml:space="preserve">
+    <value>Z нотации схемы трубопроводов</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaProjection" xml:space="preserve">
+    <value>Проекция схемы Z нотации</value>
+  </data>
+  <data name="IslamInfo_ZNotationSpot" xml:space="preserve">
+    <value>Z-нотация Spot</value>
+  </data>
+  <data name="IslamInfo_ZNotationTypeColon" xml:space="preserve">
+    <value>Z нотации типа Колон</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Корень</value>
+  </data>
+  <data name="IslamInfo_Lemma" xml:space="preserve">
+    <value>Лемма</value>
+  </data>
+  <data name="IslamInfo_SpecialGroup" xml:space="preserve">
+    <value>Специальная группа</value>
+  </data>
+  <data name="IslamInfo_PartOfSpeech" xml:space="preserve">
+    <value>Часть речи</value>
+  </data>
+  <data name="IslamInfo_AttachedPronoun" xml:space="preserve">
+    <value>Прилагаемый местоимение</value>
+  </data>
+  <data name="IslamInfo_Determiner" xml:space="preserve">
+    <value>Семантические свойства</value>
+  </data>
+  <data name="IslamInfo_ByWithOrInPreposition" xml:space="preserve">
+    <value>На с или Семантические свойства</value>
+  </data>
+  <data name="IslamInfo_LikeOrThusPreposition" xml:space="preserve">
+    <value>Как или таким образом предлог</value>
+  </data>
+  <data name="IslamInfo_ParticleOfOathUsedAsPreposition" xml:space="preserve">
+    <value>Частица присяги, используется как предлог</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingFuture" xml:space="preserve">
+    <value>Префиксные частиц, указывающее будущее</value>
+  </data>
+  <data name="IslamInfo_CallingVocative" xml:space="preserve">
+    <value>Призывая звательный</value>
+  </data>
+  <data name="IslamInfo_PointingVocative" xml:space="preserve">
+    <value>Указывая звательный</value>
+  </data>
+  <data name="IslamInfo_PrefixedInterrogativeParticle" xml:space="preserve">
+    <value>Префиксные Вопросительная частица</value>
+  </data>
+  <data name="IslamInfo_PrefixedEqualizationParticle" xml:space="preserve">
+    <value>Префиксные равных частиц</value>
+  </data>
+  <data name="IslamInfo_Resumption" xml:space="preserve">
+    <value>Возобновление</value>
+  </data>
+  <data name="IslamInfo_Circumstantial" xml:space="preserve">
+    <value>Косвенные</value>
+  </data>
+  <data name="IslamInfo_Comitative" xml:space="preserve">
+    <value>Comitative</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="IslamInfo_Supplemental" xml:space="preserve">
+    <value>Дополнительные</value>
+  </data>
+  <data name="IslamInfo_Cause" xml:space="preserve">
+    <value>причина</value>
+  </data>
+  <data name="IslamInfo_PrefixedPreposition" xml:space="preserve">
+    <value>Префиксные предлог</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingEmphasis" xml:space="preserve">
+    <value>Префиксные частиц, указывающее акцент</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingPurpose" xml:space="preserve">
+    <value>Префиксные частиц, указывающий цель</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleUsedToFormImperative" xml:space="preserve">
+    <value>Префикс частиц используется для формирования императив</value>
+  </data>
+  <data name="IslamInfo_VocativeWordForm" xml:space="preserve">
+    <value>Слово Звательная форма</value>
+  </data>
+  <data name="IslamInfo_Emphatic" xml:space="preserve">
+    <value>Эмфатический</value>
+  </data>
+  <data name="IslamInfo_IndicativeMood" xml:space="preserve">
+    <value>Ориентировочные настроение</value>
+  </data>
+  <data name="IslamInfo_SubjunctiveMood" xml:space="preserve">
+    <value>Сослагательное настроение</value>
+  </data>
+  <data name="IslamInfo_JussiveMood" xml:space="preserve">
+    <value>Наклонениями настроение</value>
+  </data>
+  <data name="IslamInfo_Stem" xml:space="preserve">
+    <value>Стебель</value>
+  </data>
+  <data name="IslamInfo_Participle" xml:space="preserve">
+    <value>Причастие</value>
+  </data>
+  <data name="IslamInfo_TypeOne" xml:space="preserve">
+    <value>Тип 1</value>
+  </data>
+  <data name="IslamInfo_TypeTwo" xml:space="preserve">
+    <value>Type Two</value>
+  </data>
+  <data name="IslamInfo_TypeThree" xml:space="preserve">
+    <value>Тип 3</value>
+  </data>
+  <data name="IslamInfo_TypeFour" xml:space="preserve">
+    <value>Тип 4</value>
+  </data>
+  <data name="IslamInfo_TypeFive" xml:space="preserve">
+    <value>Тип 5</value>
+  </data>
+  <data name="IslamInfo_TypeSix" xml:space="preserve">
+    <value>Тип 6</value>
+  </data>
+  <data name="IslamInfo_TypeSeven" xml:space="preserve">
+    <value>Тип 7</value>
+  </data>
+  <data name="IslamInfo_TypeEight" xml:space="preserve">
+    <value>Тип 8</value>
+  </data>
+  <data name="IslamInfo_TypeNine" xml:space="preserve">
+    <value>Тип 9</value>
+  </data>
+  <data name="IslamInfo_TypeTen" xml:space="preserve">
+    <value>Тип 10</value>
+  </data>
+  <data name="IslamInfo_TypeEleven" xml:space="preserve">
+    <value>Тип 11</value>
+  </data>
+  <data name="IslamInfo_TypeTwelve" xml:space="preserve">
+    <value>Тип 12</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Активная</value>
+  </data>
+  <data name="IslamInfo_Perfect" xml:space="preserve">
+    <value>Идеальный</value>
+  </data>
+  <data name="IslamInfo_Imperfect" xml:space="preserve">
+    <value>Имперфект</value>
+  </data>
+  <data name="IslamInfo_Imperative" xml:space="preserve">
+    <value>Императив</value>
+  </data>
+  <data name="IslamInfo_GenitiveCase" xml:space="preserve">
+    <value>Родительный падеж</value>
+  </data>
+  <data name="IslamInfo_Singular" xml:space="preserve">
+    <value>Сингулярные</value>
+  </data>
+  <data name="IslamInfo_NumberSpelling" xml:space="preserve">
+    <value>Номер правописания</value>
+  </data>
+  <data name="IslamInfo_HeadingNumberSpelling" xml:space="preserve">
+    <value>Заголовок номер правописания</value>
+  </data>
+  <data name="IslamInfo_StoppingEndowment" xml:space="preserve">
+    <value>Остановка пожертвований</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaStoppingEndowment" xml:space="preserve">
+    <value>Teh Marbuta остановки пожертвований</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaJoiningContinuing" xml:space="preserve">
+    <value>Teh Marbuta присоединение продолжается</value>
+  </data>
+  <data name="IslamInfo_JoiningContinuing" xml:space="preserve">
+    <value>Присоединение продолжается</value>
+  </data>
+  <data name="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Постоянный продолговатые ноль небольшой высокой вертикально прямоугольные ноль</value>
+  </data>
+  <data name="IslamInfo_EmptyCentreLowStop" xml:space="preserve">
+    <value>Пустой центр низкой стоп</value>
+  </data>
+  <data name="IslamInfo_RoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Округлые высоко стоп с заполненной центр</value>
+  </data>
+  <data name="IslamInfo_SmallNoon" xml:space="preserve">
+    <value>Малые полдень</value>
+  </data>
+  <data name="IslamInfo_SmallHighSeen" xml:space="preserve">
+    <value>Малые высокой видел</value>
+  </data>
+  <data name="IslamInfo_SmallLowSeen" xml:space="preserve">
+    <value>Небольшой низкий видел</value>
+  </data>
+  <data name="IslamInfo_Sukun" xml:space="preserve">
+    <value>Sukun</value>
+  </data>
+  <data name="IslamInfo_EmptyShadda" xml:space="preserve">
+    <value>Пустой шадда</value>
+  </data>
+  <data name="IslamInfo_ShaddaResolve" xml:space="preserve">
+    <value>Шадда решимость</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaFatha" xml:space="preserve">
+    <value>Продолжающиеся Хамза Фатхой</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaKasra" xml:space="preserve">
+    <value>Продолжающиеся Kasra Хамза</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaDamma" xml:space="preserve">
+    <value>Продолжающиеся Хамза Damma</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaEmpty" xml:space="preserve">
+    <value>Продолжающиеся Хамза пусто</value>
+  </data>
+  <data name="IslamInfo_LaamAssimilation" xml:space="preserve">
+    <value>Laam ассимиляции</value>
+  </data>
+  <data name="IslamInfo_RaaAssimilation" xml:space="preserve">
+    <value>Раа ассимиляции</value>
+  </data>
+  <data name="IslamInfo_RaaHeavinessOrLightness" xml:space="preserve">
+    <value>Легкость или тяжесть САР</value>
+  </data>
+  <data name="IslamInfo_SmallWaw" xml:space="preserve">
+    <value>Малые Waw</value>
+  </data>
+  <data name="IslamInfo_SmallYeh" xml:space="preserve">
+    <value>Малые Yeh</value>
+  </data>
+  <data name="IslamInfo_FathaSilentLetterSuperscriptAlef" xml:space="preserve">
+    <value>Фатхой Silent письмо надстрочного Алеф</value>
+  </data>
+  <data name="IslamInfo_DipthongZeroLength" xml:space="preserve">
+    <value>Dipthong нулевой длины</value>
+  </data>
+  <data name="IslamInfo_OriginalLengtheningZeroCapture" xml:space="preserve">
+    <value>Оригинал, удлинение нулевой захвата</value>
+  </data>
+  <data name="IslamInfo_AssimilateGreatIdenticalDammaMerge" xml:space="preserve">
+    <value>Усвоить большой идентичные Damma слияния</value>
+  </data>
+  <data name="IslamInfo_AssimilateSmallIdenticalHaaSakinah" xml:space="preserve">
+    <value>Усвоить небольшой идентичные Haa Sakinah</value>
+  </data>
+  <data name="IslamInfo_MostCompleteNasalization" xml:space="preserve">
+    <value>Наиболее полная назализация</value>
+  </data>
+  <data name="IslamInfo_CompleteNasalization" xml:space="preserve">
+    <value>Полная назализация</value>
+  </data>
+  <data name="IslamInfo_IncompleteNasalization" xml:space="preserve">
+    <value>Неполные назализация</value>
+  </data>
+  <data name="IslamInfo_MostIncompleteNasalization" xml:space="preserve">
+    <value>Наиболее неполной назализация</value>
+  </data>
+  <data name="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" xml:space="preserve">
+    <value>Vowelless полдень неполного освоения назализация</value>
+  </data>
+  <data name="IslamInfo_UnwrittenHelperKasra" xml:space="preserve">
+    <value>Неписаные вспомогательный Kasra</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaWawHamza" xml:space="preserve">
+    <value>Waw Wasla Алеф Хамза</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaAlefMaksuraHamza" xml:space="preserve">
+    <value>Wasla Алеф Алеф Хамза Maksura</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaHamza" xml:space="preserve">
+    <value>Алеф Хамза Wasla</value>
+  </data>
+  <data name="IslamInfo_SmallHamza" xml:space="preserve">
+    <value>Малые Хамза</value>
+  </data>
+  <data name="IslamInfo_LetterHamza" xml:space="preserve">
+    <value>Письмо Хамза</value>
+  </data>
+  <data name="IslamInfo_HamzaAbove" xml:space="preserve">
+    <value>Хамза выше</value>
+  </data>
+  <data name="IslamInfo_NotAlef" xml:space="preserve">
+    <value>Не Алеф</value>
+  </data>
+  <data name="IslamInfo_MaddAlef" xml:space="preserve">
+    <value>Мэдд Алеф</value>
+  </data>
+  <data name="IslamInfo_NotWaw" xml:space="preserve">
+    <value>Не Waw</value>
+  </data>
+  <data name="IslamInfo_NotYeh" xml:space="preserve">
+    <value>Не Yeh</value>
+  </data>
+  <data name="IslamInfo_MaddWaw" xml:space="preserve">
+    <value>Мэдд Waw</value>
+  </data>
+  <data name="IslamInfo_LeenWaw" xml:space="preserve">
+    <value>Leen Waw</value>
+  </data>
+  <data name="IslamInfo_StrongWaw" xml:space="preserve">
+    <value>Сильный Waw</value>
+  </data>
+  <data name="IslamInfo_MaddYeh" xml:space="preserve">
+    <value>Мэдд Yeh</value>
+  </data>
+  <data name="IslamInfo_LeenYeh" xml:space="preserve">
+    <value>Leen Yeh</value>
+  </data>
+  <data name="IslamInfo_StrongYeh" xml:space="preserve">
+    <value>Сильный Yeh</value>
+  </data>
+  <data name="IslamInfo_DivisionMarkers" xml:space="preserve">
+    <value>Отдел маркеры</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkers" xml:space="preserve">
+    <value>Продолжать стоповых маркеров</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkersAtEnding" xml:space="preserve">
+    <value>Продолжить стоповых маркеров на окончание</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryLightened" xml:space="preserve">
+    <value>Маддах обязательные облегченный</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryWeighted" xml:space="preserve">
+    <value>Маддах обязательные Средневзвешенная</value>
+  </data>
+  <data name="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" xml:space="preserve">
+    <value>Связанные удлинение основные представленные Sukun</value>
+  </data>
+  <data name="IslamInfo_SoftLengtheningLetters" xml:space="preserve">
+    <value>Мягкие удлинение письма</value>
+  </data>
+  <data name="IslamInfo_LetterSpelling" xml:space="preserve">
+    <value>Написание письма</value>
+  </data>
+  <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
+    <value>Памяти после молитвы</value>
+  </data>
 </root>

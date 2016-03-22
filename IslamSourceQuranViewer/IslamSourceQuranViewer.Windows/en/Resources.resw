@@ -117,11 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About.Label" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabic Qur'an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
+Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
+Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
+Unicode data credited to The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>Add Bookmark</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Additional Verse Advance Delay</value>
+  </data>
   <data name="ArabicFont.Text" xml:space="preserve">
     <value>Arabic Font</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance Verse Automatically</value>
   </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Back</value>
@@ -141,6 +161,9 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Default Language</value>
   </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Delay Length of Verse Before Advancing</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</value>
   </data>
@@ -152,6 +175,9 @@
   </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Increase Font Size</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Looping Mode</value>
   </data>
   <data name="OtherTextFont.Text" xml:space="preserve">
     <value>Other Text Font</value>

@@ -12,4 +12,1810 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>წიგნი:</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>წიგნები</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>ინდექსი</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>თარგმანი</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>ხმა</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>ზემოთ</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>აბსოლუტური</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>ანგარიში</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>ლუკა</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>შემდეგ</value>
+  </data>
+  <data name="IslamInfo_Airplane" xml:space="preserve">
+    <value>თვითმფრინავი</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>ალჟირი</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>ყველა</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>ნებადართული</value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>თითქმის ტოლი ან ტოლი</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>მუდამ</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>ღუზა</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>ანგელოზი</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>კუთხე:</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>ბრაზიანი</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>შეხვედრა</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>ზღვართან მიახლოებული</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>დაახლოებით უდრის</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>არაბული</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Arc</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>არგუმენტი</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>გარშემო</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>ამაღლება</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>ვარსკვლავი</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>ვარსკვლავის ოპერატორი</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>ასიმპტომატიკურად ტოლია</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>ატრიბუტები:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>უკან</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>ბალანსი</value>
+  </data>
+  <data name="IslamInfo_Because" xml:space="preserve">
+    <value>ამიტომ</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>მანამდე</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>უკეთესი</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>შორის...</value>
+  </data>
+  <data name="IslamInfo_Big" xml:space="preserve">
+    <value>დიდი</value>
+  </data>
+  <data name="IslamInfo_Bigger" xml:space="preserve">
+    <value>უფრო დიდი</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>შავი</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>შავი წრე</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>შავი გულის კომპლექტი</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>შიგთავსი</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>წიგნი:</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>ქვედა მარცხენა კუთხე</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>ქვედა მარჯვენა კუთხე</value>
+  </data>
+  <data name="IslamInfo_Bread" xml:space="preserve">
+    <value>პური</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>შემოკლების ნიშანი</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>თანამშრომლობა</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>საჩუქრები</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>პირობები</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>ბურთულა</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>ბურთულას ოპერატორი</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>შეძენა</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>დარეკვა</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>კანადა</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>მანქანა</value>
+  </data>
+  <data name="IslamInfo_Chain" xml:space="preserve">
+    <value>საზომი ჯაჭვი</value>
+  </data>
+  <data name="IslamInfo_Chair" xml:space="preserve">
+    <value>სკამი</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>თავი ! !!!!!!!!!!!!!!!!</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>ღილები</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>ჩინეთი</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>ვარსკვლავის ოპერატორი წრეში</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>ტირე წრეში</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>გაყოფის ნიშანი წრეში</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>წერტილის ოპერატორი წრეში</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>მინუსი წრეში</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>პლიუსი წრეში</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>რკალის ოპერატორის წრეში</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>დრო წრეში</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>კლასიფიკაცია</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>წაშლა</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>კონტურული ინტეგრალი საათის ისრის მიმართულებით</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>ინტეგრალი საათის ისრის მიმართულებით</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>ნახევრად მრგვალი ისარი საათის ისრის მიმართულებით ზემოთ</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>დახურვა...</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>ღრუბელი</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>კოლექცია</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>ორწერტილი</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>მძიმე</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>გაერთიანება</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>კომპლექტი</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>დასრულებული</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>პირობა</value>
+  </data>
+  <data name="IslamInfo_Confirmed" xml:space="preserve">
+    <value>დადასტურებული</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>მილოცვები</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>დაკავშირება</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>შეიცავს როგორც ჩვეულებრივ ქვეჯგუფს</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>შეიცავს ჩვეულებრივ ქვეჯგუფს ან ტოლია</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>შიგთავსი</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>კონტურული ინტეგრალი</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>ასლი</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>საავტორო უფლების ნიშანი</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>დაფარვა</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>კუბური ფესვი</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>მორკალური ლოგიკური და</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>მორკალური ლოგიკური ან</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>ინდივიდუალური</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>ჯვარი</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>დევიდი</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>დღე</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>კვირა</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>ორშაბათი</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>სამშაბათი</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>ოთხშაბათი</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>ხუთშაბათი</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>პარასკევი</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>შაბათი</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>ნაგულისხმევი</value>
+  </data>
+  <data name="IslamInfo_DegreeCelsius" xml:space="preserve">
+    <value>ცელსიუსის გრადუსი</value>
+  </data>
+  <data name="IslamInfo_DegreeFahrenheit" xml:space="preserve">
+    <value>ფარენჰეიტის გრადუსი</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>დაყოვნება:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>ჩაბარება</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>დელტა ტოლია</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>დეტალები</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>დიაკრიტიკული ნიშნები</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>ოპერატორი რომბი</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>სხვაობა</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>სიფრთხილე</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>დაყოფა</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>გაყოფის ნიშანი</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>წილადის გაყოფა</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>გაყოფის დრო</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>არ შეიცავს როგორც წევრს</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>არ იყოფა</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>არ ზემოქმედებს</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>არ უსწრებს</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>არ უსწრებს ან ტოლია</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>არ ამტკიცებს</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>არ მისდევს</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>არ მიჰყვება ან ტოლია</value>
+  </data>
+  <data name="IslamInfo_Dog" xml:space="preserve">
+    <value>ძაღლი</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>ოპერატორი წერტილი</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>წერტილი პლიუსი</value>
+  </data>
+  <data name="IslamInfo_DoubleDagger" xml:space="preserve">
+    <value>ორმაგი ჯვარი</value>
+  </data>
+  <data name="IslamInfo_DoubleIntegral" xml:space="preserve">
+    <value>ორმაგი ინტეგრალი</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>ორმაგი გადაკვეთის წერტილი</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>ორმაგი ქვენაკრები</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>ორმაგი სუპერნაკრები</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>ორმაგი კავშირი</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>ქვედა მარჯვენა დიაგონალური ელიფსები</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>გადათრევა</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>დრიმი</value>
+  </data>
+  <data name="IslamInfo_Drill" xml:space="preserve">
+    <value>დეტალიზაცია</value>
+  </data>
+  <data name="IslamInfo_Drink" xml:space="preserve">
+    <value>სასმელი</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>დედამიწა</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>ეგვიპტე</value>
+  </data>
+  <data name="IslamInfo_ElementOf" xml:space="preserve">
+    <value>ელემენტი</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>ამაღლება:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>—	დიდი ტირე</value>
+  </data>
+  <data name="IslamInfo_EmptySet" xml:space="preserve">
+    <value>ცარიელი ნაკრები</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value>Em ჰარი</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>დასასრული</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>–	ტირე</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value>En ჰარი</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>შეტანა</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>გართობა</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>კონვერტი</value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>ტოლი ან პარალელური</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>განტოლება განსაზღვრებით</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>ტოლია ან ასწრებს</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>ტოლია ან მიყვება</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>ტოლობა</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>გამონაკლისი:</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>განმარტება...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>ჭეშმარიტი</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>სახე</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>მცდარი</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>მდედრობითი</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>კარგი</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>ცეცხლი</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>პირველი</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>მთვარის პირველი მეოთხედი</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>ფიქსირებული</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>ალი</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>ნაკადი</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>ყვავილი</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>საკვები</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>ფუტი</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>თვის:</value>
+  </data>
+  <data name="IslamInfo_ForAll" xml:space="preserve">
+    <value>ყველასათვის</value>
+  </data>
+  <data name="IslamInfo_Forces" xml:space="preserve">
+    <value>ზემოქმედებს</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>შადრევანი</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>მეოთხე ფესვი</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>საფრანგეთი</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>პარასკევი</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>ენიდან:</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>წინა</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>მთელი ბლოკი</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>მომავალი</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>ბაღი</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>გადაცემა</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>სქესი</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>ზოგადი  </value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>გამომუშავება</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>გეომეტრიულად ტოლია</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>გეომეტრიულად ტოლი</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>გერმანია</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>ოქროსფერი</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>კარგი</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>გრაციოზული</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>გრამატიკა</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>ბლაგვი</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>ბლაგვი მახვილი</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>დიდი ბრიტანეთი</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>მეტობა ან ტოლობა</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>მეტობის ნიშანი ტოლობის ნიშნის ზემოთ</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>მეტობის ნიშანი</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>ჯგუფი</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>ჯგუფები</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>ბეწვი</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>დარიგება</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>თავი</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>გული</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>დამალული</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>ქარაგმა:</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>ჰორიზონტალური სამწერტილი</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>საათი</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>ჰაუსი</value>
+  </data>
+  <data name="IslamInfo_How" xml:space="preserve">
+    <value>როგორ?</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>იდენტური</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>IF</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>ნახატი ან დაახლოებით ტოლი</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>მოქმედება</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>დმ</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>დაუსრულებელი</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>ზრდა</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>ინდექსი</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>ინდოეთი</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>ინდონეზია</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>უსასრულობა</value>
+  </data>
+  <data name="IslamInfo_Inspiration" xml:space="preserve">
+    <value>შთაგონება</value>
+  </data>
+  <data name="IslamInfo_Integral" xml:space="preserve">
+    <value>ინტეგრალი</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>ინტერპოლაცია</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>გადაკვეთის წერტილი</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>შესავალი</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>შესავალი</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>გადაბრუნებული ძახილის ნიშანი</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>ომის ამოტრიალებული ნიშანი</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>გადაბრუნებული კითხვის ნიშანი</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>ერაყი</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>ისრაელი</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>შეერთება</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>იორდანია</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>იუპიტერი</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>კენია</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>კლავიატურა...</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>კუვეიტი</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>ბოლო</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>მთვარის ბოლო მეოთხედი</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>მიმთითებელი</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>გამოსვლა</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>ლიბანი</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>მარცხნივ</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>ნახევრად სწორი წარმოებულის მარცხენა ნორმალური მამრავლი</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>მარცხენა მრგვალი ფრჩხილი</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>მარცხენა-მარჯვენა ისარი</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>ორმაგი ისარი მარცხნივ-მარჯვნივ</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>ტალღოვანი ისარი მარცხნივ-მარჯვნივ</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>ნახევრად სწორი წარმოებულის მარცხენა ნაწილი</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>ნაკლებობა ან ტოლობა</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>ნაკლებობის ნიშანი ტოლობის ნიშნის ზემოთ</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>წერილები</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>დონე:</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>ბიბლიოთეკა</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>ღია</value>
+  </data>
+  <data name="IslamInfo_Lightning" xml:space="preserve">
+    <value>განათება</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>ზღვარი</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>ბმულების დასმა</value>
+  </data>
+  <data name="IslamInfo_LogicalAnd" xml:space="preserve">
+    <value>ლოგიკური და</value>
+  </data>
+  <data name="IslamInfo_LogicalOr" xml:space="preserve">
+    <value>ლოგიკური ან</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>გრძელი</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>გრძელი ისარი მარცხნივ-მარჯვნივ</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>გრძელი ორმაგი ისარი მარცხნივ-მარჯვნივ</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>მამრობითი</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Man</value>
+  </data>
+  <data name="IslamInfo_Market" xml:space="preserve">
+    <value>ბაზარი</value>
+  </data>
+  <data name="IslamInfo_Mary" xml:space="preserve">
+    <value>მერი</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>მთავარი</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>კითხვა</value>
+  </data>
+  <data name="IslamInfo_Measure" xml:space="preserve">
+    <value>სიდიდე</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>გაზომილი კუთხე</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>გაზომილი</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>მექა</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>მედინა</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>შეხვედრა</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>თარაზული მრავალწერტილი შუაში</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>წუთი</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>მოდელები</value>
+  </data>
+  <data name="IslamInfo_Money" xml:space="preserve">
+    <value>ფული</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>თვე</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>თვეები</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>მთვარე</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>დილა</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>მაროკო</value>
+  </data>
+  <data name="IslamInfo_Mountain" xml:space="preserve">
+    <value>მთა</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>ბევრად მეტი</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>ბევრად ნაკლები</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>რამდენიმე რუქა</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>გამრავლების ნიშანი</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>მრავალნაკრებიანი კავშირი</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>შესავალი</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>ნაბლა</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>სახელი:</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>სახელები</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>N-არული ოპერატორი წერტილი წრეწირში</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>N-არული ოპერატორი პლიუსი წრეწირში</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>N-არული ოპერატორის დრო წრეწირში</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>N-არული გადაკვეთის წერტილი</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>N-არული ლოგიკური და</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>N-არული ლოგიკური ან</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-არული ოპერატორი კვადრატის გადაკვეთის წერტილი</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>N-არული ოპერატორი კვადრატული კავშირი</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>N-არული შეჯამება</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>N-არული კავშირი</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>N-არული ოპერატორი კავშირი წერტილით</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-არული ოპერატორი კავშირი პლიუსით</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>ორმაგი შვეული ზოლი უარყოფით და ორმაგი პოსტამენტით მარჯვნიდან</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>არც ასიმპტომატიკურად და არც ფაქტობრივად ტოლია</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>ნეიტრალური</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>ახალი...</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>ახალი ამბები</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>შემდეგი გვერდი</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>ჩვეულებრივი ქვეჯგუფი</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>ჩვეულებრივი ქვეჯგუფი ან ტოლი</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>არა</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>არ არის თითქმის ტოლი</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>არ არის ასიმპტომატიკურად ტოლი</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>არ უტოლდება</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>არ არის ექვივალენტური</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>არ არის მეტი</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>არ არის იდენტური</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>არ არის ნაკლები</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>არ არის ჩვეულებრივი ქვეჯგუფი</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>არ არის ჩვეულებრივი ქვეჯგუფი ან ტოლი</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>არ არის პარალელური</value>
+  </data>
+  <data name="IslamInfo_NotSign" xml:space="preserve">
+    <value>უარყოფის ნიშანი</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>არ არის კვადრატული ნახატი ან ტოლი</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>არ არის კვადრატული ორიგინალი ან ტოლი</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>ტილდას გარეშე</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>არ არის ჭეშმარიტი</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>ი</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>კენტი</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>ოფისი</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>ერთი</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>მიმდინარეობს გახსნა</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>ან</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>წყვილის გარეშე</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>სხვა</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>გვერდი</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>გვერდი </value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>პაკისტანი</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>პარალელურია</value>
+  </data>
+  <data name="IslamInfo_PartialDifferential" xml:space="preserve">
+    <value>ნაწილობრივი დიფერენციალი</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>ნაწილაკი</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>პარტნიორი</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>თანამშრომლობა</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>წვეულების მუსიკა</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>პასიური</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>მისამართი</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>მშვიდობა</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>კალამი</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>ფანქარი</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>ხალხი</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>პროცენტის ნიშანი</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>ნებართვა</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>პერსპექტივა:</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>ფილიპინები</value>
+  </data>
+  <data name="IslamInfo_Pillar" xml:space="preserve">
+    <value>სვეტი</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>კამერტონი</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>ადგილი</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>პროგრამა ”ადგილები”</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>გრაფიკი</value>
+  </data>
+  <data name="IslamInfo_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	მიმართულების დაფორმატება</value>
+  </data>
+  <data name="IslamInfo_Pound" xml:space="preserve">
+    <value>გირვანქა</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>შუადღე</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>მზის ჩასვლა</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>მზის ამოსვლა</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>ასწრებს</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>უსწრებს მაგრამ არა ექვივალენტურია</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>ასწრებს ან ტოლია</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEquivalentTo" xml:space="preserve">
+    <value>უსწრებს ან ექვივალენტურია</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>პრეფიქსი</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>წინა გვერდი</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>მთავარი</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>პროპორცია</value>
+  </data>
+  <data name="IslamInfo_ProportionalTo" xml:space="preserve">
+    <value>პროპორციულია</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>დაცვა</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>კვარტალი</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>შედარება</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>მერი</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>პარასკევი</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Man</value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>თანაფარდობა</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>წაკითხვა</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>რეკომენდებული</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>რეგისტრირების ნიშანი</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>მოთხოვნა</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>გამოხმაურება</value>
+  </data>
+  <data name="IslamInfo_ReversedTilde" xml:space="preserve">
+    <value>შეცვლილი ტილდა</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>შეცვლილი ტილდას ტოლობები</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>მარჯვნივ</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>მარჯვენა კუთხე</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>მარჯვენა კუთხე რკალით</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>ნახევრად სწორი წარმოებულის მარჯვენა ნორმალური მამრავლი</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>მარჯვენა მრგვალი ფრჩხილი</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>ნახევრად სწორი წარმოებულის მარჯვენა ნაწილი</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>მარჯვენა ერთეული ბრჭყალი</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>მარჯვენა სამკუთხედი</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>ტოლი რკალი</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>რკალი ტოლობაში</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>უსაფრთხოება</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>სატურნი</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>საუდის არაბეთი</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>სკალა</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>მასშტაბები</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>სკოლა</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>ხელნაწერი ნუსხური P</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>ღია-ლურჯი</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>წამი</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>სექციები</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>წერტილ-მძიმე</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>აღქმა;Sense</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>მინუსის დასმა</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>სამყურა</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>მოკლე</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>ხელმოწერა</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>ვერცხლისფერი</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>სუფთა სინუსოიდა</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>დეკორაცია</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>ცა</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>დახრილობა</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>ღიმილი=:-)</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>სოკეტები:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>სოული</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>ხმა</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>ჰარი</value>
+  </data>
+  <data name="IslamInfo_Specific" xml:space="preserve">
+    <value>სპეციფიკური</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>ლაპარაკი</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>სფეროსებრი კუთხე</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>ქუდი ოთხკუთხედი თავით</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>ოთხკუთხედი ფინჯანი</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>წერტილი ოპერატორი კვადრატში</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>მინუსი კვადრატში</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>პლიუსი კვადრატში</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>დრო კვადრატში</value>
+  </data>
+  <data name="IslamInfo_SquareFoot" xml:space="preserve">
+    <value>კვადრატული ფუტი</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>კვადრატული ნახატი</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>კვადარატული ნახატი ან ტოლი</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>კვადრატული ორიგინალი</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>კვადრატული ორიგინალი ან ტოლი</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>კვადრატის ფესვი</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>შრილანკა</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>ვარსკვლავი</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>ოპერატორი ვარსკვლავი</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>სადგური</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>ჩერდება...</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>სიმძლავრე</value>
+  </data>
+  <data name="IslamInfo_Student" xml:space="preserve">
+    <value>სტუდენტი</value>
+  </data>
+  <data name="IslamInfo_SubsetOf" xml:space="preserve">
+    <value>ქვენაკრები</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>უტოლობის ქვენაკრები</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>უბრალო</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>მისდევს</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>მიჰყვება მაგრამ არაექვივალენტურია</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>უსწრებს ან ტოლია</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>მისდევს ან ექვივალენტურია</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>სუდანი</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>სუფიქსი:</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>შეთავაზება</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>კვი</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>მზის ამოსვლა</value>
+  </data>
+  <data name="IslamInfo_SupersetOf" xml:space="preserve">
+    <value>სუპერ ნაკრები</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>უტოლობის სუპერნაკრები</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>ზედაპირული ინტეგრალი</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>ცხრილი</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>მაღალი</value>
+  </data>
+  <data name="IslamInfo_TapeDrive" xml:space="preserve">
+    <value>მაგნიტური ფირის მოწყობილობა</value>
+  </data>
+  <data name="IslamInfo_Term" xml:space="preserve">
+    <value>ტერმინი</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>ტექსტი</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>ყოველი</value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>იქ არ არსებობს</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>იქ არსებობს</value>
+  </data>
+  <data name="IslamInfo_Therefore" xml:space="preserve">
+    <value>მაშასადამე</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>პირველი</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>მეოთხე</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>წამი</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>ეს</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>ქარაგმა</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>დრო</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>ნამცეცა</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>დღეს</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>საწყისი მარცხენა კუთხე</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>ზედა მარჯვენა კუთხე</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>შეხება</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>დაბა</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>ქალაქი/დაბა</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>კვალი</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>სავაჭრო ნიშნის სიმბოლო</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>თარგმანი</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>მოგზაურობა</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>სამმაგი ინტეგრალი</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>სამმაგი შვეული ზოლის მარჯვენა ტურნიკეტი</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>ჭეშმარიტი</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>ტუნისი</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>ამობრუნებული ბერძნული პატარა სიმბოლო იოტა</value>
+  </data>
+  <data name="IslamInfo_Umbrella" xml:space="preserve">
+    <value>ქოლგა</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>გახსნა</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>კავშირი</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>უცნობი</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>უნახავი</value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>ზედა-ქვედა ისარი</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>ორმაგი ისარი ზემოთ-ქვემოთ</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>ზედა მარჯვენა დიაგონალური ელიფსები</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>ურანი</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>ზმნა</value>
+  </data>
+  <data name="IslamInfo_VerticalEllipsis" xml:space="preserve">
+    <value>შვეული ელიფსები</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>შვეული ხაზი</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>ძალიან ბევრად მეტი</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>ძალიან ბევრად ნაკლები</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>ხმა</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>ხმის ინტეგრალი</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>თვალყურის დევნება</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>წყალი</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>დაბალი</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>კვირა</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>როდესაც</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>სად:</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>თეთრი წრე</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>თეთრი მომღიმარე სახე</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>თეთრი სამკუთხედი მიმთითებლით ზემოთ</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>რატომ?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value>დანართებით</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>სიტყვა</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>შესაფუთი ქაღალდი</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>შეფუთული პროდუქტი</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>წელი</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>დიახ</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>თქვენ</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>ახალი</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>მისადაგება</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>წიგნი:</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>გამოთვლები</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>კოლექცია</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>გრადუსი</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>ლექსიკონი:</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>მიმართულება</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>გამორთვა</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>ეკრანი</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>დაყოფა</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>შრიფტი</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>გრამატიკა</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>გრიგორიანული კალენდარი</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>ისლამური კალენდარი</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>სახლი</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>ინფორმაცია</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>შესავალი</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>მ</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>სიები</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>იტვირთება...</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>განლაგება</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>წუთი</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>არა</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>გამორთვა</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>წანაცვლება:</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>ოპერაცია</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>ბეჭდვა</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>ციტირება</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>ამოღება</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>სქემა</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>წამი</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>მონიშვნა</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>ტექსტი</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>თარგმანი</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>ერთეულები</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>მაჩვენებელი</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>დიახ</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>ნაგვის ყუთი</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>ცუდი</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>დრაივერი</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>წარმატებული</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>უპირატესი</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>დაწყება...</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>შეერთებული</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>გაყოფილი</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>Exchange()</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>არც ქვენაკრები არც ტოლი</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>არც სუპერნაკრები არც ტოლი</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>არ არის ნაკრები</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>არ არის სუპერნაკრები</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>ფესვი</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>შედეგი</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>მოქმედი</value>
+  </data>
 </root>

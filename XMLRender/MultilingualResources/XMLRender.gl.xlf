@@ -8,19 +8,19 @@
       <group id="XMLRENDER/RESOURCES.RESX" datatype="resx">
         <trans-unit id="Acct_AccountActivateSuccess" translate="yes" xml:space="preserve">
           <source>Account successfully activated.</source>
-          <target state="new">Account successfully activated.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Conta activada correctamente.</target>
         </trans-unit>
         <trans-unit id="Acct_AccountAlreadyActivated" translate="yes" xml:space="preserve">
           <source>Account already activated.</source>
-          <target state="new">Account already activated.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Conta xa activado.</target>
         </trans-unit>
         <trans-unit id="Acct_AccountDeleteSuccess" translate="yes" xml:space="preserve">
           <source>Account successfully deleted.</source>
-          <target state="new">Account successfully deleted.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Conta excluída correctamente.</target>
         </trans-unit>
         <trans-unit id="Acct_AccountNotActivated" translate="yes" xml:space="preserve">
           <source>Account not yet activated please check your email first or request an additional activation code.</source>
-          <target state="new">Account not yet activated please check your email first or request an additional activation code.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Non conta activada por favor, comprobe o seu correo electrónico primeiro ou solicitar un código de activación adicional.</target>
         </trans-unit>
         <trans-unit id="Acct_ActivateAccount" translate="yes" xml:space="preserve">
           <source>Activate Account</source>
@@ -28,11 +28,11 @@
         </trans-unit>
         <trans-unit id="Acct_ActivationAccountBody" translate="yes" xml:space="preserve">
           <source>This e-mail is requesting activation of your {0} account: {1}.  Please use the following link: {2} or by proceeding to the page {3} and entering your username and the following activation code: {4}</source>
-          <target state="new">This e-mail is requesting activation of your {0} account: {1}.  Please use the following link: {2} or by proceeding to the page {3} and entering your username and the following activation code: {4}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Este enderezo de correo-e está solicitando a activación da conta {0}: {1}.</target>
         </trans-unit>
         <trans-unit id="Acct_ActivationAccountSubject" translate="yes" xml:space="preserve">
           <source>Activation for account at {0}</source>
-          <target state="new">Activation for account at {0}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Activación para conta en {0}</target>
         </trans-unit>
         <trans-unit id="Acct_ActivationCode" translate="yes" xml:space="preserve">
           <source>Activation Code</source>
@@ -40,11 +40,11 @@
         </trans-unit>
         <trans-unit id="Acct_BadEmailFormat" translate="yes" xml:space="preserve">
           <source>E-mail address not in a valid format.</source>
-          <target state="new">E-mail address not in a valid format.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Enderezo de correo electrónico non nun formato válido.</target>
         </trans-unit>
         <trans-unit id="Acct_Certain" translate="yes" xml:space="preserve">
           <source>Are you certain?</source>
-          <target state="new">Are you certain?</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Seguro?</target>
         </trans-unit>
         <trans-unit id="Acct_ChangeEmailAddress" translate="yes" xml:space="preserve">
           <source>Change E-mail Address</source>
@@ -56,15 +56,15 @@
         </trans-unit>
         <trans-unit id="Acct_ChangeUsername" translate="yes" xml:space="preserve">
           <source>Change Username</source>
-          <target state="new">Change Username</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">cambiar usuario</target>
         </trans-unit>
         <trans-unit id="Acct_CheckEmailNotice" translate="yes" xml:space="preserve">
           <source>Activation sent to address provided.  Please check your e-mail to activate your account which will complete your registration.</source>
-          <target state="new">Activation sent to address provided.  Please check your e-mail to activate your account which will complete your registration.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Activación enviado ao enderezo indicado.</target>
         </trans-unit>
         <trans-unit id="Acct_CleanupStale" translate="yes" xml:space="preserve">
           <source>Cleanup Stale</source>
-          <target state="new">Cleanup Stale</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Limpeza de Stale</target>
         </trans-unit>
         <trans-unit id="Acct_ClearCache" translate="yes" xml:space="preserve">
           <source>Clear Cache</source>
@@ -72,11 +72,11 @@
         </trans-unit>
         <trans-unit id="Acct_ClearDiskCache" translate="yes" xml:space="preserve">
           <source>Clear Disk Cache</source>
-          <target state="new">Clear Disk Cache</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Borrar caché de disco</target>
         </trans-unit>
         <trans-unit id="Acct_ConfirmEmailAddress" translate="yes" xml:space="preserve">
           <source>Confirm E-mail Address</source>
-          <target state="new">Confirm E-mail Address</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Confirma Dirección de Email</target>
         </trans-unit>
         <trans-unit id="Acct_ConfirmPassword" translate="yes" xml:space="preserve">
           <source>Confirm Password</source>
@@ -88,7 +88,7 @@
         </trans-unit>
         <trans-unit id="Acct_CreateDatabase" translate="yes" xml:space="preserve">
           <source>Create Database</source>
-          <target state="new">Create Database</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Crear base de datos</target>
         </trans-unit>
         <trans-unit id="Acct_DeleteAccount" translate="yes" xml:space="preserve">
           <source>Delete Account</source>
@@ -96,11 +96,11 @@
         </trans-unit>
         <trans-unit id="Acct_DotNetVersion" translate="yes" xml:space="preserve">
           <source>Dot Net Version</source>
-          <target state="new">Dot Net Version</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dot Net Versión</target>
         </trans-unit>
         <trans-unit id="Acct_DuplicateUser" translate="yes" xml:space="preserve">
           <source>User with this name already exists please choose another.</source>
-          <target state="new">User with this name already exists please choose another.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Usuario con ese nome xa existe, por favor, escolla outro.</target>
         </trans-unit>
         <trans-unit id="Acct_EmailAddress" translate="yes" xml:space="preserve">
           <source>E-mail Address</source>
@@ -108,15 +108,15 @@
         </trans-unit>
         <trans-unit id="Acct_EmailChangeReactivate" translate="yes" xml:space="preserve">
           <source>E-mail address changed and activation e-mail sent to reactivate account.</source>
-          <target state="new">E-mail address changed and activation e-mail sent to reactivate account.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Enderezo de correo electrónico cambiou e activación de correo enviado para reactivar conta.</target>
         </trans-unit>
         <trans-unit id="Acct_EmailInUse" translate="yes" xml:space="preserve">
           <source>E-mail already in use please login with existing credentials.</source>
-          <target state="new">E-mail already in use please login with existing credentials.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Correo-e xa está en uso por favor, faga o login co credenciais existentes.</target>
         </trans-unit>
         <trans-unit id="Acct_EmailsNotMatch" translate="yes" xml:space="preserve">
           <source>E-mail addresses do not match</source>
-          <target state="new">E-mail addresses do not match</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Os enderezos de correo-e non corresponden</target>
         </trans-unit>
         <trans-unit id="Acct_ForgotPassword" translate="yes" xml:space="preserve">
           <source>Forgot Password</source>
@@ -124,7 +124,7 @@
         </trans-unit>
         <trans-unit id="Acct_ForgotUsername" translate="yes" xml:space="preserve">
           <source>Forgot Username</source>
-          <target state="new">Forgot Username</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nome de usuario Esqueceu</target>
         </trans-unit>
         <trans-unit id="Acct_Home" translate="yes" xml:space="preserve">
           <source>Home</source>
@@ -132,11 +132,11 @@
         </trans-unit>
         <trans-unit id="Acct_IncorrectActivationCode" translate="yes" xml:space="preserve">
           <source>Incorrect activation code.</source>
-          <target state="new">Incorrect activation code.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">código de activación incorrecto.</target>
         </trans-unit>
         <trans-unit id="Acct_IncorrectPasswordResetCode" translate="yes" xml:space="preserve">
           <source>Incorrect password reset code.</source>
-          <target state="new">Incorrect password reset code.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">código de redefinición de contrasinal incorrecta.</target>
         </trans-unit>
         <trans-unit id="Acct_InvalidInput" translate="yes" xml:space="preserve">
           <source>Invalid input.</source>
@@ -144,7 +144,7 @@
         </trans-unit>
         <trans-unit id="Acct_InvalidUsernamePassword" translate="yes" xml:space="preserve">
           <source>Invalid username or password.</source>
-          <target state="new">Invalid username or password.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">nome de usuario ou contrasinal incorrecto.</target>
         </trans-unit>
         <trans-unit id="Acct_Login" translate="yes" xml:space="preserve">
           <source>Login</source>
@@ -160,15 +160,15 @@
         </trans-unit>
         <trans-unit id="Acct_LogoffSuccess" translate="yes" xml:space="preserve">
           <source>Logoff successful.</source>
-          <target state="new">Logoff successful.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Logoff exitoso.</target>
         </trans-unit>
         <trans-unit id="Acct_MinimumPassword" translate="yes" xml:space="preserve">
           <source>Password must be at least 8 characters.</source>
-          <target state="new">Password must be at least 8 characters.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">O contrasinal debe ter polo menos 8 caracteres.</target>
         </trans-unit>
         <trans-unit id="Acct_MinimumUsername" translate="yes" xml:space="preserve">
           <source>Username must be at least 4 characters.</source>
-          <target state="new">Username must be at least 4 characters.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Usuario debe ter polo menos 4 caracteres.</target>
         </trans-unit>
         <trans-unit id="Acct_No" translate="yes" xml:space="preserve">
           <source>No</source>
@@ -176,11 +176,11 @@
         </trans-unit>
         <trans-unit id="Acct_NotConfirmDelete" translate="yes" xml:space="preserve">
           <source>Must confirm account deletion.</source>
-          <target state="new">Must confirm account deletion.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Debe confirmar a exclusión da conta.</target>
         </trans-unit>
         <trans-unit id="Acct_NoUserExists" translate="yes" xml:space="preserve">
           <source>No user exists for the entered e-mail address.</source>
-          <target state="new">No user exists for the entered e-mail address.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ningún usuario existe ao enderezo de correo-e ingresaran.</target>
         </trans-unit>
         <trans-unit id="Acct_Password" translate="yes" xml:space="preserve">
           <source>Password</source>
@@ -188,39 +188,39 @@
         </trans-unit>
         <trans-unit id="Acct_PasswordAlreadyReset" translate="yes" xml:space="preserve">
           <source>Password already reset or process not initiated.</source>
-          <target state="new">Password already reset or process not initiated.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Contrasinal xa axustar ou proceso non iniciado.</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordChangedBody" translate="yes" xml:space="preserve">
           <source>This e-mail is to inform of the password change of your {0} account: {1}.</source>
-          <target state="new">This e-mail is to inform of the password change of your {0} account: {1}.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Este enderezo de correo-e está a informar sobre a modificación do contrasinal da súa conta de {0}: {1}.</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordChangedSubject" translate="yes" xml:space="preserve">
           <source>Password changed for account at {0}</source>
-          <target state="new">Password changed for account at {0}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Contrasinal modificada para conta en {0}</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordChangeSuccess" translate="yes" xml:space="preserve">
           <source>Password successfully changed.</source>
-          <target state="new">Password successfully changed.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Contrasinal modificada con éxito.</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordEmailSent" translate="yes" xml:space="preserve">
           <source>An e-mail has been sent to your address on file to initiate the password reset process.</source>
-          <target state="new">An e-mail has been sent to your address on file to initiate the password reset process.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Un correo electrónico foi enviado ao seu enderezo no arquivo para iniciar o proceso de redefinición de contrasinal.</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordResetBody" translate="yes" xml:space="preserve">
           <source>This e-mail is to reset the password of your {0} account: {1}.  Please use the following link: {3} or by proceeding to the page {4}  and entering your username and the following password reset code: {5}</source>
-          <target state="new">This e-mail is to reset the password of your {0} account: {1}.  Please use the following link: {3} or by proceeding to the page {4}  and entering your username and the following password reset code: {5}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Este enderezo de correo-e está a axustar o contrasinal da súa conta de {0}: {1}.</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordResetCode" translate="yes" xml:space="preserve">
           <source>Password Reset Code</source>
-          <target state="new">Password Reset Code</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Código de redefinición de contrasinal</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordResetSubject" translate="yes" xml:space="preserve">
           <source>Password reset for account at {0}</source>
-          <target state="new">Password reset for account at {0}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">redefinición de contrasinal para conta en {0}</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordResetSuccess" translate="yes" xml:space="preserve">
           <source>Password successfully reset.</source>
-          <target state="new">Password successfully reset.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Redefinición de contrasinal correctamente.</target>
         </trans-unit>
         <trans-unit id="Acct_PasswordsNotMatch" translate="yes" xml:space="preserve">
           <source>Passwords do not match</source>
@@ -232,15 +232,15 @@
         </trans-unit>
         <trans-unit id="Acct_Remember" translate="yes" xml:space="preserve">
           <source>Remember?</source>
-          <target state="new">Remember?</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Lembra-se?</target>
         </trans-unit>
         <trans-unit id="Acct_RemoveDatabase" translate="yes" xml:space="preserve">
           <source>Remove Database</source>
-          <target state="new">Remove Database</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Eliminar Base de Datos</target>
         </trans-unit>
         <trans-unit id="Acct_ResendActivationEmail" translate="yes" xml:space="preserve">
           <source>Resend Activation E-mail</source>
-          <target state="new">Resend Activation E-mail</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Reenviar correo de Activación</target>
         </trans-unit>
         <trans-unit id="Acct_ResetPassword" translate="yes" xml:space="preserve">
           <source>Reset Password</source>
@@ -248,15 +248,15 @@
         </trans-unit>
         <trans-unit id="Acct_RetrievePassword" translate="yes" xml:space="preserve">
           <source>Retrieve Password</source>
-          <target state="new">Retrieve Password</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Solicitar un novo contrasinal</target>
         </trans-unit>
         <trans-unit id="Acct_RetrieveUsername" translate="yes" xml:space="preserve">
           <source>Retrieve Username</source>
-          <target state="new">Retrieve Username</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">recuperar Nome de usuario</target>
         </trans-unit>
         <trans-unit id="Acct_SendActivationCode" translate="yes" xml:space="preserve">
           <source>Send Activation Code</source>
-          <target state="new">Send Activation Code</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Enviar código de activación</target>
         </trans-unit>
         <trans-unit id="Acct_Username" translate="yes" xml:space="preserve">
           <source>Username</source>
@@ -264,43 +264,43 @@
         </trans-unit>
         <trans-unit id="Acct_UsernameChangedBody" translate="yes" xml:space="preserve">
           <source>This e-mail is to inform of the account name change of your {0} account: {1}.</source>
-          <target state="new">This e-mail is to inform of the account name change of your {0} account: {1}.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Este enderezo de correo-e está a informar do cambio de nome da conta da súa {0} conta: {1}.</target>
         </trans-unit>
         <trans-unit id="Acct_UsernameChangedSubject" translate="yes" xml:space="preserve">
           <source>Username changed for account at {0}</source>
-          <target state="new">Username changed for account at {0}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nome de usuario cambiou de conta en {0}</target>
         </trans-unit>
         <trans-unit id="Acct_UsernameChangeSuccess" translate="yes" xml:space="preserve">
           <source>Username successfully changed.</source>
-          <target state="new">Username successfully changed.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nome de usuario cambiou correctamente.</target>
         </trans-unit>
         <trans-unit id="Acct_UsernameEmailSent" translate="yes" xml:space="preserve">
           <source>An e-mail has been sent to your address on file with your username.</source>
-          <target state="new">An e-mail has been sent to your address on file with your username.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Un correo electrónico foi enviado ao seu enderezo no arquivo co seu nome de usuario.</target>
         </trans-unit>
         <trans-unit id="Acct_UsernameReminderBody" translate="yes" xml:space="preserve">
           <source>This e-mail is a reminder of your {0} account: {1}.</source>
-          <target state="new">This e-mail is a reminder of your {0} account: {1}.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Este enderezo de correo-e é un recordatorio da súa conta {0}: {1}.</target>
         </trans-unit>
         <trans-unit id="Acct_UsernameReminderSubject" translate="yes" xml:space="preserve">
           <source>Username reminder for account at {0}</source>
-          <target state="new">Username reminder for account at {0}</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">recordatorio de nome de usuario para a conta en {0}</target>
         </trans-unit>
         <trans-unit id="Acct_UserNotFound" translate="yes" xml:space="preserve">
           <source>User does not exist.</source>
-          <target state="new">User does not exist.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">O usuario non existe.</target>
         </trans-unit>
         <trans-unit id="Acct_ViewCache" translate="yes" xml:space="preserve">
           <source>View Cache</source>
-          <target state="new">View Cache</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ver caché</target>
         </trans-unit>
         <trans-unit id="Acct_ViewDiskCache" translate="yes" xml:space="preserve">
           <source>View Disk Cache</source>
-          <target state="new">View Disk Cache</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ver caché de disco</target>
         </trans-unit>
         <trans-unit id="Acct_ViewHeaders" translate="yes" xml:space="preserve">
           <source>View Headers</source>
-          <target state="new">View Headers</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">vexa cabeceiras</target>
         </trans-unit>
         <trans-unit id="Acct_Yes" translate="yes" xml:space="preserve">
           <source>Yes</source>
@@ -308,15 +308,15 @@
         </trans-unit>
         <trans-unit id="lang_am" translate="yes" xml:space="preserve">
           <source>ኣማርኛ</source>
-          <target state="new">ኣማርኛ</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ኣማርኛ</target>
         </trans-unit>
         <trans-unit id="lang_ar" translate="yes" xml:space="preserve">
           <source>العربية</source>
-          <target state="new">العربية</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">العربية</target>
         </trans-unit>
         <trans-unit id="lang_az" translate="yes" xml:space="preserve">
           <source>Azərbaycan dili</source>
-          <target state="new">Azərbaycan dili</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dili Creative</target>
         </trans-unit>
         <trans-unit id="lang_ber" translate="yes" xml:space="preserve">
           <source>Tamazight</source>
@@ -324,19 +324,19 @@
         </trans-unit>
         <trans-unit id="lang_bg" translate="yes" xml:space="preserve">
           <source>български</source>
-          <target state="new">български</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">български</target>
         </trans-unit>
         <trans-unit id="lang_bn" translate="yes" xml:space="preserve">
           <source>বাংলা</source>
-          <target state="new">বাংলা</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">বাংলা</target>
         </trans-unit>
         <trans-unit id="lang_bs" translate="yes" xml:space="preserve">
           <source>bosanski</source>
-          <target state="new">bosanski</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Creative</target>
         </trans-unit>
         <trans-unit id="lang_cs" translate="yes" xml:space="preserve">
           <source>čeština</source>
-          <target state="new">čeština</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Čeština</target>
         </trans-unit>
         <trans-unit id="lang_de" translate="yes" xml:space="preserve">
           <source>Deutsch</source>
@@ -344,7 +344,7 @@
         </trans-unit>
         <trans-unit id="lang_dv" translate="yes" xml:space="preserve">
           <source>ދިވެހި</source>
-          <target state="new">ދިވެހި</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ދިވެހި</target>
         </trans-unit>
         <trans-unit id="lang_en" translate="yes" xml:space="preserve">
           <source>English</source>
@@ -352,51 +352,51 @@
         </trans-unit>
         <trans-unit id="lang_es" translate="yes" xml:space="preserve">
           <source>español</source>
-          <target state="new">español</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Español</target>
         </trans-unit>
         <trans-unit id="lang_fa" translate="yes" xml:space="preserve">
           <source>فارسى</source>
-          <target state="new">فارسى</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">فارسى</target>
         </trans-unit>
         <trans-unit id="lang_fr" translate="yes" xml:space="preserve">
           <source>français</source>
-          <target state="new">français</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">français</target>
         </trans-unit>
         <trans-unit id="lang_ha" translate="yes" xml:space="preserve">
           <source>ḥawsa</source>
-          <target state="new">ḥawsa</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ḥawsa</target>
         </trans-unit>
         <trans-unit id="lang_hi" translate="yes" xml:space="preserve">
           <source>हिन्दी</source>
-          <target state="new">हिन्दी</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">हिन्दी</target>
         </trans-unit>
         <trans-unit id="lang_id" translate="yes" xml:space="preserve">
           <source>Bahasa Indonesia</source>
-          <target state="new">Bahasa Indonesia</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">bahasa Indonesia</target>
         </trans-unit>
         <trans-unit id="lang_it" translate="yes" xml:space="preserve">
           <source>italiano</source>
-          <target state="new">italiano</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">italiano</target>
         </trans-unit>
         <trans-unit id="lang_ja" translate="yes" xml:space="preserve">
           <source>日本語</source>
-          <target state="new">日本語</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">日本語</target>
         </trans-unit>
         <trans-unit id="lang_ko" translate="yes" xml:space="preserve">
           <source>한국어</source>
-          <target state="new">한국어</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">한국어</target>
         </trans-unit>
         <trans-unit id="lang_ku" translate="yes" xml:space="preserve">
           <source>کوردی</source>
-          <target state="new">کوردی</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کوردی</target>
         </trans-unit>
         <trans-unit id="lang_ml" translate="yes" xml:space="preserve">
           <source>മലയാളം</source>
-          <target state="new">മലയാളം</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">മലയാളം</target>
         </trans-unit>
         <trans-unit id="lang_ms" translate="yes" xml:space="preserve">
           <source>Bahasa melayu</source>
-          <target state="new">Bahasa melayu</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">bahasa Melayu</target>
         </trans-unit>
         <trans-unit id="lang_nl" translate="yes" xml:space="preserve">
           <source>Nederlands</source>
@@ -404,35 +404,35 @@
         </trans-unit>
         <trans-unit id="lang_no" translate="yes" xml:space="preserve">
           <source>Norsk</source>
-          <target state="new">Norsk</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Norsk</target>
         </trans-unit>
         <trans-unit id="lang_pl" translate="yes" xml:space="preserve">
           <source>polski</source>
-          <target state="new">polski</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Polski</target>
         </trans-unit>
         <trans-unit id="lang_pt" translate="yes" xml:space="preserve">
           <source>português</source>
-          <target state="new">português</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">portugués</target>
         </trans-unit>
         <trans-unit id="lang_ro" translate="yes" xml:space="preserve">
           <source>रोमानो</source>
-          <target state="new">रोमानो</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">रोमानो</target>
         </trans-unit>
         <trans-unit id="lang_ru" translate="yes" xml:space="preserve">
           <source>Русский язык</source>
-          <target state="new">Русский язык</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Русский язык</target>
         </trans-unit>
         <trans-unit id="lang_sd" translate="yes" xml:space="preserve">
           <source>سنڌي</source>
-          <target state="new">سنڌي</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سنڌي</target>
         </trans-unit>
         <trans-unit id="lang_so" translate="yes" xml:space="preserve">
           <source>af Soomaali</source>
-          <target state="new">af Soomaali</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">af Soomaali</target>
         </trans-unit>
         <trans-unit id="lang_sq" translate="yes" xml:space="preserve">
           <source>shqip</source>
-          <target state="new">shqip</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Attribution</target>
         </trans-unit>
         <trans-unit id="lang_sv" translate="yes" xml:space="preserve">
           <source>Svenska</source>
@@ -444,15 +444,15 @@
         </trans-unit>
         <trans-unit id="lang_ta" translate="yes" xml:space="preserve">
           <source>தமிழ்</source>
-          <target state="new">தமிழ்</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">தமிழ்</target>
         </trans-unit>
         <trans-unit id="lang_tg" translate="yes" xml:space="preserve">
           <source>тоҷики</source>
-          <target state="new">тоҷики</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">тоҷики</target>
         </trans-unit>
         <trans-unit id="lang_th" translate="yes" xml:space="preserve">
           <source>ภาษาไทย</source>
-          <target state="new">ภาษาไทย</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ภาษา ไทย</target>
         </trans-unit>
         <trans-unit id="lang_tr" translate="yes" xml:space="preserve">
           <source>Türkçe</source>
@@ -460,23 +460,23 @@
         </trans-unit>
         <trans-unit id="lang_tt" translate="yes" xml:space="preserve">
           <source>татарча</source>
-          <target state="new">татарча</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">татарча</target>
         </trans-unit>
         <trans-unit id="lang_ug" translate="yes" xml:space="preserve">
           <source>ئۇيغۇر</source>
-          <target state="new">ئۇيغۇر</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ئۇيغۇر</target>
         </trans-unit>
         <trans-unit id="lang_ur" translate="yes" xml:space="preserve">
           <source>اردو</source>
-          <target state="new">اردو</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اردو</target>
         </trans-unit>
         <trans-unit id="lang_uz" translate="yes" xml:space="preserve">
           <source>o'zbek tili ўзбек тили</source>
-          <target state="new">o'zbek tili ўзбек тили</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">o'zbek tili ўзбек тили</target>
         </trans-unit>
         <trans-unit id="lang_zh" translate="yes" xml:space="preserve">
           <source>中文</source>
-          <target state="new">中文</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">中文</target>
         </trans-unit>
         <trans-unit id="lang_localam" translate="yes" xml:space="preserve">
           <source>Amharic</source>
@@ -492,7 +492,7 @@
         </trans-unit>
         <trans-unit id="lang_localber" translate="yes" xml:space="preserve">
           <source>Amazigh</source>
-          <target state="new">Amazigh</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">amazic</target>
         </trans-unit>
         <trans-unit id="lang_localbg" translate="yes" xml:space="preserve">
           <source>Bulgarian</source>
@@ -1080,7 +1080,7 @@
         </trans-unit>
         <trans-unit id="unicode_LeftCurlyBracket" translate="yes" xml:space="preserve">
           <source>Left Curly Bracket</source>
-          <target state="new">Left Curly Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Esquerda Curly bracket</target>
         </trans-unit>
         <trans-unit id="unicode_LeftPointingDoubleAngleQuotationMark" translate="yes" xml:space="preserve">
           <source>Left-Pointing Double Angle Quotation Mark</source>
@@ -1088,7 +1088,7 @@
         </trans-unit>
         <trans-unit id="unicode_LeftSquareBracket" translate="yes" xml:space="preserve">
           <source>Left Square Bracket</source>
-          <target state="new">Left Square Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Esquerda Praza bracket</target>
         </trans-unit>
         <trans-unit id="unicode_OrnateLeftParenthesis" translate="yes" xml:space="preserve">
           <source>Ornate Left Parenthesis</source>
@@ -1108,7 +1108,7 @@
         </trans-unit>
         <trans-unit id="unicode_RightCurlyBracket" translate="yes" xml:space="preserve">
           <source>Right Curly Bracket</source>
-          <target state="new">Right Curly Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">chaveta dereita</target>
         </trans-unit>
         <trans-unit id="unicode_RightPointingDoubleAngleQuotationMark" translate="yes" xml:space="preserve">
           <source>Right-Pointing Double Angle Quotation Mark</source>
@@ -1116,7 +1116,7 @@
         </trans-unit>
         <trans-unit id="unicode_RightSquareBracket" translate="yes" xml:space="preserve">
           <source>Right Square Bracket</source>
-          <target state="new">Right Square Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">paréntese dereito</target>
         </trans-unit>
         <trans-unit id="unicode_Space" translate="yes" xml:space="preserve">
           <source>Space</source>
@@ -1124,7 +1124,7 @@
         </trans-unit>
         <trans-unit id="Acct_CertRequest" translate="yes" xml:space="preserve">
           <source>Certificate Request</source>
-          <target state="new">Certificate Request</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Solicitude de certificado</target>
         </trans-unit>
         <trans-unit id="Acct_Certificate" translate="yes" xml:space="preserve">
           <source>Certificate</source>
@@ -1132,7 +1132,7 @@
         </trans-unit>
         <trans-unit id="Acct_CertInstall" translate="yes" xml:space="preserve">
           <source>Install Certificate</source>
-          <target state="new">Install Certificate</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">instalar certificado</target>
         </trans-unit>
         <trans-unit id="Acct_CurrentUser" translate="yes" xml:space="preserve">
           <source>Current User</source>
@@ -1140,35 +1140,35 @@
         </trans-unit>
         <trans-unit id="Acct_DeleteCertRequest" translate="yes" xml:space="preserve">
           <source>Delete Certificate Request</source>
-          <target state="new">Delete Certificate Request</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Eliminar solicitude de certificado</target>
         </trans-unit>
         <trans-unit id="Acct_EnableSSL" translate="yes" xml:space="preserve">
           <source>Enable SSL</source>
-          <target state="new">Enable SSL</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">activar SSL</target>
         </trans-unit>
         <trans-unit id="Acct_PrivateKey" translate="yes" xml:space="preserve">
           <source>Private Key</source>
-          <target state="new">Private Key</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">chave privada</target>
         </trans-unit>
         <trans-unit id="Acct_ViewCertRequests" translate="yes" xml:space="preserve">
           <source>View Certificate Requests</source>
-          <target state="new">View Certificate Requests</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">As solicitudes Ver certificado</target>
         </trans-unit>
         <trans-unit id="Acct_ViewSites" translate="yes" xml:space="preserve">
           <source>View Sites</source>
-          <target state="new">View Sites</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Visualización de sitios</target>
         </trans-unit>
         <trans-unit id="Acct_CertInstallIntermed" translate="yes" xml:space="preserve">
           <source>Install Intermediate Certificate</source>
-          <target state="new">Install Intermediate Certificate</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Instalar certificado Intermedio</target>
         </trans-unit>
         <trans-unit id="unicode_LeftToRightEmbedding" translate="yes" xml:space="preserve">
           <source>Left-To-Right Embedding</source>
-          <target state="new">Left-To-Right Embedding</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">De esquerda a dereita embedding</target>
         </trans-unit>
         <trans-unit id="unicode_RightToLeftEmbedding" translate="yes" xml:space="preserve">
           <source>Right-To-Left Embedding</source>
-          <target state="new">Right-To-Left Embedding</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">A dereita-esquerda embedding</target>
         </trans-unit>
         <trans-unit id="unicode_LeftToRightMark" translate="yes" xml:space="preserve">
           <source>Left-To-Right Mark</source>

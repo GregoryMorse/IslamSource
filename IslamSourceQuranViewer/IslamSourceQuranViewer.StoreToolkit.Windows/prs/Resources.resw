@@ -30,4 +30,25 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>لسان حالت اصلی</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>اضافه کردن &amp;محل یاب</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>محل یاب ها</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>به کلیپ بورد رونویسی نمایید</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>مکث</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>پخش کردن</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>شریک سازی</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>در مورد</value>
+  </data>
 </root>

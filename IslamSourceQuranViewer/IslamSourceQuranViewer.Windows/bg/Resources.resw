@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Език по подразбиране</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Добавяне на показалец</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Маркери</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Копирай в клипборда</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Отидете в стих</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Пусни</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Рецитатор</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Премахване на показалец</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Задаване възпроизвеждане стих</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Покажи обяснение</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Споделяне</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Допълнителен стих авансово закъснение</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Предварително стих автоматично</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Забавяне дължина на стих преди напредък</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Привързан режим</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>За програмата</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Арабски Корана с метаданни и всички преводи и някои аудио декламации Освен изброените кредитират Tanzil проект (http://tanzil.net). 
+Унгарски превод на Корана от целувка Жужана Христофор кредитират Magyar Iszlam (http://magyariszlam.hu). 
+Английски превод на Корана от Maulana Мохамед Али кредитирани в Лахор Ahmadiyya движение в исляма (http://www.aaiil.org). 
+Морфология данни и английската дума по дума превод кредита за Корана арабски корпус (http://corpus.quran.com). 
+Кредит на индонезийски дума по дума превод на Ал-Корана Индонезия (http://www.alquran-indonesia.com/web/quran). 
+Урду дума по дума превод от Мохамед Хафъз Nazar кредитират лесно Коран Wa Hadees (http://www.easyquranwahadees.com). 
+Други дума по дума преводи, както и други преводи в програмата Microsoft Превод доставчик (http://www.microsoft.com/en-us/translator) и Google Translate (http://translate.google.com) и не могат да бъдат точни.  За Малайзия дума по дума Корана източникът е индонезийски.  За всички други дума по дума Корана източникът е английски Корана арабски корпус. 
+Други аудио декламации с битрейт показани кредитирани всеки Аят (http://www.everyayah.com). 
+Данни на Unicode, кредитирани в Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

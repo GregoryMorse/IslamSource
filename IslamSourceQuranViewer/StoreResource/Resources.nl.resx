@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Standaardtaal</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Voeg bladwijzer toe</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Bladwijzers</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Naar het Klembord kopiëren</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Ga naar vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Onderbreken</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Afspelen</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Voordrager</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Bladwijzer verwijderen</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set afspelen vers</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Toon exegese</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Delen</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Extra vers Advance vertraging</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Dia vers automatisch</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Lengte van de vertraging van vers vóór het bevorderen van</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Modus in een lus</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabische Koran met metagegevens en alle vertalingen en sommige audio recitaties behalve deze lijst gecrediteerd aan Tanzil Project (http://tanzil.net). 
+Hongaarse vertaling van Qur'an door Kiss Zsuzsanna Halima bijgeschreven op Magyar Iszlam (http://magyariszlam.hu). 
+Engelse vertaling van Qu'ran door Maulana Muhammad Ali bijgeschreven op de Lahore Ahmadiyya beweging in de Islam (http://www.aaiil.org). 
+Morfologie gegevens en Engelse vertaling van het woord-van-woord krediet aan Quranic Arabisch Corpus (http://corpus.quran.com). 
+Indonesisch-per-woord vertaling krediet aan Al-Quran Indonesië (http://www.alquran-indonesia.com/web/quran). 
+Urdu-per-woord vertaling door Hafiz Nazar Muhammad bijgeschreven op gemakkelijk Quran Wa Hadees (http://www.easyquranwahadees.com). 
+Andere-per-woord-vertalingen, alsmede andere vertalingen in het programma toegeschreven aan Microsoft vertaling Provider (http://www.microsoft.com/en-us/translator) en Google Translate (http://translate.google.com) en niet nauwkeurig kan worden.  De bron is voor Maleisische woord-van-woord Qur'an, Indonesische.  Voor alle andere-per-woord Qur'an is de bron de Engelse Quranic Arabisch Corpus. 
+Andere audio recitaties met bitrate weergegeven bijgeschreven op elke Ayah (http://www.everyayah.com). 
+Unicode-gegevens gecrediteerd aan het Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

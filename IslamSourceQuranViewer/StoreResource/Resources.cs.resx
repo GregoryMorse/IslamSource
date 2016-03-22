@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Výchozí jazyk</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Přidat záložku</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Záložky</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopírovat do schránky</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Přejít na verš</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pozastavit</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Přehrát</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Recitátora</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Odstranit záložku</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Nastavení přehrávání verš</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Zobrazit exegeze</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Sdílet</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Další verš předem zpoždění</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Automatický přechod verš</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Délka zpoždění verše před postupující</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Režim opakování</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>O produktu</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabský Korán s metadaty a všechny překlady a některé audio recitace, s výjimkou druhů uvedených připsány na projektu Aneta (http://tanzil.net). 
+Maďarský překlad Koránu tím Kiss Zsuzsanna Halima připsány Magyar Iszlam (http://magyariszlam.hu). 
+Anglický překlad Koránu o Maulana Muhammad Ali připsány na The Lahore Ahmadiyya hnutí v islámu (http://www.aaiil.org). Údaje 
+morfologie a anglické slovo za slovem překlad úvěru Koránu Arabština Corpus (http://corpus.quran.com). 
+Indonéské-doslovným překladem úvěrů Al-Korán Indonésie (http://www.alquran-indonesia.com/web/quran). 
+Urdština Překlad slovo za slovem Muhammad Háfiz Nazar připsány na snadné Koránu Wa Měsíc Hadees (http://www.easyquranwahadees.com). 
+Jiné překlady slovo za slovem, ale i jiné překlady v programu Microsoft překlad Provider (http://www.microsoft.com/en-us/translator) a Google Translate (http://translate.google.com) a nemusí být přesné.  Pro malajské Koranu slovo za slovem zdroj je indonéské.  Pro všechny ostatní slovo za slovem Koránu zdroj je angličtina arabština Corpus Koránu. 
+Jiné audio recitaci s bitrate zobrazena připsána na každý verš (http://www.everyayah.com). 
+Data ve formátu Unicode, které jsou připsány na Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

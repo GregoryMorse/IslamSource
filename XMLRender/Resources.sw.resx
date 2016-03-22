@@ -12,11 +12,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Akaunti mafanikio ulioamilishwa.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Akaunti tayari ulioamilishwa.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Akaunti mafanikio ilifutwa.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Akaunti bado kuanzishwa tafadhali angalia barua pepe yako ya kwanza au ombi ziada uanzishaji kanuni.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>kuamsha Akaunti</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Hii ya barua pepe ni kuomba uanzishaji wa {0} akaunti yako: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Uanzishaji ajili ya akaunti katika {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>uanzishaji Kanuni</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>E-pepe si katika format halali.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Je, wewe fulani?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Mabadiliko E-mail Address</value>
+  </data>
   <data name="Acct_ChangePassword" xml:space="preserve">
     <value>Badilisha Nywila</value>
   </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>mabadiliko Username</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Uanzishaji kutumwa kwa anuani zinazotolewa.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Cleanup Stale</value>
+  </data>
   <data name="Acct_ClearCache" xml:space="preserve">
     <value>Ondoa Hifadhi muda</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Wazi Disk Cache</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Kuthibitisha E-mail Address</value>
   </data>
   <data name="Acct_ConfirmPassword" xml:space="preserve">
     <value>Thibitisha Nywila</value>
@@ -24,29 +72,107 @@
   <data name="Acct_ControlPanel" xml:space="preserve">
     <value>Paneli Dhibiti</value>
   </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>kujenga Database</value>
+  </data>
   <data name="Acct_DeleteAccount" xml:space="preserve">
     <value>Futa Akaunti</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net Version</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>User kwa jina hili tayari lipo tafadhali kuchagua mwingine.</value>
   </data>
   <data name="Acct_EmailAddress" xml:space="preserve">
     <value>Anwani ya Barua pepe</value>
   </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>E-pepe iliyopita na uanzishaji barua pepe kutumwa kwa kuianzisha akaunti.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>E-mail tayari katika matumizi tafadhali kuingia na sifa zilizopo.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>E-mail anwani si mechi</value>
+  </data>
   <data name="Acct_ForgotPassword" xml:space="preserve">
     <value>Umesahau nenotambulisho?</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Umesahau jina la mtumiaji</value>
   </data>
   <data name="Acct_Home" xml:space="preserve">
     <value>Nyumbani</value>
   </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>Sio sahihi uanzishaji kanuni.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Sio sahihi password reset kificho.</value>
+  </data>
   <data name="Acct_InvalidInput" xml:space="preserve">
     <value>Ingizo batili</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>username batili au password.</value>
   </data>
   <data name="Acct_Login" xml:space="preserve">
     <value>Fungua...</value>
   </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Ingia mafanikio.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>logoff</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff mafanikio.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Nywila lazima wahusika angalau 8.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Jina la mtumiaji lazima angalau 4 wahusika.</value>
+  </data>
   <data name="Acct_No" xml:space="preserve">
     <value>Hapana</value>
   </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Lazima kuthibitisha akaunti ya kufutwa.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Hakuna user lipo kwa ajili ya aliingia barua pepe.</value>
+  </data>
   <data name="Acct_Password" xml:space="preserve">
     <value>Nywila:</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Nywila tayari upya au mchakato si ulianzishwa.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Hii ya barua pepe ni kuwajulisha ya mabadiliko ya password ya {0} akaunti yako: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Nywila iliyopita kwa ajili ya akaunti katika {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Nywila mafanikio iliyopita.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>barua pepe imekuwa kutumwa kwa anuani yako kwenye faili la kuanzisha upya mchakato wa nywila.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Hii ya barua pepe ni kuweka upya nenosiri la {0} akaunti yako: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Password Rudisha Kanuni</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Password reset ajili ya akaunti katika {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Nywila kwa mafanikio upya.</value>
   </data>
   <data name="Acct_PasswordsNotMatch" xml:space="preserve">
     <value>Nywila hailingani</value>
@@ -54,23 +180,191 @@
   <data name="Acct_Register" xml:space="preserve">
     <value>REGISTER</value>
   </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Kukumbuka?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Ondoa Database</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Resend Activation E-mail</value>
+  </data>
   <data name="Acct_ResetPassword" xml:space="preserve">
     <value>Seti upya nenotambulishi</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>retrieve Nywila</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>retrieve jina la mtumiaji</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Kutuma Activation Kanuni</value>
   </data>
   <data name="Acct_Username" xml:space="preserve">
     <value>Jina la mtumiaji</value>
   </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Hii ya barua pepe ni kuwajulisha ya mabadiliko ya akaunti jina la {0} akaunti yako: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Jina la mtumiaji iliyopita kwa ajili ya akaunti katika {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Jina la mtumiaji mafanikio iliyopita.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>barua pepe imekuwa kutumwa kwa anuani yako kwenye faili kwa jina lako.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Hii ya barua pepe ni ukumbusho wa {0} akaunti yako: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>Username mawaidha kwa akaunti katika {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>User haipo.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>View Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>View Disk Cache</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>View Headers</value>
+  </data>
   <data name="Acct_Yes" xml:space="preserve">
     <value>Ndiyo</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Azərbaycan dili</value>
   </data>
   <data name="lang_ber" xml:space="preserve">
     <value>Kitamazigi</value>
   </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>български</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
   <data name="lang_en" xml:space="preserve">
     <value>Kiingereza</value>
   </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Bahasa Indonesia</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Bahasa melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>Русский язык</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>af Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
   <data name="lang_sw" xml:space="preserve">
     <value>Kiswahili</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>тоҷики</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษา ไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>татарча</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
   </data>
   <data name="lang_localam" xml:space="preserve">
     <value>Kiamhariki</value>
@@ -80,6 +374,9 @@
   </data>
   <data name="lang_localaz" xml:space="preserve">
     <value>Kiazebaijani</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
   </data>
   <data name="lang_localbg" xml:space="preserve">
     <value>Kibulgaria</value>
@@ -201,22 +498,406 @@
   <data name="Acct_Download" xml:space="preserve">
     <value>Pakua {0}</value>
   </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Kiarabu Comma</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Kiarabu Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Kiarabu Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Kiarabu Empty Kituo cha High Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Kiarabu Empty Kituo cha Chini Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Kiarabu End Of Ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Kiarabu Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Kiarabu Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Kiarabu Hamza Juu</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Kiarabu Hamza Chini</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Nane</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Tano</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Nne</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Tisa</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Kiarabu-Indic Digit One</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Saba</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Six</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Tatu</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Mbili</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Kiarabu-Indic Digit Zero</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Kiarabu Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Kiarabu Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Kiarabu Letter Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Kiarabu Letter Aleph</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Kiarabu Letter Aleph Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Kiarabu Letter Aleph Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Kiarabu Letter Aleph Pamoja Hamza Juu</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Kiarabu Letter Aleph Pamoja Hamza Chini</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Kiarabu Letter Aleph Pamoja Madda Juu</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Kiarabu Letter Beh</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Kiarabu Letter Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Kiarabu Letter Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Kiarabu Letter Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Kiarabu Letter GAF</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Kiarabu Letter Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Kiarabu Letter Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Kiarabu Letter Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Kiarabu Letter Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Kiarabu Letter jiim</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Kiarabu Letter Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Kiarabu Letter Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Kiarabu Letter Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Kiarabu Letter Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Kiarabu Letter Noon</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Kiarabu Letter Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Kiarabu Letter Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Kiarabu Letter Reh</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Kiarabu Letter Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Kiarabu Letter Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Kiarabu Letter Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Kiarabu Letter Superscript Aleph</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Kiarabu Letter Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Kiarabu Letter Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Kiarabu Letter Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Kiarabu Letter Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Kiarabu Letter Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Kiarabu Letter Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Kiarabu Letter Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Kiarabu Letter Waw</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Kiarabu Letter Waw Pamoja Hamza Juu</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Kiarabu Letter Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Kiarabu Letter Yeh Pamoja Hamza Juu</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Kiarabu Letter Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Kiarabu Letter Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Akbar Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature alayhi Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Allah Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Kiarabu ligature Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Kiarabu ligature Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Mohammad Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Qala Kutumika Kama Kurani Stop Sign Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Rasoul Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Salam Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Salla Isolated kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Kiarabu ligature Sallallahou alayhi Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Salla Kutumika Kama Kurani Stop Sign Pekee kidato cha</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Kiarabu ligature Wasallam Pekee kidato cha</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Kiarabu Maddah Juu</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Kiarabu Place Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Kiarabu Swali Mark</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Kiarabu Mviringo High Stop Pamoja Kujazwa Kituo cha</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Kiarabu Semikoloni</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Kiarabu Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Kiarabu Ndogo High jiim</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Kiarabu Ndogo High Lam Aleph</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Kiarabu Ndogo High ligature Qaf Pamoja Lam Pamoja Aleph Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Kiarabu Ndogo High ligature Sad Pamoja Lam Pamoja Aleph Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Kiarabu Ndogo High Meem Awali kidato cha</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Kiarabu Ndogo High Meem Pekee kidato cha</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Kiarabu Ndogo High Noon</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Kiarabu Ndogo High Mviringo Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Kiarabu Ndogo High Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Kiarabu Ndogo High Tatu Dots</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Kiarabu Ndogo High Upright Rectangular Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Kiarabu Ndogo Chini Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Kiarabu Ndogo Chini Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Kiarabu Ndogo Waw</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Kiarabu Ndogo Yeh</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Kiarabu Start Of Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Kiarabu Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Kiarabu Tatweel</value>
+  </data>
   <data name="unicode_Colon" xml:space="preserve">
     <value>Nuktapacha</value>
   </data>
   <data name="unicode_Comma" xml:space="preserve">
     <value>Mkato</value>
   </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>Alama ya mshangao</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Full Stop</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Hyphen-Minus</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Kushoto Curly Bracket</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Kushoto Akizungumzia Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Kushoto Square Bracket</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Ornate Mabano kushoto</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Ornate Right Mabano</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>quotation Mark</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Sign</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Right Curly Bracket</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Right-Akizungumzia Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Right Square Bracket</value>
+  </data>
   <data name="unicode_Space" xml:space="preserve">
     <value>Nafasi</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Ombi cheti</value>
   </data>
   <data name="Acct_Certificate" xml:space="preserve">
     <value>Cheti</value>
   </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>kufunga cheti</value>
+  </data>
   <data name="Acct_CurrentUser" xml:space="preserve">
     <value>Mtumiaji wa sasa</value>
   </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Kufuta Ombi Cheti</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>kuwawezesha SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Ufunguo binafsi</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Maombi View Cheti</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>View Sites</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Kufunga Intermediate Cheti</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Kushoto-To-Right Embedding</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Right-To-kushoto Embedding</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Kushoto-To-Right Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Kushoto-To-Right override</value>
+  </data>
   <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
     <value>‬	Uumbizaji wa Pop Directional</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Right-To-kushoto Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Right-To-Kushoto override</value>
   </data>
 </root>

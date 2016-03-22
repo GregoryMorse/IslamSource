@@ -12,4 +12,604 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>ᏗᎪᏪᎵ</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>ᏂᎬᎿᏅ ᎠᏓᏎᎮᎯ:</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>ᎤᏃᏴᎬᎢ</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>ᎠᏚᏓᎸᏗ</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>ᎦᏳᎳ:</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>ᏂᎦᏓ</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>ᎠᎵᏍᎪᎸᏔᏅ</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>ᏂᎪᎯᎸ</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>ᎦᎾᎯᏍᏗᏍᎩ</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>ᎠᎳᏈ</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Ꮲ:</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>ᏄᏍᏛ ᏗᎦᏅᏛᎢ:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>ᎠᏏᎾᎦᏘ</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>ᎢᏗᎦᎢ</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>ᎢᎬᏱ ᎤᏩᎬᏛ:</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>ᎬᎾᎨᎢ</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>ᎬᎿᎨ ᎠᏓᏅᏙ ᏗᏟᎶᏍᏓ</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>ᏗᎪᏪᎵ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>ᎦᏂ</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>ᏣᏩᎯ</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>ᏫᏯᎾ</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>ᎦᏛᏗ</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>ᎯᎵᎦᎵᏯ</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>ᎠᎩᏏᏓᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>ᎠᏓᏍᎦᏃᎳᏗᏍᎩ</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>ᎾᎥ ᎤᎾᏓᏡᎬ</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>ᎤᎾᏙᏢᏒ</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>ᎧᎵᏬ ᎠᎵᏍᏆᏛ</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>ᎠᏂᎸᏉᏗᏍᎬ!</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>ᎫᏓᎸᎥᏍᎦ</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>ᏕᎦᎸᏛᎢ</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>ᏗᏟᎶᏍᏔᏅᎯ</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>ᏓᏟᎶᏍᏓ ᎠᎦᏘᏏ</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>ᏄᏍᏛᎢᏯᏛᏁᏗᎢ</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>ᎢᎪᎯ</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>ᎢᎦ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>ᎤᎾᏙᏓᏆᏍᎬ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>ᎤᎾᏙᏓᏉᏅ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>ᏔᎵᏁ ᎢᎦ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>ᏦᎢᏁ ᎢᎦ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>ᏅᎩᏁ ᎢᎦ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>ᏧᏅᎩᎶᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>ᎤᎾᏙᏓᏫᏕᎾ</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>ᎠᏓᏁᏟᏴᏍᏗᏍᎩ</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>ᏂᏕᎬᎿᎥᎢ</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>ᎠᏰᏟ ᎦᏯᎸᎢ</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>ᎦᎾᏏᏁᎦ</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>ᎡᎶᎯ</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>Em ᏍᏆᎳ ᎦᏅᎩ ᎠᏍᏓᏅᏅ</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>ᎠᏍᏆᏗᏍᏙᏗ</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>ᎤᎾᏛᏁᎸᏗ</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>ᎪᏪᎵᎠᏍᏚᏗ</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>ᏙᏳ ᎨᏒ</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>ᎭᎧᏛᎢ</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>ᎦᎶᏄᎮᏓ</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>ᎾᏍᎩᎾᎢ:</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>ᏧᏅᎩᎶᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>ᏅᏓᏳᏅᏅᎯ</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>ᏂᎦᏓᏊ</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>ᎠᏕᎳ ᏓᎶᏂᎨ</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>ᎣᏍᏓ</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>ᏟᎦ ᎤᎪᏓ- ᎠᏎᏃ ᎠᎴᏱᎩ ᎢᏧᎳᎭ ᎥᎭᏃ</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>ᎤᏔᎾᎪᏪᎵ</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>ᏑᎾᏓᏡᎩ</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>ᎬᏍᎦᏝ</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>ᎧᏁᎢᏍᏙᏗ:</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>ᏥᏱ ᎦᏌᏆᎸ ᎢᏳᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>ᏑᏟᎶᏓ</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Ꮭ ᎠᏍᏆᏛ ᏱᎩ</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>ᏂᎬᎿᏅ ᎠᏓᏎᎮᎯ:</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>ᎾᎵᏍᏆᏗᏍᎬᎾ</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>ᎯᏏᏅᏍᏓ ᏍᏓᏯ ᏗᎦᏁᏍᏗ ᎪᏪᎸ</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>ᎯᏏᏅᏍᏓ ᎠᏛᏛᎲᏍᎩ ᎪᏪᎸ</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>ᎢᎳᎩ</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>ᏗᎵᏍᏙᏗ</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>ᏦᏓᏂ</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>ᎩᏂᏯ</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>ᏗᏐᏅᏍᏙᏗ</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>ᎫᏪᏘ</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>ᎣᏂ</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>ᎭᏂᎦ</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>ᎴᏆᎾᏂ</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>ᎠᎦᏍᎦᏂ:</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>ᎦᏲᏟᎨ- ᎠᏎᏃ ᎠᎴᏱᎩ ᎢᏧᎳᎭ ᎥᎭᏃ</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>ᎤᏩᎾᏕᏍᎩ</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>ᏧᏂᎪᎵᏰᏗᎢ</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>ᎦᏌᎦᎢ</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>ᎦᏅᎯᏓ</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>ᎢᏳᏍᏗ ᏯᏛᎿ</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>ᎢᏯᏔᏬᏍᏔᏅ</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>ᏏᏅᏙ</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>ᎧᏁᏉᏍᏗ ᎦᏯᎸᎢ</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>ᏚᏙᎥ</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>N- ᎠᎵ ᎣᏂ ᎦᏟᏐᏅ ᎦᏬᏂᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>ᎢᏤ</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>ᏐᎢ ᎤᎦᏅᏓᏛᎢ</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Ꮭ ᎢᏗᎦᎦᎢ ᏱᎩ</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>ᏗᎦᎸᏫᏍᏓᏁᏗ</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>ᏌᏊ</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>ᎠᏍᏚᎢᏓ</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>ᏐᎢ</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>ᎤᎦᏅᏓᏛᎢ:</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>ᏚᎦᏅᏓᏛᎢ</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>ᎤᎾᎵᎪᏒ</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>ᎤᎾᏓᏟᏌᎲ</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>ᏂᏚᏓᏂᏴᏒᏂ</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>ᎠᏍᏓᏩᏛᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>ᎪᏪᎶᏙᏗ</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>ᏗᎪᏪᎶᏗ</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>ᎠᏂᏴᏫ</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>ᎤᏙᏢᏒ</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>ᏚᏙᏢᏒᎢ</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>ᏧᏩᎫᏔᏅ ᎤᎦᏅᏓᏛᎢ</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>ᎠᎴᏂᏍᎬ</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>ᎠᏓᏍᏆᏂᎪᏗᏍᎩ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>ᏧᏅᎩᎶᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>ᎠᎪᎵᏰᏗ</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value> [ᎧᏁᎢᏍᏔᏅᎯ]</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>ᎪᏪᎳᏅ ᎦᏯᎸᎢ</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>ᎠᏎᎢ ᎢᏳᎵᏍᏙᏗ</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>ᎠᎦᏘᏍᎩ</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>ᎠᎦᏘᏏ ᎤᏩᏌ ᏄᏪᏒ ᎪᏪᎸᎢ</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>ᏂᎦᎾᏰᎬᎾ</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>ᏂᎬ ᎦᏁᏟᏴᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>ᎢᏯᏎᎸᎢ</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>Sense</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>ᏍᏆᎳᎢ</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>ᎠᏕᎳ ᎤᏁᎦ</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>ᏗᎵᏲ:</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>ᎤᏃᏴᎦ</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>ᎤᏜᏅᏛᎯ</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>ᎧᏁᎬᎢ</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>ᎥᎴᏫᏍᏙᏗᏍᎬ</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>ᏄᎵᏂᎬᎬ</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>ᎣᏂᎪᏪᎸ:</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>ᎧᏃᎮᏓ</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>ᏙᏓᏩᏍᎬᎢ</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>ᏧᏜᏅᎢᏓ</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>ᎢᏅᏱᎦᏘ</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>ᎠᎪᎵᏰᏗ</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>ᎢᏯᏎᎸᎢ</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>ᎠᏟᎢᎵᏒ</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>ᎪᎯ ᎢᎦ</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>ᎭᏒᏅᎦ</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>ᎣᏤᎵᎪ ᎦᏯᎸᎢ</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>ᎡᏙᎵᏓᏍᏗ</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>ᏚᏳᎪᏛ</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>ᏚᏂᏏᎠ</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>ᏃᏅᏛᎾ</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>ᎧᏁᎬ ᎤᏃᏴᎬ</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>ᏂᎨᏒᎾ ᎤᏟᏂᎩᏓ</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>ᏒᎾᏙᏓᏆᏍᎩ</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>ᎾᎯᏳ:</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>ᏤᏙᎲ:</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>ᎤᏁᎦ ᎤᏰᏥᏙᎲ ᎤᎧᏛ</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>ᎦᏙᏃ?</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>ᎧᏁᏨ</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>ᏗᎧᏁᎢᏍᏗ:</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>ᎠᏕᏘᏱᏍᎬ</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>ᎥᎥ</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>ᏂᎯ</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>ᎧᏁᏉᏍᏗ...</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>ᎲᏓ</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>ᏗᎪᏪᎵ</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>ᎠᎩᏏᏓᏍᏗ</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>ᎢᎪᎯ</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>ᎤᎭᎨᏓ ᏗᎧᏁᏍᏙᏗ</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>ᎢᏗᏜ</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>ᎠᎴᏫᏍᏙᏓ</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>DᎬᏂᎨᏒ ᏅᎦ</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>ᏄᏍᏛ ᎠᏙᏪᎵᏍᎩ</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>ᏗᏇᏅᏒᎢ</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>ᎧᏃᎮᏢᎥᏍᎩ</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>ᏕᎦᏅᏅᏛᎢ</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>ᏕᎦᏢᏍᎦ</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>ᎢᏯᏔᏬᏍᏔᏅ</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Ꮭ</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>ᎤᏣᏘᎾ</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>ᎢᏗᎦᎨᏓ</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>ᏄᏍᏗᏗᏒᎢ</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>ᎦᎴᏴᏙᏗᎢ</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>ᎧᏁᎢᏍᏙᏗ</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>ᏅᏅᏓᎩ</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>ᎠᏓᏅᏖᏗ</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>ᏯᏎᏢ</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>ᏗᏑᏰᏓ</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>ᎠᎪᎵᏰᏗ</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>ᏭᏍᏗᎬ ᎧᎵ ᎨᏒ</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>ᎥᎥ</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>ᎠᏠᏓᎪᎵᏰᏙᏗ</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>ᎠᏂᎩᎠ</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>ᎦᏁᏟᏴᏍᏗᎢ</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>ᎤᎿᏍᏕᏢ</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>ᎾᏛᏁᎲ</value>
+  </data>
 </root>

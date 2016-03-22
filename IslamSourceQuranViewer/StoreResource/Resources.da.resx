@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Standardsprog</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Tilføj bogmærke</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Bogmærker</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopier til Udklipsholder</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Gå til vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Afbryd midlertidigt</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Afspil</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Oplæser</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Fjern bogmærke</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Sæt afspilning vers</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Vis eksegese</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Del</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Yderligere vers Advance forsinkelse</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Forhånd vers automatisk</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Forsinkelse længde af vers inden man rykkede</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Looping tilstand</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabisk Koranen med metadata og alle oversættelser og nogle audio recitationer undtagen nævnt krediteres Tanzil projekt (http://tanzil.net). 
+Ungarsk Oversættelse af Koranen af Kiss Zsuzsanna Halima krediteres Magyar Iszlam (http://magyariszlam.hu). 
+Engelsk oversættelse af Koranen af Maulana Muhammad Ali krediteres den Lahore Ahmadiyya bevægelse i Islam (http://www.aaiil.org). 
+Morfologi data og engelske ord-for-ord oversættelse kredit til Koranens arabisk Corpus (http://corpus.quran.com). 
+Indonesiske ord-for-ord oversættelse kredit til Al-Quran Indonesien (http://www.alquran-indonesia.com/web/quran). 
+Urdu ord-for-ord oversættelse af Hafiz Nazar Muhammad krediteret til nem Koranen Wa Hadees (http://www.easyquranwahadees.com). 
+Andre ord-for-ord oversættelser samt andre oversættelser i programmet krediteret til Microsoft af oversættelsesydelser (http://www.microsoft.com/en-us/translator) og Google Translate (http://translate.google.com) og må ikke være nøjagtig.  For malaysiske ord for ord Koranen er kilden indonesisk.  For alle andre ord for ord Koranen er kilden den engelske Koranens arabisk Corpus. 
+Andre audio recitationer med bitrate vist krediteres hver Ayah (http://www.everyayah.com). 
+Unicode-data krediteret The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

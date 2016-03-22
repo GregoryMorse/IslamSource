@@ -27402,4 +27402,541 @@
   <data name="IslamInfo_RecitationRules" xml:space="preserve">
     <value>背诵规则</value>
   </data>
+  <data name="IslamInfo_AngleWithSInside" xml:space="preserve">
+    <value>内部有 S 角</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallVBelow" xml:space="preserve">
+    <value>下面的竖翻小型 V 的阿拉伯文字母 Beh</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithSmallVBelow" xml:space="preserve">
+    <value>下面的小型 V 的阿拉伯文字母 Beh</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallVBelow" xml:space="preserve">
+    <value>与下面的竖翻小型 V 的阿拉伯文字母 Dal</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterRehWithSmallVBelow" xml:space="preserve">
+    <value>阿拉伯文字母 Reh 随以下小型 V</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterUWithHamzaAbove" xml:space="preserve">
+    <value>阿拉伯文字母 U 随以上喉塞音符</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterZainWithInvertedVAbove" xml:space="preserve">
+    <value>阿拉伯文字母 Zain 倒 v 以上</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignInvertedSmallVAbove" xml:space="preserve">
+    <value>阿拉伯文元音倒上小型 V</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignSmallVAbove" xml:space="preserve">
+    <value>阿拉伯文元音标记标志小 V 以上</value>
+  </data>
+  <data name="IslamInfo_BatakVowelSignUForSimalungunSa" xml:space="preserve">
+    <value>巴达克语元音标记 U Simalungun Sa</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterAWithDiaeresis" xml:space="preserve">
+    <value>结合拉丁文小写字母 A 随以分音符</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterCCedilla" xml:space="preserve">
+    <value>结合下加符的拉丁文小写字母 C</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenAAbove" xml:space="preserve">
+    <value>扁平的结合拉丁文小写字母打开上文 A</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterLWithDoubleMiddleTilde" xml:space="preserve">
+    <value>结合带双中间颚化符的拉丁文小写字母 L</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithDiaeresis" xml:space="preserve">
+    <value>结合带分音符的拉丁文小写字母 O</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithLightCentralizationStroke" xml:space="preserve">
+    <value>结合与光集权中风的拉丁文小写字母 O</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRBelow" xml:space="preserve">
+    <value>组合用拉丁文小写字母 R 下面</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRRotunda" xml:space="preserve">
+    <value>拉丁文小写字母 R 圆形建筑相结合</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithDiaeresis" xml:space="preserve">
+    <value>结合带分音符的拉丁文小写字母 U</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithLightCentralizationStroke" xml:space="preserve">
+    <value>结合与光集权中风的拉丁文小写字母 U</value>
+  </data>
+  <data name="IslamInfo_CombiningXAbove" xml:space="preserve">
+    <value>结合上面的 X</value>
+  </data>
+  <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
+    <value>组合用下 X</value>
+  </data>
+  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
+    <value>组合用下 X X-</value>
+  </data>
+  <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
+    <value>双高 Reversed9 引号</value>
+  </data>
+  <data name="IslamInfo_DoubleLow9QuotationMark" xml:space="preserve">
+    <value>双 Low9 引号</value>
+  </data>
+  <data name="IslamInfo_DoubleLowReversed9QuotationMark" xml:space="preserve">
+    <value>双低 Reversed9 引号</value>
+  </data>
+  <data name="IslamInfo_IntegralAroundAPointOperator" xml:space="preserve">
+    <value>围绕点运算符积分</value>
+  </data>
+  <data name="IslamInfo_LBBarSymbol" xml:space="preserve">
+    <value>L B 栏符号</value>
+  </data>
+  <data name="IslamInfo_LeftSidewaysUBracket" xml:space="preserve">
+    <value>左横盘 U 支架</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignEAbove" xml:space="preserve">
+    <value>缅甸文元音 E 以上</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignShanEAbove" xml:space="preserve">
+    <value>缅甸文元音标记标志山 E 以上</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>非子集也不等于</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>非超集的也不等于</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>不是的一个子集</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>不是它的超集</value>
+  </data>
+  <data name="IslamInfo_ParenthesizedKoreanCharacterOHu" xml:space="preserve">
+    <value>带圆括号朝鲜文字 O 胡</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType1Plastics" xml:space="preserve">
+    <value>Type1 塑料再循环符号</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType2Plastics" xml:space="preserve">
+    <value>2 型塑料再循环符号</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType3Plastics" xml:space="preserve">
+    <value>Type3 塑料再循环符号</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType4Plastics" xml:space="preserve">
+    <value>Type4 塑料再循环符号</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType5Plastics" xml:space="preserve">
+    <value>Type5 塑料再循环符号</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType6Plastics" xml:space="preserve">
+    <value>Type6 塑料再循环符号</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType7Plastics" xml:space="preserve">
+    <value>7 型塑料再循环符号</value>
+  </data>
+  <data name="IslamInfo_RightSidewaysUBracket" xml:space="preserve">
+    <value>右斜向一边 U 支架</value>
+  </data>
+  <data name="IslamInfo_SInTriangle" xml:space="preserve">
+    <value>在三角形 S</value>
+  </data>
+  <data name="IslamInfo_SingleHighReversed9QuotationMark" xml:space="preserve">
+    <value>单一的高 Reversed9 引号</value>
+  </data>
+  <data name="IslamInfo_SingleLow9QuotationMark" xml:space="preserve">
+    <value>单 Low9 引号</value>
+  </data>
+  <data name="IslamInfo_SquareAOverM" xml:space="preserve">
+    <value>在 M 方块 A</value>
+  </data>
+  <data name="IslamInfo_SquareVOverM" xml:space="preserve">
+    <value>方形 V/M</value>
+  </data>
+  <data name="IslamInfo_ThreeDBottomLightedRightwardsArrowhead" xml:space="preserve">
+    <value>三 D 底部光向右箭头</value>
+  </data>
+  <data name="IslamInfo_ThreeDLeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
+    <value>三 D 左点燃等边向下箭头</value>
+  </data>
+  <data name="IslamInfo_ThreeDRightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
+    <value>三 D 权利点燃等边向上箭头</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
+    <value>三 D 顶部点燃等边向左箭头</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsArrowhead" xml:space="preserve">
+    <value>三 D 顶光向右箭头</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
+    <value>三 D 顶部点燃等边向右箭头</value>
+  </data>
+  <data name="IslamInfo_UpArrowheadInARectangleBox" xml:space="preserve">
+    <value>上一个矩形框中的箭头</value>
+  </data>
+  <data name="IslamInfo_XInARectangleBox" xml:space="preserve">
+    <value>在一个矩形框 X</value>
+  </data>
+  <data name="IslamInfo_ZNotationBagMembership" xml:space="preserve">
+    <value>Z 符号包成员</value>
+  </data>
+  <data name="IslamInfo_ZNotationDomainAntirestriction" xml:space="preserve">
+    <value>Z 符号域反限制</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftBindingBracket" xml:space="preserve">
+    <value>Z 符号左的绑定括号</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftImageBracket" xml:space="preserve">
+    <value>Z 符号左的图像支架</value>
+  </data>
+  <data name="IslamInfo_ZNotationRangeAntirestriction" xml:space="preserve">
+    <value>Z 符号范围反限制</value>
+  </data>
+  <data name="IslamInfo_ZNotationRelationalComposition" xml:space="preserve">
+    <value>Z 符号关系成分</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightBindingBracket" xml:space="preserve">
+    <value>Z 符号右绑定括号</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightImageBracket" xml:space="preserve">
+    <value>Z 符号右图像支架</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaComposition" xml:space="preserve">
+    <value>Z 符号图解成分</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaPiping" xml:space="preserve">
+    <value>Z 符号架构管道</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaProjection" xml:space="preserve">
+    <value>Z 符号图解投影</value>
+  </data>
+  <data name="IslamInfo_ZNotationSpot" xml:space="preserve">
+    <value>Z 符号点</value>
+  </data>
+  <data name="IslamInfo_ZNotationTypeColon" xml:space="preserve">
+    <value>Z 符号类型冒号</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>根</value>
+  </data>
+  <data name="IslamInfo_Lemma" xml:space="preserve">
+    <value>外稃</value>
+  </data>
+  <data name="IslamInfo_SpecialGroup" xml:space="preserve">
+    <value>特别小组</value>
+  </data>
+  <data name="IslamInfo_PartOfSpeech" xml:space="preserve">
+    <value>词性</value>
+  </data>
+  <data name="IslamInfo_AttachedPronoun" xml:space="preserve">
+    <value>连接的代词</value>
+  </data>
+  <data name="IslamInfo_Determiner" xml:space="preserve">
+    <value>限定词</value>
+  </data>
+  <data name="IslamInfo_ByWithOrInPreposition" xml:space="preserve">
+    <value>由与或介词</value>
+  </data>
+  <data name="IslamInfo_LikeOrThusPreposition" xml:space="preserve">
+    <value>喜欢或因此介词</value>
+  </data>
+  <data name="IslamInfo_ParticleOfOathUsedAsPreposition" xml:space="preserve">
+    <value>粒子的用作介词的誓言</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingFuture" xml:space="preserve">
+    <value>带前缀的粒子指示未来</value>
+  </data>
+  <data name="IslamInfo_CallingVocative" xml:space="preserve">
+    <value>调用呼格</value>
+  </data>
+  <data name="IslamInfo_PointingVocative" xml:space="preserve">
+    <value>指向呼格</value>
+  </data>
+  <data name="IslamInfo_PrefixedInterrogativeParticle" xml:space="preserve">
+    <value>带前缀的语气词</value>
+  </data>
+  <data name="IslamInfo_PrefixedEqualizationParticle" xml:space="preserve">
+    <value>带前缀的均衡粒子</value>
+  </data>
+  <data name="IslamInfo_Resumption" xml:space="preserve">
+    <value>恢复</value>
+  </data>
+  <data name="IslamInfo_Circumstantial" xml:space="preserve">
+    <value>依情况而定</value>
+  </data>
+  <data name="IslamInfo_Comitative" xml:space="preserve">
+    <value>Comitative</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="IslamInfo_Supplemental" xml:space="preserve">
+    <value>补充</value>
+  </data>
+  <data name="IslamInfo_Cause" xml:space="preserve">
+    <value>原因</value>
+  </data>
+  <data name="IslamInfo_PrefixedPreposition" xml:space="preserve">
+    <value>带前缀的介词</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingEmphasis" xml:space="preserve">
+    <value>带前缀的粒子表示强调</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingPurpose" xml:space="preserve">
+    <value>带前缀的粒子指示目的</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleUsedToFormImperative" xml:space="preserve">
+    <value>前缀用来形成必要的粒子</value>
+  </data>
+  <data name="IslamInfo_VocativeWordForm" xml:space="preserve">
+    <value>呼格 Word 窗体</value>
+  </data>
+  <data name="IslamInfo_Emphatic" xml:space="preserve">
+    <value>重点</value>
+  </data>
+  <data name="IslamInfo_IndicativeMood" xml:space="preserve">
+    <value>陈述语气</value>
+  </data>
+  <data name="IslamInfo_SubjunctiveMood" xml:space="preserve">
+    <value>虚拟语气</value>
+  </data>
+  <data name="IslamInfo_JussiveMood" xml:space="preserve">
+    <value>命令的心情</value>
+  </data>
+  <data name="IslamInfo_Stem" xml:space="preserve">
+    <value>干</value>
+  </data>
+  <data name="IslamInfo_Participle" xml:space="preserve">
+    <value>分词</value>
+  </data>
+  <data name="IslamInfo_TypeOne" xml:space="preserve">
+    <value>第一类</value>
+  </data>
+  <data name="IslamInfo_TypeTwo" xml:space="preserve">
+    <value>Type Two</value>
+  </data>
+  <data name="IslamInfo_TypeThree" xml:space="preserve">
+    <value>三类</value>
+  </data>
+  <data name="IslamInfo_TypeFour" xml:space="preserve">
+    <value>类型四</value>
+  </data>
+  <data name="IslamInfo_TypeFive" xml:space="preserve">
+    <value>类型五</value>
+  </data>
+  <data name="IslamInfo_TypeSix" xml:space="preserve">
+    <value>类型六</value>
+  </data>
+  <data name="IslamInfo_TypeSeven" xml:space="preserve">
+    <value>类型七</value>
+  </data>
+  <data name="IslamInfo_TypeEight" xml:space="preserve">
+    <value>类型八</value>
+  </data>
+  <data name="IslamInfo_TypeNine" xml:space="preserve">
+    <value>类型九</value>
+  </data>
+  <data name="IslamInfo_TypeTen" xml:space="preserve">
+    <value>类型十</value>
+  </data>
+  <data name="IslamInfo_TypeEleven" xml:space="preserve">
+    <value>键入十一</value>
+  </data>
+  <data name="IslamInfo_TypeTwelve" xml:space="preserve">
+    <value>类型十二</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>活动</value>
+  </data>
+  <data name="IslamInfo_Perfect" xml:space="preserve">
+    <value>完美</value>
+  </data>
+  <data name="IslamInfo_Imperfect" xml:space="preserve">
+    <value>不完美</value>
+  </data>
+  <data name="IslamInfo_Imperative" xml:space="preserve">
+    <value>势在必行</value>
+  </data>
+  <data name="IslamInfo_GenitiveCase" xml:space="preserve">
+    <value>所有格</value>
+  </data>
+  <data name="IslamInfo_Singular" xml:space="preserve">
+    <value>单数</value>
+  </data>
+  <data name="IslamInfo_NumberSpelling" xml:space="preserve">
+    <value>数字的拼写</value>
+  </data>
+  <data name="IslamInfo_HeadingNumberSpelling" xml:space="preserve">
+    <value>标题编号拼写</value>
+  </data>
+  <data name="IslamInfo_StoppingEndowment" xml:space="preserve">
+    <value>停止养老</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaStoppingEndowment" xml:space="preserve">
+    <value>洪德 Marbuta 停止养老</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaJoiningContinuing" xml:space="preserve">
+    <value>洪德 Marbuta 加入继续</value>
+  </data>
+  <data name="IslamInfo_JoiningContinuing" xml:space="preserve">
+    <value>加入继续</value>
+  </data>
+  <data name="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>站在长圆形零小高直立矩形零</value>
+  </data>
+  <data name="IslamInfo_EmptyCentreLowStop" xml:space="preserve">
+    <value>空中心低停止</value>
+  </data>
+  <data name="IslamInfo_RoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>圆与填充中心高句号</value>
+  </data>
+  <data name="IslamInfo_SmallNoon" xml:space="preserve">
+    <value>小中午</value>
+  </data>
+  <data name="IslamInfo_SmallHighSeen" xml:space="preserve">
+    <value>小高看到</value>
+  </data>
+  <data name="IslamInfo_SmallLowSeen" xml:space="preserve">
+    <value>小低见</value>
+  </data>
+  <data name="IslamInfo_Sukun" xml:space="preserve">
+    <value>苏坤</value>
+  </data>
+  <data name="IslamInfo_EmptyShadda" xml:space="preserve">
+    <value>空 Shadda</value>
+  </data>
+  <data name="IslamInfo_ShaddaResolve" xml:space="preserve">
+    <value>Shadda 的决心</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaFatha" xml:space="preserve">
+    <value>继续哈姆扎罚的骂</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaKasra" xml:space="preserve">
+    <value>继续哈姆扎 Kasra</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaDamma" xml:space="preserve">
+    <value>继续 Hamza Damma</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaEmpty" xml:space="preserve">
+    <value>继续哈姆扎空</value>
+  </data>
+  <data name="IslamInfo_LaamAssimilation" xml:space="preserve">
+    <value>Laam 同化</value>
+  </data>
+  <data name="IslamInfo_RaaAssimilation" xml:space="preserve">
+    <value>Raa 同化</value>
+  </data>
+  <data name="IslamInfo_RaaHeavinessOrLightness" xml:space="preserve">
+    <value>Raa 沉重或亮度</value>
+  </data>
+  <data name="IslamInfo_SmallWaw" xml:space="preserve">
+    <value>小 Waw</value>
+  </data>
+  <data name="IslamInfo_SmallYeh" xml:space="preserve">
+    <value>小的叶</value>
+  </data>
+  <data name="IslamInfo_FathaSilentLetterSuperscriptAlef" xml:space="preserve">
+    <value>罚的骂无声字母上标 Alef</value>
+  </data>
+  <data name="IslamInfo_DipthongZeroLength" xml:space="preserve">
+    <value>Dipthong 零长度</value>
+  </data>
+  <data name="IslamInfo_OriginalLengtheningZeroCapture" xml:space="preserve">
+    <value>原来延长零捕获</value>
+  </data>
+  <data name="IslamInfo_AssimilateGreatIdenticalDammaMerge" xml:space="preserve">
+    <value>吸收大相同 Damma 合并</value>
+  </data>
+  <data name="IslamInfo_AssimilateSmallIdenticalHaaSakinah" xml:space="preserve">
+    <value>同化小相同 Haa Sakinah</value>
+  </data>
+  <data name="IslamInfo_MostCompleteNasalization" xml:space="preserve">
+    <value>最完整的鼻音化</value>
+  </data>
+  <data name="IslamInfo_CompleteNasalization" xml:space="preserve">
+    <value>完整的鼻音化</value>
+  </data>
+  <data name="IslamInfo_IncompleteNasalization" xml:space="preserve">
+    <value>不完整的鼻音化</value>
+  </data>
+  <data name="IslamInfo_MostIncompleteNasalization" xml:space="preserve">
+    <value>最完整的鼻音化</value>
+  </data>
+  <data name="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" xml:space="preserve">
+    <value>于中午不完全同化鼻音化</value>
+  </data>
+  <data name="IslamInfo_UnwrittenHelperKasra" xml:space="preserve">
+    <value>不成文的帮手 Kasra</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaWawHamza" xml:space="preserve">
+    <value>Alef Wasla Waw 喉塞音符</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaAlefMaksuraHamza" xml:space="preserve">
+    <value>Alef Wasla Alef Maksura 喉塞音符</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaHamza" xml:space="preserve">
+    <value>Alef Wasla 喉塞音符</value>
+  </data>
+  <data name="IslamInfo_SmallHamza" xml:space="preserve">
+    <value>小喉塞音符</value>
+  </data>
+  <data name="IslamInfo_LetterHamza" xml:space="preserve">
+    <value>字母喉塞音符</value>
+  </data>
+  <data name="IslamInfo_HamzaAbove" xml:space="preserve">
+    <value>以上喉塞音符</value>
+  </data>
+  <data name="IslamInfo_NotAlef" xml:space="preserve">
+    <value>不 Alef</value>
+  </data>
+  <data name="IslamInfo_MaddAlef" xml:space="preserve">
+    <value>Madd Alef</value>
+  </data>
+  <data name="IslamInfo_NotWaw" xml:space="preserve">
+    <value>不 Waw</value>
+  </data>
+  <data name="IslamInfo_NotYeh" xml:space="preserve">
+    <value>不叶</value>
+  </data>
+  <data name="IslamInfo_MaddWaw" xml:space="preserve">
+    <value>Madd Waw</value>
+  </data>
+  <data name="IslamInfo_LeenWaw" xml:space="preserve">
+    <value>利恩 Waw</value>
+  </data>
+  <data name="IslamInfo_StrongWaw" xml:space="preserve">
+    <value>强 Waw</value>
+  </data>
+  <data name="IslamInfo_MaddYeh" xml:space="preserve">
+    <value>Madd 叶</value>
+  </data>
+  <data name="IslamInfo_LeenYeh" xml:space="preserve">
+    <value>利恩叶</value>
+  </data>
+  <data name="IslamInfo_StrongYeh" xml:space="preserve">
+    <value>强叶</value>
+  </data>
+  <data name="IslamInfo_DivisionMarkers" xml:space="preserve">
+    <value>司标记</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkers" xml:space="preserve">
+    <value>继续停止标记</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkersAtEnding" xml:space="preserve">
+    <value>在结局继续停止标记</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryLightened" xml:space="preserve">
+    <value>马达赫强制点亮</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryWeighted" xml:space="preserve">
+    <value>马达赫强制性加权</value>
+  </data>
+  <data name="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" xml:space="preserve">
+    <value>连接延长必要提出苏坤</value>
+  </data>
+  <data name="IslamInfo_SoftLengtheningLetters" xml:space="preserve">
+    <value>软的延长字母</value>
+  </data>
+  <data name="IslamInfo_LetterSpelling" xml:space="preserve">
+    <value>字母拼写</value>
+  </data>
+  <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
+    <value>祷告后的回忆</value>
+  </data>
 </root>

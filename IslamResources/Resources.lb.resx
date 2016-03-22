@@ -12,4 +12,1816 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Buch</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Bicher</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Iwwersetzung</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>Iwwert</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Absolut</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>Kont</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>No...</value>
+  </data>
+  <data name="IslamInfo_Airplane" xml:space="preserve">
+    <value>Fliger</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>Algerien</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Erlaabt</value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>Bal Gläich oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>Ëmmer</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>Anker</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Engel</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Wénkel:</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>Veriergert</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>Rendez-vous</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>Approchéiert d'Limit</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>Ongeféier Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arabesch</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Bou</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>Argument</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Ronderëm</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>Christi Himmelfaart</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>Stäerchen</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Stäerchen Operateur</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Asymptotesch Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Attributer:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Zeréck</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="IslamInfo_Because" xml:space="preserve">
+    <value>Well</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Virdrun...</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>Besser</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>Tëschent...</value>
+  </data>
+  <data name="IslamInfo_Big" xml:space="preserve">
+    <value>Grouss</value>
+  </data>
+  <data name="IslamInfo_Bigger" xml:space="preserve">
+    <value>Méi Grouss</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Schwaarz</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Schwaarze Krees</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>Graphitkostüm</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>Kierper</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>Buch</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Eck ënne lénks</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Eck ënne riets</value>
+  </data>
+  <data name="IslamInfo_Bread" xml:space="preserve">
+    <value>Brout</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Kierztzeechen</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Partenariat</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Cadeauen</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Konditiounen</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Kugel</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Opzielzeechen Operateur</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Kafen</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Uruff</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>Kanada</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="IslamInfo_Chain" xml:space="preserve">
+    <value>Ketten</value>
+  </data>
+  <data name="IslamInfo_Chair" xml:space="preserve">
+    <value>Stull</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Kapitel:</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>Knäppercher</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>China</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Agekreest Stäerchenoperateur</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Agekreeste Stréch</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Agekreest Divisiounsslash</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Agekreest Punktoperateur</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Agekreest Minus</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Agekreest Plus</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Agekreest Rankoperateur</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Agekreest Mol</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Klassifikatioun:</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Läschen</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Am Sënn vun der Auer Kontur Integral</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Am Sënn vun der Auer Integral</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Am Sënn vun der Auer Hallefkrees Feil no uewen</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>Gëtt zougemaach...</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>Wollek</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>Kollektioun</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>Doppelpunkt</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>Komma</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Communitéit</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Firma</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>Ergänzung</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Fäerdeg</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Konditioun</value>
+  </data>
+  <data name="IslamInfo_Confirmed" xml:space="preserve">
+    <value>Bestätegt</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Gléckwënsch</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Verbënnt</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>Enthält eng Normal Ënnergrupp</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>Enthält als Normal Ënnergrupp vun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>Inhalter</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Kontur Integral</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Kopie</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>Copyright-Zeechen</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>Zoudecken</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Cube Wuerzel</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Gekrauselte Logeschen An</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>Gekrauselte Logeschen Oder</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Personaliséiert</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Dolch</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Dag</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Sonndeg</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Méindeg</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Dënschdeg</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Mëttwoch</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Donneschdeg</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Freideg</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Samschdeg</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="IslamInfo_DegreeCelsius" xml:space="preserve">
+    <value>Grad Celsius</value>
+  </data>
+  <data name="IslamInfo_DegreeFahrenheit" xml:space="preserve">
+    <value>Grad Fahrenheit</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>Délai:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Liwwerung</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>Delta Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Detailer...</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>Diakritesch Zeechen</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Raut Operateur</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>Differenz tëschent</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>Egal wéi eng</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Divisioun</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Divisiounszeechen</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Divisiounsslash</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Divisioun Mol</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>Enthält net als Member</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Dividéiert net</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Forcéiert Net</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Kënnt Net Virdrun</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>Kënnt net Virdrun oder Gläich</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>Beweist Net</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Kënnt Net Duerno</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>Kënnt net Duerno oder Gläich</value>
+  </data>
+  <data name="IslamInfo_Dog" xml:space="preserve">
+    <value>Hond</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Punkt Operateur</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Punkt Plus</value>
+  </data>
+  <data name="IslamInfo_DoubleDagger" xml:space="preserve">
+    <value>Duebelen Dolch</value>
+  </data>
+  <data name="IslamInfo_DoubleIntegral" xml:space="preserve">
+    <value>Duebel Integral</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Duebel Intersectioun</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Dueblen Ënnersaz</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Dueblen Iwwergeurdente Saz</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Duebel Union</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>No Ënne Riets Diagonal Ellips</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>Zéien</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>Dream</value>
+  </data>
+  <data name="IslamInfo_Drill" xml:space="preserve">
+    <value>Drill</value>
+  </data>
+  <data name="IslamInfo_Drink" xml:space="preserve">
+    <value>Gedrénks</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>Äerd</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>Ägypten</value>
+  </data>
+  <data name="IslamInfo_ElementOf" xml:space="preserve">
+    <value>Element Vun</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Erhéigung:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>Gedankestréch</value>
+  </data>
+  <data name="IslamInfo_EmptySet" xml:space="preserve">
+    <value>Eidele Saz</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value> 	Em Espace</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>ENN</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>Bindestréch</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value> 	En Espace</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Ënnerhalung</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Enveloppe: </value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>Gläich Wéi oder Parallel mat</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>Gläich Wéi Per Definitioun</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>Gläich Wéi oder Kënnt Virdrun</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>Gläich Wéi oder Kënnt Duerno</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Equivalent mat</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>Ausnam:</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>Erklären...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Explizit</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>Gesiichtserkennung</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>Falsch</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Weiblech</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>Fein</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Feier</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>Éischt/en:</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>Den Éischte Véirel vum Mound</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>Fest</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>Flam</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>fléissen</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>Blumm</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Liewensmëttel</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>Fouss</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>Fir:</value>
+  </data>
+  <data name="IslamInfo_ForAll" xml:space="preserve">
+    <value>Fir All</value>
+  </data>
+  <data name="IslamInfo_Forces" xml:space="preserve">
+    <value>Kräften</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>Buer</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Véiert Wuerzel</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>Frankräich</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Freideg</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>Vun</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Vir</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>Volle Block</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>Zukunft</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>Gaart</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>Zännrad</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>Geschlecht</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Allgemeng</value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>Generatioun</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>Geometresch Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>Geometresch Equivalent mat</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>Däitschland</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Gold</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Gutt</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Eleganz</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Grammaire</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Déif</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>Staarken Accent (`)</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>Groussbritannien</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>Méi Grouss Oder Gläich Wéi...</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Gréisser Wéi Iwwer Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>Méi-grouss-wéi-Zeechen</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Grupp:</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Gruppen</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Hoerstréch</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Hand</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>Kapp</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Häerz</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>Ausgeblennt</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Hiwäis:</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>Horizontal Ellips</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>Stonn</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>House</value>
+  </data>
+  <data name="IslamInfo_How" xml:space="preserve">
+    <value>Wéi?</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Identesch Mat</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>WANN</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>Bild vun oder Ongeféiert Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Impact</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>An</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Net vollstänneg</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Vergréisserung</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>Indien</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>Indonesien</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>Onendlech</value>
+  </data>
+  <data name="IslamInfo_Inspiration" xml:space="preserve">
+    <value>Inspiratioun</value>
+  </data>
+  <data name="IslamInfo_Integral" xml:space="preserve">
+    <value>Integral</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>Dertëschent Setzen</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Intersectioun</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Aleedung</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Aleedung</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>Ëmgekéiert Ausruffzeechen</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Ëmgedréint Ohm Zeechen</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>Ëmgekéiert Froenzeechen</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>Irak</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>Israel</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Deelhuelen</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>Jordanien</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Jupiter</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>Kenya</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>Tastatur...</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>Kuwait</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>Lescht(en)</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>De leschte Véirel-Mound</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Punktéiert</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>&amp;Verloossen</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>Libanon</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>Lénks</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Lénks Normale Facteur Semidirekte Produit</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>Lénks ronn Klamer</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>Feil no riets a lénks</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Lénks-Riets Duebele Feil</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Lénks-Rietse Wellen-Feil</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Lénks Semidirekte Produit</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>Méi kleng oder gläich wéi...</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Manner Wéi Iwwer Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Bréiwer</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>Niveau:</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Bibliothéik</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Hell</value>
+  </data>
+  <data name="IslamInfo_Lightning" xml:space="preserve">
+    <value>Blëtz</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Limite</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>Verknëppt</value>
+  </data>
+  <data name="IslamInfo_LogicalAnd" xml:space="preserve">
+    <value>Logesch An</value>
+  </data>
+  <data name="IslamInfo_LogicalOr" xml:space="preserve">
+    <value>Logesch Oder</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Laang</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Laange Lénks-Riets Feil</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Laange Lénks-Riets Duebel Feil</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Männlech</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Mann </value>
+  </data>
+  <data name="IslamInfo_Market" xml:space="preserve">
+    <value>Geschäft</value>
+  </data>
+  <data name="IslamInfo_Mary" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Basis</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Géigestand</value>
+  </data>
+  <data name="IslamInfo_Measure" xml:space="preserve">
+    <value>Mooss</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Gemeesste Wénkel</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Gemooss Vun</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mekka</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>Reunioun</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Mëttlinn Horizontal Ellips</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Minutt</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>Modeller</value>
+  </data>
+  <data name="IslamInfo_Money" xml:space="preserve">
+    <value>Suen</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Mount</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Méint</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Mound</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Jéimert</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>Marokko</value>
+  </data>
+  <data name="IslamInfo_Mountain" xml:space="preserve">
+    <value>Bierg</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Vill Méi Grouss Wéi</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Vill Manner Wéi</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>Multipelt Mappen</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>Multiplikatiounszeechen</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Multiset Unioun</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Aleedung</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Nabla</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Benennen</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Nimm</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>N-ären Agekreeste Punktoperateur</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>N-ären Agekreeste Plusoperateur</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>N-ären Agekreeste Moloperateur</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>N-är Intersectioun</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>N-är Logesch An</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>N-är Logesch Oder</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-äre Quadrat Intersectioun Operateur</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>N-äre Quadrat Uniounsoperateur</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>N-Ary-Zommebildung</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>N-är Unioun</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>N-ären Uniounsoperateur mat Punkt</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-ären Uniounsoperateur mat Plus</value>
+  </data>
+  <data name="IslamInfo_Near" xml:space="preserve">
+    <value>ongeféier</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Negéiert Duebel Vertikal Läischt Duebelt Rietst Dréikräiz</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>Weder Ongeféier nach Tatsächlech Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Neutral</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Nei...</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Neiegkeeten</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>Nächst Säit</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Normal Ënnergrupp Vun</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Normal Ënnergrupp vun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Net</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Net Bal Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Net Asymptotesch Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Ass net gläich</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Net Equivalent Mat</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Net Gréisser Wéi</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Net Identesch Mat</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Net Manner Wéi</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Net Normal Ënnergrupp Vun</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Net Normal Ënnergrupp Vun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Net Parallell zou</value>
+  </data>
+  <data name="IslamInfo_NotSign" xml:space="preserve">
+    <value>Net-Zeechen</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Net Véiereckegt Bild vun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Net Véiereckegt Original vun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Keng Tilde</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Net Richteg</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>T</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Ongrued</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Eent</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>Mécht op</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>-Oder-</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>Weesekand</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Aner</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>Säit</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Säiten</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>Pakistan</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Parallell zou</value>
+  </data>
+  <data name="IslamInfo_PartialDifferential" xml:space="preserve">
+    <value>Partiellen Differential</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>Partikel</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>Partner</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>Partenariat</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>Party</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>Passiv</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Wee</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>Fridden</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>Stëft</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>Bläisteft</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Leit</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>Prozentzeechen</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Autorisatioun</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Perspektiv:</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>Philippinen</value>
+  </data>
+  <data name="IslamInfo_Pillar" xml:space="preserve">
+    <value>Peiler</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Mëchtgreef</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Plaz</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Plazen</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Zeechefläch</value>
+  </data>
+  <data name="IslamInfo_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Richtungsformatéierung Affichéieren</value>
+  </data>
+  <data name="IslamInfo_Pound" xml:space="preserve">
+    <value>Pond</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Nomëtteg</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Sonnenënnergang</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Sonnenopgang</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>Kënnt virdrun</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>Kënnt Virdru mee Net Equivalent Mat</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>Kënnt Virdrun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEquivalentTo" xml:space="preserve">
+    <value>Kënnt Virdrun oder Equivalent Mat</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>PREFIX</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>Viregt Säit</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>Einfache Stréch</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Proportioun</value>
+  </data>
+  <data name="IslamInfo_ProportionalTo" xml:space="preserve">
+    <value>Proportionnel zou</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Protectioun</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Quartal</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Konkurrenz</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Freideg</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Mann </value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Ratio</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>Liest</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Recommandéiert</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>Registréiert-Zeechen</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>Ufuerderungen</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Äntwert</value>
+  </data>
+  <data name="IslamInfo_ReversedTilde" xml:space="preserve">
+    <value>Ëmgedréinten Tilde</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Ëmgedréit Tilde Ass Gläich</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>Riets</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>Rietse Wénkel</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>Riets Wénkel mat Bou</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Riets Normale Facteur Semidirekte Produit</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>Riets ronn Klamer</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Riets Semidirekte Produit</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>Einfacht lénks Ausféierungszeechen</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>Rechtwénklegen Dräieck</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Rank Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>Rank an Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Sécherheet</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Saturn</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>Saudi Arabien</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Skala</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Skalaen</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Schoul</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>Skript Groussbuschtaf P</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>Mier</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>Sekonn</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Sektiounen</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>; (Stréchpunkt)</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>Optimiséierung;Sense</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Minus Festleeën</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>Kléiblat</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Kuerz</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Zeechen</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Sëlwer</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>Sinuswell</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>Augesinn</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Himmel</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>Neigung</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Smiley</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Uschlëss:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>Soul</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>Sound</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Espace</value>
+  </data>
+  <data name="IslamInfo_Specific" xml:space="preserve">
+    <value>spezifesch</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Ried</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Sphäresche Wénkel</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>Véiereckeg Cap</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Véiereckege Kelch</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Punktoperateur am Quadrat</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Minus am Quadrat</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Plus am Quadrat</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Mol am Quadrat</value>
+  </data>
+  <data name="IslamInfo_SquareFoot" xml:space="preserve">
+    <value>Quadrat Fouss</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Véiereckegt Bild Vun</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Véiereckegt Bild Vun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Véiereckegt Original Vun</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Véiereckegt Original Vun oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Quadratwuerzel</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>Sri Lanka</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>Stär</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Stär Operateur</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Statioun</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>Amgaang ze stoppen...</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>Stäerkt</value>
+  </data>
+  <data name="IslamInfo_Student" xml:space="preserve">
+    <value>Student</value>
+  </data>
+  <data name="IslamInfo_SubsetOf" xml:space="preserve">
+    <value>Ënnersaz vun</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>Ënnersaz Vu mat Net Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Subtil</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>Kënnt duerno</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>Kënnt Duerno mee Net Equivalent Mat</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>Kënnt Duerno oder Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>Kënnt Duerno oder Equivalent Mat</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>Sudan</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Suffix:</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>Virschlag:</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>Son</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Sonnenopgang</value>
+  </data>
+  <data name="IslamInfo_SupersetOf" xml:space="preserve">
+    <value>Iwwergeuerdente Saz Vun</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>Iwwergeurdente Saz Vu mat Net Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Fläch Integral</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>Tabell: </value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>Grouss</value>
+  </data>
+  <data name="IslamInfo_TapeDrive" xml:space="preserve">
+    <value>Bandlafwierk</value>
+  </data>
+  <data name="IslamInfo_Term" xml:space="preserve">
+    <value>Begrëff</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>Den </value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Et gëtt net</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Et gëtt</value>
+  </data>
+  <data name="IslamInfo_Therefore" xml:space="preserve">
+    <value>Dofir</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>Éischt/en:</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>véiert</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>Sekonn</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Dëst</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Tilde</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Zäit</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>Winzeg</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>Haut</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Eck uewe lénks</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Eck uewe riets</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>Touch-Input</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>Stad</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>Stad</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>&amp;Noverfollegen</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>Markenzeechen-Zeechen</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Iwwersetzung</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Reesen</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Dräifach Integral</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Dräifach Vertikal Läischt Rietst Dréikräiz</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>Richteg</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>Tunesien</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>Gedréite Griischeche Klenge Buschtaf Iota</value>
+  </data>
+  <data name="IslamInfo_Umbrella" xml:space="preserve">
+    <value>Präbbeli</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>Opdecken</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Unioun</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Onbekannt</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Net affichéiert</value>
+  </data>
+  <data name="IslamInfo_Until" xml:space="preserve">
+    <value>Bis: </value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>Duebele vertikale Feil</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>No Uewen-No Ënnen Duebele Feil</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>No Uewe Riets Diagonal Ellips</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>Uranus</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>Verb</value>
+  </data>
+  <data name="IslamInfo_VerticalEllipsis" xml:space="preserve">
+    <value>Vertikal Ellips</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Vertikal Linn</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Ganz Vill Gréisser Wéi</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Ganz Vill Manner Wéi</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>Stëmm</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Volume-Integral</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Iwwerwaachung</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Waasser</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>Niddreg</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>Woch</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Wéini:</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Wou:</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Wäisse Krees</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>Mat Laachendem Gesiicht</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Wäissen Dräieck mat der Spëtzt no uewen</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>Woufir?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value>mat</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Word </value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Wierder:</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Awéckelpabeier</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Kranz Produit</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>Joer</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Jo</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>Dir</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Derbäisetzen</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Iwwerhuelen</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Buch</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>Berechnungen</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Kollektioun</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Grad</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Dictionnaire</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Richtung:</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Desaktivéieren</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Affichage</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Divisioun</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Schrëft</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Grammaire</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Gregorianesche Kalenner</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Hijri Kalenner</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Startsäit</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Informatioun</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Aleedung</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Lëschten</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Amgaang ze lueden...</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Mapping</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Minutten</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Neen</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Verschibung</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Operatioun</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Drécken</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Zitéieren</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Ewechhuelen</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Schema</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>Sekonnen</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Auswiel</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Iwwersetzung</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Unitéiten</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Zuschauer</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Jo</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Pabeierkuerf</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Schlecht</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Dreiwer</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Mat Erfolleg</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Preferéiert</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Fänkt un</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Ugeschloss</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Getrennt</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>Exchange()</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Weder en Ënnersaz vun nach Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Weder en Iwwergeurdente Saz vun nach Gläich Wéi</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Keen Ënnersaz Vun</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Keen Iwwergeurdente Saz Vun</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Stamm</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Aktiv</value>
+  </data>
 </root>

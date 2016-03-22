@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>שפת ברירת המחדל</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>להוסיף סימניה</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>סימניות</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>‏‏העתק ללוח</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>ללכת פסוק</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>השהה</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>הפעל</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>יודע לדקלם</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>להסיר סימנייה</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>הפסוק קבע השמעה</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>הצג אלהית</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>שתף</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>פסוק נוסף מראש עיכוב</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>לקדם את הפסוק באופן אוטומטי</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>עיכוב אורך פסוק לפני קידום</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>מצב לולאה</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>אודות</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>הקוראן בערבית עם מטא-נתונים כל התרגומים, כמה מקריאים שמע מלבד אלה המפורטים זוכה לפרוייקט Tanzil (http://tanzil.net). 
+הונגרית תרגום של הקוראן על-ידי לנשק חלימה Zsuzsanna זוכה Magyar Iszlam (http://magyariszlam.hu). 
+תרגום לאנגלית של הקוראן בידי מעט מוחמד עלי לזכות לאהור אחמדים (http://www.aaiil.org). תרגום מילה אחר מילה אנגלי ונתונים 
+מורפולוגיה אשראי לקורפוס הח'ליפים ערבית (http://corpus.quran.com). 
+-איטלקית תרגום מילה אחר מילה אשראי לאינדונזיה אל-קוראן (http://www.alquran-indonesia.com/web/quran). 
+תרגום מילה אחר מילה אורדו מאת מוחמד לאגמי חפיז זוכה הקוראן קל ווה Hadees (http://www.easyquranwahadees.com). 
+תרגומים אחרים מילה אחר מילה, וכן תרגומים אחרים בתוכנית זוכה ספק תרגום של Microsoft (http://www.microsoft.com/en-us/translator) ו- Google Translate (http://translate.google.com), וייתכן שלא תהיה מדויקת.  עבור מילה אחר מילה מלזיה קוראן, המקור הוא איטלקית.  עבור כל שאר קוראן מילה אחר מילה, המקור הוא הקורפוס ערבית אנגלית הח'ליפים. 
+השני מקריאים שמע עם bitrate שמוצג זוכה כל האיה (http://www.everyayah.com). 
+נתוני Unicode זוכה ה Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

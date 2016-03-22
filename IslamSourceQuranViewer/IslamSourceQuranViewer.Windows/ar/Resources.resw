@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>اللغة الافتراضية</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>إضافة إشارة مرجعية</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>إشارات مرجعية</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>النسخ إلى "الحافظة"</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>انتقل إلى الآية</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>إيقاف مؤقت</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>تشغيل</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>القارئ</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>إزالة إشارة مرجعية</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>الآية قراءة مجموعة</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>إظهار التفسير</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>مشاركة</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>الآية إضافية مقدما تأخير</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>تقدم الآية تلقائياً</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>طول تأخير الآية قبل المضي قدما</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>وضع حلقات</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>حول</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>القرآن العربية مع بيانات التعريف وكل الترجمات وبعض التلاوات الصوت ما عدا تلك المدرجة في القائمة المقيدة للمشروع عبد القادر (http://tanzil.net). وتقيد 
+الهنغارية ترجمة القرآن من قبله حليمة سوزانا "إيسزلام المجرية" (http://magyariszlam.hu). 
+"الترجمة الإنكليزية للقرآن" "مولانا محمد على" وتقيد "حركة الأحمدية لاهور" في الإسلام (http://www.aaiil.org). البيانات 
+مورفولوجيا وترجمة كلمة بكلمة باللغة الإنكليزية الائتمان القرآنية العربية الإحضار (http://corpus.quran.com). 
+الائتمان الإندونيسية كل كلمة ترجمة للقرآن إندونيسيا (http://www.alquran-indonesia.com/web/quran). وتقيد 
+الأردية الترجمة كلمة بكلمة حافظ محمد نزار "الكريم وا القرآن سهل" (http://www.easyquranwahadees.com). 
+ترجمة كلمة بكلمة أخرى، فضلا عن الترجمات الأخرى في البرنامج حساب Microsoft موفر الترجمة (http://www.microsoft.com/en-us/translator) وترجمة جوجل (http://translate.google.com)، وقد لا تكون دقيقة.  للماليزي كلمة بكلمة القرآن، المصدر الإندونيسية.  لجميع القرآن كلمة بكلمة أخرى، هو المصدر "الإحضار القرآنية اللغة الإنجليزية على اللغة العربية". 
+لحساب الأخرى التلاوات الصوتية مع معدل البت سيظهر "كل الآية" (http://www.everyayah.com). 
+بيانات Unicode الفضل Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

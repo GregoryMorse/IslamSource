@@ -21,4 +21,16 @@
   <data name="Size.Text" xml:space="preserve">
     <value>ᎢᎩᏓ</value>
   </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ᎯᏲᎯᏍᏓ</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>ᏗᏁᎸᏙᏗᎢ</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>ᎠᏯᏙᏍᏗᎢ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ᎢᎸᏢ</value>
+  </data>
 </root>

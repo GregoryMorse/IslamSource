@@ -33,4 +33,25 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Әдепкі тіл</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;Бетбелгі қосу</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Бетбелгілер</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Копировать в буфер</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Тоқтата тұру</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Ойнату</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Ортақ пайдалану</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Туралы</value>
+  </data>
 </root>

@@ -12,4 +12,865 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>ປຶ້ມ</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>ດັດຊະນີ:</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>ຄວາມດັງສຽງ</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>ທາງເທິງ</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>ບັນຊີ</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>ຫຼັງຈາກ</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>ອັລຈິເຣຍ</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>ທັງໝົດ</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>ອະນຸຍາດ </value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>ຕະຫຼອດ</value>
+  </data>
+  <data name="IslamInfo_Amman" xml:space="preserve">
+    <value>ແອມມານ</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>ຈຸດຍຶດ</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>ມຸມ</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>ໃຈຮ້າຍ</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>ການນັດພົບ</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>ອາຣັບ</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Arc</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>ປະມານ:</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>ອາເຊັນຊັນ</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>ເຄື່ອງໝາຍດາວ</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>ຄຸນສົມບັດ</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>ກັບ​ຄືນ</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>ຍອດເງິນ</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>ກ່ອນ</value>
+  </data>
+  <data name="IslamInfo_Beirut" xml:space="preserve">
+    <value>ເບີຣຸດ</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>ດີຂື້ນ</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>ສີດຳ</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>ເນື້ອໃນ</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>ປຶ້ມ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>ຄູ່ຮ່ວມງານ:</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>ສັນຍາລັກຫົວຂໍ້ຍ່ອຍ</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>ຊື້</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>ໂທ</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>ແຄນາດາ</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>ລົດ</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>ຈີນ</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>ການຈຳແນກປະເພດ:</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>ລຶບ</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>ຄັງ​ສະ​ສົມ</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>ເຄື່ອງໝາຍຈຸດ</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>ຊຸມຊົນ</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>ບໍລິສັດ:</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>ສຳເລັດ</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>ການຊົມເຊີຍ</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>ການເຊື່ອມຕໍ່</value>
+  </data>
+  <data name="IslamInfo_Construction" xml:space="preserve">
+    <value>ມີການກໍ່ສ້າງ</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>ເນື້ອໃນ</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>ກັອບປີ້</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>ກໍານົດເອງ</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>ວັນທີ</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>ວັນ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>ວັນອາທິດ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>ວັນຈັນ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>ວັນອັງຄານ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>ວັນພຸດ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>ວັນພະຫັດ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>ວັນສຸກ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>ວັນເສົາ</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>ມາດຕະຖານ</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>ການຈັດສົ່ງ</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>ລາຍລະອຽດ &gt;&gt;</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>ພະແນກ</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>ສຽງດີມ</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>ອີຢິບ</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>ສິ້ນສຸດ</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>ບັນ​ເທີງ</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>ຊອງຈົດໝາຍ</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>ຍົກເວັ້ນ:</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>ຈະແຈ້ງ</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>ໃບໜ້າ</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>ເທັດ</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>ເພດຍິງ</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>ດີ</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>ທຳອິດ:</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>ພະຈັນເຄິງສ້ຽວ</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>ແນ່ນອນ</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>ແປວໄຟ</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>ຟຸດ</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>ສໍາຫຼັບ:</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>ນ້ຳພຸ</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>ຝຣັ່ງ</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>ວັນສຸກ</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>ຈາກ</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>ສວນ</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>ແຂ້ວ​ເຟືອງ</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>ເພດ</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>ທົ່ວໄປ</value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>ລະດັບອາຍຸ</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>ເຢຍລະມັນ</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>ສີຄຳ</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>ດີ</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>ການເນັ້ນສຽງເກຣຟ</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>ບຣິດເທັນໃຫຍ່</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>ເຄື່ອງໝາຍຫຼາຍກວ່າ</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>ກຸ່ມ:	</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>ກຸ່ມ</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>ມື</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>ເກີ</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>ເຊື່ອງໄວ້</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>ຮີນ:</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>ຊົ່ວໂມງ</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>ເພງແນວຮາວສ</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>ໃນ</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>ບໍ່ສົມບູນ</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>ດັດຊະນີ:</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>ອິນເດຍ</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>ອິນໂດເນເຊຍ</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>ອີຣັກ</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>ອິດສະລາແອນ</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>ເຂົ້າຮ່ວມ</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>ຈໍແດນ</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>ເຄັນຢາ</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>ແປ້ນພິມ</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>ກູເວດ</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>ລ່າສຸດ</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>ພະຈັນເຄິ່ງສຽວ</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>ອອກໄປ</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>ເລບານອນ</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>ເບື້ອງຊ້າຍ</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>ຫ້ອງສະມຸດ</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>ແຈ້ງ</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>ຍາວ</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>ເພດຊາຍ</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>ສາລະ</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>ເມັກກະ</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>ເມດີນາ</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>ປະ​ຊຸມ</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>ນາທີ</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>ເດືອນ</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>ບັນດາເດືອນ</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>ດວງຈັນ</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>ມໍຣັອກໂຄ</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>ຊື່</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>ບັນດາຊື່</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>​ເປັນກາງ</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>ໃໝ່</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>ຂ່າວ</value>
+  </data>
+  <data name="IslamInfo_Night" xml:space="preserve">
+    <value>ກາງຄືນ</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Not</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>ຫ້ອງການ</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>ໜຶ່ງ</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>ກຳລັງເປີດ</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>ຫຼື</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>ອໍເຟິນ</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>ອື່ນໆ </value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>ໜ້າ</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>ໜ້າເຈ້ຍ</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>ປາກິດສະຖານ</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>ເມັດນ້ອຍໆ</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>ຫຸ້ນສ່ວນ</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>ຄູ່ຮ່ວມງານ:</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>ກຸ່ມ</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>ບໍ່ໃຊ້ງານຢູ່</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>ເສັ້ນທາງໄປສູ່ຍ່າງຕາມ</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>ສັນຕິພາບ</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>ປາກກາ:</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>ສໍດໍາ</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>ຜູ້ຄົນ</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>ການອະນຸຍາດ</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>ຟິລິບປິນ</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>ສະຖານທີ່</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>ສະຖານທີ່</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>ລົງຈຸດ</value>
+  </data>
+  <data name="IslamInfo_PrayTime5" xml:space="preserve">
+    <value>ກາງຄືນ</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>ຕາເວັນຂຶ້ນ</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>ຄຳນຳໜ້າ</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>ເຄື່ອງໝາຍພຣາຍ</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>ພາກສວ່ນ</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>ການປ້ອງກັນ</value>
+  </data>
+  <data name="IslamInfo_Pure" xml:space="preserve">
+    <value>ບໍລິສຸດ</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>​ໄຕ​ມາດ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>ວັນສຸກ</value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>ຊັດສ່ວນ</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>ການອ່ານ</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>ຄຳແນະນຳ</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>ຄວາມຕ້ອງການ</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>ການຕອບສະໜອງ</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>ຂວາ</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>ເຄື່ອງໝາຍວົງຢືມດ່ຽວເບື້ອງຂວາ</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>ຄວາມ​ປອດ​ໄພ</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>ຊາອຸດິອາຣາເບຍ</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>ມາດຕາສ່ວນ:</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>ໂຮງຮຽນ</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>ວິນາທີ</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>ອັດສະລິຍະ;Sense</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>Shamrock</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>ສັ້ນ</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>ເຊັນ</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>ສີເງີນ</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>ສະກີນ</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>ສໍຂາວ:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>ສຽງໂຊນ</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>ສຽງ</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>ຍະຫວ່າງ</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>ສັ່ງງານດ້ວຍສຽງ</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>ສີລັງກາ</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>ສະຖານີ</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>ກຳລັງຢຸດ...</value>
+  </data>
+  <data name="IslamInfo_Stopwatch" xml:space="preserve">
+    <value>ໂມງຈັບເວລາ</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>ຊູດານ</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>ຫ້ອຍທ້າຍ</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>ຄຳແນະນຳ</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>ທິດ</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>ຕາເວັນຂຶ້ນ</value>
+  </data>
+  <data name="IslamInfo_Symmetry" xml:space="preserve">
+    <value>ຄວາມເຄິ່ງຄື</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>ຕາຕະລາງ</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>ສູງ</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>ຂໍ້​ຄວາມ</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_Then" xml:space="preserve">
+    <value>ຈາກນັ້ນ</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>ທຳອິດ:</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>ວິນາທີ</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>ເວລາ:</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>ນ້ອຍຫຼາຍ</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>ມື້​ນີ້</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>ສຳພັດ</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>ເມືອງ</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>ເມືອງ/ຕົວເມືອງ</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>ການ​ເດີນ​ທາງ</value>
+  </data>
+  <data name="IslamInfo_Tribe" xml:space="preserve">
+    <value>ຊົນເຜົ່າ</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>ຖືກ</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>ຕູນີເຊຍ</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>ບໍ່ຮູ້ຈັກ</value>
+  </data>
+  <data name="IslamInfo_Until" xml:space="preserve">
+    <value>ຈົນກະທັ້ງ: </value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>ສຽງ</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>ນ້ຳ</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>ອ່ອນ</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>ອາທິດ</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>ເມື່ອໃດ</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>ຢູ່ໃສ:</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>ເປັນຫຍັງ?</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>ຄຳ​ເວົ້າ</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>ຄຳສັບ:</value>
+  </data>
+  <data name="IslamInfo_World" xml:space="preserve">
+    <value>ໂລກ</value>
+  </data>
+  <data name="IslamInfo_Xor" xml:space="preserve">
+    <value>Xor</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>ປີ:</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>ແມ່ນ</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>ທ່ານ</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>ເພີ່ມ</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>ນໍາໃຊ້</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>ປຶ້ມ</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>ຄັງ​ສະ​ສົມ</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>ວັນທີ</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>ອົງສາ</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>ວັດຈະນານຸກົມ</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>ທິດທາງ</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>ປິດໃຊ້ງານ</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>ສະແດງຜົນ</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>ພະແນກ</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>ຟອນ</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>ຈຸດເລີ່ມຕົ້ນ</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>ຂໍ້ມູນຂ່າວສານ</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>ລາຍການ</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>ກຳລັງໂຫຼດ</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>ນາທີ</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>ບໍ່ແມ່ນ</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>ປິດ</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>ຕັ້ງຄ່າການປິດ</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>ການດຳເນີນງານ</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>ພິມ</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>ເຄື່ອງໝາຍວົງຢືມ</value>
+  </data>
+  <data name="IslamSource_Radians" xml:space="preserve">
+    <value>ຣາ​ດ່ຽງ</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>ເອົາອອກ</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>ແບບແຜນ</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>ວິນາທີ</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>ການເລືອກ</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>ຂໍ້​ຄວາມ</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>ຫົວໜ່ວຍ</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>ແມ່ນ</value>
+  </data>
+  <data name="IslamInfo_Basra" xml:space="preserve">
+    <value>ບາສຣາ</value>
+  </data>
+  <data name="IslamInfo_Baghdad" xml:space="preserve">
+    <value>ບາແດດ</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>ຂອງບໍ່ມີຄ່າ</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>ບໍ່ດີ</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>ໂປຣແກຣມຄວບຄຸມ</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>ສຳເລັດສົມບູນ</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>ຄວາມຕ້ອງການ</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>ກຳລັງເລີ້ມ</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>ກົກເຄົ້າ</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>ຜົນຮັບ</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>ໃຊ້ງານຢູ່</value>
+  </data>
 </root>

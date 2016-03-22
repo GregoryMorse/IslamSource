@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>ଆକାର:</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;ବୁକମାର୍କ ଯୋଡନ୍ତୁ</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;ବୁକ୍‌ମାର୍କ</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>କ୍ଲିପ୍ ବୋର୍ଡକୁ କପି କରନ୍ତୁ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ବିରାମ</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>ଚାଳନ</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>ଅଂଶ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ବିଷୟରେ</value>
+  </data>
 </root>

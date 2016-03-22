@@ -12,11 +12,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Conta activada correctamente.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Conta xa activado.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Conta excluída correctamente.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Non conta activada por favor, comprobe o seu correo electrónico primeiro ou solicitar un código de activación adicional.</value>
+  </data>
   <data name="Acct_ActivateAccount" xml:space="preserve">
     <value>"Activar conta"</value>
   </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Este enderezo de correo-e está solicitando a activación da conta {0}: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Activación para conta en {0}</value>
+  </data>
   <data name="Acct_ActivationCode" xml:space="preserve">
     <value>Código de activación</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Enderezo de correo electrónico non nun formato válido.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>Seguro?</value>
   </data>
   <data name="Acct_ChangeEmailAddress" xml:space="preserve">
     <value>Change E-mail Address...</value>
@@ -24,8 +48,23 @@
   <data name="Acct_ChangePassword" xml:space="preserve">
     <value>Modificar contrasinal</value>
   </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>cambiar usuario</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Activación enviado ao enderezo indicado.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>Limpeza de Stale</value>
+  </data>
   <data name="Acct_ClearCache" xml:space="preserve">
     <value>Limpar caché</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Borrar caché de disco</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Confirma Dirección de Email</value>
   </data>
   <data name="Acct_ConfirmPassword" xml:space="preserve">
     <value>Confirmar contrasinal:</value>
@@ -33,20 +72,50 @@
   <data name="Acct_ControlPanel" xml:space="preserve">
     <value>Panel de control</value>
   </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Crear base de datos</value>
+  </data>
   <data name="Acct_DeleteAccount" xml:space="preserve">
     <value>Eliminar conta</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Dot Net Versión</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Usuario con ese nome xa existe, por favor, escolla outro.</value>
   </data>
   <data name="Acct_EmailAddress" xml:space="preserve">
     <value>Enderezo de correo electrónico</value>
   </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Enderezo de correo electrónico cambiou e activación de correo enviado para reactivar conta.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>Correo-e xa está en uso por favor, faga o login co credenciais existentes.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Os enderezos de correo-e non corresponden</value>
+  </data>
   <data name="Acct_ForgotPassword" xml:space="preserve">
     <value>Esquecín o contrasinal</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Nome de usuario Esqueceu</value>
   </data>
   <data name="Acct_Home" xml:space="preserve">
     <value>Inicio</value>
   </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>código de activación incorrecto.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>código de redefinición de contrasinal incorrecta.</value>
+  </data>
   <data name="Acct_InvalidInput" xml:space="preserve">
     <value>Entrada non válida</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>nome de usuario ou contrasinal incorrecto.</value>
   </data>
   <data name="Acct_Login" xml:space="preserve">
     <value>Iniciar sesión</value>
@@ -57,11 +126,53 @@
   <data name="Acct_Logoff" xml:space="preserve">
     <value>Logoff</value>
   </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff exitoso.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>O contrasinal debe ter polo menos 8 caracteres.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Usuario debe ter polo menos 4 caracteres.</value>
+  </data>
   <data name="Acct_No" xml:space="preserve">
     <value>Non</value>
   </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Debe confirmar a exclusión da conta.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Ningún usuario existe ao enderezo de correo-e ingresaran.</value>
+  </data>
   <data name="Acct_Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Contrasinal xa axustar ou proceso non iniciado.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Este enderezo de correo-e está a informar sobre a modificación do contrasinal da súa conta de {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Contrasinal modificada para conta en {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Contrasinal modificada con éxito.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Un correo electrónico foi enviado ao seu enderezo no arquivo para iniciar o proceso de redefinición de contrasinal.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Este enderezo de correo-e está a axustar o contrasinal da súa conta de {0}: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Código de redefinición de contrasinal</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>redefinición de contrasinal para conta en {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Redefinición de contrasinal correctamente.</value>
   </data>
   <data name="Acct_PasswordsNotMatch" xml:space="preserve">
     <value>Os contrasinais non coinciden</value>
@@ -69,26 +180,158 @@
   <data name="Acct_Register" xml:space="preserve">
     <value>REXISTRAR</value>
   </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Lembra-se?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>Eliminar Base de Datos</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Reenviar correo de Activación</value>
+  </data>
   <data name="Acct_ResetPassword" xml:space="preserve">
     <value>Restablecer contrasinal</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Solicitar un novo contrasinal</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>recuperar Nome de usuario</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Enviar código de activación</value>
   </data>
   <data name="Acct_Username" xml:space="preserve">
     <value>Nome de usuario</value>
   </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Este enderezo de correo-e está a informar do cambio de nome da conta da súa {0} conta: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Nome de usuario cambiou de conta en {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Nome de usuario cambiou correctamente.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Un correo electrónico foi enviado ao seu enderezo no arquivo co seu nome de usuario.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Este enderezo de correo-e é un recordatorio da súa conta {0}: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>recordatorio de nome de usuario para a conta en {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>O usuario non existe.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>ver caché</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>Ver caché de disco</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>vexa cabeceiras</value>
+  </data>
   <data name="Acct_Yes" xml:space="preserve">
     <value>Si</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>Dili Creative</value>
   </data>
   <data name="lang_ber" xml:space="preserve">
     <value>Tamazight</value>
   </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>български</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Creative</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>Čeština</value>
+  </data>
   <data name="lang_de" xml:space="preserve">
     <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
   </data>
   <data name="lang_en" xml:space="preserve">
     <value>Inglés</value>
   </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>bahasa Indonesia</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>bahasa Melayu</value>
+  </data>
   <data name="lang_nl" xml:space="preserve">
     <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>Polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>portugués</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>Русский язык</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>af Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Attribution</value>
   </data>
   <data name="lang_sv" xml:space="preserve">
     <value>Svenska</value>
@@ -96,8 +339,32 @@
   <data name="lang_sw" xml:space="preserve">
     <value>Suahili</value>
   </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>тоҷики</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษา ไทย</value>
+  </data>
   <data name="lang_tr" xml:space="preserve">
     <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>татарча</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
   </data>
   <data name="lang_localam" xml:space="preserve">
     <value>Amárico</value>
@@ -107,6 +374,9 @@
   </data>
   <data name="lang_localaz" xml:space="preserve">
     <value>Acerbaixano</value>
+  </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>amazic</value>
   </data>
   <data name="lang_localbg" xml:space="preserve">
     <value>Búlgaro</value>
@@ -546,8 +816,14 @@
   <data name="unicode_HyphenMinus" xml:space="preserve">
     <value>Hyphen-Minus</value>
   </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Esquerda Curly bracket</value>
+  </data>
   <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
     <value>Left-Pointing Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Esquerda Praza bracket</value>
   </data>
   <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
     <value>Ornate Left Parenthesis</value>
@@ -561,17 +837,53 @@
   <data name="unicode_RialSign" xml:space="preserve">
     <value>Rial Sign</value>
   </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>chaveta dereita</value>
+  </data>
   <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
     <value>Right-Pointing Double Angle Quotation Mark</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>paréntese dereito</value>
   </data>
   <data name="unicode_Space" xml:space="preserve">
     <value>Espazo</value>
   </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Solicitude de certificado</value>
+  </data>
   <data name="Acct_Certificate" xml:space="preserve">
     <value>Certificado</value>
   </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>instalar certificado</value>
+  </data>
   <data name="Acct_CurrentUser" xml:space="preserve">
     <value>Usuario actual</value>
+  </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Eliminar solicitude de certificado</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>activar SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>chave privada</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>As solicitudes Ver certificado</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Visualización de sitios</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Instalar certificado Intermedio</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>De esquerda a dereita embedding</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>A dereita-esquerda embedding</value>
   </data>
   <data name="unicode_LeftToRightMark" xml:space="preserve">
     <value>Left-To-Right Mark</value>

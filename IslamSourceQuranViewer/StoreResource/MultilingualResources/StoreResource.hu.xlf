@@ -177,47 +177,87 @@
         </trans-unit>
         <trans-unit id="AddBookmark.Text" translate="yes" xml:space="preserve">
           <source>Add Bookmark</source>
-          <target state="new">Add Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Könyvjelző felvétele</target>
         </trans-unit>
         <trans-unit id="Bookmarks.Text" translate="yes" xml:space="preserve">
           <source>Bookmarks</source>
-          <target state="new">Bookmarks</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Könyvjelzők</target>
         </trans-unit>
         <trans-unit id="CopyToClipboard.Text" translate="yes" xml:space="preserve">
           <source>Copy to Clipboard</source>
-          <target state="new">Copy to Clipboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Másolás a vágólapra</target>
         </trans-unit>
         <trans-unit id="GoToVerse.Label" translate="yes" xml:space="preserve">
           <source>Go to Verse</source>
-          <target state="new">Go to Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Megy a vers</target>
         </trans-unit>
         <trans-unit id="Pause.Label" translate="yes" xml:space="preserve">
           <source>Pause</source>
-          <target state="new">Pause</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Szünet</target>
         </trans-unit>
         <trans-unit id="Play.Label" translate="yes" xml:space="preserve">
           <source>Play</source>
-          <target state="new">Play</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Lejátszás</target>
         </trans-unit>
         <trans-unit id="Reciter.Text" translate="yes" xml:space="preserve">
           <source>Reciter</source>
-          <target state="new">Reciter</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Szavaló</target>
         </trans-unit>
         <trans-unit id="RemoveBookmark.Text" translate="yes" xml:space="preserve">
           <source>Remove Bookmark</source>
-          <target state="new">Remove Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Könyvjelző eltávolítása</target>
         </trans-unit>
         <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
           <source>Set Playback Verse</source>
-          <target state="new">Set Playback Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Set lejátszás vers</target>
         </trans-unit>
         <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
           <source>Show Exegesis</source>
-          <target state="new">Show Exegesis</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Térkép Exegesis</target>
         </trans-unit>
         <trans-unit id="Share.Text" translate="yes" xml:space="preserve">
           <source>Share</source>
-          <target state="new">Share</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Megosztás</target>
+        </trans-unit>
+        <trans-unit id="AdditionalVerseAdvanceDelay.Text" translate="yes" xml:space="preserve">
+          <source>Additional Verse Advance Delay</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">További vers előzetes késedelem</target>
+        </trans-unit>
+        <trans-unit id="AutomaticAdvanceVerse.Text" translate="yes" xml:space="preserve">
+          <source>Advance Verse Automatically</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">A vers automatikusan előre</target>
+        </trans-unit>
+        <trans-unit id="DelayVerseLengthBeforeAdvancing.Text" translate="yes" xml:space="preserve">
+          <source>Delay Length of Verse Before Advancing</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Késedelem hosszát vers előtt halad</target>
+        </trans-unit>
+        <trans-unit id="Looping.Text" translate="yes" xml:space="preserve">
+          <source>Looping Mode</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Körkörös lejátszás mód</target>
+        </trans-unit>
+        <trans-unit id="About.Label" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Névjegy</target>
+        </trans-unit>
+        <trans-unit id="AboutInfo.Text" translate="yes" xml:space="preserve">
+          <source>Arabic Qur'an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
+Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
+Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
+Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arab korán metaadatok és néhány audio mozgássorozatokat kivéve felsorolt jóváírt Kálmán projekt (http://tanzil.net) és az összes fordítást. 
+Magyar fordítás a Korán által Kiss Zsuzsanna Halima jóváírásra Magyar Iszlam (http://magyariszlam.hu). 
+Angol fordítás liberalizálják által Maulana Muhammad Ali jóváírni a Lahore Ahmadiyya mozgalom az iszlám (http://www.aaiil.org). 
+Morfológiai adatok és angol szó szerint fordításban hitel korán Arab Corpus (http://corpus.quran.com). 
+Fordítás szóra hitel belefér Indonézia (http://www.alquran-indonesia.com/web/quran). 
+Ágnes Judit fordításában Urdu szó szerint jóváírásra könnyű korán Wa Hoang Zoli (http://www.easyquranwahadees.com). 
+Más szó szerint fordítások, valamint egyéb fordítások a program Microsoft fordítási szolgáltató (http://www.microsoft.com/en-us/translator) és a Google Translate (http://translate.google.com), és nem lehet pontos.  Maláj szó szerint korán a forrás az indonéz.  Az összes többi szó szerint korán a forrás az angol korán Arab Corpus. 
+Más audio mozgássorozatokat bitráta jelenik meg a jóváírt minden hindu dajka (http://www.everyayah.com). 
+Unicode-adatokat jóváírásra az Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

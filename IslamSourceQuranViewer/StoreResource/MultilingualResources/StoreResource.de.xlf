@@ -177,47 +177,87 @@
         </trans-unit>
         <trans-unit id="AddBookmark.Text" translate="yes" xml:space="preserve">
           <source>Add Bookmark</source>
-          <target state="new">Add Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bookmark hinzufügen</target>
         </trans-unit>
         <trans-unit id="Bookmarks.Text" translate="yes" xml:space="preserve">
           <source>Bookmarks</source>
-          <target state="new">Bookmarks</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Textmarken</target>
         </trans-unit>
         <trans-unit id="CopyToClipboard.Text" translate="yes" xml:space="preserve">
           <source>Copy to Clipboard</source>
-          <target state="new">Copy to Clipboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">In Zwischenablage kopieren</target>
         </trans-unit>
         <trans-unit id="GoToVerse.Label" translate="yes" xml:space="preserve">
           <source>Go to Verse</source>
-          <target state="new">Go to Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Gehen Sie zu Vers</target>
         </trans-unit>
         <trans-unit id="Pause.Label" translate="yes" xml:space="preserve">
           <source>Pause</source>
-          <target state="new">Pause</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Anhalten</target>
         </trans-unit>
         <trans-unit id="Play.Label" translate="yes" xml:space="preserve">
           <source>Play</source>
-          <target state="new">Play</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Wiedergabe</target>
         </trans-unit>
         <trans-unit id="Reciter.Text" translate="yes" xml:space="preserve">
           <source>Reciter</source>
-          <target state="new">Reciter</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Deklamator</target>
         </trans-unit>
         <trans-unit id="RemoveBookmark.Text" translate="yes" xml:space="preserve">
           <source>Remove Bookmark</source>
-          <target state="new">Remove Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Entfernen Sie Lesezeichen</target>
         </trans-unit>
         <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
           <source>Set Playback Verse</source>
-          <target state="new">Set Playback Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Set-Wiedergabe Vers</target>
         </trans-unit>
         <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
           <source>Show Exegesis</source>
-          <target state="new">Show Exegesis</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Karte-Exegese</target>
         </trans-unit>
         <trans-unit id="Share.Text" translate="yes" xml:space="preserve">
           <source>Share</source>
-          <target state="new">Share</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Freigeben</target>
+        </trans-unit>
+        <trans-unit id="AdditionalVerseAdvanceDelay.Text" translate="yes" xml:space="preserve">
+          <source>Additional Verse Advance Delay</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Zusätzliche Verse Advance Verzögerung</target>
+        </trans-unit>
+        <trans-unit id="AutomaticAdvanceVerse.Text" translate="yes" xml:space="preserve">
+          <source>Advance Verse Automatically</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vers automatisch voraus</target>
+        </trans-unit>
+        <trans-unit id="DelayVerseLengthBeforeAdvancing.Text" translate="yes" xml:space="preserve">
+          <source>Delay Length of Verse Before Advancing</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Verzögerung Länge des Verses, bevor Sie den Status</target>
+        </trans-unit>
+        <trans-unit id="Looping.Text" translate="yes" xml:space="preserve">
+          <source>Looping Mode</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Schleifen-Modus</target>
+        </trans-unit>
+        <trans-unit id="About.Label" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Info</target>
+        </trans-unit>
+        <trans-unit id="AboutInfo.Text" translate="yes" xml:space="preserve">
+          <source>Arabic Qur'an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
+Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
+Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
+Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabisch Koran mit Metadaten und alle Übersetzungen und einige audio-Rezitationen außer den genannten Tanzil-Projekt (http://tanzil.net) gutgeschrieben. Ungarische Übersetzung des Koran von Kiss Zsuzsanna Halima gutgeschrieben 
+Magyar Iszlam (http://magyariszlam.hu). 
+Gutgeschrieben, englische Übersetzung des Qu'ran von Maulana Muhammad Ali der Lahore Ahmadiyya-Bewegung im Islam (http://www.aaiil.org). 
+Morphologie Daten und englische Wort-für-Wort-Übersetzung danken Quranic Arabisch Corpus (http://corpus.quran.com). 
+Indonesisch Wort für Wort Übersetzung Kredit an Al-Quran-Indonesien (http://www.alquran-indonesia.com/web/quran). 
+Urdu Wort-für-Wort-Übersetzung von Hafiz Nazar Muhammad gutgeschrieben einfach Koran Wa Hadees (http://www.easyquranwahadees.com). 
+Andere Wort-für-Wort-Übersetzungen sowie andere Übersetzungen im Programm Microsoft Übersetzungsanbieter (http://www.microsoft.com/en-us/translator) und Google Translate (http://translate.google.com) gutgeschrieben und kann nicht genau.  Für malaysische Wort für Wort Qur ' an ist die indonesische.  Für alle anderen Wort-für-Wort-Koran ist die Quelle des englischen Quranic Arabisch Korpus. 
+Andere audio Rezitationen mit Bitrate angezeigt gutgeschrieben Every Ayah (http://www.everyayah.com). 
+Unicode-Daten auf das Unicode Consortium (http://www.unicode.org) gutgeschrieben</target>
         </trans-unit>
       </group>
     </body>

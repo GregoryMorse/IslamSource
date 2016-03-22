@@ -4580,7 +4580,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook17" translate="yes" xml:space="preserve">
           <source>Prostration During Recital of Qur'an</source>
-          <target state="new">Prostration During Recital of Qur'an</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قرآن کی قرائت کے دوران سجدہ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook18" translate="yes" xml:space="preserve">
           <source>Shortening the Prayers (At-Taqseer)</source>
@@ -4592,7 +4592,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook1Chapter1" translate="yes" xml:space="preserve">
           <source>{How the Divine Inspiration started to be revealed to Allah's Messenger (SAWS).  And the Statement of Allah (ta'ala): "Verily, We have inspired you (O Muhammad (SAWS)) as We inspired Nuh (Noah) and the Prophets after him."}4.163</source>
-          <target state="new">{How the Divine Inspiration started to be revealed to Allah's Messenger (SAWS).  And the Statement of Allah (ta'ala): "Verily, We have inspired you (O Muhammad (SAWS)) as We inspired Nuh (Noah) and the Prophets after him."}4.163</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">{گانے وحی رسول اللہ صلی اللہ (ص) پر نازل کیا جا کرنے کے لئے شروع کر دیا.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2" translate="yes" xml:space="preserve">
           <source>Belief</source>
@@ -4640,7 +4640,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter1" translate="yes" xml:space="preserve">
           <source>The statement of the Prophet (SAWS): 'Islam is based on five principles.'</source>
-          <target state="new">The statement of the Prophet (SAWS): 'Islam is based on five principles.'</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رسول اللہ (ص) کا بیان: 'اسلام کے پانچ اصولوں پر مبنی ہے.'</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter10" translate="yes" xml:space="preserve">
           <source>To love the Ansar is a sign of faith.</source>
@@ -4656,7 +4656,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter13" translate="yes" xml:space="preserve">
           <source>The statement of the Prophet (SAWS): 'I know Allah (azza wa jal) better than all of you do'.</source>
-          <target state="new">The statement of the Prophet (SAWS): 'I know Allah (azza wa jal) better than all of you do'.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رسول اللہ (ص) کا بیان: 'میں اللہ (Azza و جل) معلوم ہے کہ تم میں سے سب سے بہتر کر'.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter14" translate="yes" xml:space="preserve">
           <source>Whoever hates to revert to Kufr.</source>
@@ -4692,7 +4692,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter21" translate="yes" xml:space="preserve">
           <source>To be ungrateful to one's husband.  And disbelief is of different grades.</source>
-          <target state="new">To be ungrateful to one's husband.  And disbelief is of different grades.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کسی کے شوہر سے کفر کریں.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter22" translate="yes" xml:space="preserve">
           <source>Sins are from ignorance and a sinner is not a disbeliever unless he worships others along with Allah (azza wa jal).</source>
@@ -4716,7 +4716,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter27" translate="yes" xml:space="preserve">
           <source>Al-Jihad (holy war - fighting in Allah's cause) is a part of faith.</source>
-          <target state="new">Al-Jihad (holy war - fighting in Allah's cause) is a part of faith.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">الجہاد (مقدس جنگ - اللہ کی راہ میں لڑنے والے) ایمان کا ایک حصہ ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter28" translate="yes" xml:space="preserve">
           <source>It is a part of faith to establish the (Nawafil - voluntary) prayers during the nights of Ramadan.</source>
@@ -4724,7 +4724,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter29" translate="yes" xml:space="preserve">
           <source>To observe Saum [fasts (according to Islamic teachings)] during the month of Ramadan (sincerely and faithfully) hoping for Allah's rewards only, is a part of faith.</source>
-          <target state="new">To observe Saum [fasts (according to Islamic teachings)] during the month of Ramadan (sincerely and faithfully) hoping for Allah's rewards only, is a part of faith.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رمضان (صدق دل اور حقیقت) صرف اللہ کی انعامات کے لئے امید کے مہینے کے دوران [(اسلامی تعلیمات کے مطابق) روزوں] روزہ مشاہدہ کرنا، ایمان کا ایک حصہ ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter3" translate="yes" xml:space="preserve">
           <source>(What is said) regarding the deeds of faith.</source>
@@ -4780,15 +4780,15 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter41" translate="yes" xml:space="preserve">
           <source>To pay Al-Khumus (one-fifth of the war booty to be given in Allah's cause) is a part of faith.</source>
-          <target state="new">To pay Al-Khumus (one-fifth of the war booty to be given in Allah's cause) is a part of faith.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">امام Khumus (مال غنیمت کا پانچواں حصہ اللہ کی راہ میں دیا جائے) ادا کرنے کو ایمان کا ایک حصہ ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter42" translate="yes" xml:space="preserve">
           <source>What is said regarding the statement: 'The reward of deeds depends upon the intention.'</source>
-          <target state="new">What is said regarding the statement: 'The reward of deeds depends upon the intention.'</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کس بات کے حوالے سے کہا جاتا ہے کہ. اعمال کا ثواب نیت پر انحصار کرتا ہے '</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter43" translate="yes" xml:space="preserve">
           <source>The statement of the Prophet (SAWS): 'Religion is An-Nasiha [(to be sincere and true) to Allah, to His Messenger, to the Muslim rulers, and to all the Muslims.]'</source>
-          <target state="new">The statement of the Prophet (SAWS): 'Religion is An-Nasiha [(to be sincere and true) to Allah, to His Messenger, to the Muslim rulers, and to all the Muslims.]'</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رسول اللہ (ص) کا بیان: 'مذہب' ایک Nasiha ہے [. اللہ کے لئے، اس کے رسول کی، مسلم حکمرانوں کیلئے، اور تمام مسلمانوں کے لئے (مخلص اور سچا ہونا)] '</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter5" translate="yes" xml:space="preserve">
           <source>Whose Islam is the best (Who is the best Muslim)?</source>
@@ -4800,7 +4800,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter7" translate="yes" xml:space="preserve">
           <source>To like for one's (Muslim's) brother what one likes for himself is a part of faith.</source>
-          <target state="new">To like for one's (Muslim's) brother what one likes for himself is a part of faith.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کسی کے (مسلمان) بھائی کے لیے پسند کرنا جو ایک اپنے لئے پسند کرتا ہے ایمان کا ایک حصہ ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter8" translate="yes" xml:space="preserve">
           <source>To love the Messenger (Muhammad) (SAWS) is a part of faith.</source>
@@ -4828,7 +4828,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook33" translate="yes" xml:space="preserve">
           <source>Retiring to a Mosque for Remembrance of Allah (I'tikaf)</source>
-          <target state="new">Retiring to a Mosque for Remembrance of Allah (I'tikaf)</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اللہ کے ذکر کے لئے ایک مسجد (اعتکاف) سبکدوش ہونے والے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook34" translate="yes" xml:space="preserve">
           <source>Sales and Trade</source>
@@ -4872,7 +4872,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter13" translate="yes" xml:space="preserve">
           <source>If Allah (azza wa jal) wants to do good to a person, He makes him comprehend the religion. [The understanding of the Qur'an and the Sunna (legal ways) of Prophet Muhammad (SAWS)].</source>
-          <target state="new">If Allah (azza wa jal) wants to do good to a person, He makes him comprehend the religion. [The understanding of the Qur'an and the Sunna (legal ways) of Prophet Muhammad (SAWS)].</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اللہ (Azza و جل) ایک شخص کو اچھا کرنا چاہتا ہے تو اسے دین سمجھ ہوتا.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter14" translate="yes" xml:space="preserve">
           <source>(The superiority of) Comprehending knowledge.</source>
@@ -4880,15 +4880,15 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter15" translate="yes" xml:space="preserve">
           <source>Wish to be like the one who has knowledge and Al-Hikmah (wisdom) [i.e. the knowledge of the Qur'an and the Sunna (legal ways) of the Prophet (SAWS)]. And 'Umar (RA) said: Everyone must acquire sound religious knowledge early before he becomes a chief. (Abu 'Abdullah said: The companions of the Prophet had studied inspite of the fact that they were old in age).</source>
-          <target state="new">Wish to be like the one who has knowledge and Al-Hikmah (wisdom) [i.e. the knowledge of the Qur'an and the Sunna (legal ways) of the Prophet (SAWS)]. And 'Umar (RA) said: Everyone must acquire sound religious knowledge early before he becomes a chief. (Abu 'Abdullah said: The companions of the Prophet had studied inspite of the fact that they were old in age).</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">علم اور امام الحکمہ (حکمت) [رہے تو وہ طرح بننا چاہتے ہیں یعنی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter16" translate="yes" xml:space="preserve">
           <source>What has been said about the journey of Prophet Musa ('alaihi as-salam) (when he went) in the sea to meet Al-Khidr.</source>
-          <target state="new">What has been said about the journey of Prophet Musa ('alaihi as-salam) (when he went) in the sea to meet Al-Khidr.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کیا حضرت موسی کے سفر کے بارے میں کہا گیا ہے ( 'alaihi و طور السلام) (وہ گیا جب) الخضر کو پورا کرنے کے سمندر میں.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter17" translate="yes" xml:space="preserve">
           <source>The statement of the Prophet (SAWS): 'O Allah! Bestow on hlm (Ibn 'Abbas) the knowledge of the Book (the Qur'an).'</source>
-          <target state="new">The statement of the Prophet (SAWS): 'O Allah! Bestow on hlm (Ibn 'Abbas) the knowledge of the Book (the Qur'an).'</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رسول اللہ (ص) کا بیان: اے اللہ!</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter18" translate="yes" xml:space="preserve">
           <source>At what age may youth be listened to (i.e. the quotation of the Hadith from a boy be acceptable).</source>
@@ -4924,11 +4924,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter25" translate="yes" xml:space="preserve">
           <source>The Prophet (saws) urged the people (mission) of 'Abdul Qais to memorize the faith and the (religious) knowledge (as he explained to them) and to inform (convey) to their people whom they left behind (at home).</source>
-          <target state="new">The Prophet (saws) urged the people (mission) of 'Abdul Qais to memorize the faith and the (religious) knowledge (as he explained to them) and to inform (convey) to their people whom they left behind (at home).</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رسول اللہ (ص) عبد قیس کے لوگ (مشن) پر زور دیا کہ ایمان اور (مذہبی) علم حفظ کرنے کی (اس نے ان سے وضاحت کے طور پر) اور (تبلیغ) ان لوگوں سے جن کو وہ (گھر میں) پیچھے چھوڑ کرنے کے لئے کو مطلع کرنا.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter26" translate="yes" xml:space="preserve">
           <source>To travel seeking an answer to a problematic matter, and to teach it to one's family.</source>
-          <target state="new">To travel seeking an answer to a problematic matter, and to teach it to one's family.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایک پریشانی معاملے کا جواب تلاش کر رہا سفر کرنے، اور ایک کے خاندان کو یہ سکھانے کے لئے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter27" translate="yes" xml:space="preserve">
           <source>To fix the duties in rotation for learning (religious) knowledge.</source>
@@ -4948,7 +4948,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter30" translate="yes" xml:space="preserve">
           <source>Repeating one's talk thrice in order to make others understand.</source>
-          <target state="new">Repeating one's talk thrice in order to make others understand.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">دوسروں کو سمجھانے کی غرض سے تین مرتبہ ایک ہی بات بار بار.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter31" translate="yes" xml:space="preserve">
           <source>A man teaching (religion to) his woman-slave and his family.</source>
@@ -4976,7 +4976,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter37" translate="yes" xml:space="preserve">
           <source>It is incumbent on those who are present [in a religious meeting (or conference)] to convey the knowledge to those who are absent. (This statement has come from the Prophet (SAWS) upon the authority of Ibn 'Abbas).</source>
-          <target state="new">It is incumbent on those who are present [in a religious meeting (or conference)] to convey the knowledge to those who are absent. (This statement has come from the Prophet (SAWS) upon the authority of Ibn 'Abbas).</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اس سے غیر حاضر ہیں وہ لوگ جو کرنے کے لئے علم کی تبلیغ کے لئے موجود [ایک مذہبی اجلاس (یا کانفرنس)] ہیں جو ان لوگوں پر فرض ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter38" translate="yes" xml:space="preserve">
           <source>The sin of a person who tells a lie against the Prophet (SAWS).</source>
@@ -5036,7 +5036,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter50" translate="yes" xml:space="preserve">
           <source>(What is said as regards:-) To be shy (Al-Haya') while learning (religious knowledge).</source>
-          <target state="new">(What is said as regards:-) To be shy (Al-Haya') while learning (religious knowledge).</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">(تمنائیں (مذہبی علم) سیکھنے جبکہ :-) (امام سے Haya ') شرماو کرنے کے طور پر کیا کہا جاتا ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter51" translate="yes" xml:space="preserve">
           <source>Whosoever felt shy (to ask something) and then requested another person to ask on his behalf.</source>
@@ -5064,7 +5064,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter9" translate="yes" xml:space="preserve">
           <source>The statement of the Prophet (SAWS): 'It is probable that a person who receives a piece of information indirectly may comprehend it better than he who has heard it directly from its source.'</source>
-          <target state="new">The statement of the Prophet (SAWS): 'It is probable that a person who receives a piece of information indirectly may comprehend it better than he who has heard it directly from its source.'</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رسول اللہ (ص) کا بیان: 'یہ ممکنہ کسی شخص معلومات کا ایک ٹکڑا حاصل کرتا ہے جو بالواسطہ طور پر اس سے کہ وہ کون اس کے ذریعہ سے براہ راست سنا ہے بہتر سمجھ سکتا ہے.'</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook4" translate="yes" xml:space="preserve">
           <source>Ablutions (Wudu')</source>
@@ -5180,11 +5180,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook65" translate="yes" xml:space="preserve">
           <source>Prophetic Commentary on the Qur'an (Tafseer of the Prophet (pbuh))</source>
-          <target state="new">Prophetic Commentary on the Qur'an (Tafseer of the Prophet (pbuh))</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قرآن نبوی شروحات (نبی کی تفسیر (ص))</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook66" translate="yes" xml:space="preserve">
           <source>Virtues of the Qur'an</source>
-          <target state="new">Virtues of the Qur'an</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قرآن کے فضائل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook67" translate="yes" xml:space="preserve">
           <source>Wedlock, Marriage (Nikaah)</source>
@@ -5268,7 +5268,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook85" translate="yes" xml:space="preserve">
           <source>Laws of Inheritance (Al-Faraa'id)</source>
-          <target state="new">Laws of Inheritance (Al-Faraa'id)</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">وراثت کے قوانین (امام Faraa'id)</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook86" translate="yes" xml:space="preserve">
           <source>Limits and Punishments set by Allah (Hudood)</source>
@@ -5320,7 +5320,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook97" translate="yes" xml:space="preserve">
           <source>Holding Fast to the Qur'an and Sunnah</source>
-          <target state="new">Holding Fast to the Qur'an and Sunnah</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قرآن اور سنت کے روزہ کے انعقاد</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook98" translate="yes" xml:space="preserve">
           <source>Oneness, Uniqueness of Allah (Tawheed)</source>
@@ -13984,7 +13984,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_IhramPrayerSupplication" translate="yes" xml:space="preserve">
           <source>In the name of Allah, the Most Gracious, the Most Merciful! Allah is the greatest, Allah is the greatest, Allah is the greatest, how perfect He is, The One Who has placed this (transport) at our service, and we ourselves would not have been capable of that, and of our Lord is our final destiny. O Allah we ask You for birr and taqwaa(comprehensive terms referring to all good actions and obedience) in this journey of ours, and we ask you for deeds which please You. O Allah, facilitate our journey and let us cover it's distance quickly. O Allah, You are the Companion on the journey and The Successor over the family, O Allah, I take refuge with you from the difficulties of travel, from having a change of hearts and being in a bad predicament, and I take refuge in You from an ill fated out come with wealth and family.</source>
-          <target state="new">In the name of Allah, the Most Gracious, the Most Merciful! Allah is the greatest, Allah is the greatest, Allah is the greatest, how perfect He is, The One Who has placed this (transport) at our service, and we ourselves would not have been capable of that, and of our Lord is our final destiny. O Allah we ask You for birr and taqwaa(comprehensive terms referring to all good actions and obedience) in this journey of ours, and we ask you for deeds which please You. O Allah, facilitate our journey and let us cover it's distance quickly. O Allah, You are the Companion on the journey and The Successor over the family, O Allah, I take refuge with you from the difficulties of travel, from having a change of hearts and being in a bad predicament, and I take refuge in You from an ill fated out come with wealth and family.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اللہ، رحمن اور رحیم کے نام پر!</target>
         </trans-unit>
         <trans-unit id="IslamInfo_IhramPrayerSupplicationLabel" translate="yes" xml:space="preserve">
           <source>Ihram Prayer Supplication</source>
@@ -14468,7 +14468,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_InTheEvening1" translate="yes" xml:space="preserve">
           <source>We have ended a new day and with it all dominion is Allah's.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the good things of this night and of the nights that come after it, and I seek refuge in You from the evil of this night and of the nights that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.</source>
-          <target state="new">We have ended a new day and with it all dominion is Allah's.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the good things of this night and of the nights that come after it, and I seek refuge in You from the evil of this night and of the nights that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ہم نے ایک نئے دن ختم ہو گئے اور اس کے ساتھ تمام بادشاہی خدا ہی کا ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_InTheEvening1Label" translate="yes" xml:space="preserve">
           <source>In The Evening</source>
@@ -14544,7 +14544,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_InTheMorning1" translate="yes" xml:space="preserve">
           <source>We have entered a new day and with it all dominion is Allah's.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.</source>
-          <target state="new">We have entered a new day and with it all dominion is Allah's.  Praise is to Allah.  None has the right to be worshipped but Allah alone, Who has no partner.  To Allah belongs the dominion, and to Him is the praise and He is Able to do all things.  My Lord, I ask You for the goodness of this day and of the days that come after it, and I seek refuge in You from the evil of this day and of the days that come after it.  My lord, I seek refuge in You from laziness and helpless old age.  My Lord, I seek refuge in You from the punishment of Hell-fire, and from the punishment of the grave.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ہم نے ایک نئے دن میں داخل کیا ہے اور اس کے ساتھ تمام بادشاہی خدا ہی کا ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_InTheMorning1Label" translate="yes" xml:space="preserve">
           <source>In The Morning</source>
@@ -18112,7 +18112,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_MalikMuwatta" translate="yes" xml:space="preserve">
           <source>Malik's Muwatta</source>
-          <target state="new">Malik's Muwatta</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">رحمان ملک کا موطا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MalteseCross" translate="yes" xml:space="preserve">
           <source>Maltese Cross</source>
@@ -19628,7 +19628,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_muslimBook15" translate="yes" xml:space="preserve">
           <source>The Book of I'tikaf</source>
-          <target state="new">The Book of I'tikaf</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اعتکاف کا بیان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_muslimBook16" translate="yes" xml:space="preserve">
           <source>The Book of Pilgrimage</source>
@@ -26848,7 +26848,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_SunanNasai" translate="yes" xml:space="preserve">
           <source>Sunan an-Nasa'i Al-Sughra</source>
-          <target state="new">Sunan an-Nasa'i Al-Sughra</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نسائی اور امام صغری سنن</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SunanTirmidhi" translate="yes" xml:space="preserve">
           <source>Sunan al-Tirmidhi</source>
@@ -32608,7 +32608,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_WhenWakingUp2" translate="yes" xml:space="preserve">
           <source>There is none worthy of worship but Allah alone, Who has no partner.  His is the dominion and to Him belongs all praise, and He is Able to do all things.  Glory is to Allah.  Praise is to Allah.  There is none worthy of worship but Allah.  Allah is the Most Great.  There is no might and no power except by Allah's leave, the Exalted, the Mighty.  My Lord, forgive me.</source>
-          <target state="new">There is none worthy of worship but Allah alone, Who has no partner.  His is the dominion and to Him belongs all praise, and He is Able to do all things.  Glory is to Allah.  Praise is to Allah.  There is none worthy of worship but Allah.  Allah is the Most Great.  There is no might and no power except by Allah's leave, the Exalted, the Mighty.  My Lord, forgive me.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کوئی بھی عبادت کے لائق مگر اللہ اکیلے، کوئی شریک نہیں ہے نہیں ہے.</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WhenWakingUp2Label" translate="yes" xml:space="preserve">
           <source>When Waking Up 2</source>
@@ -33752,7 +33752,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Bigger" translate="yes" xml:space="preserve">
           <source>+</source>
-          <target state="new">+</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">+</target>
         </trans-unit>
         <trans-unit id="IslamSource_Book" translate="yes" xml:space="preserve">
           <source>Book</source>
@@ -33952,7 +33952,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_IslamicWebsitesAllahsQuran" translate="yes" xml:space="preserve">
           <source>Allah's Quran</source>
-          <target state="new">Allah's Quran</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">اللہ کا قرآن</target>
         </trans-unit>
         <trans-unit id="IslamSource_IslamicWebsitesCorpus" translate="yes" xml:space="preserve">
           <source>Quranic Arabic Corpus</source>
@@ -36528,479 +36528,719 @@
         </trans-unit>
         <trans-unit id="IslamInfo_AngleWithSInside" translate="yes" xml:space="preserve">
           <source>Angle With S  Inside</source>
-          <target state="new">Angle With S  Inside</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">S اندر کے ساتھ زاویہ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterBehWithInvertedSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Beh With Inverted Small V  Below</source>
-          <target state="new">Arabic Letter Beh With Inverted Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ذیل میں الٹی چھوٹی V کے ساتھ عربی خط سے Beh</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterBehWithSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Beh With Small V  Below</source>
-          <target state="new">Arabic Letter Beh With Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ذیل چھوٹے V کے ساتھ عربی خط سے Beh</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterDalWithInvertedSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Dal With Inverted Small V  Below</source>
-          <target state="new">Arabic Letter Dal With Inverted Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ذیل میں الٹی چھوٹی V کے ساتھ عربی خط ڈل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterRehWithSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Reh With Small V  Below</source>
-          <target state="new">Arabic Letter Reh With Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ذیل چھوٹے V کے ساتھ عربی خط Reh کی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterUWithHamzaAbove" translate="yes" xml:space="preserve">
           <source>Arabic Letter U  With Hamza Above</source>
-          <target state="new">Arabic Letter U  With Hamza Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حمزہ سے اوپر کے ساتھ عربی خط U</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterZainWithInvertedVAbove" translate="yes" xml:space="preserve">
           <source>Arabic Letter Zain With Inverted V  Above</source>
-          <target state="new">Arabic Letter Zain With Inverted V  Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">الٹی V سے اوپر کے ساتھ عربی خط زین</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicVowelSignInvertedSmallVAbove" translate="yes" xml:space="preserve">
           <source>Arabic Vowel Sign Inverted Small V  Above</source>
-          <target state="new">Arabic Vowel Sign Inverted Small V  Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">عربی حرف علت سائن الٹی چھوٹے وی کے اوپر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicVowelSignSmallVAbove" translate="yes" xml:space="preserve">
           <source>Arabic Vowel Sign Small V  Above</source>
-          <target state="new">Arabic Vowel Sign Small V  Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">عربی حرف علت سائن چھوٹے وی کے اوپر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BatakVowelSignUForSimalungunSa" translate="yes" xml:space="preserve">
           <source>Batak Vowel Sign U  For Simalungun Sa</source>
-          <target state="new">Batak Vowel Sign U  For Simalungun Sa</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Simalungun سا کے Batak حرف علت کیجئے U</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterAWithDiaeresis" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter A  With Diaeresis</source>
-          <target state="new">Combining Latin Small Letter A  With Diaeresis</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈایاریسس ساتھ لاطینی چھوٹے خط کا امتزاج</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterCCedilla" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter C  Cedilla</source>
-          <target state="new">Combining Latin Small Letter C  Cedilla</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">لاطینی چھوٹے خط سی سڈلا کا امتزاج</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterFlattenedOpenAAbove" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter Flattened Open A  Above</source>
-          <target state="new">Combining Latin Small Letter Flattened Open A  Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">لاطینی چھوٹے خط چپٹی کھلا ایک سے بڑھ کر میں جمع کرنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterLWithDoubleMiddleTilde" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter L  With Double Middle Tilde</source>
-          <target state="new">Combining Latin Small Letter L  With Double Middle Tilde</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈبل مشرق ٹلڈا ساتھ لاطینی چھوٹے خط L کا امتزاج</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterOWithDiaeresis" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter O  With Diaeresis</source>
-          <target state="new">Combining Latin Small Letter O  With Diaeresis</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈایاریسس ساتھ لاطینی چھوٹے خط O میں جمع کرنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterOWithLightCentralizationStroke" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter O  With Light Centralization Stroke</source>
-          <target state="new">Combining Latin Small Letter O  With Light Centralization Stroke</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">روشنی مرکزیت سٹروک کے ساتھ لاطینی چھوٹے خط O میں جمع کرنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterRBelow" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter R  Below</source>
-          <target state="new">Combining Latin Small Letter R  Below</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">لاطینی چھوٹے خط R ذیل میں جمع کرنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterRRotunda" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter R  Rotunda</source>
-          <target state="new">Combining Latin Small Letter R  Rotunda</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">لاطینی چھوٹے خط R روٹنڈا کا امتزاج</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterUWithDiaeresis" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter U  With Diaeresis</source>
-          <target state="new">Combining Latin Small Letter U  With Diaeresis</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈایاریسس ساتھ لاطینی چھوٹے خط U میں جمع کرنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterUWithLightCentralizationStroke" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter U  With Light Centralization Stroke</source>
-          <target state="new">Combining Latin Small Letter U  With Light Centralization Stroke</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">روشنی مرکزیت سٹروک کے ساتھ لاطینی چھوٹے خط U میں جمع کرنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningXAbove" translate="yes" xml:space="preserve">
           <source>Combining X  Above</source>
-          <target state="new">Combining X  Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">X بڑھ امتزاج کر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningXBelow" translate="yes" xml:space="preserve">
           <source>Combining X  Below</source>
-          <target state="new">Combining X  Below</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ذیل میں جمع کرنا X</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningX-XBelow" translate="yes" xml:space="preserve">
           <source>Combining X- X  Below</source>
-          <target state="new">Combining X- X  Below</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">X- X ذیل میں جمع کرنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleHighReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double High Reversed9  Quotation Mark</source>
-          <target state="new">Double High Reversed9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈبل اعلی Reversed9 علامت اقتباس</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleLow9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double Low9  Quotation Mark</source>
-          <target state="new">Double Low9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈبل Low9 علامت اقتباس</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleLowReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double Low Reversed9  Quotation Mark</source>
-          <target state="new">Double Low Reversed9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈبل کم Reversed9 علامت اقتباس</target>
         </trans-unit>
         <trans-unit id="IslamInfo_IntegralAroundAPointOperator" translate="yes" xml:space="preserve">
           <source>Integral Around A  Point Operator</source>
-          <target state="new">Integral Around A  Point Operator</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">A پوائنٹ آپریٹر بھر انٹیگرل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LBBarSymbol" translate="yes" xml:space="preserve">
           <source>L  B  Bar Symbol</source>
-          <target state="new">L  B  Bar Symbol</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">L B بار علامت</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LeftSidewaysUBracket" translate="yes" xml:space="preserve">
           <source>Left Sideways U  Bracket</source>
-          <target state="new">Left Sideways U  Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">بائیں بازو کی جماعتوں موقع U خط وحدانی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MyanmarVowelSignEAbove" translate="yes" xml:space="preserve">
           <source>Myanmar Vowel Sign E  Above</source>
-          <target state="new">Myanmar Vowel Sign E  Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">میانمار حرف علت کیجئے E بڑھ کر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MyanmarVowelSignShanEAbove" translate="yes" xml:space="preserve">
           <source>Myanmar Vowel Sign Shan E  Above</source>
-          <target state="new">Myanmar Vowel Sign Shan E  Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">میانمار حرف علت کیجئے شان E بڑھ کر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NeitherASubsetOfNorEqualTo" translate="yes" xml:space="preserve">
           <source>Neither A  Subset Of Nor Equal To</source>
-          <target state="new">Neither A  Subset Of Nor Equal To</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نا تحتى سيٹ ہے نا ہى برابر ہے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NeitherASupersetOfNorEqualTo" translate="yes" xml:space="preserve">
           <source>Neither A  Superset Of Nor Equal To</source>
-          <target state="new">Neither A  Superset Of Nor Equal To</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نا سپر سيٹ ہے نا ہى برابر ہے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NotASubsetOf" translate="yes" xml:space="preserve">
           <source>Not A  Subset Of</source>
-          <target state="new">Not A  Subset Of</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کا تحتى سيٹ نہيں ہے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NotASupersetOf" translate="yes" xml:space="preserve">
           <source>Not A  Superset Of</source>
-          <target state="new">Not A  Superset Of</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کا سپر سيٹ نہيں ہے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ParenthesizedKoreanCharacterOHu" translate="yes" xml:space="preserve">
           <source>Parenthesized Korean Character O  Hu</source>
-          <target state="new">Parenthesized Korean Character O  Hu</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قوسین کوریا کریکٹر O ہوجن</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType1Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type1  Plastics</source>
-          <target state="new">Recycling Symbol For Type1  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type1 پلاسٹک کے لئے ری سائیکلنگ کا نشان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType2Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type2  Plastics</source>
-          <target state="new">Recycling Symbol For Type2  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">TYPE2 پلاسٹک کے لئے ری سائیکلنگ کا نشان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType3Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type3  Plastics</source>
-          <target state="new">Recycling Symbol For Type3  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type3 پلاسٹک کے لئے ری سائیکلنگ کا نشان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType4Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type4  Plastics</source>
-          <target state="new">Recycling Symbol For Type4  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type4 پلاسٹک کے لئے ری سائیکلنگ کا نشان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType5Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type5  Plastics</source>
-          <target state="new">Recycling Symbol For Type5  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type5 پلاسٹک کے لئے ری سائیکلنگ کا نشان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType6Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type6  Plastics</source>
-          <target state="new">Recycling Symbol For Type6  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type6 پلاسٹک کے لئے ری سائیکلنگ کا نشان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType7Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type7  Plastics</source>
-          <target state="new">Recycling Symbol For Type7  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type7 پلاسٹک کے لئے ری سائیکلنگ کا نشان</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RightSidewaysUBracket" translate="yes" xml:space="preserve">
           <source>Right Sideways U  Bracket</source>
-          <target state="new">Right Sideways U  Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">صحیح موقع U خط وحدانی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SInTriangle" translate="yes" xml:space="preserve">
           <source>S  In Triangle</source>
-          <target state="new">S  In Triangle</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایس مثلث</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SingleHighReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Single High Reversed9  Quotation Mark</source>
-          <target state="new">Single High Reversed9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایک اعلی Reversed9 علامت اقتباس</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SingleLow9QuotationMark" translate="yes" xml:space="preserve">
           <source>Single Low9  Quotation Mark</source>
-          <target state="new">Single Low9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سنگل Low9 علامت اقتباس</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SquareAOverM" translate="yes" xml:space="preserve">
           <source>Square A  Over M</source>
-          <target state="new">Square A  Over M</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چوک A میٹر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SquareVOverM" translate="yes" xml:space="preserve">
           <source>Square V  Over M</source>
-          <target state="new">Square V  Over M</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چوک V میٹر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDBottomLightedRightwardsArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Bottom Lighted Rightwards Arrowhead</source>
-          <target state="new">Three D  Bottom Lighted Rightwards Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تین D پایان روشن دائیں نوک تیر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDLeftLightedDownwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Left Lighted Downwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Left Lighted Downwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تین D بائیں روشن نیچی Equilateral نوک تیر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDRightLightedUpwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Right Lighted Upwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Right Lighted Upwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تین D حق روشن اوپر Equilateral نوک تیر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDTopLightedLeftwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Top Lighted Leftwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Top Lighted Leftwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تین D اوپر روشن بائیں طرف Equilateral نوک تیر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDTopLightedRightwardsArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Top Lighted Rightwards Arrowhead</source>
-          <target state="new">Three D  Top Lighted Rightwards Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تین D اوپر روشن دائیں نوک تیر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDTopLightedRightwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Top Lighted Rightwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Top Lighted Rightwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تین D اوپر روشن دائیں Equilateral نوک تیر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_UpArrowheadInARectangleBox" translate="yes" xml:space="preserve">
           <source>Up Arrowhead In A  Rectangle Box</source>
-          <target state="new">Up Arrowhead In A  Rectangle Box</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایک مستطیل کے خانے میں نوک تیر اوپر</target>
         </trans-unit>
         <trans-unit id="IslamInfo_XInARectangleBox" translate="yes" xml:space="preserve">
           <source>X  In A  Rectangle Box</source>
-          <target state="new">X  In A  Rectangle Box</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایک مستطیل کے خانے میں X</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationBagMembership" translate="yes" xml:space="preserve">
           <source>Z  Notation Bag Membership</source>
-          <target state="new">Z  Notation Bag Membership</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن بیگ رکنیت</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationDomainAntirestriction" translate="yes" xml:space="preserve">
           <source>Z  Notation Domain Antirestriction</source>
-          <target state="new">Z  Notation Domain Antirestriction</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن ڈومین Antirestriction</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationLeftBindingBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Left Binding Bracket</source>
-          <target state="new">Z  Notation Left Binding Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن بائیں بائنڈنگ وحدانی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationLeftImageBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Left Image Bracket</source>
-          <target state="new">Z  Notation Left Image Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن بائیں تصویر وحدانی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRangeAntirestriction" translate="yes" xml:space="preserve">
           <source>Z  Notation Range Antirestriction</source>
-          <target state="new">Z  Notation Range Antirestriction</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن حد Antirestriction</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRelationalComposition" translate="yes" xml:space="preserve">
           <source>Z  Notation Relational Composition</source>
-          <target state="new">Z  Notation Relational Composition</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن سنبندپرک مرکب</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRightBindingBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Right Binding Bracket</source>
-          <target state="new">Z  Notation Right Binding Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن حق بائنڈنگ وحدانی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRightImageBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Right Image Bracket</source>
-          <target state="new">Z  Notation Right Image Bracket</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن صحیح تصویر وحدانی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSchemaComposition" translate="yes" xml:space="preserve">
           <source>Z  Notation Schema Composition</source>
-          <target state="new">Z  Notation Schema Composition</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن شجرہ مرکب</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSchemaPiping" translate="yes" xml:space="preserve">
           <source>Z  Notation Schema Piping</source>
-          <target state="new">Z  Notation Schema Piping</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن شجرہ پائپنگ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSchemaProjection" translate="yes" xml:space="preserve">
           <source>Z  Notation Schema Projection</source>
-          <target state="new">Z  Notation Schema Projection</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن شجرہ پروجیکشن</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSpot" translate="yes" xml:space="preserve">
           <source>Z  Notation Spot</source>
-          <target state="new">Z  Notation Spot</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن سپاٹ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationTypeColon" translate="yes" xml:space="preserve">
           <source>Z  Notation Type Colon</source>
-          <target state="new">Z  Notation Type Colon</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Z سنکیتن قسم قولون</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Root" translate="yes" xml:space="preserve">
           <source>Root</source>
-          <target state="new">Root</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">بنياد</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Lemma" translate="yes" xml:space="preserve">
           <source>Lemma</source>
-          <target state="new">Lemma</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تصادم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SpecialGroup" translate="yes" xml:space="preserve">
           <source>Special Group</source>
-          <target state="new">Special Group</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">خاص گروپ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PartOfSpeech" translate="yes" xml:space="preserve">
           <source>Part Of Speech</source>
-          <target state="new">Part Of Speech</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تقریر کا حصہ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AttachedPronoun" translate="yes" xml:space="preserve">
           <source>Attached Pronoun</source>
-          <target state="new">Attached Pronoun</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">منسلک Pronoun کی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Determiner" translate="yes" xml:space="preserve">
           <source>Determiner</source>
-          <target state="new">Determiner</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Determiner</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ByWithOrInPreposition" translate="yes" xml:space="preserve">
           <source>By With Or In Preposition</source>
-          <target state="new">By With Or In Preposition</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کے ساتھ یا پوروسرگ میں کی طرف سے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LikeOrThusPreposition" translate="yes" xml:space="preserve">
           <source>Like Or Thus Preposition</source>
-          <target state="new">Like Or Thus Preposition</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">پوروسرگ طرح یا اس طرح</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ParticleOfOathUsedAsPreposition" translate="yes" xml:space="preserve">
           <source>Particle Of Oath Used As Preposition</source>
-          <target state="new">Particle Of Oath Used As Preposition</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حلف کے ذرہ پوروسرگ کے طور پر استعمال</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleIndicatingFuture" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Indicating Future</source>
-          <target state="new">Prefixed Particle Indicating Future</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">مستقبل کا اشارہ کے prefixed پارٹیکل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CallingVocative" translate="yes" xml:space="preserve">
           <source>Calling Vocative</source>
-          <target state="new">Calling Vocative</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vocative کالنگ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PointingVocative" translate="yes" xml:space="preserve">
           <source>Pointing Vocative</source>
-          <target state="new">Pointing Vocative</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vocative طرف اشارہ کرتے ہوئے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedInterrogativeParticle" translate="yes" xml:space="preserve">
           <source>Prefixed Interrogative Particle</source>
-          <target state="new">Prefixed Interrogative Particle</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کے prefixed Interrogative پارٹیکل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedEqualizationParticle" translate="yes" xml:space="preserve">
           <source>Prefixed Equalization Particle</source>
-          <target state="new">Prefixed Equalization Particle</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کے prefixed سمکاری پارٹیکل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Resumption" translate="yes" xml:space="preserve">
           <source>Resumption</source>
-          <target state="new">Resumption</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">بحالی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Circumstantial" translate="yes" xml:space="preserve">
           <source>Circumstantial</source>
-          <target state="new">Circumstantial</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">واقعاتی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Comitative" translate="yes" xml:space="preserve">
           <source>Comitative</source>
-          <target state="new">Comitative</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Comitative</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Result" translate="yes" xml:space="preserve">
           <source>Result</source>
-          <target state="new">Result</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نتيجہ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Supplemental" translate="yes" xml:space="preserve">
           <source>Supplemental</source>
-          <target state="new">Supplemental</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تائیدی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Cause" translate="yes" xml:space="preserve">
           <source>Cause</source>
-          <target state="new">Cause</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">راہ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedPreposition" translate="yes" xml:space="preserve">
           <source>Prefixed Preposition</source>
-          <target state="new">Prefixed Preposition</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کے prefixed پوروسرگ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleIndicatingEmphasis" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Indicating Emphasis</source>
-          <target state="new">Prefixed Particle Indicating Emphasis</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کے prefixed پارٹیکل اشارہ زور</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleIndicatingPurpose" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Indicating Purpose</source>
-          <target state="new">Prefixed Particle Indicating Purpose</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کے prefixed پارٹیکل اشارہ مقصدی</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleUsedToFormImperative" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Used To Form Imperative</source>
-          <target state="new">Prefixed Particle Used To Form Imperative</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کے prefixed پارٹیکل أمر تشکیل کے لئے استعمال کیا جاتا ہے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_VocativeWordForm" translate="yes" xml:space="preserve">
           <source>Vocative Word Form</source>
-          <target state="new">Vocative Word Form</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vocative لفظ بنانے</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Emphatic" translate="yes" xml:space="preserve">
           <source>Emphatic</source>
-          <target state="new">Emphatic</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">زوردار</target>
         </trans-unit>
         <trans-unit id="IslamInfo_IndicativeMood" translate="yes" xml:space="preserve">
           <source>Indicative Mood</source>
-          <target state="new">Indicative Mood</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نشاندہی موڈ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SubjunctiveMood" translate="yes" xml:space="preserve">
           <source>Subjunctive Mood</source>
-          <target state="new">Subjunctive Mood</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سبجنکٹاوی موڈ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_JussiveMood" translate="yes" xml:space="preserve">
           <source>Jussive Mood</source>
-          <target state="new">Jussive Mood</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Jussive موڈ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Stem" translate="yes" xml:space="preserve">
           <source>Stem</source>
-          <target state="new">Stem</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تنا</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Participle" translate="yes" xml:space="preserve">
           <source>Participle</source>
-          <target state="new">Participle</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کردنت</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeOne" translate="yes" xml:space="preserve">
           <source>Type One</source>
-          <target state="new">Type One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایک قسم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeTwo" translate="yes" xml:space="preserve">
           <source>Type Two</source>
-          <target state="new">Type Two</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قسم دو</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeThree" translate="yes" xml:space="preserve">
           <source>Type Three</source>
-          <target state="new">Type Three</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قسم تین</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeFour" translate="yes" xml:space="preserve">
           <source>Type Four</source>
-          <target state="new">Type Four</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چار کی قسم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeFive" translate="yes" xml:space="preserve">
           <source>Type Five</source>
-          <target state="new">Type Five</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">پروپوزل پانچ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeSix" translate="yes" xml:space="preserve">
           <source>Type Six</source>
-          <target state="new">Type Six</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھ قسم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeSeven" translate="yes" xml:space="preserve">
           <source>Type Seven</source>
-          <target state="new">Type Seven</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سات قسم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeEight" translate="yes" xml:space="preserve">
           <source>Type Eight</source>
-          <target state="new">Type Eight</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">آٹھ قسم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeNine" translate="yes" xml:space="preserve">
           <source>Type Nine</source>
-          <target state="new">Type Nine</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نو قسم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeTen" translate="yes" xml:space="preserve">
           <source>Type Ten</source>
-          <target state="new">Type Ten</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">دس ٹائپ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeEleven" translate="yes" xml:space="preserve">
           <source>Type Eleven</source>
-          <target state="new">Type Eleven</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">قسم گیارہ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeTwelve" translate="yes" xml:space="preserve">
           <source>Type Twelve</source>
-          <target state="new">Type Twelve</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">بارہ قسم</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Active" translate="yes" xml:space="preserve">
           <source>Active</source>
-          <target state="new">Active</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">زير عمل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Perfect" translate="yes" xml:space="preserve">
           <source>Perfect</source>
-          <target state="new">Perfect</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">کامل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Imperfect" translate="yes" xml:space="preserve">
           <source>Imperfect</source>
-          <target state="new">Imperfect</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نامکمل</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Imperative" translate="yes" xml:space="preserve">
           <source>Imperative</source>
-          <target state="new">Imperative</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ضروری</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GenitiveCase" translate="yes" xml:space="preserve">
           <source>Genitive Case</source>
-          <target state="new">Genitive Case</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Genitive کیس</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Singular" translate="yes" xml:space="preserve">
           <source>Singular</source>
-          <target state="new">Singular</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Singular میں</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NumberSpelling" translate="yes" xml:space="preserve">
+          <source>Number Spelling</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نمبر ہجے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HeadingNumberSpelling" translate="yes" xml:space="preserve">
+          <source>Heading Number Spelling</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نمبر ہجے سرخی</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Stopping Endowment</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">روکنا انڈومنٹ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaStoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Stopping Endowment</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">موزوں Marbuta روکنا انڈومنٹ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaJoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Joining Continuing</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">موزوں Marbuta میں شمولیت کا تسلسل ہے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_JoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Joining Continuing</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">میں شمولیت کا تسلسل ہے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" translate="yes" xml:space="preserve">
+          <source>Standing Oblong Zero Small High Upright Rectangular Zero</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">لمبوترا زیرو چھوٹے ہائی سیدھا آئتاکار زیرو کھڑے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyCentreLowStop" translate="yes" xml:space="preserve">
+          <source>Empty Centre Low Stop</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">خالی سینٹر کم سٹاپ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RoundedHighStopWithFilledCentre" translate="yes" xml:space="preserve">
+          <source>Rounded High Stop With Filled Centre</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">مدور اعلی کے ساتھ روک بھرا سینٹر</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallNoon" translate="yes" xml:space="preserve">
+          <source>Small Noon</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھوٹے نون</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHighSeen" translate="yes" xml:space="preserve">
+          <source>Small High Seen</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھوٹے ہائی دیکھا</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallLowSeen" translate="yes" xml:space="preserve">
+          <source>Small Low Seen</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھوٹے کم دیکھا</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Sukun" translate="yes" xml:space="preserve">
+          <source>Sukun</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sukun</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyShadda" translate="yes" xml:space="preserve">
+          <source>Empty Shadda</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">خالی Shadda</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ShaddaResolve" translate="yes" xml:space="preserve">
+          <source>Shadda Resolve</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Shadda ریزالوو</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaFatha" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Fatha</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حمزہ Fatha جاری رکھتے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaKasra" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Kasra</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حمزہ سے Kasra جاری رکھتے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaDamma" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Damma</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حمزہ سے Damma جاری رکھتے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaEmpty" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Empty</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حمزہ خالی جاری رکھتے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LaamAssimilation" translate="yes" xml:space="preserve">
+          <source>Laam Assimilation</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Laam کی انظمام</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaAssimilation" translate="yes" xml:space="preserve">
+          <source>Raa Assimilation</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Raa میں انظمام</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaHeavinessOrLightness" translate="yes" xml:space="preserve">
+          <source>Raa Heaviness Or Lightness</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Raa میں لیتی یا دھیماپن</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallWaw" translate="yes" xml:space="preserve">
+          <source>Small Waw</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھوٹے سے Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallYeh" translate="yes" xml:space="preserve">
+          <source>Small Yeh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھوٹے سے Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_FathaSilentLetterSuperscriptAlef" translate="yes" xml:space="preserve">
+          <source>Fatha Silent Letter Superscript Alef</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Fatha خاموش خط سپر اسکرپٹ سے alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DipthongZeroLength" translate="yes" xml:space="preserve">
+          <source>Dipthong Zero Length</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dipthong زیرو لمبائی</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OriginalLengtheningZeroCapture" translate="yes" xml:space="preserve">
+          <source>Original Lengthening Zero Capture</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حقیقی طویل زیرو گرفتاری</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateGreatIdenticalDammaMerge" translate="yes" xml:space="preserve">
+          <source>Assimilate Great Identical Damma Merge</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">عظیم جیسی سے Damma ضم ضم</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateSmallIdenticalHaaSakinah" translate="yes" xml:space="preserve">
+          <source>Assimilate Small Identical Haa Sakinah</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھوٹے جیسی سے Haa سکینہ اہنگ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostCompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Complete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سب سے زیادہ مکمل Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Complete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">مکمل Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_IncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Incomplete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نامکمل Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostIncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Incomplete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سب سے زیادہ نامکمل Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" translate="yes" xml:space="preserve">
+          <source>Vowelless Noon Incomplete Assimilating Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vowelless نون نامکمل ضم Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_UnwrittenHelperKasra" translate="yes" xml:space="preserve">
+          <source>Unwritten Helper Kasra</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">غیر تحریر شدہ دستگیر سے Kasra</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaWawHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Waw Hamza</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سے alef Wasla سے Waw حمزہ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaAlefMaksuraHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Alef Maksura Hamza</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سے alef Wasla سے alef Maksura حمزہ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Hamza</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سے alef Wasla حمزہ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHamza" translate="yes" xml:space="preserve">
+          <source>Small Hamza</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">چھوٹے حمزہ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterHamza" translate="yes" xml:space="preserve">
+          <source>Letter Hamza</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">خط حمزہ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HamzaAbove" translate="yes" xml:space="preserve">
+          <source>Hamza Above</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حمزہ کے اوپر</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotAlef" translate="yes" xml:space="preserve">
+          <source>Not Alef</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سے alef نہیں</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddAlef" translate="yes" xml:space="preserve">
+          <source>Madd Alef</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سے Madd سے alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotWaw" translate="yes" xml:space="preserve">
+          <source>Not Waw</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نہیں سے Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotYeh" translate="yes" xml:space="preserve">
+          <source>Not Yeh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نہیں یہ ہے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddWaw" translate="yes" xml:space="preserve">
+          <source>Madd Waw</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سے Madd سے Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenWaw" translate="yes" xml:space="preserve">
+          <source>Leen Waw</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Leen سے Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongWaw" translate="yes" xml:space="preserve">
+          <source>Strong Waw</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">مضبوط سے Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddYeh" translate="yes" xml:space="preserve">
+          <source>Madd Yeh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سے Madd یہ ہے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenYeh" translate="yes" xml:space="preserve">
+          <source>Leen Yeh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Leen یہ ہے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongYeh" translate="yes" xml:space="preserve">
+          <source>Strong Yeh</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">مضبوط سے Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DivisionMarkers" translate="yes" xml:space="preserve">
+          <source>Division Markers</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڈویژن مارکر</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkers" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">پروفائل سٹاپ مارکر</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkersAtEnding" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers At Ending</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">سٹاپ مارکر پر ختم کی پروفائل</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryLightened" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Lightened</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Maddah واجب تخفیف</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryWeighted" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Weighted</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Maddah واجب بارت</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" translate="yes" xml:space="preserve">
+          <source>Connected Lengthening Essential Presented Sukun</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">مربوط طویل ضروری پیش Sukun</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SoftLengtheningLetters" translate="yes" xml:space="preserve">
+          <source>Soft Lengthening Letters</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نرم طویل خط</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterSpelling" translate="yes" xml:space="preserve">
+          <source>Letter Spelling</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">خط ہجے</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RemembranceAfterPrayer" translate="yes" xml:space="preserve">
+          <source>Remembrance After Prayer</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">نماز کے بعد نصیحت</target>
         </trans-unit>
       </group>
     </body>

@@ -12,4 +12,1807 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Pukapuka:</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Ngā Pukapuka</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Taupū</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Whakawhiti Reo</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Rōrahi</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>Runga</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Pūmau</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>Pūkete</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Tama</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>ā muri</value>
+  </data>
+  <data name="IslamInfo_Airplane" xml:space="preserve">
+    <value>Rererangi</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>Aratiria</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>Katoa</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Whakaāheitia</value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>Tata Rite ana e Rite ana rānei Ki</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>Tonu Ai</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>Punga</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Anahera</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Koki:</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>Riri</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>Wāhui</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>E whakatata ana Te Tepenga</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>E āhua Rite ana Ki</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Arapika</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Pewa</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>Tohenga</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Rawhi</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>Kakenga</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>Whetūriki</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Tohutūmahi Whetūriki</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Pātapa Ōrite KI</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Ngā Huanga:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Hoki</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Tautika</value>
+  </data>
+  <data name="IslamInfo_Because" xml:space="preserve">
+    <value>Nātemea</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>I mua:</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>Pai Ake</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>waenganui...</value>
+  </data>
+  <data name="IslamInfo_Big" xml:space="preserve">
+    <value>Nui</value>
+  </data>
+  <data name="IslamInfo_Bigger" xml:space="preserve">
+    <value>Nui Ake</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Pango</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Porohita Pango</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>Hūtu Manawa Pango</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>Tinana</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>Pukapuka:</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Koko Mauī-mā-Raro</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Koko Matau-mā-Raro</value>
+  </data>
+  <data name="IslamInfo_Bread" xml:space="preserve">
+    <value>Paraoa</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Orowaru</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Mahi ngātahi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Ngā Tāonga</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Ngā Here</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Matā</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Tohutūmahi Matā</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Hokona</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Waea</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>Kānata</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Motokā</value>
+  </data>
+  <data name="IslamInfo_Chair" xml:space="preserve">
+    <value>Tūru</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Ūpoko ! !!!!!!!!!!!!!!!!</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>Ngā Atahono</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>Haina</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Tohutūmahi Whetūriki i Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Pīhono I Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Rītaha Wehe Kua Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Tohutūmahi Ira I Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Tango Kua Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Tāpiri Kua Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Tohutūmahi Mōwhiti I Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Whakarea Kua Porowhitatia</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Tauahatanga</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Ūkui</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Tau tōpu Aratau Tākaraka</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Tau tōpu Tākaraka</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Pere Runga Porowhita weherua Whakatekaraka</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>E Kati Ana...</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>Kapua</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>Kohinga</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>Kopirua</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>Piko</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Hapori</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Kamupene</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>Hoapiri</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Kua Oti</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Here</value>
+  </data>
+  <data name="IslamInfo_Confirmed" xml:space="preserve">
+    <value>Kua whakaūkia</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Kia Ora</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Tūhono ana...</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>Kei roto hei Huingaiti Noa</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>Kei roto hei Huingaiti Noa Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>Ngā Ihirangi</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Tau tōpu Aratau</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Tārua</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>Tohu Manatārua</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>Taupokina</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Pūtake Kupiki</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Arotau Riporipo Me</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>Arotau Riporipo Rānei</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Ritenga</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Oka</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Te Rā</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>Rāwiri</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Rangi</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Rātapu</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Rāhina</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Rātū</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Rāapa</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Rāpare</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Rāmere</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Rāhoroi</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Taunoa</value>
+  </data>
+  <data name="IslamInfo_DegreeCelsius" xml:space="preserve">
+    <value>Waeine Celsius</value>
+  </data>
+  <data name="IslamInfo_DegreeFahrenheit" xml:space="preserve">
+    <value>Waeine Fahrenheit</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>Takaware:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Tukunga</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>Tēira E Ōrite Ana Ki</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Ngā Taipitopito</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>Tohu whakahua</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Tohutūmahi Taimana</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>Rerekētanga i waenga</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>Ka Āta Whiria</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Wehenga</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Tohu Whakawehe</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Rītaha Whakawehe</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Wehenga Wā</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>Kāhore I Roto hei Mema</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Kāhore e Wehea</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Kāhore E Āki</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Kāhore e Haere Whakamua</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>Kāhore E Haere Whakamua, e Ōrite rānei</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>Kāhore E Hāpono</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Kāhore e Tutuki</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>Kāhore E Angitū, e Ōrite rānei</value>
+  </data>
+  <data name="IslamInfo_Dog" xml:space="preserve">
+    <value>Kurī</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Tohutūmahi Ira</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Tāpiri Ira</value>
+  </data>
+  <data name="IslamInfo_DoubleDagger" xml:space="preserve">
+    <value>Oka Pūrua</value>
+  </data>
+  <data name="IslamInfo_DoubleIntegral" xml:space="preserve">
+    <value>Tau tōpu Taurua</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Pūtahitanga Pūrua</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Huingaiti Pūrua</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Huinganui Pūrua</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Uniana Pūrua</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>Kupu mahue Whakateraro Matau Raro</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>Tō ana</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>Moemoeā</value>
+  </data>
+  <data name="IslamInfo_Drill" xml:space="preserve">
+    <value>Wiri</value>
+  </data>
+  <data name="IslamInfo_Drink" xml:space="preserve">
+    <value>Inu</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>Papatūānuku</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>Ihipa</value>
+  </data>
+  <data name="IslamInfo_ElementOf" xml:space="preserve">
+    <value>Huanga O</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Whakarewatanga:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>—	Pīhono Em</value>
+  </data>
+  <data name="IslamInfo_EmptySet" xml:space="preserve">
+    <value>Huinga Kore</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value> 	Mokowā Em</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>Mutunga</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>–	Pīhono En</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value> 	Mokowā En</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Tāuru</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Whakangahau</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Pūhera</value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>Ōrite me Whakarara Ki</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>E ōrite ana Mā te Tautuhinga</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>Ōrite ki ka Haere Whakamua rānei</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>Ōrite ki ka Angitū rānei</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>Okotahinga:</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>Whakamārama...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Anuanu</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>Kanohi</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>Hē</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Wahine</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>Matarehu</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Ahi</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>Tuatahi</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>Koata Tuatahi</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>Uka</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>Mura</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>Rerenga</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>Putiputi</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Kai</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>Putu</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>Mā:</value>
+  </data>
+  <data name="IslamInfo_ForAll" xml:space="preserve">
+    <value>Mō Katoa</value>
+  </data>
+  <data name="IslamInfo_Forces" xml:space="preserve">
+    <value>Whakaūtia</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>Wai Hīrere</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Pūtake Tuawhā</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>Wiwi</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Rāmere</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>Mai</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Mua</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>Paraka Katoa</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>Hei te wa heke</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>Māra</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>Kia</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>Tangatatanga</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Ahuwhānui</value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>Reanga</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>E Āhua Rite ana ā-Āhuahanga Ki</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>E Āhua Rite ana ā-Āhuahanga Ki</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>Tiamana</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Kōura</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Pai</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Wahapū</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Wetereo</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Tāware</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>Tāware Nako</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>Te Hononga o Peretānia</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>Nui Ake, Ōrite Rānei Ki</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Nui Ake Ki Tua Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>Tohu Nui Ake I</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Ngā Rōpū</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Makawe</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Ringa</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>Upoko</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Manawa</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>Hunahuna</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Hint</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>Kupu mahue huapae</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>Haora</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>Whare</value>
+  </data>
+  <data name="IslamInfo_How" xml:space="preserve">
+    <value>Me pēhea?</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Ōrite pū Ki</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>MĒNĀ</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>Atahanga o Āhua Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Pānga</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>Ki roto</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Korekatoa</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Āpiti iti ake</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Taupū</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>Inia</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>Initonīhia</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>Mutunga Kore</value>
+  </data>
+  <data name="IslamInfo_Inspiration" xml:space="preserve">
+    <value>Whakaawenga</value>
+  </data>
+  <data name="IslamInfo_Integral" xml:space="preserve">
+    <value>Tau tōpū</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>Kōkuhu pānui rā</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Whakawhitinga</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Kupu Whakataki</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Kupu Whakataki</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>Tohuhā Huripoki</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Tohu Ohm i Kōarotia</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>Tohu Pātai Huripoki</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>Irāki</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>Iharaira</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Hono</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>Horano</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Kōpū-nui</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>Kenia</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>Papapātuhi...</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>Kūweiti</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>Whakamutunga</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>Koata Mutunga</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Arataki</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>Puta atu</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>Repanona</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>LEFT</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Hua Tauwehe Noa Mauī Āhua tohutohu</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>Reu Mauī</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>&amp;Pere Mauī-Matau</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Pere Pūrua Mauī-Matau</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Pere Pūngaru Mauī-Matau</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Hua Mauī Āhua tohutohu</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>Iti Ake, Ōrite Rānei Ki</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Iti Ake Ki Tua Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Ngā Reta</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>Taumata:</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Puna</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Kōmā</value>
+  </data>
+  <data name="IslamInfo_Lightning" xml:space="preserve">
+    <value>Uira</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Tepe</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>E Hono Ana</value>
+  </data>
+  <data name="IslamInfo_LogicalAnd" xml:space="preserve">
+    <value>He Arorau, Ā</value>
+  </data>
+  <data name="IslamInfo_LogicalOr" xml:space="preserve">
+    <value>He Arorau Rānei</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Roa</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Pere Mauī-Matau Roa</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Pere Pūrua Mauī-Matau Roa</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Tāne</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Tangata</value>
+  </data>
+  <data name="IslamInfo_Market" xml:space="preserve">
+    <value>Mākete</value>
+  </data>
+  <data name="IslamInfo_Mary" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Matua</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Matū</value>
+  </data>
+  <data name="IslamInfo_Measure" xml:space="preserve">
+    <value>Ine</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Koki i Inea</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Inea Mā te</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Medina</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>Hui</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Kupu mahue Whakapae</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Meneti</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>Ngā Momotauira</value>
+  </data>
+  <data name="IslamInfo_Money" xml:space="preserve">
+    <value>Ahumoni</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Marama</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Marama</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Te Marama</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Ata</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>Marako</value>
+  </data>
+  <data name="IslamInfo_Mountain" xml:space="preserve">
+    <value>Maunga</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Rahi Rawa i Te</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Iti iho Rawa i Te</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>Maheremaha</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>Tohu Whakarau</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Ūniana Huingamaha</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Kupu Whakataki</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Kūkau</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Ngā Ingoa</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>Tohutūmahi Ira I Porowhitatia Ā-rua</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>Tohutūmahi Tāpiri I Porowhitatia Ā-rua</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>Tohutūmahi Whakarea i Porowhitatia Ā-rua</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>Pūtahitanga Ā-rua</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>Arorau Ā-rua Me</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>Arorau Ā-rua Rānei</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>Tohutūmahi Pūtahitanga Tapawhā Ā-rua</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>Tohutūmahi Ūniana Tapawhā Ā-rua</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>Whakatautapeke N-Ary</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>Ūniana Ā-rua</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>Tohutūmahi Ūniana Ā-rua me Ira</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>Tohutūmahi Ūniana Ā-rua me Tāpiri</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Ringapūrere Pae Poutū Pūrua Matau i Whakakāhoretia</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>Kāhore e āhua Rite ana e Rite Pū ana rānei Ki</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Kūpapa</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Hōu</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Rongokōrero</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>Whārangi Panuku</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Huingaiti Noa O</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Huingaiti Noa o Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Kāore</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Kāhore e Tata Rite ana Ki</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Kāhore e Pātapa Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Kāore E Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Kāhore e āhua Rite ana Ki</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Kāhore i Nui Ake</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Kāhore e Ōrite pū Ki</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Kāhore e Iti iho i Te</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Ehara i te Huingaiti Noa O</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Ehara i te Huinga Noa O Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Kāhore i Whakarara Ki</value>
+  </data>
+  <data name="IslamInfo_NotSign" xml:space="preserve">
+    <value>Ehara te Tohu</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Ehara i te Atahanga Tapawhā O, Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Ehara i te Taketake Tapawhā O Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Tire Kāhore</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Kāhore i te Pono</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Kehe</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Tahi</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>Whakatuwhera ana</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>Rānei</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>Pani</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Ētahi Atu</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>Whārangi</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Ngā Whārangi</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>Pakitāne</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Whakarara Ki</value>
+  </data>
+  <data name="IslamInfo_PartialDifferential" xml:space="preserve">
+    <value>Pārōnaki Motunga</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>Korakora</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>Hoa</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>Mahi ngātahi</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>Party</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>Tautauā</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Ara:</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>Rongomau</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>Pene</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>Penerākau</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Tāngata</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>Tohu Ōrau</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Whakaaetanga</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Tirohanga:</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>Piripini</value>
+  </data>
+  <data name="IslamInfo_Pillar" xml:space="preserve">
+    <value>Pou</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Pūinengāteri</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Wāhi</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Taupānga Takiwā</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Tāmahere</value>
+  </data>
+  <data name="IslamInfo_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Whakahōputu Whakahōputu ā-Anga Pop</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Ahiahi</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Tōnga o te Rā</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Whitinga o te Rā</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>Mō mua</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>Ka Haere Whakamua engari Kāhore e Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>Mō mua Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEquivalentTo" xml:space="preserve">
+    <value>Mō mua Ōrite te rahi Ki</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>Pīmua</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>Whārangi Tōmua</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>Toitū</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Wāhanga</value>
+  </data>
+  <data name="IslamInfo_ProportionalTo" xml:space="preserve">
+    <value>Ā hautanga KI</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Parenga</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Hauwhā</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Whakataetae</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Rāmere</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Tangata</value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Ōwehenga</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>E Pānui ana</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Kua tūtohua</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>Tohu Rēhitatanga</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>Whakaritenga</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Urupare</value>
+  </data>
+  <data name="IslamInfo_ReversedTilde" xml:space="preserve">
+    <value>Tire Whakamuri</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Tohu Oru i Kōarotia Ka Ōrite</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>Koki Matau</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>Koki Matau me Pewa</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Hua Tauwehe Noa Matau Āhua tohutohu</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>Reu Matau</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Hua Matau Āhua tohutohu</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>Korukī Matau</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>Tapatoru tākonga</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Porowhita Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>Porowhita roto Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Haumaru</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Pareārau</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>Arapia</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Tauine</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Ngā Tauine</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Kura</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>Pūmatua Hōtuhi P</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>Moana</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>hēkona</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Ngā Wāhanga</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>Kopipiko</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>Tairongo;Sense</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Tautuhia Tango</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>Raukoroa</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Poto</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Waitohu</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Hiriwa</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>Ngaru Aho</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>kiri</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Rangi</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>Tāhinga</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Menemene=:-)</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Tōkena:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>Kare-ā-roto</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>Ngā Oro</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Mokowā</value>
+  </data>
+  <data name="IslamInfo_Specific" xml:space="preserve">
+    <value>pūtā</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Kōrero</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Koki Tīrake</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>Pū Tapawhā</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Kapu Tapawhā</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Tohutūmahi Ira I Tapawhātia</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Tango I Tapawhātia</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Tāpiri I Tapawhātia</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Wharea I Tapawhātia</value>
+  </data>
+  <data name="IslamInfo_SquareFoot" xml:space="preserve">
+    <value>Putu Pūrua</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Atahanga Tapawhā O</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Atahanga Tapawhā O Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Tapawhā Taketake O</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Tapawhā Taketake O Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Pūtake Rua</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>Hiri Rānaka</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>Whetū</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Tohutūmahi Whetū</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Teihana</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>Poro ana</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>Kaha</value>
+  </data>
+  <data name="IslamInfo_Student" xml:space="preserve">
+    <value>Ākonga</value>
+  </data>
+  <data name="IslamInfo_SubsetOf" xml:space="preserve">
+    <value>Rōpuiti O</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>Huingaiti O me Kāhore e Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Topeha</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>Tutuki</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>Ka Angitū engari Kāhore e Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>Mō muri Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>Mō muri Ōrite te rahi Ki</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>Hūtāne</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Suffix</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>Huatau</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>Ta</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Whitinga o te Rā</value>
+  </data>
+  <data name="IslamInfo_SupersetOf" xml:space="preserve">
+    <value>Huinganui O</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>Huinganui O me Kāhore e Ōrite Ki</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Tau Tōpu Mata</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>Tūtohi</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>Teitei</value>
+  </data>
+  <data name="IslamInfo_Term" xml:space="preserve">
+    <value>Kupu</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>Kuputuhi</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>Te</value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Tērā Kāhore e Tīariari</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Tērā e Tīariari</value>
+  </data>
+  <data name="IslamInfo_Therefore" xml:space="preserve">
+    <value>Nōreira</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>Tuatahi</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>tuawhā</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>hēkona</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Tēnei</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Tire</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Wā</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>Iti Rawa</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>I Tēnei Rā</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Koko Mauī Runga</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Koko Matau-mā-Runga</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>Pā</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>Tāone</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>Tāone/Tāone Nui</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>Whakataki</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>Tohu Waitohu</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Whakawhiti Reo</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Tāpoi</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Tau tōpu Tautoru</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Ringapūrere Pae Poutū Pūtoru Matau</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>Tika</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>Tunihia</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>I huri Pū Iti Kiriki Hāirota</value>
+  </data>
+  <data name="IslamInfo_Umbrella" xml:space="preserve">
+    <value>Hamarara</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>Huakina</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Kotahitanga</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Tē Mōhiotia</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Tē Kitea</value>
+  </data>
+  <data name="IslamInfo_Until" xml:space="preserve">
+    <value>Hei te: </value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>&amp;Pere Runga-Raro</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>Pere Pūrua Mauī Runga-Raro</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>Kupu mahue Whakateraro Matau Runga</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>Whērangi</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>Kupumahi</value>
+  </data>
+  <data name="IslamInfo_VerticalEllipsis" xml:space="preserve">
+    <value>Kupu mahue Poutū</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Raina Poutū</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Tino Tino Nui Ake</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Tino Tino Iti Iho</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>Reo</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Tau tōpu Rōrahi</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Matawā</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Wai</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>Ngoikore</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>Wiki</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Hei āwhea</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Ki whea</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Porohita Mā</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>Kanohi Memene Mā</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Tapatoru Atatohu-Runga</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>He aha ai?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value> Me:</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Ngā Kupu:</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Kaipōkai</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Hua Pare</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>Tau</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Āe</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>Koe</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>PIRI</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Hoatu</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Pukapuka:</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>Tātaitai</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Kohinga</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Te Rā</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Ngā Waeine</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Papakupu:</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Aronga</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Mono</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Whakaaturanga</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Wehenga</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Momotuhi</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Wetereo</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Maramataka Gregorian</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Maramataka Hihiri</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Kāinga</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Mōhiohio</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Kupu Whakataki</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Ngā Rārangi</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Mahere ana</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Meneti</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Kāo</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Weto</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Wāhikē:</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Mahi</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Tā</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Kīanga</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Tango</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Aronui</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>Ngā Hēkona</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Tīpakonga</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Kuputuhi</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Whakawhiti Reo</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Ngā Wae</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Pūtiro</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Āe</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Paraurehe</value>
+  </data>
+  <data name="IslamInfo_Sweep" xml:space="preserve">
+    <value>Tahitahi</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Kino</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Atekōkiri</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Momoho</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Kua Manakohia</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Tīmata Ana...</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Joined</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Tūwehe</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>Exchange</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Ehara i te Huingaiti o Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Ehara i te Huinganui o Ōrite Ki rānei</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Ehara i te Huingaiti O</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Ehara i te Huinganui O</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Pūtake</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Otinga</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Hohe</value>
+  </data>
 </root>

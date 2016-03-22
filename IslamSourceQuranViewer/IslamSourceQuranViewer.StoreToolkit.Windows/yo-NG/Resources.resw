@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Ìwọ̀n</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Àwọn Àmì ìwé</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Ṣẹ̀dà sí kílípubọọdù</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Dúró díẹ̀</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Ṣeré</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Pín</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Nípa</value>
+  </data>
 </root>

@@ -21,4 +21,19 @@
   <data name="Size.Text" xml:space="preserve">
     <value>|ຂະໜາດ||</value>
   </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>ສຳເນົາໄປຍັງຄວາມຈຳຊົ່ວຄາວ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ຢຸດຊົ່ວຄາວ</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>ຫຼິ້ນ</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>ແຊຣ໌</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ກ່ຽວກັບ</value>
+  </data>
 </root>

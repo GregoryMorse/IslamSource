@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Каран Слова за слова Пераклад</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>транслітарацыя</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Арабская</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>па вершах</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Слова за слова</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>каран</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>каран глядач</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(С) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Каран з арабскім, транслітарацыі і перакладу слова за словам і па вершах для навучання, вывучэння, даследаванні, запамінанню, адлюстраванне і майстэрства Tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Галоўны глядач Каран.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>каран</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Пераклад</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>транслітарацыя</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Арабская</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>каран</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>каран</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Аль-Каран</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Галоўны глядач Каран.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Першапачатковая версія.</value>
   </data>
 </root>

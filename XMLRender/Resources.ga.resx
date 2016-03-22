@@ -12,11 +12,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acct_AccountActivateSuccess" xml:space="preserve">
+    <value>Cuntas ngníomh go rathúil.</value>
+  </data>
+  <data name="Acct_AccountAlreadyActivated" xml:space="preserve">
+    <value>Cuntas ngníomh cheana.</value>
+  </data>
+  <data name="Acct_AccountDeleteSuccess" xml:space="preserve">
+    <value>Cuntas éirigh le scriosadh.</value>
+  </data>
+  <data name="Acct_AccountNotActivated" xml:space="preserve">
+    <value>Cuntas nár ngníomh go fóill seiceáil do r-phost den chéad uair nó a iarraidh ghníomhachtú i ríomhphost breise.</value>
+  </data>
+  <data name="Acct_ActivateAccount" xml:space="preserve">
+    <value>Gníomhachtaigh Cuntas</value>
+  </data>
+  <data name="Acct_ActivationAccountBody" xml:space="preserve">
+    <value>Tá an r-phoist ag iarraidh gníomhachtú do {0} cuntas: {1}.</value>
+  </data>
+  <data name="Acct_ActivationAccountSubject" xml:space="preserve">
+    <value>Gníomhachtaithe do chuntas ar {0}</value>
+  </data>
+  <data name="Acct_ActivationCode" xml:space="preserve">
+    <value>Activation Cód</value>
+  </data>
+  <data name="Acct_BadEmailFormat" xml:space="preserve">
+    <value>Seoladh r-phoist nach bhfuil i bhformáid bailí.</value>
+  </data>
+  <data name="Acct_Certain" xml:space="preserve">
+    <value>An bhfuil tú áirithe?</value>
+  </data>
+  <data name="Acct_ChangeEmailAddress" xml:space="preserve">
+    <value>Athraigh Ríomhphost Seoladh</value>
+  </data>
   <data name="Acct_ChangePassword" xml:space="preserve">
     <value>Athraigh an Pasfhocal</value>
   </data>
+  <data name="Acct_ChangeUsername" xml:space="preserve">
+    <value>Athraigh Ainm Úsáideora</value>
+  </data>
+  <data name="Acct_CheckEmailNotice" xml:space="preserve">
+    <value>Gníomhachtú sheoladh chun aghaidh sholáthar.</value>
+  </data>
+  <data name="Acct_CleanupStale" xml:space="preserve">
+    <value>glanta stale</value>
+  </data>
   <data name="Acct_ClearCache" xml:space="preserve">
     <value>Glan taisce</value>
+  </data>
+  <data name="Acct_ClearDiskCache" xml:space="preserve">
+    <value>Cache Diosca Glan</value>
+  </data>
+  <data name="Acct_ConfirmEmailAddress" xml:space="preserve">
+    <value>Deimhnigh Seoladh Ríomhphoist</value>
   </data>
   <data name="Acct_ConfirmPassword" xml:space="preserve">
     <value>Deimhnigh pasfhocal</value>
@@ -24,29 +72,107 @@
   <data name="Acct_ControlPanel" xml:space="preserve">
     <value>Painéal Rialúcháin</value>
   </data>
+  <data name="Acct_CreateDatabase" xml:space="preserve">
+    <value>Cruthaigh Bunachar Sonraí</value>
+  </data>
   <data name="Acct_DeleteAccount" xml:space="preserve">
     <value>Scrios Cuntas</value>
+  </data>
+  <data name="Acct_DotNetVersion" xml:space="preserve">
+    <value>Ponc Glan Leagan</value>
+  </data>
+  <data name="Acct_DuplicateUser" xml:space="preserve">
+    <value>Úsáideoir leis an ainm seo ann cheana roghnaigh ceann eile.</value>
   </data>
   <data name="Acct_EmailAddress" xml:space="preserve">
     <value>Seoladh ríomhphoist</value>
   </data>
+  <data name="Acct_EmailChangeReactivate" xml:space="preserve">
+    <value>Seoladh r-phoist athraithe agus activation r-phost a sheoladh a athghníomhachtú áireamh.</value>
+  </data>
+  <data name="Acct_EmailInUse" xml:space="preserve">
+    <value>Ríomhphost in úsáid cheana do thoil logáil isteach le dintiúir atá ann cheana.</value>
+  </data>
+  <data name="Acct_EmailsNotMatch" xml:space="preserve">
+    <value>Ní gá seoltaí ríomhphoist mheaitseáil</value>
+  </data>
   <data name="Acct_ForgotPassword" xml:space="preserve">
     <value>An ndearna tú dearmad ar an bpasfocal?</value>
+  </data>
+  <data name="Acct_ForgotUsername" xml:space="preserve">
+    <value>Ainm Úsáideora Forgot</value>
   </data>
   <data name="Acct_Home" xml:space="preserve">
     <value>Baile</value>
   </data>
+  <data name="Acct_IncorrectActivationCode" xml:space="preserve">
+    <value>cód gníomhachtúcháin mícheart.</value>
+  </data>
+  <data name="Acct_IncorrectPasswordResetCode" xml:space="preserve">
+    <value>Mícheart cód phasfhocal a athshocrú.</value>
+  </data>
   <data name="Acct_InvalidInput" xml:space="preserve">
     <value>Ionchur neamhbhailí</value>
+  </data>
+  <data name="Acct_InvalidUsernamePassword" xml:space="preserve">
+    <value>ainm úsáideora neamhbhailí nó focal faire.</value>
   </data>
   <data name="Acct_Login" xml:space="preserve">
     <value>Logáil isteach</value>
   </data>
+  <data name="Acct_LoginSuccess" xml:space="preserve">
+    <value>Logáil rathúil.</value>
+  </data>
+  <data name="Acct_Logoff" xml:space="preserve">
+    <value>Logáil Amach</value>
+  </data>
+  <data name="Acct_LogoffSuccess" xml:space="preserve">
+    <value>Logoff rathúil.</value>
+  </data>
+  <data name="Acct_MinimumPassword" xml:space="preserve">
+    <value>Ní mór Pasfhocal a laghad 8 gcarachtar.</value>
+  </data>
+  <data name="Acct_MinimumUsername" xml:space="preserve">
+    <value>Ní mór ainm úsáideora ar a laghad 4 carachtair.</value>
+  </data>
   <data name="Acct_No" xml:space="preserve">
     <value>Níl</value>
   </data>
+  <data name="Acct_NotConfirmDelete" xml:space="preserve">
+    <value>Ní mór a dheimhniú scriosadh cuntais.</value>
+  </data>
+  <data name="Acct_NoUserExists" xml:space="preserve">
+    <value>Níl aon úsáideoir le haghaidh an seoladh isteach r-phoist.</value>
+  </data>
   <data name="Acct_Password" xml:space="preserve">
     <value>Pasfhocal:</value>
+  </data>
+  <data name="Acct_PasswordAlreadyReset" xml:space="preserve">
+    <value>Pasfhocal athshocrú cheana nó próiseas nach thionscain.</value>
+  </data>
+  <data name="Acct_PasswordChangedBody" xml:space="preserve">
+    <value>Tá an r-phost a chur in iúl an t-athrú focal faire ar do {0} cuntas: {1}.</value>
+  </data>
+  <data name="Acct_PasswordChangedSubject" xml:space="preserve">
+    <value>Pasfhocal athraigh áireamh ag {0}</value>
+  </data>
+  <data name="Acct_PasswordChangeSuccess" xml:space="preserve">
+    <value>Pasfhocal éirigh le hathrú.</value>
+  </data>
+  <data name="Acct_PasswordEmailSent" xml:space="preserve">
+    <value>Tá ríomhphost seolta chuig do sheoladh ar chomhad an próiseas dá phasfhocal a athshocrú.</value>
+  </data>
+  <data name="Acct_PasswordResetBody" xml:space="preserve">
+    <value>Tá an r-phost a athshocrú an focal faire ar do {0} cuntas: {1}.</value>
+  </data>
+  <data name="Acct_PasswordResetCode" xml:space="preserve">
+    <value>Pasfhocal Cód Athshocraigh</value>
+  </data>
+  <data name="Acct_PasswordResetSubject" xml:space="preserve">
+    <value>Pasfhocal athshocrú do chuntas ag {0}</value>
+  </data>
+  <data name="Acct_PasswordResetSuccess" xml:space="preserve">
+    <value>Pasfhocal athshocrú go rathúil.</value>
   </data>
   <data name="Acct_PasswordsNotMatch" xml:space="preserve">
     <value>Ní hionann na pasfhocail</value>
@@ -54,23 +180,191 @@
   <data name="Acct_Register" xml:space="preserve">
     <value>Cláraigh</value>
   </data>
+  <data name="Acct_Remember" xml:space="preserve">
+    <value>Cuimhnigh?</value>
+  </data>
+  <data name="Acct_RemoveDatabase" xml:space="preserve">
+    <value>bain Bunachar Sonraí</value>
+  </data>
+  <data name="Acct_ResendActivationEmail" xml:space="preserve">
+    <value>Cuirfear ar aghaidh arís Gníomhachtaithe Ríomhphost</value>
+  </data>
   <data name="Acct_ResetPassword" xml:space="preserve">
     <value>Athshocraigh an pasfhocal...</value>
+  </data>
+  <data name="Acct_RetrievePassword" xml:space="preserve">
+    <value>Aisghabh Pasfhocal</value>
+  </data>
+  <data name="Acct_RetrieveUsername" xml:space="preserve">
+    <value>Aisghabh Ainm Úsáideora</value>
+  </data>
+  <data name="Acct_SendActivationCode" xml:space="preserve">
+    <value>Seol Activation Cód</value>
   </data>
   <data name="Acct_Username" xml:space="preserve">
     <value>Ainm úsáideora</value>
   </data>
+  <data name="Acct_UsernameChangedBody" xml:space="preserve">
+    <value>Tá an r-phost a chur in iúl an t-athrú ainm san áireamh do {0} cuntas: {1}.</value>
+  </data>
+  <data name="Acct_UsernameChangedSubject" xml:space="preserve">
+    <value>Ainm Úsáideora athrú le haghaidh cuntas ag {0}</value>
+  </data>
+  <data name="Acct_UsernameChangeSuccess" xml:space="preserve">
+    <value>Ainm Úsáideora éirigh le hathrú.</value>
+  </data>
+  <data name="Acct_UsernameEmailSent" xml:space="preserve">
+    <value>Tá ríomhphost seolta chuig do sheoladh ar chomhad le d'ainm úsáideora.</value>
+  </data>
+  <data name="Acct_UsernameReminderBody" xml:space="preserve">
+    <value>Tá an r-phost i gcuimhne de do {0} cuntas: {1}.</value>
+  </data>
+  <data name="Acct_UsernameReminderSubject" xml:space="preserve">
+    <value>gcuimhne ainm úsáideora le haghaidh cuntas ag {0}</value>
+  </data>
+  <data name="Acct_UserNotFound" xml:space="preserve">
+    <value>Níl Úsáideora ann.</value>
+  </data>
+  <data name="Acct_ViewCache" xml:space="preserve">
+    <value>Féach ar Cache</value>
+  </data>
+  <data name="Acct_ViewDiskCache" xml:space="preserve">
+    <value>View Cache Diosca</value>
+  </data>
+  <data name="Acct_ViewHeaders" xml:space="preserve">
+    <value>View Headers</value>
+  </data>
   <data name="Acct_Yes" xml:space="preserve">
     <value>Tá</value>
+  </data>
+  <data name="lang_am" xml:space="preserve">
+    <value>ኣማርኛ</value>
+  </data>
+  <data name="lang_ar" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="lang_az" xml:space="preserve">
+    <value>dili Azərbaycan</value>
   </data>
   <data name="lang_ber" xml:space="preserve">
     <value>Tamaisis</value>
   </data>
+  <data name="lang_bg" xml:space="preserve">
+    <value>български</value>
+  </data>
+  <data name="lang_bn" xml:space="preserve">
+    <value>বাংলা</value>
+  </data>
+  <data name="lang_bs" xml:space="preserve">
+    <value>Bosanski</value>
+  </data>
+  <data name="lang_cs" xml:space="preserve">
+    <value>čeština</value>
+  </data>
+  <data name="lang_de" xml:space="preserve">
+    <value>Deutsch</value>
+  </data>
+  <data name="lang_dv" xml:space="preserve">
+    <value>ދިވެހި</value>
+  </data>
   <data name="lang_en" xml:space="preserve">
     <value>Béarla</value>
   </data>
+  <data name="lang_es" xml:space="preserve">
+    <value>español</value>
+  </data>
+  <data name="lang_fa" xml:space="preserve">
+    <value>فارسى</value>
+  </data>
+  <data name="lang_fr" xml:space="preserve">
+    <value>français</value>
+  </data>
+  <data name="lang_ha" xml:space="preserve">
+    <value>ḥawsa</value>
+  </data>
+  <data name="lang_hi" xml:space="preserve">
+    <value>हिन्दी</value>
+  </data>
+  <data name="lang_id" xml:space="preserve">
+    <value>Gaeilge</value>
+  </data>
+  <data name="lang_it" xml:space="preserve">
+    <value>italiano</value>
+  </data>
+  <data name="lang_ja" xml:space="preserve">
+    <value>日本語</value>
+  </data>
+  <data name="lang_ko" xml:space="preserve">
+    <value>한국어</value>
+  </data>
+  <data name="lang_ku" xml:space="preserve">
+    <value>کوردی</value>
+  </data>
+  <data name="lang_ml" xml:space="preserve">
+    <value>മലയാളം</value>
+  </data>
+  <data name="lang_ms" xml:space="preserve">
+    <value>Bahasa melayu</value>
+  </data>
+  <data name="lang_nl" xml:space="preserve">
+    <value>Nederlands</value>
+  </data>
+  <data name="lang_no" xml:space="preserve">
+    <value>Norsk</value>
+  </data>
+  <data name="lang_pl" xml:space="preserve">
+    <value>polski</value>
+  </data>
+  <data name="lang_pt" xml:space="preserve">
+    <value>português</value>
+  </data>
+  <data name="lang_ro" xml:space="preserve">
+    <value>रोमानो</value>
+  </data>
+  <data name="lang_ru" xml:space="preserve">
+    <value>Русский язык</value>
+  </data>
+  <data name="lang_sd" xml:space="preserve">
+    <value>سنڌي</value>
+  </data>
+  <data name="lang_so" xml:space="preserve">
+    <value>af Soomaali</value>
+  </data>
+  <data name="lang_sq" xml:space="preserve">
+    <value>Shqip</value>
+  </data>
+  <data name="lang_sv" xml:space="preserve">
+    <value>Svenska</value>
+  </data>
   <data name="lang_sw" xml:space="preserve">
     <value>Ciosvahaílis</value>
+  </data>
+  <data name="lang_ta" xml:space="preserve">
+    <value>தமிழ்</value>
+  </data>
+  <data name="lang_tg" xml:space="preserve">
+    <value>тоҷики</value>
+  </data>
+  <data name="lang_th" xml:space="preserve">
+    <value>ภาษา ไทย</value>
+  </data>
+  <data name="lang_tr" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
+  <data name="lang_tt" xml:space="preserve">
+    <value>татарча</value>
+  </data>
+  <data name="lang_ug" xml:space="preserve">
+    <value>ئۇيغۇر</value>
+  </data>
+  <data name="lang_ur" xml:space="preserve">
+    <value>اردو</value>
+  </data>
+  <data name="lang_uz" xml:space="preserve">
+    <value>o'zbek tili ўзбек тили</value>
+  </data>
+  <data name="lang_zh" xml:space="preserve">
+    <value>中文</value>
   </data>
   <data name="lang_localam" xml:space="preserve">
     <value>Amáiris</value>
@@ -81,11 +375,17 @@
   <data name="lang_localaz" xml:space="preserve">
     <value>Asarbaiseáinis</value>
   </data>
+  <data name="lang_localber" xml:space="preserve">
+    <value>Amazigh</value>
+  </data>
   <data name="lang_localbg" xml:space="preserve">
     <value>Bulgáiris</value>
   </data>
   <data name="lang_localbn" xml:space="preserve">
     <value>Beangáilis</value>
+  </data>
+  <data name="lang_localbs" xml:space="preserve">
+    <value>Boisnis</value>
   </data>
   <data name="lang_localcs" xml:space="preserve">
     <value>Seicis</value>
@@ -125,6 +425,9 @@
   </data>
   <data name="lang_localko" xml:space="preserve">
     <value>Cóiréis</value>
+  </data>
+  <data name="lang_localku" xml:space="preserve">
+    <value>Coirdis</value>
   </data>
   <data name="lang_localml" xml:space="preserve">
     <value>Mailéalaimis</value>
@@ -195,22 +498,406 @@
   <data name="Acct_Download" xml:space="preserve">
     <value>Íoslódáil {0}</value>
   </data>
+  <data name="unicode_ArabicComma" xml:space="preserve">
+    <value>Araibis Camóga</value>
+  </data>
+  <data name="unicode_ArabicDamma" xml:space="preserve">
+    <value>Araibis Damma</value>
+  </data>
+  <data name="unicode_ArabicDammatan" xml:space="preserve">
+    <value>Araibis Dammatan</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreHighStop" xml:space="preserve">
+    <value>Araibis Folamh Centre High Stop</value>
+  </data>
+  <data name="unicode_ArabicEmptyCentreLowStop" xml:space="preserve">
+    <value>Ionad folamh arabic Low Stop</value>
+  </data>
+  <data name="unicode_ArabicEndOfAyah" xml:space="preserve">
+    <value>Deireadh Araibis Of ayah</value>
+  </data>
+  <data name="unicode_ArabicFatha" xml:space="preserve">
+    <value>Araibis Fatha</value>
+  </data>
+  <data name="unicode_ArabicFathatan" xml:space="preserve">
+    <value>Araibis Fathatan</value>
+  </data>
+  <data name="unicode_ArabicHamzaAbove" xml:space="preserve">
+    <value>Araibis Hamza Thuas</value>
+  </data>
+  <data name="unicode_ArabicHamzaBelow" xml:space="preserve">
+    <value>Araibis Hamza Thíos</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitEight" xml:space="preserve">
+    <value>Araibis-Indic Digit hOcht</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFive" xml:space="preserve">
+    <value>Araibis-Indic Digit Cúig</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitFour" xml:space="preserve">
+    <value>Araibis-Indic Digit Ceathair</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitNine" xml:space="preserve">
+    <value>Araibis-Indic Digit Naoi</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitOne" xml:space="preserve">
+    <value>Araibis-Indic amháin Digit</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSeven" xml:space="preserve">
+    <value>Araibis-Indic Digit Seacht</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitSix" xml:space="preserve">
+    <value>Araibis-Indic Digit Sé</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitThree" xml:space="preserve">
+    <value>Araibis-Indic Digit Trí</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitTwo" xml:space="preserve">
+    <value>Araibis-Indic Digit Dó</value>
+  </data>
+  <data name="unicode_ArabicIndicDigitZero" xml:space="preserve">
+    <value>Araibis-Indic Digit nialais</value>
+  </data>
+  <data name="unicode_ArabicKasra" xml:space="preserve">
+    <value>Araibis Kasra</value>
+  </data>
+  <data name="unicode_ArabicKasratan" xml:space="preserve">
+    <value>Araibis Kasratan</value>
+  </data>
+  <data name="unicode_ArabicLetterAin" xml:space="preserve">
+    <value>Araibis Litir Ain</value>
+  </data>
+  <data name="unicode_ArabicLetterAlef" xml:space="preserve">
+    <value>Araibis Litir Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefMaksura" xml:space="preserve">
+    <value>Araibis Litir Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWasla" xml:space="preserve">
+    <value>Araibis Litir Alef Wasla</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaAbove" xml:space="preserve">
+    <value>Araibis Litir Alef Le Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithHamzaBelow" xml:space="preserve">
+    <value>Araibis Litir Alef Le Hamza Thíos</value>
+  </data>
+  <data name="unicode_ArabicLetterAlefWithMaddaAbove" xml:space="preserve">
+    <value>Araibis Litir Alef Le Madda Above</value>
+  </data>
+  <data name="unicode_ArabicLetterBeh" xml:space="preserve">
+    <value>Araibis Litir BEH</value>
+  </data>
+  <data name="unicode_ArabicLetterDad" xml:space="preserve">
+    <value>Araibis Litir Dad</value>
+  </data>
+  <data name="unicode_ArabicLetterDal" xml:space="preserve">
+    <value>Araibis Litir Dal</value>
+  </data>
+  <data name="unicode_ArabicLetterFeh" xml:space="preserve">
+    <value>Araibis Litir Feh</value>
+  </data>
+  <data name="unicode_ArabicLetterGaf" xml:space="preserve">
+    <value>Araibis Litir Gaf</value>
+  </data>
+  <data name="unicode_ArabicLetterGhain" xml:space="preserve">
+    <value>Araibis Litir Ghain</value>
+  </data>
+  <data name="unicode_ArabicLetterHah" xml:space="preserve">
+    <value>Araibis Litir Hah</value>
+  </data>
+  <data name="unicode_ArabicLetterHamza" xml:space="preserve">
+    <value>Araibis Litir Hamza</value>
+  </data>
+  <data name="unicode_ArabicLetterHeh" xml:space="preserve">
+    <value>Araibis Litir Heh</value>
+  </data>
+  <data name="unicode_ArabicLetterJeem" xml:space="preserve">
+    <value>Araibis Litir Jeem</value>
+  </data>
+  <data name="unicode_ArabicLetterKaf" xml:space="preserve">
+    <value>Araibis Litir Kaf</value>
+  </data>
+  <data name="unicode_ArabicLetterKhah" xml:space="preserve">
+    <value>Araibis Litir Khah</value>
+  </data>
+  <data name="unicode_ArabicLetterLam" xml:space="preserve">
+    <value>Araibis Litir Lam</value>
+  </data>
+  <data name="unicode_ArabicLetterMeem" xml:space="preserve">
+    <value>Araibis Litir Meem</value>
+  </data>
+  <data name="unicode_ArabicLetterNoon" xml:space="preserve">
+    <value>Araibis Litir Nóin</value>
+  </data>
+  <data name="unicode_ArabicLetterPeh" xml:space="preserve">
+    <value>Araibis Litir Peh</value>
+  </data>
+  <data name="unicode_ArabicLetterQaf" xml:space="preserve">
+    <value>Araibis Litir Qaf</value>
+  </data>
+  <data name="unicode_ArabicLetterReh" xml:space="preserve">
+    <value>Araibis Litir REH</value>
+  </data>
+  <data name="unicode_ArabicLetterSad" xml:space="preserve">
+    <value>Litir Araibis Sad</value>
+  </data>
+  <data name="unicode_ArabicLetterSeen" xml:space="preserve">
+    <value>Litir Araibis Seen</value>
+  </data>
+  <data name="unicode_ArabicLetterSheen" xml:space="preserve">
+    <value>Araibis Litir Sheen</value>
+  </data>
+  <data name="unicode_ArabicLetterSuperscriptAlef" xml:space="preserve">
+    <value>Araibis Litir Forscript Alef</value>
+  </data>
+  <data name="unicode_ArabicLetterTah" xml:space="preserve">
+    <value>Araibis Litir Tah</value>
+  </data>
+  <data name="unicode_ArabicLetterTcheh" xml:space="preserve">
+    <value>Araibis Litir Tcheh</value>
+  </data>
+  <data name="unicode_ArabicLetterTeh" xml:space="preserve">
+    <value>Araibis Litir Teh</value>
+  </data>
+  <data name="unicode_ArabicLetterTehMarbuta" xml:space="preserve">
+    <value>Araibis Litir Teh Marbuta</value>
+  </data>
+  <data name="unicode_ArabicLetterThal" xml:space="preserve">
+    <value>Araibis Litir Thal</value>
+  </data>
+  <data name="unicode_ArabicLetterTheh" xml:space="preserve">
+    <value>Araibis Litir Theh</value>
+  </data>
+  <data name="unicode_ArabicLetterVeh" xml:space="preserve">
+    <value>Araibis Litir Veh</value>
+  </data>
+  <data name="unicode_ArabicLetterWaw" xml:space="preserve">
+    <value>Araibis Litir WAW</value>
+  </data>
+  <data name="unicode_ArabicLetterWawWithHamzaAbove" xml:space="preserve">
+    <value>Araibis Litir WAW Le Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterYeh" xml:space="preserve">
+    <value>Araibis Litir Yeh</value>
+  </data>
+  <data name="unicode_ArabicLetterYehWithHamzaAbove" xml:space="preserve">
+    <value>Araibis Litir Yeh Le Hamza Above</value>
+  </data>
+  <data name="unicode_ArabicLetterZah" xml:space="preserve">
+    <value>Araibis Litir Zah</value>
+  </data>
+  <data name="unicode_ArabicLetterZain" xml:space="preserve">
+    <value>Araibis Litir Zain</value>
+  </data>
+  <data name="unicode_ArabicLigatureAkbarIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Akbar Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureAlayheIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Alayhe Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureAllahIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Allah Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureBismillahArRahmanArRaheem" xml:space="preserve">
+    <value>Araibis Ligature Bismillah Ar-Rahman Ar-Raheem</value>
+  </data>
+  <data name="unicode_ArabicLigatureJallajalalouhou" xml:space="preserve">
+    <value>Araibis Ligature Jallajalalouhou</value>
+  </data>
+  <data name="unicode_ArabicLigatureMohammadIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Mohammad Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureQalaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Qala Úsáidte Mar Koranic Stop Cláraigh Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureRasoulIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Rasoul Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureSalamIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Salam Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Salla Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallallahouAlayheWasallam" xml:space="preserve">
+    <value>Araibis Ligature Sallallahou Alayhe Wasallam</value>
+  </data>
+  <data name="unicode_ArabicLigatureSallaUsedAsKoranicStopSignIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Salla Úsáidte Mar Sign scoite Foirm Koranic Stop</value>
+  </data>
+  <data name="unicode_ArabicLigatureWasallamIsolatedForm" xml:space="preserve">
+    <value>Araibis Ligature Wasallam Foirm scoite</value>
+  </data>
+  <data name="unicode_ArabicMaddahAbove" xml:space="preserve">
+    <value>Araibis Maddah Thuas</value>
+  </data>
+  <data name="unicode_ArabicPlaceOfSajdah" xml:space="preserve">
+    <value>Áit Araibis Of Sajdah</value>
+  </data>
+  <data name="unicode_ArabicQuestionMark" xml:space="preserve">
+    <value>Araibis Mark Ceist</value>
+  </data>
+  <data name="unicode_ArabicRoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>Araibis Cruinn High Stop Le Centre Líonta</value>
+  </data>
+  <data name="unicode_ArabicSemicolon" xml:space="preserve">
+    <value>Araibis Leathstad</value>
+  </data>
+  <data name="unicode_ArabicShadda" xml:space="preserve">
+    <value>Araibis Shadda</value>
+  </data>
+  <data name="unicode_ArabicSmallHighJeem" xml:space="preserve">
+    <value>Araibis High Jeem Beag</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLamAlef" xml:space="preserve">
+    <value>Araibis Beaga High Lam Alef</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureQafWithLamWithAlefMaksura" xml:space="preserve">
+    <value>Araibis Beaga High Ligature Qaf Le Lam Le Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighLigatureSadWithLamWithAlefMaksura" xml:space="preserve">
+    <value>High Ligature Araibis Beaga Sad Le Lam Le Alef Maksura</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemInitialForm" xml:space="preserve">
+    <value>Araibis Beaga High Meem Foirm tosaigh</value>
+  </data>
+  <data name="unicode_ArabicSmallHighMeemIsolatedForm" xml:space="preserve">
+    <value>Araibis Foirm Beaga High Meem scoite</value>
+  </data>
+  <data name="unicode_ArabicSmallHighNoon" xml:space="preserve">
+    <value>Araibis Beaga Ard Nóin</value>
+  </data>
+  <data name="unicode_ArabicSmallHighRoundedZero" xml:space="preserve">
+    <value>Araibis Beaga High Chothromú Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallHighSeen" xml:space="preserve">
+    <value>Araibis Beaga High Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallHighThreeDots" xml:space="preserve">
+    <value>Araibis Beaga Ard Trí Dots</value>
+  </data>
+  <data name="unicode_ArabicSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>Araibis Beaga High Upright Dronuilleogach Zero</value>
+  </data>
+  <data name="unicode_ArabicSmallLowMeem" xml:space="preserve">
+    <value>Araibis Beaga Low Meem</value>
+  </data>
+  <data name="unicode_ArabicSmallLowSeen" xml:space="preserve">
+    <value>Araibis Beaga Low Seen</value>
+  </data>
+  <data name="unicode_ArabicSmallWaw" xml:space="preserve">
+    <value>Araibis WAW Beaga</value>
+  </data>
+  <data name="unicode_ArabicSmallYeh" xml:space="preserve">
+    <value>Araibis Yeh Beaga</value>
+  </data>
+  <data name="unicode_ArabicStartOfRubElHizb" xml:space="preserve">
+    <value>Araibis Tosaigh As Rub El Hizb</value>
+  </data>
+  <data name="unicode_ArabicSukun" xml:space="preserve">
+    <value>Araibis Sukun</value>
+  </data>
+  <data name="unicode_ArabicTatweel" xml:space="preserve">
+    <value>Araibis Tatweel</value>
+  </data>
   <data name="unicode_Colon" xml:space="preserve">
     <value>Idirstad</value>
   </data>
   <data name="unicode_Comma" xml:space="preserve">
     <value>Camóg</value>
   </data>
+  <data name="unicode_ExclamationMark" xml:space="preserve">
+    <value>exclamation Mark</value>
+  </data>
+  <data name="unicode_FullStop" xml:space="preserve">
+    <value>Lánstad</value>
+  </data>
+  <data name="unicode_HyphenMinus" xml:space="preserve">
+    <value>Fleiscín-Lúide</value>
+  </data>
+  <data name="unicode_LeftCurlyBracket" xml:space="preserve">
+    <value>Chlé Curly Lúibín</value>
+  </data>
+  <data name="unicode_LeftPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Clé-Ag tagairt Dúbailte Uillinn Luachan Mark</value>
+  </data>
+  <data name="unicode_LeftSquareBracket" xml:space="preserve">
+    <value>Chlé Square Lúibín</value>
+  </data>
+  <data name="unicode_OrnateLeftParenthesis" xml:space="preserve">
+    <value>Ornate Chlé parenthesis</value>
+  </data>
+  <data name="unicode_OrnateRightParenthesis" xml:space="preserve">
+    <value>Ornate Ceart parenthesis</value>
+  </data>
+  <data name="unicode_QuotationMark" xml:space="preserve">
+    <value>Luachana Mark</value>
+  </data>
+  <data name="unicode_RialSign" xml:space="preserve">
+    <value>Rial Cláraigh</value>
+  </data>
+  <data name="unicode_RightCurlyBracket" xml:space="preserve">
+    <value>Lúibín Curly Ceart</value>
+  </data>
+  <data name="unicode_RightPointingDoubleAngleQuotationMark" xml:space="preserve">
+    <value>Right-Ag tagairt Dúbailte Uillinn Luachan Mark</value>
+  </data>
+  <data name="unicode_RightSquareBracket" xml:space="preserve">
+    <value>Lúibín cearnach ar dheis</value>
+  </data>
   <data name="unicode_Space" xml:space="preserve">
     <value>Spás</value>
+  </data>
+  <data name="Acct_CertRequest" xml:space="preserve">
+    <value>Iarratas Teastais</value>
   </data>
   <data name="Acct_Certificate" xml:space="preserve">
     <value>Deimhniú:</value>
   </data>
+  <data name="Acct_CertInstall" xml:space="preserve">
+    <value>Suiteáil Teastas</value>
+  </data>
   <data name="Acct_CurrentUser" xml:space="preserve">
     <value>Úsáideoir reatha</value>
   </data>
+  <data name="Acct_DeleteCertRequest" xml:space="preserve">
+    <value>Scrios Teastais Iarratas</value>
+  </data>
+  <data name="Acct_EnableSSL" xml:space="preserve">
+    <value>Cumasaigh SSL</value>
+  </data>
+  <data name="Acct_PrivateKey" xml:space="preserve">
+    <value>Eochair phríobháideach</value>
+  </data>
+  <data name="Acct_ViewCertRequests" xml:space="preserve">
+    <value>Iarratais Amharc Teastais</value>
+  </data>
+  <data name="Acct_ViewSites" xml:space="preserve">
+    <value>Láithreáin Amharc</value>
+  </data>
+  <data name="Acct_CertInstallIntermed" xml:space="preserve">
+    <value>Suiteáil Meánteistiméireachta</value>
+  </data>
+  <data name="unicode_LeftToRightEmbedding" xml:space="preserve">
+    <value>Clé-Le-Ceart Leabú</value>
+  </data>
+  <data name="unicode_RightToLeftEmbedding" xml:space="preserve">
+    <value>Right-Le-Chlé Leabú</value>
+  </data>
+  <data name="unicode_LeftToRightMark" xml:space="preserve">
+    <value>Clé-Le-Ceart Mark</value>
+  </data>
+  <data name="unicode_LeftToRightOverride" xml:space="preserve">
+    <value>Clé-Le-Ceart Sáraigh</value>
+  </data>
   <data name="unicode_PopDirectionalFormatting" xml:space="preserve">
     <value>‬	Formáidiú treo aníos</value>
+  </data>
+  <data name="unicode_RightToLeftMark" xml:space="preserve">
+    <value>Right-Le-Chlé Mark</value>
+  </data>
+  <data name="unicode_RightToLeftOverride" xml:space="preserve">
+    <value>Right-Le-Clé Sáraigh</value>
   </data>
 </root>

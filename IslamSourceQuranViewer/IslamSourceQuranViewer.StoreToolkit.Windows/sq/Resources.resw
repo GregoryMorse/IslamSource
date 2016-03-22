@@ -12,19 +12,103 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabic Font</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Prapa</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>Zvogëlo madhësinë e fontit</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default Font Size</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kur'ani me arabe e saj, transliterimit dhe fjala e përkthimit me fjalë dhe varg nga vargu për të mësuarit, studimin, kërkimin, mësimin përmendësh, reflektim dhe zotërim të Texhvid.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Kurani fjalë për fjalë</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Rrit madhësinë e fontit</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Font Tjetër Text</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>suvatoj</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Parametrat</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Trego Përkthim</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Trego Transliterimi</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Tregojnë fjalë për fjalë</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>Madhësia</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Përdorni recitimit Rregulla ngjyrosje</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Default Gjuha</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Shto &amp;shenjën e referimit</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Shenjat e referimit</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopjo te kujtesa e fragmenteve</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Shko tek Vargu</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pezullo</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Lexo</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>deklamues</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Hiq Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set Playback Vargu</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Trego Eksegjeza</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Përbashko</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Shtesë Vargu Advance Delay</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance Vargu Automatikisht</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Vonesa Gjatësia e Vargu Para Avancimi</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping Mode</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Rreth</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabic Kur'ani me metadata dhe të gjitha Përkthimet dhe disa recitime audio me përjashtim të atyre të listuara kreditohet në Projektin Tanzil (http://tanzil.net).&lt;br&gt;</value>
   </data>
 </root>

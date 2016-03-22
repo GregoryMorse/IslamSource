@@ -12,4 +12,1813 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>ibhuku</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Izincwadi</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>inkomba</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Ukuhumusha</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Ivolumu</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>Ngaphezulu</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Kuphelele</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>i-Akhawunti</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>u-Adam</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Emuva...</value>
+  </data>
+  <data name="IslamInfo_Airplane" xml:space="preserve">
+    <value>Indiza</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>I-Algeria</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>konke</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Vunyelwe</value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>Cishe Kulingana noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>Njalo</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>Isibekisombhalo</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Ingelosi</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Igumbi:</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>Onolaka</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>Usuku olumisiwe</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>Kusondela Emkhawulweni</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>Kucishe Kulingane Na-</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Isi-Arabhu</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Ucezu lwesiyingi</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>Impikiswano</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Ngokuzungeza</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>Usuku Lokwenyuka</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>Uphawu lwenkanyezi</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Isisetshenziswa Esingokwezibalo kwe-Asterisk</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Okungalona uphawu Okulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Izimo:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Impindamuva</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Isilinganisi</value>
+  </data>
+  <data name="IslamInfo_Because" xml:space="preserve">
+    <value>Ngoba</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Ngaphambi</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>Ngcono</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>maphakathi...</value>
+  </data>
+  <data name="IslamInfo_Big" xml:space="preserve">
+    <value>Okukhulu</value>
+  </data>
+  <data name="IslamInfo_Bigger" xml:space="preserve">
+    <value>Okukhudlwana</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Mnyama</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Isiyingi Esimnyama</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>Isudi Yenhliziyo Emnyama</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>Umzimba</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>ibhuku</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Ingosi engezansi ngakwesokunxele</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Ingosi esezansi kwesokuDla</value>
+  </data>
+  <data name="IslamInfo_Bread" xml:space="preserve">
+    <value>Isinkwa</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Ibhrevi</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Ubambiswano</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>izipho</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Imibandela</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Icashazi</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Isisetshenziswa Esingokwezibalo sebhulethi</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Thenga</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Fonela</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>I-Canada</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Imoto</value>
+  </data>
+  <data name="IslamInfo_Chain" xml:space="preserve">
+    <value>Iketanga</value>
+  </data>
+  <data name="IslamInfo_Chair" xml:space="preserve">
+    <value>Isihlalo</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Isahluko:</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>Izikhangiso</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>I-China</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Isisetshenziswa Esingokwezibalo Kwe-Asterisk Okuzungeleziwe</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Udwi Ozungeleziwe</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Isigenco Sokwahlukanisa Esizungeleziwe</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Isisetshenziswa Esingokwezibalo Sechashazi Esizungeleziwe</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Ukususa  Okuzungeleziwe</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Ukuhlanganisa Ozungeleziwe</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Isisetshenziswa Esingokwezibalo Sesyingi Esizungeleziwe</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Izikhathi Ezizungeleziwe</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Ukwahlukanisa</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Sula</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Okuphelelisayo Okuvundlile Njengokuhamba kwezinti zewashi</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Okuphelelisayo Njengokuhamba kwezinti zewashi</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Umcibisholo Ophezulu Wocezu oluyisiyingi uhamba njengobala kwezinti zewashi</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>Iyavala...</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>Ifu</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>Iqoqo</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>Ikholoni</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>Ikhefana</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Umphakathi</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Inkampane</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>Gcwalisela</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Qedela</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Isimo...</value>
+  </data>
+  <data name="IslamInfo_Confirmed" xml:space="preserve">
+    <value>Kuqinisekisiwe</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Siyakuhalalisela!</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Iyaxhuma</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>Kuqukethwe njengeqoqo elincane Elejwayelekile</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>Kuqukethe njengeQoqo elincane noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>okuqukethwe</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Isiphelelisi Esinqumile</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Ukukopisha</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>Uphawu Lwelungelo Loshicilelo</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>Mboza</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Unombolo ziphinde wenombolo ephindwe kathathu</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Okushwilekile Okuqondile Futhi</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>Okushilekile Okuqondile Noma</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Okuqokiwe</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Dagger</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Usuku</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Usuku</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>ISonto</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Umsombuluko</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Ulwesibili</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Ulwesithathu</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Ulwesine</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Ulwesihlanu</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>UMgqibelo</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Okumisiwe</value>
+  </data>
+  <data name="IslamInfo_DegreeCelsius" xml:space="preserve">
+    <value>I-Degree Celsius</value>
+  </data>
+  <data name="IslamInfo_DegreeFahrenheit" xml:space="preserve">
+    <value>I-Degree Fahrenheit</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>Bambezela:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Ihambise</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>IDeltha Ilingana Na-</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Imininingwane &gt;&gt;</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>Izimpawana eziba ngaphezu noma ngaphansi kwamagama</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Isisetshenziswa sokungokwezibalo Sedayimane</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>Umehluko phakathi</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>Isinqumo Esizimele</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Ukwahlukana</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Uphawu lokwehlukanisa</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Isigenco Sokwehlukanisa</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Izikhathi zokwhlukanisa</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>Akuqukethe njengeLungu</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Akwehlukanisa</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Ayiphoqi</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Akwenduleli</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>Akwanduleli noma Kulingana</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>Ayihloli</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Akuphumeleli</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>Akuphumelanga noma Kulingana</value>
+  </data>
+  <data name="IslamInfo_Dog" xml:space="preserve">
+    <value>Inja</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Isisetshenziswa sokungokwezibalo Sechashazi</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Ukuhlanganisa Kwechashazi</value>
+  </data>
+  <data name="IslamInfo_DoubleDagger" xml:space="preserve">
+    <value>i-Dagger ephindwe kabili</value>
+  </data>
+  <data name="IslamInfo_DoubleIntegral" xml:space="preserve">
+    <value>Isiphelelisi Esiphindwe kabili</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Impambano ephindwe kabili</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Isethi encane ephindwe kabili</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Isethi enkulu ephindwe kabili</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Inyunyana ephindwe kabili</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>Okusaqhubeka Okudayagonali Kwesokudla Phansi</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>Ukudonsa</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>I-Dream</value>
+  </data>
+  <data name="IslamInfo_Drill" xml:space="preserve">
+    <value>Bhoboza</value>
+  </data>
+  <data name="IslamInfo_Drink" xml:space="preserve">
+    <value>Isiphuzo</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>Umhlaba</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>IGibhithe</value>
+  </data>
+  <data name="IslamInfo_ElementOf" xml:space="preserve">
+    <value>Ingxenye ye-</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Ukup&amp;hakama:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>Ikhonco Le-m</value>
+  </data>
+  <data name="IslamInfo_EmptySet" xml:space="preserve">
+    <value>Isethi engenalutho</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value>Faka isikhala se-EM</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>Isiphetho</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>–	i-En Dash</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value>Faka isikhala se-En</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Faka</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Ezokujabulisa</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Imvilophu</value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>Kulingana futhi Kulinganisana Na-</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>Kulingana Na- Ngokwencazelo</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>Kulingana na- noma Kwandulela</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>Kulingana na- noma Kuphumelele</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Lingana Na-</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>Okungekho:</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>&amp;Chaza...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Ngokucacile</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>Ubuso</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>Ngamanga</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Isifazane</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>Coyisisa</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Umlilo</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>Kuqala</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>Ikota yokuqala Yenyanga</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>Phelele</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>Salangabi</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>i-flow</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>Imbali</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Ukudla</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>Ifidi</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>Ka-:</value>
+  </data>
+  <data name="IslamInfo_ForAll" xml:space="preserve">
+    <value>Kwakho konke</value>
+  </data>
+  <data name="IslamInfo_Forces" xml:space="preserve">
+    <value>Iphoqa</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>I-Fountain</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Unombolo ziphinde wenombolo Yenombolo</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>i-France</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Ulwesihlanu</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>Kusuka</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Ngaphambili</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>Isigaxa esikhulu</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>Ingomuso</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>Ingadi</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>Igiya</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>ubulili</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Okuvamile</value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>Isizukulwano</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>Ngokusazibalo zomdwebo Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>Ngokusazibalo zomdwebo Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>I-Germany</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Igolide</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Kuhle</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Umusa</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Uhlelo lolimi</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Okubhodlayo</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>Isigcizelelo Esibhodlayo</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>I-United Kingdom</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>Kungaphezu Noma Kulingana No-…</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Okukhulu Kuna-Phezu Kokulingana Na-</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>Uphawu Lokukhulu Kuno-</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Iqembu</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Amaqoqo</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Uboya</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Amakhadi okudlala</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>Ikhanda</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Inhliziyo</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>Kufihliwe</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Okokuhlawumbisela:</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>Okuqhubekayo Okuvundlile</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>ihora</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>I-House</value>
+  </data>
+  <data name="IslamInfo_How" xml:space="preserve">
+    <value>Kanjani?</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Kufana ncamashi Na-</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>Uma</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>Umfanekiso We- noma Kusondelene Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Umthelela</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>Ku-</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Akuphelele</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Isengezo</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>inkomba</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>E-India</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>I-Indonesia</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>Okungenasiphetho</value>
+  </data>
+  <data name="IslamInfo_Inspiration" xml:space="preserve">
+    <value>Ukushukumisa</value>
+  </data>
+  <data name="IslamInfo_Integral" xml:space="preserve">
+    <value>I-Integral</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>i-Intercalate</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Impambano</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Isingeniso:</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Isingeniso:</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>Uphawu Lwesibabazo Oluphendukezelwe</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Uphawu luka-Ohm Oluphenduliwe</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>Uphawu Lombuzo Oluphendukezelwe</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>I-Iraq</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>I-Israel</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Hlanganisa</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>i-Jordan</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Indonsa</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>i-Kenya</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>I-keyboard</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>i-Kuwait</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>okokugcina</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>Ikota yokugcina Yenyanga</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Umholi</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>&amp;Shiya</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>i-Lebanon</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>Kwesokunxele</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Umkhiqizo Wokuqonde ngqo owehlukaniswe kabili Wesiphindi Esejwayelekile Sangakwesokunxele</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>Umkaki wangakwesokunxele</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>Umcibisholo Wangakwesokunxele-Nangakwesokudla</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Umcibisholo Ophinde kabili Kwesokunxele Nakwesokudla</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Umcibisholo Wamaza Angakwesokunxele Nakwesokudla</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Umkhiqizo Wokuqonde ngqo owehlukaniswa kabili Wangakwesokunxele</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>Kungaphansi Noma Kulingana No-…</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Okucane Kuna- Phezu Kokulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Izincwadi</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>Izinga:</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Umtapo</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Ukukhanya</value>
+  </data>
+  <data name="IslamInfo_Lightning" xml:space="preserve">
+    <value>Umbani</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Khawula</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>Ukuxhumanisa</value>
+  </data>
+  <data name="IslamInfo_LogicalAnd" xml:space="preserve">
+    <value>Okuqondile futhi</value>
+  </data>
+  <data name="IslamInfo_LogicalOr" xml:space="preserve">
+    <value>Okuqondile noma</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Kude</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Umcibisholo Omude Kwesokunxele -Nangakwesokudla</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Umcibisholo Omude Ophindwe kabili Kwesokunxele -Nangakwesokudla</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Isilisa</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Ngesandla </value>
+  </data>
+  <data name="IslamInfo_Market" xml:space="preserve">
+    <value>Imakethe</value>
+  </data>
+  <data name="IslamInfo_Mary" xml:space="preserve">
+    <value>u-Mary</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Okukhulu</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Udaba</value>
+  </data>
+  <data name="IslamInfo_Measure" xml:space="preserve">
+    <value>Linganisa</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Igumbi elilinganisiwe</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Kulinganiswa Nge-</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>I-Mecca</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>I-Medina</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>Umhlangano</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>I-Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Okusaqhubeka Okudindilizi Komugqa ophakathi</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Umzuzu</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>Izinhlobo</value>
+  </data>
+  <data name="IslamInfo_Money" xml:space="preserve">
+    <value>Imali</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Inyanga</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Izinyanga</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Inyanga</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Ukuseni</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>i-Morocco</value>
+  </data>
+  <data name="IslamInfo_Mountain" xml:space="preserve">
+    <value>Intaba</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Kukhulu Kakhulu Kuna-</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Okuncane Kakhulu Kuna-</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>i-Multimap</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>Uphawu lokuphindaphinda</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Inyunyana Yesethi enhlobonhlobo</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Isingeniso:</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Nabla</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>amagama</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>Isisetshenziswa sokungokwezibalo Esizungeleziwe se-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>Isisetshenziswa sokungokwezibalo Sokuhlanganisa Esizungeleziwe se-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>Isistshenziswa esingokwezibalo Esizungeleziwe se-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>Impambano ye-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>Okuqondile kwe-N-ary Futhi</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>Okuqonde kwe-N-ary Noma</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>Isisetshenziswa esingokwezibalo Sempambano Eyisikwele ye-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>Isisetshenziswa sokungokwezibalo seNyunyana Esiyikwele se-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>Ukuhlanganisa Kwe-N-Ary</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>Inyunyana ye-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>Isisetshenziswa esingokwezibalo seNyunyana esineChashazi se-N-ary</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>Isisetshenziswa esingokwezibalo seNyunyana Sokuhlanganisa se-N-ary</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Isikhwelo sokweqa uthango Langakwesokudla Esiphindwe kabili  seBha Yokuqonde mpo Okuphindwe kabili Okuphikiswayo</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>Kungaba Kusondelene noma Kulingani Ngqo na-</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Okuphakathi nendawo</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Okusha...</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Izindaba</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>Ikhasi Elilandelayo</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Iqoqo elincane Elejwayelekile Le-</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Iqoqo elincane Elejwayelekile le- noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Hhayi</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Akucishe nakancane Kulingane Na-</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Kucishe Kulingane Na-</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Akulingani Na-</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Akulingani Na-</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Akungaphezulu kwe-</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Akufani ncamashi Na-</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Akungaphansi Kwe-</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Akulona iqoqo elincane Elejwayelekile Le-</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Akulona iQoqo elincane Elejwayelekile Le- noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Imigqa engalinganisene Ku-</value>
+  </data>
+  <data name="IslamInfo_NotSign" xml:space="preserve">
+    <value>Ungasayini</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Akuwona umfanekiso Oyisikwele We- noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Akukhona Okungumsuka Oyisikwele We- noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Akuyona ithilidi</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Akulona Iqiniso</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>O</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Okuwugweje</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Kunye</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>Ukuvula</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>-Noma-</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>Intandane</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Okunye</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>Ikhasi</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Amakhasi</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>i-Pakistan</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Imigqa elinganisene Ku-</value>
+  </data>
+  <data name="IslamInfo_PartialDifferential" xml:space="preserve">
+    <value>Okwehlukile Kwenye</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>Izinhlayiya</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>Umlingani</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>Ubambiswano</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>Owe-Party</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>Akusebenzi</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Umgudu:</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>Ukuthula</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>Ipeni</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>Ipensela</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Abantu</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>Uphawu lwephesenti</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Imvume</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Indlela yokubuka izinto:</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>i-Philippines</value>
+  </data>
+  <data name="IslamInfo_Pillar" xml:space="preserve">
+    <value>Insika</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Ifologo yotshani</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Indawo</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Izindawo:</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Dweba</value>
+  </data>
+  <data name="IslamInfo_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Ukuhlela Komgudu Oyilungu</value>
+  </data>
+  <data name="IslamInfo_Pound" xml:space="preserve">
+    <value>Iphawundi</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Ntambama</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Ukushona Kwelanga</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Ekuphumeni Kwelanga</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>Andulela</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>Kuyendulela kodwa Akulinganiswa Na-</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>Andulela noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>PREFIX</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>Ikhasi Eledlule</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>Okokuqala</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Ukulinganisana</value>
+  </data>
+  <data name="IslamInfo_ProportionalTo" xml:space="preserve">
+    <value>Kuhlanganiselwe Ku-</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Ukuvikela</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Ikota</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Umacintiswano</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>u-Mary</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Ulwesihlanu</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Ngesandla </value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Ubukhulu bokulinganiselwa</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>Iyafunda</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Okunconyiwe</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>Uphawu Olubhalisiwe</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>Imfuneko</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Impendulo</value>
+  </data>
+  <data name="IslamInfo_ReversedTilde" xml:space="preserve">
+    <value>Ithilidi ehlanekezelwe</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Okulinganayo kwethilidi Okuhlanekezelwe</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>Ngakwesokudla</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>Igumbi eliqonde mpo</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>Igumbi eliqonde mpo elinocezu lwesiyingi</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Umkhiqizo Wokuqonde ngqo owehlukaniswa kabili Wesiphindi Esejwayelekile Sangakwesokudla</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>Ubakaki Bangakwesokudla</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Umkhiqizo Wokuqonde ngqo owehlukaniswa kabili Wangakwesokudla</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>Uphawu Lwengcaphuno Eyodwa Kwesokudla</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>Unxantathu wangakwesokudla</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Ukuzungelezela Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>Ukuzungelezela phakathi Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Ukuphepha</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Inkanyezi enkulu</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>iSaudi Arabia</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Isilinganiso</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Izilinganiso</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Isikole</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>Uhlelosiluleko Usonhlamvukazi u-P</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>Ulwandle</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>umzuzwana</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Izingxenye</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>Ikhefanangqi</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>Umuzwa;Sense</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Ukwehlukanisa Kwesethi</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>I-Shamrock</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Kufushane</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Sayina</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Isiliva</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>I-Sine Wave</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>Ukubukeka</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Umdwebo We-Sumi</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>Yewukela</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Mamatheka</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Amasokisi:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>I-Soul</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>Umsindo...</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Isikhala</value>
+  </data>
+  <data name="IslamInfo_Specific" xml:space="preserve">
+    <value>okuthile</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Inkulumo</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Igumbi esambulunga</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>Ikepisi Elyisikwele</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Inkomishi Eyisikwele</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Isisetshenziswa Esingokwezibalo Sechashazi Esiyisikwele</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Ukususa Okuyisikwele</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Ukuhlanganisa Okuyisikwele</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Izikhathi Eziyizikwele</value>
+  </data>
+  <data name="IslamInfo_SquareFoot" xml:space="preserve">
+    <value>Ubude Besikwele</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Umfanekiso Oyisikwele We-</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Umfanekiso Oyisikwele We- noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Okungumsuka Okuyisikwele Kwe-</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Okungumsuka Okuyisikwele Kwe- noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Unombolo ziphinde</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>i-Sri Lanka</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>INkanyezi</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Isisetshenziswa sokungokwezibalo Senkanyezi</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Isiteshi</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>Iyama...</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>Amandla</value>
+  </data>
+  <data name="IslamInfo_Student" xml:space="preserve">
+    <value>Umfundi</value>
+  </data>
+  <data name="IslamInfo_SubsetOf" xml:space="preserve">
+    <value>Isethi encane Ye-</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>Isethi encane Ye-Engenaye uKulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Ngobuqili</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>Phumelela</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>Kuphumelele kodwa Akulinganiswa Na-</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>Phumelela noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>Phemelela noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>I-Sudan</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Isijobelelo</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>Isiphakamiso</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>Son</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Ekuphumeni Kwelanga</value>
+  </data>
+  <data name="IslamInfo_SupersetOf" xml:space="preserve">
+    <value>Isethi enkulu Ye-</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>Isethi enkulu Ye- Engenaye uKulingana Na-</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Isiphelelisi Esisobala</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>[Ithebula]</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>Mude</value>
+  </data>
+  <data name="IslamInfo_TapeDrive" xml:space="preserve">
+    <value>Idrayivu yokuqopha</value>
+  </data>
+  <data name="IslamInfo_Term" xml:space="preserve">
+    <value>Ithemu</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>Umbhalo</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>I- </value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Lapho Kungokungekho</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Lapho Kukhona</value>
+  </data>
+  <data name="IslamInfo_Therefore" xml:space="preserve">
+    <value>Ngakho-ke</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>Kuqala</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>Isine</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>umzuzwana</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Lokhu</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Uphawu I-Tilde</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Isikhathi</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>Ncanimpela</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>Namuhla</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Igumbi elingakwesokunxele phezulu</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Ingosi esenhla kwesokuDla</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>Thinta</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>Idolobha</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>Idolobha/Idolobhakazi</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>Ukudweba ngokulandela uhlaka</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>Uphawu Lokuhweba</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Ukuhumusha</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Ezokuvakasha</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Isiphelelisi Esiphindwe kathathu</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Isikhwelo sokweqa uthango esiphenduliwe Sangasokudla seBha Yokuqonde thwi Okuphindwe kathathu</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>Yiqiniso</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>i-Tunisia</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>Uhlamvu Oluncane lwe-Iota lwesiGrikhi oluphenduliwe</value>
+  </data>
+  <data name="IslamInfo_Umbrella" xml:space="preserve">
+    <value>iSambulela</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>Ungambozi</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Inhlanganisela</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Okungaziwa</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Okungabonwa</value>
+  </data>
+  <data name="IslamInfo_Until" xml:space="preserve">
+    <value>Kuze kube: </value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>&amp;Umcibisholo oya phezulu-naphansi</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>Umcibisholo Ophindwe kabili Phansi naphezulu</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>Okusaqhubeka Okudayagonali Kwesokudla Phezulu</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>I-Uranus</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>isenzo</value>
+  </data>
+  <data name="IslamInfo_VerticalEllipsis" xml:space="preserve">
+    <value>Okusaqhubeka Okuqonde thwi</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Ulayini owehlayo</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Kukhuliu Kakhulu Kuna-</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Kuncane Kakhulu Kuna-</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>Iphimbo</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Isiphelelisi Somthamo</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Iwashi</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Amanzi</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>Okungenamandla</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>ISonto</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Nini</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Kuphi:</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Isiyingi Esimhlophe</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>Ubuso Obumamathekayo Obumhlophe</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Unxantathu Okhomba -Phezulu Omhlophe</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>Kungani?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value>Nga-</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>I-Word</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Amagama:</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>i-Wrapper</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Umkhiqizo wegoda lezimbali</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>Unyaka</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Yebo</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>Wena</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Faka</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Sebenzisa</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>ibhuku</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>Izibalo</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Iqoqo</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Usuku</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Amazinga</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Isichazamazwi</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Isiqondisindlela</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Yenqabela</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Bonisa</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Ukwahlukana</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Ifonti</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Uhlelo lolimi</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Ikhalenda yesi-Gregory</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Ikhalenda yesi-Hijri</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Ekhaya</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Ulwazi</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Isingeniso:</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>A</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>izinhla</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Isalayisha</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>ukuhlela</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Imizuzu</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Cha</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Cishile</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Ukusuka</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Umsebenzi</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Phrinta</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Caphuna</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>&lt;&lt; Khipha</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Isikimu</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>imizuzwana</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Okukhethiwe</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Umbhalo</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Ukuhumusha</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Amayunithi</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Isibonisi</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Yebo</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Imfungumfungu</value>
+  </data>
+  <data name="IslamInfo_Sweep" xml:space="preserve">
+    <value>Shanela</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Kubi</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Idrayiva</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Ngempumelelo</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Okuthandiwe</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Kuyaqaliswa</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Ixhunyiwe</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Hlukeneyo</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>I-Exchange()</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Kungaba isethi encane ye- noma Kulingana  Na-</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Kungaba isethi enkulu ye- noma Kulingana Na-</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Ayiyona isethi encane Ye-</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Ayiyona isethi enkulu Ye-</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Ingxabo</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Umphumela</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Kuyasebenza</value>
+  </data>
 </root>

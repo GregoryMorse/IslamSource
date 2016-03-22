@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Predvolený jazyk</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Pridať záložku</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Záložky</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Skopírovať do Schránky</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Prejsť na verš</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pozastaviť</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Prehrať</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Recitácie</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Odstrániť záložku</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Nastavenie prehrávania verš</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Zobraziť exegéza</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Zdieľanie</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Ďalšie verše pokročilého oneskorenia</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Vopred verš automaticky</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Dĺžka oneskorenia verš pred posunom</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Režim slučky</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value> - informácie</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabčina Korán s metadátami a všetky preklady a niektoré zvukové recitácie, okrem prípadov, ktoré sú pripísané na Tanzil projektu (http://tanzil.net). 
+Maďarský preklad Koránu do Kiss Zsuzsanna Halima pripisovať Magyar Iszlam (http://magyariszlam.hu). 
+Anglický preklad Korán Maulana Muhammad Ali pripísaná na The Lahore Ahmadiyya hnutie v islame (http://www.aaiil.org). 
+Morfológia údajov a anglickom preklade slovo za slovom úvery Quranic arabčina Corpus (http://corpus.quran.com). 
+Indonézskej-doslovne preklad úver Al-Korán Indonézia (http://www.alquran-indonesia.com/web/quran). 
+Prekladateľské Urdu slovo od slova od Hafiz Nazar Muhammad pripísaná na jednoduché Wa Hadees Korán (http://www.easyquranwahadees.com). 
+Iné preklady slovo za slovom, ako aj iné preklady v programe pripisovať Microsoft prekladateľské služby (http://www.microsoft.com/en-us/translator) a Google Translate (http://translate.google.com) a nemusia byť presné.  Pre malajzijskej slovo na slovo Qur'an, zdrojom je indonézsky.  Pre iné slovo na slovo Qur'an, zdrojom je angličtina arabčina Corpus Koráne. 
+Ostatné audio výpočty s bitrate zobrazené pripísaná na každý verš (http://www.everyayah.com). 
+Údaje s kódovaním Unicode pripísať konzorcia Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

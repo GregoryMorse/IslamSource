@@ -27,4 +27,19 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Величина</value>
   </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Копирај у међуспремник</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Репродукуј</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Заједничко</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>О програму</value>
+  </data>
 </root>

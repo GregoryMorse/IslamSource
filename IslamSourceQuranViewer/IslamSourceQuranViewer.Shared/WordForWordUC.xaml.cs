@@ -162,6 +162,21 @@ namespace IslamSourceQuranViewer
             gestRec.ProcessMoveEvents(e.GetIntermediatePoints(null));
             e.Handled = true;
         }
+        void OnPointerCanceled(object sender, PointerRoutedEventArgs e)
+        {
+            gestRec.CompleteGesture();
+            e.Handled = true;
+        }
+        void OnPointerCaptureLost(object sender, PointerRoutedEventArgs e)
+        {
+            gestRec.CompleteGesture();
+            e.Handled = true;
+        }
+        void OnPointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            gestRec.CompleteGesture();
+            e.Handled = true;
+        }
         void OnHolding(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.HoldingEventArgs args)
         {
             if (args.HoldingState == Windows.UI.Input.HoldingState.Started)
@@ -182,10 +197,20 @@ namespace IslamSourceQuranViewer
             double curWidth = UIChanger.MaxWidth;
             Division = c.Division;
             Selection = c.Selection;
+            int JumpToChapter = c.JumpToChapter;
+            int JumpToVerse = c.JumpToVerse;
             this.ViewModel.RenderModels = await System.Threading.Tasks.Task.Run(() => VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), curWidth));
             if (curWidth == 0 && UIChanger.MaxWidth != 0) OnSizeChanged(this, null);
-            while (ViewModel.VerseReferences.Count() != CurrentPlayingItem && ViewModel.VerseReferences[CurrentPlayingItem].Chapter == -1) { CurrentPlayingItem++; if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) CurrentPlayingItem = 0; }
+            if (JumpToChapter != -1)
+            {
+                while (ViewModel.VerseReferences.Count() != CurrentPlayingItem && (ViewModel.VerseReferences[CurrentPlayingItem].Chapter != JumpToChapter || ViewModel.VerseReferences[CurrentPlayingItem].Verse != JumpToVerse)) { CurrentPlayingItem++; if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) CurrentPlayingItem = 0; }
+            }
+            else {
+                while (ViewModel.VerseReferences.Count() != CurrentPlayingItem && ViewModel.VerseReferences[CurrentPlayingItem].Chapter == -1) { CurrentPlayingItem++; if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) CurrentPlayingItem = 0; }
+            }
             ViewModel.CurrentVerse = ViewModel.VerseReferences[CurrentPlayingItem];
+            if (JumpToChapter != -1) { ScrollToVerse(ViewModel.CurrentVerse); }
+            if (c.StartPlaying) { PlayPause_Click(null, null); }
             LoadingRing.IsActive = false;
         }
         public MyUIChanger UIChanger { get; set; }
@@ -320,10 +345,29 @@ namespace IslamSourceQuranViewer
                     PlayPause.Icon = new SymbolIcon(Symbol.Play);
                     PlayPause.Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Play/Label");
                 } else if (((PlayPause.Icon as SymbolIcon).Symbol == Symbol.Pause) && mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Paused) {
-                    do
-                    {
+                    if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[1].Name) { VersePlayer.Play(); return; }
+                    do {
                         CurrentPlayingItem++;
-                        if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) CurrentPlayingItem = 0;
+                        if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) {
+                            if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[2].Name) {
+                                CurrentPlayingItem = 0;
+                            } else {
+                                int max = IslamMetadata.TanzilReader.GetSelectionNames(Division.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty).Count();
+                                if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[0].Name && Selection + 1 != max) {
+                                    this.Frame.Navigate(typeof(WordForWordUC), new { Division = Division, Selection = Selection + 1, JumpToChapter = -1, JumpToVerse = -1, StartPlaying = true });
+                                    this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
+                                    return;
+                                }
+                                else if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[3].Name) {
+                                    this.Frame.Navigate(typeof(WordForWordUC), new { Division = Division, Selection = (Selection + 1) == max ? 0 : (Selection + 1), JumpToChapter = -1, JumpToVerse = -1, StartPlaying = true });
+                                    this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
+                                    return;
+                                } else {
+                                    CurrentPlayingItem--;
+                                    return;
+                                }
+                            }
+                        }
                     } while (ViewModel.VerseReferences.Count() != CurrentPlayingItem && ViewModel.VerseReferences[CurrentPlayingItem].Chapter == -1);
                     ViewModel.CurrentVerse = ViewModel.VerseReferences[CurrentPlayingItem];
                     ScrollToVerse(ViewModel.VerseReferences[CurrentPlayingItem]);
@@ -438,7 +482,7 @@ namespace IslamSourceQuranViewer
                 (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
                 {
                     ViewModel.CurrentVerse = (sender as StackPanel).DataContext as MyRenderItem;
-                    for (int count = 0; count < ViewModel.VerseReferences.Count() - 1; count++)
+                    for (int count = 0; count <= ViewModel.VerseReferences.Count() - 1; count++)
                     {
                         if (ViewModel.VerseReferences[count] == ViewModel.CurrentVerse) { CurrentPlayingItem = count; break; }
                         VersePlayer.Source = null;
@@ -664,7 +708,7 @@ namespace IslamSourceQuranViewer
             set
             {
                 _RenderModels = value;
-                VerseReferences = value.SelectMany((Model) => Model.RenderItems).ToList();
+                VerseReferences = value.SelectMany((Model) => Model.RenderItems).Where((Item) => Item.Chapter != -1).ToList();
                 if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderModels"));
                 if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderSource"));
             }

@@ -12,4 +12,1471 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Књига</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Књиге</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Превођење</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Јачина звука</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>изнад</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Апсолутно</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>Кориснички рачун</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Послије...</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>Алжир</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>Све</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Дозвољено </value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>Скоро једнако или једнако са</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>Увијек</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>Ознака</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Угао:</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>Љуто</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>договор</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>Приближава се граници</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>Приближно једнако са</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Арапски</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Лук</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>аргумент</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Около</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>Звјездица</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Оператор звјездица</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Асимптотично једнако са</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Атрибути:</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>баланс</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>испред</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>Боље</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>Између...</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Црна</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Црни круг</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>Тијело</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>Књига</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Доњи лијеви угао</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Доњи десни угао</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Бреве</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Партнерство</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Поклони</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Услови</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Знак за истицање</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Знак за истицање оператора</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Купити</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Позив</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>Канада</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Аутомобил</value>
+  </data>
+  <data name="IslamInfo_Chain" xml:space="preserve">
+    <value>Ланац</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Поглавље:</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>Кина</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Заокружени оператор астерикс</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Заокружена цртица</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Заокружена коса црта за дијељење</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Заокружени оператор тачка</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Заокружени минус</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Заокружени плус</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Заокружени оператор прстен</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Заокружено вријеме</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Класификација</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Избрисати</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Интеграл за контуру у смијеру кретања казаљке на сату</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Интеграл за смијер кретања у смијеру казаљке на сату</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Стрелица са полукругом на горе усмјерена у смјеру кретања казаљки на сату</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>Затварање...</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>Облак</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>Двотачка</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>Зарез</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Заједница</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Компанија :</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Заврши</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Услов</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Честитамо</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Повезивање...</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>Садржано као нормална група</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>Садржано као нормална група или једнако са</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>САДРЖАЈ</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Интеграл за контуру</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Копирај</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Кубни коријен</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Закривљено логичко И</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>Закривљено логичко Или</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Прилагођено</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Знак †</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Датум</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>Давид</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Дан</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>недјеља</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>понедјељак</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>уторак</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>сриједа</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>четвртак</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>петак</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Субота</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Задано</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>Одгода:</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Испорука</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>Делта једнака са</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Детаљи...</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>Дијакритичке знаке</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Дијамант оператор</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>Разлика између</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Дијељење</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Знак дијељења</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Коса црта за дијељење</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Дијељење времена</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>Не садржи као члан</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Није подијељен</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Не форсира</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Не предходи</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>Не предходи или је једнако</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>Не доказује</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Не сљедује</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>Не слиједи или је једнако</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Тачка оператор</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Тачка плус</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Дупли пресјек</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Двоструки подскуп</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Двоструки надскуп</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Дупла унија</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>Доња десна дијагонала елипсе</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>Сан</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>Земља</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>Египат</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Уздигнуће:</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>—	Дуга цртица</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value> 	Дуги размак</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>КРАЈ</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>–	Повлака</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value> 	Кратки размак</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Забава</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Коверта</value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>Једнако и паралелно са</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>Једнако по дефиницији</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>Једнако са или предходи</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>Једнако са или слиједи</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Еквивалентно са</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>Објасни...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Одређен</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Женско</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>Фин</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Ватра</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>први</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>Прва четврт Мјесеца</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>Непромјењиво</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>Пламен</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>ток</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Храна</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>Фонтана</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Четврти коријен</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>Француска</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>петак</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>Од:</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Предњи дио</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>Читав блок</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>Будућност</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>Башта</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>Спол</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Генерално  </value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>Геометријски једнако са</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>Геометријски еквивалентно са</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>Њемачка</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Злато</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Добро</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Достојанствена</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Граматика</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Граве</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>Гравис</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>Велика Британија</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>Веће од или једнако са...</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Веће од или једнако</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Група</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Групе</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Врло танко</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Рука</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>Глава</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Срце</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>Скривено</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Наговјештај</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>Сат</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>Хаус</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Идентичан са</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>Слика од или приближно једнако са</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Impact</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>У</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Некомплетно</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Прираштај</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>Индија</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>Индонезија</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>Бесконачно</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>Уметнути</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Пресјек</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Увод</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Увод</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Обрнути Ohm-ов знак</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>Ирак</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>Израел</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Споји</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>Joрдан</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Јупитер</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>Keнија</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>Тастатура...</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>Kувајт</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>Посљедња</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>Задња четврт Мјесеца</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Водич</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>Либан</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Лијеви нормални фактор полудиректног производа</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>Лијева заграда</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Дупла стрелица и за лијево и за десно</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Таласна стрелица и за лије и за десно</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Лијеви полудиректни производ</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>Мање од или једнако са...</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Мање од или једнако</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Писма</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>Ниво</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Библиотека</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Свијетло</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Лимес</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Дуго</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Дуга стрелица и за лијево и за десно</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Двострука дуга стрелица и за лијево и за десно</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Мушко</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Ручно </value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Прототип</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Материја</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Измјерени угао</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Мјерено по</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>Састанак</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Средња линија хоризонталне елипсе</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Минута</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>Модели</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Мјесец</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Мјесеци</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Мјесец</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Јутро</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>Мароко</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Пуно веће од</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Много мање од</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>Вишеструко мапирање</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>Знак множења</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Унија више скупова</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Увод</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Набла</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Име</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Називи</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>Н-ти заокружени тачка оператор</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>Н-ти заокружени плус оператор</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>Н-ти заокружени оператор за вријеме</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>Н-ти пресјек</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>Н-то логичко И</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>Н-то логичко Или</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>Н-ти оператор за квадратни пресјек</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>Н-ти оператор за квадратну унију</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>Н-та унија</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>Н-ти оператор за унију са тачком</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>Н-ти оператор за унију са плусом</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Угнијеждена дупла вертикална црта дупли обртни крст на десно</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>Нити приближно нити стварно једнако са</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Неутрално</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Ново...</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Интересне групе</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>Сљедећа страница</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Нормална подгрупа од</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Нормална подгрупа од или једнако са</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Није скоро једнако</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Није асимптотично једнако са</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Није еквиваленто са</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Не веће од</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Није идентичан са</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Не мање од</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Није нормална подгрупа од</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Није нормална подгрупа од или једнако са</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Није паралелно са</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Није квадратна слика од или једнако са</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Није квадратни оригинал од или једнако са</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Без тилде</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Није истина</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>'О'</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Један</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value> Отварање </value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>Нема надређеног</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Остало</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>Страница</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Странице</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>Пакистан</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Паралелно са</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>Честица</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>Партнер</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>Партнерство</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>Пасивно</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Путања</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>Перо</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Људи</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>Знак за процент</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Дозвола</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Перспектива:</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>Филипини</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Рачве</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Мјесто</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Мјеста:</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Plot</value>
+  </data>
+  <data name="IslamInfo_Pound" xml:space="preserve">
+    <value>Фунта</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Послијеподне</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Залазак сунца</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Излазак сунца</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>Предходи</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>Предходи али није еквивалентно са</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>Предходи или једнак са</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEquivalentTo" xml:space="preserve">
+    <value>Предходи или еквивалентно са</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>- Позивни -</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>Претходна страница</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Пропорција</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Заштита</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Конкуренција</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>петак</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Ручно </value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Омјер</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>Читање</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Препоручено</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Одговор</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Једнако обрнутој тилди</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>Десни угао са луком</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Десни нормални фактор полудиректног производа</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>Десна заграда</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Десни полудиректни производ</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>Правоугли троугао</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Круг једнак са</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>Заокружити у једнако са</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Сигурност</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Сатурн</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>Саудијска Арабија</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Размјер...</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Размјери</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Школа</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>Велико писано П</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>Море</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Одломци:</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>Тачка-зарез</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Поставити минус</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>Дјетелина</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Кратко</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Потпиши</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Сребрена</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>Синусни талас</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Небо</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Осмјех=:-)</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Сокс:</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>Соул</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>Звук</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Размак</value>
+  </data>
+  <data name="IslamInfo_Specific" xml:space="preserve">
+    <value>специфично</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Говор</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Сферични угао</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>квадратна капа</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Квадратни пехар</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Квадрирани тачка оператор</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Квадрирани минус</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Квадрирани плус</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Квадрирано вријеме</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Квадратна слика од</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Квадртна слика од или једнако са</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Квадратни оригинал од</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Квадрат оригинала од или једнако са</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Квадратни коријен</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>Шри Ланка</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>Звијезда=(*)</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Звијезда оператор</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Станица</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>Заустављање...</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>Подскуп од уз није једнако са</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Суптилно</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>Слиједи</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>Слиједи али није еквивалентно са</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>Сљедује или једнак са</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>Сљедује или еквивалентно са</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>Судан</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Суфикс</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>Приједлог</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>нед</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Излазак сунца</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>Надскуп од уз није једнако са</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Површински интеграл</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>Табела: </value>
+  </data>
+  <data name="IslamInfo_TapeDrive" xml:space="preserve">
+    <value>Јединица траке</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>текст</value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Тамо не постоје</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Тамо постоје</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>први</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>четврти</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Ово</value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Тилда</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Вријеме:</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>Ситан</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>Данас</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Горњи лијеви угао</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Горњи десни угао</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>Град</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>Град</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>Прати</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Превођење</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Путовање</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Троструки интеграл</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Трострука усправна црта окренута на десно</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>Тунис</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>Окренуто грчко мало слово Iota</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Унија</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Непознато</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>Дупла стрелица и за горе и за доле</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>Горња десна дијагонала елипсе</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>Уран</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>Глагол</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Вертикална линија</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Пуно веће него</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Пуно мање него</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>Глас</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Интеграл за волумен</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Надзор</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Вода</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>Седмица</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Када:</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Гдје:</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Бијели круг</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Бијели троугао који показује према горе</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>Зашто?</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value>са</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Ријеч</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Ријечи:</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Омотач</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Вијенац производа</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>Година</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>Додај...</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Примијени</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Књига</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Датум</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Рјечник...</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Смјер</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Онемогући</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Приказ</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Дијељење</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Фонт</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Граматика</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Грегоријански календар</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Хиџретски календар</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Почетак</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Информације</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Увод</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>А</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Спискови</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Учитавање...</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Мапирање</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Не</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Помак:</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Операција</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Штампање</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>ЦИТАТ</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Уклони</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Шема</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>Секунде</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Избор</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>текст</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Превођење</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Јединице</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Смеће</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Лоше</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Погонски програм</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Успјешно</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Преферирано</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Почиње</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Придружен</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Раздвојено</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Ни подскуп ни једнако са</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Ни надскуп ни једнако са</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Није подскуп од</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Није надскуп од</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Коријен</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Резултат</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Активно</value>
+  </data>
 </root>

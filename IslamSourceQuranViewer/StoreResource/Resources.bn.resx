@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>আকার</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>যোগ ও বুকমার্ক</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;বুকমার্কসমূহ</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>ক্লিপবোর্ডে অনুলিপি করুন</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>বিরতি দিন</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>চালান</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>অংশীদারি</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>সম্পর্কে</value>
+  </data>
 </root>

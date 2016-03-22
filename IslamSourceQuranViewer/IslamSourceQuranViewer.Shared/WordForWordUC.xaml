@@ -57,7 +57,7 @@
             <ItemsControl ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}" MaxWidth="{Binding MaxWidth, Converter={StaticResource WidthLimiter}, Mode=OneWay}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Background="{Binding IsSelected, Converter={StaticResource BackgroundSelected}, Mode=OneWay}" Orientation="Vertical" Width="auto" Height="auto" Holding="StackPanel_Holding" PointerPressed="OnPointerPressed" PointerMoved="OnPointerMoved" PointerReleased="OnPointerReleased"></StackPanel>
+                        <StackPanel Background="{Binding IsSelected, Converter={StaticResource BackgroundSelected}, Mode=OneWay}" Orientation="Vertical" Width="auto" Height="auto" Holding="StackPanel_Holding" PointerPressed="OnPointerPressed" PointerMoved="OnPointerMoved" PointerReleased="OnPointerReleased" PointerCanceled="OnPointerCanceled" PointerExited="OnPointerExited" PointerCaptureLost="OnPointerCaptureLost"></StackPanel>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
@@ -98,7 +98,7 @@
         </ItemsControl>
         <ProgressRing Name="LoadingRing" IsActive="True" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"></ProgressRing>
         <MediaElement Name="VersePlayer" CurrentStateChanged="MediaElement_CurrentStateChanged" AreTransportControlsEnabled="False" AutoPlay="True"></MediaElement>
-        <Popup x:Name="GoToVersePopup">
+        <Popup x:Name="GoToVersePopup" IsLightDismissEnabled="True">
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                 Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
                 <ListBox ItemsSource="{Binding Source={StaticResource VerseNumbers}, Mode=OneWay}" 

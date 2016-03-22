@@ -36808,7 +36808,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Root" translate="yes" xml:space="preserve">
           <source>Root</source>
-          <target state="new">Root</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Reen</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Lemma" translate="yes" xml:space="preserve">
           <source>Lemma</source>
@@ -36876,7 +36876,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Result" translate="yes" xml:space="preserve">
           <source>Result</source>
-          <target state="new">Result</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Njuréef</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Supplemental" translate="yes" xml:space="preserve">
           <source>Supplemental</source>
@@ -36980,7 +36980,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Active" translate="yes" xml:space="preserve">
           <source>Active</source>
-          <target state="new">Active</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sawar</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Perfect" translate="yes" xml:space="preserve">
           <source>Perfect</source>
@@ -37001,6 +37001,246 @@
         <trans-unit id="IslamInfo_Singular" translate="yes" xml:space="preserve">
           <source>Singular</source>
           <target state="new">Singular</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NumberSpelling" translate="yes" xml:space="preserve">
+          <source>Number Spelling</source>
+          <target state="new">Number Spelling</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HeadingNumberSpelling" translate="yes" xml:space="preserve">
+          <source>Heading Number Spelling</source>
+          <target state="new">Heading Number Spelling</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Stopping Endowment</source>
+          <target state="new">Stopping Endowment</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaStoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Stopping Endowment</source>
+          <target state="new">Teh Marbuta Stopping Endowment</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaJoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Joining Continuing</source>
+          <target state="new">Teh Marbuta Joining Continuing</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_JoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Joining Continuing</source>
+          <target state="new">Joining Continuing</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" translate="yes" xml:space="preserve">
+          <source>Standing Oblong Zero Small High Upright Rectangular Zero</source>
+          <target state="new">Standing Oblong Zero Small High Upright Rectangular Zero</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyCentreLowStop" translate="yes" xml:space="preserve">
+          <source>Empty Centre Low Stop</source>
+          <target state="new">Empty Centre Low Stop</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RoundedHighStopWithFilledCentre" translate="yes" xml:space="preserve">
+          <source>Rounded High Stop With Filled Centre</source>
+          <target state="new">Rounded High Stop With Filled Centre</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallNoon" translate="yes" xml:space="preserve">
+          <source>Small Noon</source>
+          <target state="new">Small Noon</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHighSeen" translate="yes" xml:space="preserve">
+          <source>Small High Seen</source>
+          <target state="new">Small High Seen</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallLowSeen" translate="yes" xml:space="preserve">
+          <source>Small Low Seen</source>
+          <target state="new">Small Low Seen</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Sukun" translate="yes" xml:space="preserve">
+          <source>Sukun</source>
+          <target state="new">Sukun</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyShadda" translate="yes" xml:space="preserve">
+          <source>Empty Shadda</source>
+          <target state="new">Empty Shadda</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ShaddaResolve" translate="yes" xml:space="preserve">
+          <source>Shadda Resolve</source>
+          <target state="new">Shadda Resolve</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaFatha" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Fatha</source>
+          <target state="new">Continuing Hamza Fatha</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaKasra" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Kasra</source>
+          <target state="new">Continuing Hamza Kasra</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaDamma" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Damma</source>
+          <target state="new">Continuing Hamza Damma</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaEmpty" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Empty</source>
+          <target state="new">Continuing Hamza Empty</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LaamAssimilation" translate="yes" xml:space="preserve">
+          <source>Laam Assimilation</source>
+          <target state="new">Laam Assimilation</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaAssimilation" translate="yes" xml:space="preserve">
+          <source>Raa Assimilation</source>
+          <target state="new">Raa Assimilation</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaHeavinessOrLightness" translate="yes" xml:space="preserve">
+          <source>Raa Heaviness Or Lightness</source>
+          <target state="new">Raa Heaviness Or Lightness</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallWaw" translate="yes" xml:space="preserve">
+          <source>Small Waw</source>
+          <target state="new">Small Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallYeh" translate="yes" xml:space="preserve">
+          <source>Small Yeh</source>
+          <target state="new">Small Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_FathaSilentLetterSuperscriptAlef" translate="yes" xml:space="preserve">
+          <source>Fatha Silent Letter Superscript Alef</source>
+          <target state="new">Fatha Silent Letter Superscript Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DipthongZeroLength" translate="yes" xml:space="preserve">
+          <source>Dipthong Zero Length</source>
+          <target state="new">Dipthong Zero Length</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OriginalLengtheningZeroCapture" translate="yes" xml:space="preserve">
+          <source>Original Lengthening Zero Capture</source>
+          <target state="new">Original Lengthening Zero Capture</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateGreatIdenticalDammaMerge" translate="yes" xml:space="preserve">
+          <source>Assimilate Great Identical Damma Merge</source>
+          <target state="new">Assimilate Great Identical Damma Merge</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateSmallIdenticalHaaSakinah" translate="yes" xml:space="preserve">
+          <source>Assimilate Small Identical Haa Sakinah</source>
+          <target state="new">Assimilate Small Identical Haa Sakinah</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostCompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Complete Nasalization</source>
+          <target state="new">Most Complete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Complete Nasalization</source>
+          <target state="new">Complete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_IncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Incomplete Nasalization</source>
+          <target state="new">Incomplete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostIncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Incomplete Nasalization</source>
+          <target state="new">Most Incomplete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" translate="yes" xml:space="preserve">
+          <source>Vowelless Noon Incomplete Assimilating Nasalization</source>
+          <target state="new">Vowelless Noon Incomplete Assimilating Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_UnwrittenHelperKasra" translate="yes" xml:space="preserve">
+          <source>Unwritten Helper Kasra</source>
+          <target state="new">Unwritten Helper Kasra</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaWawHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Waw Hamza</source>
+          <target state="new">Alef Wasla Waw Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaAlefMaksuraHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Alef Maksura Hamza</source>
+          <target state="new">Alef Wasla Alef Maksura Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Hamza</source>
+          <target state="new">Alef Wasla Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHamza" translate="yes" xml:space="preserve">
+          <source>Small Hamza</source>
+          <target state="new">Small Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterHamza" translate="yes" xml:space="preserve">
+          <source>Letter Hamza</source>
+          <target state="new">Letter Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HamzaAbove" translate="yes" xml:space="preserve">
+          <source>Hamza Above</source>
+          <target state="new">Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotAlef" translate="yes" xml:space="preserve">
+          <source>Not Alef</source>
+          <target state="new">Not Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddAlef" translate="yes" xml:space="preserve">
+          <source>Madd Alef</source>
+          <target state="new">Madd Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotWaw" translate="yes" xml:space="preserve">
+          <source>Not Waw</source>
+          <target state="new">Not Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotYeh" translate="yes" xml:space="preserve">
+          <source>Not Yeh</source>
+          <target state="new">Not Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddWaw" translate="yes" xml:space="preserve">
+          <source>Madd Waw</source>
+          <target state="new">Madd Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenWaw" translate="yes" xml:space="preserve">
+          <source>Leen Waw</source>
+          <target state="new">Leen Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongWaw" translate="yes" xml:space="preserve">
+          <source>Strong Waw</source>
+          <target state="new">Strong Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddYeh" translate="yes" xml:space="preserve">
+          <source>Madd Yeh</source>
+          <target state="new">Madd Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenYeh" translate="yes" xml:space="preserve">
+          <source>Leen Yeh</source>
+          <target state="new">Leen Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongYeh" translate="yes" xml:space="preserve">
+          <source>Strong Yeh</source>
+          <target state="new">Strong Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DivisionMarkers" translate="yes" xml:space="preserve">
+          <source>Division Markers</source>
+          <target state="new">Division Markers</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkers" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers</source>
+          <target state="new">Continue Stop Markers</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkersAtEnding" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers At Ending</source>
+          <target state="new">Continue Stop Markers At Ending</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryLightened" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Lightened</source>
+          <target state="new">Maddah Obligatory Lightened</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryWeighted" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Weighted</source>
+          <target state="new">Maddah Obligatory Weighted</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" translate="yes" xml:space="preserve">
+          <source>Connected Lengthening Essential Presented Sukun</source>
+          <target state="new">Connected Lengthening Essential Presented Sukun</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SoftLengtheningLetters" translate="yes" xml:space="preserve">
+          <source>Soft Lengthening Letters</source>
+          <target state="new">Soft Lengthening Letters</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterSpelling" translate="yes" xml:space="preserve">
+          <source>Letter Spelling</source>
+          <target state="new">Letter Spelling</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RemembranceAfterPrayer" translate="yes" xml:space="preserve">
+          <source>Remembrance After Prayer</source>
+          <target state="new">Remembrance After Prayer</target>
         </trans-unit>
       </group>
     </body>

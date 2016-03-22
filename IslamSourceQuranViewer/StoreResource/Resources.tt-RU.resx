@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Үлчәм:</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;Кыстыргыч өстәү</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Кыстыргычлар</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Алмашу буферына күчермәләү</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Туктатып тору</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Уйнату</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Уртак куллану</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Мәгълүмат</value>
+  </data>
 </root>

@@ -210,7 +210,6 @@
         <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
           <source>Set Playback Verse</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">پلے بیک آیت سیٹ کریں</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
           <source>Show Exegesis</source>
@@ -218,7 +217,39 @@
         </trans-unit>
         <trans-unit id="Share.Text" translate="yes" xml:space="preserve">
           <source>Share</source>
-          <target state="new">Share</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حصہ داری کریں</target>
+        </trans-unit>
+        <trans-unit id="AdditionalVerseAdvanceDelay.Text" translate="yes" xml:space="preserve">
+          <source>Additional Verse Advance Delay</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایڈیشنل آیت ایڈوانس تاخیر</target>
+        </trans-unit>
+        <trans-unit id="AutomaticAdvanceVerse.Text" translate="yes" xml:space="preserve">
+          <source>Advance Verse Automatically</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ایڈوانس آیت خود کار طریقے سے</target>
+        </trans-unit>
+        <trans-unit id="DelayVerseLengthBeforeAdvancing.Text" translate="yes" xml:space="preserve">
+          <source>Delay Length of Verse Before Advancing</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">آیت کی تاخیر کی لمبائی آگے بڑھنا سے پہلے</target>
+        </trans-unit>
+        <trans-unit id="Looping.Text" translate="yes" xml:space="preserve">
+          <source>Looping Mode</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">looping کے موڈ</target>
+        </trans-unit>
+        <trans-unit id="About.Label" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">متعلق</target>
+        </trans-unit>
+        <trans-unit id="AboutInfo.Text" translate="yes" xml:space="preserve">
+          <source>Arabic Qur'an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
+Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
+Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
+Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;میٹا ڈیٹا اور تمام تراجم اور التنزیل پروجیکٹ (http://tanzil.net) میں جمع کی فہرست میں شامل لوگوں کے سوا کچھ آڈیو قرآت ساتھ عربی قرآن.&lt;br&gt;</target>
         </trans-unit>
       </group>
     </body>

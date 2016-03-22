@@ -90,4 +90,25 @@
   <data name="ShowExegesis.Text" xml:space="preserve">
     <value>دکھائیں تفسیر</value>
   </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>حصہ داری کریں</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>ایڈیشنل آیت ایڈوانس تاخیر</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>ایڈوانس آیت خود کار طریقے سے</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>آیت کی تاخیر کی لمبائی آگے بڑھنا سے پہلے</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping کے موڈ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>متعلق</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;میٹا ڈیٹا اور تمام تراجم اور التنزیل پروجیکٹ (http://tanzil.net) میں جمع کی فہرست میں شامل لوگوں کے سوا کچھ آڈیو قرآت ساتھ عربی قرآن.&lt;br&gt;</value>
+  </data>
 </root>

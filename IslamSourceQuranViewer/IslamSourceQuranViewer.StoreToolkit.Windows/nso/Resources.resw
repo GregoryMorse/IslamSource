@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Bogolo</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Mafelotšhupetšo</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopišetša go Klipbote</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Emiša nakwana</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Raloka</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Abelana</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Mabapi le</value>
+  </data>
 </root>

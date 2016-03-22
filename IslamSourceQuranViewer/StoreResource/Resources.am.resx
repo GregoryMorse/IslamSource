@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>መጠን፦</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;እልባት አክል</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>እልባቶች</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>ወደ ቅንጥብ ሰሌዳ ገልብጥ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ላፍታ አቁም</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value> አጫውት</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>አጋራ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ስለ</value>
+  </data>
 </root>

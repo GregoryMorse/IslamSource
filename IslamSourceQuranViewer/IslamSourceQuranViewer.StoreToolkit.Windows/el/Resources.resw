@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Προεπιλεγμένη γλώσσα</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Προσθήκη σελιδοδείκτη</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Σελιδοδείκτες</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Αντιγραφή στο Πρόχειρο</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Πηγαίνετε στο στίχο</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Παύση</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Αναπαραγωγή</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Αφηγητής</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Κατάργηση σελιδοδείκτη</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Σύνολο αναπαραγωγής στίχο</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Εμφάνιση εξήγηση</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Κοινοποίηση</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Καθυστέρηση εκ των προτέρων πρόσθετες στίχο</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Εκ των προτέρων στίχο αυτόματα</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Μήκος καθυστέρηση το στίχο πριν από την προώθηση</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Λειτουργία επανάληψης</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Πληροφορίες</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Αραβικά Qur'an με μεταδεδομένα και όλες οι μεταφράσεις και κάποια ήχου απαγγελίες εκτός αυτών που παρατίθενται πιστώνονται στο έργο Tanzil (http://tanzil.net). 
+Ουγγρική μετάφραση του Κορανίου από φιλί Χαλιμάς Zsuzsanna πιστώνεται Magyar Iszlam (http://magyariszlam.hu). 
+Αγγλική μετάφραση του Κορανίου από Maulana Muhammad Ali πιστώνεται η Λαχόρη κινήσεως Ahmadiyya στο Ισλάμ (http://www.aaiil.org). Δεδομένα 
+μορφολογία και αγγλική λέξη προς λέξη μετάφραση πιστωτικών να Quranic Αραβικά Corpus (http://corpus.quran.com). 
+Πιστωτική ινδονησιακή λέξη προς λέξη μετάφραση στην Ινδονησία Al-Quran (http://www.alquran-indonesia.com/web/quran). 
+Ουρντού λέξη προς λέξη μετάφραση από Hafiz Nazar Muhammad πιστώνονται στο εύκολο Quran Wa Hadees (http://www.easyquranwahadees.com). 
+Άλλες μεταφράσεις λέξη προς λέξη, καθώς και άλλες μεταφράσεις στο πρόγραμμα παροχής Microsoft μετάφραση (http://www.microsoft.com/en-us/translator) και το Google Translate (http://translate.google.com) και μπορεί να μην είναι ακριβής.  Για Μαλαισίας λέξη προς λέξη Qur'an, η πηγή είναι Ινδονησιακά.  Για όλα τα άλλα λέξη προς λέξη Qur'an, η πηγή είναι η αγγλική Quranic Αραβικά Corpus. 
+Άλλες ήχου απαγγελίες με bitrate δείξει πιστώνεται κάθε Ayah (http://www.everyayah.com). 
+Δεδομένα Unicode που πιστώνεται για τον όμιλο Unicode (http://www.unicode.org)</value>
+  </data>
 </root>

@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>വലുപ്</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;ബുക്ക്‌മാർക്ക് ചേർക്കുക</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;ബുക്ക്‌മാര്‍ക്കുകള്‍</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>പകര്‍പ്പിടത്തിലേക്ക് പകര്‍ത്തുക</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>അല്‍‌പംനിര്‍ത്തുക</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>പ്ലേചെയ്യുക</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>പങ്കിടുക</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>കുറിച്ച്</value>
+  </data>
 </root>

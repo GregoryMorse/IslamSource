@@ -8,7 +8,7 @@
       <group id="ISLAMRESOURCES/RESOURCES.RESX" datatype="resx">
         <trans-unit id="Hadith_Book" translate="yes" xml:space="preserve">
           <source>Book</source>
-          <target state="new">Book</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປຶ້ມ</target>
         </trans-unit>
         <trans-unit id="Hadith_Books" translate="yes" xml:space="preserve">
           <source>Books</source>
@@ -32,7 +32,7 @@
         </trans-unit>
         <trans-unit id="Hadith_Index" translate="yes" xml:space="preserve">
           <source>Index</source>
-          <target state="new">Index</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ດັດຊະນີ:</target>
         </trans-unit>
         <trans-unit id="Hadith_MappedOf" translate="yes" xml:space="preserve">
           <source>{0} Mapped Of {1}</source>
@@ -72,7 +72,7 @@
         </trans-unit>
         <trans-unit id="Hadith_Volume" translate="yes" xml:space="preserve">
           <source>Volume</source>
-          <target state="new">Volume</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄວາມດັງສຽງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AaminaBintiWahb" translate="yes" xml:space="preserve">
           <source>Aamina Binti Wahb</source>
@@ -160,7 +160,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Above" translate="yes" xml:space="preserve">
           <source>Above</source>
-          <target state="new">Above</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທາງເທິງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AboveUp" translate="yes" xml:space="preserve">
           <source>Above Up</source>
@@ -268,7 +268,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Account" translate="yes" xml:space="preserve">
           <source>Account</source>
-          <target state="new">Account</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບັນຊີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AccountablePerson" translate="yes" xml:space="preserve">
           <source>Accountable Person</source>
@@ -436,7 +436,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_After" translate="yes" xml:space="preserve">
           <source>After</source>
-          <target state="new">After</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຫຼັງຈາກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AfterBuryingTheDeceased" translate="yes" xml:space="preserve">
           <source>After Burying The Deceased</source>
@@ -556,7 +556,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Algeria" translate="yes" xml:space="preserve">
           <source>Algeria</source>
-          <target state="new">Algeria</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອັລຈິເຣຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Ali" translate="yes" xml:space="preserve">
           <source>Ali</source>
@@ -608,7 +608,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_All" translate="yes" xml:space="preserve">
           <source>All</source>
-          <target state="new">All</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທັງໝົດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Allah" translate="yes" xml:space="preserve">
           <source>The one God</source>
@@ -708,7 +708,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Allowed" translate="yes" xml:space="preserve">
           <source>Allowed</source>
-          <target state="new">Allowed</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອະນຸຍາດ </target>
         </trans-unit>
         <trans-unit id="IslamInfo_AllowedSeparatedLengthening" translate="yes" xml:space="preserve">
           <source>Allowed Separated Lengthening</source>
@@ -788,7 +788,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Always" translate="yes" xml:space="preserve">
           <source>Always</source>
-          <target state="new">Always</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຕະຫຼອດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AmaarBinYaasir" translate="yes" xml:space="preserve">
           <source>Amaar Bin Yaasir</source>
@@ -816,7 +816,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Amman" translate="yes" xml:space="preserve">
           <source>Amman</source>
-          <target state="new">Amman</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແອມມານ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Ampersand" translate="yes" xml:space="preserve">
           <source>Ampersand</source>
@@ -836,7 +836,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Anchor" translate="yes" xml:space="preserve">
           <source>Anchor</source>
-          <target state="new">Anchor</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈຸດຍຶດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AncientArabianGameOfChanceGambling" translate="yes" xml:space="preserve">
           <source>Ancient Arabian Game Of Chance Gambling</source>
@@ -920,7 +920,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Angle" translate="yes" xml:space="preserve">
           <source>Angle</source>
-          <target state="new">Angle</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ມຸມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AngleWithUnderbar" translate="yes" xml:space="preserve">
           <source>Angle With Underbar</source>
@@ -928,7 +928,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Angry" translate="yes" xml:space="preserve">
           <source>Angry</source>
-          <target state="new">Angry</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໃຈຮ້າຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Ankh" translate="yes" xml:space="preserve">
           <source>Ankh</source>
@@ -1008,7 +1008,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Appointment" translate="yes" xml:space="preserve">
           <source>Appointment</source>
-          <target state="new">Appointment</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການນັດພົບ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AppointmentFixedTimesAndPlacesForEnteringStateOfRitualConsecration" translate="yes" xml:space="preserve">
           <source>Appointment Fixed Times And Places For Entering State Of Ritual Consecration</source>
@@ -1044,7 +1044,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Arabic" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອາຣັບ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Arabic1" translate="yes" xml:space="preserve">
           <source>Arabic1</source>
@@ -2436,7 +2436,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Arc" translate="yes" xml:space="preserve">
           <source>Arc</source>
-          <target state="new">Arc</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arc</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Argument" translate="yes" xml:space="preserve">
           <source>Argument</source>
@@ -2460,7 +2460,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Around" translate="yes" xml:space="preserve">
           <source>Around</source>
-          <target state="new">Around</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປະມານ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Arrogance" translate="yes" xml:space="preserve">
           <source>Arrogance</source>
@@ -2488,7 +2488,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Ascension" translate="yes" xml:space="preserve">
           <source>Ascension</source>
-          <target state="new">Ascension</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອາເຊັນຊັນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Ashura" translate="yes" xml:space="preserve">
           <source>Ashura</source>
@@ -2576,7 +2576,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Asterisk" translate="yes" xml:space="preserve">
           <source>Asterisk</source>
-          <target state="new">Asterisk</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຄື່ອງໝາຍດາວ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsteriskOperator" translate="yes" xml:space="preserve">
           <source>Asterisk Operator</source>
@@ -2692,7 +2692,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Attributes" translate="yes" xml:space="preserve">
           <source>Attributes</source>
-          <target state="new">Attributes</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄຸນສົມບັດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AttributeSingularPattern" translate="yes" xml:space="preserve">
           <source>Attribute Singular Pattern</source>
@@ -2732,7 +2732,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Back" translate="yes" xml:space="preserve">
           <source>Back</source>
-          <target state="new">Back</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກັບ​ຄືນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BackAfter" translate="yes" xml:space="preserve">
           <source>Back After</source>
@@ -2756,7 +2756,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Balance" translate="yes" xml:space="preserve">
           <source>Balance</source>
-          <target state="new">Balance</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຍອດເງິນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BalanceScale" translate="yes" xml:space="preserve">
           <source>Balance Scale</source>
@@ -2968,7 +2968,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Before" translate="yes" xml:space="preserve">
           <source>Before</source>
-          <target state="new">Before</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກ່ອນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BeforeEating" translate="yes" xml:space="preserve">
           <source>Before Eating</source>
@@ -3088,7 +3088,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Beirut" translate="yes" xml:space="preserve">
           <source>Beirut</source>
-          <target state="new">Beirut</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເບີຣຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BeJust" translate="yes" xml:space="preserve">
           <source>Be Just</source>
@@ -3168,7 +3168,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Better" translate="yes" xml:space="preserve">
           <source>Better</source>
-          <target state="new">Better</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ດີຂື້ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BetterGuided" translate="yes" xml:space="preserve">
           <source>Better Guided</source>
@@ -3248,7 +3248,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Black" translate="yes" xml:space="preserve">
           <source>Black</source>
-          <target state="new">Black</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສີດຳ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BlackBowtie" translate="yes" xml:space="preserve">
           <source>Black Bowtie</source>
@@ -3800,7 +3800,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Body" translate="yes" xml:space="preserve">
           <source>Body</source>
-          <target state="new">Body</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເນື້ອໃນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BodyNecessary" translate="yes" xml:space="preserve">
           <source>Body Necessary</source>
@@ -3820,7 +3820,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Book" translate="yes" xml:space="preserve">
           <source>Book</source>
-          <target state="new">Book</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປຶ້ມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Booty" translate="yes" xml:space="preserve">
           <source>Booty</source>
@@ -4648,7 +4648,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter11" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter12" translate="yes" xml:space="preserve">
           <source>To flee (run away) from Al-Fitan (trials and afflications etc.) is a part of religion.</source>
@@ -4768,7 +4768,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter39" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook2Chapter4" translate="yes" xml:space="preserve">
           <source>A Muslim is the one who avoids harming Muslims with his tongue and hands.</source>
@@ -4860,7 +4860,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter10" translate="yes" xml:space="preserve">
           <source></source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"></target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook3Chapter11" translate="yes" xml:space="preserve">
           <source>The Prophet (SAWS) used to take care of the people in preaching by selecting a suitable time so that they might not run away (or get bored).</source>
@@ -5100,7 +5100,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook47" translate="yes" xml:space="preserve">
           <source>Partnership</source>
-          <target state="new">Partnership</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄູ່ຮ່ວມງານ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_bukhariBook48" translate="yes" xml:space="preserve">
           <source>Mortgaging</source>
@@ -5328,7 +5328,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Bullet" translate="yes" xml:space="preserve">
           <source>Bullet</source>
-          <target state="new">Bullet</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສັນຍາລັກຫົວຂໍ້ຍ່ອຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BulletOperator" translate="yes" xml:space="preserve">
           <source>Bullet Operator</source>
@@ -5348,7 +5348,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Buy" translate="yes" xml:space="preserve">
           <source>Buy</source>
-          <target state="new">Buy</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊື້</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ByOfOath" translate="yes" xml:space="preserve">
           <source>By Of Oath</source>
@@ -5380,7 +5380,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Call" translate="yes" xml:space="preserve">
           <source>Call</source>
-          <target state="new">Call</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໂທ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Caller" translate="yes" xml:space="preserve">
           <source>Caller</source>
@@ -5448,7 +5448,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Canada" translate="yes" xml:space="preserve">
           <source>Canada</source>
-          <target state="new">Canada</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແຄນາດາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CanadianSyllabicsHyphen" translate="yes" xml:space="preserve">
           <source>Canadian Syllabics Hyphen</source>
@@ -5468,7 +5468,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Car" translate="yes" xml:space="preserve">
           <source>Car</source>
-          <target state="new">Car</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ລົດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CareOf" translate="yes" xml:space="preserve">
           <source>Care Of</source>
@@ -5688,7 +5688,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_China" translate="yes" xml:space="preserve">
           <source>China</source>
-          <target state="new">China</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈີນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ChiRho" translate="yes" xml:space="preserve">
           <source>Chi Rho</source>
@@ -6720,7 +6720,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Classification" translate="yes" xml:space="preserve">
           <source>Classification</source>
-          <target state="new">Classification</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການຈຳແນກປະເພດ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ClassifiedOrganizedWork" translate="yes" xml:space="preserve">
           <source>Classified Organized Work</source>
@@ -6740,7 +6740,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Clear" translate="yes" xml:space="preserve">
           <source>Clear</source>
-          <target state="new">Clear</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ລຶບ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ClearCut" translate="yes" xml:space="preserve">
           <source>Clear Cut</source>
@@ -6864,7 +6864,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Collection" translate="yes" xml:space="preserve">
           <source>Collection</source>
-          <target state="new">Collection</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄັງ​ສະ​ສົມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CollectiveObligation" translate="yes" xml:space="preserve">
           <source>Collective Obligation</source>
@@ -8088,7 +8088,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Comma" translate="yes" xml:space="preserve">
           <source>Comma</source>
-          <target state="new">Comma</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຄື່ອງໝາຍຈຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CommandTenseVerb" translate="yes" xml:space="preserve">
           <source>Command Tense Verb</source>
@@ -8124,7 +8124,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Community" translate="yes" xml:space="preserve">
           <source>Community</source>
-          <target state="new">Community</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊຸມຊົນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CompanionFellow" translate="yes" xml:space="preserve">
           <source>Companion Fellow</source>
@@ -8136,7 +8136,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Company" translate="yes" xml:space="preserve">
           <source>Company</source>
-          <target state="new">Company</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບໍລິສັດ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ComparativeDerivedNoun" translate="yes" xml:space="preserve">
           <source>Comparative Derived Noun</source>
@@ -8160,7 +8160,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Complete" translate="yes" xml:space="preserve">
           <source>Complete</source>
-          <target state="new">Complete</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສຳເລັດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CompletelyInflexible" translate="yes" xml:space="preserve">
           <source>Completely Inflexible</source>
@@ -8228,7 +8228,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Congratulations" translate="yes" xml:space="preserve">
           <source>Congratulations</source>
-          <target state="new">Congratulations</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການຊົມເຊີຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Congregation" translate="yes" xml:space="preserve">
           <source>Congregation</source>
@@ -8260,7 +8260,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Connecting" translate="yes" xml:space="preserve">
           <source>Connecting</source>
-          <target state="new">Connecting</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການເຊື່ອມຕໍ່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ConnectingParticles" translate="yes" xml:space="preserve">
           <source>Connecting Particles</source>
@@ -8292,7 +8292,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Construction" translate="yes" xml:space="preserve">
           <source>Construction</source>
-          <target state="new">Construction</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ມີການກໍ່ສ້າງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Consultation" translate="yes" xml:space="preserve">
           <source>Consultation</source>
@@ -8324,7 +8324,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Contents" translate="yes" xml:space="preserve">
           <source>Contents</source>
-          <target state="new">Contents</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເນື້ອໃນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ContinuousUnderlineSymbol" translate="yes" xml:space="preserve">
           <source>Continuous Underline Symbol</source>
@@ -8412,7 +8412,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Copy" translate="yes" xml:space="preserve">
           <source>Copy</source>
-          <target state="new">Copy</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກັອບປີ້</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CopyrightSign" translate="yes" xml:space="preserve">
           <source>Copyright Sign</source>
@@ -8552,7 +8552,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Custom" translate="yes" xml:space="preserve">
           <source>Custom</source>
-          <target state="new">Custom</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກໍານົດເອງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Cuticle" translate="yes" xml:space="preserve">
           <source>Cuticle</source>
@@ -8616,7 +8616,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Date" translate="yes" xml:space="preserve">
           <source>Date</source>
-          <target state="new">Date</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນທີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DatePalm" translate="yes" xml:space="preserve">
           <source>Date Palm</source>
@@ -8636,35 +8636,35 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Day" translate="yes" xml:space="preserve">
           <source>Day</source>
-          <target state="new">Day</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DayOfWeek1" translate="yes" xml:space="preserve">
           <source>Sunday</source>
-          <target state="new">Sunday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນອາທິດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DayOfWeek2" translate="yes" xml:space="preserve">
           <source>Monday</source>
-          <target state="new">Monday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນຈັນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DayOfWeek3" translate="yes" xml:space="preserve">
           <source>Tuesday</source>
-          <target state="new">Tuesday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນອັງຄານ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DayOfWeek4" translate="yes" xml:space="preserve">
           <source>Wednesday</source>
-          <target state="new">Wednesday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນພຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DayOfWeek5" translate="yes" xml:space="preserve">
           <source>Thursday</source>
-          <target state="new">Thursday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນພະຫັດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DayOfWeek6" translate="yes" xml:space="preserve">
           <source>Friday</source>
-          <target state="new">Friday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນສຸກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DayOfWeek7" translate="yes" xml:space="preserve">
           <source>Saturday</source>
-          <target state="new">Saturday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນເສົາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DaysOfWeek" translate="yes" xml:space="preserve">
           <source>Days of the Week</source>
@@ -8736,7 +8736,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Default" translate="yes" xml:space="preserve">
           <source>Default</source>
-          <target state="new">Default</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ມາດຕະຖານ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DefectiveAccusative" translate="yes" xml:space="preserve">
           <source>Defective Accusative</source>
@@ -8780,7 +8780,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Delivery" translate="yes" xml:space="preserve">
           <source>Delivery</source>
-          <target state="new">Delivery</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການຈັດສົ່ງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DeltaEqualTo" translate="yes" xml:space="preserve">
           <source>Delta Equal To</source>
@@ -8924,7 +8924,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Details" translate="yes" xml:space="preserve">
           <source>Details</source>
-          <target state="new">Details</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ລາຍລະອຽດ &gt;&gt;</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DeterminerPrefix" translate="yes" xml:space="preserve">
           <source>Determiner Prefix</source>
@@ -9472,7 +9472,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Division" translate="yes" xml:space="preserve">
           <source>Division</source>
-          <target state="new">Division</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ພະແນກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DivisionSign" translate="yes" xml:space="preserve">
           <source>Division Sign</source>
@@ -10060,7 +10060,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Dream" translate="yes" xml:space="preserve">
           <source>Dream</source>
-          <target state="new">Dream</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສຽງດີມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Drill" translate="yes" xml:space="preserve">
           <source>Drill</source>
@@ -10148,7 +10148,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Egypt" translate="yes" xml:space="preserve">
           <source>Egypt</source>
-          <target state="new">Egypt</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອີຢິບ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Eighth" translate="yes" xml:space="preserve">
           <source>Eighth</source>
@@ -10328,7 +10328,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_End" translate="yes" xml:space="preserve">
           <source>End</source>
-          <target state="new">End</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສິ້ນສຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_EnDash" translate="yes" xml:space="preserve">
           <source>En Dash</source>
@@ -10372,7 +10372,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Enter" translate="yes" xml:space="preserve">
           <source>Enter</source>
-          <target state="new">Enter</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Enter</target>
         </trans-unit>
         <trans-unit id="IslamInfo_EnteringMasjidilHaram" translate="yes" xml:space="preserve">
           <source>O Allah! Thou art peace and peace is from Thee! Our Lord! Cause us to live with peace, and cause us to enter The House of Peace. Our Lord, Owner of Honor and Majesty, Thou art most Blessed and Exalted! O Allah! Grant me with Thou blessings and forgiveness, live me in it in the Name of Allah, and all Praise is to Allah, salawat and Salam to our Master Sayyidina Muhammad.</source>
@@ -10408,11 +10408,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Entertainment" translate="yes" xml:space="preserve">
           <source>Entertainment</source>
-          <target state="new">Entertainment</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບັນ​ເທີງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Envelope" translate="yes" xml:space="preserve">
           <source>Envelope</source>
-          <target state="new">Envelope</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊອງຈົດໝາຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Envy" translate="yes" xml:space="preserve">
           <source>Envy</source>
@@ -10788,7 +10788,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Exception" translate="yes" xml:space="preserve">
           <source>Exception</source>
-          <target state="new">Exception</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຍົກເວັ້ນ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ExceptiveParticle" translate="yes" xml:space="preserve">
           <source>Exceptive Particle</source>
@@ -10840,7 +10840,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Explicit" translate="yes" xml:space="preserve">
           <source>Explicit</source>
-          <target state="new">Explicit</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈະແຈ້ງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ExtendedArabicIndicDigitEight" translate="yes" xml:space="preserve">
           <source>Extended Arabic Indic Digit Eight</source>
@@ -10912,7 +10912,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Face" translate="yes" xml:space="preserve">
           <source>Face</source>
-          <target state="new">Face</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໃບໜ້າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FaceCoveringVeil" translate="yes" xml:space="preserve">
           <source>Face Covering Veil</source>
@@ -10948,7 +10948,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_False" translate="yes" xml:space="preserve">
           <source>False</source>
-          <target state="new">False</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເທັດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FalseGod" translate="yes" xml:space="preserve">
           <source>False God</source>
@@ -11092,7 +11092,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Female" translate="yes" xml:space="preserve">
           <source>Female</source>
-          <target state="new">Female</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເພດຍິງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FemaleSign" translate="yes" xml:space="preserve">
           <source>Female Sign</source>
@@ -11172,7 +11172,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Fine" translate="yes" xml:space="preserve">
           <source>Fine</source>
-          <target state="new">Fine</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ດີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Finger" translate="yes" xml:space="preserve">
           <source>Finger</source>
@@ -11196,7 +11196,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_First" translate="yes" xml:space="preserve">
           <source>First</source>
-          <target state="new">First</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທຳອິດ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FirstCreed" translate="yes" xml:space="preserve">
           <source>There is no God except Allah Muhammad is the Messenger of Allah.</source>
@@ -11224,7 +11224,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_FirstQuarterMoon" translate="yes" xml:space="preserve">
           <source>First Quarter Moon</source>
-          <target state="new">First Quarter Moon</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ພະຈັນເຄິງສ້ຽວ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Fisheye" translate="yes" xml:space="preserve">
           <source>Fisheye</source>
@@ -11244,7 +11244,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Fixed" translate="yes" xml:space="preserve">
           <source>Fixed</source>
-          <target state="new">Fixed</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແນ່ນອນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FixedInTheBookAndTradition" translate="yes" xml:space="preserve">
           <source>Fixed In The Book And Tradition</source>
@@ -11264,7 +11264,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Flame" translate="yes" xml:space="preserve">
           <source>Flame</source>
-          <target state="new">Flame</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແປວໄຟ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Flatness" translate="yes" xml:space="preserve">
           <source>Flatness</source>
@@ -11356,11 +11356,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Foot" translate="yes" xml:space="preserve">
           <source>Foot</source>
-          <target state="new">Foot</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຟຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_For" translate="yes" xml:space="preserve">
           <source>For</source>
-          <target state="new">For</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສໍາຫຼັບ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ForAll" translate="yes" xml:space="preserve">
           <source>For All</source>
@@ -11668,7 +11668,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Fountain" translate="yes" xml:space="preserve">
           <source>Fountain</source>
-          <target state="new">Fountain</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ນ້ຳພຸ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FourBalloonSpokedAsterisk" translate="yes" xml:space="preserve">
           <source>Four Balloon Spoked Asterisk</source>
@@ -11720,7 +11720,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_France" translate="yes" xml:space="preserve">
           <source>France</source>
-          <target state="new">France</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຝຣັ່ງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FrankCandid" translate="yes" xml:space="preserve">
           <source>Frank Candid</source>
@@ -11732,11 +11732,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Friday" translate="yes" xml:space="preserve">
           <source>Friday</source>
-          <target state="new">Friday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນສຸກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_From" translate="yes" xml:space="preserve">
           <source>From</source>
-          <target state="new">From</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈາກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_FromAbout" translate="yes" xml:space="preserve">
           <source>From About</source>
@@ -12012,7 +12012,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Garden" translate="yes" xml:space="preserve">
           <source>Garden</source>
-          <target state="new">Garden</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສວນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Gardens" translate="yes" xml:space="preserve">
           <source>Gardens</source>
@@ -12072,7 +12072,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Gear" translate="yes" xml:space="preserve">
           <source>Gear</source>
-          <target state="new">Gear</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແຂ້ວ​ເຟືອງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GearWithHandles" translate="yes" xml:space="preserve">
           <source>Gear With Handles</source>
@@ -12088,15 +12088,15 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Gender" translate="yes" xml:space="preserve">
           <source>Gender</source>
-          <target state="new">Gender</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເພດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_General" translate="yes" xml:space="preserve">
           <source>General</source>
-          <target state="new">General</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທົ່ວໄປ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Generation" translate="yes" xml:space="preserve">
           <source>Generation</source>
-          <target state="new">Generation</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ລະດັບອາຍຸ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GenericNounInPossessiveConstructionWithDefiniteNounOrPronoun" translate="yes" xml:space="preserve">
           <source>Generic Noun In Possessive Construction With Definite Noun Or Pronoun</source>
@@ -12116,7 +12116,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Germany" translate="yes" xml:space="preserve">
           <source>Germany</source>
-          <target state="new">Germany</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຢຍລະມັນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GestureSignIndicatorTrafficSignalAllusionHintIntimation" translate="yes" xml:space="preserve">
           <source>Gesture Sign Indicator Traffic Signal Allusion Hint Intimation</source>
@@ -12196,7 +12196,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Gold" translate="yes" xml:space="preserve">
           <source>Gold</source>
-          <target state="new">Gold</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສີຄຳ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GoldCoinOf2.975Grams" translate="yes" xml:space="preserve">
           <source>Gold Coin Of2.975 Grams</source>
@@ -12208,7 +12208,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Good" translate="yes" xml:space="preserve">
           <source>Good</source>
-          <target state="new">Good</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ດີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GoodAndOnePartOfChainHasSingleNarrator" translate="yes" xml:space="preserve">
           <source>Good And One Part Of Chain Has Single Narrator</source>
@@ -12276,7 +12276,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_GraveAccent" translate="yes" xml:space="preserve">
           <source>Grave Accent</source>
-          <target state="new">Grave Accent</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການເນັ້ນສຽງເກຣຟ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GraveWorship" translate="yes" xml:space="preserve">
           <source>Grave Worship</source>
@@ -12288,7 +12288,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_GreatBritain" translate="yes" xml:space="preserve">
           <source>Great Britain</source>
-          <target state="new">Great Britain</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບຣິດເທັນໃຫຍ່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GreaterThanAboveDoubleLineEqualAboveLessThan" translate="yes" xml:space="preserve">
           <source>Greater Than Above Double Line Equal Above Less Than</source>
@@ -12388,7 +12388,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_GreaterThanSign" translate="yes" xml:space="preserve">
           <source>Greater Than Sign</source>
-          <target state="new">Greater Than Sign</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຄື່ອງໝາຍຫຼາຍກວ່າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GreaterThanWithCircleInside" translate="yes" xml:space="preserve">
           <source>Greater Than With Circle Inside</source>
@@ -12516,7 +12516,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Group" translate="yes" xml:space="preserve">
           <source>Group</source>
-          <target state="new">Group</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກຸ່ມ:	</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Groupings" translate="yes" xml:space="preserve">
           <source>Groupings</source>
@@ -12524,7 +12524,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Groups" translate="yes" xml:space="preserve">
           <source>Groups</source>
-          <target state="new">Groups</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກຸ່ມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GuardCovering" translate="yes" xml:space="preserve">
           <source>Guard Covering</source>
@@ -12764,7 +12764,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Hand" translate="yes" xml:space="preserve">
           <source>Hand</source>
-          <target state="new">Hand</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ມື</target>
         </trans-unit>
         <trans-unit id="IslamInfo_HanunooSignPamudpod" translate="yes" xml:space="preserve">
           <source>Hanunoo Sign Pamudpod</source>
@@ -12836,7 +12836,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Heart" translate="yes" xml:space="preserve">
           <source>Heart</source>
-          <target state="new">Heart</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເກີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_HeartSofteners" translate="yes" xml:space="preserve">
           <source>Heart Softeners</source>
@@ -13592,7 +13592,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Hidden" translate="yes" xml:space="preserve">
           <source>Hidden</source>
-          <target state="new">Hidden</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຊື່ອງໄວ້</target>
         </trans-unit>
         <trans-unit id="IslamInfo_HiddenMetaphor" translate="yes" xml:space="preserve">
           <source>Hidden Metaphor</source>
@@ -13632,7 +13632,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Hint" translate="yes" xml:space="preserve">
           <source>Hint</source>
-          <target state="new">Hint</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຮີນ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_His" translate="yes" xml:space="preserve">
           <source>His</source>
@@ -13732,7 +13732,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Hour" translate="yes" xml:space="preserve">
           <source>Hour</source>
-          <target state="new">Hour</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊົ່ວໂມງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Hourglass" translate="yes" xml:space="preserve">
           <source>Hourglass</source>
@@ -13748,7 +13748,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_House" translate="yes" xml:space="preserve">
           <source>House</source>
-          <target state="new">House</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເພງແນວຮາວສ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_HouseHome" translate="yes" xml:space="preserve">
           <source>House Home</source>
@@ -14120,7 +14120,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_In" translate="yes" xml:space="preserve">
           <source>In</source>
-          <target state="new">In</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໃນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_InBetweenRecitation" translate="yes" xml:space="preserve">
           <source>In Between Recitation</source>
@@ -14136,7 +14136,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Incomplete" translate="yes" xml:space="preserve">
           <source>Incomplete</source>
-          <target state="new">Incomplete</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບໍ່ສົມບູນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_IncompleteInfinity" translate="yes" xml:space="preserve">
           <source>Incomplete Infinity</source>
@@ -14172,11 +14172,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Index" translate="yes" xml:space="preserve">
           <source>Index</source>
-          <target state="new">Index</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ດັດຊະນີ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_India" translate="yes" xml:space="preserve">
           <source>India</source>
-          <target state="new">India</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອິນເດຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Indication" translate="yes" xml:space="preserve">
           <source>Indication</source>
@@ -14208,7 +14208,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Indonesia" translate="yes" xml:space="preserve">
           <source>Indonesia</source>
-          <target state="new">Indonesia</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອິນໂດເນເຊຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Infinity" translate="yes" xml:space="preserve">
           <source>Infinity</source>
@@ -14864,7 +14864,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Iraq" translate="yes" xml:space="preserve">
           <source>Iraq</source>
-          <target state="new">Iraq</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອີຣັກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_IrregularNarratedBySingleTrustworthyPersonContraryToOtherSources" translate="yes" xml:space="preserve">
           <source>Irregular Narrated By Single Trustworthy Person Contrary To Other Sources</source>
@@ -14936,7 +14936,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Israel" translate="yes" xml:space="preserve">
           <source>Israel</source>
-          <target state="new">Israel</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອິດສະລາແອນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ISwearByAllah" translate="yes" xml:space="preserve">
           <source>I Swear By Allah</source>
@@ -15064,7 +15064,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Join" translate="yes" xml:space="preserve">
           <source>Join</source>
-          <target state="new">Join</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຂົ້າຮ່ວມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Jonas" translate="yes" xml:space="preserve">
           <source>Jonas</source>
@@ -15072,7 +15072,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Jordan" translate="yes" xml:space="preserve">
           <source>Jordan</source>
-          <target state="new">Jordan</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈໍແດນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Joseph" translate="yes" xml:space="preserve">
           <source>Joseph</source>
@@ -16056,11 +16056,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Kenya" translate="yes" xml:space="preserve">
           <source>Kenya</source>
-          <target state="new">Kenya</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຄັນຢາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Keyboard" translate="yes" xml:space="preserve">
           <source>Keyboard</source>
-          <target state="new">Keyboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແປ້ນພິມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_KFGQPCNaskh" translate="yes" xml:space="preserve">
           <source>KFGQPC Naskh</source>
@@ -16396,7 +16396,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Kuwait" translate="yes" xml:space="preserve">
           <source>Kuwait</source>
-          <target state="new">Kuwait</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກູເວດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LaamHeaviness" translate="yes" xml:space="preserve">
           <source>Laam Heaviness</source>
@@ -16524,11 +16524,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Last" translate="yes" xml:space="preserve">
           <source>Last</source>
-          <target state="new">Last</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ລ່າສຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LastQuarterMoon" translate="yes" xml:space="preserve">
           <source>Last Quarter Moon</source>
-          <target state="new">Last Quarter Moon</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ພະຈັນເຄິ່ງສຽວ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LateNight" translate="yes" xml:space="preserve">
           <source>Late night</source>
@@ -16560,11 +16560,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Leave" translate="yes" xml:space="preserve">
           <source>Leave</source>
-          <target state="new">Leave</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອອກໄປ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Lebanon" translate="yes" xml:space="preserve">
           <source>Lebanon</source>
-          <target state="new">Lebanon</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເລບານອນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Lecture" translate="yes" xml:space="preserve">
           <source>Lecture</source>
@@ -16572,7 +16572,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Left" translate="yes" xml:space="preserve">
           <source>Left</source>
-          <target state="new">Left</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເບື້ອງຊ້າຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LeftAndRightDoubleTurnstile" translate="yes" xml:space="preserve">
           <source>Left And Right Double Turnstile</source>
@@ -17468,7 +17468,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Library" translate="yes" xml:space="preserve">
           <source>Library</source>
-          <target state="new">Library</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຫ້ອງສະມຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Lie" translate="yes" xml:space="preserve">
           <source>Lie</source>
@@ -17484,7 +17484,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Light" translate="yes" xml:space="preserve">
           <source>Light</source>
-          <target state="new">Light</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແຈ້ງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LightenedCompulsoryLengtheningLetters" translate="yes" xml:space="preserve">
           <source>Lightened Compulsory Lengthening Letters</source>
@@ -17748,7 +17748,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Long" translate="yes" xml:space="preserve">
           <source>Long</source>
-          <target state="new">Long</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຍາວ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LongConstantSingularAccusative" translate="yes" xml:space="preserve">
           <source>Long Constant Singular Accusative</source>
@@ -18088,7 +18088,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Male" translate="yes" xml:space="preserve">
           <source>Male</source>
-          <target state="new">Male</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເພດຊາຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MaleAndFemaleSign" translate="yes" xml:space="preserve">
           <source>Male And Female Sign</source>
@@ -18256,7 +18256,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Matter" translate="yes" xml:space="preserve">
           <source>Matter</source>
-          <target state="new">Matter</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສາລະ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MatterAffair" translate="yes" xml:space="preserve">
           <source>Matter Affair</source>
@@ -18640,11 +18640,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Mecca" translate="yes" xml:space="preserve">
           <source>Mecca</source>
-          <target state="new">Mecca</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເມັກກະ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Medina" translate="yes" xml:space="preserve">
           <source>Medina</source>
-          <target state="new">Medina</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເມດີນາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MediumBlackCircle" translate="yes" xml:space="preserve">
           <source>Medium Black Circle</source>
@@ -18724,7 +18724,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Meeting" translate="yes" xml:space="preserve">
           <source>Meeting</source>
-          <target state="new">Meeting</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປະ​ຊຸມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MelodicRecitation" translate="yes" xml:space="preserve">
           <source>Melodic Recitation</source>
@@ -18892,7 +18892,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Minute" translate="yes" xml:space="preserve">
           <source>Minute</source>
-          <target state="new">Minute</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ນາທີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Miny" translate="yes" xml:space="preserve">
           <source>Miny</source>
@@ -19356,7 +19356,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Month" translate="yes" xml:space="preserve">
           <source>Month</source>
-          <target state="new">Month</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເດືອນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Month1" translate="yes" xml:space="preserve">
           <source>The forbidden one</source>
@@ -19412,11 +19412,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Months" translate="yes" xml:space="preserve">
           <source>Months</source>
-          <target state="new">Months</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບັນດາເດືອນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Moon" translate="yes" xml:space="preserve">
           <source>Moon</source>
-          <target state="new">Moon</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ດວງຈັນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MoreEntitledMoreWorthy" translate="yes" xml:space="preserve">
           <source>More Entitled More Worthy</source>
@@ -19440,7 +19440,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Morocco" translate="yes" xml:space="preserve">
           <source>Morocco</source>
-          <target state="new">Morocco</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ມໍຣັອກໂຄ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MorphologyWordPatterns" translate="yes" xml:space="preserve">
           <source>Morphology Word Patterns</source>
@@ -19964,7 +19964,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Name" translate="yes" xml:space="preserve">
           <source>Name</source>
-          <target state="new">Name</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊື່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NameInChainOfNarrationOmittedOrUnknownNameMentioned" translate="yes" xml:space="preserve">
           <source>Name In Chain Of Narration Omitted Or Unknown Name Mentioned</source>
@@ -19972,7 +19972,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Names" translate="yes" xml:space="preserve">
           <source>Names</source>
-          <target state="new">Names</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບັນດາຊື່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NamesAndAttributes" translate="yes" xml:space="preserve">
           <source>Names And Attributes</source>
@@ -20264,7 +20264,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Neutral" translate="yes" xml:space="preserve">
           <source>Neutral</source>
-          <target state="new">Neutral</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">​ເປັນກາງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NeverCertainlyNot" translate="yes" xml:space="preserve">
           <source>Never Certainly Not</source>
@@ -20272,7 +20272,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_New" translate="yes" xml:space="preserve">
           <source>New</source>
-          <target state="new">New</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໃໝ່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NewlineLeft" translate="yes" xml:space="preserve">
           <source>Newline Left</source>
@@ -20288,7 +20288,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_News" translate="yes" xml:space="preserve">
           <source>News</source>
-          <target state="new">News</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຂ່າວ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NewTaiLueSignLae" translate="yes" xml:space="preserve">
           <source>New Tai Lue Sign Lae</source>
@@ -20304,7 +20304,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Night" translate="yes" xml:space="preserve">
           <source>Night</source>
-          <target state="new">Night</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກາງຄືນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NightJourney" translate="yes" xml:space="preserve">
           <source>Night Journey</source>
@@ -20524,7 +20524,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Not" translate="yes" xml:space="preserve">
           <source>Not</source>
-          <target state="new">Not</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Not</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NotAlmostEqualTo" translate="yes" xml:space="preserve">
           <source>Not Almost Equal To</source>
@@ -20716,7 +20716,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_O" translate="yes" xml:space="preserve">
           <source>O</source>
-          <target state="new">O</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">O</target>
         </trans-unit>
         <trans-unit id="IslamInfo_OAliRememberTheReappearanceOfOffice" translate="yes" xml:space="preserve">
           <source>O Ali Remember The Reappearance Of Office</source>
@@ -20856,7 +20856,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Office" translate="yes" xml:space="preserve">
           <source>Office</source>
-          <target state="new">Office</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຫ້ອງການ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_OffspringGeneration" translate="yes" xml:space="preserve">
           <source>Offspring Generation</source>
@@ -20948,7 +20948,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_One" translate="yes" xml:space="preserve">
           <source>One</source>
-          <target state="new">One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໜຶ່ງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_OneDotLeader" translate="yes" xml:space="preserve">
           <source>One Dot Leader</source>
@@ -21064,7 +21064,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Opening" translate="yes" xml:space="preserve">
           <source>Opening</source>
-          <target state="new">Opening</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກຳລັງເປີດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_OpenOutlinedRightwardsArrow" translate="yes" xml:space="preserve">
           <source>Open Outlined Rightwards Arrow</source>
@@ -21120,7 +21120,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Or" translate="yes" xml:space="preserve">
           <source>Or</source>
-          <target state="new">Or</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຫຼື</target>
         </trans-unit>
         <trans-unit id="IslamInfo_OReasonedSonOfHasanAlAskari" translate="yes" xml:space="preserve">
           <source>O Reasoned Son Of Hasan Al Askari</source>
@@ -21192,7 +21192,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Orphan" translate="yes" xml:space="preserve">
           <source>Orphan</source>
-          <target state="new">Orphan</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອໍເຟິນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_OrthodoxCross" translate="yes" xml:space="preserve">
           <source>Orthodox Cross</source>
@@ -21212,7 +21212,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Other" translate="yes" xml:space="preserve">
           <source>Other</source>
-          <target state="new">Other</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອື່ນໆ </target>
         </trans-unit>
         <trans-unit id="IslamInfo_OtherThan" translate="yes" xml:space="preserve">
           <source>Other Than</source>
@@ -21300,11 +21300,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Page" translate="yes" xml:space="preserve">
           <source>Page</source>
-          <target state="new">Page</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໜ້າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Pages" translate="yes" xml:space="preserve">
           <source>Pages</source>
-          <target state="new">Pages</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໜ້າເຈ້ຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Painful" translate="yes" xml:space="preserve">
           <source>Painful</source>
@@ -21312,7 +21312,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Pakistan" translate="yes" xml:space="preserve">
           <source>Pakistan</source>
-          <target state="new">Pakistan</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປາກິດສະຖານ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Pallas" translate="yes" xml:space="preserve">
           <source>Pallas</source>
@@ -21468,7 +21468,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Particle" translate="yes" xml:space="preserve">
           <source>Particle</source>
-          <target state="new">Particle</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເມັດນ້ອຍໆ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ParticleAssociatedVerbs" translate="yes" xml:space="preserve">
           <source>Particle Associated Verbs</source>
@@ -21560,7 +21560,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Partner" translate="yes" xml:space="preserve">
           <source>Partner</source>
-          <target state="new">Partner</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຫຸ້ນສ່ວນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PartnerAssociate" translate="yes" xml:space="preserve">
           <source>Partner Associate</source>
@@ -21568,7 +21568,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Partnership" translate="yes" xml:space="preserve">
           <source>Partnership</source>
-          <target state="new">Partnership</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄູ່ຮ່ວມງານ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PartnershipSign" translate="yes" xml:space="preserve">
           <source>Partnership Sign</source>
@@ -21580,7 +21580,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Party" translate="yes" xml:space="preserve">
           <source>Party</source>
-          <target state="new">Party</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກຸ່ມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PartyGroup" translate="yes" xml:space="preserve">
           <source>Party Group</source>
@@ -21588,7 +21588,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Passive" translate="yes" xml:space="preserve">
           <source>Passive</source>
-          <target state="new">Passive</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບໍ່ໃຊ້ງານຢູ່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PassiveParticiplePassiveNoun" translate="yes" xml:space="preserve">
           <source>Passive Participle Passive Noun</source>
@@ -21624,7 +21624,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Path" translate="yes" xml:space="preserve">
           <source>Path</source>
-          <target state="new">Path</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເສັ້ນທາງໄປສູ່ຍ່າງຕາມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Patience" translate="yes" xml:space="preserve">
           <source>Patience</source>
@@ -21640,7 +21640,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Peace" translate="yes" xml:space="preserve">
           <source>Peace</source>
-          <target state="new">Peace</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສັນຕິພາບ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PeaceBeUponYou" translate="yes" xml:space="preserve">
           <source>Peace be upon you</source>
@@ -21688,11 +21688,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Pen" translate="yes" xml:space="preserve">
           <source>Pen</source>
-          <target state="new">Pen</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປາກກາ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Pencil" translate="yes" xml:space="preserve">
           <source>Pencil</source>
-          <target state="new">Pencil</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສໍດໍາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Pentagram" translate="yes" xml:space="preserve">
           <source>Pentagram</source>
@@ -21700,7 +21700,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_People" translate="yes" xml:space="preserve">
           <source>People</source>
-          <target state="new">People</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຜູ້ຄົນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PeopleOfHadith" translate="yes" xml:space="preserve">
           <source>People Of Hadith</source>
@@ -21768,7 +21768,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Permission" translate="yes" xml:space="preserve">
           <source>Permission</source>
-          <target state="new">Permission</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການອະນຸຍາດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PermissionLeave" translate="yes" xml:space="preserve">
           <source>Permission Leave</source>
@@ -21836,7 +21836,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Philippines" translate="yes" xml:space="preserve">
           <source>Philippines</source>
-          <target state="new">Philippines</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຟິລິບປິນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Phonation" translate="yes" xml:space="preserve">
           <source>Phonation</source>
@@ -21936,7 +21936,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Place" translate="yes" xml:space="preserve">
           <source>Place</source>
-          <target state="new">Place</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສະຖານທີ່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PlaceAbode" translate="yes" xml:space="preserve">
           <source>Place Abode</source>
@@ -21952,7 +21952,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Places" translate="yes" xml:space="preserve">
           <source>Places</source>
-          <target state="new">Places</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສະຖານທີ່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PlacingChildrenUnderAllahsProtection" translate="yes" xml:space="preserve">
           <source>Placing Children Under Allahs Protection</source>
@@ -21984,7 +21984,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Plot" translate="yes" xml:space="preserve">
           <source>Plot</source>
-          <target state="new">Plot</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ລົງຈຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Plural" translate="yes" xml:space="preserve">
           <source>Plural</source>
@@ -22264,7 +22264,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_PrayTime5" translate="yes" xml:space="preserve">
           <source>Night</source>
-          <target state="new">Night</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກາງຄືນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrayTime6" translate="yes" xml:space="preserve">
           <source>Abstention</source>
@@ -22272,7 +22272,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_PrayTime7" translate="yes" xml:space="preserve">
           <source>Sunrise</source>
-          <target state="new">Sunrise</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຕາເວັນຂຶ້ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrayTime8" translate="yes" xml:space="preserve">
           <source>Calculated sunset</source>
@@ -22352,7 +22352,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Prefix" translate="yes" xml:space="preserve">
           <source>Prefix</source>
-          <target state="new">Prefix</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄຳນຳໜ້າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Preponderate" translate="yes" xml:space="preserve">
           <source>Preponderate</source>
@@ -22540,7 +22540,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Prime" translate="yes" xml:space="preserve">
           <source>Prime</source>
-          <target state="new">Prime</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຄື່ອງໝາຍພຣາຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrincipleMethod" translate="yes" xml:space="preserve">
           <source>Principle Method</source>
@@ -22644,7 +22644,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Proportion" translate="yes" xml:space="preserve">
           <source>Proportion</source>
-          <target state="new">Proportion</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ພາກສວ່ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ProportionalTo" translate="yes" xml:space="preserve">
           <source>Proportional To</source>
@@ -22688,7 +22688,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Protection" translate="yes" xml:space="preserve">
           <source>Protection</source>
-          <target state="new">Protection</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການປ້ອງກັນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ProtectionFromTheDajjal" translate="yes" xml:space="preserve">
           <source>Protection From The Dajjal</source>
@@ -22736,7 +22736,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Pure" translate="yes" xml:space="preserve">
           <source>Pure</source>
-          <target state="new">Pure</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບໍລິສຸດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PureAndPurifying" translate="yes" xml:space="preserve">
           <source>Pure And Purifying</source>
@@ -22856,7 +22856,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Quarter" translate="yes" xml:space="preserve">
           <source>Quarter</source>
-          <target state="new">Quarter</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">​ໄຕ​ມາດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_QuarterNote" translate="yes" xml:space="preserve">
           <source>Quarter Note</source>
@@ -23192,7 +23192,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_QuranChapter62" translate="yes" xml:space="preserve">
           <source>Friday</source>
-          <target state="new">Friday</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນສຸກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_QuranChapter63" translate="yes" xml:space="preserve">
           <source>The Hypocrites</source>
@@ -23468,7 +23468,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Ratio" translate="yes" xml:space="preserve">
           <source>Ratio</source>
-          <target state="new">Ratio</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊັດສ່ວນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RationalInsights" translate="yes" xml:space="preserve">
           <source>Rational Insights</source>
@@ -23496,7 +23496,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Reading" translate="yes" xml:space="preserve">
           <source>Reading</source>
-          <target state="new">Reading</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການອ່ານ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RealisticJurisprudence" translate="yes" xml:space="preserve">
           <source>Realistic Jurisprudence</source>
@@ -23548,7 +23548,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Recommended" translate="yes" xml:space="preserve">
           <source>Recommended</source>
-          <target state="new">Recommended</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄຳແນະນຳ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecommendedRepresentative" translate="yes" xml:space="preserve">
           <source>Recommended Representative</source>
@@ -23900,7 +23900,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Requirement" translate="yes" xml:space="preserve">
           <source>Requirement</source>
-          <target state="new">Requirement</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄວາມຕ້ອງການ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Respect" translate="yes" xml:space="preserve">
           <source>Respect</source>
@@ -23908,7 +23908,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Response" translate="yes" xml:space="preserve">
           <source>Response</source>
-          <target state="new">Response</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການຕອບສະໜອງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ResponseParticles" translate="yes" xml:space="preserve">
           <source>Response Particles</source>
@@ -24176,7 +24176,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Right" translate="yes" xml:space="preserve">
           <source>Right</source>
-          <target state="new">Right</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຂວາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RightAngle" translate="yes" xml:space="preserve">
           <source>Right Angle</source>
@@ -24388,7 +24388,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_RightSingleQuotationMark" translate="yes" xml:space="preserve">
           <source>Right Single Quotation Mark</source>
-          <target state="new">Right Single Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຄື່ອງໝາຍວົງຢືມດ່ຽວເບື້ອງຂວາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RightSquareBracket" translate="yes" xml:space="preserve">
           <source>Right Square Bracket</source>
@@ -24968,7 +24968,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Safety" translate="yes" xml:space="preserve">
           <source>Safety</source>
-          <target state="new">Safety</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄວາມ​ປອດ​ໄພ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SafiyyaBintHuyayy" translate="yes" xml:space="preserve">
           <source>Safiyya Bint Huyayy</source>
@@ -25144,7 +25144,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_SaudiArabia" translate="yes" xml:space="preserve">
           <source>Saudi Arabia</source>
-          <target state="new">Saudi Arabia</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊາອຸດິອາຣາເບຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Saul" translate="yes" xml:space="preserve">
           <source>Saul</source>
@@ -25172,7 +25172,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Scale" translate="yes" xml:space="preserve">
           <source>Scale</source>
-          <target state="new">Scale</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ມາດຕາສ່ວນ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Scales" translate="yes" xml:space="preserve">
           <source>Scales</source>
@@ -25188,7 +25188,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_School" translate="yes" xml:space="preserve">
           <source>School</source>
-          <target state="new">School</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໂຮງຮຽນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SchoolOfJurisprudence" translate="yes" xml:space="preserve">
           <source>School of jurisprudence</source>
@@ -25236,7 +25236,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Second" translate="yes" xml:space="preserve">
           <source>Second</source>
-          <target state="new">Second</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວິນາທີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SecondCreed" translate="yes" xml:space="preserve">
           <source>I bear witness that no-one is worthy of worship except Allah, the One alone, without partner, and I bear witness that Muhammad is His servant and Messenger.</source>
@@ -25364,7 +25364,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Sense" translate="yes" xml:space="preserve">
           <source>Sense</source>
-          <target state="new">Sense</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອັດສະລິຍະ;Sense</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SeparatedLengtheningGreatConnection" translate="yes" xml:space="preserve">
           <source>Separated Lengthening Great Connection</source>
@@ -25448,7 +25448,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Shamrock" translate="yes" xml:space="preserve">
           <source>Shamrock</source>
-          <target state="new">Shamrock</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Shamrock</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Shaping" translate="yes" xml:space="preserve">
           <source>Shaping</source>
@@ -25492,7 +25492,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Short" translate="yes" xml:space="preserve">
           <source>Short</source>
-          <target state="new">Short</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສັ້ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ShortBackslantedSouthArrow" translate="yes" xml:space="preserve">
           <source>Short Backslanted South Arrow</source>
@@ -25572,11 +25572,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Sign" translate="yes" xml:space="preserve">
           <source>Sign</source>
-          <target state="new">Sign</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຊັນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Silver" translate="yes" xml:space="preserve">
           <source>Silver</source>
-          <target state="new">Silver</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສີເງີນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SilverOf2.975Grams" translate="yes" xml:space="preserve">
           <source>Silver Of2.975 Grams</source>
@@ -25716,7 +25716,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Skin" translate="yes" xml:space="preserve">
           <source>Skin</source>
-          <target state="new">Skin</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສະກີນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SkullAndCrossbones" translate="yes" xml:space="preserve">
           <source>Skull And Crossbones</source>
@@ -25968,7 +25968,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Socks" translate="yes" xml:space="preserve">
           <source>Socks</source>
-          <target state="new">Socks</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສໍຂາວ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SockStocking" translate="yes" xml:space="preserve">
           <source>Sock Stocking</source>
@@ -26020,7 +26020,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Soul" translate="yes" xml:space="preserve">
           <source>Soul</source>
-          <target state="new">Soul</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສຽງໂຊນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SoulSpirit" translate="yes" xml:space="preserve">
           <source>Soul Spirit</source>
@@ -26032,7 +26032,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Sound" translate="yes" xml:space="preserve">
           <source>Sound</source>
-          <target state="new">Sound</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສຽງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SoundFeminineDefinitePluralAccusativePossessive" translate="yes" xml:space="preserve">
           <source>Sound Feminine Definite Plural Accusative Possessive</source>
@@ -26164,7 +26164,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Space" translate="yes" xml:space="preserve">
           <source>Space</source>
-          <target state="new">Space</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຍະຫວ່າງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Sparkle" translate="yes" xml:space="preserve">
           <source>Sparkle</source>
@@ -26188,7 +26188,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Speech" translate="yes" xml:space="preserve">
           <source>Speech</source>
-          <target state="new">Speech</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສັ່ງງານດ້ວຍສຽງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SpeechOfAllah" translate="yes" xml:space="preserve">
           <source>Speech Of Allah</source>
@@ -26428,7 +26428,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_SriLanka" translate="yes" xml:space="preserve">
           <source>Sri Lanka</source>
-          <target state="new">Sri Lanka</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສີລັງກາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_StablizationLengthening" translate="yes" xml:space="preserve">
           <source>Stablization Lengthening</source>
@@ -26496,7 +26496,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Station" translate="yes" xml:space="preserve">
           <source>Station</source>
-          <target state="new">Station</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສະຖານີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Stations" translate="yes" xml:space="preserve">
           <source>Stations</source>
@@ -26528,7 +26528,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Stopping" translate="yes" xml:space="preserve">
           <source>Stopping</source>
-          <target state="new">Stopping</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກຳລັງຢຸດ...</target>
         </trans-unit>
         <trans-unit id="IslamInfo_StoppingOrLodgingSomewhere" translate="yes" xml:space="preserve">
           <source>Stopping Or Lodging Somewhere</source>
@@ -26540,7 +26540,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Stopwatch" translate="yes" xml:space="preserve">
           <source>Stopwatch</source>
-          <target state="new">Stopwatch</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໂມງຈັບເວລາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Stories" translate="yes" xml:space="preserve">
           <source>Stories</source>
@@ -26784,7 +26784,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Sudan" translate="yes" xml:space="preserve">
           <source>Sudan</source>
-          <target state="new">Sudan</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊູດານ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SuddenShiftsInGrammaticalConstructions" translate="yes" xml:space="preserve">
           <source>Sudden Shifts In Grammatical Constructions</source>
@@ -26792,11 +26792,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Suffix" translate="yes" xml:space="preserve">
           <source>Suffix</source>
-          <target state="new">Suffix</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຫ້ອຍທ້າຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Suggestion" translate="yes" xml:space="preserve">
           <source>Suggestion</source>
-          <target state="new">Suggestion</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄຳແນະນຳ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SuhaylBinAmr" translate="yes" xml:space="preserve">
           <source>Suhayl Bin Amr</source>
@@ -26828,7 +26828,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Sun" translate="yes" xml:space="preserve">
           <source>Sun</source>
-          <target state="new">Sun</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທິດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SunanAbiDawood" translate="yes" xml:space="preserve">
           <source>Sunan Abi Dawood</source>
@@ -26904,7 +26904,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Sunrise" translate="yes" xml:space="preserve">
           <source>Sunrise</source>
-          <target state="new">Sunrise</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຕາເວັນຂຶ້ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Supererogatory" translate="yes" xml:space="preserve">
           <source>Supererogatory</source>
@@ -27288,7 +27288,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Symmetry" translate="yes" xml:space="preserve">
           <source>Symmetry</source>
-          <target state="new">Symmetry</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄວາມເຄິ່ງຄື</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SyriacAbbreviationMark" translate="yes" xml:space="preserve">
           <source>Syriac Abbreviation Mark</source>
@@ -27608,7 +27608,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Table" translate="yes" xml:space="preserve">
           <source>Table</source>
-          <target state="new">Table</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຕາຕະລາງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TagalogSignVirama" translate="yes" xml:space="preserve">
           <source>Tagalog Sign Virama</source>
@@ -27812,7 +27812,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Tall" translate="yes" xml:space="preserve">
           <source>Tall</source>
-          <target state="new">Tall</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສູງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TamilAsAboveSign" translate="yes" xml:space="preserve">
           <source>Tamil As Above Sign</source>
@@ -28020,7 +28020,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Text" translate="yes" xml:space="preserve">
           <source>Text</source>
-          <target state="new">Text</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຂໍ້​ຄວາມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Textual" translate="yes" xml:space="preserve">
           <source>Textual</source>
@@ -28332,7 +28332,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_The" translate="yes" xml:space="preserve">
           <source>The</source>
-          <target state="new">The</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion"></target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheAbaser" translate="yes" xml:space="preserve">
           <source>The Abaser</source>
@@ -28924,7 +28924,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Then" translate="yes" xml:space="preserve">
           <source>Then</source>
-          <target state="new">Then</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈາກນັ້ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheNamesOfAllahAreBest" translate="yes" xml:space="preserve">
           <source>The Names Of Allah Are Best</source>
@@ -29420,7 +29420,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_TheWhiteMoonFirstLabel" translate="yes" xml:space="preserve">
           <source>First</source>
-          <target state="new">First</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທຳອິດ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheWhiteMoonFourth" translate="yes" xml:space="preserve">
           <source>For him who invites us to the way of Allah</source>
@@ -29436,7 +29436,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_TheWhiteMoonSecondLabel" translate="yes" xml:space="preserve">
           <source>Second</source>
-          <target state="new">Second</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວິນາທີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheWhiteMoonSeventh" translate="yes" xml:space="preserve">
           <source>You have brought to this city nobility</source>
@@ -29996,7 +29996,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Time" translate="yes" xml:space="preserve">
           <source>Time</source>
-          <target state="new">Time</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເວລາ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TimeAdverb" translate="yes" xml:space="preserve">
           <source>Time Adverb</source>
@@ -30024,7 +30024,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Tiny" translate="yes" xml:space="preserve">
           <source>Tiny</source>
-          <target state="new">Tiny</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ນ້ອຍຫຼາຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TironianSignEt" translate="yes" xml:space="preserve">
           <source>Tironian Sign Et</source>
@@ -30040,7 +30040,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Today" translate="yes" xml:space="preserve">
           <source>Today</source>
-          <target state="new">Today</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ມື້​ນີ້</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ToJudgePreventReform" translate="yes" xml:space="preserve">
           <source>To Judge Prevent Reform</source>
@@ -30188,7 +30188,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Touch" translate="yes" xml:space="preserve">
           <source>Touch</source>
-          <target state="new">Touch</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສຳພັດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ToWardOffTheDeceptionOfTheObstinateDevils" translate="yes" xml:space="preserve">
           <source>To Ward Off The Deception Of The Obstinate Devils</source>
@@ -30200,11 +30200,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Town" translate="yes" xml:space="preserve">
           <source>Town</source>
-          <target state="new">Town</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເມືອງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TownCity" translate="yes" xml:space="preserve">
           <source>Town City</source>
-          <target state="new">Town City</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເມືອງ/ຕົວເມືອງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Trace" translate="yes" xml:space="preserve">
           <source>Trace</source>
@@ -30272,7 +30272,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Travel" translate="yes" xml:space="preserve">
           <source>Travel</source>
-          <target state="new">Travel</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການ​ເດີນ​ທາງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Travelling" translate="yes" xml:space="preserve">
           <source>Travelling</source>
@@ -30320,7 +30320,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Tribe" translate="yes" xml:space="preserve">
           <source>Tribe</source>
-          <target state="new">Tribe</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຊົນເຜົ່າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Tricolon" translate="yes" xml:space="preserve">
           <source>Tricolon</source>
@@ -30416,7 +30416,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_True" translate="yes" xml:space="preserve">
           <source>True</source>
-          <target state="new">True</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຖືກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TrulyAllahIsWithThePatient" translate="yes" xml:space="preserve">
           <source>Truly Allah Is With The Patient</source>
@@ -30456,7 +30456,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Tunisia" translate="yes" xml:space="preserve">
           <source>Tunisia</source>
-          <target state="new">Tunisia</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຕູນີເຊຍ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Tunnel" translate="yes" xml:space="preserve">
           <source>Tunnel</source>
@@ -30744,7 +30744,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Unknown" translate="yes" xml:space="preserve">
           <source>Unknown</source>
-          <target state="new">Unknown</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບໍ່ຮູ້ຈັກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_UnknownSourceNarrator" translate="yes" xml:space="preserve">
           <source>Unknown Source Narrator</source>
@@ -30764,7 +30764,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Until" translate="yes" xml:space="preserve">
           <source>Until</source>
-          <target state="new">Until</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈົນກະທັ້ງ: </target>
         </trans-unit>
         <trans-unit id="IslamInfo_UnusualQuranicTerms" translate="yes" xml:space="preserve">
           <source>Unusual Quranic Terms</source>
@@ -32012,7 +32012,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Voice" translate="yes" xml:space="preserve">
           <source>Voice</source>
-          <target state="new">Voice</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສຽງ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_VolumeIntegral" translate="yes" xml:space="preserve">
           <source>Volume Integral</source>
@@ -32196,7 +32196,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Water" translate="yes" xml:space="preserve">
           <source>Water</source>
-          <target state="new">Water</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ນ້ຳ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WaveArrowPointingDirectlyLeft" translate="yes" xml:space="preserve">
           <source>Wave Arrow Pointing Directly Left</source>
@@ -32240,7 +32240,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Weak" translate="yes" xml:space="preserve">
           <source>Weak</source>
-          <target state="new">Weak</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອ່ອນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Weakness" translate="yes" xml:space="preserve">
           <source>Weakness</source>
@@ -32256,7 +32256,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Week" translate="yes" xml:space="preserve">
           <source>Week</source>
-          <target state="new">Week</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອາທິດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeHavePutTrustInAllah" translate="yes" xml:space="preserve">
           <source>We Have Put Trust In Allah</source>
@@ -32340,7 +32340,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_When" translate="yes" xml:space="preserve">
           <source>When</source>
-          <target state="new">When</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເມື່ອໃດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WhenAngry" translate="yes" xml:space="preserve">
           <source>When Angry</source>
@@ -32652,7 +32652,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Where" translate="yes" xml:space="preserve">
           <source>Where</source>
-          <target state="new">Where</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຢູ່ໃສ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WhereFromWhy" translate="yes" xml:space="preserve">
           <source>Where From Why</source>
@@ -33176,7 +33176,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Why" translate="yes" xml:space="preserve">
           <source>Why</source>
-          <target state="new">Why</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເປັນຫຍັງ?</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WifeHusband" translate="yes" xml:space="preserve">
           <source>Wife Husband</source>
@@ -33288,7 +33288,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Word" translate="yes" xml:space="preserve">
           <source>Word</source>
-          <target state="new">Word</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄຳ​ເວົ້າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WordBeingDescribed" translate="yes" xml:space="preserve">
           <source>Word Being Described</source>
@@ -33304,7 +33304,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Words" translate="yes" xml:space="preserve">
           <source>Words</source>
-          <target state="new">Words</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄຳສັບ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WordSeparatorMiddleDot" translate="yes" xml:space="preserve">
           <source>Word Separator Middle Dot</source>
@@ -33324,7 +33324,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_World" translate="yes" xml:space="preserve">
           <source>World</source>
-          <target state="new">World</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໂລກ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Worship" translate="yes" xml:space="preserve">
           <source>Worship</source>
@@ -33360,7 +33360,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Xor" translate="yes" xml:space="preserve">
           <source>Xor</source>
-          <target state="new">Xor</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Xor</target>
         </trans-unit>
         <trans-unit id="IslamInfo_YaasirBinAmir" translate="yes" xml:space="preserve">
           <source>Yaasir Bin Amir</source>
@@ -33368,7 +33368,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Year" translate="yes" xml:space="preserve">
           <source>Year</source>
-          <target state="new">Year</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປີ:</target>
         </trans-unit>
         <trans-unit id="IslamInfo_YearlyPredestination" translate="yes" xml:space="preserve">
           <source>Yearly Predestination</source>
@@ -33388,7 +33388,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Yes" translate="yes" xml:space="preserve">
           <source>Yes</source>
-          <target state="new">Yes</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແມ່ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_YesIndeed" translate="yes" xml:space="preserve">
           <source>Yes Indeed</source>
@@ -33620,7 +33620,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_You" translate="yes" xml:space="preserve">
           <source>You</source>
-          <target state="new">You</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທ່ານ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_YouAll" translate="yes" xml:space="preserve">
           <source>You All</source>
@@ -33724,7 +33724,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Add" translate="yes" xml:space="preserve">
           <source>Add</source>
-          <target state="new">Add</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເພີ່ມ</target>
         </trans-unit>
         <trans-unit id="IslamSource_AlternateHundredForm" translate="yes" xml:space="preserve">
           <source>Alternate Hundred Form</source>
@@ -33736,7 +33736,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Apply" translate="yes" xml:space="preserve">
           <source>Apply</source>
-          <target state="new">Apply</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ນໍາໃຊ້</target>
         </trans-unit>
         <trans-unit id="IslamSource_ArabicAlphabet" translate="yes" xml:space="preserve">
           <source>Arabic Alphabet</source>
@@ -33756,7 +33756,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Book" translate="yes" xml:space="preserve">
           <source>Book</source>
-          <target state="new">Book</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປຶ້ມ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Calculations" translate="yes" xml:space="preserve">
           <source>Calculations</source>
@@ -33764,7 +33764,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Collection" translate="yes" xml:space="preserve">
           <source>Collection</source>
-          <target state="new">Collection</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄັງ​ສະ​ສົມ</target>
         </trans-unit>
         <trans-unit id="IslamSource_ColorCues" translate="yes" xml:space="preserve">
           <source>Use Color Cues</source>
@@ -33784,7 +33784,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Date" translate="yes" xml:space="preserve">
           <source>Date</source>
-          <target state="new">Date</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັນທີ</target>
         </trans-unit>
         <trans-unit id="IslamSource_DecimalDegree" translate="yes" xml:space="preserve">
           <source>Decimal Degrees</source>
@@ -33796,27 +33796,27 @@
         </trans-unit>
         <trans-unit id="IslamSource_Degrees" translate="yes" xml:space="preserve">
           <source>Degrees</source>
-          <target state="new">Degrees</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ອົງສາ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Dictionary" translate="yes" xml:space="preserve">
           <source>Dictionary</source>
-          <target state="new">Dictionary</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວັດຈະນານຸກົມ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Direction" translate="yes" xml:space="preserve">
           <source>Direction</source>
-          <target state="new">Direction</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ທິດທາງ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Disable" translate="yes" xml:space="preserve">
           <source>Disable</source>
-          <target state="new">Disable</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປິດໃຊ້ງານ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Display" translate="yes" xml:space="preserve">
           <source>Display</source>
-          <target state="new">Display</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສະແດງຜົນ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Division" translate="yes" xml:space="preserve">
           <source>Division</source>
-          <target state="new">Division</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ພະແນກ</target>
         </trans-unit>
         <trans-unit id="IslamSource_DocumentBuilder" translate="yes" xml:space="preserve">
           <source>Document Builder</source>
@@ -33844,7 +33844,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Font" translate="yes" xml:space="preserve">
           <source>Font</source>
-          <target state="new">Font</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຟອນ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Goal" translate="yes" xml:space="preserve">
           <source>This website aims to provide raw source material about Islam including the Quran, hadith collections, books, audio, video, news, vocabulary, transliteration systems and programming information.</source>
@@ -33880,11 +33880,11 @@
         </trans-unit>
         <trans-unit id="IslamSource_Home" translate="yes" xml:space="preserve">
           <source>Home</source>
-          <target state="new">Home</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຈຸດເລີ່ມຕົ້ນ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Information" translate="yes" xml:space="preserve">
           <source>Information</source>
-          <target state="new">Information</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຂໍ້ມູນຂ່າວສານ</target>
         </trans-unit>
         <trans-unit id="IslamSource_InternetArabic" translate="yes" xml:space="preserve">
           <source>Internet Arabic</source>
@@ -34124,15 +34124,15 @@
         </trans-unit>
         <trans-unit id="IslamSource_LetterSample" translate="yes" xml:space="preserve">
           <source>A</source>
-          <target state="new">A</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">A</target>
         </trans-unit>
         <trans-unit id="IslamSource_Lists" translate="yes" xml:space="preserve">
           <source>Lists</source>
-          <target state="new">Lists</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ລາຍການ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Loading" translate="yes" xml:space="preserve">
           <source>Loading</source>
-          <target state="new">Loading</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກຳລັງໂຫຼດ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Lotus" translate="yes" xml:space="preserve">
           <source>Lotus</source>
@@ -34144,7 +34144,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Minutes" translate="yes" xml:space="preserve">
           <source>Minutes</source>
-          <target state="new">Minutes</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ນາທີ</target>
         </trans-unit>
         <trans-unit id="IslamSource_ChangeScriptFormat" translate="yes" xml:space="preserve">
           <source>Change Script Format</source>
@@ -34152,7 +34152,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_No" translate="yes" xml:space="preserve">
           <source>No</source>
-          <target state="new">No</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບໍ່ແມ່ນ</target>
         </trans-unit>
         <trans-unit id="IslamSource_NotableArticles" translate="yes" xml:space="preserve">
           <source>Notable Articles</source>
@@ -34168,11 +34168,11 @@
         </trans-unit>
         <trans-unit id="IslamSource_Off" translate="yes" xml:space="preserve">
           <source>Off</source>
-          <target state="new">Off</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ປິດ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Offset" translate="yes" xml:space="preserve">
           <source>Offset</source>
-          <target state="new">Offset</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຕັ້ງຄ່າການປິດ</target>
         </trans-unit>
         <trans-unit id="IslamSource_FromScript" translate="yes" xml:space="preserve">
           <source>Source Script Format</source>
@@ -34184,7 +34184,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Operation" translate="yes" xml:space="preserve">
           <source>Operation</source>
-          <target state="new">Operation</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການດຳເນີນງານ</target>
         </trans-unit>
         <trans-unit id="IslamSource_LeftToRight" translate="yes" xml:space="preserve">
           <source>Left To Right</source>
@@ -34212,7 +34212,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Print" translate="yes" xml:space="preserve">
           <source>Print</source>
-          <target state="new">Print</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ພິມ</target>
         </trans-unit>
         <trans-unit id="IslamSource_QiblaDirectionFromTrueNorth" translate="yes" xml:space="preserve">
           <source>Qibla Direction From True North</source>
@@ -34224,7 +34224,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Quote" translate="yes" xml:space="preserve">
           <source>Quote</source>
-          <target state="new">Quote</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເຄື່ອງໝາຍວົງຢືມ</target>
         </trans-unit>
         <trans-unit id="IslamSource_QuoteMode" translate="yes" xml:space="preserve">
           <source>Quote Mode</source>
@@ -34244,11 +34244,11 @@
         </trans-unit>
         <trans-unit id="IslamSource_Radians" translate="yes" xml:space="preserve">
           <source>Radians</source>
-          <target state="new">Radians</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຣາ​ດ່ຽງ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Remove" translate="yes" xml:space="preserve">
           <source>Remove</source>
-          <target state="new">Remove</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ເອົາອອກ</target>
         </trans-unit>
         <trans-unit id="IslamSource_RomanToArabic" translate="yes" xml:space="preserve">
           <source>Roman To Arabic</source>
@@ -34260,15 +34260,15 @@
         </trans-unit>
         <trans-unit id="IslamSource_Scheme" translate="yes" xml:space="preserve">
           <source>Scheme</source>
-          <target state="new">Scheme</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແບບແຜນ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Seconds" translate="yes" xml:space="preserve">
           <source>Seconds</source>
-          <target state="new">Seconds</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ວິນາທີ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Selection" translate="yes" xml:space="preserve">
           <source>Selection</source>
-          <target state="new">Selection</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ການເລືອກ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Smaller" translate="yes" xml:space="preserve">
           <source>-</source>
@@ -34284,7 +34284,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Text" translate="yes" xml:space="preserve">
           <source>Text</source>
-          <target state="new">Text</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຂໍ້​ຄວາມ</target>
         </trans-unit>
         <trans-unit id="IslamSource_Translation" translate="yes" xml:space="preserve">
           <source>Translation</source>
@@ -34316,7 +34316,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Units" translate="yes" xml:space="preserve">
           <source>Units</source>
-          <target state="new">Units</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຫົວໜ່ວຍ</target>
         </trans-unit>
         <trans-unit id="IslamSource_UseClassicArabic" translate="yes" xml:space="preserve">
           <source>Use Classic Arabic</source>
@@ -34348,7 +34348,7 @@
         </trans-unit>
         <trans-unit id="IslamSource_Yes" translate="yes" xml:space="preserve">
           <source>Yes</source>
-          <target state="new">Yes</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ແມ່ນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_QuranicExegesis1" translate="yes" xml:space="preserve">
           <source>Quranic Exegesis1</source>
@@ -34508,11 +34508,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Basra" translate="yes" xml:space="preserve">
           <source>Basra</source>
-          <target state="new">Basra</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບາສຣາ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Baghdad" translate="yes" xml:space="preserve">
           <source>Baghdad</source>
-          <target state="new">Baghdad</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບາແດດ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RhetoricNonLiteralUsageOfWords" translate="yes" xml:space="preserve">
           <source>Rhetoric Non Literal Usage Of Words</source>
@@ -34540,7 +34540,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Trash" translate="yes" xml:space="preserve">
           <source>Trash</source>
-          <target state="new">Trash</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຂອງບໍ່ມີຄ່າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LairOfWildAnimal" translate="yes" xml:space="preserve">
           <source>Lair Of Wild Animal</source>
@@ -34652,7 +34652,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Bad" translate="yes" xml:space="preserve">
           <source>Bad</source>
-          <target state="new">Bad</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ບໍ່ດີ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WitnessPresentMartyr" translate="yes" xml:space="preserve">
           <source>Witness Present Martyr</source>
@@ -34708,7 +34708,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Driver" translate="yes" xml:space="preserve">
           <source>Driver</source>
-          <target state="new">Driver</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໂປຣແກຣມຄວບຄຸມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Envier" translate="yes" xml:space="preserve">
           <source>Envier</source>
@@ -34732,7 +34732,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Successful" translate="yes" xml:space="preserve">
           <source>Successful</source>
-          <target state="new">Successful</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ສຳເລັດສົມບູນ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Cheater" translate="yes" xml:space="preserve">
           <source>Cheater</source>
@@ -35236,11 +35236,11 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Preferred" translate="yes" xml:space="preserve">
           <source>Preferred</source>
-          <target state="new">Preferred</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຄວາມຕ້ອງການ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Starting" translate="yes" xml:space="preserve">
           <source>Starting</source>
-          <target state="new">Starting</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກຳລັງເລີ້ມ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CutOff" translate="yes" xml:space="preserve">
           <source>Cut Off</source>
@@ -35528,7 +35528,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Exchange" translate="yes" xml:space="preserve">
           <source>Exchange</source>
-          <target state="new">Exchange</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Exchange</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Effort" translate="yes" xml:space="preserve">
           <source>Effort</source>
@@ -36808,7 +36808,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Root" translate="yes" xml:space="preserve">
           <source>Root</source>
-          <target state="new">Root</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ກົກເຄົ້າ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Lemma" translate="yes" xml:space="preserve">
           <source>Lemma</source>
@@ -36876,7 +36876,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Result" translate="yes" xml:space="preserve">
           <source>Result</source>
-          <target state="new">Result</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ຜົນຮັບ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Supplemental" translate="yes" xml:space="preserve">
           <source>Supplemental</source>
@@ -36980,7 +36980,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Active" translate="yes" xml:space="preserve">
           <source>Active</source>
-          <target state="new">Active</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ໃຊ້ງານຢູ່</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Perfect" translate="yes" xml:space="preserve">
           <source>Perfect</source>
@@ -37001,6 +37001,246 @@
         <trans-unit id="IslamInfo_Singular" translate="yes" xml:space="preserve">
           <source>Singular</source>
           <target state="new">Singular</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NumberSpelling" translate="yes" xml:space="preserve">
+          <source>Number Spelling</source>
+          <target state="new">Number Spelling</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HeadingNumberSpelling" translate="yes" xml:space="preserve">
+          <source>Heading Number Spelling</source>
+          <target state="new">Heading Number Spelling</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Stopping Endowment</source>
+          <target state="new">Stopping Endowment</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaStoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Stopping Endowment</source>
+          <target state="new">Teh Marbuta Stopping Endowment</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaJoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Joining Continuing</source>
+          <target state="new">Teh Marbuta Joining Continuing</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_JoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Joining Continuing</source>
+          <target state="new">Joining Continuing</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" translate="yes" xml:space="preserve">
+          <source>Standing Oblong Zero Small High Upright Rectangular Zero</source>
+          <target state="new">Standing Oblong Zero Small High Upright Rectangular Zero</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyCentreLowStop" translate="yes" xml:space="preserve">
+          <source>Empty Centre Low Stop</source>
+          <target state="new">Empty Centre Low Stop</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RoundedHighStopWithFilledCentre" translate="yes" xml:space="preserve">
+          <source>Rounded High Stop With Filled Centre</source>
+          <target state="new">Rounded High Stop With Filled Centre</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallNoon" translate="yes" xml:space="preserve">
+          <source>Small Noon</source>
+          <target state="new">Small Noon</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHighSeen" translate="yes" xml:space="preserve">
+          <source>Small High Seen</source>
+          <target state="new">Small High Seen</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallLowSeen" translate="yes" xml:space="preserve">
+          <source>Small Low Seen</source>
+          <target state="new">Small Low Seen</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Sukun" translate="yes" xml:space="preserve">
+          <source>Sukun</source>
+          <target state="new">Sukun</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyShadda" translate="yes" xml:space="preserve">
+          <source>Empty Shadda</source>
+          <target state="new">Empty Shadda</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ShaddaResolve" translate="yes" xml:space="preserve">
+          <source>Shadda Resolve</source>
+          <target state="new">Shadda Resolve</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaFatha" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Fatha</source>
+          <target state="new">Continuing Hamza Fatha</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaKasra" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Kasra</source>
+          <target state="new">Continuing Hamza Kasra</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaDamma" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Damma</source>
+          <target state="new">Continuing Hamza Damma</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaEmpty" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Empty</source>
+          <target state="new">Continuing Hamza Empty</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LaamAssimilation" translate="yes" xml:space="preserve">
+          <source>Laam Assimilation</source>
+          <target state="new">Laam Assimilation</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaAssimilation" translate="yes" xml:space="preserve">
+          <source>Raa Assimilation</source>
+          <target state="new">Raa Assimilation</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaHeavinessOrLightness" translate="yes" xml:space="preserve">
+          <source>Raa Heaviness Or Lightness</source>
+          <target state="new">Raa Heaviness Or Lightness</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallWaw" translate="yes" xml:space="preserve">
+          <source>Small Waw</source>
+          <target state="new">Small Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallYeh" translate="yes" xml:space="preserve">
+          <source>Small Yeh</source>
+          <target state="new">Small Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_FathaSilentLetterSuperscriptAlef" translate="yes" xml:space="preserve">
+          <source>Fatha Silent Letter Superscript Alef</source>
+          <target state="new">Fatha Silent Letter Superscript Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DipthongZeroLength" translate="yes" xml:space="preserve">
+          <source>Dipthong Zero Length</source>
+          <target state="new">Dipthong Zero Length</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OriginalLengtheningZeroCapture" translate="yes" xml:space="preserve">
+          <source>Original Lengthening Zero Capture</source>
+          <target state="new">Original Lengthening Zero Capture</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateGreatIdenticalDammaMerge" translate="yes" xml:space="preserve">
+          <source>Assimilate Great Identical Damma Merge</source>
+          <target state="new">Assimilate Great Identical Damma Merge</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateSmallIdenticalHaaSakinah" translate="yes" xml:space="preserve">
+          <source>Assimilate Small Identical Haa Sakinah</source>
+          <target state="new">Assimilate Small Identical Haa Sakinah</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostCompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Complete Nasalization</source>
+          <target state="new">Most Complete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Complete Nasalization</source>
+          <target state="new">Complete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_IncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Incomplete Nasalization</source>
+          <target state="new">Incomplete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostIncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Incomplete Nasalization</source>
+          <target state="new">Most Incomplete Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" translate="yes" xml:space="preserve">
+          <source>Vowelless Noon Incomplete Assimilating Nasalization</source>
+          <target state="new">Vowelless Noon Incomplete Assimilating Nasalization</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_UnwrittenHelperKasra" translate="yes" xml:space="preserve">
+          <source>Unwritten Helper Kasra</source>
+          <target state="new">Unwritten Helper Kasra</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaWawHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Waw Hamza</source>
+          <target state="new">Alef Wasla Waw Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaAlefMaksuraHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Alef Maksura Hamza</source>
+          <target state="new">Alef Wasla Alef Maksura Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Hamza</source>
+          <target state="new">Alef Wasla Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHamza" translate="yes" xml:space="preserve">
+          <source>Small Hamza</source>
+          <target state="new">Small Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterHamza" translate="yes" xml:space="preserve">
+          <source>Letter Hamza</source>
+          <target state="new">Letter Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HamzaAbove" translate="yes" xml:space="preserve">
+          <source>Hamza Above</source>
+          <target state="new">Hamza Above</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotAlef" translate="yes" xml:space="preserve">
+          <source>Not Alef</source>
+          <target state="new">Not Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddAlef" translate="yes" xml:space="preserve">
+          <source>Madd Alef</source>
+          <target state="new">Madd Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotWaw" translate="yes" xml:space="preserve">
+          <source>Not Waw</source>
+          <target state="new">Not Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotYeh" translate="yes" xml:space="preserve">
+          <source>Not Yeh</source>
+          <target state="new">Not Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddWaw" translate="yes" xml:space="preserve">
+          <source>Madd Waw</source>
+          <target state="new">Madd Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenWaw" translate="yes" xml:space="preserve">
+          <source>Leen Waw</source>
+          <target state="new">Leen Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongWaw" translate="yes" xml:space="preserve">
+          <source>Strong Waw</source>
+          <target state="new">Strong Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddYeh" translate="yes" xml:space="preserve">
+          <source>Madd Yeh</source>
+          <target state="new">Madd Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenYeh" translate="yes" xml:space="preserve">
+          <source>Leen Yeh</source>
+          <target state="new">Leen Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongYeh" translate="yes" xml:space="preserve">
+          <source>Strong Yeh</source>
+          <target state="new">Strong Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DivisionMarkers" translate="yes" xml:space="preserve">
+          <source>Division Markers</source>
+          <target state="new">Division Markers</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkers" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers</source>
+          <target state="new">Continue Stop Markers</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkersAtEnding" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers At Ending</source>
+          <target state="new">Continue Stop Markers At Ending</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryLightened" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Lightened</source>
+          <target state="new">Maddah Obligatory Lightened</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryWeighted" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Weighted</source>
+          <target state="new">Maddah Obligatory Weighted</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" translate="yes" xml:space="preserve">
+          <source>Connected Lengthening Essential Presented Sukun</source>
+          <target state="new">Connected Lengthening Essential Presented Sukun</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SoftLengtheningLetters" translate="yes" xml:space="preserve">
+          <source>Soft Lengthening Letters</source>
+          <target state="new">Soft Lengthening Letters</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterSpelling" translate="yes" xml:space="preserve">
+          <source>Letter Spelling</source>
+          <target state="new">Letter Spelling</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RemembranceAfterPrayer" translate="yes" xml:space="preserve">
+          <source>Remembrance After Prayer</source>
+          <target state="new">Remembrance After Prayer</target>
         </trans-unit>
       </group>
     </body>

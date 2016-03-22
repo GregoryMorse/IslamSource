@@ -36528,479 +36528,719 @@
         </trans-unit>
         <trans-unit id="IslamInfo_AngleWithSInside" translate="yes" xml:space="preserve">
           <source>Angle With S  Inside</source>
-          <target state="new">Angle With S  Inside</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Angle avec S à l'intérieur</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterBehWithInvertedSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Beh With Inverted Small V  Below</source>
-          <target state="new">Arabic Letter Beh With Inverted Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre arabe Beh inversé petit v ci-dessous</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterBehWithSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Beh With Small V  Below</source>
-          <target state="new">Arabic Letter Beh With Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre arabe Beh petit v ci-dessous</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterDalWithInvertedSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Dal With Inverted Small V  Below</source>
-          <target state="new">Arabic Letter Dal With Inverted Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre arabe Dal inversé petit v ci-dessous</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterRehWithSmallVBelow" translate="yes" xml:space="preserve">
           <source>Arabic Letter Reh With Small V  Below</source>
-          <target state="new">Arabic Letter Reh With Small V  Below</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre arabe RA ' petit V ci-dessous</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterUWithHamzaAbove" translate="yes" xml:space="preserve">
           <source>Arabic Letter U  With Hamza Above</source>
-          <target state="new">Arabic Letter U  With Hamza Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre arabe U hamza en chef</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicLetterZainWithInvertedVAbove" translate="yes" xml:space="preserve">
           <source>Arabic Letter Zain With Inverted V  Above</source>
-          <target state="new">Arabic Letter Zain With Inverted V  Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre arabe Zain avec V inversé ci-dessus</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicVowelSignInvertedSmallVAbove" translate="yes" xml:space="preserve">
           <source>Arabic Vowel Sign Inverted Small V  Above</source>
-          <target state="new">Arabic Vowel Sign Inverted Small V  Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Signe de voyelle arabe inversé petit V ci-dessus</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ArabicVowelSignSmallVAbove" translate="yes" xml:space="preserve">
           <source>Arabic Vowel Sign Small V  Above</source>
-          <target state="new">Arabic Vowel Sign Small V  Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Signe de voyelle arabe petit V ci-dessus</target>
         </trans-unit>
         <trans-unit id="IslamInfo_BatakVowelSignUForSimalungunSa" translate="yes" xml:space="preserve">
           <source>Batak Vowel Sign U  For Simalungun Sa</source>
-          <target state="new">Batak Vowel Sign U  For Simalungun Sa</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Batak VOYELLE DIACRITIQUE ou pour Simalungun Sa</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterAWithDiaeresis" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter A  With Diaeresis</source>
-          <target state="new">Combining Latin Small Letter A  With Diaeresis</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine A tréma</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterCCedilla" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter C  Cedilla</source>
-          <target state="new">Combining Latin Small Letter C  Cedilla</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine C cédille</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterFlattenedOpenAAbove" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter Flattened Open A  Above</source>
-          <target state="new">Combining Latin Small Letter Flattened Open A  Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Combinaison de lettre minuscule latine aplati ouvrir A ci-dessus</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterLWithDoubleMiddleTilde" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter L  With Double Middle Tilde</source>
-          <target state="new">Combining Latin Small Letter L  With Double Middle Tilde</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine L tilde médian Double</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterOWithDiaeresis" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter O  With Diaeresis</source>
-          <target state="new">Combining Latin Small Letter O  With Diaeresis</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine O tréma</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterOWithLightCentralizationStroke" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter O  With Light Centralization Stroke</source>
-          <target state="new">Combining Latin Small Letter O  With Light Centralization Stroke</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine O accent centralisation léger accident vasculaire cérébral</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterRBelow" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter R  Below</source>
-          <target state="new">Combining Latin Small Letter R  Below</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine R ci-dessous</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterRRotunda" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter R  Rotunda</source>
-          <target state="new">Combining Latin Small Letter R  Rotunda</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine R rotonde</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterUWithDiaeresis" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter U  With Diaeresis</source>
-          <target state="new">Combining Latin Small Letter U  With Diaeresis</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine U tréma</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningLatinSmallLetterUWithLightCentralizationStroke" translate="yes" xml:space="preserve">
           <source>Combining Latin Small Letter U  With Light Centralization Stroke</source>
-          <target state="new">Combining Latin Small Letter U  With Light Centralization Stroke</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison de lettre minuscule latine U accent centralisation léger accident vasculaire cérébral</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningXAbove" translate="yes" xml:space="preserve">
           <source>Combining X  Above</source>
-          <target state="new">Combining X  Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Combinant X ci-dessus</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningXBelow" translate="yes" xml:space="preserve">
           <source>Combining X  Below</source>
-          <target state="new">Combining X  Below</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Combinant X ci-dessous</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CombiningX-XBelow" translate="yes" xml:space="preserve">
           <source>Combining X- X  Below</source>
-          <target state="new">Combining X- X  Below</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La combinaison ci-dessous, X - X</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleHighReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double High Reversed9  Quotation Mark</source>
-          <target state="new">Double High Reversed9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Guillemet double Reversed9 haut</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleLow9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double Low9  Quotation Mark</source>
-          <target state="new">Double Low9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Low9 double guillemet</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleLowReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double Low Reversed9  Quotation Mark</source>
-          <target state="new">Double Low Reversed9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Guillemet double bas Reversed9</target>
         </trans-unit>
         <trans-unit id="IslamInfo_IntegralAroundAPointOperator" translate="yes" xml:space="preserve">
           <source>Integral Around A  Point Operator</source>
-          <target state="new">Integral Around A  Point Operator</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Intégrale, sur un opérateur Point</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LBBarSymbol" translate="yes" xml:space="preserve">
           <source>L  B  Bar Symbol</source>
-          <target state="new">L  B  Bar Symbol</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">L B Bar symbole</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LeftSidewaysUBracket" translate="yes" xml:space="preserve">
           <source>Left Sideways U  Bracket</source>
-          <target state="new">Left Sideways U  Bracket</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Support de U sur le côté gauche</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MyanmarVowelSignEAbove" translate="yes" xml:space="preserve">
           <source>Myanmar Vowel Sign E  Above</source>
-          <target state="new">Myanmar Vowel Sign E  Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Myanmar VOYELLE DIACRITIQUE E ci-dessus</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MyanmarVowelSignShanEAbove" translate="yes" xml:space="preserve">
           <source>Myanmar Vowel Sign Shan E  Above</source>
-          <target state="new">Myanmar Vowel Sign Shan E  Above</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Myanmar voyelle signe Shan E ci-dessus</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NeitherASubsetOfNorEqualTo" translate="yes" xml:space="preserve">
           <source>Neither A  Subset Of Nor Equal To</source>
-          <target state="new">Neither A  Subset Of Nor Equal To</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Un sous-ensemble de ni égal à</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NeitherASupersetOfNorEqualTo" translate="yes" xml:space="preserve">
           <source>Neither A  Superset Of Nor Equal To</source>
-          <target state="new">Neither A  Superset Of Nor Equal To</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ni un sur-ensemble de, ni égal à</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NotASubsetOf" translate="yes" xml:space="preserve">
           <source>Not A  Subset Of</source>
-          <target state="new">Not A  Subset Of</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pas un sous-ensemble de</target>
         </trans-unit>
         <trans-unit id="IslamInfo_NotASupersetOf" translate="yes" xml:space="preserve">
           <source>Not A  Superset Of</source>
-          <target state="new">Not A  Superset Of</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pas un sur-ensemble de</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ParenthesizedKoreanCharacterOHu" translate="yes" xml:space="preserve">
           <source>Parenthesized Korean Character O  Hu</source>
-          <target state="new">Parenthesized Korean Character O  Hu</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Entre parenthèses le caractère coréen O Hu</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType1Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type1  Plastics</source>
-          <target state="new">Recycling Symbol For Type1  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Symbole de recyclage pour les plastiques de Type1</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType2Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type2  Plastics</source>
-          <target state="new">Recycling Symbol For Type2  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Symbole de recyclage pour les plastiques de Type2</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType3Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type3  Plastics</source>
-          <target state="new">Recycling Symbol For Type3  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Symbole de recyclage pour les plastiques de Type3</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType4Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type4  Plastics</source>
-          <target state="new">Recycling Symbol For Type4  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Symbole de recyclage pour les plastiques de Type4</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType5Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type5  Plastics</source>
-          <target state="new">Recycling Symbol For Type5  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Symbole de recyclage pour les plastiques de Type5</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType6Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type6  Plastics</source>
-          <target state="new">Recycling Symbol For Type6  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Symbole de recyclage pour les plastiques Type6</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RecyclingSymbolForType7Plastics" translate="yes" xml:space="preserve">
           <source>Recycling Symbol For Type7  Plastics</source>
-          <target state="new">Recycling Symbol For Type7  Plastics</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Symbole de recyclage pour les plastiques de Type7</target>
         </trans-unit>
         <trans-unit id="IslamInfo_RightSidewaysUBracket" translate="yes" xml:space="preserve">
           <source>Right Sideways U  Bracket</source>
-          <target state="new">Right Sideways U  Bracket</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Support de U sur le côté droit</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SInTriangle" translate="yes" xml:space="preserve">
           <source>S  In Triangle</source>
-          <target state="new">S  In Triangle</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">S en Triangle</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SingleHighReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Single High Reversed9  Quotation Mark</source>
-          <target state="new">Single High Reversed9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Guillemet simple haute Reversed9</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SingleLow9QuotationMark" translate="yes" xml:space="preserve">
           <source>Single Low9  Quotation Mark</source>
-          <target state="new">Single Low9  Quotation Mark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Low9 seul guillemet</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SquareAOverM" translate="yes" xml:space="preserve">
           <source>Square A  Over M</source>
-          <target state="new">Square A  Over M</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Carré A plus M</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SquareVOverM" translate="yes" xml:space="preserve">
           <source>Square V  Over M</source>
-          <target state="new">Square V  Over M</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Carré V sur M</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDBottomLightedRightwardsArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Bottom Lighted Rightwards Arrowhead</source>
-          <target state="new">Three D  Bottom Lighted Rightwards Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D trois bas éclairé vers la pointe de flèche</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDLeftLightedDownwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Left Lighted Downwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Left Lighted Downwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D trois gauche allumé pointe de flèche vers le bas équilatéral</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDRightLightedUpwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Right Lighted Upwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Right Lighted Upwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D trois juste éclairé pointe de flèche vers le haut équilatéral</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDTopLightedLeftwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Top Lighted Leftwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Top Lighted Leftwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D trois Top éclairé pointe de flèche vers la gauche équilatéral</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDTopLightedRightwardsArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Top Lighted Rightwards Arrowhead</source>
-          <target state="new">Three D  Top Lighted Rightwards Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D trois haut éclairé vers la pointe de flèche</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ThreeDTopLightedRightwardsEquilateralArrowhead" translate="yes" xml:space="preserve">
           <source>Three D  Top Lighted Rightwards Equilateral Arrowhead</source>
-          <target state="new">Three D  Top Lighted Rightwards Equilateral Arrowhead</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D trois Top éclairé pointe de flèche vers la droite équilatéral</target>
         </trans-unit>
         <trans-unit id="IslamInfo_UpArrowheadInARectangleBox" translate="yes" xml:space="preserve">
           <source>Up Arrowhead In A  Rectangle Box</source>
-          <target state="new">Up Arrowhead In A  Rectangle Box</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Jusqu'à la pointe de flèche dans une boîte Rectangle</target>
         </trans-unit>
         <trans-unit id="IslamInfo_XInARectangleBox" translate="yes" xml:space="preserve">
           <source>X  In A  Rectangle Box</source>
-          <target state="new">X  In A  Rectangle Box</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">X dans une boîte Rectangle</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationBagMembership" translate="yes" xml:space="preserve">
           <source>Z  Notation Bag Membership</source>
-          <target state="new">Z  Notation Bag Membership</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Adhésion à sac la Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationDomainAntirestriction" translate="yes" xml:space="preserve">
           <source>Z  Notation Domain Antirestriction</source>
-          <target state="new">Z  Notation Domain Antirestriction</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ANTIRESTRICTION en domaine de Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationLeftBindingBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Left Binding Bracket</source>
-          <target state="new">Z  Notation Left Binding Bracket</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Support de fixation gauche de Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationLeftImageBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Left Image Bracket</source>
-          <target state="new">Z  Notation Left Image Bracket</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Support de gauche Image Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRangeAntirestriction" translate="yes" xml:space="preserve">
           <source>Z  Notation Range Antirestriction</source>
-          <target state="new">Z  Notation Range Antirestriction</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ANTIRESTRICTION de la gamme de Notation en Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRelationalComposition" translate="yes" xml:space="preserve">
           <source>Z  Notation Relational Composition</source>
-          <target state="new">Z  Notation Relational Composition</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Composition/relationnelle de Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRightBindingBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Right Binding Bracket</source>
-          <target state="new">Z  Notation Right Binding Bracket</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Parenthèse droite lien de Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationRightImageBracket" translate="yes" xml:space="preserve">
           <source>Z  Notation Right Image Bracket</source>
-          <target state="new">Z  Notation Right Image Bracket</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Support de bonne Image Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSchemaComposition" translate="yes" xml:space="preserve">
           <source>Z  Notation Schema Composition</source>
-          <target state="new">Z  Notation Schema Composition</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Composition de schéma Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSchemaPiping" translate="yes" xml:space="preserve">
           <source>Z  Notation Schema Piping</source>
-          <target state="new">Z  Notation Schema Piping</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Z Notation schéma tuyauterie</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSchemaProjection" translate="yes" xml:space="preserve">
           <source>Z  Notation Schema Projection</source>
-          <target state="new">Z  Notation Schema Projection</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Projection de schéma Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationSpot" translate="yes" xml:space="preserve">
           <source>Z  Notation Spot</source>
-          <target state="new">Z  Notation Spot</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Spot de Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ZNotationTypeColon" translate="yes" xml:space="preserve">
           <source>Z  Notation Type Colon</source>
-          <target state="new">Z  Notation Type Colon</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Colon de Type Notation Z</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Root" translate="yes" xml:space="preserve">
           <source>Root</source>
-          <target state="new">Root</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Racine</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Lemma" translate="yes" xml:space="preserve">
           <source>Lemma</source>
-          <target state="new">Lemma</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lemme</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SpecialGroup" translate="yes" xml:space="preserve">
           <source>Special Group</source>
-          <target state="new">Special Group</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Groupe spécial</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PartOfSpeech" translate="yes" xml:space="preserve">
           <source>Part Of Speech</source>
-          <target state="new">Part Of Speech</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Partie du discours</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AttachedPronoun" translate="yes" xml:space="preserve">
           <source>Attached Pronoun</source>
-          <target state="new">Attached Pronoun</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pronom attaché</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Determiner" translate="yes" xml:space="preserve">
           <source>Determiner</source>
-          <target state="new">Determiner</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">DΘterminant</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ByWithOrInPreposition" translate="yes" xml:space="preserve">
           <source>By With Or In Preposition</source>
-          <target state="new">By With Or In Preposition</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Par ou en préposition</target>
         </trans-unit>
         <trans-unit id="IslamInfo_LikeOrThusPreposition" translate="yes" xml:space="preserve">
           <source>Like Or Thus Preposition</source>
-          <target state="new">Like Or Thus Preposition</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aime ou donc Preposition</target>
         </trans-unit>
         <trans-unit id="IslamInfo_ParticleOfOathUsedAsPreposition" translate="yes" xml:space="preserve">
           <source>Particle Of Oath Used As Preposition</source>
-          <target state="new">Particle Of Oath Used As Preposition</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Particule de serment utilisée comme préposition</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleIndicatingFuture" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Indicating Future</source>
-          <target state="new">Prefixed Particle Indicating Future</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Particule préfixe indiquant l'avenir</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CallingVocative" translate="yes" xml:space="preserve">
           <source>Calling Vocative</source>
-          <target state="new">Calling Vocative</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Composant le Vocatif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PointingVocative" translate="yes" xml:space="preserve">
           <source>Pointing Vocative</source>
-          <target state="new">Pointing Vocative</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pointant le Vocatif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedInterrogativeParticle" translate="yes" xml:space="preserve">
           <source>Prefixed Interrogative Particle</source>
-          <target state="new">Prefixed Interrogative Particle</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le préfixe particule Interrogative</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedEqualizationParticle" translate="yes" xml:space="preserve">
           <source>Prefixed Equalization Particle</source>
-          <target state="new">Prefixed Equalization Particle</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Péréquation avec le préfixe particule</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Resumption" translate="yes" xml:space="preserve">
           <source>Resumption</source>
-          <target state="new">Resumption</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Reprise</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Circumstantial" translate="yes" xml:space="preserve">
           <source>Circumstantial</source>
-          <target state="new">Circumstantial</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Circonstancielle</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Comitative" translate="yes" xml:space="preserve">
           <source>Comitative</source>
-          <target state="new">Comitative</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Comitatif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Result" translate="yes" xml:space="preserve">
           <source>Result</source>
-          <target state="new">Result</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Résultat</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Supplemental" translate="yes" xml:space="preserve">
           <source>Supplemental</source>
-          <target state="new">Supplemental</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Supplemental</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Cause" translate="yes" xml:space="preserve">
           <source>Cause</source>
-          <target state="new">Cause</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">cause</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedPreposition" translate="yes" xml:space="preserve">
           <source>Prefixed Preposition</source>
-          <target state="new">Prefixed Preposition</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Préposition préfixée</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleIndicatingEmphasis" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Indicating Emphasis</source>
-          <target state="new">Prefixed Particle Indicating Emphasis</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Particule préfixe indiquant l'accent</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleIndicatingPurpose" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Indicating Purpose</source>
-          <target state="new">Prefixed Particle Indicating Purpose</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Avec le préfixe particule indiquant le but</target>
         </trans-unit>
         <trans-unit id="IslamInfo_PrefixedParticleUsedToFormImperative" translate="yes" xml:space="preserve">
           <source>Prefixed Particle Used To Form Imperative</source>
-          <target state="new">Prefixed Particle Used To Form Imperative</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le préfixe utilisé pour former l'impératif de particules</target>
         </trans-unit>
         <trans-unit id="IslamInfo_VocativeWordForm" translate="yes" xml:space="preserve">
           <source>Vocative Word Form</source>
-          <target state="new">Vocative Word Form</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Forme du mot Vocatif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Emphatic" translate="yes" xml:space="preserve">
           <source>Emphatic</source>
-          <target state="new">Emphatic</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Emphatique</target>
         </trans-unit>
         <trans-unit id="IslamInfo_IndicativeMood" translate="yes" xml:space="preserve">
           <source>Indicative Mood</source>
-          <target state="new">Indicative Mood</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Humeur indicative</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SubjunctiveMood" translate="yes" xml:space="preserve">
           <source>Subjunctive Mood</source>
-          <target state="new">Subjunctive Mood</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Humeur de subjonctif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_JussiveMood" translate="yes" xml:space="preserve">
           <source>Jussive Mood</source>
-          <target state="new">Jussive Mood</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Humeur jussif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Stem" translate="yes" xml:space="preserve">
           <source>Stem</source>
-          <target state="new">Stem</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tige</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Participle" translate="yes" xml:space="preserve">
           <source>Participle</source>
-          <target state="new">Participle</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Participe</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeOne" translate="yes" xml:space="preserve">
           <source>Type One</source>
-          <target state="new">Type One</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tapez une</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeTwo" translate="yes" xml:space="preserve">
           <source>Type Two</source>
-          <target state="new">Type Two</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type Two</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeThree" translate="yes" xml:space="preserve">
           <source>Type Three</source>
-          <target state="new">Type Three</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type trois</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeFour" translate="yes" xml:space="preserve">
           <source>Type Four</source>
-          <target state="new">Type Four</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type quatre</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeFive" translate="yes" xml:space="preserve">
           <source>Type Five</source>
-          <target state="new">Type Five</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type 5</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeSix" translate="yes" xml:space="preserve">
           <source>Type Six</source>
-          <target state="new">Type Six</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type 6</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeSeven" translate="yes" xml:space="preserve">
           <source>Type Seven</source>
-          <target state="new">Type Seven</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type de sept</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeEight" translate="yes" xml:space="preserve">
           <source>Type Eight</source>
-          <target state="new">Type Eight</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type de huit</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeNine" translate="yes" xml:space="preserve">
           <source>Type Nine</source>
-          <target state="new">Type Nine</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type de neuf</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeTen" translate="yes" xml:space="preserve">
           <source>Type Ten</source>
-          <target state="new">Type Ten</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type 10</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeEleven" translate="yes" xml:space="preserve">
           <source>Type Eleven</source>
-          <target state="new">Type Eleven</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type d'onze</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TypeTwelve" translate="yes" xml:space="preserve">
           <source>Type Twelve</source>
-          <target state="new">Type Twelve</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Type de douze</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Active" translate="yes" xml:space="preserve">
           <source>Active</source>
-          <target state="new">Active</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Actif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Perfect" translate="yes" xml:space="preserve">
           <source>Perfect</source>
-          <target state="new">Perfect</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Parfait</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Imperfect" translate="yes" xml:space="preserve">
           <source>Imperfect</source>
-          <target state="new">Imperfect</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Imparfaite</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Imperative" translate="yes" xml:space="preserve">
           <source>Imperative</source>
-          <target state="new">Imperative</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Impératif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GenitiveCase" translate="yes" xml:space="preserve">
           <source>Genitive Case</source>
-          <target state="new">Genitive Case</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Génitif</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Singular" translate="yes" xml:space="preserve">
           <source>Singular</source>
-          <target state="new">Singular</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">singulier</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NumberSpelling" translate="yes" xml:space="preserve">
+          <source>Number Spelling</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Numéro d'orthographe</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HeadingNumberSpelling" translate="yes" xml:space="preserve">
+          <source>Heading Number Spelling</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Titre numéro orthographe</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Stopping Endowment</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arrêt de dotation</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaStoppingEndowment" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Stopping Endowment</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Teh Marbuta arrêt Endowment</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TehMarbutaJoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Teh Marbuta Joining Continuing</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Teh Marbuta rejoindre continue</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_JoiningContinuing" translate="yes" xml:space="preserve">
+          <source>Joining Continuing</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Se joindre à poursuivre</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" translate="yes" xml:space="preserve">
+          <source>Standing Oblong Zero Small High Upright Rectangular Zero</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Debout Oblong zéro petit haut zéro rectangulaire verticale</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyCentreLowStop" translate="yes" xml:space="preserve">
+          <source>Empty Centre Low Stop</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Butée basse Centre vide</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RoundedHighStopWithFilledCentre" translate="yes" xml:space="preserve">
+          <source>Rounded High Stop With Filled Centre</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arrondi de butée haute avec plein Centre</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallNoon" translate="yes" xml:space="preserve">
+          <source>Small Noon</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Petit midi</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHighSeen" translate="yes" xml:space="preserve">
+          <source>Small High Seen</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Petit haut vu</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallLowSeen" translate="yes" xml:space="preserve">
+          <source>Small Low Seen</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Petit faible vu</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Sukun" translate="yes" xml:space="preserve">
+          <source>Sukun</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sukun</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_EmptyShadda" translate="yes" xml:space="preserve">
+          <source>Empty Shadda</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CHADDA vide</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ShaddaResolve" translate="yes" xml:space="preserve">
+          <source>Shadda Resolve</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Resolve shadda</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaFatha" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Fatha</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Continue Hamza Fatha</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaKasra" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Kasra</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kasra continue de Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaDamma" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Damma</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Continue Hamza Damma</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinuingHamzaEmpty" translate="yes" xml:space="preserve">
+          <source>Continuing Hamza Empty</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Continue Hamza vide</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LaamAssimilation" translate="yes" xml:space="preserve">
+          <source>Laam Assimilation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assimilation de Laam</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaAssimilation" translate="yes" xml:space="preserve">
+          <source>Raa Assimilation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assimilation de RAA</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RaaHeavinessOrLightness" translate="yes" xml:space="preserve">
+          <source>Raa Heaviness Or Lightness</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">RAA lourdeur ou légèreté</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallWaw" translate="yes" xml:space="preserve">
+          <source>Small Waw</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Petit Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallYeh" translate="yes" xml:space="preserve">
+          <source>Small Yeh</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Petit Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_FathaSilentLetterSuperscriptAlef" translate="yes" xml:space="preserve">
+          <source>Fatha Silent Letter Superscript Alef</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fatha Silent lettre exposant Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DipthongZeroLength" translate="yes" xml:space="preserve">
+          <source>Dipthong Zero Length</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Dipthong Zero Length</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OriginalLengtheningZeroCapture" translate="yes" xml:space="preserve">
+          <source>Original Lengthening Zero Capture</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Original allongement zéro Capture</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateGreatIdenticalDammaMerge" translate="yes" xml:space="preserve">
+          <source>Assimilate Great Identical Damma Merge</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assimiler la grande fusion de Damma identiques</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AssimilateSmallIdenticalHaaSakinah" translate="yes" xml:space="preserve">
+          <source>Assimilate Small Identical Haa Sakinah</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assimiler les petits identiques Haa Sakinah</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostCompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Complete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nasalisation plus complète</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Complete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nasalisation complète</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_IncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Incomplete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nasalisation incomplète</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MostIncompleteNasalization" translate="yes" xml:space="preserve">
+          <source>Most Incomplete Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nasalisation incomplète plus</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" translate="yes" xml:space="preserve">
+          <source>Vowelless Noon Incomplete Assimilating Nasalization</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assimiler la nasalisation incomplète vowelless midi</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_UnwrittenHelperKasra" translate="yes" xml:space="preserve">
+          <source>Unwritten Helper Kasra</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kasra non écrite d'assistance</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaWawHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Waw Hamza</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alef Wasla Waw Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaAlefMaksuraHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Alef Maksura Hamza</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alef Wasla Alef Hamza MAKSOURA</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AlefWaslaHamza" translate="yes" xml:space="preserve">
+          <source>Alef Wasla Hamza</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alef Wasla Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SmallHamza" translate="yes" xml:space="preserve">
+          <source>Small Hamza</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Petit Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterHamza" translate="yes" xml:space="preserve">
+          <source>Letter Hamza</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre Hamza</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_HamzaAbove" translate="yes" xml:space="preserve">
+          <source>Hamza Above</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hamza en chef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotAlef" translate="yes" xml:space="preserve">
+          <source>Not Alef</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pas de Alef</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddAlef" translate="yes" xml:space="preserve">
+          <source>Madd Alef</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alef MADD</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotWaw" translate="yes" xml:space="preserve">
+          <source>Not Waw</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pas de Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NotYeh" translate="yes" xml:space="preserve">
+          <source>Not Yeh</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pas de Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddWaw" translate="yes" xml:space="preserve">
+          <source>Madd Waw</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Waw MADD</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenWaw" translate="yes" xml:space="preserve">
+          <source>Leen Waw</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Leen Waw</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongWaw" translate="yes" xml:space="preserve">
+          <source>Strong Waw</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Waw fort</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddYeh" translate="yes" xml:space="preserve">
+          <source>Madd Yeh</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Yeh MADD</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeenYeh" translate="yes" xml:space="preserve">
+          <source>Leen Yeh</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Leen Yeh</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_StrongYeh" translate="yes" xml:space="preserve">
+          <source>Strong Yeh</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Yeh forte</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DivisionMarkers" translate="yes" xml:space="preserve">
+          <source>Division Markers</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Marqueurs de division</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkers" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Continuer l'arrêt marqueurs</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ContinueStopMarkersAtEnding" translate="yes" xml:space="preserve">
+          <source>Continue Stop Markers At Ending</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Continuer l'arrêt marqueurs à fin</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryLightened" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Lightened</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Malala obligatoire allégé</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_MaddahObligatoryWeighted" translate="yes" xml:space="preserve">
+          <source>Maddah Obligatory Weighted</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Malala obligatoire pondéré</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" translate="yes" xml:space="preserve">
+          <source>Connected Lengthening Essential Presented Sukun</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Connecté allongeant Sukun présenté essentiel</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SoftLengtheningLetters" translate="yes" xml:space="preserve">
+          <source>Soft Lengthening Letters</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettres de prolongation molle</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LetterSpelling" translate="yes" xml:space="preserve">
+          <source>Letter Spelling</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lettre orthographe</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RemembranceAfterPrayer" translate="yes" xml:space="preserve">
+          <source>Remembrance After Prayer</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Souvenir après la prière</target>
         </trans-unit>
       </group>
     </body>

@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Ogo</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Ntụpụta ihuakwụkwọ gasị</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kọpịa n'ebendobe eserese</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Chèretụ</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Gwuo</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Kekọrịta</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Gbasara</value>
+  </data>
 </root>

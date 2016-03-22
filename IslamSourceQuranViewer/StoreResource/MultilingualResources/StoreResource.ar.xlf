@@ -177,47 +177,87 @@
         </trans-unit>
         <trans-unit id="AddBookmark.Text" translate="yes" xml:space="preserve">
           <source>Add Bookmark</source>
-          <target state="new">Add Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">إضافة إشارة مرجعية</target>
         </trans-unit>
         <trans-unit id="Bookmarks.Text" translate="yes" xml:space="preserve">
           <source>Bookmarks</source>
-          <target state="new">Bookmarks</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">إشارات مرجعية</target>
         </trans-unit>
         <trans-unit id="CopyToClipboard.Text" translate="yes" xml:space="preserve">
           <source>Copy to Clipboard</source>
-          <target state="new">Copy to Clipboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">النسخ إلى "الحافظة"</target>
         </trans-unit>
         <trans-unit id="GoToVerse.Label" translate="yes" xml:space="preserve">
           <source>Go to Verse</source>
-          <target state="new">Go to Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">انتقل إلى الآية</target>
         </trans-unit>
         <trans-unit id="Pause.Label" translate="yes" xml:space="preserve">
           <source>Pause</source>
-          <target state="new">Pause</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">إيقاف مؤقت</target>
         </trans-unit>
         <trans-unit id="Play.Label" translate="yes" xml:space="preserve">
           <source>Play</source>
-          <target state="new">Play</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">تشغيل</target>
         </trans-unit>
         <trans-unit id="Reciter.Text" translate="yes" xml:space="preserve">
           <source>Reciter</source>
-          <target state="new">Reciter</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">القارئ</target>
         </trans-unit>
         <trans-unit id="RemoveBookmark.Text" translate="yes" xml:space="preserve">
           <source>Remove Bookmark</source>
-          <target state="new">Remove Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">إزالة إشارة مرجعية</target>
         </trans-unit>
         <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
           <source>Set Playback Verse</source>
-          <target state="new">Set Playback Verse</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">الآية قراءة مجموعة</target>
         </trans-unit>
         <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
           <source>Show Exegesis</source>
-          <target state="new">Show Exegesis</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">إظهار التفسير</target>
         </trans-unit>
         <trans-unit id="Share.Text" translate="yes" xml:space="preserve">
           <source>Share</source>
-          <target state="new">Share</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">مشاركة</target>
+        </trans-unit>
+        <trans-unit id="AdditionalVerseAdvanceDelay.Text" translate="yes" xml:space="preserve">
+          <source>Additional Verse Advance Delay</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">الآية إضافية مقدما تأخير</target>
+        </trans-unit>
+        <trans-unit id="AutomaticAdvanceVerse.Text" translate="yes" xml:space="preserve">
+          <source>Advance Verse Automatically</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">تقدم الآية تلقائياً</target>
+        </trans-unit>
+        <trans-unit id="DelayVerseLengthBeforeAdvancing.Text" translate="yes" xml:space="preserve">
+          <source>Delay Length of Verse Before Advancing</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">طول تأخير الآية قبل المضي قدما</target>
+        </trans-unit>
+        <trans-unit id="Looping.Text" translate="yes" xml:space="preserve">
+          <source>Looping Mode</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">وضع حلقات</target>
+        </trans-unit>
+        <trans-unit id="About.Label" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">حول</target>
+        </trans-unit>
+        <trans-unit id="AboutInfo.Text" translate="yes" xml:space="preserve">
+          <source>Arabic Qur'an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
+Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
+Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
+Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">القرآن العربية مع بيانات التعريف وكل الترجمات وبعض التلاوات الصوت ما عدا تلك المدرجة في القائمة المقيدة للمشروع عبد القادر (http://tanzil.net). وتقيد 
+الهنغارية ترجمة القرآن من قبله حليمة سوزانا "إيسزلام المجرية" (http://magyariszlam.hu). 
+"الترجمة الإنكليزية للقرآن" "مولانا محمد على" وتقيد "حركة الأحمدية لاهور" في الإسلام (http://www.aaiil.org). البيانات 
+مورفولوجيا وترجمة كلمة بكلمة باللغة الإنكليزية الائتمان القرآنية العربية الإحضار (http://corpus.quran.com). 
+الائتمان الإندونيسية كل كلمة ترجمة للقرآن إندونيسيا (http://www.alquran-indonesia.com/web/quran). وتقيد 
+الأردية الترجمة كلمة بكلمة حافظ محمد نزار "الكريم وا القرآن سهل" (http://www.easyquranwahadees.com). 
+ترجمة كلمة بكلمة أخرى، فضلا عن الترجمات الأخرى في البرنامج حساب Microsoft موفر الترجمة (http://www.microsoft.com/en-us/translator) وترجمة جوجل (http://translate.google.com)، وقد لا تكون دقيقة.  للماليزي كلمة بكلمة القرآن، المصدر الإندونيسية.  لجميع القرآن كلمة بكلمة أخرى، هو المصدر "الإحضار القرآنية اللغة الإنجليزية على اللغة العربية". 
+لحساب الأخرى التلاوات الصوتية مع معدل البت سيظهر "كل الآية" (http://www.everyayah.com). 
+بيانات Unicode الفضل Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

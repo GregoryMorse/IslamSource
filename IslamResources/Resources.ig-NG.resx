@@ -1800,4 +1800,25 @@
   <data name="IslamInfo_Exchange" xml:space="preserve">
     <value>mgbanwe()</value>
   </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Ọbụghị Sọbseetị Nkè maọbụ nke Pụtara</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Ọbụghị Supaseetị Nkè maọbụ Pụtara</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Ọbụghị Sọbseetị Nkè</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Ọbụghị Supaseetị Nkè</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Isi</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Rịzọọtụ</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>kèdịìrè</value>
+  </data>
 </root>

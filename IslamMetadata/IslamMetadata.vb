@@ -108,10 +108,10 @@ Public Class Arabic
         End Function
     End Class
     Public Shared Function GetRecitationSymbol(Index As Integer) As String
-        Return ArabicData.ArabicLetters(Index).UnicodeName + " (" + ArabicData.FixStartingCombiningSymbol(ArabicData.ArabicLetters(Index).Symbol) + ArabicData.LeftToRightEmbedding + ")" + ArabicData.PopDirectionalFormatting
+        Return ArabicData.ArabicLetters(Index).UnicodeName + ArabicData.LeftToRightOverride + " (" + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(ArabicData.ArabicLetters(Index).Symbol) + ArabicData.LeftToRightOverride + ")" + ArabicData.PopDirectionalFormatting
     End Function
     Public Shared Function GetRecitationSymbols() As Array()
-        Return New List(Of Object())(Linq.Enumerable.Select(CachedData.RecitationSymbols, Function(Ch As String) New Object() {ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName + " (" + ArabicData.FixStartingCombiningSymbol(Ch) + ArabicData.LeftToRightEmbedding + ")" + ArabicData.PopDirectionalFormatting, ArabicData.FindLetterBySymbol(Ch.Chars(0))})).ToArray()
+        Return New List(Of Object())(Linq.Enumerable.Select(CachedData.RecitationSymbols, Function(Ch As String) New Object() {ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName + ArabicData.LeftToRightOverride + " (" + ArabicData.PopDirectionalFormatting + ArabicData.FixStartingCombiningSymbol(Ch) + ArabicData.LeftToRightOverride + ")" + ArabicData.PopDirectionalFormatting, ArabicData.FindLetterBySymbol(Ch.Chars(0))})).ToArray()
     End Function
     Public Shared _BuckwalterMap As Dictionary(Of Char, Integer)
     Public Shared ReadOnly Property BuckwalterMap As Dictionary(Of Char, Integer)
@@ -1271,7 +1271,7 @@ Public Class IslamData
             <Xml.Serialization.XmlAttribute("source")>
             Public Source As String
             <Xml.Serialization.XmlAttribute("bitrate")>
-            <ComponentModel.DefaultValueAttribute(-1)>
+            <ComponentModel.DefaultValue(0)>
             Public BitRate As Integer
         End Structure
         <Xml.Serialization.XmlElement("reciter")>
@@ -1281,6 +1281,18 @@ Public Class IslamData
     End Structure
     <Xml.Serialization.XmlElement("reciters")>
     Public ReciterList As Reciters
+    Public Structure LoopingModes
+        Public Structure LoopingMode
+            <Xml.Serialization.XmlAttribute("name")>
+            Public Name As String
+        End Structure
+        <Xml.Serialization.XmlElement("loopingmode")>
+        Public LoopingModes() As LoopingMode
+        <Xml.Serialization.XmlAttribute("default")>
+        Public DefaultLoopingMode As String
+    End Structure
+    <Xml.Serialization.XmlElement("loopingmodes")>
+    Public LoopingModeList As LoopingModes
     Public Structure ListCategory
         Public Structure Word
             <Xml.Serialization.XmlAttribute("text")>
@@ -4421,7 +4433,7 @@ Public Class TanzilReader
     End Function
     Public Shared Function GetSelectionName(Division As Integer, Part As Integer, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
         If Division = 0 Then
-            Return TanzilReader.GetChapterName(GetTextChapter(CachedData.XMLDocInfo, Part), SchemeType, Scheme)
+            Return TanzilReader.GetChapterName(GetChapterByIndex(Part), SchemeType, Scheme)
         ElseIf Division = 1 Then
             Return TanzilReader.GetChapterName(GetChapterIndexByRevelationOrder(Part), SchemeType, Scheme)
         ElseIf Division = 2 Then
@@ -5486,7 +5498,9 @@ Public Class TanzilReader
                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
                 Texts.Clear()
             ElseIf If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) <> 0 Then
-                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eReference, New Integer() {BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks + 1}))
+                If If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) <> ArabicData.ArabicEndOfAyah Then
+                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eReference, New Integer() {BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse, Count - PauseMarks + 1}))
+                End If
                 If Not NoArabic Then
                     If Colorize Then
                         Texts.AddRange(WordColors(Count))
@@ -5558,7 +5572,6 @@ Public Class TanzilReader
                     '    Text += Arabic.TransliterateFromBuckwalter("B")
                     '    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("B"))}))
                     'End If
-                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eReference, New Integer() {BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse}))
                     If CInt(If(Chapter = 0, BaseVerse, 1)) + Verse = 1 Then
                         Node = GetTextVerse(GetTextChapter(CachedData.XMLDocMain, BaseChapter + Chapter), 1).Attribute("bismillah")
                         If Not Node Is Nothing Then
@@ -5587,6 +5600,7 @@ Public Class TanzilReader
                             End If
                         End If
                     End If
+                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eReference, New Integer() {BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse}))
                     If TanzilReader.IsSajda(BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse) Then
                         'Sajda markers are already in the text
                         'Text += Arabic.TransliterateFromBuckwalter("R")
@@ -5747,10 +5761,10 @@ Public Class TanzilReader
     End Function
     Public Shared Function GetPartName(Index As Integer, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
         Dim Convert As Xml.Linq.XElement = Utility.GetChildNodeByIndex("juz", "index", Index, New List(Of Xml.Linq.XElement)(Utility.GetChildNode("juzs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray())
-        Return Convert.Attribute("index").Value + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " ") + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), Nothing, CachedData.RuleMetas("Normal"))))
+        Return Convert.Attribute("index").Value + ". " + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).ID) + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " ") + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), Nothing, CachedData.RuleMetas("Normal"))))
     End Function
     Public Shared Function GetPartNames(SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
-        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("juz", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("juzs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " ") + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), Nothing, CachedData.RuleMetas("Normal")))), CInt(Convert.Attribute("index").Value)})).ToArray()
+        Dim Names() As Array = New List(Of Object())(Linq.Enumerable.Select(Utility.GetChildNodes("juz", New List(Of Xml.Linq.XElement)(Utility.GetChildNode("juzs", New List(Of Xml.Linq.XElement)(CachedData.XMLDocInfo.Root.Elements).ToArray()).Elements).ToArray()), Function(Convert As Xml.Linq.XElement) New Object() {Convert.Attribute("index").Value + ". " + Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).ID) + " (" + Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " ") + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), SchemeType, Scheme, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("juz " + CachedData.IslamData.QuranParts(CInt(Convert.Attribute("index").Value) - 1).Name + " "), Nothing, CachedData.RuleMetas("Normal")))), CInt(Convert.Attribute("index").Value)})).ToArray()
         Array.Sort(Names, New Utility.CompareNameValueArray)
         Return Names
     End Function

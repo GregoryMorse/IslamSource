@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Язык по умолчанию</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Добавить закладку</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Закладки</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Копировать в буфер обмена</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Перейти к стих</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Воспроизвести</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Чтец</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Удалить закладку.</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Настройка воспроизведения стих</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Показать толкование</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Общий доступ</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Дополнительные стих заранее задержки</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Заранее стих автоматически</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Продолжительность задержки стих до продвижения</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Циклы режим</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>о программе</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Арабский Коран с метаданными и все переводы и некоторые аудио декламации, за исключением перечисленных приписывают Tanzil проекта (http://tanzil.net). Венгерский перевод Корана на Kiss Zsuzsanna Халима 
+приписывают Magyar Iszlam (http://magyariszlam.hu). 
+Английский перевод Корана Гуссейн Мухаммеда Али приписывают Лахор ахмадийской движение в Исламе (http://www.aaiil.org). Данные 
+морфологии и английский перевод слово в слово кредит коранических Арабский корпус (http://corpus.quran.com). 
+Индонезийский перевод слово в слово кредит Аль-Коран Индонезии (http://www.alquran-indonesia.com/web/quran). 
+Урду перевод слово в слово Хафиз Мухаммад Nazar приписывают легко Коран Wa Hadees (http://www.easyquranwahadees.com). 
+Другие переводы, слово в слово, а также другие переводы в программе приписывают перевод поставщик Microsoft (http://www.microsoft.com/en-us/translator) и Google Translate (http://translate.google.com) и не может быть точным.  Для Малайзии слово в слово Коран источник Индонезии.  Для всех других Qur'an слово в слово источником является английский корпус Арабский Корана. 
+Другие аудио декламации с битрейтом показано зачисляются на каждый аят (http://www.everyayah.com). 
+Приписывают Unicode Consortium (http://www.unicode.org) данные в кодировке Юникод</value>
+  </data>
 </root>

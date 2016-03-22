@@ -3441,11 +3441,17 @@
   <data name="IslamInfo_bukhariBook16" xml:space="preserve">
     <value>گرہن</value>
   </data>
+  <data name="IslamInfo_bukhariBook17" xml:space="preserve">
+    <value>قرآن کی قرائت کے دوران سجدہ</value>
+  </data>
   <data name="IslamInfo_bukhariBook18" xml:space="preserve">
     <value>قصر (کم-تقصیر)</value>
   </data>
   <data name="IslamInfo_bukhariBook19" xml:space="preserve">
     <value>رات کی نماز (تہجد)</value>
+  </data>
+  <data name="IslamInfo_bukhariBook1Chapter1" xml:space="preserve">
+    <value>{گانے وحی رسول اللہ صلی اللہ (ص) پر نازل کیا جا کرنے کے لئے شروع کر دیا.</value>
   </data>
   <data name="IslamInfo_bukhariBook2" xml:space="preserve">
     <value>یقین</value>
@@ -3480,6 +3486,9 @@
   <data name="IslamInfo_bukhariBook29" xml:space="preserve">
     <value>مدینہ کی فضیلت</value>
   </data>
+  <data name="IslamInfo_bukhariBook2Chapter1" xml:space="preserve">
+    <value>رسول اللہ (ص) کا بیان: 'اسلام کے پانچ اصولوں پر مبنی ہے.'</value>
+  </data>
   <data name="IslamInfo_bukhariBook2Chapter10" xml:space="preserve">
     <value>انصار سے محبت کرنا ایمان کی علامت ہے.</value>
   </data>
@@ -3488,6 +3497,9 @@
   </data>
   <data name="IslamInfo_bukhariBook2Chapter12" xml:space="preserve">
     <value>(بھاگ) امام الفتن سے بھاگنے (آزمائش اور afflications وغیرہ) دین کا ایک حصہ ہے.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter13" xml:space="preserve">
+    <value>رسول اللہ (ص) کا بیان: 'میں اللہ (Azza و جل) معلوم ہے کہ تم میں سے سب سے بہتر کر'.</value>
   </data>
   <data name="IslamInfo_bukhariBook2Chapter14" xml:space="preserve">
     <value>جو شخص کفر پر واپس آجائے کرنے سے نفرت کرتا ہے.</value>
@@ -3513,6 +3525,9 @@
   <data name="IslamInfo_bukhariBook2Chapter20" xml:space="preserve">
     <value>سلام کرنا اسلام کا ایک حصہ ہے.</value>
   </data>
+  <data name="IslamInfo_bukhariBook2Chapter21" xml:space="preserve">
+    <value>کسی کے شوہر سے کفر کریں.</value>
+  </data>
   <data name="IslamInfo_bukhariBook2Chapter22" xml:space="preserve">
     <value>گناہ جہالت سے ہیں اور وہ اللہ (Azza و جل) کے ساتھ ساتھ دوسروں کی عبادت ہے جب تک کہ گناہ گار کافر نہیں ہے.</value>
   </data>
@@ -3528,8 +3543,14 @@
   <data name="IslamInfo_bukhariBook2Chapter26" xml:space="preserve">
     <value>القدر کی رات کو نماز قائم کرنے کو ایمان کا ایک حصہ ہے.</value>
   </data>
+  <data name="IslamInfo_bukhariBook2Chapter27" xml:space="preserve">
+    <value>الجہاد (مقدس جنگ - اللہ کی راہ میں لڑنے والے) ایمان کا ایک حصہ ہے.</value>
+  </data>
   <data name="IslamInfo_bukhariBook2Chapter28" xml:space="preserve">
     <value>رمضان کی راتوں کے دوران دعا مانگ - یہ (رضاکارانہ Nawafil) قائم کرنے کے لئے ایمان کا ایک حصہ ہے.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter29" xml:space="preserve">
+    <value>رمضان (صدق دل اور حقیقت) صرف اللہ کی انعامات کے لئے امید کے مہینے کے دوران [(اسلامی تعلیمات کے مطابق) روزوں] روزہ مشاہدہ کرنا، ایمان کا ایک حصہ ہے.</value>
   </data>
   <data name="IslamInfo_bukhariBook2Chapter3" xml:space="preserve">
     <value>(کیا کہا جاتا ہے) کے عقیدے کے اعمال کے بارے میں.</value>
@@ -3570,11 +3591,23 @@
   <data name="IslamInfo_bukhariBook2Chapter40" xml:space="preserve">
     <value>اس شخص کو اپنے دین کی خاطر سب مشکوک (غیر واضح) چیزیں چھوڑ دیتا ہے جو کی برتری.</value>
   </data>
+  <data name="IslamInfo_bukhariBook2Chapter41" xml:space="preserve">
+    <value>امام Khumus (مال غنیمت کا پانچواں حصہ اللہ کی راہ میں دیا جائے) ادا کرنے کو ایمان کا ایک حصہ ہے.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter42" xml:space="preserve">
+    <value>کس بات کے حوالے سے کہا جاتا ہے کہ. اعمال کا ثواب نیت پر انحصار کرتا ہے '</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter43" xml:space="preserve">
+    <value>رسول اللہ (ص) کا بیان: 'مذہب' ایک Nasiha ہے [. اللہ کے لئے، اس کے رسول کی، مسلم حکمرانوں کیلئے، اور تمام مسلمانوں کے لئے (مخلص اور سچا ہونا)] '</value>
+  </data>
   <data name="IslamInfo_bukhariBook2Chapter5" xml:space="preserve">
     <value>کس کی اسلام سب سے بہتر ہے (کون بہترین مسلمان ہے)؟</value>
   </data>
   <data name="IslamInfo_bukhariBook2Chapter6" xml:space="preserve">
     <value>(دوسروں کو) کھانا کھلانا اسلام کا ایک حصہ ہے.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter7" xml:space="preserve">
+    <value>کسی کے (مسلمان) بھائی کے لیے پسند کرنا جو ایک اپنے لئے پسند کرتا ہے ایمان کا ایک حصہ ہے.</value>
   </data>
   <data name="IslamInfo_bukhariBook2Chapter8" xml:space="preserve">
     <value>رسول (ص) سے محبت کرنا ایمان کا ایک حصہ ہے.</value>
@@ -3593,6 +3626,9 @@
   </data>
   <data name="IslamInfo_bukhariBook32" xml:space="preserve">
     <value>شب قدر کی فضیلت</value>
+  </data>
+  <data name="IslamInfo_bukhariBook33" xml:space="preserve">
+    <value>اللہ کے ذکر کے لئے ایک مسجد (اعتکاف) سبکدوش ہونے والے</value>
   </data>
   <data name="IslamInfo_bukhariBook34" xml:space="preserve">
     <value>فروخت اور تجارت</value>
@@ -3624,8 +3660,20 @@
   <data name="IslamInfo_bukhariBook3Chapter12" xml:space="preserve">
     <value>لھذا جس نے طلبا کو (ایک مذہبی بات) دینے کے لئے ایک خاص دن مقرر.</value>
   </data>
+  <data name="IslamInfo_bukhariBook3Chapter13" xml:space="preserve">
+    <value>اللہ (Azza و جل) ایک شخص کو اچھا کرنا چاہتا ہے تو اسے دین سمجھ ہوتا.</value>
+  </data>
   <data name="IslamInfo_bukhariBook3Chapter14" xml:space="preserve">
     <value>(کی برتری) علم سمجھنے.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter15" xml:space="preserve">
+    <value>علم اور امام الحکمہ (حکمت) [رہے تو وہ طرح بننا چاہتے ہیں یعنی</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter16" xml:space="preserve">
+    <value>کیا حضرت موسی کے سفر کے بارے میں کہا گیا ہے ( 'alaihi و طور السلام) (وہ گیا جب) الخضر کو پورا کرنے کے سمندر میں.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter17" xml:space="preserve">
+    <value>رسول اللہ (ص) کا بیان: اے اللہ!</value>
   </data>
   <data name="IslamInfo_bukhariBook3Chapter18" xml:space="preserve">
     <value>کس عمر میں نوجوانوں کی بات سنی جا سکتی ہیں (یعنی ایک لڑکے سے حدیث کی کوٹیشن قابل قبول ہو).</value>
@@ -3651,6 +3699,12 @@
   <data name="IslamInfo_bukhariBook3Chapter24" xml:space="preserve">
     <value>لھذا جس نے بھی اشارہ کر کے یا جھکی سے ایک مذہبی فیصلہ دیا.</value>
   </data>
+  <data name="IslamInfo_bukhariBook3Chapter25" xml:space="preserve">
+    <value>رسول اللہ (ص) عبد قیس کے لوگ (مشن) پر زور دیا کہ ایمان اور (مذہبی) علم حفظ کرنے کی (اس نے ان سے وضاحت کے طور پر) اور (تبلیغ) ان لوگوں سے جن کو وہ (گھر میں) پیچھے چھوڑ کرنے کے لئے کو مطلع کرنا.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter26" xml:space="preserve">
+    <value>ایک پریشانی معاملے کا جواب تلاش کر رہا سفر کرنے، اور ایک کے خاندان کو یہ سکھانے کے لئے.</value>
+  </data>
   <data name="IslamInfo_bukhariBook3Chapter27" xml:space="preserve">
     <value>Fi سے ؟؟ سیکھنے (مذہبی) علم کے لئے گردش میں فرائض ایکس.</value>
   </data>
@@ -3662,6 +3716,9 @@
   </data>
   <data name="IslamInfo_bukhariBook3Chapter3" xml:space="preserve">
     <value>جو شخص (پہنچانے) کے علم میں اس کی آواز اٹھاتا ہے.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter30" xml:space="preserve">
+    <value>دوسروں کو سمجھانے کی غرض سے تین مرتبہ ایک ہی بات بار بار.</value>
   </data>
   <data name="IslamInfo_bukhariBook3Chapter31" xml:space="preserve">
     <value>ایک شخص سکھا (دین سے) ان کی عورت کے غلام اور اس کے خاندان.</value>
@@ -3680,6 +3737,9 @@
   </data>
   <data name="IslamInfo_bukhariBook3Chapter36" xml:space="preserve">
     <value>لھذا جس نے بھی کچھ سنا (لیکن یہ سمجھ میں نہیں آیا ہے) اور پھر دوبارہ پوچھا کہ وہ اسے مکمل طور پر سمجھ تک.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter37" xml:space="preserve">
+    <value>اس سے غیر حاضر ہیں وہ لوگ جو کرنے کے لئے علم کی تبلیغ کے لئے موجود [ایک مذہبی اجلاس (یا کانفرنس)] ہیں جو ان لوگوں پر فرض ہے.</value>
   </data>
   <data name="IslamInfo_bukhariBook3Chapter38" xml:space="preserve">
     <value>ایک شخص جو رسول اللہ (ص) پر جھوٹ بتاتا کا گناہ.</value>
@@ -3723,6 +3783,9 @@
   <data name="IslamInfo_bukhariBook3Chapter5" xml:space="preserve">
     <value>امام اپنے علم کو ٹیسٹ کرنے کے لئے میں ان کے اصحاب سے پوچھ گچھ.</value>
   </data>
+  <data name="IslamInfo_bukhariBook3Chapter50" xml:space="preserve">
+    <value>(تمنائیں (مذہبی علم) سیکھنے جبکہ :-) (امام سے Haya ') شرماو کرنے کے طور پر کیا کہا جاتا ہے.</value>
+  </data>
   <data name="IslamInfo_bukhariBook3Chapter51" xml:space="preserve">
     <value>جو کوئی شرم محسوس (کچھ پوچھنا ہے) اور پھر اس کی جانب سے پوچھیں کرنے کے لئے کسی دوسرے شخص کی درخواست کی.</value>
   </data>
@@ -3740,6 +3803,9 @@
   </data>
   <data name="IslamInfo_bukhariBook3Chapter8" xml:space="preserve">
     <value>جو شخص ایک اجتماع کے دور آخر میں بیٹھ گیا.</value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter9" xml:space="preserve">
+    <value>رسول اللہ (ص) کا بیان: 'یہ ممکنہ کسی شخص معلومات کا ایک ٹکڑا حاصل کرتا ہے جو بالواسطہ طور پر اس سے کہ وہ کون اس کے ذریعہ سے براہ راست سنا ہے بہتر سمجھ سکتا ہے.'</value>
   </data>
   <data name="IslamInfo_bukhariBook4" xml:space="preserve">
     <value>Ablutions (Wudu</value>
@@ -3825,6 +3891,12 @@
   <data name="IslamInfo_bukhariBook64" xml:space="preserve">
     <value>فوجی مہمات رسول اللہ (ص) کی قیادت میں (امام Maghaazi)</value>
   </data>
+  <data name="IslamInfo_bukhariBook65" xml:space="preserve">
+    <value>قرآن نبوی شروحات (نبی کی تفسیر (ص))</value>
+  </data>
+  <data name="IslamInfo_bukhariBook66" xml:space="preserve">
+    <value>قرآن کے فضائل</value>
+  </data>
   <data name="IslamInfo_bukhariBook67" xml:space="preserve">
     <value>شادی، شادی (عقد نکاح)</value>
   </data>
@@ -3885,6 +3957,9 @@
   <data name="IslamInfo_bukhariBook84" xml:space="preserve">
     <value>ادوری قسموں کا کفارہ</value>
   </data>
+  <data name="IslamInfo_bukhariBook85" xml:space="preserve">
+    <value>وراثت کے قوانین (امام Faraa'id)</value>
+  </data>
   <data name="IslamInfo_bukhariBook86" xml:space="preserve">
     <value>حدود اور سزاؤں اللہ کی طرف سے مقرر (حدود)</value>
   </data>
@@ -3920,6 +3995,9 @@
   </data>
   <data name="IslamInfo_bukhariBook96" xml:space="preserve">
     <value>قبول معلومات ایک سچے شخص کی طرف دیکھتے ہوئے</value>
+  </data>
+  <data name="IslamInfo_bukhariBook97" xml:space="preserve">
+    <value>قرآن اور سنت کے روزہ کے انعقاد</value>
   </data>
   <data name="IslamInfo_bukhariBook98" xml:space="preserve">
     <value>توحید، اللہ کی انفرادیت (توحید)</value>
@@ -10416,6 +10494,9 @@
   <data name="IslamInfo_IHavePutTrustInAllah" xml:space="preserve">
     <value>بیشک میں نے االله پر بھروسہ کیا ہے</value>
   </data>
+  <data name="IslamInfo_IhramPrayerSupplication" xml:space="preserve">
+    <value>اللہ، رحمن اور رحیم کے نام پر!</value>
+  </data>
   <data name="IslamInfo_IhramPrayerSupplicationLabel" xml:space="preserve">
     <value>احرام نماز کی دعا</value>
   </data>
@@ -10776,6 +10857,9 @@
   <data name="IslamInfo_InTheEvening" xml:space="preserve">
     <value>شام میں</value>
   </data>
+  <data name="IslamInfo_InTheEvening1" xml:space="preserve">
+    <value>ہم نے ایک نئے دن ختم ہو گئے اور اس کے ساتھ تمام بادشاہی خدا ہی کا ہے.</value>
+  </data>
   <data name="IslamInfo_InTheEvening1Label" xml:space="preserve">
     <value>شام میں</value>
   </data>
@@ -10829,6 +10913,9 @@
   </data>
   <data name="IslamInfo_InTheMorning" xml:space="preserve">
     <value>صبح کے وقت</value>
+  </data>
+  <data name="IslamInfo_InTheMorning1" xml:space="preserve">
+    <value>ہم نے ایک نئے دن میں داخل کیا ہے اور اس کے ساتھ تمام بادشاہی خدا ہی کا ہے.</value>
   </data>
   <data name="IslamInfo_InTheMorning1Label" xml:space="preserve">
     <value>صبح کے وقت</value>
@@ -13503,6 +13590,9 @@
   <data name="IslamInfo_Malik" xml:space="preserve">
     <value>رحمان ملک</value>
   </data>
+  <data name="IslamInfo_MalikMuwatta" xml:space="preserve">
+    <value>رحمان ملک کا موطا</value>
+  </data>
   <data name="IslamInfo_MalteseCross" xml:space="preserve">
     <value>مالٹی کراس</value>
   </data>
@@ -14636,6 +14726,9 @@
   </data>
   <data name="IslamInfo_muslimBook14" xml:space="preserve">
     <value>روزے کی کتاب</value>
+  </data>
+  <data name="IslamInfo_muslimBook15" xml:space="preserve">
+    <value>اعتکاف کا بیان</value>
   </data>
   <data name="IslamInfo_muslimBook16" xml:space="preserve">
     <value>حج اور عمرہ کی کتاب</value>
@@ -20049,6 +20142,9 @@
   <data name="IslamInfo_SunanIbnMaja" xml:space="preserve">
     <value>سنن ابن ماجہ</value>
   </data>
+  <data name="IslamInfo_SunanNasai" xml:space="preserve">
+    <value>نسائی اور امام صغری سنن</value>
+  </data>
   <data name="IslamInfo_SunanTirmidhi" xml:space="preserve">
     <value>سنن ترمذی</value>
   </data>
@@ -24366,6 +24462,9 @@
   <data name="IslamInfo_WhenWakingUp1Label" xml:space="preserve">
     <value>1 جاگ جب</value>
   </data>
+  <data name="IslamInfo_WhenWakingUp2" xml:space="preserve">
+    <value>کوئی بھی عبادت کے لائق مگر اللہ اکیلے، کوئی شریک نہیں ہے نہیں ہے.</value>
+  </data>
   <data name="IslamInfo_WhenWakingUp2Label" xml:space="preserve">
     <value>2 جاگ جب</value>
   </data>
@@ -25218,6 +25317,9 @@
   <data name="IslamSource_ArabicToRoman" xml:space="preserve">
     <value>رومن عربی</value>
   </data>
+  <data name="IslamSource_Bigger" xml:space="preserve">
+    <value>+</value>
+  </data>
   <data name="IslamSource_Book" xml:space="preserve">
     <value>کتاب</value>
   </data>
@@ -25364,6 +25466,9 @@
   </data>
   <data name="IslamSource_IslamicWebsitesAlHudaInternationalWelfareFoundation" xml:space="preserve">
     <value>امام الہدی انٹرنیشنل ویلفیئر فاؤنڈیشن</value>
+  </data>
+  <data name="IslamSource_IslamicWebsitesAllahsQuran" xml:space="preserve">
+    <value>اللہ کا قرآن</value>
   </data>
   <data name="IslamSource_IslamicWebsitesCorpus" xml:space="preserve">
     <value>قرآنی عربی کورپس</value>
@@ -27293,5 +27398,542 @@
   </data>
   <data name="IslamInfo_RecitationRules" xml:space="preserve">
     <value>تلاوت کے قوانین</value>
+  </data>
+  <data name="IslamInfo_AngleWithSInside" xml:space="preserve">
+    <value>S اندر کے ساتھ زاویہ</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithInvertedSmallVBelow" xml:space="preserve">
+    <value>ذیل میں الٹی چھوٹی V کے ساتھ عربی خط سے Beh</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterBehWithSmallVBelow" xml:space="preserve">
+    <value>ذیل چھوٹے V کے ساتھ عربی خط سے Beh</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterDalWithInvertedSmallVBelow" xml:space="preserve">
+    <value>ذیل میں الٹی چھوٹی V کے ساتھ عربی خط ڈل</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterRehWithSmallVBelow" xml:space="preserve">
+    <value>ذیل چھوٹے V کے ساتھ عربی خط Reh کی</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterUWithHamzaAbove" xml:space="preserve">
+    <value>حمزہ سے اوپر کے ساتھ عربی خط U</value>
+  </data>
+  <data name="IslamInfo_ArabicLetterZainWithInvertedVAbove" xml:space="preserve">
+    <value>الٹی V سے اوپر کے ساتھ عربی خط زین</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignInvertedSmallVAbove" xml:space="preserve">
+    <value>عربی حرف علت سائن الٹی چھوٹے وی کے اوپر</value>
+  </data>
+  <data name="IslamInfo_ArabicVowelSignSmallVAbove" xml:space="preserve">
+    <value>عربی حرف علت سائن چھوٹے وی کے اوپر</value>
+  </data>
+  <data name="IslamInfo_BatakVowelSignUForSimalungunSa" xml:space="preserve">
+    <value>Simalungun سا کے Batak حرف علت کیجئے U</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterAWithDiaeresis" xml:space="preserve">
+    <value>ڈایاریسس ساتھ لاطینی چھوٹے خط کا امتزاج</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterCCedilla" xml:space="preserve">
+    <value>لاطینی چھوٹے خط سی سڈلا کا امتزاج</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterFlattenedOpenAAbove" xml:space="preserve">
+    <value>لاطینی چھوٹے خط چپٹی کھلا ایک سے بڑھ کر میں جمع کرنا</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterLWithDoubleMiddleTilde" xml:space="preserve">
+    <value>ڈبل مشرق ٹلڈا ساتھ لاطینی چھوٹے خط L کا امتزاج</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithDiaeresis" xml:space="preserve">
+    <value>ڈایاریسس ساتھ لاطینی چھوٹے خط O میں جمع کرنا</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterOWithLightCentralizationStroke" xml:space="preserve">
+    <value>روشنی مرکزیت سٹروک کے ساتھ لاطینی چھوٹے خط O میں جمع کرنا</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRBelow" xml:space="preserve">
+    <value>لاطینی چھوٹے خط R ذیل میں جمع کرنا</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterRRotunda" xml:space="preserve">
+    <value>لاطینی چھوٹے خط R روٹنڈا کا امتزاج</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithDiaeresis" xml:space="preserve">
+    <value>ڈایاریسس ساتھ لاطینی چھوٹے خط U میں جمع کرنا</value>
+  </data>
+  <data name="IslamInfo_CombiningLatinSmallLetterUWithLightCentralizationStroke" xml:space="preserve">
+    <value>روشنی مرکزیت سٹروک کے ساتھ لاطینی چھوٹے خط U میں جمع کرنا</value>
+  </data>
+  <data name="IslamInfo_CombiningXAbove" xml:space="preserve">
+    <value>X بڑھ امتزاج کر</value>
+  </data>
+  <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
+    <value>ذیل میں جمع کرنا X</value>
+  </data>
+  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
+    <value>X- X ذیل میں جمع کرنا</value>
+  </data>
+  <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
+    <value>ڈبل اعلی Reversed9 علامت اقتباس</value>
+  </data>
+  <data name="IslamInfo_DoubleLow9QuotationMark" xml:space="preserve">
+    <value>ڈبل Low9 علامت اقتباس</value>
+  </data>
+  <data name="IslamInfo_DoubleLowReversed9QuotationMark" xml:space="preserve">
+    <value>ڈبل کم Reversed9 علامت اقتباس</value>
+  </data>
+  <data name="IslamInfo_IntegralAroundAPointOperator" xml:space="preserve">
+    <value>A پوائنٹ آپریٹر بھر انٹیگرل</value>
+  </data>
+  <data name="IslamInfo_LBBarSymbol" xml:space="preserve">
+    <value>L B بار علامت</value>
+  </data>
+  <data name="IslamInfo_LeftSidewaysUBracket" xml:space="preserve">
+    <value>بائیں بازو کی جماعتوں موقع U خط وحدانی</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignEAbove" xml:space="preserve">
+    <value>میانمار حرف علت کیجئے E بڑھ کر</value>
+  </data>
+  <data name="IslamInfo_MyanmarVowelSignShanEAbove" xml:space="preserve">
+    <value>میانمار حرف علت کیجئے شان E بڑھ کر</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>نا تحتى سيٹ ہے نا ہى برابر ہے</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>نا سپر سيٹ ہے نا ہى برابر ہے</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>کا تحتى سيٹ نہيں ہے</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>کا سپر سيٹ نہيں ہے</value>
+  </data>
+  <data name="IslamInfo_ParenthesizedKoreanCharacterOHu" xml:space="preserve">
+    <value>قوسین کوریا کریکٹر O ہوجن</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType1Plastics" xml:space="preserve">
+    <value>Type1 پلاسٹک کے لئے ری سائیکلنگ کا نشان</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType2Plastics" xml:space="preserve">
+    <value>TYPE2 پلاسٹک کے لئے ری سائیکلنگ کا نشان</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType3Plastics" xml:space="preserve">
+    <value>Type3 پلاسٹک کے لئے ری سائیکلنگ کا نشان</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType4Plastics" xml:space="preserve">
+    <value>Type4 پلاسٹک کے لئے ری سائیکلنگ کا نشان</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType5Plastics" xml:space="preserve">
+    <value>Type5 پلاسٹک کے لئے ری سائیکلنگ کا نشان</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType6Plastics" xml:space="preserve">
+    <value>Type6 پلاسٹک کے لئے ری سائیکلنگ کا نشان</value>
+  </data>
+  <data name="IslamInfo_RecyclingSymbolForType7Plastics" xml:space="preserve">
+    <value>Type7 پلاسٹک کے لئے ری سائیکلنگ کا نشان</value>
+  </data>
+  <data name="IslamInfo_RightSidewaysUBracket" xml:space="preserve">
+    <value>صحیح موقع U خط وحدانی</value>
+  </data>
+  <data name="IslamInfo_SInTriangle" xml:space="preserve">
+    <value>ایس مثلث</value>
+  </data>
+  <data name="IslamInfo_SingleHighReversed9QuotationMark" xml:space="preserve">
+    <value>ایک اعلی Reversed9 علامت اقتباس</value>
+  </data>
+  <data name="IslamInfo_SingleLow9QuotationMark" xml:space="preserve">
+    <value>سنگل Low9 علامت اقتباس</value>
+  </data>
+  <data name="IslamInfo_SquareAOverM" xml:space="preserve">
+    <value>چوک A میٹر</value>
+  </data>
+  <data name="IslamInfo_SquareVOverM" xml:space="preserve">
+    <value>چوک V میٹر</value>
+  </data>
+  <data name="IslamInfo_ThreeDBottomLightedRightwardsArrowhead" xml:space="preserve">
+    <value>تین D پایان روشن دائیں نوک تیر</value>
+  </data>
+  <data name="IslamInfo_ThreeDLeftLightedDownwardsEquilateralArrowhead" xml:space="preserve">
+    <value>تین D بائیں روشن نیچی Equilateral نوک تیر</value>
+  </data>
+  <data name="IslamInfo_ThreeDRightLightedUpwardsEquilateralArrowhead" xml:space="preserve">
+    <value>تین D حق روشن اوپر Equilateral نوک تیر</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedLeftwardsEquilateralArrowhead" xml:space="preserve">
+    <value>تین D اوپر روشن بائیں طرف Equilateral نوک تیر</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsArrowhead" xml:space="preserve">
+    <value>تین D اوپر روشن دائیں نوک تیر</value>
+  </data>
+  <data name="IslamInfo_ThreeDTopLightedRightwardsEquilateralArrowhead" xml:space="preserve">
+    <value>تین D اوپر روشن دائیں Equilateral نوک تیر</value>
+  </data>
+  <data name="IslamInfo_UpArrowheadInARectangleBox" xml:space="preserve">
+    <value>ایک مستطیل کے خانے میں نوک تیر اوپر</value>
+  </data>
+  <data name="IslamInfo_XInARectangleBox" xml:space="preserve">
+    <value>ایک مستطیل کے خانے میں X</value>
+  </data>
+  <data name="IslamInfo_ZNotationBagMembership" xml:space="preserve">
+    <value>Z سنکیتن بیگ رکنیت</value>
+  </data>
+  <data name="IslamInfo_ZNotationDomainAntirestriction" xml:space="preserve">
+    <value>Z سنکیتن ڈومین Antirestriction</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftBindingBracket" xml:space="preserve">
+    <value>Z سنکیتن بائیں بائنڈنگ وحدانی</value>
+  </data>
+  <data name="IslamInfo_ZNotationLeftImageBracket" xml:space="preserve">
+    <value>Z سنکیتن بائیں تصویر وحدانی</value>
+  </data>
+  <data name="IslamInfo_ZNotationRangeAntirestriction" xml:space="preserve">
+    <value>Z سنکیتن حد Antirestriction</value>
+  </data>
+  <data name="IslamInfo_ZNotationRelationalComposition" xml:space="preserve">
+    <value>Z سنکیتن سنبندپرک مرکب</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightBindingBracket" xml:space="preserve">
+    <value>Z سنکیتن حق بائنڈنگ وحدانی</value>
+  </data>
+  <data name="IslamInfo_ZNotationRightImageBracket" xml:space="preserve">
+    <value>Z سنکیتن صحیح تصویر وحدانی</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaComposition" xml:space="preserve">
+    <value>Z سنکیتن شجرہ مرکب</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaPiping" xml:space="preserve">
+    <value>Z سنکیتن شجرہ پائپنگ</value>
+  </data>
+  <data name="IslamInfo_ZNotationSchemaProjection" xml:space="preserve">
+    <value>Z سنکیتن شجرہ پروجیکشن</value>
+  </data>
+  <data name="IslamInfo_ZNotationSpot" xml:space="preserve">
+    <value>Z سنکیتن سپاٹ</value>
+  </data>
+  <data name="IslamInfo_ZNotationTypeColon" xml:space="preserve">
+    <value>Z سنکیتن قسم قولون</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>بنياد</value>
+  </data>
+  <data name="IslamInfo_Lemma" xml:space="preserve">
+    <value>تصادم</value>
+  </data>
+  <data name="IslamInfo_SpecialGroup" xml:space="preserve">
+    <value>خاص گروپ</value>
+  </data>
+  <data name="IslamInfo_PartOfSpeech" xml:space="preserve">
+    <value>تقریر کا حصہ</value>
+  </data>
+  <data name="IslamInfo_AttachedPronoun" xml:space="preserve">
+    <value>منسلک Pronoun کی</value>
+  </data>
+  <data name="IslamInfo_Determiner" xml:space="preserve">
+    <value>Determiner</value>
+  </data>
+  <data name="IslamInfo_ByWithOrInPreposition" xml:space="preserve">
+    <value>کے ساتھ یا پوروسرگ میں کی طرف سے</value>
+  </data>
+  <data name="IslamInfo_LikeOrThusPreposition" xml:space="preserve">
+    <value>پوروسرگ طرح یا اس طرح</value>
+  </data>
+  <data name="IslamInfo_ParticleOfOathUsedAsPreposition" xml:space="preserve">
+    <value>حلف کے ذرہ پوروسرگ کے طور پر استعمال</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingFuture" xml:space="preserve">
+    <value>مستقبل کا اشارہ کے prefixed پارٹیکل</value>
+  </data>
+  <data name="IslamInfo_CallingVocative" xml:space="preserve">
+    <value>Vocative کالنگ</value>
+  </data>
+  <data name="IslamInfo_PointingVocative" xml:space="preserve">
+    <value>Vocative طرف اشارہ کرتے ہوئے</value>
+  </data>
+  <data name="IslamInfo_PrefixedInterrogativeParticle" xml:space="preserve">
+    <value>کے prefixed Interrogative پارٹیکل</value>
+  </data>
+  <data name="IslamInfo_PrefixedEqualizationParticle" xml:space="preserve">
+    <value>کے prefixed سمکاری پارٹیکل</value>
+  </data>
+  <data name="IslamInfo_Resumption" xml:space="preserve">
+    <value>بحالی</value>
+  </data>
+  <data name="IslamInfo_Circumstantial" xml:space="preserve">
+    <value>واقعاتی</value>
+  </data>
+  <data name="IslamInfo_Comitative" xml:space="preserve">
+    <value>Comitative</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>نتيجہ</value>
+  </data>
+  <data name="IslamInfo_Supplemental" xml:space="preserve">
+    <value>تائیدی</value>
+  </data>
+  <data name="IslamInfo_Cause" xml:space="preserve">
+    <value>راہ</value>
+  </data>
+  <data name="IslamInfo_PrefixedPreposition" xml:space="preserve">
+    <value>کے prefixed پوروسرگ</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingEmphasis" xml:space="preserve">
+    <value>کے prefixed پارٹیکل اشارہ زور</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleIndicatingPurpose" xml:space="preserve">
+    <value>کے prefixed پارٹیکل اشارہ مقصدی</value>
+  </data>
+  <data name="IslamInfo_PrefixedParticleUsedToFormImperative" xml:space="preserve">
+    <value>کے prefixed پارٹیکل أمر تشکیل کے لئے استعمال کیا جاتا ہے</value>
+  </data>
+  <data name="IslamInfo_VocativeWordForm" xml:space="preserve">
+    <value>Vocative لفظ بنانے</value>
+  </data>
+  <data name="IslamInfo_Emphatic" xml:space="preserve">
+    <value>زوردار</value>
+  </data>
+  <data name="IslamInfo_IndicativeMood" xml:space="preserve">
+    <value>نشاندہی موڈ</value>
+  </data>
+  <data name="IslamInfo_SubjunctiveMood" xml:space="preserve">
+    <value>سبجنکٹاوی موڈ</value>
+  </data>
+  <data name="IslamInfo_JussiveMood" xml:space="preserve">
+    <value>Jussive موڈ</value>
+  </data>
+  <data name="IslamInfo_Stem" xml:space="preserve">
+    <value>تنا</value>
+  </data>
+  <data name="IslamInfo_Participle" xml:space="preserve">
+    <value>کردنت</value>
+  </data>
+  <data name="IslamInfo_TypeOne" xml:space="preserve">
+    <value>ایک قسم</value>
+  </data>
+  <data name="IslamInfo_TypeTwo" xml:space="preserve">
+    <value>قسم دو</value>
+  </data>
+  <data name="IslamInfo_TypeThree" xml:space="preserve">
+    <value>قسم تین</value>
+  </data>
+  <data name="IslamInfo_TypeFour" xml:space="preserve">
+    <value>چار کی قسم</value>
+  </data>
+  <data name="IslamInfo_TypeFive" xml:space="preserve">
+    <value>پروپوزل پانچ</value>
+  </data>
+  <data name="IslamInfo_TypeSix" xml:space="preserve">
+    <value>چھ قسم</value>
+  </data>
+  <data name="IslamInfo_TypeSeven" xml:space="preserve">
+    <value>سات قسم</value>
+  </data>
+  <data name="IslamInfo_TypeEight" xml:space="preserve">
+    <value>آٹھ قسم</value>
+  </data>
+  <data name="IslamInfo_TypeNine" xml:space="preserve">
+    <value>نو قسم</value>
+  </data>
+  <data name="IslamInfo_TypeTen" xml:space="preserve">
+    <value>دس ٹائپ</value>
+  </data>
+  <data name="IslamInfo_TypeEleven" xml:space="preserve">
+    <value>قسم گیارہ</value>
+  </data>
+  <data name="IslamInfo_TypeTwelve" xml:space="preserve">
+    <value>بارہ قسم</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>زير عمل</value>
+  </data>
+  <data name="IslamInfo_Perfect" xml:space="preserve">
+    <value>کامل</value>
+  </data>
+  <data name="IslamInfo_Imperfect" xml:space="preserve">
+    <value>نامکمل</value>
+  </data>
+  <data name="IslamInfo_Imperative" xml:space="preserve">
+    <value>ضروری</value>
+  </data>
+  <data name="IslamInfo_GenitiveCase" xml:space="preserve">
+    <value>Genitive کیس</value>
+  </data>
+  <data name="IslamInfo_Singular" xml:space="preserve">
+    <value>Singular میں</value>
+  </data>
+  <data name="IslamInfo_NumberSpelling" xml:space="preserve">
+    <value>نمبر ہجے</value>
+  </data>
+  <data name="IslamInfo_HeadingNumberSpelling" xml:space="preserve">
+    <value>نمبر ہجے سرخی</value>
+  </data>
+  <data name="IslamInfo_StoppingEndowment" xml:space="preserve">
+    <value>روکنا انڈومنٹ</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaStoppingEndowment" xml:space="preserve">
+    <value>موزوں Marbuta روکنا انڈومنٹ</value>
+  </data>
+  <data name="IslamInfo_TehMarbutaJoiningContinuing" xml:space="preserve">
+    <value>موزوں Marbuta میں شمولیت کا تسلسل ہے</value>
+  </data>
+  <data name="IslamInfo_JoiningContinuing" xml:space="preserve">
+    <value>میں شمولیت کا تسلسل ہے</value>
+  </data>
+  <data name="IslamInfo_StandingOblongZeroSmallHighUprightRectangularZero" xml:space="preserve">
+    <value>لمبوترا زیرو چھوٹے ہائی سیدھا آئتاکار زیرو کھڑے</value>
+  </data>
+  <data name="IslamInfo_EmptyCentreLowStop" xml:space="preserve">
+    <value>خالی سینٹر کم سٹاپ</value>
+  </data>
+  <data name="IslamInfo_RoundedHighStopWithFilledCentre" xml:space="preserve">
+    <value>مدور اعلی کے ساتھ روک بھرا سینٹر</value>
+  </data>
+  <data name="IslamInfo_SmallNoon" xml:space="preserve">
+    <value>چھوٹے نون</value>
+  </data>
+  <data name="IslamInfo_SmallHighSeen" xml:space="preserve">
+    <value>چھوٹے ہائی دیکھا</value>
+  </data>
+  <data name="IslamInfo_SmallLowSeen" xml:space="preserve">
+    <value>چھوٹے کم دیکھا</value>
+  </data>
+  <data name="IslamInfo_Sukun" xml:space="preserve">
+    <value>Sukun</value>
+  </data>
+  <data name="IslamInfo_EmptyShadda" xml:space="preserve">
+    <value>خالی Shadda</value>
+  </data>
+  <data name="IslamInfo_ShaddaResolve" xml:space="preserve">
+    <value>Shadda ریزالوو</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaFatha" xml:space="preserve">
+    <value>حمزہ Fatha جاری رکھتے</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaKasra" xml:space="preserve">
+    <value>حمزہ سے Kasra جاری رکھتے</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaDamma" xml:space="preserve">
+    <value>حمزہ سے Damma جاری رکھتے</value>
+  </data>
+  <data name="IslamInfo_ContinuingHamzaEmpty" xml:space="preserve">
+    <value>حمزہ خالی جاری رکھتے</value>
+  </data>
+  <data name="IslamInfo_LaamAssimilation" xml:space="preserve">
+    <value>Laam کی انظمام</value>
+  </data>
+  <data name="IslamInfo_RaaAssimilation" xml:space="preserve">
+    <value>Raa میں انظمام</value>
+  </data>
+  <data name="IslamInfo_RaaHeavinessOrLightness" xml:space="preserve">
+    <value>Raa میں لیتی یا دھیماپن</value>
+  </data>
+  <data name="IslamInfo_SmallWaw" xml:space="preserve">
+    <value>چھوٹے سے Waw</value>
+  </data>
+  <data name="IslamInfo_SmallYeh" xml:space="preserve">
+    <value>چھوٹے سے Yeh</value>
+  </data>
+  <data name="IslamInfo_FathaSilentLetterSuperscriptAlef" xml:space="preserve">
+    <value>Fatha خاموش خط سپر اسکرپٹ سے alef</value>
+  </data>
+  <data name="IslamInfo_DipthongZeroLength" xml:space="preserve">
+    <value>Dipthong زیرو لمبائی</value>
+  </data>
+  <data name="IslamInfo_OriginalLengtheningZeroCapture" xml:space="preserve">
+    <value>حقیقی طویل زیرو گرفتاری</value>
+  </data>
+  <data name="IslamInfo_AssimilateGreatIdenticalDammaMerge" xml:space="preserve">
+    <value>عظیم جیسی سے Damma ضم ضم</value>
+  </data>
+  <data name="IslamInfo_AssimilateSmallIdenticalHaaSakinah" xml:space="preserve">
+    <value>چھوٹے جیسی سے Haa سکینہ اہنگ</value>
+  </data>
+  <data name="IslamInfo_MostCompleteNasalization" xml:space="preserve">
+    <value>سب سے زیادہ مکمل Nasalization</value>
+  </data>
+  <data name="IslamInfo_CompleteNasalization" xml:space="preserve">
+    <value>مکمل Nasalization</value>
+  </data>
+  <data name="IslamInfo_IncompleteNasalization" xml:space="preserve">
+    <value>نامکمل Nasalization</value>
+  </data>
+  <data name="IslamInfo_MostIncompleteNasalization" xml:space="preserve">
+    <value>سب سے زیادہ نامکمل Nasalization</value>
+  </data>
+  <data name="IslamInfo_VowellessNoonIncompleteAssimilatingNasalization" xml:space="preserve">
+    <value>Vowelless نون نامکمل ضم Nasalization</value>
+  </data>
+  <data name="IslamInfo_UnwrittenHelperKasra" xml:space="preserve">
+    <value>غیر تحریر شدہ دستگیر سے Kasra</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaWawHamza" xml:space="preserve">
+    <value>سے alef Wasla سے Waw حمزہ</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaAlefMaksuraHamza" xml:space="preserve">
+    <value>سے alef Wasla سے alef Maksura حمزہ</value>
+  </data>
+  <data name="IslamInfo_AlefWaslaHamza" xml:space="preserve">
+    <value>سے alef Wasla حمزہ</value>
+  </data>
+  <data name="IslamInfo_SmallHamza" xml:space="preserve">
+    <value>چھوٹے حمزہ</value>
+  </data>
+  <data name="IslamInfo_LetterHamza" xml:space="preserve">
+    <value>خط حمزہ</value>
+  </data>
+  <data name="IslamInfo_HamzaAbove" xml:space="preserve">
+    <value>حمزہ کے اوپر</value>
+  </data>
+  <data name="IslamInfo_NotAlef" xml:space="preserve">
+    <value>سے alef نہیں</value>
+  </data>
+  <data name="IslamInfo_MaddAlef" xml:space="preserve">
+    <value>سے Madd سے alef</value>
+  </data>
+  <data name="IslamInfo_NotWaw" xml:space="preserve">
+    <value>نہیں سے Waw</value>
+  </data>
+  <data name="IslamInfo_NotYeh" xml:space="preserve">
+    <value>نہیں یہ ہے</value>
+  </data>
+  <data name="IslamInfo_MaddWaw" xml:space="preserve">
+    <value>سے Madd سے Waw</value>
+  </data>
+  <data name="IslamInfo_LeenWaw" xml:space="preserve">
+    <value>Leen سے Waw</value>
+  </data>
+  <data name="IslamInfo_StrongWaw" xml:space="preserve">
+    <value>مضبوط سے Waw</value>
+  </data>
+  <data name="IslamInfo_MaddYeh" xml:space="preserve">
+    <value>سے Madd یہ ہے</value>
+  </data>
+  <data name="IslamInfo_LeenYeh" xml:space="preserve">
+    <value>Leen یہ ہے</value>
+  </data>
+  <data name="IslamInfo_StrongYeh" xml:space="preserve">
+    <value>مضبوط سے Yeh</value>
+  </data>
+  <data name="IslamInfo_DivisionMarkers" xml:space="preserve">
+    <value>ڈویژن مارکر</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkers" xml:space="preserve">
+    <value>پروفائل سٹاپ مارکر</value>
+  </data>
+  <data name="IslamInfo_ContinueStopMarkersAtEnding" xml:space="preserve">
+    <value>سٹاپ مارکر پر ختم کی پروفائل</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryLightened" xml:space="preserve">
+    <value>Maddah واجب تخفیف</value>
+  </data>
+  <data name="IslamInfo_MaddahObligatoryWeighted" xml:space="preserve">
+    <value>Maddah واجب بارت</value>
+  </data>
+  <data name="IslamInfo_ConnectedLengtheningEssentialPresentedSukun" xml:space="preserve">
+    <value>مربوط طویل ضروری پیش Sukun</value>
+  </data>
+  <data name="IslamInfo_SoftLengtheningLetters" xml:space="preserve">
+    <value>نرم طویل خط</value>
+  </data>
+  <data name="IslamInfo_LetterSpelling" xml:space="preserve">
+    <value>خط ہجے</value>
+  </data>
+  <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
+    <value>نماز کے بعد نصیحت</value>
   </data>
 </root>

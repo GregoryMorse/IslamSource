@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Selekanyo</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Matshwaotsebe</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopololela mo Polokelodimamaretsweng</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Kgaotsa</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Tshameka</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Tlhakanela</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ka ga</value>
+  </data>
 </root>

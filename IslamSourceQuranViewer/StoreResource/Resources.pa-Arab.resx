@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>سائز</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>نشانواںں</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>کلپ بورڈ تے کاپی کرو</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>‏‏وقفہ کرو</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>چلاوو</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>حصہ داری کرو</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>تعارف</value>
+  </data>
 </root>

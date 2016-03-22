@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Idioma Padrão</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Adicionar marcador</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Indicadores</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Copiar para Área de Transferência</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Ir ao verso</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausar</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Executar</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Recitador</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Remover o marcador</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Verso conjunto de reprodução</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Mostrar a exegese</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Compartilhar</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Atraso de avanço adicional verso</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Avançar o verso automaticamente</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Comprimento de atraso do verso antes de avançar</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Modo de loop</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Alcorão árabe com metadados e todas as traduções e algumas recitações áudio, excepto os listados creditado ao projeto Tanzil (http://tanzil.net). 
+Húngaro Tradução do Alcorão por beijar Zsuzsanna Halima creditada a Magyar Iszlam (http://magyariszlam.hu). 
+Inglês Tradução de Qu'ran por Maulana Muhammad Ali creditado para o movimento de Ahmadiyya Lahore no Islã (http://www.aaiil.org). Dados 
+morfologia e tradução para o Inglês palavra por palavra crédito ao Corpus de árabe corânico (http://corpus.quran.com). 
+Crédito Indonésio Tradução palavra por palavra para Al-Quran Indonésia (http://www.alquran-indonesia.com/web/quran). 
+Tradução de palavra por palavra Urdu por Hafiz Nazar Muhammad creditado para fácil Alcorão Wa Hadees (http://www.easyquranwahadees.com). 
+Outras traduções de palavra por palavra, bem como outras traduções no programa creditado ao provedor de tradução da Microsoft (http://www.microsoft.com/en-us/translator) e o Google Translate (http://translate.google.com) e não pode ser exatas.  Para Malásia Alcorão palavra por palavra, a fonte é Indonésia.  Para todos os outros Alcorão palavra por palavra, a fonte é o inglês Corpus árabe corânico. 
+Outras recitações áudio com bitrate mostrado creditado para cada Ayah (http://www.everyayah.com). 
+Dados Unicode creditados para o Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

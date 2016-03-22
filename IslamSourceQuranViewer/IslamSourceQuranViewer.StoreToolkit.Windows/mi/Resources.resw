@@ -27,4 +27,25 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Rahi</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Tāpiri &amp;Tohuwāhi</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Ngā Tohuwāhi</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Tārua ki te Papatopenga</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Tatari</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Purei</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Tiri</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Mō</value>
+  </data>
 </root>

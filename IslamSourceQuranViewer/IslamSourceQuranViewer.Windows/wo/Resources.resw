@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Dayo</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Xàmme-téere yi</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Sotti ko ci sotteendi</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Tekkeerlu</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Dawal</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Séddoo</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>lu aju ci</value>
+  </data>
 </root>

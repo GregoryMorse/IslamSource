@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Standardsprache</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Bookmark hinzufügen</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Textmarken</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>In Zwischenablage kopieren</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Gehen Sie zu Vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Anhalten</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Wiedergabe</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Deklamator</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Entfernen Sie Lesezeichen</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set-Wiedergabe Vers</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Karte-Exegese</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Freigeben</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Zusätzliche Verse Advance Verzögerung</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Vers automatisch voraus</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Verzögerung Länge des Verses, bevor Sie den Status</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Schleifen-Modus</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabisch Koran mit Metadaten und alle Übersetzungen und einige audio-Rezitationen außer den genannten Tanzil-Projekt (http://tanzil.net) gutgeschrieben. Ungarische Übersetzung des Koran von Kiss Zsuzsanna Halima gutgeschrieben 
+Magyar Iszlam (http://magyariszlam.hu). 
+Gutgeschrieben, englische Übersetzung des Qu'ran von Maulana Muhammad Ali der Lahore Ahmadiyya-Bewegung im Islam (http://www.aaiil.org). 
+Morphologie Daten und englische Wort-für-Wort-Übersetzung danken Quranic Arabisch Corpus (http://corpus.quran.com). 
+Indonesisch Wort für Wort Übersetzung Kredit an Al-Quran-Indonesien (http://www.alquran-indonesia.com/web/quran). 
+Urdu Wort-für-Wort-Übersetzung von Hafiz Nazar Muhammad gutgeschrieben einfach Koran Wa Hadees (http://www.easyquranwahadees.com). 
+Andere Wort-für-Wort-Übersetzungen sowie andere Übersetzungen im Programm Microsoft Übersetzungsanbieter (http://www.microsoft.com/en-us/translator) und Google Translate (http://translate.google.com) gutgeschrieben und kann nicht genau.  Für malaysische Wort für Wort Qur ' an ist die indonesische.  Für alle anderen Wort-für-Wort-Koran ist die Quelle des englischen Quranic Arabisch Korpus. 
+Andere audio Rezitationen mit Bitrate angezeigt gutgeschrieben Every Ayah (http://www.everyayah.com). 
+Unicode-Daten auf das Unicode Consortium (http://www.unicode.org) gutgeschrieben</value>
+  </data>
 </root>

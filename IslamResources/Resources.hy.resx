@@ -12,4 +12,1807 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Hadith_Book" xml:space="preserve">
+    <value>Գիրք</value>
+  </data>
+  <data name="Hadith_Books" xml:space="preserve">
+    <value>Գրքեր</value>
+  </data>
+  <data name="Hadith_Index" xml:space="preserve">
+    <value>Ցուցակ</value>
+  </data>
+  <data name="Hadith_Translation" xml:space="preserve">
+    <value>Թարգմանություն</value>
+  </data>
+  <data name="Hadith_Volume" xml:space="preserve">
+    <value>Ուժգնություն</value>
+  </data>
+  <data name="IslamInfo_Above" xml:space="preserve">
+    <value>Վերեւ</value>
+  </data>
+  <data name="IslamInfo_Absolute" xml:space="preserve">
+    <value>Բացարձակ</value>
+  </data>
+  <data name="IslamInfo_Account" xml:space="preserve">
+    <value>Հաշիվ</value>
+  </data>
+  <data name="IslamInfo_Adam" xml:space="preserve">
+    <value>Ադամ</value>
+  </data>
+  <data name="IslamInfo_After" xml:space="preserve">
+    <value>Հետո.</value>
+  </data>
+  <data name="IslamInfo_Airplane" xml:space="preserve">
+    <value>Ինքնաթիռ</value>
+  </data>
+  <data name="IslamInfo_Algeria" xml:space="preserve">
+    <value>Ալժիր</value>
+  </data>
+  <data name="IslamInfo_All" xml:space="preserve">
+    <value>Բոլորը</value>
+  </data>
+  <data name="IslamInfo_Allowed" xml:space="preserve">
+    <value>Թույլատրված</value>
+  </data>
+  <data name="IslamInfo_AlmostEqualOrEqualTo" xml:space="preserve">
+    <value>Համարյա հավասար է կամ հավասար</value>
+  </data>
+  <data name="IslamInfo_Always" xml:space="preserve">
+    <value>Միշտ</value>
+  </data>
+  <data name="IslamInfo_Anchor" xml:space="preserve">
+    <value>Խարիսխ</value>
+  </data>
+  <data name="IslamInfo_Angel" xml:space="preserve">
+    <value>Հրեշտակ</value>
+  </data>
+  <data name="IslamInfo_Angle" xml:space="preserve">
+    <value>Անկյուն.</value>
+  </data>
+  <data name="IslamInfo_Angry" xml:space="preserve">
+    <value>Զայրացած=:-@</value>
+  </data>
+  <data name="IslamInfo_Appointment" xml:space="preserve">
+    <value>Ժամադրություն</value>
+  </data>
+  <data name="IslamInfo_ApproachesTheLimit" xml:space="preserve">
+    <value>Ձգտում է սահմանին</value>
+  </data>
+  <data name="IslamInfo_ApproximatelyEqualTo" xml:space="preserve">
+    <value>Մոտավորապես հավասար է</value>
+  </data>
+  <data name="IslamInfo_Arabic" xml:space="preserve">
+    <value>Արաբական</value>
+  </data>
+  <data name="IslamInfo_Arc" xml:space="preserve">
+    <value>Arc</value>
+  </data>
+  <data name="IslamInfo_Argument" xml:space="preserve">
+    <value>Արգումենտ</value>
+  </data>
+  <data name="IslamInfo_Arial" xml:space="preserve">
+    <value>Arial</value>
+  </data>
+  <data name="IslamInfo_Around" xml:space="preserve">
+    <value>Շուրջը</value>
+  </data>
+  <data name="IslamInfo_Ascension" xml:space="preserve">
+    <value>Համբարձում</value>
+  </data>
+  <data name="IslamInfo_Asterisk" xml:space="preserve">
+    <value>Աստղանիշ</value>
+  </data>
+  <data name="IslamInfo_AsteriskOperator" xml:space="preserve">
+    <value>Աստղի գործավար</value>
+  </data>
+  <data name="IslamInfo_AsymptoticallyEqualTo" xml:space="preserve">
+    <value>Ասիմպտոտիկ հավասար է</value>
+  </data>
+  <data name="IslamInfo_Attributes" xml:space="preserve">
+    <value>Հատկանիշներ.</value>
+  </data>
+  <data name="IslamInfo_Back" xml:space="preserve">
+    <value>Հետ</value>
+  </data>
+  <data name="IslamInfo_Balance" xml:space="preserve">
+    <value>Հաշվեկշիռ</value>
+  </data>
+  <data name="IslamInfo_Because" xml:space="preserve">
+    <value>Քանի որ</value>
+  </data>
+  <data name="IslamInfo_Before" xml:space="preserve">
+    <value>Մինչ.</value>
+  </data>
+  <data name="IslamInfo_Better" xml:space="preserve">
+    <value>Ավելի լավ</value>
+  </data>
+  <data name="IslamInfo_Between" xml:space="preserve">
+    <value>միջեւ...</value>
+  </data>
+  <data name="IslamInfo_Big" xml:space="preserve">
+    <value>Մեծ</value>
+  </data>
+  <data name="IslamInfo_Bigger" xml:space="preserve">
+    <value>Ավելի մեծ</value>
+  </data>
+  <data name="IslamInfo_Black" xml:space="preserve">
+    <value>Սեւ</value>
+  </data>
+  <data name="IslamInfo_BlackCircle" xml:space="preserve">
+    <value>Սեւ շրջանագիծ</value>
+  </data>
+  <data name="IslamInfo_BlackHeartSuit" xml:space="preserve">
+    <value>Սև սրտեր</value>
+  </data>
+  <data name="IslamInfo_Body" xml:space="preserve">
+    <value>Գրվածք</value>
+  </data>
+  <data name="IslamInfo_Book" xml:space="preserve">
+    <value>Գիրք</value>
+  </data>
+  <data name="IslamInfo_BottomLeftCorner" xml:space="preserve">
+    <value>Ներքին ձախ անկյունը</value>
+  </data>
+  <data name="IslamInfo_BottomRightCorner" xml:space="preserve">
+    <value>Ներքին աջ անկյունը</value>
+  </data>
+  <data name="IslamInfo_Bread" xml:space="preserve">
+    <value>Հաց</value>
+  </data>
+  <data name="IslamInfo_Breve" xml:space="preserve">
+    <value>Կարճ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter11" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook2Chapter39" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook3Chapter10" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IslamInfo_bukhariBook47" xml:space="preserve">
+    <value>Համագործակցում</value>
+  </data>
+  <data name="IslamInfo_bukhariBook51" xml:space="preserve">
+    <value>Նվերներ</value>
+  </data>
+  <data name="IslamInfo_bukhariBook54" xml:space="preserve">
+    <value>Պայմաններ</value>
+  </data>
+  <data name="IslamInfo_Bullet" xml:space="preserve">
+    <value>Պարբերակ</value>
+  </data>
+  <data name="IslamInfo_BulletOperator" xml:space="preserve">
+    <value>Պարբերակի գործավար</value>
+  </data>
+  <data name="IslamInfo_Buy" xml:space="preserve">
+    <value>Գնել</value>
+  </data>
+  <data name="IslamInfo_Call" xml:space="preserve">
+    <value>Զանգել</value>
+  </data>
+  <data name="IslamInfo_Canada" xml:space="preserve">
+    <value>Կանադա</value>
+  </data>
+  <data name="IslamInfo_Car" xml:space="preserve">
+    <value>Ավտոմեքենա</value>
+  </data>
+  <data name="IslamInfo_Chain" xml:space="preserve">
+    <value>Շղթա</value>
+  </data>
+  <data name="IslamInfo_Chair" xml:space="preserve">
+    <value>Աթոռ</value>
+  </data>
+  <data name="IslamInfo_Chapter" xml:space="preserve">
+    <value>Գլուխ.</value>
+  </data>
+  <data name="IslamInfo_Charms" xml:space="preserve">
+    <value>Հրաշք կոճակներ</value>
+  </data>
+  <data name="IslamInfo_China" xml:space="preserve">
+    <value>Չինաստան</value>
+  </data>
+  <data name="IslamInfo_CircledAsteriskOperator" xml:space="preserve">
+    <value>Շրջանաձեւ աստղանիշի գործարկու</value>
+  </data>
+  <data name="IslamInfo_CircledDash" xml:space="preserve">
+    <value>Շրջանաձեւ գիծ</value>
+  </data>
+  <data name="IslamInfo_CircledDivisionSlash" xml:space="preserve">
+    <value>Շրջանաձեւ բաժանման տրոհագիծ</value>
+  </data>
+  <data name="IslamInfo_CircledDotOperator" xml:space="preserve">
+    <value>Շրջանաձեւ կետի գործարկու</value>
+  </data>
+  <data name="IslamInfo_CircledMinus" xml:space="preserve">
+    <value>Շրջանաձեւ հանած</value>
+  </data>
+  <data name="IslamInfo_CircledPlus" xml:space="preserve">
+    <value>Շրջանաձեւ գումարած</value>
+  </data>
+  <data name="IslamInfo_CircledRingOperator" xml:space="preserve">
+    <value>Շրջանով օղի օպերատոր</value>
+  </data>
+  <data name="IslamInfo_CircledTimes" xml:space="preserve">
+    <value>Շրջան անգամ</value>
+  </data>
+  <data name="IslamInfo_Classification" xml:space="preserve">
+    <value>Դասակարգում</value>
+  </data>
+  <data name="IslamInfo_Clear" xml:space="preserve">
+    <value>Մաքրել</value>
+  </data>
+  <data name="IslamInfo_ClockwiseContourIntegral" xml:space="preserve">
+    <value>Ժամացույցի սլաքի ուղղությամբ ուրվագծի ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_ClockwiseIntegral" xml:space="preserve">
+    <value>Ժամացույցի սլաքի ուղղությամբ ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_ClockwiseTopSemicircleArrow" xml:space="preserve">
+    <value>Ժամացույցի սլաքի ուղղությամբ վեր կիսաշրջան սլաք</value>
+  </data>
+  <data name="IslamInfo_Closing" xml:space="preserve">
+    <value>Ավարտ</value>
+  </data>
+  <data name="IslamInfo_Cloud" xml:space="preserve">
+    <value>Ամպ</value>
+  </data>
+  <data name="IslamInfo_Collection" xml:space="preserve">
+    <value>Հավաքածու</value>
+  </data>
+  <data name="IslamInfo_Colon" xml:space="preserve">
+    <value>Երկկետ</value>
+  </data>
+  <data name="IslamInfo_Comma" xml:space="preserve">
+    <value>Ստորակետ</value>
+  </data>
+  <data name="IslamInfo_Community" xml:space="preserve">
+    <value>Համայնք</value>
+  </data>
+  <data name="IslamInfo_Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="IslamInfo_Complement" xml:space="preserve">
+    <value>Լրացում</value>
+  </data>
+  <data name="IslamInfo_Complete" xml:space="preserve">
+    <value>Ավարտել</value>
+  </data>
+  <data name="IslamInfo_Condition" xml:space="preserve">
+    <value>Պայման</value>
+  </data>
+  <data name="IslamInfo_Confirmed" xml:space="preserve">
+    <value>Հաստատված</value>
+  </data>
+  <data name="IslamInfo_Congratulations" xml:space="preserve">
+    <value>Շնորհավորանքներ</value>
+  </data>
+  <data name="IslamInfo_Connecting" xml:space="preserve">
+    <value>Կապակցում</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroup" xml:space="preserve">
+    <value>Պարունակում է որպես Սովորական ենթախումբ</value>
+  </data>
+  <data name="IslamInfo_ContainsAsNormalSubgroupOrEqualTo" xml:space="preserve">
+    <value>Պարունակում է որպես Սոովորական ենթախումբ կամ Հավասար է</value>
+  </data>
+  <data name="IslamInfo_Contents" xml:space="preserve">
+    <value>բովանդակություն</value>
+  </data>
+  <data name="IslamInfo_ContourIntegral" xml:space="preserve">
+    <value>Ուրվագծային ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_Copy" xml:space="preserve">
+    <value>Պատճենել</value>
+  </data>
+  <data name="IslamInfo_CopyrightSign" xml:space="preserve">
+    <value>Հեղինակային իրավունքի նշան</value>
+  </data>
+  <data name="IslamInfo_Cover" xml:space="preserve">
+    <value>Ծածկել</value>
+  </data>
+  <data name="IslamInfo_CubeRoot" xml:space="preserve">
+    <value>Խորանարդ արմատ</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalAnd" xml:space="preserve">
+    <value>Կոր տրամաբանական Եւ</value>
+  </data>
+  <data name="IslamInfo_CurlyLogicalOr" xml:space="preserve">
+    <value>Կոր տրամաբանական Կամ</value>
+  </data>
+  <data name="IslamInfo_Custom" xml:space="preserve">
+    <value>Ընտելական</value>
+  </data>
+  <data name="IslamInfo_Dagger" xml:space="preserve">
+    <value>Դաշույն</value>
+  </data>
+  <data name="IslamInfo_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="IslamInfo_David" xml:space="preserve">
+    <value>David</value>
+  </data>
+  <data name="IslamInfo_Day" xml:space="preserve">
+    <value>Օր</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek1" xml:space="preserve">
+    <value>Կիրակի</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek2" xml:space="preserve">
+    <value>Երկուշաբթի</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek3" xml:space="preserve">
+    <value>Երեքշաբթի</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek4" xml:space="preserve">
+    <value>Չորեքշաբթի</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek5" xml:space="preserve">
+    <value>Հինգշաբթի</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek6" xml:space="preserve">
+    <value>Ուրբաթ</value>
+  </data>
+  <data name="IslamInfo_DayOfWeek7" xml:space="preserve">
+    <value>Շաբաթ</value>
+  </data>
+  <data name="IslamInfo_Default" xml:space="preserve">
+    <value>Ենթադրյալ</value>
+  </data>
+  <data name="IslamInfo_DegreeCelsius" xml:space="preserve">
+    <value>Ցելսիուսի աստիճան</value>
+  </data>
+  <data name="IslamInfo_DegreeFahrenheit" xml:space="preserve">
+    <value>Ֆարենհայտի աստիճան</value>
+  </data>
+  <data name="IslamInfo_Delay" xml:space="preserve">
+    <value>Հետաձգել.</value>
+  </data>
+  <data name="IslamInfo_Delivery" xml:space="preserve">
+    <value>Առաքում</value>
+  </data>
+  <data name="IslamInfo_DeltaEqualTo" xml:space="preserve">
+    <value>Դելտա հավասար</value>
+  </data>
+  <data name="IslamInfo_Details" xml:space="preserve">
+    <value>Մանրամասներ</value>
+  </data>
+  <data name="IslamInfo_Diacritics" xml:space="preserve">
+    <value>Տարբերիչ նշաններ</value>
+  </data>
+  <data name="IslamInfo_DiamondOperator" xml:space="preserve">
+    <value>Շեղանկյուն գործարկու</value>
+  </data>
+  <data name="IslamInfo_DifferenceBetween" xml:space="preserve">
+    <value>Տարբերություն</value>
+  </data>
+  <data name="IslamInfo_Discretionary" xml:space="preserve">
+    <value>Կամայական</value>
+  </data>
+  <data name="IslamInfo_Division" xml:space="preserve">
+    <value>Բաժանում</value>
+  </data>
+  <data name="IslamInfo_DivisionSign" xml:space="preserve">
+    <value>Բաժանման նշան</value>
+  </data>
+  <data name="IslamInfo_DivisionSlash" xml:space="preserve">
+    <value>Բաժանման շեղգիծ</value>
+  </data>
+  <data name="IslamInfo_DivisionTimes" xml:space="preserve">
+    <value>Բաժանման անգամաներ</value>
+  </data>
+  <data name="IslamInfo_DoesNotContainAsMember" xml:space="preserve">
+    <value>Չի պարունակում որպես անդամ</value>
+  </data>
+  <data name="IslamInfo_DoesNotDivide" xml:space="preserve">
+    <value>Չի բաժանվում</value>
+  </data>
+  <data name="IslamInfo_DoesNotForce" xml:space="preserve">
+    <value>Չի պարտադրում</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecede" xml:space="preserve">
+    <value>Չի նախորդում</value>
+  </data>
+  <data name="IslamInfo_DoesNotPrecedeOrEqual" xml:space="preserve">
+    <value>Չի նախորդում եւ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_DoesNotProve" xml:space="preserve">
+    <value>Չի ապացուցում</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceed" xml:space="preserve">
+    <value>Չի հաջորդում</value>
+  </data>
+  <data name="IslamInfo_DoesNotSucceedOrEqual" xml:space="preserve">
+    <value>Չի հաջորդում եւ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_Dog" xml:space="preserve">
+    <value>Շուն</value>
+  </data>
+  <data name="IslamInfo_DotOperator" xml:space="preserve">
+    <value>Կետի գործարկու</value>
+  </data>
+  <data name="IslamInfo_DotPlus" xml:space="preserve">
+    <value>Կետ գումարած</value>
+  </data>
+  <data name="IslamInfo_DoubleDagger" xml:space="preserve">
+    <value>Երկդաշույն</value>
+  </data>
+  <data name="IslamInfo_DoubleIntegral" xml:space="preserve">
+    <value>Կրկնակի ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_DoubleIntersection" xml:space="preserve">
+    <value>Կրկնակի հատում</value>
+  </data>
+  <data name="IslamInfo_DoubleSubset" xml:space="preserve">
+    <value>Կրկնակի ենթաբազմություն</value>
+  </data>
+  <data name="IslamInfo_DoubleSuperset" xml:space="preserve">
+    <value>Կրկնակի վերբազմություն</value>
+  </data>
+  <data name="IslamInfo_DoubleUnion" xml:space="preserve">
+    <value>Կրկնակի միավորում</value>
+  </data>
+  <data name="IslamInfo_DownRightDiagonalEllipsis" xml:space="preserve">
+    <value>Վար աջ անկյունագծով էլիպս</value>
+  </data>
+  <data name="IslamInfo_Dragging" xml:space="preserve">
+    <value>Քաշում</value>
+  </data>
+  <data name="IslamInfo_Dream" xml:space="preserve">
+    <value>Երազային</value>
+  </data>
+  <data name="IslamInfo_Drill" xml:space="preserve">
+    <value>Մանրամասնում</value>
+  </data>
+  <data name="IslamInfo_Drink" xml:space="preserve">
+    <value>Խմիչք</value>
+  </data>
+  <data name="IslamInfo_Earth" xml:space="preserve">
+    <value>Երկիր</value>
+  </data>
+  <data name="IslamInfo_Egypt" xml:space="preserve">
+    <value>Եգիպտոս</value>
+  </data>
+  <data name="IslamInfo_ElementOf" xml:space="preserve">
+    <value>Տարր է</value>
+  </data>
+  <data name="IslamInfo_Elevation" xml:space="preserve">
+    <value>Բարձրացում.</value>
+  </data>
+  <data name="IslamInfo_EmDash" xml:space="preserve">
+    <value>—	M-աչափ գիծ</value>
+  </data>
+  <data name="IslamInfo_EmptySet" xml:space="preserve">
+    <value>Դատարկ կազմ</value>
+  </data>
+  <data name="IslamInfo_EmSpace" xml:space="preserve">
+    <value> 	M-աչափ բացատ</value>
+  </data>
+  <data name="IslamInfo_End" xml:space="preserve">
+    <value>Ավարտ</value>
+  </data>
+  <data name="IslamInfo_EnDash" xml:space="preserve">
+    <value>–	N-աչափ գիծ</value>
+  </data>
+  <data name="IslamInfo_EnSpace" xml:space="preserve">
+    <value> 	N-աչափ բացատ</value>
+  </data>
+  <data name="IslamInfo_Enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="IslamInfo_Entertainment" xml:space="preserve">
+    <value>Ժամանց</value>
+  </data>
+  <data name="IslamInfo_Envelope" xml:space="preserve">
+    <value>Ծրար</value>
+  </data>
+  <data name="IslamInfo_EqualAndParallelTo" xml:space="preserve">
+    <value>Համարժեք է եւ Զուգահեռ</value>
+  </data>
+  <data name="IslamInfo_EqualToByDefinition" xml:space="preserve">
+    <value>Հավասար է ըստ սահմանման</value>
+  </data>
+  <data name="IslamInfo_EqualToOrPrecedes" xml:space="preserve">
+    <value>Հավասար է կամ նախորդում է</value>
+  </data>
+  <data name="IslamInfo_EqualToOrSucceeds" xml:space="preserve">
+    <value>Հավասար է կամ հաջորդում է</value>
+  </data>
+  <data name="IslamInfo_EquivalentTo" xml:space="preserve">
+    <value>Համարժեք է</value>
+  </data>
+  <data name="IslamInfo_Exception" xml:space="preserve">
+    <value>Բացառություն.</value>
+  </data>
+  <data name="IslamInfo_Explain" xml:space="preserve">
+    <value>Բացատրել...</value>
+  </data>
+  <data name="IslamInfo_Explicit" xml:space="preserve">
+    <value>Բացահայտ</value>
+  </data>
+  <data name="IslamInfo_Face" xml:space="preserve">
+    <value>Դեմք</value>
+  </data>
+  <data name="IslamInfo_False" xml:space="preserve">
+    <value>Կեղծ</value>
+  </data>
+  <data name="IslamInfo_Female" xml:space="preserve">
+    <value>Կին</value>
+  </data>
+  <data name="IslamInfo_Fine" xml:space="preserve">
+    <value>Նուրբ</value>
+  </data>
+  <data name="IslamInfo_Fire" xml:space="preserve">
+    <value>Կրակ</value>
+  </data>
+  <data name="IslamInfo_First" xml:space="preserve">
+    <value>Առաջին</value>
+  </data>
+  <data name="IslamInfo_FirstQuarterMoon" xml:space="preserve">
+    <value>Առաջին քառորդ</value>
+  </data>
+  <data name="IslamInfo_Fixed" xml:space="preserve">
+    <value>Ամրակայված</value>
+  </data>
+  <data name="IslamInfo_Flame" xml:space="preserve">
+    <value>Բոց</value>
+  </data>
+  <data name="IslamInfo_Flow" xml:space="preserve">
+    <value>Հոսք</value>
+  </data>
+  <data name="IslamInfo_Flower" xml:space="preserve">
+    <value>Ծաղիկ</value>
+  </data>
+  <data name="IslamInfo_Food" xml:space="preserve">
+    <value>Սնունդ</value>
+  </data>
+  <data name="IslamInfo_Foot" xml:space="preserve">
+    <value>Ֆուտ</value>
+  </data>
+  <data name="IslamInfo_For" xml:space="preserve">
+    <value>Համար.</value>
+  </data>
+  <data name="IslamInfo_ForAll" xml:space="preserve">
+    <value>Բոլորի համար</value>
+  </data>
+  <data name="IslamInfo_Forces" xml:space="preserve">
+    <value>Պարտադրում է</value>
+  </data>
+  <data name="IslamInfo_Fountain" xml:space="preserve">
+    <value>Շատրվան</value>
+  </data>
+  <data name="IslamInfo_FourthRoot" xml:space="preserve">
+    <value>Չորրորդ աստիճանի արմատ</value>
+  </data>
+  <data name="IslamInfo_France" xml:space="preserve">
+    <value>Ֆրանսիա</value>
+  </data>
+  <data name="IslamInfo_Friday" xml:space="preserve">
+    <value>Ուրբաթ</value>
+  </data>
+  <data name="IslamInfo_From" xml:space="preserve">
+    <value>Հետեւյալից</value>
+  </data>
+  <data name="IslamInfo_Front" xml:space="preserve">
+    <value>Առջեւք</value>
+  </data>
+  <data name="IslamInfo_FullBlock" xml:space="preserve">
+    <value>Լիաբաժին</value>
+  </data>
+  <data name="IslamInfo_Future" xml:space="preserve">
+    <value>Ապագա</value>
+  </data>
+  <data name="IslamInfo_Garden" xml:space="preserve">
+    <value>Այգի</value>
+  </data>
+  <data name="IslamInfo_Gear" xml:space="preserve">
+    <value>Ատամնանիվ</value>
+  </data>
+  <data name="IslamInfo_Gender" xml:space="preserve">
+    <value>Սեռ</value>
+  </data>
+  <data name="IslamInfo_General" xml:space="preserve">
+    <value>Ընդհանուր</value>
+  </data>
+  <data name="IslamInfo_Generation" xml:space="preserve">
+    <value>Սերունդ</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEqualTo" xml:space="preserve">
+    <value>Եռանկյունաչափորեն հավասար է</value>
+  </data>
+  <data name="IslamInfo_GeometricallyEquivalentTo" xml:space="preserve">
+    <value>Եռանկյունաչափորեն համարժեք է</value>
+  </data>
+  <data name="IslamInfo_Germany" xml:space="preserve">
+    <value>Գերմանիա</value>
+  </data>
+  <data name="IslamInfo_Gold" xml:space="preserve">
+    <value>Ոսկի</value>
+  </data>
+  <data name="IslamInfo_Good" xml:space="preserve">
+    <value>Լավ</value>
+  </data>
+  <data name="IslamInfo_Grace" xml:space="preserve">
+    <value>Գրավիչ</value>
+  </data>
+  <data name="IslamInfo_Grammar" xml:space="preserve">
+    <value>Քերականություն</value>
+  </data>
+  <data name="IslamInfo_Grave" xml:space="preserve">
+    <value>Բութ</value>
+  </data>
+  <data name="IslamInfo_GraveAccent" xml:space="preserve">
+    <value>Բութ</value>
+  </data>
+  <data name="IslamInfo_GreatBritain" xml:space="preserve">
+    <value>Մեծ Բրիտանիա</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOrEqualTo" xml:space="preserve">
+    <value>Մեծ է կամ հավասար</value>
+  </data>
+  <data name="IslamInfo_GreaterThanOverEqualTo" xml:space="preserve">
+    <value>Մեծ է՝ հավասար-ի վերեւից</value>
+  </data>
+  <data name="IslamInfo_GreaterThanSign" xml:space="preserve">
+    <value>«Մեծ քան» նշան</value>
+  </data>
+  <data name="IslamInfo_Group" xml:space="preserve">
+    <value>Խմբավորել</value>
+  </data>
+  <data name="IslamInfo_Groups" xml:space="preserve">
+    <value>Խմբեր</value>
+  </data>
+  <data name="IslamInfo_Hair" xml:space="preserve">
+    <value>Մազեր</value>
+  </data>
+  <data name="IslamInfo_Hand" xml:space="preserve">
+    <value>Ձեռք</value>
+  </data>
+  <data name="IslamInfo_Head" xml:space="preserve">
+    <value>Գլուխ</value>
+  </data>
+  <data name="IslamInfo_Heart" xml:space="preserve">
+    <value>Սիրտ</value>
+  </data>
+  <data name="IslamInfo_Hidden" xml:space="preserve">
+    <value>Թաքնված</value>
+  </data>
+  <data name="IslamInfo_Hint" xml:space="preserve">
+    <value>Հուշակ.</value>
+  </data>
+  <data name="IslamInfo_HorizontalEllipsis" xml:space="preserve">
+    <value>Հորիզոնական էլիպսներ</value>
+  </data>
+  <data name="IslamInfo_Hour" xml:space="preserve">
+    <value>ժամ</value>
+  </data>
+  <data name="IslamInfo_House" xml:space="preserve">
+    <value>Հաուս</value>
+  </data>
+  <data name="IslamInfo_How" xml:space="preserve">
+    <value>Ինչպե՞ս:</value>
+  </data>
+  <data name="IslamInfo_IdenticalTo" xml:space="preserve">
+    <value>Նույնություն է</value>
+  </data>
+  <data name="IslamInfo_If" xml:space="preserve">
+    <value>Եթե</value>
+  </data>
+  <data name="IslamInfo_ImageOfOrApproximatelyEqualTo" xml:space="preserve">
+    <value>Պատկերն է կամ մոտավոր հավասար է</value>
+  </data>
+  <data name="IslamInfo_Impact" xml:space="preserve">
+    <value>Ազդեցություն</value>
+  </data>
+  <data name="IslamInfo_In" xml:space="preserve">
+    <value>Հետեւյալում</value>
+  </data>
+  <data name="IslamInfo_Incomplete" xml:space="preserve">
+    <value>Անավարտ</value>
+  </data>
+  <data name="IslamInfo_Increment" xml:space="preserve">
+    <value>Աճ</value>
+  </data>
+  <data name="IslamInfo_Index" xml:space="preserve">
+    <value>Ցուցակ</value>
+  </data>
+  <data name="IslamInfo_India" xml:space="preserve">
+    <value>Հնդկաստան</value>
+  </data>
+  <data name="IslamInfo_Indonesia" xml:space="preserve">
+    <value>Ինդոնեզիա</value>
+  </data>
+  <data name="IslamInfo_Infinity" xml:space="preserve">
+    <value>Անվերջություն</value>
+  </data>
+  <data name="IslamInfo_Inspiration" xml:space="preserve">
+    <value>Ոգեշնչում</value>
+  </data>
+  <data name="IslamInfo_Integral" xml:space="preserve">
+    <value>Ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_Intercalate" xml:space="preserve">
+    <value>Միջաճ</value>
+  </data>
+  <data name="IslamInfo_Intersection" xml:space="preserve">
+    <value>Հատում</value>
+  </data>
+  <data name="IslamInfo_Introduction" xml:space="preserve">
+    <value>Ներածություն</value>
+  </data>
+  <data name="IslamInfo_IntroductionBestNamesLabel" xml:space="preserve">
+    <value>Ներածություն</value>
+  </data>
+  <data name="IslamInfo_InvertedExclamationMark" xml:space="preserve">
+    <value>Հակադարձ բացականչական նշան</value>
+  </data>
+  <data name="IslamInfo_InvertedOhmSign" xml:space="preserve">
+    <value>Շրջված Օհմ նշան</value>
+  </data>
+  <data name="IslamInfo_InvertedQuestionMark" xml:space="preserve">
+    <value>Հակադարձ հարցական նշան</value>
+  </data>
+  <data name="IslamInfo_Iraq" xml:space="preserve">
+    <value>Իրաք</value>
+  </data>
+  <data name="IslamInfo_Israel" xml:space="preserve">
+    <value>Իսրայել</value>
+  </data>
+  <data name="IslamInfo_Join" xml:space="preserve">
+    <value>Միակցում</value>
+  </data>
+  <data name="IslamInfo_Jordan" xml:space="preserve">
+    <value>Հորդանան</value>
+  </data>
+  <data name="IslamInfo_Jupiter" xml:space="preserve">
+    <value>Յուպիտեր</value>
+  </data>
+  <data name="IslamInfo_Kenya" xml:space="preserve">
+    <value>Քենիա</value>
+  </data>
+  <data name="IslamInfo_Keyboard" xml:space="preserve">
+    <value>Ստեղնաշար...</value>
+  </data>
+  <data name="IslamInfo_Kuwait" xml:space="preserve">
+    <value>Քուվեյթ</value>
+  </data>
+  <data name="IslamInfo_Last" xml:space="preserve">
+    <value>Վերջին</value>
+  </data>
+  <data name="IslamInfo_LastQuarterMoon" xml:space="preserve">
+    <value>Վերջին քառորդ</value>
+  </data>
+  <data name="IslamInfo_Leader" xml:space="preserve">
+    <value>Առաջնորդ</value>
+  </data>
+  <data name="IslamInfo_Leave" xml:space="preserve">
+    <value>Փակել</value>
+  </data>
+  <data name="IslamInfo_Lebanon" xml:space="preserve">
+    <value>Լիբանան</value>
+  </data>
+  <data name="IslamInfo_Left" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="IslamInfo_LeftNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Ձախ սովորական գործոնի կիսաուղիղ արտադրանք</value>
+  </data>
+  <data name="IslamInfo_LeftParenthesis" xml:space="preserve">
+    <value>Ձախ փակագծեր</value>
+  </data>
+  <data name="IslamInfo_LeftRightArrow" xml:space="preserve">
+    <value>&amp;Ձախ-աջ սլաք</value>
+  </data>
+  <data name="IslamInfo_LeftRightDoubleArrow" xml:space="preserve">
+    <value>Ձախ-աջ երկսլաք</value>
+  </data>
+  <data name="IslamInfo_LeftRightWaveArrow" xml:space="preserve">
+    <value>Ձախից աջ ալիքաձեւ սլաք</value>
+  </data>
+  <data name="IslamInfo_LeftSemidirectProduct" xml:space="preserve">
+    <value>Ձախ կիսաուղիղ արտադրանք</value>
+  </data>
+  <data name="IslamInfo_LessThanOrEqualTo" xml:space="preserve">
+    <value>Փոքր է կամ հավասար</value>
+  </data>
+  <data name="IslamInfo_LessThanOverEqualTo" xml:space="preserve">
+    <value>Փոքր է՝ հավասար-ի վերեւից</value>
+  </data>
+  <data name="IslamInfo_Letters" xml:space="preserve">
+    <value>Նամակներ</value>
+  </data>
+  <data name="IslamInfo_Level" xml:space="preserve">
+    <value>Մակարդակ.</value>
+  </data>
+  <data name="IslamInfo_Library" xml:space="preserve">
+    <value>Դարան</value>
+  </data>
+  <data name="IslamInfo_Light" xml:space="preserve">
+    <value>Բաց</value>
+  </data>
+  <data name="IslamInfo_Lightning" xml:space="preserve">
+    <value>Կայծակ</value>
+  </data>
+  <data name="IslamInfo_Limit" xml:space="preserve">
+    <value>Սահման</value>
+  </data>
+  <data name="IslamInfo_Linking" xml:space="preserve">
+    <value>Կապում</value>
+  </data>
+  <data name="IslamInfo_LogicalAnd" xml:space="preserve">
+    <value>Տրամաբանական Եւ</value>
+  </data>
+  <data name="IslamInfo_LogicalOr" xml:space="preserve">
+    <value>Տրամաբանական Կամ</value>
+  </data>
+  <data name="IslamInfo_Long" xml:space="preserve">
+    <value>Երկար</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightArrow" xml:space="preserve">
+    <value>Երկար ձախից աջ սլաք</value>
+  </data>
+  <data name="IslamInfo_LongLeftRightDoubleArrow" xml:space="preserve">
+    <value>Երկար ձախից աջ սլաք գոտուց</value>
+  </data>
+  <data name="IslamInfo_Male" xml:space="preserve">
+    <value>Տղամարդ</value>
+  </data>
+  <data name="IslamInfo_Man" xml:space="preserve">
+    <value>Ձեռքով</value>
+  </data>
+  <data name="IslamInfo_Market" xml:space="preserve">
+    <value>Խանութ</value>
+  </data>
+  <data name="IslamInfo_Mary" xml:space="preserve">
+    <value>Մարիա</value>
+  </data>
+  <data name="IslamInfo_Master" xml:space="preserve">
+    <value>Հիմնօրինակ</value>
+  </data>
+  <data name="IslamInfo_Matter" xml:space="preserve">
+    <value>Պատճառ</value>
+  </data>
+  <data name="IslamInfo_Measure" xml:space="preserve">
+    <value>Չափում</value>
+  </data>
+  <data name="IslamInfo_MeasuredAngle" xml:space="preserve">
+    <value>Չափված անկյուն</value>
+  </data>
+  <data name="IslamInfo_MeasuredBy" xml:space="preserve">
+    <value>Չափված ըստ</value>
+  </data>
+  <data name="IslamInfo_Mecca" xml:space="preserve">
+    <value>Մեկկա</value>
+  </data>
+  <data name="IslamInfo_Medina" xml:space="preserve">
+    <value>Մեդինա</value>
+  </data>
+  <data name="IslamInfo_Meeting" xml:space="preserve">
+    <value>Հանդիպում</value>
+  </data>
+  <data name="IslamInfo_Messenger" xml:space="preserve">
+    <value>Messenger</value>
+  </data>
+  <data name="IslamInfo_MidlineHorizontalEllipsis" xml:space="preserve">
+    <value>Միջնագիծ հորիզոնական էլիպս</value>
+  </data>
+  <data name="IslamInfo_Minute" xml:space="preserve">
+    <value>Րոպե</value>
+  </data>
+  <data name="IslamInfo_Models" xml:space="preserve">
+    <value>Մոդելներ</value>
+  </data>
+  <data name="IslamInfo_Money" xml:space="preserve">
+    <value>Ֆինանսական</value>
+  </data>
+  <data name="IslamInfo_Month" xml:space="preserve">
+    <value>Ամիս</value>
+  </data>
+  <data name="IslamInfo_Months" xml:space="preserve">
+    <value>Ամիս</value>
+  </data>
+  <data name="IslamInfo_Moon" xml:space="preserve">
+    <value>Լուսին</value>
+  </data>
+  <data name="IslamInfo_Morning" xml:space="preserve">
+    <value>Առավոտ</value>
+  </data>
+  <data name="IslamInfo_Morocco" xml:space="preserve">
+    <value>Մարոկո</value>
+  </data>
+  <data name="IslamInfo_Mountain" xml:space="preserve">
+    <value>Սար</value>
+  </data>
+  <data name="IslamInfo_MuchGreaterThan" xml:space="preserve">
+    <value>Շատ ավելի մեծ է</value>
+  </data>
+  <data name="IslamInfo_MuchLessThan" xml:space="preserve">
+    <value>Շատ ավելի փոքր է</value>
+  </data>
+  <data name="IslamInfo_Multimap" xml:space="preserve">
+    <value>Բազմարտապատկեր</value>
+  </data>
+  <data name="IslamInfo_MultiplicationSign" xml:space="preserve">
+    <value>Բազմապատկման նշան</value>
+  </data>
+  <data name="IslamInfo_MultisetUnion" xml:space="preserve">
+    <value>Բազմակազմ միավորում</value>
+  </data>
+  <data name="IslamInfo_muslimBook1" xml:space="preserve">
+    <value>Ներածություն</value>
+  </data>
+  <data name="IslamInfo_Nabla" xml:space="preserve">
+    <value>Նաբլա</value>
+  </data>
+  <data name="IslamInfo_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="IslamInfo_Names" xml:space="preserve">
+    <value>Անուններ</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
+    <value>N-ական շրջանային կետի գործարկու</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
+    <value>N-ական շրջանային գումարի գործարկու</value>
+  </data>
+  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
+    <value>N-ական շրջանային ժամանակների գործարկու</value>
+  </data>
+  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
+    <value>N-ական հատում</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
+    <value>N-ական տրամաբանական եւ</value>
+  </data>
+  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
+    <value>N-ական տրամաբանական կամ</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-ական քառակուսի հատման գործարկու</value>
+  </data>
+  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
+    <value>N-ական քառակուսի միավորման գործարկու</value>
+  </data>
+  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
+    <value>N-ային գումարում</value>
+  </data>
+  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
+    <value>N-ական միավորում</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
+    <value>N-ական միավորման գործարկու` կետով</value>
+  </data>
+  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-ական միավորման գործարկու` գումարի նշանով</value>
+  </data>
+  <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
+    <value>Ժխտված կրկնակի ուղղաձիգ գոտի կրկնակի աջ պտտաձող</value>
+  </data>
+  <data name="IslamInfo_NeitherApproximatelyNorActuallyEqualTo" xml:space="preserve">
+    <value>Ոչ մոտավոր, ոչ ստույգ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_Neutral" xml:space="preserve">
+    <value>Չեզոք</value>
+  </data>
+  <data name="IslamInfo_New" xml:space="preserve">
+    <value>Նոր...</value>
+  </data>
+  <data name="IslamInfo_News" xml:space="preserve">
+    <value>Լուրեր</value>
+  </data>
+  <data name="IslamInfo_NextPage" xml:space="preserve">
+    <value>Հաջորդ էջը</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOf" xml:space="preserve">
+    <value>Սովորական ենթախումբ</value>
+  </data>
+  <data name="IslamInfo_NormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Սովորական ենթախումբ կամ Հավասար է</value>
+  </data>
+  <data name="IslamInfo_Not" xml:space="preserve">
+    <value>Ոչ</value>
+  </data>
+  <data name="IslamInfo_NotAlmostEqualTo" xml:space="preserve">
+    <value>Համարյա հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_NotAsymptoticallyEqualTo" xml:space="preserve">
+    <value>Ասիմտոտիկ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_NotEqualTo" xml:space="preserve">
+    <value>Հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_NotEquivalentTo" xml:space="preserve">
+    <value>Համարժեք չէ</value>
+  </data>
+  <data name="IslamInfo_NotGreaterThan" xml:space="preserve">
+    <value>Մեծ չէ</value>
+  </data>
+  <data name="IslamInfo_NotIdenticalTo" xml:space="preserve">
+    <value>Նույնություն չէ</value>
+  </data>
+  <data name="IslamInfo_NotLessThan" xml:space="preserve">
+    <value>Փոքր չէ</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOf" xml:space="preserve">
+    <value>Չի հանդիսանում որպես Սովորական ենթախումբ</value>
+  </data>
+  <data name="IslamInfo_NotNormalSubgroupOfOrEqualTo" xml:space="preserve">
+    <value>Չի հանդիսանում որպես Սովորական ենթախումբ կամ Համարժեք է</value>
+  </data>
+  <data name="IslamInfo_NotParallelTo" xml:space="preserve">
+    <value>Զուգահեռ չէ</value>
+  </data>
+  <data name="IslamInfo_NotSign" xml:space="preserve">
+    <value>Մերժման նշան</value>
+  </data>
+  <data name="IslamInfo_NotSquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Քառակուսի պատկեր կամ հավասարը չէ</value>
+  </data>
+  <data name="IslamInfo_NotSquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Քառակուսի բնօրինակ կամ հավասարը չէ</value>
+  </data>
+  <data name="IslamInfo_NotTilde" xml:space="preserve">
+    <value>Ալիքանշան չէ</value>
+  </data>
+  <data name="IslamInfo_NotTrue" xml:space="preserve">
+    <value>Ճշմարիտ չէ</value>
+  </data>
+  <data name="IslamInfo_O" xml:space="preserve">
+    <value>Բ</value>
+  </data>
+  <data name="IslamInfo_Odd" xml:space="preserve">
+    <value>Կենտ</value>
+  </data>
+  <data name="IslamInfo_Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="IslamInfo_One" xml:space="preserve">
+    <value>Մեկ</value>
+  </data>
+  <data name="IslamInfo_Opening" xml:space="preserve">
+    <value>Բացում...</value>
+  </data>
+  <data name="IslamInfo_Or" xml:space="preserve">
+    <value>Կամ</value>
+  </data>
+  <data name="IslamInfo_Orphan" xml:space="preserve">
+    <value>Որբ</value>
+  </data>
+  <data name="IslamInfo_Other" xml:space="preserve">
+    <value>Այլ</value>
+  </data>
+  <data name="IslamInfo_Page" xml:space="preserve">
+    <value>Էջ</value>
+  </data>
+  <data name="IslamInfo_Pages" xml:space="preserve">
+    <value>Էջեր</value>
+  </data>
+  <data name="IslamInfo_Pakistan" xml:space="preserve">
+    <value>Պակիստան</value>
+  </data>
+  <data name="IslamInfo_ParallelTo" xml:space="preserve">
+    <value>Զուգահեռ է</value>
+  </data>
+  <data name="IslamInfo_PartialDifferential" xml:space="preserve">
+    <value>Մասնակի դիֆերենցիալ</value>
+  </data>
+  <data name="IslamInfo_Particle" xml:space="preserve">
+    <value>Մասնիկներ</value>
+  </data>
+  <data name="IslamInfo_Partner" xml:space="preserve">
+    <value>Գործընկեր</value>
+  </data>
+  <data name="IslamInfo_Partnership" xml:space="preserve">
+    <value>Համագործակցում</value>
+  </data>
+  <data name="IslamInfo_Party" xml:space="preserve">
+    <value>Երեկույթի</value>
+  </data>
+  <data name="IslamInfo_Passive" xml:space="preserve">
+    <value>Պասիվ</value>
+  </data>
+  <data name="IslamInfo_Path" xml:space="preserve">
+    <value>Ուղի</value>
+  </data>
+  <data name="IslamInfo_Peace" xml:space="preserve">
+    <value>Խաղաղություն</value>
+  </data>
+  <data name="IslamInfo_Pen" xml:space="preserve">
+    <value>Գրիչ</value>
+  </data>
+  <data name="IslamInfo_Pencil" xml:space="preserve">
+    <value>Մատիտ</value>
+  </data>
+  <data name="IslamInfo_People" xml:space="preserve">
+    <value>Մարդիկ</value>
+  </data>
+  <data name="IslamInfo_PercentSign" xml:space="preserve">
+    <value>Տոկոսի նշան</value>
+  </data>
+  <data name="IslamInfo_Permission" xml:space="preserve">
+    <value>Թույլտվություն</value>
+  </data>
+  <data name="IslamInfo_Perspective" xml:space="preserve">
+    <value>Հեռանկար.</value>
+  </data>
+  <data name="IslamInfo_Philippines" xml:space="preserve">
+    <value>Ֆիլիպիններ</value>
+  </data>
+  <data name="IslamInfo_Pillar" xml:space="preserve">
+    <value>Սյուն</value>
+  </data>
+  <data name="IslamInfo_Pitchfork" xml:space="preserve">
+    <value>Շրջված եռաժանի</value>
+  </data>
+  <data name="IslamInfo_Place" xml:space="preserve">
+    <value>Վայր</value>
+  </data>
+  <data name="IslamInfo_Places" xml:space="preserve">
+    <value>Վայրերի գործադիր</value>
+  </data>
+  <data name="IslamInfo_Plot" xml:space="preserve">
+    <value>Գծագիր</value>
+  </data>
+  <data name="IslamInfo_PopDirectionalFormatting" xml:space="preserve">
+    <value>‬	Ուղղության ձևաչափում</value>
+  </data>
+  <data name="IslamInfo_Pound" xml:space="preserve">
+    <value>Ֆունտ</value>
+  </data>
+  <data name="IslamInfo_PrayTime3" xml:space="preserve">
+    <value>Ցերեկային</value>
+  </data>
+  <data name="IslamInfo_PrayTime4" xml:space="preserve">
+    <value>Արեւամուտ</value>
+  </data>
+  <data name="IslamInfo_PrayTime7" xml:space="preserve">
+    <value>Արեւածագ</value>
+  </data>
+  <data name="IslamInfo_Precedes" xml:space="preserve">
+    <value>Նախորդում</value>
+  </data>
+  <data name="IslamInfo_PrecedesButNotEquivalentTo" xml:space="preserve">
+    <value>Նախորդում է, սակայն համարժեք չէ</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEqualTo" xml:space="preserve">
+    <value>Նախորդում է կամ հավասար է</value>
+  </data>
+  <data name="IslamInfo_PrecedesOrEquivalentTo" xml:space="preserve">
+    <value>Նախորդում է կամ համարժեք է</value>
+  </data>
+  <data name="IslamInfo_Prefix" xml:space="preserve">
+    <value>Նախածանց</value>
+  </data>
+  <data name="IslamInfo_PreviousPage" xml:space="preserve">
+    <value>Նախորդ էջը</value>
+  </data>
+  <data name="IslamInfo_Prime" xml:space="preserve">
+    <value>Առաջնային</value>
+  </data>
+  <data name="IslamInfo_Proportion" xml:space="preserve">
+    <value>Համաչափություն</value>
+  </data>
+  <data name="IslamInfo_ProportionalTo" xml:space="preserve">
+    <value>Համաչափ է</value>
+  </data>
+  <data name="IslamInfo_Protection" xml:space="preserve">
+    <value>Պաշտպանություն</value>
+  </data>
+  <data name="IslamInfo_Quarter" xml:space="preserve">
+    <value>Եռամսյակ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter102" xml:space="preserve">
+    <value>Մրցույթ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter19" xml:space="preserve">
+    <value>Մարիա</value>
+  </data>
+  <data name="IslamInfo_QuranChapter62" xml:space="preserve">
+    <value>Ուրբաթ</value>
+  </data>
+  <data name="IslamInfo_QuranChapter76" xml:space="preserve">
+    <value>Ձեռքով</value>
+  </data>
+  <data name="IslamInfo_Ratio" xml:space="preserve">
+    <value>Հարաբերություն</value>
+  </data>
+  <data name="IslamInfo_Reading" xml:space="preserve">
+    <value>Ընթերցում</value>
+  </data>
+  <data name="IslamInfo_Recommended" xml:space="preserve">
+    <value>Հանձնարարելի</value>
+  </data>
+  <data name="IslamInfo_RegisteredSign" xml:space="preserve">
+    <value>Գրանցված նշան</value>
+  </data>
+  <data name="IslamInfo_Requirement" xml:space="preserve">
+    <value>Պահանջ</value>
+  </data>
+  <data name="IslamInfo_Response" xml:space="preserve">
+    <value>Պատասխան</value>
+  </data>
+  <data name="IslamInfo_ReversedTilde" xml:space="preserve">
+    <value>Շրջված Տիլդ</value>
+  </data>
+  <data name="IslamInfo_ReversedTildeEquals" xml:space="preserve">
+    <value>Շրջված ալիք հավասար</value>
+  </data>
+  <data name="IslamInfo_Right" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="IslamInfo_RightAngle" xml:space="preserve">
+    <value>Աջ անկյուն</value>
+  </data>
+  <data name="IslamInfo_RightAngleWithArc" xml:space="preserve">
+    <value>Աջ անկյուն` կամարով</value>
+  </data>
+  <data name="IslamInfo_RightNormalFactorSemidirectProduct" xml:space="preserve">
+    <value>Աջ սովորական գործոնի կիսաուղիղ արտադրանք</value>
+  </data>
+  <data name="IslamInfo_RightParenthesis" xml:space="preserve">
+    <value>Աջ փակագծեր</value>
+  </data>
+  <data name="IslamInfo_RightSemidirectProduct" xml:space="preserve">
+    <value>Աջ կիսաուղիղ արտադրանք</value>
+  </data>
+  <data name="IslamInfo_RightSingleQuotationMark" xml:space="preserve">
+    <value>Աջ փակող չակերտ</value>
+  </data>
+  <data name="IslamInfo_RightTriangle" xml:space="preserve">
+    <value>Ուղիղ եռանկյունի</value>
+  </data>
+  <data name="IslamInfo_RingEqualTo" xml:space="preserve">
+    <value>Օղակ հավասար է</value>
+  </data>
+  <data name="IslamInfo_RingInEqualTo" xml:space="preserve">
+    <value>Օղակ՝ հավասար-ում</value>
+  </data>
+  <data name="IslamInfo_Safety" xml:space="preserve">
+    <value>Ապահովություն</value>
+  </data>
+  <data name="IslamInfo_Saturn" xml:space="preserve">
+    <value>Սատուրն</value>
+  </data>
+  <data name="IslamInfo_SaudiArabia" xml:space="preserve">
+    <value>Սաուդյան Արաբիա</value>
+  </data>
+  <data name="IslamInfo_Scale" xml:space="preserve">
+    <value>Սանդղել...</value>
+  </data>
+  <data name="IslamInfo_Scales" xml:space="preserve">
+    <value>Սանդղակներ</value>
+  </data>
+  <data name="IslamInfo_School" xml:space="preserve">
+    <value>Դպրոց</value>
+  </data>
+  <data name="IslamInfo_ScriptCapitalP" xml:space="preserve">
+    <value>Մեծատառ P</value>
+  </data>
+  <data name="IslamInfo_Sea" xml:space="preserve">
+    <value>Ծով</value>
+  </data>
+  <data name="IslamInfo_Second" xml:space="preserve">
+    <value>վայրկյան</value>
+  </data>
+  <data name="IslamInfo_Sections" xml:space="preserve">
+    <value>Բաժիններ</value>
+  </data>
+  <data name="IslamInfo_Semicolon" xml:space="preserve">
+    <value>Կետ-ստորակետ</value>
+  </data>
+  <data name="IslamInfo_Sense" xml:space="preserve">
+    <value>Sense</value>
+  </data>
+  <data name="IslamInfo_SetMinus" xml:space="preserve">
+    <value>Բազմության հանում</value>
+  </data>
+  <data name="IslamInfo_Shamrock" xml:space="preserve">
+    <value>Եռատերեւուկ</value>
+  </data>
+  <data name="IslamInfo_Short" xml:space="preserve">
+    <value>Կարճ</value>
+  </data>
+  <data name="IslamInfo_Sign" xml:space="preserve">
+    <value>Ստորագրել</value>
+  </data>
+  <data name="IslamInfo_Silver" xml:space="preserve">
+    <value>Արծաթագույն</value>
+  </data>
+  <data name="IslamInfo_SineWave" xml:space="preserve">
+    <value>Ներդաշնակ ալիք</value>
+  </data>
+  <data name="IslamInfo_Skin" xml:space="preserve">
+    <value>շապիկ</value>
+  </data>
+  <data name="IslamInfo_Sky" xml:space="preserve">
+    <value>Երկինք</value>
+  </data>
+  <data name="IslamInfo_Slope" xml:space="preserve">
+    <value>Թեք</value>
+  </data>
+  <data name="IslamInfo_Smile" xml:space="preserve">
+    <value>Ժպիտ=:-)</value>
+  </data>
+  <data name="IslamInfo_Socks" xml:space="preserve">
+    <value>Բնիկ.</value>
+  </data>
+  <data name="IslamInfo_Soul" xml:space="preserve">
+    <value>Հոգեղեն</value>
+  </data>
+  <data name="IslamInfo_Sound" xml:space="preserve">
+    <value>Ձայն</value>
+  </data>
+  <data name="IslamInfo_Space" xml:space="preserve">
+    <value>Բացատ</value>
+  </data>
+  <data name="IslamInfo_Speech" xml:space="preserve">
+    <value>Խոսք</value>
+  </data>
+  <data name="IslamInfo_SphericalAngle" xml:space="preserve">
+    <value>Գնդաձեւ անկյոււն</value>
+  </data>
+  <data name="IslamInfo_SquareCap" xml:space="preserve">
+    <value>Քառակուսի ծածկ</value>
+  </data>
+  <data name="IslamInfo_SquareCup" xml:space="preserve">
+    <value>Քառակուսի տակ</value>
+  </data>
+  <data name="IslamInfo_SquaredDotOperator" xml:space="preserve">
+    <value>Քառակուսի կետի գործարկու</value>
+  </data>
+  <data name="IslamInfo_SquaredMinus" xml:space="preserve">
+    <value>Քառակուսի հանած</value>
+  </data>
+  <data name="IslamInfo_SquaredPlus" xml:space="preserve">
+    <value>Քառակուսի գումարած</value>
+  </data>
+  <data name="IslamInfo_SquaredTimes" xml:space="preserve">
+    <value>Քառակուսի անգամ</value>
+  </data>
+  <data name="IslamInfo_SquareFoot" xml:space="preserve">
+    <value>Քառակուսի ֆուտ</value>
+  </data>
+  <data name="IslamInfo_SquareImageOf" xml:space="preserve">
+    <value>Քառակուսի պատկեր`</value>
+  </data>
+  <data name="IslamInfo_SquareImageOfOrEqualTo" xml:space="preserve">
+    <value>Քառակուսի պատկերն է կամ Հավասար է</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOf" xml:space="preserve">
+    <value>Քառակուսի բնօրինակ`</value>
+  </data>
+  <data name="IslamInfo_SquareOriginalOfOrEqualTo" xml:space="preserve">
+    <value>Քառակուսի բնօրինակ կամ հավասար</value>
+  </data>
+  <data name="IslamInfo_SquareRoot" xml:space="preserve">
+    <value>Քառակուսի արմատ</value>
+  </data>
+  <data name="IslamInfo_SriLanka" xml:space="preserve">
+    <value>Շրի Լանկա</value>
+  </data>
+  <data name="IslamInfo_Star" xml:space="preserve">
+    <value>Աստղ</value>
+  </data>
+  <data name="IslamInfo_StarOperator" xml:space="preserve">
+    <value>Աստղի գործարկու</value>
+  </data>
+  <data name="IslamInfo_Station" xml:space="preserve">
+    <value>Կայան</value>
+  </data>
+  <data name="IslamInfo_Stopping" xml:space="preserve">
+    <value>Կանգ...</value>
+  </data>
+  <data name="IslamInfo_Strength" xml:space="preserve">
+    <value>Ուժգնություն</value>
+  </data>
+  <data name="IslamInfo_Student" xml:space="preserve">
+    <value>Ուսանող</value>
+  </data>
+  <data name="IslamInfo_SubsetOf" xml:space="preserve">
+    <value>Ենթակազմ՝</value>
+  </data>
+  <data name="IslamInfo_SubsetOfWithNotEqualTo" xml:space="preserve">
+    <value>Ենթաբազմություն՝ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_Subtle" xml:space="preserve">
+    <value>Նրբագեղ</value>
+  </data>
+  <data name="IslamInfo_Succeeds" xml:space="preserve">
+    <value>Հաջորդում</value>
+  </data>
+  <data name="IslamInfo_SucceedsButNotEquivalentTo" xml:space="preserve">
+    <value>Հաջորդում է, սակայն համարժեք չէ</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEqualTo" xml:space="preserve">
+    <value>Հաջորդում է կամ հավասար է</value>
+  </data>
+  <data name="IslamInfo_SucceedsOrEquivalentTo" xml:space="preserve">
+    <value>Հաջորդում է կամ համարժեք է</value>
+  </data>
+  <data name="IslamInfo_Sudan" xml:space="preserve">
+    <value>Սուդան</value>
+  </data>
+  <data name="IslamInfo_Suffix" xml:space="preserve">
+    <value>Վերջածանց.</value>
+  </data>
+  <data name="IslamInfo_Suggestion" xml:space="preserve">
+    <value>Առաջարկ</value>
+  </data>
+  <data name="IslamInfo_Sun" xml:space="preserve">
+    <value>Կիր</value>
+  </data>
+  <data name="IslamInfo_Sunrise" xml:space="preserve">
+    <value>Արեւածագ</value>
+  </data>
+  <data name="IslamInfo_SupersetOf" xml:space="preserve">
+    <value>Վրակազմ</value>
+  </data>
+  <data name="IslamInfo_SupersetOfWithNotEqualTo" xml:space="preserve">
+    <value>Վերբազմություն՝ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_SurfaceIntegral" xml:space="preserve">
+    <value>Մակերեսային ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_Table" xml:space="preserve">
+    <value>Աղյուսակ</value>
+  </data>
+  <data name="IslamInfo_Tall" xml:space="preserve">
+    <value>Բարձր</value>
+  </data>
+  <data name="IslamInfo_TapeDrive" xml:space="preserve">
+    <value>Ժապավենային սարք</value>
+  </data>
+  <data name="IslamInfo_Term" xml:space="preserve">
+    <value>Տերմին</value>
+  </data>
+  <data name="IslamInfo_Text" xml:space="preserve">
+    <value>Գրվածք</value>
+  </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>1.</value>
+  </data>
+  <data name="IslamInfo_ThereDoesNotExist" xml:space="preserve">
+    <value>Այնտեղ առկա չէ</value>
+  </data>
+  <data name="IslamInfo_ThereExists" xml:space="preserve">
+    <value>Այնտեղ առկա է</value>
+  </data>
+  <data name="IslamInfo_Therefore" xml:space="preserve">
+    <value>Հետեւաբար</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFirstLabel" xml:space="preserve">
+    <value>Առաջին</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonFourthLabel" xml:space="preserve">
+    <value>չորրորդ</value>
+  </data>
+  <data name="IslamInfo_TheWhiteMoonSecondLabel" xml:space="preserve">
+    <value>վայրկյան</value>
+  </data>
+  <data name="IslamInfo_This" xml:space="preserve">
+    <value>Սա </value>
+  </data>
+  <data name="IslamInfo_Tilde" xml:space="preserve">
+    <value>Ալիք</value>
+  </data>
+  <data name="IslamInfo_Time" xml:space="preserve">
+    <value>Ժամանակ</value>
+  </data>
+  <data name="IslamInfo_Tiny" xml:space="preserve">
+    <value>փոքրիկ</value>
+  </data>
+  <data name="IslamInfo_Today" xml:space="preserve">
+    <value>Այսօր</value>
+  </data>
+  <data name="IslamInfo_TopLeftCorner" xml:space="preserve">
+    <value>Վերին ձախ անկյունը</value>
+  </data>
+  <data name="IslamInfo_TopRightCorner" xml:space="preserve">
+    <value>Վերին աջ անկյունը</value>
+  </data>
+  <data name="IslamInfo_Touch" xml:space="preserve">
+    <value>Հպում</value>
+  </data>
+  <data name="IslamInfo_Town" xml:space="preserve">
+    <value>Քաղաք</value>
+  </data>
+  <data name="IslamInfo_TownCity" xml:space="preserve">
+    <value>Քաղաք/արվարձան</value>
+  </data>
+  <data name="IslamInfo_Trace" xml:space="preserve">
+    <value>Հետք</value>
+  </data>
+  <data name="IslamInfo_TradeMarkSign" xml:space="preserve">
+    <value>Ապրանքանիշի նշան</value>
+  </data>
+  <data name="IslamInfo_Translation" xml:space="preserve">
+    <value>Թարգմանություն</value>
+  </data>
+  <data name="IslamInfo_Travel" xml:space="preserve">
+    <value>Ճանապարհորդել</value>
+  </data>
+  <data name="IslamInfo_TripleIntegral" xml:space="preserve">
+    <value>Եռակի ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_TripleVerticalBarRightTurnstile" xml:space="preserve">
+    <value>Եռակի ուղղաձիգ գոտու աջ պտտաձող</value>
+  </data>
+  <data name="IslamInfo_True" xml:space="preserve">
+    <value>Ճշմարիտ</value>
+  </data>
+  <data name="IslamInfo_Tunisia" xml:space="preserve">
+    <value>Թունիս</value>
+  </data>
+  <data name="IslamInfo_TurnedGreekSmallLetterIota" xml:space="preserve">
+    <value>Շրջված հունական փոքրատառ Յոտա</value>
+  </data>
+  <data name="IslamInfo_Umbrella" xml:space="preserve">
+    <value>Հովանոց</value>
+  </data>
+  <data name="IslamInfo_Uncover" xml:space="preserve">
+    <value>Բացել</value>
+  </data>
+  <data name="IslamInfo_Union" xml:space="preserve">
+    <value>Միավորում</value>
+  </data>
+  <data name="IslamInfo_Unknown" xml:space="preserve">
+    <value>Անհայտ</value>
+  </data>
+  <data name="IslamInfo_Unseen" xml:space="preserve">
+    <value>Չդիտված</value>
+  </data>
+  <data name="IslamInfo_UpDownArrow" xml:space="preserve">
+    <value>Վեր-վար սլաք</value>
+  </data>
+  <data name="IslamInfo_UpDownDoubleArrow" xml:space="preserve">
+    <value>Վեր-վար երկսլաք</value>
+  </data>
+  <data name="IslamInfo_UpRightDiagonalEllipsis" xml:space="preserve">
+    <value>Վեր աջ անկյունագծով էլիպս</value>
+  </data>
+  <data name="IslamInfo_Uranus" xml:space="preserve">
+    <value>Ուրան</value>
+  </data>
+  <data name="IslamInfo_Verb" xml:space="preserve">
+    <value>Բայ</value>
+  </data>
+  <data name="IslamInfo_VerticalEllipsis" xml:space="preserve">
+    <value>Ուղղաձիգ էլիպս</value>
+  </data>
+  <data name="IslamInfo_VerticalLine" xml:space="preserve">
+    <value>Ուղղաձիգ գիծ</value>
+  </data>
+  <data name="IslamInfo_VeryMuchGreaterThan" xml:space="preserve">
+    <value>Շատ ավելի մեծ է քան</value>
+  </data>
+  <data name="IslamInfo_VeryMuchLessThan" xml:space="preserve">
+    <value>Շատ ավելի փոքր է քան</value>
+  </data>
+  <data name="IslamInfo_Voice" xml:space="preserve">
+    <value>Ձայն</value>
+  </data>
+  <data name="IslamInfo_VolumeIntegral" xml:space="preserve">
+    <value>Հզորության ինտեգրալ</value>
+  </data>
+  <data name="IslamInfo_Watch" xml:space="preserve">
+    <value>Դիտել</value>
+  </data>
+  <data name="IslamInfo_Water" xml:space="preserve">
+    <value>Ջուր</value>
+  </data>
+  <data name="IslamInfo_Weak" xml:space="preserve">
+    <value>Թույլ</value>
+  </data>
+  <data name="IslamInfo_Week" xml:space="preserve">
+    <value>Շաբաթ</value>
+  </data>
+  <data name="IslamInfo_When" xml:space="preserve">
+    <value>Երբ.</value>
+  </data>
+  <data name="IslamInfo_Where" xml:space="preserve">
+    <value>Ուր.</value>
+  </data>
+  <data name="IslamInfo_WhiteCircle" xml:space="preserve">
+    <value>Սպիտակ շրջանագիծ</value>
+  </data>
+  <data name="IslamInfo_WhiteSmilingFace" xml:space="preserve">
+    <value>Սպիտակ ժպտացող դեմք</value>
+  </data>
+  <data name="IslamInfo_WhiteUpPointingTriangle" xml:space="preserve">
+    <value>Սպիտակ վերեւ նշող եռանկյունի</value>
+  </data>
+  <data name="IslamInfo_Why" xml:space="preserve">
+    <value>Ինչի՞:</value>
+  </data>
+  <data name="IslamInfo_With" xml:space="preserve">
+    <value>Նաեւ</value>
+  </data>
+  <data name="IslamInfo_Word" xml:space="preserve">
+    <value>Բառ</value>
+  </data>
+  <data name="IslamInfo_Words" xml:space="preserve">
+    <value>Բառեր.</value>
+  </data>
+  <data name="IslamInfo_Wrapper" xml:space="preserve">
+    <value>Ծալիչ</value>
+  </data>
+  <data name="IslamInfo_WreathProduct" xml:space="preserve">
+    <value>Խոպոպ արտադրյալ</value>
+  </data>
+  <data name="IslamInfo_Year" xml:space="preserve">
+    <value>Տարի</value>
+  </data>
+  <data name="IslamInfo_Yes" xml:space="preserve">
+    <value>Այո</value>
+  </data>
+  <data name="IslamInfo_You" xml:space="preserve">
+    <value>Դուք</value>
+  </data>
+  <data name="IslamSource_Add" xml:space="preserve">
+    <value>ՀԱՎ-Լ</value>
+  </data>
+  <data name="IslamSource_Apply" xml:space="preserve">
+    <value>Գործադրել</value>
+  </data>
+  <data name="IslamSource_Book" xml:space="preserve">
+    <value>Գիրք</value>
+  </data>
+  <data name="IslamSource_Calculations" xml:space="preserve">
+    <value>Հաշվարկումներ</value>
+  </data>
+  <data name="IslamSource_Collection" xml:space="preserve">
+    <value>Հավաքածու</value>
+  </data>
+  <data name="IslamSource_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="IslamSource_Degrees" xml:space="preserve">
+    <value>Աստիճան</value>
+  </data>
+  <data name="IslamSource_Dictionary" xml:space="preserve">
+    <value>Բառարան.</value>
+  </data>
+  <data name="IslamSource_Direction" xml:space="preserve">
+    <value>Ուղղություն</value>
+  </data>
+  <data name="IslamSource_Disable" xml:space="preserve">
+    <value>Կասեցնել</value>
+  </data>
+  <data name="IslamSource_Display" xml:space="preserve">
+    <value>Ցուցադրել</value>
+  </data>
+  <data name="IslamSource_Division" xml:space="preserve">
+    <value>Բաժանում</value>
+  </data>
+  <data name="IslamSource_Font" xml:space="preserve">
+    <value>Տառատեսակ</value>
+  </data>
+  <data name="IslamSource_Grammar" xml:space="preserve">
+    <value>Քերականություն</value>
+  </data>
+  <data name="IslamSource_GregorianCalendar" xml:space="preserve">
+    <value>Գրիգորյան տոմար</value>
+  </data>
+  <data name="IslamSource_HijriCalendar" xml:space="preserve">
+    <value>Հիջրի տոմար</value>
+  </data>
+  <data name="IslamSource_Home" xml:space="preserve">
+    <value>Տուն</value>
+  </data>
+  <data name="IslamSource_Information" xml:space="preserve">
+    <value>Տեղեկույթ</value>
+  </data>
+  <data name="IslamSource_Introduction" xml:space="preserve">
+    <value>Ներածություն</value>
+  </data>
+  <data name="IslamSource_LetterSample" xml:space="preserve">
+    <value>Ա</value>
+  </data>
+  <data name="IslamSource_Lists" xml:space="preserve">
+    <value>Ցուցակներ</value>
+  </data>
+  <data name="IslamSource_Loading" xml:space="preserve">
+    <value>Բեռնում...</value>
+  </data>
+  <data name="IslamSource_Mapping" xml:space="preserve">
+    <value>Արտապատկերում</value>
+  </data>
+  <data name="IslamSource_Minutes" xml:space="preserve">
+    <value>Րոպե</value>
+  </data>
+  <data name="IslamSource_No" xml:space="preserve">
+    <value>Ոչ</value>
+  </data>
+  <data name="IslamSource_Off" xml:space="preserve">
+    <value>Անջատ</value>
+  </data>
+  <data name="IslamSource_Offset" xml:space="preserve">
+    <value>Շեղում.</value>
+  </data>
+  <data name="IslamSource_Operation" xml:space="preserve">
+    <value>Գործողություն</value>
+  </data>
+  <data name="IslamSource_Print" xml:space="preserve">
+    <value>Տպել</value>
+  </data>
+  <data name="IslamSource_Quote" xml:space="preserve">
+    <value>Մեջբերում</value>
+  </data>
+  <data name="IslamSource_Remove" xml:space="preserve">
+    <value>Հեռացնել</value>
+  </data>
+  <data name="IslamSource_Scheme" xml:space="preserve">
+    <value>Ուրվակազմ</value>
+  </data>
+  <data name="IslamSource_Seconds" xml:space="preserve">
+    <value>վայրկյաններ</value>
+  </data>
+  <data name="IslamSource_Selection" xml:space="preserve">
+    <value>Ընտրում</value>
+  </data>
+  <data name="IslamSource_Text" xml:space="preserve">
+    <value>Գրվածք</value>
+  </data>
+  <data name="IslamSource_Translation" xml:space="preserve">
+    <value>Թարգմանություն</value>
+  </data>
+  <data name="IslamSource_Units" xml:space="preserve">
+    <value>Միավորներ</value>
+  </data>
+  <data name="IslamSource_Viewer" xml:space="preserve">
+    <value>Դիտակ</value>
+  </data>
+  <data name="IslamSource_Yes" xml:space="preserve">
+    <value>Այո</value>
+  </data>
+  <data name="IslamInfo_Trash" xml:space="preserve">
+    <value>Աղբ</value>
+  </data>
+  <data name="IslamInfo_Bad" xml:space="preserve">
+    <value>Վատ</value>
+  </data>
+  <data name="IslamInfo_Driver" xml:space="preserve">
+    <value>Սարքավար.</value>
+  </data>
+  <data name="IslamInfo_Successful" xml:space="preserve">
+    <value>Հաջող</value>
+  </data>
+  <data name="IslamInfo_Preferred" xml:space="preserve">
+    <value>Նախընտրած</value>
+  </data>
+  <data name="IslamInfo_Starting" xml:space="preserve">
+    <value>Մեկնարկում...</value>
+  </data>
+  <data name="IslamInfo_Joined" xml:space="preserve">
+    <value>Միակցված</value>
+  </data>
+  <data name="IslamInfo_Separated" xml:space="preserve">
+    <value>Առանձնացված</value>
+  </data>
+  <data name="IslamInfo_Exchange" xml:space="preserve">
+    <value>Exchange()</value>
+  </data>
+  <data name="IslamInfo_NeitherASubsetOfNorEqualTo" xml:space="preserve">
+    <value>Ենթաբազմություն չէ եւ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_NeitherASupersetOfNorEqualTo" xml:space="preserve">
+    <value>Վերբազմություն չէ եւ հավասար չէ</value>
+  </data>
+  <data name="IslamInfo_NotASubsetOf" xml:space="preserve">
+    <value>Ենթակազմ չէ</value>
+  </data>
+  <data name="IslamInfo_NotASupersetOf" xml:space="preserve">
+    <value>Վրակազմ չէ</value>
+  </data>
+  <data name="IslamInfo_Root" xml:space="preserve">
+    <value>Արմատ</value>
+  </data>
+  <data name="IslamInfo_Result" xml:space="preserve">
+    <value>Արդյունք</value>
+  </data>
+  <data name="IslamInfo_Active" xml:space="preserve">
+    <value>Գործուն</value>
+  </data>
 </root>

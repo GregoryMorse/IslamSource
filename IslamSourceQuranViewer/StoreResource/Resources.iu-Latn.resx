@@ -27,4 +27,22 @@
   <data name="Size.Text" xml:space="preserve">
     <value>Angininga</value>
   </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Nalunaikkutat</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Ijjuarli Ilijagakkuvimmut</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Nuqqakainnaq</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Nilliatittijjut</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Katujji</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Mitsaanut</value>
+  </data>
 </root>

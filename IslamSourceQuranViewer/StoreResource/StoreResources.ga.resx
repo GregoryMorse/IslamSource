@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Quran Word ag Word Aistriúchán</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>transliteration</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Arabach</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Verse ag Verse</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Focal ag Word</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>quran</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>breathnóir quran</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Qur'an lena Araibis, transliteration agus focal aistriúcháin le focal agus véarsa trí véarsa don fhoghlaim, ag déanamh staidéir, taighde, memorization, machnamh agus máistreacht tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Príomh Quran bhreathnóir.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>quran</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Aistriúchán</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>transliteration</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Arabach</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Qur'an</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Koran</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al-Quran</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Príomh Quran bhreathnóir.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Leagan Tosaigh.</value>
   </data>
 </root>

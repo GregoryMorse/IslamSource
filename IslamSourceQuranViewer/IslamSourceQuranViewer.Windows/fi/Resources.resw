@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Oletuskieli</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Lisää kirjanmerkki</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Kirjanmerkit</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopioi leikepöydälle</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Siirry jae</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Keskeytä</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Toista</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Lausuja</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Poista kirjanmerkki</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Aseta toiston jae</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Näytä eksegeesin</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>jaa</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Lisää jae etukäteen viive</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Etukäteen jae automaattisesti</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Viive pituuden jae ennen etenee</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Kiehkura moodi</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Tietoja</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabia Koraanin metatiedot ja kaikki käännökset ja audio recitations paitsi edellä lueteltuja hyvitetään Tanzil Project (http://tanzil.net). 
+Unkarin käännös Koraanin by suudella Zsuzsanna Halima hyvitetään Magyar Iszlam (http://magyariszlam.hu). 
+Englanti käännös Koraania Maulana Muhammad Alin hyvitetään Lahore Ahmadiyya liikkeen Islam (http://www.aaiil.org). 
+Morfologia tiedot ja käännös sana kerrallaan kunniaksi Koraanin Arabia Corpus (http://corpus.quran.com). 
+Indonesian sana kerrallaan käännös luottoa Al Quran Indonesia (http://www.alquran-indonesia.com/web/quran). 
+Urdu sana kerrallaan käännös Hafiz Nazar Muhammad tilillesi helppoa Koraani Wa Hadees (http://www.easyquranwahadees.com). 
+Muut sana kerrallaan käännökset sekä muut käännökset ohjelmassa hyvitetään Microsoft käännös-palvelu (http://www.microsoft.com/en-us/translator) ja Google Translate (http://translate.google.com) ja voi olla tarkka.  Malesian sana kerrallaan Koraanin lähde on Indonesian.  Muut sana kerrallaan Koraanin lähde on Englanti Koraanin Arabia Corpus. 
+Muut äänen recitations bitrate JavaScript hyvitetään joka Ayah (http://www.everyayah.com). 
+Unicodea hyvitetään The Unicode Consortiumilta (http://www.unicode.org)</value>
+  </data>
 </root>

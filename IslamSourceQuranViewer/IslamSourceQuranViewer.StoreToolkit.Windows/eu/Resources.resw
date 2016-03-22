@@ -30,4 +30,25 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Hizkuntza lehenetsia</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;Gehitu laster-marka</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Laster-markak</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopiatu arbelera</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausatu</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Erreproduzitu</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Partekatu</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Honi buruz</value>
+  </data>
 </root>

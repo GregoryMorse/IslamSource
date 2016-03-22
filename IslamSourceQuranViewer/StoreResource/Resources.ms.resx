@@ -60,4 +60,63 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Bahasa Lalai</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Tambah penanda buku</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Penanda buku</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Salin kepada Papan Klip</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Pergi ke ayat</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Jeda</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Judul</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Mengalih keluar penanda buku</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Main semula set ayat</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Menunjukkan takwil Al-Qur'an</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Kongsi</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Tambahan ayat pendahuluan kelewatan</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Pendahuluan ayat secara automatik</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Tempoh kelewatan ayat sebelum memajukan</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Menggelung mod</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Perihal</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Al-Quran Bahasa Arab dengan metadata dan semua terjemahan dan mengaji beberapa audio kecuali yang disenaraikan dikreditkan ke projek Tanzil (http://tanzil.net). 
+Hungary terjemahan daripada Al-Quran dengan Kiss Zsuzsanna Halima dikreditkan ke Magyar Iszlam (http://magyariszlam.hu). 
+Bahasa Melayu terjemahan daripada Al-Qur'an oleh Maulana Muhammad Ali dikreditkan ke The Kuala Lumpur Ahmadiyya pergerakan dalam Islam (http://www.aaiil.org). Data 
+morfologi dan terjemahan perkataan demi perkataan Bahasa Melayu kredit kepada korpus Bahasa Arab Al-Quran (http://corpus.quran.com). 
+Kredit terjemahan perkataan demi perkataan Indonesia ke Indonesia Al-Quran (http://www.alquran-indonesia.com/web/quran). 
+Terjemahan perkataan demi perkataan Urdu oleh Hafiz Nazar Muhammad dikreditkan ke mudah Al-Quran Wa Hadees (http://www.easyquranwahadees.com). 
+Terjemahan perkataan demi perkataan lain serta terjemahan lain dalam program dikreditkan kepada penyedia terjemahan Microsoft (http://www.microsoft.com/en-us/translator) dan Terjemahan Google (http://translate.google.com) dan mungkin tidak tepat.  Bagi Al-Quran perkataan demi perkataan Malaysia, sumber adalah Indonesia.  Bagi semua lain-lain perkataan demi perkataan Al-Qur'an, sumber adalah korpus Bahasa Arab Al-Quran dalam Bahasa Inggeris. 
+Mengaji audio lain dengan bitrate ditunjukkan dikreditkan kepada tiap-tiap Ayah (http://www.everyayah.com). 
+Data Unikod yang dikreditkan kepada The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
 </root>

@@ -30,4 +30,25 @@
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Susmaya görə dil</value>
   </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;Əlfəcin əlavə et</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Əlfəcinlər</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Mübadilə buferinə köçür</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>İfa et</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Paylaş</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Haqqında</value>
+  </data>
 </root>

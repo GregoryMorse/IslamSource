@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Quran palabra por palabra Tradución</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>transliteración</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Árabe</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Verso por verso</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Palabra por palabra</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>Quran</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>espectador Corán</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Corán co seu Árabe, transliteración e tradución da palabra por palabra e verso por verso para a aprendizaxe, estudo, investigación, memorización, reflexión e dominio de tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>espectador Corán principal.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>Quran</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Tradución</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>transliteración</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Árabe</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Corán</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Corán</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al Quran</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>espectador Corán principal.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Versión inicial.</value>
   </data>
 </root>

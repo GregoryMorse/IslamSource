@@ -12,11 +12,11 @@
         </trans-unit>
         <trans-unit id="AppFeature1" translate="yes" xml:space="preserve">
           <source>Quran Word by Word Translation</source>
-          <target state="new">Quran Word by Word Translation</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn orð af orði Þýðing</target>
         </trans-unit>
         <trans-unit id="AppFeature2" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">umritun</target>
         </trans-unit>
         <trans-unit id="AppFeature3" translate="yes" xml:space="preserve">
           <source>Arabic</source>
@@ -24,39 +24,39 @@
         </trans-unit>
         <trans-unit id="AppFeature4" translate="yes" xml:space="preserve">
           <source>Verse by Verse</source>
-          <target state="new">Verse by Verse</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Verse eftir Verse</target>
         </trans-unit>
         <trans-unit id="AppFeature5" translate="yes" xml:space="preserve">
           <source>Word by Word</source>
-          <target state="new">Word by Word</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Orð af orði</target>
         </trans-unit>
         <trans-unit id="AppFeature6" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn</target>
         </trans-unit>
         <trans-unit id="AppFeature7" translate="yes" xml:space="preserve">
           <source>Quran viewer</source>
-          <target state="new">Quran viewer</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn áhorfandi</target>
         </trans-unit>
         <trans-unit id="AppFeature8" translate="yes" xml:space="preserve">
           <source>Tajweed</source>
-          <target state="new">Tajweed</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tajweed</target>
         </trans-unit>
         <trans-unit id="CopyrightTrademarkInfo" translate="yes" xml:space="preserve">
           <source>(c) GMorseCode</source>
-          <target state="new">(c) GMorseCode</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">(C) GMorseCode</target>
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</source>
-          <target state="new">Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn með sína arabíska, umritun og þýðingar orð með orði og vers eftir vers til náms, nám, rannsóknir, memorization, íhugun og leikni tajweed.</target>
         </trans-unit>
         <trans-unit id="DesktopScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Main Quran áhorfandi.</target>
         </trans-unit>
         <trans-unit id="Keyword1" translate="yes" xml:space="preserve">
           <source>Quran</source>
-          <target state="new">Quran</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn</target>
         </trans-unit>
         <trans-unit id="Keyword2" translate="yes" xml:space="preserve">
           <source>Translation</source>
@@ -64,7 +64,7 @@
         </trans-unit>
         <trans-unit id="Keyword3" translate="yes" xml:space="preserve">
           <source>Transliteration</source>
-          <target state="new">Transliteration</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">umritun</target>
         </trans-unit>
         <trans-unit id="Keyword4" translate="yes" xml:space="preserve">
           <source>Arabic</source>
@@ -72,19 +72,19 @@
         </trans-unit>
         <trans-unit id="Keyword5" translate="yes" xml:space="preserve">
           <source>Qur'an</source>
-          <target state="new">Qur'an</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn</target>
         </trans-unit>
         <trans-unit id="Keyword6" translate="yes" xml:space="preserve">
           <source>Koran</source>
-          <target state="new">Koran</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Koran</target>
         </trans-unit>
         <trans-unit id="Keyword7" translate="yes" xml:space="preserve">
           <source>Al-Quran</source>
-          <target state="new">Al-Quran</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Al-Quran</target>
         </trans-unit>
         <trans-unit id="MobileScreenshotDescription1" translate="yes" xml:space="preserve">
           <source>Main Quran viewer.</source>
-          <target state="new">Main Quran viewer.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Main Quran áhorfandi.</target>
         </trans-unit>
         <trans-unit id="PrivacyPolicy" translate="yes" xml:space="preserve">
           <source></source>
@@ -92,7 +92,7 @@
         </trans-unit>
         <trans-unit id="ReleaseNotes" translate="yes" xml:space="preserve">
           <source>Initial Version.</source>
-          <target state="new">Initial Version.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Byrjunar Version.</target>
         </trans-unit>
         <trans-unit id="SupportContactInfo" translate="yes" xml:space="preserve">
           <source>gregory.morse@live.com</source>
@@ -113,7 +113,7 @@
       <group id="STORERESOURCE/RESOURCES.RESX" datatype="resx">
         <trans-unit id="ArabicFont.Text" translate="yes" xml:space="preserve">
           <source>Arabic Font</source>
-          <target state="new">Arabic Font</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabic Font</target>
         </trans-unit>
         <trans-unit id="Back.Label" translate="yes" xml:space="preserve">
           <source>Back</source>
@@ -125,15 +125,15 @@
         </trans-unit>
         <trans-unit id="DefaultFontSize.Label" translate="yes" xml:space="preserve">
           <source>Default Font Size</source>
-          <target state="new">Default Font Size</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sjálfgefið Leturstærð</target>
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</source>
-          <target state="new">Qur'an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed.</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn með sína arabíska, umritun og þýðingar orð með orði og vers eftir vers til náms, nám, rannsóknir, memorization, íhugun og leikni tajweed.</target>
         </trans-unit>
         <trans-unit id="DisplayName" translate="yes" xml:space="preserve">
           <source>Quran Word By Word</source>
-          <target state="new">Quran Word By Word</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Kóraninn orð af orði</target>
         </trans-unit>
         <trans-unit id="IncreaseFontSize.Label" translate="yes" xml:space="preserve">
           <source>Increase Font Size</source>
@@ -141,11 +141,11 @@
         </trans-unit>
         <trans-unit id="OtherTextFont.Text" translate="yes" xml:space="preserve">
           <source>Other Text Font</source>
-          <target state="new">Other Text Font</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Annað Textaletur</target>
         </trans-unit>
         <trans-unit id="Render.Label" translate="yes" xml:space="preserve">
           <source>Render</source>
-          <target state="new">Render</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Render</target>
         </trans-unit>
         <trans-unit id="Settings.Label" translate="yes" xml:space="preserve">
           <source>Settings</source>
@@ -153,15 +153,15 @@
         </trans-unit>
         <trans-unit id="ShowTranslation.Text" translate="yes" xml:space="preserve">
           <source>Show Translation</source>
-          <target state="new">Show Translation</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sýna Þýðing</target>
         </trans-unit>
         <trans-unit id="ShowTransliteration.Text" translate="yes" xml:space="preserve">
           <source>Show Transliteration</source>
-          <target state="new">Show Transliteration</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sýna Umritun</target>
         </trans-unit>
         <trans-unit id="ShowWordByWord.Text" translate="yes" xml:space="preserve">
           <source>Show Word By Word</source>
-          <target state="new">Show Word By Word</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sýna orð af orði</target>
         </trans-unit>
         <trans-unit id="Size.Text" translate="yes" xml:space="preserve">
           <source>Size</source>
@@ -169,55 +169,87 @@
         </trans-unit>
         <trans-unit id="UseRecitationRuleColoring.Text" translate="yes" xml:space="preserve">
           <source>Use Recitation Rule Coloring</source>
-          <target state="new">Use Recitation Rule Coloring</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nota leiklestur reglu litarefni</target>
         </trans-unit>
         <trans-unit id="DefaultLanguage.Text" translate="yes" xml:space="preserve">
           <source>Default Language</source>
-          <target state="new">Default Language</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sjálfgefið tungumál</target>
         </trans-unit>
         <trans-unit id="AddBookmark.Text" translate="yes" xml:space="preserve">
           <source>Add Bookmark</source>
-          <target state="new">Add Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bæta við &amp;bókamerki</target>
         </trans-unit>
         <trans-unit id="Bookmarks.Text" translate="yes" xml:space="preserve">
           <source>Bookmarks</source>
-          <target state="new">Bookmarks</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">&amp;Bókamerki</target>
         </trans-unit>
         <trans-unit id="CopyToClipboard.Text" translate="yes" xml:space="preserve">
           <source>Copy to Clipboard</source>
-          <target state="new">Copy to Clipboard</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Afrita yfir á klippiborð</target>
         </trans-unit>
         <trans-unit id="GoToVerse.Label" translate="yes" xml:space="preserve">
           <source>Go to Verse</source>
-          <target state="new">Go to Verse</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Fara á Vers</target>
         </trans-unit>
         <trans-unit id="Pause.Label" translate="yes" xml:space="preserve">
           <source>Pause</source>
-          <target state="new">Pause</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Hlé</target>
         </trans-unit>
         <trans-unit id="Play.Label" translate="yes" xml:space="preserve">
           <source>Play</source>
-          <target state="new">Play</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Spila</target>
         </trans-unit>
         <trans-unit id="Reciter.Text" translate="yes" xml:space="preserve">
           <source>Reciter</source>
-          <target state="new">Reciter</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">upplesari</target>
         </trans-unit>
         <trans-unit id="RemoveBookmark.Text" translate="yes" xml:space="preserve">
           <source>Remove Bookmark</source>
-          <target state="new">Remove Bookmark</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">fjarlægja bókamerki</target>
         </trans-unit>
         <trans-unit id="SetPlaybackVerse.Text" translate="yes" xml:space="preserve">
           <source>Set Playback Verse</source>
-          <target state="new">Set Playback Verse</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Setja spilun Verse</target>
         </trans-unit>
         <trans-unit id="ShowExegesis.Text" translate="yes" xml:space="preserve">
           <source>Show Exegesis</source>
-          <target state="new">Show Exegesis</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sýna sönnum</target>
         </trans-unit>
         <trans-unit id="Share.Text" translate="yes" xml:space="preserve">
           <source>Share</source>
-          <target state="new">Share</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Samnýtt svæði</target>
+        </trans-unit>
+        <trans-unit id="AdditionalVerseAdvanceDelay.Text" translate="yes" xml:space="preserve">
+          <source>Additional Verse Advance Delay</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Viðbótarupplýsingar Verse Advance Töf</target>
+        </trans-unit>
+        <trans-unit id="AutomaticAdvanceVerse.Text" translate="yes" xml:space="preserve">
+          <source>Advance Verse Automatically</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Advance Verse sjálfkrafa</target>
+        </trans-unit>
+        <trans-unit id="DelayVerseLengthBeforeAdvancing.Text" translate="yes" xml:space="preserve">
+          <source>Delay Length of Verse Before Advancing</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Seinkun Lengd Verse áður en lengra</target>
+        </trans-unit>
+        <trans-unit id="Looping.Text" translate="yes" xml:space="preserve">
+          <source>Looping Mode</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">lykkja Mode</target>
+        </trans-unit>
+        <trans-unit id="About.Label" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Um</target>
+        </trans-unit>
+        <trans-unit id="AboutInfo.Text" translate="yes" xml:space="preserve">
+          <source>Arabic Qur'an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
+Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
+Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
+Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabic Kóraninn með lýsigögnum og öllum þýðingum og sumir hljómflutnings recitations nema þau sem talin eru lögð til Tanzil Project (http://tanzil.net).&lt;br&gt;</target>
         </trans-unit>
       </group>
     </body>
