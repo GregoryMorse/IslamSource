@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>อักษรอาหรับ</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>กลับ</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>ลดขนาดฟอนต์</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>ขนาดแบบอักษรเริ่มต้น</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>อัลกุรอานภาษาอาหรับ สากล และแปลคำโดย word และข้อโดยข้อการเรียนรู้ การศึกษา วิจัย เปียโน และของนบีมุฮัมมัด</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>อัลกุรอานคำโดยคำ</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>เพิ่มขนาดฟอนต์</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>แบบอักษรข้อความอื่น ๆ</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>สร้างภาพ</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>แสดงการแปล</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>แสดงสากล</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>ดู Word จาก Word</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>ขนาด</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>ใช้ระบายสีอ่านกฎ</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>ภาษาเริ่มต้น</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>เพิ่มคั่นหน้าเว็บ</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>ที่คั่นหน้า</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>คัดลอกไปที่คลิปบอร์ด</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>ไปที่ข้อ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>หยุดชั่วขณะ</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>เล่น</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>อ่านโดยกอรี</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>ลบที่คั่นหน้า</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>ข้อกำหนดการเล่น</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>ดูตัฟสีรอัล</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>แชร์</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>ข้อเพิ่มเติมล่วงหน้าล่าช้า</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>ล่วงหน้าข้อโดยอัตโนมัติ</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>ความยาวหน่วงเวลาข้อพระคัมภีร์ก่อนที่จะก้าวหน้า</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>โหมดการวนรอบ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>เกี่ยวกับ</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>อัลกุ รอานภาษาอาหรับกับข้อมูลเมตา และแปล และอ่านเสียงบางยกเว้นผู้แสดงเข้าโครงการ Tanzil (http://tanzil.net) 
+ฮังการีแปลของอัลกุรอาน โดยจูบฮาลิมา Zsuzsanna เข้า Magyar Iszlam (http://magyariszlam.hu) 
+ภาษาอังกฤษการแปลของ Qu'ran โดย Maulana หมัดอาลีเข้าเคลื่อนไหว Ahmadiyya ฮอร์การในอิสลาม (http://www.aaiil.org) ข้อมูล
+สัณฐานวิทยาและคำโดยคำแปลเครดิตคอร์ปัสอาหรับ Quranic (http://corpus.quran.com) 
+เครดิตแปลคำโดยคำที่อินโดนีเซียอินโดนีเซียคัมภีร์อัลกุรอาน (http://www.alquran-indonesia.com/web/quran) 
+อูรดูคำโดยคำแปล โดยมุมุ Nazar เข้าง่ายอัลกุรอานวา Hadees (http://www.easyquranwahadees.com) 
+อื่น ๆ แปลคำโดยคำรวมทั้งคำแปลอื่น ๆ ในโปรแกรมเครดิตที่ผู้ให้บริการการแปลของ Microsoft (http://www.microsoft.com/en-us/translator) และ Google แปล (http://translate.google.com) และอาจไม่ถูกต้อง  สำหรับอัลกุรอานคำโดยคำมาเลเซีย แหล่งที่มาคืออินโดนีเซีย  สำหรับทั้งหมดอื่น ๆ คำโดยคำอัลกุรอาน แหล่งที่มาคือ Corpus Quranic ภาษาอาหรับ ภาษาอังกฤษ 
+การอ่านอื่น ๆ เสียงกับอัตราบิตที่แสดงเครดิตทุก Ayah (http://www.everyayah.com) 
+ข้อมูล Unicode ที่เข้าใน Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>

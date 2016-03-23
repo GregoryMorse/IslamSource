@@ -732,20 +732,8 @@
   <data name="IslamInfo_AnticlockwiseTopSemicircleArrow" xml:space="preserve">
     <value>Halbkreisförmiger Pfeil oben gegen den Uhrzeigersinn</value>
   </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" xml:space="preserve">
-    <value>Gegen den Uhrzeigersinn Dreieck Spitze unten U-förmigen Pfeil</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" xml:space="preserve">
-    <value>Gegen den Uhrzeigersinn Dreieck Spitze links U-förmigen Pfeil</value>
-  </data>
   <data name="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" xml:space="preserve">
     <value>Gegen den Uhrzeigersinn Dreieck Spitze Open Circle Pfeil</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" xml:space="preserve">
-    <value>Gegen den Uhrzeigersinn Dreieck Spitze rechts U-förmigen Pfeil</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" xml:space="preserve">
-    <value>Gegen den Uhrzeigersinn Dreieck Spitze Top U-förmigen Pfeil</value>
   </data>
   <data name="IslamInfo_AnyKindOfHurt" xml:space="preserve">
     <value>Jede Art von Schaden</value>
@@ -4623,72 +4611,6 @@
   <data name="IslamInfo_CjkRadicalCow" xml:space="preserve">
     <value>CJK-Radical Kuh</value>
   </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedBird" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Vogel</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedCart" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Warenkorb</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedDragon" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEat" xml:space="preserve">
-    <value>CJK-Radical C-vereinfachte Essen</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEven" xml:space="preserve">
-    <value>CJK-Radical C-sogar vereinfacht</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFish" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Fisch</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFly" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Fly</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFrog" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Frosch</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGate" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Gate</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGold" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Gold</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedHorse" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Pferd</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLeaf" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Leaf</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLong" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte lange</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSalt" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Salz</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSee" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte siehe</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedShell" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Shell</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSilk" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Seide</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSpeech" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Rede</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" xml:space="preserve">
-    <value>CJK-Radical C-vereinfachte gegerbtes Leder</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTooth" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Zahn</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Turtle</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedWind" xml:space="preserve">
-    <value>CJK-Radical C - vereinfachte Wind</value>
-  </data>
   <data name="IslamInfo_CjkRadicalDeath" xml:space="preserve">
     <value>CJK-Radical Tod</value>
   </data>
@@ -4748,18 +4670,6 @@
   </data>
   <data name="IslamInfo_CjkRadicalJade" xml:space="preserve">
     <value>CJK-Radical Jade</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedDragon" xml:space="preserve">
-    <value>CJK-Radical J - vereinfacht Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedEven" xml:space="preserve">
-    <value>CJK-Radical J-sogar vereinfacht</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTooth" xml:space="preserve">
-    <value>CJK-Radical J - vereinfacht Zahn</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK-Radical J - vereinfacht Turtle</value>
   </data>
   <data name="IslamInfo_CjkRadicalKnifeOne" xml:space="preserve">
     <value>CJK-Radical Messer ein</value>
@@ -7365,9 +7275,6 @@
   <data name="IslamInfo_DoubleStrokeNotSign" xml:space="preserve">
     <value>Doppelter Querstrich, kein Zeichen</value>
   </data>
-  <data name="IslamInfo_DoubleStruckN-ArySummation" xml:space="preserve">
-    <value>Doppel geschlagen N - äre Summierung</value>
-  </data>
   <data name="IslamInfo_DoubleSubset" xml:space="preserve">
     <value>Doppelte Teilmenge</value>
   </data>
@@ -9155,9 +9062,6 @@
   </data>
   <data name="IslamInfo_Gold" xml:space="preserve">
     <value>Gold</value>
-  </data>
-  <data name="IslamInfo_GoldCoinOf2.975Grams" xml:space="preserve">
-    <value>Goldmünze Of2.975 Gramm</value>
   </data>
   <data name="IslamInfo_Goliath" xml:space="preserve">
     <value>Goliath</value>
@@ -12654,9 +12558,6 @@
   <data name="IslamInfo_LeftSquareBracketWithUnderbar" xml:space="preserve">
     <value>Eckige Klammer links mit Unterstrich</value>
   </data>
-  <data name="IslamInfo_LeftS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Links S-förmige Behältertrennzeichen</value>
-  </data>
   <data name="IslamInfo_LeftSubstitutionBracket" xml:space="preserve">
     <value>Linke Ersetzungsklammer</value>
   </data>
@@ -15024,54 +14925,6 @@
   <data name="IslamInfo_NarrowNoBreakSpace" xml:space="preserve">
     <value>Keine Pause-Raum schmal</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N-ärer eingekreister Punktoperator</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N - äre Eingekreiste zzgl. Operator</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N - äre kreiste Mal Operator</value>
-  </data>
-  <data name="IslamInfo_N-AryCoproduct" xml:space="preserve">
-    <value>N - äre Koprodukt</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N - äre Kreuzung</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N - äre logische und</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N - äre logische oder</value>
-  </data>
-  <data name="IslamInfo_N-AryProduct" xml:space="preserve">
-    <value>N - ary Produkt</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N - äre Quadrat Schnittmengen-Operator</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N - äre Platz Union-Operator</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N - äre Summierung</value>
-  </data>
-  <data name="IslamInfo_N-AryTimesOperator" xml:space="preserve">
-    <value>N - äre Mal Operator</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N - äre Union</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N - äre Union-Operator mit Dot</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N - äre Union-Operator mit Plus</value>
-  </data>
-  <data name="IslamInfo_N-AryWhiteVerticalBar" xml:space="preserve">
-    <value>N - äre weiß vertikaler Leiste</value>
-  </data>
   <data name="IslamInfo_Nasalization" xml:space="preserve">
     <value>Nasalization</value>
   </data>
@@ -15791,12 +15644,6 @@
   </data>
   <data name="IslamInfo_OpenCentreTeardropSpokedAsterisk" xml:space="preserve">
     <value>Offenes Zentrum tropfenförmigen Sternchen</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputH-TypeSymbol" xml:space="preserve">
-    <value>Symbol der Leerlaufspannung Ausgabe H - Typ</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputL-TypeSymbol" xml:space="preserve">
-    <value>L - Type Symbol Leerlaufspannung Ausgabe</value>
   </data>
   <data name="IslamInfo_Openers" xml:space="preserve">
     <value>Opener</value>
@@ -18324,9 +18171,6 @@
   <data name="IslamInfo_RightSquareBracketWithUnderbar" xml:space="preserve">
     <value>Eckige Klammer rechts mit Unterstrich</value>
   </data>
-  <data name="IslamInfo_RightS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Richtigen S-förmige Behältertrennzeichen</value>
-  </data>
   <data name="IslamInfo_RightSubstitutionBracket" xml:space="preserve">
     <value>Rechte Ersetzungsklammer</value>
   </data>
@@ -19190,9 +19034,6 @@
   </data>
   <data name="IslamInfo_Silver" xml:space="preserve">
     <value>Silber</value>
-  </data>
-  <data name="IslamInfo_SilverOf2.975Grams" xml:space="preserve">
-    <value>Gramm Silber Of2.975</value>
   </data>
   <data name="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" xml:space="preserve">
     <value>Ähnlich wie oben größer als über Gleichheitszeichen</value>
@@ -21288,9 +21129,6 @@
   <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
     <value>Alle Hörer alles sehen</value>
   </data>
-  <data name="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" xml:space="preserve">
-    <value>Alle Hörer sehen, dem Meister der Helfer die oberste vergebender den mächtigen das Knower von Feinheiten, die bekanntlich ein gesamter die ungeraden das schöne die schüchtern Coverer großen die extrem erhöht man die einzige vorherrschenden man alle</value>
-  </data>
   <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
     <value>Der alle Hörer die enge</value>
   </data>
@@ -21338,9 +21176,6 @@
   </data>
   <data name="IslamInfo_TheBeneficent" xml:space="preserve">
     <value>Die segensreichen</value>
-  </data>
-  <data name="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" xml:space="preserve">
-    <value>Die segensreichen der barmherzigen das ewige Herr der heiligste die Verkörperung des Friedens Tee-Ei des Glaubens der Bewahrer der Sicherheit die mächtigen ein gesamter zwingend der bedeutendste des Schöpfers Evolver die einwandfreie Shaper-das erste unendlichen letzte die wahrnehmbar die unmerklichen</value>
   </data>
   <data name="IslamInfo_TheBenignOne" xml:space="preserve">
     <value>Die benigne ein</value>
@@ -21431,9 +21266,6 @@
   </data>
   <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
     <value>Die Verkörperung der Wahrheit</value>
-  </data>
-  <data name="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" xml:space="preserve">
-    <value>Die Verkörperung der Wahrheit die klare starke derjenige die Firma eine die jemals Leben existiere eine erhabene derjenige selbst die herrliche Anerkennung diejenige Clemens derjenige das alles durchdringende man das alles wissen eines der Akzeptor jemals Reue kluges man selbst ausreichend One die reiche eine allein derjenige der obersten Anbieter schließen die antwortende ein vergebender liebevolle derjenige</value>
   </data>
   <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
     <value>Der ewige Erbe</value>
@@ -21539,9 +21371,6 @@
   </data>
   <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
     <value>Die große vergebende</value>
-  </data>
-  <data name="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" xml:space="preserve">
-    <value>Die große vergebende gutartige derjenige der obersten Gewährer die großzügigsten der heiligste von allen Schwäche der ewige Erbe der allerhöchsten Meister den einen Gott wird1</value>
   </data>
   <data name="IslamInfo_TheGreatOne" xml:space="preserve">
     <value>Großen</value>
@@ -21822,9 +21651,6 @@
   <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
     <value>Das schützende assoziierte Unternehmen</value>
   </data>
-  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" xml:space="preserve">
-    <value>Die schützen der alleinigen lobenswerten ein Associate die Bewachung eine glorreiche derjenige der obersten Solver alle beobachteten Zeugen die Terminüberwachung ein Zauderer des allmächtigen König alle autorisierenden derjenige der Brilliant Taker den Extender der Anbieter die unwiderstehlich derjenige belohnt</value>
-  </data>
   <data name="IslamInfo_TheProvider" xml:space="preserve">
     <value>Der Anbieter</value>
   </data>
@@ -21842,9 +21668,6 @@
   </data>
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>Die Erkennung der Allwissende One</value>
-  </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
-    <value>Die Erkennung der Gewährer die allmächtige eine der kontinuierliche Schöpfer der Besitzer der Gesamt-Anbieter das universelle der wachsamen ein Trustee der Macher des guten der Abrechnung ein derjenige, der dem sanfte Heilmittel die Geber die tragenden ein Herrn die guten die unparteiische Richter des obersten Leiter Brunnen der Wahrheit zu Ehren</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>Die Erkennung der Clemens One</value>
@@ -22233,9 +22056,6 @@
   <data name="IslamInfo_Thunderstorm" xml:space="preserve">
     <value>Gewitter</value>
   </data>
-  <data name="IslamInfo_TibetanAstrologicalSign-KhyudPa" xml:space="preserve">
-    <value>Tibetischen astrologischen Zeichen-Khyud-Pa</value>
-  </data>
   <data name="IslamInfo_TibetanAstrologicalSignSdongTshugs" xml:space="preserve">
     <value>Tibetanisches astrologisches Zeichen Sdong Tshugs</value>
   </data>
@@ -22260,9 +22080,6 @@
   <data name="IslamInfo_TibetanMarkNgasBzungSgorRtags" xml:space="preserve">
     <value>Tibetanisches Zeichen Ngas Bzung Sgor Rtags</value>
   </data>
-  <data name="IslamInfo_TibetanMarkTsa-Phru" xml:space="preserve">
-    <value>Tibetische Mark Tsa-Phru</value>
-  </data>
   <data name="IslamInfo_TibetanSignLciRtags" xml:space="preserve">
     <value>Tibetanisches Zeichen Lci Rtags</value>
   </data>
@@ -22280,9 +22097,6 @@
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterA" xml:space="preserve">
     <value>Teilverbundener tibetanischer Buchstabe A</value>
-  </data>
-  <data name="IslamInfo_TibetanSubjoinedLetter-A" xml:space="preserve">
-    <value>Tibetischen Nachnahmesendung Brief-A</value>
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterBa" xml:space="preserve">
     <value>Teilverbundener tibetanischer Buchstabe Ba</value>
@@ -24215,9 +24029,6 @@
   </data>
   <data name="IslamInfo_WeightMeasureOf2172Grams" xml:space="preserve">
     <value>Gewicht Maß Of2172 Gramm</value>
-  </data>
-  <data name="IslamInfo_WeightMeasureOf4.25Grams" xml:space="preserve">
-    <value>Gewicht Maß Of4.25 Gramm</value>
   </data>
   <data name="IslamInfo_WeightMeasureOf543Grams" xml:space="preserve">
     <value>Gewicht Maß Of543 Gramm</value>
@@ -26784,19 +26595,7 @@
   <data name="IslamInfo_GreatMasterpiece12" xml:space="preserve">
     <value>Meisterwerk</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece12-1" xml:space="preserve">
-    <value>Meisterwerk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-2" xml:space="preserve">
-    <value>Meisterwerk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-3" xml:space="preserve">
-    <value>Meisterwerk</value>
-  </data>
   <data name="IslamInfo_GreatMasterpiece13" xml:space="preserve">
-    <value>Meisterwerk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece13-1" xml:space="preserve">
     <value>Meisterwerk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece14" xml:space="preserve">
@@ -26824,9 +26623,6 @@
     <value>Meisterwerk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece22" xml:space="preserve">
-    <value>Meisterwerk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece22-1" xml:space="preserve">
     <value>Meisterwerk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece23" xml:space="preserve">
@@ -26875,9 +26671,6 @@
     <value>Meisterwerk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece38" xml:space="preserve">
-    <value>Meisterwerk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece38-1" xml:space="preserve">
     <value>Meisterwerk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece39" xml:space="preserve">
@@ -27003,212 +26796,20 @@
   <data name="IslamInfo_Maxim1" xml:space="preserve">
     <value>Ersten Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
-    <value>Ersten Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
-    <value>Ersten Maxim zweite Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
-    <value>Ersten Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
-    <value>Ersten Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
-    <value>Ersten Maxim fünfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
-    <value>Ersten Maxim erste außergewöhnliche Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
-    <value>Ersten Sekunde Maxim außergewöhnliche Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim2" xml:space="preserve">
     <value>Zweite Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
-    <value>Zweite Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
-    <value>Zweite Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
-    <value>Zweite Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
-    <value>Zweite Maxim zweite Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
-    <value>Zweite Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
-    <value>Zweite Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
-    <value>Zweite Maxim fünfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
-    <value>Zweite Maxim sechste Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
-    <value>Zweite Maxim siebte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
-    <value>Zweite Maxim achte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
-    <value>Zweite Maxim neunte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
-    <value>Zweite Tochter Maxim Zehntel-Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
-    <value>Zweite Maxim elfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
-    <value>Zweite Tochter Maxim Twelfth-Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
-    <value>Zweite Maxim dreizehnten Tochtergesellschaft Maxim</value>
   </data>
   <data name="IslamInfo_Maxim3" xml:space="preserve">
     <value>Dritte Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
-    <value>Dritte Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
-    <value>Dritte Maxim zweite Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
-    <value>Dritte Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
-    <value>Dritte Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
-    <value>Dritte Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
-    <value>Dritte Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
-    <value>Dritte Maxim fünfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
-    <value>Dritte Maxim sechste Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
-    <value>Dritte Maxim siebte Tochter Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim4" xml:space="preserve">
     <value>Vierte Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
-    <value>Vierte Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
-    <value>Vierte Maxim zweite Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
-    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
-    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
-    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
-    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
-    <value>Vierte Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
-    <value>Vierte Maxim fünfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
-    <value>Vierte Maxim sechste Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
-    <value>Vierte Maxim siebte Tochter Maxim</value>
   </data>
   <data name="IslamInfo_Maxim5" xml:space="preserve">
     <value>Fünfte Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
-    <value>Fünfte Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
-    <value>Fünfte Maxim zweite Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
-    <value>Fünfte Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
-    <value>Fünfte Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
-    <value>Fünfte Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
-    <value>Fünfte Maxim fünfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
-    <value>Fünfte Maxim sechste Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
-    <value>Fünfte Maxim siebte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
-    <value>Fünfte Maxim achte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
-    <value>Fünfte Maxim neunte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
-    <value>Fünfte Maxim Zehntel Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
-    <value>Fünfte Maxim elfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
-    <value>Fünfte Maxim Twelfth Tochtergesellschaft Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Sechste Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
-    <value>Sechste Maxim erste Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
-    <value>Sechste Maxim zweite Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
-    <value>Sechste Maxim dritte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
-    <value>Sechste Maxim vierte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
-    <value>Sechste Maxim fünfte Tochtergesellschaft Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
-    <value>Sechste Maxim sechste Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
-    <value>Sechste Maxim siebte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
-    <value>Sechste Maxim achte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
-    <value>Sechste Maxim achte Tochter Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
-    <value>Sechste Maxim neunte Tochtergesellschaft Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp1" xml:space="preserve">
     <value>Erste umfassende Maxim</value>
@@ -27467,9 +27068,6 @@
   </data>
   <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Die Kombination von X unten</value>
-  </data>
-  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
-    <value>Die Kombination von X - X unten</value>
   </data>
   <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Anführungszeichen doppelte hohe Reversed9</value>
@@ -27938,5 +27536,404 @@
   </data>
   <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
     <value>Erinnerung nach dem Gebet</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" xml:space="preserve">
+    <value>Gegen den Uhrzeigersinn Dreieck Spitze unten U-förmigen Pfeil</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" xml:space="preserve">
+    <value>Gegen den Uhrzeigersinn Dreieck Spitze links U-förmigen Pfeil</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" xml:space="preserve">
+    <value>Gegen den Uhrzeigersinn Dreieck Spitze rechts U-förmigen Pfeil</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" xml:space="preserve">
+    <value>Gegen den Uhrzeigersinn Dreieck Spitze Top U-förmigen Pfeil</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedBird" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Vogel</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedCart" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Warenkorb</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedDragon" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEat" xml:space="preserve">
+    <value>CJK-Radical C-vereinfachte Essen</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEven" xml:space="preserve">
+    <value>CJK-Radical C-sogar vereinfacht</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFish" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Fisch</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFly" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Fly</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFrog" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Frosch</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGate" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Gate</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGold" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Gold</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedHorse" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Pferd</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLeaf" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Leaf</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLong" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte lange</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSalt" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Salz</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSee" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte siehe</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedShell" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Shell</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSilk" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Seide</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSpeech" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Rede</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTannedLeather" xml:space="preserve">
+    <value>CJK-Radical C-vereinfachte gegerbtes Leder</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTooth" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Zahn</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTurtle" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Turtle</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedWind" xml:space="preserve">
+    <value>CJK-Radical C - vereinfachte Wind</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedDragon" xml:space="preserve">
+    <value>CJK-Radical J - vereinfacht Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedEven" xml:space="preserve">
+    <value>CJK-Radical J-sogar vereinfacht</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTooth" xml:space="preserve">
+    <value>CJK-Radical J - vereinfacht Zahn</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTurtle" xml:space="preserve">
+    <value>CJK-Radical J - vereinfacht Turtle</value>
+  </data>
+  <data name="IslamInfo_CombiningXXBelow" xml:space="preserve">
+    <value>Die Kombination von X - X unten</value>
+  </data>
+  <data name="IslamInfo_DoubleStruckNArySummation" xml:space="preserve">
+    <value>Doppel geschlagen N - äre Summierung</value>
+  </data>
+  <data name="IslamInfo_LeftSShapedBagDelimiter" xml:space="preserve">
+    <value>Links S-förmige Behältertrennzeichen</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N-ärer eingekreister Punktoperator</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N - äre Eingekreiste zzgl. Operator</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N - äre kreiste Mal Operator</value>
+  </data>
+  <data name="IslamInfo_NAryCoproduct" xml:space="preserve">
+    <value>N - äre Koprodukt</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N - äre Kreuzung</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N - äre logische und</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N - äre logische oder</value>
+  </data>
+  <data name="IslamInfo_NAryProduct" xml:space="preserve">
+    <value>N - ary Produkt</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N - äre Quadrat Schnittmengen-Operator</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N - äre Platz Union-Operator</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N - äre Summierung</value>
+  </data>
+  <data name="IslamInfo_NAryTimesOperator" xml:space="preserve">
+    <value>N - äre Mal Operator</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N - äre Union</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N - äre Union-Operator mit Dot</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N - äre Union-Operator mit Plus</value>
+  </data>
+  <data name="IslamInfo_NAryWhiteVerticalBar" xml:space="preserve">
+    <value>N - äre weiß vertikaler Leiste</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputHTypeSymbol" xml:space="preserve">
+    <value>Symbol der Leerlaufspannung Ausgabe H - Typ</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputLTypeSymbol" xml:space="preserve">
+    <value>L - Type Symbol Leerlaufspannung Ausgabe</value>
+  </data>
+  <data name="IslamInfo_RightSShapedBagDelimiter" xml:space="preserve">
+    <value>Richtigen S-förmige Behältertrennzeichen</value>
+  </data>
+  <data name="IslamInfo_TibetanAstrologicalSignKhyudPa" xml:space="preserve">
+    <value>Tibetischen astrologischen Zeichen-Khyud-Pa</value>
+  </data>
+  <data name="IslamInfo_TibetanMarkTsaPhru" xml:space="preserve">
+    <value>Tibetische Mark Tsa-Phru</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_1" xml:space="preserve">
+    <value>Meisterwerk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_2" xml:space="preserve">
+    <value>Meisterwerk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_3" xml:space="preserve">
+    <value>Meisterwerk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece13_1" xml:space="preserve">
+    <value>Meisterwerk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece22_1" xml:space="preserve">
+    <value>Meisterwerk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece38_1" xml:space="preserve">
+    <value>Meisterwerk</value>
+  </data>
+  <data name="IslamInfo_Maxim1_1" xml:space="preserve">
+    <value>Ersten Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_2" xml:space="preserve">
+    <value>Ersten Maxim zweite Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_3" xml:space="preserve">
+    <value>Ersten Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_4" xml:space="preserve">
+    <value>Ersten Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_5" xml:space="preserve">
+    <value>Ersten Maxim fünfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_1" xml:space="preserve">
+    <value>Ersten Maxim erste außergewöhnliche Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_2" xml:space="preserve">
+    <value>Ersten Sekunde Maxim außergewöhnliche Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_1" xml:space="preserve">
+    <value>Zweite Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_2" xml:space="preserve">
+    <value>Zweite Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_3" xml:space="preserve">
+    <value>Zweite Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_2" xml:space="preserve">
+    <value>Zweite Maxim zweite Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_3" xml:space="preserve">
+    <value>Zweite Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_4" xml:space="preserve">
+    <value>Zweite Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_5" xml:space="preserve">
+    <value>Zweite Maxim fünfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_6" xml:space="preserve">
+    <value>Zweite Maxim sechste Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_7" xml:space="preserve">
+    <value>Zweite Maxim siebte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_8" xml:space="preserve">
+    <value>Zweite Maxim achte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_9" xml:space="preserve">
+    <value>Zweite Maxim neunte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_10" xml:space="preserve">
+    <value>Zweite Tochter Maxim Zehntel-Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_11" xml:space="preserve">
+    <value>Zweite Maxim elfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_12" xml:space="preserve">
+    <value>Zweite Tochter Maxim Twelfth-Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_13" xml:space="preserve">
+    <value>Zweite Maxim dreizehnten Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_1" xml:space="preserve">
+    <value>Dritte Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_2" xml:space="preserve">
+    <value>Dritte Maxim zweite Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_1" xml:space="preserve">
+    <value>Dritte Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_2" xml:space="preserve">
+    <value>Dritte Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_1" xml:space="preserve">
+    <value>Dritte Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_2" xml:space="preserve">
+    <value>Dritte Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_5" xml:space="preserve">
+    <value>Dritte Maxim fünfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_6" xml:space="preserve">
+    <value>Dritte Maxim sechste Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_7" xml:space="preserve">
+    <value>Dritte Maxim siebte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_1" xml:space="preserve">
+    <value>Vierte Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_2" xml:space="preserve">
+    <value>Vierte Maxim zweite Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_1" xml:space="preserve">
+    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_2" xml:space="preserve">
+    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_3" xml:space="preserve">
+    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_4" xml:space="preserve">
+    <value>Vierte Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_4" xml:space="preserve">
+    <value>Vierte Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_5" xml:space="preserve">
+    <value>Vierte Maxim fünfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_6" xml:space="preserve">
+    <value>Vierte Maxim sechste Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_7" xml:space="preserve">
+    <value>Vierte Maxim siebte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_1" xml:space="preserve">
+    <value>Fünfte Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_2" xml:space="preserve">
+    <value>Fünfte Maxim zweite Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_3" xml:space="preserve">
+    <value>Fünfte Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4" xml:space="preserve">
+    <value>Fünfte Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4_1" xml:space="preserve">
+    <value>Fünfte Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_5" xml:space="preserve">
+    <value>Fünfte Maxim fünfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_6" xml:space="preserve">
+    <value>Fünfte Maxim sechste Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_7" xml:space="preserve">
+    <value>Fünfte Maxim siebte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_8" xml:space="preserve">
+    <value>Fünfte Maxim achte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_9" xml:space="preserve">
+    <value>Fünfte Maxim neunte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_10" xml:space="preserve">
+    <value>Fünfte Maxim Zehntel Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_11" xml:space="preserve">
+    <value>Fünfte Maxim elfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_12" xml:space="preserve">
+    <value>Fünfte Maxim Twelfth Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_1" xml:space="preserve">
+    <value>Sechste Maxim erste Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_2" xml:space="preserve">
+    <value>Sechste Maxim zweite Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_3" xml:space="preserve">
+    <value>Sechste Maxim dritte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_4" xml:space="preserve">
+    <value>Sechste Maxim vierte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_5" xml:space="preserve">
+    <value>Sechste Maxim fünfte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_6" xml:space="preserve">
+    <value>Sechste Maxim sechste Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_7" xml:space="preserve">
+    <value>Sechste Maxim siebte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_1" xml:space="preserve">
+    <value>Sechste Maxim achte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_2" xml:space="preserve">
+    <value>Sechste Maxim achte Tochter Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_9" xml:space="preserve">
+    <value>Sechste Maxim neunte Tochtergesellschaft Maxim</value>
+  </data>
+  <data name="IslamInfo_GoldCoinOf2_975Grams" xml:space="preserve">
+    <value>Goldmünze von 2,975 Gramm</value>
+  </data>
+  <data name="IslamInfo_SilverOf2_975Grams" xml:space="preserve">
+    <value>Silber von 2,975 Gramm</value>
+  </data>
+  <data name="IslamInfo_WeightMeasureOf4_25Grams" xml:space="preserve">
+    <value>Gewichtseinheit von 4_25 Gramm</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch2" xml:space="preserve">
+    <value>Alle Hörer sehen, dem Meister der Helfer die oberste vergebender den mächtigen das Knower von Feinheiten, die bekanntlich ein gesamter die ungeraden das schöne die schüchtern Coverer großen die extrem erhöht man die einzige vorherrschenden man alle</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch1" xml:space="preserve">
+    <value>Die segensreichen der barmherzigen das ewige Herr der heiligste die Verkörperung des Friedens Tee-Ei des Glaubens der Bewahrer der Sicherheit die mächtigen ein gesamter zwingend der bedeutendste des Schöpfers Evolver die einwandfreie Shaper-das erste unendlichen letzte die wahrnehmbar die unmerklichen</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch3" xml:space="preserve">
+    <value>Die Verkörperung der Wahrheit die klare starke derjenige die Firma eine die jemals Leben existiere eine erhabene derjenige selbst die herrliche Anerkennung diejenige Clemens derjenige das alles durchdringende man das alles wissen eines der Akzeptor jemals Reue kluges man selbst ausreichend One die reiche eine allein derjenige der obersten Anbieter schließen die antwortende ein vergebender liebevolle derjenige</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch6" xml:space="preserve">
+    <value>Die große vergebende gutartige derjenige der obersten Gewährer die großzügigsten der heiligste von allen Schwäche der ewige Erbe der allerhöchsten Meister den einen Gott wird1</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch4" xml:space="preserve">
+    <value>Die schützen der alleinigen lobenswerten ein Associate die Bewachung eine glorreiche derjenige der obersten Solver alle beobachteten Zeugen die Terminüberwachung ein Zauderer des allmächtigen König alle autorisierenden derjenige der Brilliant Taker den Extender der Anbieter die unwiderstehlich derjenige belohnt</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
+    <value>Die Erkennung der Gewährer die allmächtige eine der kontinuierliche Schöpfer der Besitzer der Gesamt-Anbieter das universelle der wachsamen ein Trustee der Macher des guten der Abrechnung ein derjenige, der dem sanfte Heilmittel die Geber die tragenden ein Herrn die guten die unparteiische Richter des obersten Leiter Brunnen der Wahrheit zu Ehren</value>
   </data>
 </root>

@@ -732,20 +732,8 @@
   <data name="IslamInfo_AnticlockwiseTopSemicircleArrow" xml:space="preserve">
     <value>Urnega vrh Polkrožna puščica</value>
   </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" xml:space="preserve">
-    <value>Urnega trikotnik z naslovom dnu U-oblike puščico</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" xml:space="preserve">
-    <value>Urnega Triangle vodi levo U-oblike puščico</value>
-  </data>
   <data name="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" xml:space="preserve">
     <value>Urnega trikotnik z naslovom odprto krog puščico</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" xml:space="preserve">
-    <value>Urnega trikotnik vodil desno U-oblike puščico</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" xml:space="preserve">
-    <value>Urnega trikotnik z naslovom Top U-oblike puščico</value>
   </data>
   <data name="IslamInfo_AnyKindOfHurt" xml:space="preserve">
     <value>Kakršno koli poškodoval</value>
@@ -4623,72 +4611,6 @@
   <data name="IslamInfo_CjkRadicalCow" xml:space="preserve">
     <value>Poenotena radikalno krava</value>
   </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedBird" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno ptic</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedCart" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno voziček</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedDragon" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno zmaj</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEat" xml:space="preserve">
-    <value>Poenotena radikalno C-poenostavljeno jesti</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEven" xml:space="preserve">
-    <value>Poenotena radikalno C-poenostavljeno celo</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFish" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno rib</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFly" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno letenje</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFrog" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno žaba</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGate" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno Gate</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGold" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno zlata</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedHorse" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno konja</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLeaf" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno listov</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLong" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno dolgo</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSalt" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno sol</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSee" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno glej</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedShell" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno Shell</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSilk" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno svile</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSpeech" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno govora</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" xml:space="preserve">
-    <value>Poenotena radikalno C-poenostavljeno strojeno usnje</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTooth" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno zob</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTurtle" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno želva</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedWind" xml:space="preserve">
-    <value>Poenotena radikalno C - poenostavljeno veter</value>
-  </data>
   <data name="IslamInfo_CjkRadicalDeath" xml:space="preserve">
     <value>Poenotena radikalno smrti</value>
   </data>
@@ -4748,18 +4670,6 @@
   </data>
   <data name="IslamInfo_CjkRadicalJade" xml:space="preserve">
     <value>Poenotena radikalne Jade</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedDragon" xml:space="preserve">
-    <value>Poenotena radikalno J - poenostavljeno zmaj</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedEven" xml:space="preserve">
-    <value>Poenotena radikalno J-poenostavljeno celo</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTooth" xml:space="preserve">
-    <value>Poenotena radikalno J - poenostavljeno zob</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTurtle" xml:space="preserve">
-    <value>Poenotena radikalno J - poenostavljeno želva</value>
   </data>
   <data name="IslamInfo_CjkRadicalKnifeOne" xml:space="preserve">
     <value>Poenotena radikalno nož eno</value>
@@ -7365,9 +7275,6 @@
   <data name="IslamInfo_DoubleStrokeNotSign" xml:space="preserve">
     <value>Dvojno kapi ne podpiše</value>
   </data>
-  <data name="IslamInfo_DoubleStruckN-ArySummation" xml:space="preserve">
-    <value>Dvojno udari N - te limite vsoto</value>
-  </data>
   <data name="IslamInfo_DoubleSubset" xml:space="preserve">
     <value>Dvojna podmnožica</value>
   </data>
@@ -9155,9 +9062,6 @@
   </data>
   <data name="IslamInfo_Gold" xml:space="preserve">
     <value>Zlata</value>
-  </data>
-  <data name="IslamInfo_GoldCoinOf2.975Grams" xml:space="preserve">
-    <value>Zlatnik Of2.975 gramov</value>
   </data>
   <data name="IslamInfo_Goliath" xml:space="preserve">
     <value>Goljat</value>
@@ -12654,9 +12558,6 @@
   <data name="IslamInfo_LeftSquareBracketWithUnderbar" xml:space="preserve">
     <value>Levi oglati oklepaj z podčrt</value>
   </data>
-  <data name="IslamInfo_LeftS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Levi S-Bag ločilo v obliki</value>
-  </data>
   <data name="IslamInfo_LeftSubstitutionBracket" xml:space="preserve">
     <value>Zamenjave levi oklepaj</value>
   </data>
@@ -15024,54 +14925,6 @@
   <data name="IslamInfo_NarrowNoBreakSpace" xml:space="preserve">
     <value>Ozke odmor prostora</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N - terna obkrožena pika</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N - ti z obkroženo Plus operaterja</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N - ti z obkroženo operator</value>
-  </data>
-  <data name="IslamInfo_N-AryCoproduct" xml:space="preserve">
-    <value>N - Koprodukt te limite</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N - terna presek</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N - ti logičen in</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N - ti logičen ali</value>
-  </data>
-  <data name="IslamInfo_N-AryProduct" xml:space="preserve">
-    <value>N - terna izdelka</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N - Operator te limite kvadratni presek</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N - Operator te kvadratne unije</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N - terna vsoto</value>
-  </data>
-  <data name="IslamInfo_N-AryTimesOperator" xml:space="preserve">
-    <value>N - terna krat operaterja</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N - ta unija</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N - Operator te unije s piko</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N - Operator te unije s Plus</value>
-  </data>
-  <data name="IslamInfo_N-AryWhiteVerticalBar" xml:space="preserve">
-    <value>N - terna bela navpičnica</value>
-  </data>
   <data name="IslamInfo_Nasalization" xml:space="preserve">
     <value>Nasalization</value>
   </data>
@@ -15791,12 +15644,6 @@
   </data>
   <data name="IslamInfo_OpenCentreTeardropSpokedAsterisk" xml:space="preserve">
     <value>Odprtim središčem solze Spoked zvezdica</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputH-TypeSymbol" xml:space="preserve">
-    <value>Odprto vezje simbol izhodno H tipa</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputL-TypeSymbol" xml:space="preserve">
-    <value>Odprto vezje simbol izhodno L tipa</value>
   </data>
   <data name="IslamInfo_Openers" xml:space="preserve">
     <value>Za odpiranje</value>
@@ -18324,9 +18171,6 @@
   <data name="IslamInfo_RightSquareBracketWithUnderbar" xml:space="preserve">
     <value>Desni oglati oklepaj z podčrt</value>
   </data>
-  <data name="IslamInfo_RightS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Prav S-Bag ločilo v obliki</value>
-  </data>
   <data name="IslamInfo_RightSubstitutionBracket" xml:space="preserve">
     <value>Pravica zamenjave nosilec</value>
   </data>
@@ -19190,9 +19034,6 @@
   </data>
   <data name="IslamInfo_Silver" xml:space="preserve">
     <value>srebrna</value>
-  </data>
-  <data name="IslamInfo_SilverOf2.975Grams" xml:space="preserve">
-    <value>Srebrni Of2.975 gramov</value>
   </data>
   <data name="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" xml:space="preserve">
     <value>Podobno zgoraj večja od zgoraj je enako</value>
@@ -21288,9 +21129,6 @@
   <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
     <value>Vse poslušalca vse videnje</value>
   </data>
-  <data name="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" xml:space="preserve">
-    <value>Vse poslušalca vse videli mojster pomočnik vrhovnega Pardoner, ki je močan poznavalec razlik je vsi zavedamo čudno lepe sramežljive Coverer je velik je zelo vzvišeno, eden edini vse prevladujejo ena</value>
-  </data>
   <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
     <value>Vse poslušalca blizu</value>
   </data>
@@ -21338,9 +21176,6 @@
   </data>
   <data name="IslamInfo_TheBeneficent" xml:space="preserve">
     <value>Je blagodejno</value>
-  </data>
-  <data name="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" xml:space="preserve">
-    <value>Je blagodejno je usmiljen večno gospod najbolj sveto utelešenje mir Infuser vere ohranjevalca varnosti mogočni eno vse nujni vladajoč nedoločni zaimek tvorec Evolver brezhibno oblikovalec, ki je zelo prvi neskončno zadnjikrat nedoločni zaimek je zaznaven je neopazno</value>
   </data>
   <data name="IslamInfo_TheBenignOne" xml:space="preserve">
     <value>Je benigni</value>
@@ -21431,9 +21266,6 @@
   </data>
   <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
     <value>Utelešenje resnice</value>
-  </data>
-  <data name="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" xml:space="preserve">
-    <value>Utelešenje resnice, je jasno je močno je trdno je vedno živijo samo eno nobeno je vzvišen je veličasten je ob priznavanju Klemen je vse eno prežema vse eno vedo kdaj prevzemnik kesanje eno pametno sebe dovolj ena je bogat je edini najvišji ponudnik blizu odgovarja tisti Pardoner je ljubeč</value>
   </data>
   <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
     <value>Večno dediču</value>
@@ -21539,9 +21371,6 @@
   </data>
   <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
     <value>Veliko Forgiver</value>
-  </data>
-  <data name="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" xml:space="preserve">
-    <value>Veliko Forgiver benigne tisti vrhovni Bestower, najbolj radodaren najbolj sveto od vseh šibkost večno dediču najvišjega poveljnika enega Boga Final1</value>
   </data>
   <data name="IslamInfo_TheGreatOne" xml:space="preserve">
     <value>Je velik</value>
@@ -21822,9 +21651,6 @@
   <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
     <value>Zaščita sodelavec</value>
   </data>
-  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" xml:space="preserve">
-    <value>Za zaščito sodelavec je edini hvalevreden je varovanje je slavno vrhovni reševalca vse opazovanje priča je pospeševanja Oklijevalo vsemogočna kralj je vse avtoritativni briljantno kupcu Extender je nepremagljiv ponudnik tisti, ki Recompenses</value>
-  </data>
   <data name="IslamInfo_TheProvider" xml:space="preserve">
     <value>Ponudnik</value>
   </data>
@@ -21842,9 +21668,6 @@
   </data>
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>Prepoznavalnik vse vedo tisti</value>
-  </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
-    <value>Prepoznavalnik Bestower je vsemogočen stalno ustvarjalec lastnik celotne ponudnika univerzalne Trustee budnim eno Doer dobre računanju en tisti, ki zdravi nežno Giver je ohranjanje gospod dobro je nepristranski sodnik vrhovnega v čast vodnjak glavo resnice</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>Prepoznavalnik je Klemen</value>
@@ -22233,9 +22056,6 @@
   <data name="IslamInfo_Thunderstorm" xml:space="preserve">
     <value>Delno oblacno</value>
   </data>
-  <data name="IslamInfo_TibetanAstrologicalSign-KhyudPa" xml:space="preserve">
-    <value>Tibetanski astrološki znak-Khyud Pa</value>
-  </data>
   <data name="IslamInfo_TibetanAstrologicalSignSdongTshugs" xml:space="preserve">
     <value>Tibetanski astrološki znak Sdong Tshugs</value>
   </data>
@@ -22260,9 +22080,6 @@
   <data name="IslamInfo_TibetanMarkNgasBzungSgorRtags" xml:space="preserve">
     <value>Tibetanski Mark NGA Bzung Sgor Rtags</value>
   </data>
-  <data name="IslamInfo_TibetanMarkTsa-Phru" xml:space="preserve">
-    <value>Tibetanski Mark Tsa-Phru</value>
-  </data>
   <data name="IslamInfo_TibetanSignLciRtags" xml:space="preserve">
     <value>Tibetanski znak Lci Rtags</value>
   </data>
@@ -22280,9 +22097,6 @@
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterA" xml:space="preserve">
     <value>Tibetanski Subjoined črka A</value>
-  </data>
-  <data name="IslamInfo_TibetanSubjoinedLetter-A" xml:space="preserve">
-    <value>Tibetanski Subjoined pismo-A</value>
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterBa" xml:space="preserve">
     <value>Tibetanski Subjoined pismo Ba</value>
@@ -24215,9 +24029,6 @@
   </data>
   <data name="IslamInfo_WeightMeasureOf2172Grams" xml:space="preserve">
     <value>Teža Of2172 gram ukrep</value>
-  </data>
-  <data name="IslamInfo_WeightMeasureOf4.25Grams" xml:space="preserve">
-    <value>Teža Of4.25 gram ukrep</value>
   </data>
   <data name="IslamInfo_WeightMeasureOf543Grams" xml:space="preserve">
     <value>Teža Of543 gram ukrep</value>
@@ -26784,19 +26595,7 @@
   <data name="IslamInfo_GreatMasterpiece12" xml:space="preserve">
     <value>Veliko mojstrovina</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece12-1" xml:space="preserve">
-    <value>Veliko mojstrovina</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-2" xml:space="preserve">
-    <value>Veliko mojstrovina</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-3" xml:space="preserve">
-    <value>Veliko mojstrovina</value>
-  </data>
   <data name="IslamInfo_GreatMasterpiece13" xml:space="preserve">
-    <value>Veliko mojstrovina</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece13-1" xml:space="preserve">
     <value>Veliko mojstrovina</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece14" xml:space="preserve">
@@ -26824,9 +26623,6 @@
     <value>Veliko mojstrovina</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece22" xml:space="preserve">
-    <value>Veliko mojstrovina</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece22-1" xml:space="preserve">
     <value>Veliko mojstrovina</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece23" xml:space="preserve">
@@ -26875,9 +26671,6 @@
     <value>Veliko mojstrovina</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece38" xml:space="preserve">
-    <value>Veliko mojstrovina</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece38-1" xml:space="preserve">
     <value>Veliko mojstrovina</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece39" xml:space="preserve">
@@ -27003,212 +26796,20 @@
   <data name="IslamInfo_Maxim1" xml:space="preserve">
     <value>Prva Maksima</value>
   </data>
-  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
-    <value>Prvi Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
-    <value>Prvi drugi Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
-    <value>Prvi Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
-    <value>Prvi Maxim četrti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
-    <value>Prvi Maxim peti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
-    <value>Prvi Maxim prvi izjemnih Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
-    <value>Prvi drugi Maxim izjemnih Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim2" xml:space="preserve">
     <value>Drugi Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
-    <value>Drugi Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
-    <value>Drugi Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
-    <value>Drugi Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
-    <value>Drugi Maxim drugega podrejenega Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
-    <value>Drugi Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
-    <value>Drugi Maxim četrti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
-    <value>Drugi Maxim peti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
-    <value>Drugi Maxim šesti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
-    <value>Drugi Maxim sedmi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
-    <value>Drugi Maxim osmi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
-    <value>Drugi Maxim deveti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
-    <value>Drugi Maxim desetino subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
-    <value>Drugi Maxim enajsti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
-    <value>Drugi Maxim dvanajsta subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
-    <value>Drugi Maxim Trinajste subsidiarne Maxim</value>
   </data>
   <data name="IslamInfo_Maxim3" xml:space="preserve">
     <value>Tretji Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
-    <value>Tretji Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
-    <value>Tretji Maxim drugega podrejenega Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
-    <value>Tretje tretji Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
-    <value>Tretje tretji Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
-    <value>Tretji četrti Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
-    <value>Tretji četrti Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
-    <value>Tretji Maxim peti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
-    <value>Tretji Maxim šesti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
-    <value>Tretji Maxim sedmi subsidiarne Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim4" xml:space="preserve">
     <value>Četrti Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
-    <value>Četrti Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
-    <value>Četrti Maxim drugega podrejenega Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
-    <value>Četrti Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
-    <value>Četrti Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
-    <value>Četrti Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
-    <value>Četrti Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
-    <value>Četrti četrti Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
-    <value>Četrti Maxim peti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
-    <value>Četrti Maxim šesti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
-    <value>Četrti Maxim sedmi subsidiarne Maxim</value>
   </data>
   <data name="IslamInfo_Maxim5" xml:space="preserve">
     <value>Peti Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
-    <value>Peti Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
-    <value>Peti Maxim drugega podrejenega Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
-    <value>Peti Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
-    <value>Peti Maxim četrti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
-    <value>Peti Maxim četrti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
-    <value>Peti peti Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
-    <value>Peti šesti Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
-    <value>Peti Maxim sedmi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
-    <value>Peti Maxim osmi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
-    <value>Peti Maxim deveti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
-    <value>Peti Maxim desetino subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
-    <value>Peti Maxim enajsti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
-    <value>Peti Maxim dvanajsta subsidiarne Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Šesti Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
-    <value>Šesti Maxim prvi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
-    <value>Šesti drugi Maxim subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
-    <value>Šesti Maxim tretje subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
-    <value>Šesti Maxim četrti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
-    <value>Šesti Maxim peti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
-    <value>Šesti Maxim šesti subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
-    <value>Šesti Maxim sedmi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
-    <value>Šesti Maxim osmi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
-    <value>Šesti Maxim osmi subsidiarne Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
-    <value>Šesti Maxim deveti subsidiarne Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp1" xml:space="preserve">
     <value>Prvi celovit Maxim</value>
@@ -27467,9 +27068,6 @@
   </data>
   <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Združuje X spodaj</value>
-  </data>
-  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
-    <value>Združuje X - X spodaj</value>
   </data>
   <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Zakonsko visoke Reversed9 narekovaj</value>
@@ -27938,5 +27536,404 @@
   </data>
   <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
     <value>Spomina po molitvi</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" xml:space="preserve">
+    <value>Urnega trikotnik z naslovom dnu U-oblike puščico</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" xml:space="preserve">
+    <value>Urnega Triangle vodi levo U-oblike puščico</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" xml:space="preserve">
+    <value>Urnega trikotnik vodil desno U-oblike puščico</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" xml:space="preserve">
+    <value>Urnega trikotnik z naslovom Top U-oblike puščico</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedBird" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno ptic</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedCart" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno voziček</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedDragon" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno zmaj</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEat" xml:space="preserve">
+    <value>Poenotena radikalno C-poenostavljeno jesti</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEven" xml:space="preserve">
+    <value>Poenotena radikalno C-poenostavljeno celo</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFish" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno rib</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFly" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno letenje</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFrog" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno žaba</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGate" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno Gate</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGold" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno zlata</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedHorse" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno konja</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLeaf" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno listov</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLong" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno dolgo</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSalt" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno sol</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSee" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno glej</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedShell" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno Shell</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSilk" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno svile</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSpeech" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno govora</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTannedLeather" xml:space="preserve">
+    <value>Poenotena radikalno C-poenostavljeno strojeno usnje</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTooth" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno zob</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTurtle" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno želva</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedWind" xml:space="preserve">
+    <value>Poenotena radikalno C - poenostavljeno veter</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedDragon" xml:space="preserve">
+    <value>Poenotena radikalno J - poenostavljeno zmaj</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedEven" xml:space="preserve">
+    <value>Poenotena radikalno J-poenostavljeno celo</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTooth" xml:space="preserve">
+    <value>Poenotena radikalno J - poenostavljeno zob</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTurtle" xml:space="preserve">
+    <value>Poenotena radikalno J - poenostavljeno želva</value>
+  </data>
+  <data name="IslamInfo_CombiningXXBelow" xml:space="preserve">
+    <value>Združuje X - X spodaj</value>
+  </data>
+  <data name="IslamInfo_DoubleStruckNArySummation" xml:space="preserve">
+    <value>Dvojno udari N - te limite vsoto</value>
+  </data>
+  <data name="IslamInfo_LeftSShapedBagDelimiter" xml:space="preserve">
+    <value>Levi S-Bag ločilo v obliki</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N - terna obkrožena pika</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N - ti z obkroženo Plus operaterja</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N - ti z obkroženo operator</value>
+  </data>
+  <data name="IslamInfo_NAryCoproduct" xml:space="preserve">
+    <value>N - Koprodukt te limite</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N - terna presek</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N - ti logičen in</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N - ti logičen ali</value>
+  </data>
+  <data name="IslamInfo_NAryProduct" xml:space="preserve">
+    <value>N - terna izdelka</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N - Operator te limite kvadratni presek</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N - Operator te kvadratne unije</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N - terna vsoto</value>
+  </data>
+  <data name="IslamInfo_NAryTimesOperator" xml:space="preserve">
+    <value>N - terna krat operaterja</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N - ta unija</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N - Operator te unije s piko</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N - Operator te unije s Plus</value>
+  </data>
+  <data name="IslamInfo_NAryWhiteVerticalBar" xml:space="preserve">
+    <value>N - terna bela navpičnica</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputHTypeSymbol" xml:space="preserve">
+    <value>Odprto vezje simbol izhodno H tipa</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputLTypeSymbol" xml:space="preserve">
+    <value>Odprto vezje simbol izhodno L tipa</value>
+  </data>
+  <data name="IslamInfo_RightSShapedBagDelimiter" xml:space="preserve">
+    <value>Prav S-Bag ločilo v obliki</value>
+  </data>
+  <data name="IslamInfo_TibetanAstrologicalSignKhyudPa" xml:space="preserve">
+    <value>Tibetanski astrološki znak-Khyud Pa</value>
+  </data>
+  <data name="IslamInfo_TibetanMarkTsaPhru" xml:space="preserve">
+    <value>Tibetanski Mark Tsa-Phru</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_1" xml:space="preserve">
+    <value>Veliko mojstrovina</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_2" xml:space="preserve">
+    <value>Veliko mojstrovina</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_3" xml:space="preserve">
+    <value>Veliko mojstrovina</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece13_1" xml:space="preserve">
+    <value>Veliko mojstrovina</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece22_1" xml:space="preserve">
+    <value>Veliko mojstrovina</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece38_1" xml:space="preserve">
+    <value>Veliko mojstrovina</value>
+  </data>
+  <data name="IslamInfo_Maxim1_1" xml:space="preserve">
+    <value>Prvi Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_2" xml:space="preserve">
+    <value>Prvi drugi Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_3" xml:space="preserve">
+    <value>Prvi Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_4" xml:space="preserve">
+    <value>Prvi Maxim četrti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_5" xml:space="preserve">
+    <value>Prvi Maxim peti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_1" xml:space="preserve">
+    <value>Prvi Maxim prvi izjemnih Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_2" xml:space="preserve">
+    <value>Prvi drugi Maxim izjemnih Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_1" xml:space="preserve">
+    <value>Drugi Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_2" xml:space="preserve">
+    <value>Drugi Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_3" xml:space="preserve">
+    <value>Drugi Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_2" xml:space="preserve">
+    <value>Drugi Maxim drugega podrejenega Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_3" xml:space="preserve">
+    <value>Drugi Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_4" xml:space="preserve">
+    <value>Drugi Maxim četrti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_5" xml:space="preserve">
+    <value>Drugi Maxim peti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_6" xml:space="preserve">
+    <value>Drugi Maxim šesti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_7" xml:space="preserve">
+    <value>Drugi Maxim sedmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_8" xml:space="preserve">
+    <value>Drugi Maxim osmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_9" xml:space="preserve">
+    <value>Drugi Maxim deveti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_10" xml:space="preserve">
+    <value>Drugi Maxim desetino subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_11" xml:space="preserve">
+    <value>Drugi Maxim enajsti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_12" xml:space="preserve">
+    <value>Drugi Maxim dvanajsta subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_13" xml:space="preserve">
+    <value>Drugi Maxim Trinajste subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_1" xml:space="preserve">
+    <value>Tretji Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_2" xml:space="preserve">
+    <value>Tretji Maxim drugega podrejenega Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_1" xml:space="preserve">
+    <value>Tretje tretji Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_2" xml:space="preserve">
+    <value>Tretje tretji Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_1" xml:space="preserve">
+    <value>Tretji četrti Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_2" xml:space="preserve">
+    <value>Tretji četrti Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_5" xml:space="preserve">
+    <value>Tretji Maxim peti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_6" xml:space="preserve">
+    <value>Tretji Maxim šesti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_7" xml:space="preserve">
+    <value>Tretji Maxim sedmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_1" xml:space="preserve">
+    <value>Četrti Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_2" xml:space="preserve">
+    <value>Četrti Maxim drugega podrejenega Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_1" xml:space="preserve">
+    <value>Četrti Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_2" xml:space="preserve">
+    <value>Četrti Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_3" xml:space="preserve">
+    <value>Četrti Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_4" xml:space="preserve">
+    <value>Četrti Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_4" xml:space="preserve">
+    <value>Četrti četrti Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_5" xml:space="preserve">
+    <value>Četrti Maxim peti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_6" xml:space="preserve">
+    <value>Četrti Maxim šesti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_7" xml:space="preserve">
+    <value>Četrti Maxim sedmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_1" xml:space="preserve">
+    <value>Peti Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_2" xml:space="preserve">
+    <value>Peti Maxim drugega podrejenega Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_3" xml:space="preserve">
+    <value>Peti Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4" xml:space="preserve">
+    <value>Peti Maxim četrti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4_1" xml:space="preserve">
+    <value>Peti Maxim četrti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_5" xml:space="preserve">
+    <value>Peti peti Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_6" xml:space="preserve">
+    <value>Peti šesti Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_7" xml:space="preserve">
+    <value>Peti Maxim sedmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_8" xml:space="preserve">
+    <value>Peti Maxim osmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_9" xml:space="preserve">
+    <value>Peti Maxim deveti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_10" xml:space="preserve">
+    <value>Peti Maxim desetino subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_11" xml:space="preserve">
+    <value>Peti Maxim enajsti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_12" xml:space="preserve">
+    <value>Peti Maxim dvanajsta subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_1" xml:space="preserve">
+    <value>Šesti Maxim prvi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_2" xml:space="preserve">
+    <value>Šesti drugi Maxim subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_3" xml:space="preserve">
+    <value>Šesti Maxim tretje subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_4" xml:space="preserve">
+    <value>Šesti Maxim četrti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_5" xml:space="preserve">
+    <value>Šesti Maxim peti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_6" xml:space="preserve">
+    <value>Šesti Maxim šesti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_7" xml:space="preserve">
+    <value>Šesti Maxim sedmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_1" xml:space="preserve">
+    <value>Šesti Maxim osmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_2" xml:space="preserve">
+    <value>Šesti Maxim osmi subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_9" xml:space="preserve">
+    <value>Šesti Maxim deveti subsidiarne Maxim</value>
+  </data>
+  <data name="IslamInfo_GoldCoinOf2_975Grams" xml:space="preserve">
+    <value>Zlatnik 2.975 gramov</value>
+  </data>
+  <data name="IslamInfo_SilverOf2_975Grams" xml:space="preserve">
+    <value>Srebrna 2.975 gramov</value>
+  </data>
+  <data name="IslamInfo_WeightMeasureOf4_25Grams" xml:space="preserve">
+    <value>Tehtanja 4_25 gramov</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch2" xml:space="preserve">
+    <value>Vse poslušalca vse videli mojster pomočnik vrhovnega Pardoner, ki je močan poznavalec razlik je vsi zavedamo čudno lepe sramežljive Coverer je velik je zelo vzvišeno, eden edini vse prevladujejo ena</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch1" xml:space="preserve">
+    <value>Je blagodejno je usmiljen večno gospod najbolj sveto utelešenje mir Infuser vere ohranjevalca varnosti mogočni eno vse nujni vladajoč nedoločni zaimek tvorec Evolver brezhibno oblikovalec, ki je zelo prvi neskončno zadnjikrat nedoločni zaimek je zaznaven je neopazno</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch3" xml:space="preserve">
+    <value>Utelešenje resnice, je jasno je močno je trdno je vedno živijo samo eno nobeno je vzvišen je veličasten je ob priznavanju Klemen je vse eno prežema vse eno vedo kdaj prevzemnik kesanje eno pametno sebe dovolj ena je bogat je edini najvišji ponudnik blizu odgovarja tisti Pardoner je ljubeč</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch6" xml:space="preserve">
+    <value>Veliko Forgiver benigne tisti vrhovni Bestower, najbolj radodaren najbolj sveto od vseh šibkost večno dediču najvišjega poveljnika enega Boga Final1</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch4" xml:space="preserve">
+    <value>Za zaščito sodelavec je edini hvalevreden je varovanje je slavno vrhovni reševalca vse opazovanje priča je pospeševanja Oklijevalo vsemogočna kralj je vse avtoritativni briljantno kupcu Extender je nepremagljiv ponudnik tisti, ki Recompenses</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
+    <value>Prepoznavalnik Bestower je vsemogočen stalno ustvarjalec lastnik celotne ponudnika univerzalne Trustee budnim eno Doer dobre računanju en tisti, ki zdravi nežno Giver je ohranjanje gospod dobro je nepristranski sodnik vrhovnega v čast vodnjak glavo resnice</value>
   </data>
 </root>

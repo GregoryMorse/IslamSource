@@ -732,20 +732,8 @@
   <data name="IslamInfo_AnticlockwiseTopSemicircleArrow" xml:space="preserve">
     <value>Săgeată semicirculară Top măsurat trigonometric</value>
   </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" xml:space="preserve">
-    <value>Măsurat trigonometric triunghi condus jos U-în formă de săgeată</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" xml:space="preserve">
-    <value>Măsurat trigonometric triunghi condus U-în formă de săgeată stânga</value>
-  </data>
   <data name="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" xml:space="preserve">
     <value>Măsurat trigonometric triunghi condus Open cerc săgeată</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" xml:space="preserve">
-    <value>Măsurat trigonometric triunghi condus dreapta U-în formă de săgeată</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" xml:space="preserve">
-    <value>Măsurat trigonometric triunghi condus de sus U-în formă de săgeată</value>
   </data>
   <data name="IslamInfo_AnyKindOfHurt" xml:space="preserve">
     <value>Orice fel de rănit</value>
@@ -4623,72 +4611,6 @@
   <data name="IslamInfo_CjkRadicalCow" xml:space="preserve">
     <value>Vacă de radicali CJK</value>
   </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedBird" xml:space="preserve">
-    <value>Radicali CJK C - simplificat Bird</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedCart" xml:space="preserve">
-    <value>Radicali CJK C - simplificat cos</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedDragon" xml:space="preserve">
-    <value>Radicali CJK C - simplificat Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEat" xml:space="preserve">
-    <value>Radicali CJK C-simplificat mânca</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEven" xml:space="preserve">
-    <value>Radicali CJK C-simplificat chiar</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFish" xml:space="preserve">
-    <value>Radicali CJK C - simplificat de peşte</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFly" xml:space="preserve">
-    <value>Radicali CJK C - simplificat Fly</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFrog" xml:space="preserve">
-    <value>Radicali CJK C - simplificat broasca</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGate" xml:space="preserve">
-    <value>Radicali CJK C - simplificat poarta</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGold" xml:space="preserve">
-    <value>Radicali CJK C - simplificat de aur</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedHorse" xml:space="preserve">
-    <value>Radicali CJK C - simplificat cal</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLeaf" xml:space="preserve">
-    <value>Radicali CJK C - simplificat frunze</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLong" xml:space="preserve">
-    <value>Radicali CJK C - simplificat lung</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSalt" xml:space="preserve">
-    <value>Radicali CJK C - simplificat sare</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSee" xml:space="preserve">
-    <value>Radicali CJK C - simplificată a se vedea</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedShell" xml:space="preserve">
-    <value>Radicali CJK C - simplificat Shell</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSilk" xml:space="preserve">
-    <value>Radicali CJK C - simplificat de mătase</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSpeech" xml:space="preserve">
-    <value>Radicali CJK C - simplificarea vorbirii</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" xml:space="preserve">
-    <value>Radicali CJK C-simplificat tăbăcite piele</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTooth" xml:space="preserve">
-    <value>Radicali CJK C - simplificat dinte</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTurtle" xml:space="preserve">
-    <value>Radicali CJK C - simplificat Turtle</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedWind" xml:space="preserve">
-    <value>Radicali CJK C - simplificat vânt</value>
-  </data>
   <data name="IslamInfo_CjkRadicalDeath" xml:space="preserve">
     <value>Moartea radicali CJK</value>
   </data>
@@ -4748,18 +4670,6 @@
   </data>
   <data name="IslamInfo_CjkRadicalJade" xml:space="preserve">
     <value>Jade radicali CJK</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedDragon" xml:space="preserve">
-    <value>Radicali CJK J - simplificat Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedEven" xml:space="preserve">
-    <value>Radicali CJK J-simplificat chiar</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTooth" xml:space="preserve">
-    <value>Radicali CJK J - simplificat dinte</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTurtle" xml:space="preserve">
-    <value>Radicali CJK J - simplificat Turtle</value>
   </data>
   <data name="IslamInfo_CjkRadicalKnifeOne" xml:space="preserve">
     <value>Cutit CJK Radical unu</value>
@@ -7365,9 +7275,6 @@
   <data name="IslamInfo_DoubleStrokeNotSign" xml:space="preserve">
     <value>Dublu contur nu semna</value>
   </data>
-  <data name="IslamInfo_DoubleStruckN-ArySummation" xml:space="preserve">
-    <value>Dublu lovit N - Ary însumarea</value>
-  </data>
   <data name="IslamInfo_DoubleSubset" xml:space="preserve">
     <value>Submulțime dublă</value>
   </data>
@@ -9155,9 +9062,6 @@
   </data>
   <data name="IslamInfo_Gold" xml:space="preserve">
     <value>Auriu</value>
-  </data>
-  <data name="IslamInfo_GoldCoinOf2.975Grams" xml:space="preserve">
-    <value>Monedă de aur Of2.975 grame</value>
   </data>
   <data name="IslamInfo_Goliath" xml:space="preserve">
     <value>Goliat</value>
@@ -12654,9 +12558,6 @@
   <data name="IslamInfo_LeftSquareBracketWithUnderbar" xml:space="preserve">
     <value>Paranteză pătrată stânga cu Underbar</value>
   </data>
-  <data name="IslamInfo_LeftS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Stânga S-în formă de sac delimitator</value>
-  </data>
   <data name="IslamInfo_LeftSubstitutionBracket" xml:space="preserve">
     <value>Paranteză stânga substituirea</value>
   </data>
@@ -15024,54 +14925,6 @@
   <data name="IslamInfo_NarrowNoBreakSpace" xml:space="preserve">
     <value>Înguste fără spaţiu de pauză</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N - Operator punct încercuit ary</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N - ary incercuit Plus operatorul</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N - ary incercuit ori operatorul</value>
-  </data>
-  <data name="IslamInfo_N-AryCoproduct" xml:space="preserve">
-    <value>N - ary coprodus</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N - intersecție ary</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N - ary logice şi</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N - ary logice sau</value>
-  </data>
-  <data name="IslamInfo_N-AryProduct" xml:space="preserve">
-    <value>N - produs ary</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N - operatorul de intersecție ary pătrat</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N - operatorul piaţa Uniunii ary</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N - însumarea ary</value>
-  </data>
-  <data name="IslamInfo_N-AryTimesOperator" xml:space="preserve">
-    <value>N - Ary ori operatorul</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N - ary Uniunii</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N - Operator reuniune secundare cu punct</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N - Operator reuniune ary cu Plus</value>
-  </data>
-  <data name="IslamInfo_N-AryWhiteVerticalBar" xml:space="preserve">
-    <value>N - ary bară verticală alb</value>
-  </data>
   <data name="IslamInfo_Nasalization" xml:space="preserve">
     <value>Nasalization</value>
   </data>
@@ -15791,12 +15644,6 @@
   </data>
   <data name="IslamInfo_OpenCentreTeardropSpokedAsterisk" xml:space="preserve">
     <value>Deschis Centrul Teardrop Spoked Asterisk</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputH-TypeSymbol" xml:space="preserve">
-    <value>Circuit deschis iesire tip H - Simbol</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputL-TypeSymbol" xml:space="preserve">
-    <value>Circuit deschis iesire tip L - Simbol</value>
   </data>
   <data name="IslamInfo_Openers" xml:space="preserve">
     <value>Openers</value>
@@ -18324,9 +18171,6 @@
   <data name="IslamInfo_RightSquareBracketWithUnderbar" xml:space="preserve">
     <value>Paranteză pătrată dreapta cu Underbar</value>
   </data>
-  <data name="IslamInfo_RightS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Dreptul S-în formă de sac delimitator</value>
-  </data>
   <data name="IslamInfo_RightSubstitutionBracket" xml:space="preserve">
     <value>Paranteză dreapta substituirea</value>
   </data>
@@ -19190,9 +19034,6 @@
   </data>
   <data name="IslamInfo_Silver" xml:space="preserve">
     <value>Argintiu</value>
-  </data>
-  <data name="IslamInfo_SilverOf2.975Grams" xml:space="preserve">
-    <value>Grame de argint Of2.975</value>
   </data>
   <data name="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" xml:space="preserve">
     <value>Similare deasupra mai mare deasupra egal</value>
@@ -21288,9 +21129,6 @@
   <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
     <value>Ascultător toate toate văzând</value>
   </data>
-  <data name="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" xml:space="preserve">
-    <value>Ascultător toate toate văzând Master Helper Pardoner suprem puternic cunoscătorul subtilitatile toţii conştienţi unul ciudat frumos timid Acoperitorul cel mare extrem de exaltat una singura toate predominante unul</value>
-  </data>
   <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
     <value>Ascultător toate aproape</value>
   </data>
@@ -21338,9 +21176,6 @@
   </data>
   <data name="IslamInfo_TheBeneficent" xml:space="preserve">
     <value>Binefăcătoare</value>
-  </data>
-  <data name="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" xml:space="preserve">
-    <value>Binefăcătoare milostiv etern Doamne cel mai sacru întruchiparea pace Infuser credinţei salvator de siguranţă puternic una All convingătoare cea dominantă creatorul Evolver perfect Shaper prima infinit una dura perceptibil imperceptibil</value>
   </data>
   <data name="IslamInfo_TheBenignOne" xml:space="preserve">
     <value>Un benigne</value>
@@ -21431,9 +21266,6 @@
   </data>
   <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
     <value>Întruchiparea adevărul</value>
-  </data>
-  <data name="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" xml:space="preserve">
-    <value>Întruchiparea adevărul clar cel puternic cel ferm vreodată viaţă, Self subzistând unul unul sublim unul magnific cel diversităŃii cel Clement tot una Pervading toate una şti vreodată Acceptor de pocăinţă Înteleptul suficient unul de sine cel darnic cel unic furnizor suprem aproape răspunde cel Pardoner cel iubitor</value>
   </data>
   <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
     <value>Mostenitor Eternal</value>
@@ -21539,9 +21371,6 @@
   </data>
   <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
     <value>Forgiver mare</value>
-  </data>
-  <data name="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" xml:space="preserve">
-    <value>Forgiver mare cea benigna nconjurat suprem cel mai generos cel mai sfânt din toate slăbiciune mostenitor Eternal Master celui prea înalt Dumnezeu Final1</value>
   </data>
   <data name="IslamInfo_TheGreatOne" xml:space="preserve">
     <value>Cel mare</value>
@@ -21822,9 +21651,6 @@
   <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
     <value>Protejarea asociat</value>
   </data>
-  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" xml:space="preserve">
-    <value>Protejarea asociat unic una laudabila cel paza cel glorios Rezolvitorul suprem tot observarea martor o expediţie Procrastinator Atotputernic regele cel toate autoritate strălucitorul Taker Extender furnizor irezistibil cel care răsplătiri</value>
-  </data>
   <data name="IslamInfo_TheProvider" xml:space="preserve">
     <value>Furnizorul</value>
   </data>
@@ -21842,9 +21668,6 @@
   </data>
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>Instrumentul de recunoaștere tot ştiind cel</value>
-  </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
-    <value>Recognizer nconjurat cel Atotputernic Creator continuă proprietarul totală furnizor Universal mandatar cel vigilent Făcătorul de bine socoteala unul cel care Cure blând unul susţine dătător Domnul bun imparţial judecător suprem în cinstea cap fântâna Adevărului</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>Instrumentul de recunoaștere Clement o</value>
@@ -22233,9 +22056,6 @@
   <data name="IslamInfo_Thunderstorm" xml:space="preserve">
     <value>Furtună</value>
   </data>
-  <data name="IslamInfo_TibetanAstrologicalSign-KhyudPa" xml:space="preserve">
-    <value>Tibetană Pa Khyud semn astrologic</value>
-  </data>
   <data name="IslamInfo_TibetanAstrologicalSignSdongTshugs" xml:space="preserve">
     <value>Semnul astrologic tibetane Sdong Tshugs</value>
   </data>
@@ -22260,9 +22080,6 @@
   <data name="IslamInfo_TibetanMarkNgasBzungSgorRtags" xml:space="preserve">
     <value>Tibetană Mark garantată Bzung Sgor Rtags</value>
   </data>
-  <data name="IslamInfo_TibetanMarkTsa-Phru" xml:space="preserve">
-    <value>Tibetană Mark Tsa-Phru</value>
-  </data>
   <data name="IslamInfo_TibetanSignLciRtags" xml:space="preserve">
     <value>Tibetană semn Lci Rtags</value>
   </data>
@@ -22280,9 +22097,6 @@
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterA" xml:space="preserve">
     <value>Tibetan Subjoined litera A</value>
-  </data>
-  <data name="IslamInfo_TibetanSubjoinedLetter-A" xml:space="preserve">
-    <value>Tibetan Subjoined scrisoare de-A</value>
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterBa" xml:space="preserve">
     <value>Scrisoare Subjoined tibetane Ba</value>
@@ -24215,9 +24029,6 @@
   </data>
   <data name="IslamInfo_WeightMeasureOf2172Grams" xml:space="preserve">
     <value>Greutate măsură Of2172 grame</value>
-  </data>
-  <data name="IslamInfo_WeightMeasureOf4.25Grams" xml:space="preserve">
-    <value>Greutate măsură Of4.25 grame</value>
   </data>
   <data name="IslamInfo_WeightMeasureOf543Grams" xml:space="preserve">
     <value>Greutate măsură Of543 grame</value>
@@ -26784,19 +26595,7 @@
   <data name="IslamInfo_GreatMasterpiece12" xml:space="preserve">
     <value>Mare capodopera</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece12-1" xml:space="preserve">
-    <value>Mare capodopera</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-2" xml:space="preserve">
-    <value>Mare capodopera</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-3" xml:space="preserve">
-    <value>Mare capodopera</value>
-  </data>
   <data name="IslamInfo_GreatMasterpiece13" xml:space="preserve">
-    <value>Mare capodopera</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece13-1" xml:space="preserve">
     <value>Mare capodopera</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece14" xml:space="preserve">
@@ -26824,9 +26623,6 @@
     <value>Mare capodopera</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece22" xml:space="preserve">
-    <value>Mare capodopera</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece22-1" xml:space="preserve">
     <value>Mare capodopera</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece23" xml:space="preserve">
@@ -26875,9 +26671,6 @@
     <value>Mare capodopera</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece38" xml:space="preserve">
-    <value>Mare capodopera</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece38-1" xml:space="preserve">
     <value>Mare capodopera</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece39" xml:space="preserve">
@@ -27003,212 +26796,20 @@
   <data name="IslamInfo_Maxim1" xml:space="preserve">
     <value>Prima Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
-    <value>Prima Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
-    <value>Prima Maxim doua filiale Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
-    <value>Prima treime Maxim subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
-    <value>Prima Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
-    <value>Prima Maxim al cincilea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
-    <value>Prima Maxim prima exceptie Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
-    <value>Prima Maxim doua excepţionale Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim2" xml:space="preserve">
     <value>Al doilea Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
-    <value>Al doilea Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
-    <value>Al doilea Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
-    <value>Al doilea Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
-    <value>Al doilea Maxim doua filiale Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
-    <value>Al doilea Maxim al treilea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
-    <value>Al doilea Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
-    <value>Al doilea Maxim al cincilea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
-    <value>Al doilea Maxim al şaselea filialele Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
-    <value>Al doilea Maxim al şaptelea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
-    <value>Al doilea Maxim al optulea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
-    <value>Al doilea Maxim al nouălea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
-    <value>Al doilea Maxim al zecelea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
-    <value>Al doilea Maxim al unsprezecelea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
-    <value>Al doilea Maxim al doisprezecelea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
-    <value>Al doilea Maxim treisprezecea subsidiare Maxim</value>
   </data>
   <data name="IslamInfo_Maxim3" xml:space="preserve">
     <value>Treia Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
-    <value>Treia Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
-    <value>Treia Maxim doua filiale Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
-    <value>Treia Maxim a treia subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
-    <value>Treia Maxim a treia subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
-    <value>Treia Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
-    <value>Treia Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
-    <value>Treia Maxim al cincilea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
-    <value>Treia Maxim al şaselea filialele Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
-    <value>Treia Maxim a şaptea subsidiare Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim4" xml:space="preserve">
     <value>A patra Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
-    <value>A patra Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
-    <value>A patra Maxim doua filiale Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
-    <value>A patra treia Maxim Maxim subsidiare</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
-    <value>A patra treia Maxim Maxim subsidiare</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
-    <value>A patra treia Maxim Maxim subsidiare</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
-    <value>A patra treia Maxim Maxim subsidiare</value>
-  </data>
-  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
-    <value>A patra Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
-    <value>A patra Cincea Maxim Maxim subsidiare</value>
-  </data>
-  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
-    <value>A patra Maxim al şaselea filialele Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
-    <value>A patra Maxim a şaptea subsidiare Maxim</value>
   </data>
   <data name="IslamInfo_Maxim5" xml:space="preserve">
     <value>Al cincilea Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
-    <value>Al cincilea Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
-    <value>Al cincilea Maxim doua filiale Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
-    <value>Al cincilea Maxim a treia subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
-    <value>Al cincilea Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
-    <value>Al cincilea Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
-    <value>A cincea cincea Maxim Maxim subsidiare</value>
-  </data>
-  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
-    <value>Al cincilea Maxim al şaselea filialele Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
-    <value>Al cincilea Maxim a şaptea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
-    <value>Al cincilea Maxim opt subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
-    <value>Al cincilea Maxim nouă subsidiară Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
-    <value>Al cincilea Maxim zecea filiala Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
-    <value>Al cincilea Maxim al unsprezecelea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
-    <value>Al cincilea Maxim al doisprezecelea subsidiare Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Maxim de șasea</value>
-  </data>
-  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
-    <value>Al şaselea Maxim prima filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
-    <value>Al şaselea Maxim doua filiale Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
-    <value>Al şaselea Maxim a treia subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
-    <value>Al şaselea Maxim a patra filială Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
-    <value>Al şaselea Maxim al cincilea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
-    <value>Al şaselea Maxim de șasea subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
-    <value>Sasea saptea Maxim Maxim subsidiare</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
-    <value>Al şaselea Maxim opt subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
-    <value>Al şaselea Maxim opt subsidiare Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
-    <value>Al şaselea Maxim nouă subsidiară Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp1" xml:space="preserve">
     <value>Prima Maxim cuprinzătoare</value>
@@ -27467,9 +27068,6 @@
   </data>
   <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Combinând X mai jos</value>
-  </data>
-  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
-    <value>Combinând X - X mai jos</value>
   </data>
   <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Ghilimea dublă Reversed9 mare</value>
@@ -27938,5 +27536,377 @@
   </data>
   <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
     <value>Amintirea după rugăciune</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" xml:space="preserve">
+    <value>Măsurat trigonometric triunghi condus jos U-în formă de săgeată</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" xml:space="preserve">
+    <value>Măsurat trigonometric triunghi condus U-în formă de săgeată stânga</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" xml:space="preserve">
+    <value>Măsurat trigonometric triunghi condus dreapta U-în formă de săgeată</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" xml:space="preserve">
+    <value>Măsurat trigonometric triunghi condus de sus U-în formă de săgeată</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedBird" xml:space="preserve">
+    <value>Radicali CJK C - simplificat Bird</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedCart" xml:space="preserve">
+    <value>Radicali CJK C - simplificat cos</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedDragon" xml:space="preserve">
+    <value>Radicali CJK C - simplificat Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEat" xml:space="preserve">
+    <value>Radicali CJK C-simplificat mânca</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEven" xml:space="preserve">
+    <value>Radicali CJK C-simplificat chiar</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFish" xml:space="preserve">
+    <value>Radicali CJK C - simplificat de peşte</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFly" xml:space="preserve">
+    <value>Radicali CJK C - simplificat Fly</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFrog" xml:space="preserve">
+    <value>Radicali CJK C - simplificat broasca</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGate" xml:space="preserve">
+    <value>Radicali CJK C - simplificat poarta</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGold" xml:space="preserve">
+    <value>Radicali CJK C - simplificat de aur</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedHorse" xml:space="preserve">
+    <value>Radicali CJK C - simplificat cal</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLeaf" xml:space="preserve">
+    <value>Radicali CJK C - simplificat frunze</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLong" xml:space="preserve">
+    <value>Radicali CJK C - simplificat lung</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSalt" xml:space="preserve">
+    <value>Radicali CJK C - simplificat sare</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSee" xml:space="preserve">
+    <value>Radicali CJK C - simplificată a se vedea</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedShell" xml:space="preserve">
+    <value>Radicali CJK C - simplificat Shell</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSilk" xml:space="preserve">
+    <value>Radicali CJK C - simplificat de mătase</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSpeech" xml:space="preserve">
+    <value>Radicali CJK C - simplificarea vorbirii</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTannedLeather" xml:space="preserve">
+    <value>Radicali CJK C-simplificat tăbăcite piele</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTooth" xml:space="preserve">
+    <value>Radicali CJK C - simplificat dinte</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTurtle" xml:space="preserve">
+    <value>Radicali CJK C - simplificat Turtle</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedWind" xml:space="preserve">
+    <value>Radicali CJK C - simplificat vânt</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedDragon" xml:space="preserve">
+    <value>Radicali CJK J - simplificat Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedEven" xml:space="preserve">
+    <value>Radicali CJK J-simplificat chiar</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTooth" xml:space="preserve">
+    <value>Radicali CJK J - simplificat dinte</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTurtle" xml:space="preserve">
+    <value>Radicali CJK J - simplificat Turtle</value>
+  </data>
+  <data name="IslamInfo_CombiningXXBelow" xml:space="preserve">
+    <value>Combinând X - X mai jos</value>
+  </data>
+  <data name="IslamInfo_DoubleStruckNArySummation" xml:space="preserve">
+    <value>Dublu lovit N - Ary însumarea</value>
+  </data>
+  <data name="IslamInfo_LeftSShapedBagDelimiter" xml:space="preserve">
+    <value>Stânga S-în formă de sac delimitator</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N - Operator punct încercuit ary</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N - ary incercuit Plus operatorul</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N - ary incercuit ori operatorul</value>
+  </data>
+  <data name="IslamInfo_NAryCoproduct" xml:space="preserve">
+    <value>N - ary coprodus</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N - intersecție ary</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N - ary logice şi</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N - ary logice sau</value>
+  </data>
+  <data name="IslamInfo_NAryProduct" xml:space="preserve">
+    <value>N - produs ary</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N - operatorul de intersecție ary pătrat</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N - operatorul piaţa Uniunii ary</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N - însumarea ary</value>
+  </data>
+  <data name="IslamInfo_NAryTimesOperator" xml:space="preserve">
+    <value>N - Ary ori operatorul</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N - ary Uniunii</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N - Operator reuniune secundare cu punct</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N - Operator reuniune ary cu Plus</value>
+  </data>
+  <data name="IslamInfo_NAryWhiteVerticalBar" xml:space="preserve">
+    <value>N - ary bară verticală alb</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputHTypeSymbol" xml:space="preserve">
+    <value>Circuit deschis iesire tip H - Simbol</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputLTypeSymbol" xml:space="preserve">
+    <value>Circuit deschis iesire tip L - Simbol</value>
+  </data>
+  <data name="IslamInfo_RightSShapedBagDelimiter" xml:space="preserve">
+    <value>Dreptul S-în formă de sac delimitator</value>
+  </data>
+  <data name="IslamInfo_TibetanAstrologicalSignKhyudPa" xml:space="preserve">
+    <value>Tibetană Pa Khyud semn astrologic</value>
+  </data>
+  <data name="IslamInfo_TibetanMarkTsaPhru" xml:space="preserve">
+    <value>Tibetană Mark Tsa-Phru</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_1" xml:space="preserve">
+    <value>Mare capodopera</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_2" xml:space="preserve">
+    <value>Mare capodopera</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_3" xml:space="preserve">
+    <value>Mare capodopera</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece13_1" xml:space="preserve">
+    <value>Mare capodopera</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece22_1" xml:space="preserve">
+    <value>Mare capodopera</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece38_1" xml:space="preserve">
+    <value>Mare capodopera</value>
+  </data>
+  <data name="IslamInfo_Maxim1_1" xml:space="preserve">
+    <value>Prima Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_2" xml:space="preserve">
+    <value>Prima Maxim doua filiale Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_3" xml:space="preserve">
+    <value>Prima treime Maxim subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_4" xml:space="preserve">
+    <value>Prima Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_5" xml:space="preserve">
+    <value>Prima Maxim al cincilea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_1" xml:space="preserve">
+    <value>Prima Maxim prima exceptie Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_2" xml:space="preserve">
+    <value>Prima Maxim doua excepţionale Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_1" xml:space="preserve">
+    <value>Al doilea Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_2" xml:space="preserve">
+    <value>Al doilea Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_3" xml:space="preserve">
+    <value>Al doilea Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_2" xml:space="preserve">
+    <value>Al doilea Maxim doua filiale Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_3" xml:space="preserve">
+    <value>Al doilea Maxim al treilea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_4" xml:space="preserve">
+    <value>Al doilea Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_5" xml:space="preserve">
+    <value>Al doilea Maxim al cincilea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_6" xml:space="preserve">
+    <value>Al doilea Maxim al şaselea filialele Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_7" xml:space="preserve">
+    <value>Al doilea Maxim al şaptelea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_8" xml:space="preserve">
+    <value>Al doilea Maxim al optulea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_9" xml:space="preserve">
+    <value>Al doilea Maxim al nouălea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_10" xml:space="preserve">
+    <value>Al doilea Maxim al zecelea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_11" xml:space="preserve">
+    <value>Al doilea Maxim al unsprezecelea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_12" xml:space="preserve">
+    <value>Al doilea Maxim al doisprezecelea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_13" xml:space="preserve">
+    <value>Al doilea Maxim treisprezecea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_1" xml:space="preserve">
+    <value>Treia Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_2" xml:space="preserve">
+    <value>Treia Maxim doua filiale Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_1" xml:space="preserve">
+    <value>Treia Maxim a treia subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_2" xml:space="preserve">
+    <value>Treia Maxim a treia subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_1" xml:space="preserve">
+    <value>Treia Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_2" xml:space="preserve">
+    <value>Treia Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_5" xml:space="preserve">
+    <value>Treia Maxim al cincilea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_6" xml:space="preserve">
+    <value>Treia Maxim al şaselea filialele Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_7" xml:space="preserve">
+    <value>Treia Maxim a şaptea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_1" xml:space="preserve">
+    <value>A patra Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_2" xml:space="preserve">
+    <value>A patra Maxim doua filiale Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_1" xml:space="preserve">
+    <value>A patra treia Maxim Maxim subsidiare</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_2" xml:space="preserve">
+    <value>A patra treia Maxim Maxim subsidiare</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_3" xml:space="preserve">
+    <value>A patra treia Maxim Maxim subsidiare</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_4" xml:space="preserve">
+    <value>A patra treia Maxim Maxim subsidiare</value>
+  </data>
+  <data name="IslamInfo_Maxim4_4" xml:space="preserve">
+    <value>A patra Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_5" xml:space="preserve">
+    <value>A patra Cincea Maxim Maxim subsidiare</value>
+  </data>
+  <data name="IslamInfo_Maxim4_6" xml:space="preserve">
+    <value>A patra Maxim al şaselea filialele Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_7" xml:space="preserve">
+    <value>A patra Maxim a şaptea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_1" xml:space="preserve">
+    <value>Al cincilea Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_2" xml:space="preserve">
+    <value>Al cincilea Maxim doua filiale Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_3" xml:space="preserve">
+    <value>Al cincilea Maxim a treia subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4" xml:space="preserve">
+    <value>Al cincilea Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4_1" xml:space="preserve">
+    <value>Al cincilea Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_5" xml:space="preserve">
+    <value>A cincea cincea Maxim Maxim subsidiare</value>
+  </data>
+  <data name="IslamInfo_Maxim5_6" xml:space="preserve">
+    <value>Al cincilea Maxim al şaselea filialele Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_7" xml:space="preserve">
+    <value>Al cincilea Maxim a şaptea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_8" xml:space="preserve">
+    <value>Al cincilea Maxim opt subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_9" xml:space="preserve">
+    <value>Al cincilea Maxim nouă subsidiară Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_10" xml:space="preserve">
+    <value>Al cincilea Maxim zecea filiala Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_11" xml:space="preserve">
+    <value>Al cincilea Maxim al unsprezecelea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_12" xml:space="preserve">
+    <value>Al cincilea Maxim al doisprezecelea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_1" xml:space="preserve">
+    <value>Al şaselea Maxim prima filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_2" xml:space="preserve">
+    <value>Al şaselea Maxim doua filiale Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_3" xml:space="preserve">
+    <value>Al şaselea Maxim a treia subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_4" xml:space="preserve">
+    <value>Al şaselea Maxim a patra filială Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_5" xml:space="preserve">
+    <value>Al şaselea Maxim al cincilea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_6" xml:space="preserve">
+    <value>Al şaselea Maxim de șasea subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_7" xml:space="preserve">
+    <value>Sasea saptea Maxim Maxim subsidiare</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_1" xml:space="preserve">
+    <value>Al şaselea Maxim opt subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_2" xml:space="preserve">
+    <value>Al şaselea Maxim opt subsidiare Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_9" xml:space="preserve">
+    <value>Al şaselea Maxim nouă subsidiară Maxim</value>
   </data>
 </root>

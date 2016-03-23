@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Back.Label" xml:space="preserve">
+    <value>ಹಿಂದೆ</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>ಫಾಂಟ್ ಗಾತ್ರ ಕಡಿಮೆಗೊಳಿಸು</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>ಫಾಂಟ್ ಗಾತ್ರ ಹೆಚ್ಚಿಸು</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>ಸೆಟ್ಟಿಂಗ್‌ಗಳು</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>ಗಾತ್ರಿಸು</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;ಬುಕ್‌ಮಾರ್ಕ್ ಸೇರಿಸು</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;ಬುಕ್‌ಮಾರ್ಕ್‌ಗಳು</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ...</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ವಿರಾಮ</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>ಪ್ಲೇ ಮಾಡು</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>ಹಂಚು</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ಬಗ್ಗೆ</value>
+  </data>
+</root>

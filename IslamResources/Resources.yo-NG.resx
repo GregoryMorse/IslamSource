@@ -951,42 +951,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>Àwọn Orúkọ</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N-ary Olùṣe Todó Róbótó</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N-ary Olùṣe Àròpọ̀ Róbótó</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N-ary Olùṣe Àwọn Àkókò Róbótó</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N-ary Ìwọnú ara</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N-ary Lọ́jíkà Àti</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N-ary Lọ́jíkà Tàbí</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N-ary Olùṣe Ìwọnú ara Onígun Mẹ́rin</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N-ary Olùṣe Àpapọ̀ Onígun Mẹ́rin</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>Àròpọ̀ N-Ary</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N-ary Àpapọ̀</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N-ary Olùṣe Àpapọ̀ pẹ̀lú Todó</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N-ary Olùṣe Àpapọ̀ pẹ̀lú Àròpọ̀</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>Pẹpẹ Òró Méjì Tótako Ẹnu Ọ̀nà Ọ̀tún Méjì</value>
   </data>
@@ -1823,5 +1787,41 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Ìjáfáfá</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N-ary Olùṣe Todó Róbótó</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N-ary Olùṣe Àròpọ̀ Róbótó</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N-ary Olùṣe Àwọn Àkókò Róbótó</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N-ary Ìwọnú ara</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N-ary Lọ́jíkà Àti</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N-ary Lọ́jíkà Tàbí</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-ary Olùṣe Ìwọnú ara Onígun Mẹ́rin</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N-ary Olùṣe Àpapọ̀ Onígun Mẹ́rin</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>Àròpọ̀ N-Ary</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N-ary Àpapọ̀</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N-ary Olùṣe Àpapọ̀ pẹ̀lú Todó</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-ary Olùṣe Àpapọ̀ pẹ̀lú Àròpọ̀</value>
   </data>
 </root>

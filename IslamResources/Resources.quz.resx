@@ -948,42 +948,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>Sutikuna</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>Huk chiku n-ario ruyru rurachiq</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N-ñiqi Muyuqpi Yapa Rurachiq</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>Huk muyuriqpi n.ario rurachiq  mirachiq</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N-arios-pa tupanasqa</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>Y hamutasqa n-rio</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>Utaq hamutasqa n-ario</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>Tupanakuqpa tawa kuchu n-ario rurachiq</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>Tupanakusqa tawa kuchupa n-ario rurachiq</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N-Ary Yapasqa</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N-arios Huñusqa</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>Huk n-ario chikuwan huk tupanakuq ruraq</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N-ñiqi Huñusnasqa Rurachiq Yapa</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>Iskay kuqmu urayninman mana nisqa alliq/paña rakiq chikuyuq</value>
   </data>
@@ -1817,5 +1781,41 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Kawsaq</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>Huk chiku n-ario ruyru rurachiq</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N-ñiqi Muyuqpi Yapa Rurachiq</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>Huk muyuriqpi n.ario rurachiq  mirachiq</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N-arios-pa tupanasqa</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>Y hamutasqa n-rio</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>Utaq hamutasqa n-ario</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>Tupanakuqpa tawa kuchu n-ario rurachiq</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>Tupanakusqa tawa kuchupa n-ario rurachiq</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N-Ary Yapasqa</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N-arios Huñusqa</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>Huk n-ario chikuwan huk tupanakuq ruraq</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-ñiqi Huñusnasqa Rurachiq Yapa</value>
   </data>
 </root>

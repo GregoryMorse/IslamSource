@@ -732,20 +732,8 @@
   <data name="IslamInfo_AnticlockwiseTopSemicircleArrow" xml:space="preserve">
     <value>Anticlockwise Top Semicircle Arrow</value>
   </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" xml:space="preserve">
-    <value>Mot urviseren trekant ledet nederst U-formet pil</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" xml:space="preserve">
-    <value>Mot urviseren trekant ledet venstre U-formet pil</value>
-  </data>
   <data name="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" xml:space="preserve">
     <value>Mot urviseren trekant ledet åpne sirkelen pil</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" xml:space="preserve">
-    <value>Mot urviseren trekant ledet høyre U-formet pil</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" xml:space="preserve">
-    <value>Mot urviseren trekant dro toppen U-formet pil</value>
   </data>
   <data name="IslamInfo_AnyKindOfHurt" xml:space="preserve">
     <value>Noen form for skade</value>
@@ -4623,72 +4611,6 @@
   <data name="IslamInfo_CjkRadicalCow" xml:space="preserve">
     <value>CJK radikale ku</value>
   </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedBird" xml:space="preserve">
-    <value>CJK radikal C - forenklet fugl</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedCart" xml:space="preserve">
-    <value>CJK radikal C - forenklet handlevogn</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedDragon" xml:space="preserve">
-    <value>CJK radikal C - forenklet Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEat" xml:space="preserve">
-    <value>CJK radikal C-forenklet spise</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEven" xml:space="preserve">
-    <value>CJK radikal C-forenklet selv</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFish" xml:space="preserve">
-    <value>CJK radikal C - forenklet fisk</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFly" xml:space="preserve">
-    <value>CJK radikal C - forenklet Fly</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFrog" xml:space="preserve">
-    <value>CJK radikal C - forenklet frosk</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGate" xml:space="preserve">
-    <value>CJK radikal C - forenklet Gate</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGold" xml:space="preserve">
-    <value>CJK radikal C - forenklet gull</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedHorse" xml:space="preserve">
-    <value>CJK radikal C - forenklet hest</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLeaf" xml:space="preserve">
-    <value>CJK radikal C - forenklet blad</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLong" xml:space="preserve">
-    <value>CJK radikal C - forenklet lang</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSalt" xml:space="preserve">
-    <value>CJK radikal C - forenklet Salt</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSee" xml:space="preserve">
-    <value>CJK radikal C - forenklet se</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedShell" xml:space="preserve">
-    <value>CJK radikal C - forenklet Shell</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSilk" xml:space="preserve">
-    <value>CJK radikal C - forenklet Silk</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSpeech" xml:space="preserve">
-    <value>CJK radikal C - forenklet tale</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" xml:space="preserve">
-    <value>CJK radikal C-forenklet garvet skinn</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTooth" xml:space="preserve">
-    <value>CJK radikal C - forenklet tann</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK radikal C - forenklet skilpadde</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedWind" xml:space="preserve">
-    <value>CJK radikal C - forenklet vind</value>
-  </data>
   <data name="IslamInfo_CjkRadicalDeath" xml:space="preserve">
     <value>CJK radikale død</value>
   </data>
@@ -4748,18 +4670,6 @@
   </data>
   <data name="IslamInfo_CjkRadicalJade" xml:space="preserve">
     <value>CJK radikale Jade</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedDragon" xml:space="preserve">
-    <value>CJK radikale J - forenklet Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedEven" xml:space="preserve">
-    <value>CJK radikale J-forenklet selv</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTooth" xml:space="preserve">
-    <value>CJK radikale J - forenklet tann</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK radikale J - forenklet skilpadde</value>
   </data>
   <data name="IslamInfo_CjkRadicalKnifeOne" xml:space="preserve">
     <value>CJK radikale kniv som</value>
@@ -7365,9 +7275,6 @@
   <data name="IslamInfo_DoubleStrokeNotSign" xml:space="preserve">
     <value>Double Stroke Not Sign</value>
   </data>
-  <data name="IslamInfo_DoubleStruckN-ArySummation" xml:space="preserve">
-    <value>Dobbeltstreket N - ær summering</value>
-  </data>
   <data name="IslamInfo_DoubleSubset" xml:space="preserve">
     <value>Dobbelt delsett</value>
   </data>
@@ -9155,9 +9062,6 @@
   </data>
   <data name="IslamInfo_Gold" xml:space="preserve">
     <value>Gull</value>
-  </data>
-  <data name="IslamInfo_GoldCoinOf2.975Grams" xml:space="preserve">
-    <value>Gull mynt Of2.975 gram</value>
   </data>
   <data name="IslamInfo_Goliath" xml:space="preserve">
     <value>Goliat</value>
@@ -12654,9 +12558,6 @@
   <data name="IslamInfo_LeftSquareBracketWithUnderbar" xml:space="preserve">
     <value>Left Square Bracket With Underbar</value>
   </data>
-  <data name="IslamInfo_LeftS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Venstre S-formet Bag skilletegn</value>
-  </data>
   <data name="IslamInfo_LeftSubstitutionBracket" xml:space="preserve">
     <value>Left Substitution Bracket</value>
   </data>
@@ -15024,54 +14925,6 @@
   <data name="IslamInfo_NarrowNoBreakSpace" xml:space="preserve">
     <value>Begrense uten pause mellomrom</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N-ær sirklet punktum</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N - ær Innringet pluss operatør</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N - ær sirklet ganger operatør</value>
-  </data>
-  <data name="IslamInfo_N-AryCoproduct" xml:space="preserve">
-    <value>N - ær Koprodukt</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N - ær veikryss</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N - ær logisk og</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N - ær logisk eller</value>
-  </data>
-  <data name="IslamInfo_N-AryProduct" xml:space="preserve">
-    <value>N - ær produkt</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N - ær kvadrat skjæringspunktoperatoren</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N - ær plassen Union-Operator</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N - ær summering</value>
-  </data>
-  <data name="IslamInfo_N-AryTimesOperator" xml:space="preserve">
-    <value>N - ær ganger operatør</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N - ær Union</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N - Unionoperator med prikk for ær</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N - Unionoperator med pluss for ær</value>
-  </data>
-  <data name="IslamInfo_N-AryWhiteVerticalBar" xml:space="preserve">
-    <value>N - ær hvit Loddrett stolpe</value>
-  </data>
   <data name="IslamInfo_Nasalization" xml:space="preserve">
     <value>Nasalization</value>
   </data>
@@ -15791,12 +15644,6 @@
   </data>
   <data name="IslamInfo_OpenCentreTeardropSpokedAsterisk" xml:space="preserve">
     <value>Åpne sentrum Teardrop eiker stjerne</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputH-TypeSymbol" xml:space="preserve">
-    <value>Åpen krets utgang H - Type Symbol</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputL-TypeSymbol" xml:space="preserve">
-    <value>Åpen krets utgang L - Type Symbol</value>
   </data>
   <data name="IslamInfo_Openers" xml:space="preserve">
     <value>Openers</value>
@@ -18324,9 +18171,6 @@
   <data name="IslamInfo_RightSquareBracketWithUnderbar" xml:space="preserve">
     <value>Right Square Bracket With Underbar</value>
   </data>
-  <data name="IslamInfo_RightS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Høyre S-formet Bag skilletegn</value>
-  </data>
   <data name="IslamInfo_RightSubstitutionBracket" xml:space="preserve">
     <value>Right Substitution Bracket</value>
   </data>
@@ -19190,9 +19034,6 @@
   </data>
   <data name="IslamInfo_Silver" xml:space="preserve">
     <value>Sølv</value>
-  </data>
-  <data name="IslamInfo_SilverOf2.975Grams" xml:space="preserve">
-    <value>Sølv Of2.975 gram</value>
   </data>
   <data name="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" xml:space="preserve">
     <value>Lignende over større enn over likhetstegn</value>
@@ -21288,9 +21129,6 @@
   <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
     <value>Alle hører ser alt</value>
   </data>
-  <data name="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" xml:space="preserve">
-    <value>Alle hører alt seende originalen hjelperen den øverste hos avlatskremmer kraftig kjenner nyanser alle oppmerksom en odde vakre sjenert Coverer en stor den ekstremt opphøyet en eneste alle rådende en</value>
-  </data>
   <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
     <value>Den alle som hører tett</value>
   </data>
@@ -21338,9 +21176,6 @@
   </data>
   <data name="IslamInfo_TheBeneficent" xml:space="preserve">
     <value>Den Beneficent</value>
-  </data>
-  <data name="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" xml:space="preserve">
-    <value>Den Beneficent den barmhjertige evige Herre det helligste legemliggjørelsen av fred Infuser troens beskytter av sikkerhet den mektige alle overbevisende dominerende skaperen Evolver feilfri utformeren første uendelig siste det merkbar på umerkelig</value>
   </data>
   <data name="IslamInfo_TheBenignOne" xml:space="preserve">
     <value>En godartet</value>
@@ -21431,9 +21266,6 @@
   </data>
   <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
     <value>Legemliggjørelsen av sannheten</value>
-  </data>
-  <data name="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" xml:space="preserve">
-    <value>Legemliggjørelsen av sannheten klart en sterk en fast den stadig levende selvet livnærer seg en sublim en fantastisk en anerkjenner en Clement en alle altoverskyggende en alle vite en noensinne Acceptor omvendelsens en klok selv nok en overflod en eneste en øverste leverandøren nær svarer en hos avlatskremmer en kjærlig</value>
   </data>
   <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
     <value>Den evige Inheritor</value>
@@ -21539,9 +21371,6 @@
   </data>
   <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
     <value>Den store Forgiver</value>
-  </data>
-  <data name="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" xml:space="preserve">
-    <value>Den store Forgiver en godartet øverste skjenkeren den mest sjenerøse den mest hellige fra alle svakhet den evige Inheritor Master den høyeste Gud Final1</value>
   </data>
   <data name="IslamInfo_TheGreatOne" xml:space="preserve">
     <value>En stor</value>
@@ -21822,9 +21651,6 @@
   <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
     <value>Den beskytte medarbeider</value>
   </data>
-  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" xml:space="preserve">
-    <value>Den beskytter knytte den eneste prisverdig som vokter en strålende en øverste Problemløseren alle observere vitnet påskynde en somlekopp allmektige kongen alle autoritative en briljant Taker Extender leverandøren den uimotståelig som Recompenses</value>
-  </data>
   <data name="IslamInfo_TheProvider" xml:space="preserve">
     <value>Leverandøren</value>
   </data>
@@ -21842,9 +21668,6 @@
   </data>
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>Håndskriftgjenkjenneren alle vite en</value>
-  </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
-    <value>Håndskriftgjenkjenneren skjenkeren en allmektig kontinuerlig skaperen eier totale leverandøren Universal Tillitsmann vaktsom en Doer av gode tidsregning ett som kurer milde Giver opprettholde en Herren godt den upartisk dommer Høyesterett ære fontene-hode sannhetens</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>Håndskriftgjenkjenneren Clement en</value>
@@ -22233,9 +22056,6 @@
   <data name="IslamInfo_Thunderstorm" xml:space="preserve">
     <value>Thunderstorm</value>
   </data>
-  <data name="IslamInfo_TibetanAstrologicalSign-KhyudPa" xml:space="preserve">
-    <value>Tibetanske astrologiske tegn Khyud Pa</value>
-  </data>
   <data name="IslamInfo_TibetanAstrologicalSignSdongTshugs" xml:space="preserve">
     <value>Tibetan Astrological Sign Sdong Tshugs</value>
   </data>
@@ -22260,9 +22080,6 @@
   <data name="IslamInfo_TibetanMarkNgasBzungSgorRtags" xml:space="preserve">
     <value>Tibetan Mark Ngas Bzung Sgor Rtags</value>
   </data>
-  <data name="IslamInfo_TibetanMarkTsa-Phru" xml:space="preserve">
-    <value>Tibetanske Mark Tsa-Phru</value>
-  </data>
   <data name="IslamInfo_TibetanSignLciRtags" xml:space="preserve">
     <value>Tibetan Sign Lci Rtags</value>
   </data>
@@ -22280,9 +22097,6 @@
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterA" xml:space="preserve">
     <value>Tibetanske Subjoined bokstav A</value>
-  </data>
-  <data name="IslamInfo_TibetanSubjoinedLetter-A" xml:space="preserve">
-    <value>Tibetansk Subjoined brev-A</value>
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterBa" xml:space="preserve">
     <value>Tibetan Subjoined Letter Ba</value>
@@ -24215,9 +24029,6 @@
   </data>
   <data name="IslamInfo_WeightMeasureOf2172Grams" xml:space="preserve">
     <value>Vekt mål Of2172 gram</value>
-  </data>
-  <data name="IslamInfo_WeightMeasureOf4.25Grams" xml:space="preserve">
-    <value>Vekt mål Of4.25 gram</value>
   </data>
   <data name="IslamInfo_WeightMeasureOf543Grams" xml:space="preserve">
     <value>Vekt mål Of543 gram</value>
@@ -26784,19 +26595,7 @@
   <data name="IslamInfo_GreatMasterpiece12" xml:space="preserve">
     <value>Stor mesterverk</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece12-1" xml:space="preserve">
-    <value>Stor mesterverk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-2" xml:space="preserve">
-    <value>Stor mesterverk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-3" xml:space="preserve">
-    <value>Stor mesterverk</value>
-  </data>
   <data name="IslamInfo_GreatMasterpiece13" xml:space="preserve">
-    <value>Stor mesterverk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece13-1" xml:space="preserve">
     <value>Stor mesterverk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece14" xml:space="preserve">
@@ -26824,9 +26623,6 @@
     <value>Stor mesterverk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece22" xml:space="preserve">
-    <value>Stor mesterverk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece22-1" xml:space="preserve">
     <value>Stor mesterverk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece23" xml:space="preserve">
@@ -26875,9 +26671,6 @@
     <value>Stor mesterverk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece38" xml:space="preserve">
-    <value>Stor mesterverk</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece38-1" xml:space="preserve">
     <value>Stor mesterverk</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece39" xml:space="preserve">
@@ -27003,212 +26796,20 @@
   <data name="IslamInfo_Maxim1" xml:space="preserve">
     <value>Første Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
-    <value>Første Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
-    <value>Første Maxim andre datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
-    <value>Første Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
-    <value>Første Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
-    <value>Første Maxim femte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
-    <value>Første Maxim første eksepsjonell Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
-    <value>Første Maxim andre eksepsjonell Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim2" xml:space="preserve">
     <value>Andre Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
-    <value>Andre Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
-    <value>Andre Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
-    <value>Andre Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
-    <value>Andre Maxim andre datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
-    <value>Andre Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
-    <value>Andre Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
-    <value>Andre Maxim femte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
-    <value>Andre Maxim sjette datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
-    <value>Andre Maxim syvende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
-    <value>Andre Maxim åttende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
-    <value>Andre Maxim niende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
-    <value>Andre Maxim tiende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
-    <value>Andre Maxim ellevte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
-    <value>Andre Maxim tolvte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
-    <value>Andre Maxim trettende datterselskap Maxim</value>
   </data>
   <data name="IslamInfo_Maxim3" xml:space="preserve">
     <value>Tredje Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
-    <value>Tredje Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
-    <value>Tredje Maxim andre datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
-    <value>Tredje Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
-    <value>Tredje Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
-    <value>Tredje Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
-    <value>Tredje Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
-    <value>Tredje Maxim femte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
-    <value>Tredje Maxim sjette datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
-    <value>Tredje Maxim syvende datterselskap Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim4" xml:space="preserve">
     <value>Fjerde Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
-    <value>Fjerde Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
-    <value>Fjerde Maxim andre datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
-    <value>Fjerde Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
-    <value>Fjerde Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
-    <value>Fjerde Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
-    <value>Fjerde Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
-    <value>Fjerde Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
-    <value>Fjerde Maxim femte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
-    <value>Fjerde Maxim sjette datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
-    <value>Fjerde Maxim syvende datterselskap Maxim</value>
   </data>
   <data name="IslamInfo_Maxim5" xml:space="preserve">
     <value>Femte Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
-    <value>Femte Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
-    <value>Femte Maxim andre datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
-    <value>Femte Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
-    <value>Femte Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
-    <value>Femte Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
-    <value>Femte Maxim femte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
-    <value>Femte Maxim sjette datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
-    <value>Femte Maxim syvende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
-    <value>Femte Maxim åttende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
-    <value>Femte Maxim niende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
-    <value>Femte Maxim tiende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
-    <value>Femte Maxim ellevte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
-    <value>Femte Maxim tolvte datterselskap Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Sjette Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
-    <value>Sjette Maxim første datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
-    <value>Sjette Maxim andre datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
-    <value>Sjette Maxim tredje datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
-    <value>Sjette Maxim fjerde datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
-    <value>Sjette Maxim femte datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
-    <value>Sjette Maxim sjette datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
-    <value>Sjette Maxim syvende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
-    <value>Sjette Maxim åttende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
-    <value>Sjette Maxim åttende datterselskap Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
-    <value>Sjette Maxim niende datterselskap Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp1" xml:space="preserve">
     <value>Første omfattende Maxim</value>
@@ -27467,9 +27068,6 @@
   </data>
   <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Kombinere X nedenfor</value>
-  </data>
-  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
-    <value>Kombinere X - X nedenfor</value>
   </data>
   <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Dobbel høy Reversed9 anførselstegn</value>
@@ -27938,5 +27536,404 @@
   </data>
   <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
     <value>Minne etter bønn</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" xml:space="preserve">
+    <value>Mot urviseren trekant ledet nederst U-formet pil</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" xml:space="preserve">
+    <value>Mot urviseren trekant ledet venstre U-formet pil</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" xml:space="preserve">
+    <value>Mot urviseren trekant ledet høyre U-formet pil</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" xml:space="preserve">
+    <value>Mot urviseren trekant dro toppen U-formet pil</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedBird" xml:space="preserve">
+    <value>CJK radikal C - forenklet fugl</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedCart" xml:space="preserve">
+    <value>CJK radikal C - forenklet handlevogn</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedDragon" xml:space="preserve">
+    <value>CJK radikal C - forenklet Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEat" xml:space="preserve">
+    <value>CJK radikal C-forenklet spise</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEven" xml:space="preserve">
+    <value>CJK radikal C-forenklet selv</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFish" xml:space="preserve">
+    <value>CJK radikal C - forenklet fisk</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFly" xml:space="preserve">
+    <value>CJK radikal C - forenklet Fly</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFrog" xml:space="preserve">
+    <value>CJK radikal C - forenklet frosk</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGate" xml:space="preserve">
+    <value>CJK radikal C - forenklet Gate</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGold" xml:space="preserve">
+    <value>CJK radikal C - forenklet gull</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedHorse" xml:space="preserve">
+    <value>CJK radikal C - forenklet hest</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLeaf" xml:space="preserve">
+    <value>CJK radikal C - forenklet blad</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLong" xml:space="preserve">
+    <value>CJK radikal C - forenklet lang</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSalt" xml:space="preserve">
+    <value>CJK radikal C - forenklet Salt</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSee" xml:space="preserve">
+    <value>CJK radikal C - forenklet se</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedShell" xml:space="preserve">
+    <value>CJK radikal C - forenklet Shell</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSilk" xml:space="preserve">
+    <value>CJK radikal C - forenklet Silk</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSpeech" xml:space="preserve">
+    <value>CJK radikal C - forenklet tale</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTannedLeather" xml:space="preserve">
+    <value>CJK radikal C-forenklet garvet skinn</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTooth" xml:space="preserve">
+    <value>CJK radikal C - forenklet tann</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTurtle" xml:space="preserve">
+    <value>CJK radikal C - forenklet skilpadde</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedWind" xml:space="preserve">
+    <value>CJK radikal C - forenklet vind</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedDragon" xml:space="preserve">
+    <value>CJK radikale J - forenklet Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedEven" xml:space="preserve">
+    <value>CJK radikale J-forenklet selv</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTooth" xml:space="preserve">
+    <value>CJK radikale J - forenklet tann</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTurtle" xml:space="preserve">
+    <value>CJK radikale J - forenklet skilpadde</value>
+  </data>
+  <data name="IslamInfo_CombiningXXBelow" xml:space="preserve">
+    <value>Kombinere X - X nedenfor</value>
+  </data>
+  <data name="IslamInfo_DoubleStruckNArySummation" xml:space="preserve">
+    <value>Dobbeltstreket N - ær summering</value>
+  </data>
+  <data name="IslamInfo_LeftSShapedBagDelimiter" xml:space="preserve">
+    <value>Venstre S-formet Bag skilletegn</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N-ær sirklet punktum</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N - ær Innringet pluss operatør</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N - ær sirklet ganger operatør</value>
+  </data>
+  <data name="IslamInfo_NAryCoproduct" xml:space="preserve">
+    <value>N - ær Koprodukt</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N - ær veikryss</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N - ær logisk og</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N - ær logisk eller</value>
+  </data>
+  <data name="IslamInfo_NAryProduct" xml:space="preserve">
+    <value>N - ær produkt</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N - ær kvadrat skjæringspunktoperatoren</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N - ær plassen Union-Operator</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N - ær summering</value>
+  </data>
+  <data name="IslamInfo_NAryTimesOperator" xml:space="preserve">
+    <value>N - ær ganger operatør</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N - ær Union</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N - Unionoperator med prikk for ær</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N - Unionoperator med pluss for ær</value>
+  </data>
+  <data name="IslamInfo_NAryWhiteVerticalBar" xml:space="preserve">
+    <value>N - ær hvit Loddrett stolpe</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputHTypeSymbol" xml:space="preserve">
+    <value>Åpen krets utgang H - Type Symbol</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputLTypeSymbol" xml:space="preserve">
+    <value>Åpen krets utgang L - Type Symbol</value>
+  </data>
+  <data name="IslamInfo_RightSShapedBagDelimiter" xml:space="preserve">
+    <value>Høyre S-formet Bag skilletegn</value>
+  </data>
+  <data name="IslamInfo_TibetanAstrologicalSignKhyudPa" xml:space="preserve">
+    <value>Tibetanske astrologiske tegn Khyud Pa</value>
+  </data>
+  <data name="IslamInfo_TibetanMarkTsaPhru" xml:space="preserve">
+    <value>Tibetanske Mark Tsa-Phru</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_1" xml:space="preserve">
+    <value>Stor mesterverk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_2" xml:space="preserve">
+    <value>Stor mesterverk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_3" xml:space="preserve">
+    <value>Stor mesterverk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece13_1" xml:space="preserve">
+    <value>Stor mesterverk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece22_1" xml:space="preserve">
+    <value>Stor mesterverk</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece38_1" xml:space="preserve">
+    <value>Stor mesterverk</value>
+  </data>
+  <data name="IslamInfo_Maxim1_1" xml:space="preserve">
+    <value>Første Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_2" xml:space="preserve">
+    <value>Første Maxim andre datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_3" xml:space="preserve">
+    <value>Første Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_4" xml:space="preserve">
+    <value>Første Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_5" xml:space="preserve">
+    <value>Første Maxim femte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_1" xml:space="preserve">
+    <value>Første Maxim første eksepsjonell Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_2" xml:space="preserve">
+    <value>Første Maxim andre eksepsjonell Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_1" xml:space="preserve">
+    <value>Andre Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_2" xml:space="preserve">
+    <value>Andre Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_3" xml:space="preserve">
+    <value>Andre Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_2" xml:space="preserve">
+    <value>Andre Maxim andre datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_3" xml:space="preserve">
+    <value>Andre Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_4" xml:space="preserve">
+    <value>Andre Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_5" xml:space="preserve">
+    <value>Andre Maxim femte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_6" xml:space="preserve">
+    <value>Andre Maxim sjette datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_7" xml:space="preserve">
+    <value>Andre Maxim syvende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_8" xml:space="preserve">
+    <value>Andre Maxim åttende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_9" xml:space="preserve">
+    <value>Andre Maxim niende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_10" xml:space="preserve">
+    <value>Andre Maxim tiende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_11" xml:space="preserve">
+    <value>Andre Maxim ellevte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_12" xml:space="preserve">
+    <value>Andre Maxim tolvte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_13" xml:space="preserve">
+    <value>Andre Maxim trettende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_1" xml:space="preserve">
+    <value>Tredje Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_2" xml:space="preserve">
+    <value>Tredje Maxim andre datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_1" xml:space="preserve">
+    <value>Tredje Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_2" xml:space="preserve">
+    <value>Tredje Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_1" xml:space="preserve">
+    <value>Tredje Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_2" xml:space="preserve">
+    <value>Tredje Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_5" xml:space="preserve">
+    <value>Tredje Maxim femte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_6" xml:space="preserve">
+    <value>Tredje Maxim sjette datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_7" xml:space="preserve">
+    <value>Tredje Maxim syvende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_1" xml:space="preserve">
+    <value>Fjerde Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_2" xml:space="preserve">
+    <value>Fjerde Maxim andre datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_1" xml:space="preserve">
+    <value>Fjerde Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_2" xml:space="preserve">
+    <value>Fjerde Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_3" xml:space="preserve">
+    <value>Fjerde Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_4" xml:space="preserve">
+    <value>Fjerde Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_4" xml:space="preserve">
+    <value>Fjerde Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_5" xml:space="preserve">
+    <value>Fjerde Maxim femte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_6" xml:space="preserve">
+    <value>Fjerde Maxim sjette datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_7" xml:space="preserve">
+    <value>Fjerde Maxim syvende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_1" xml:space="preserve">
+    <value>Femte Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_2" xml:space="preserve">
+    <value>Femte Maxim andre datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_3" xml:space="preserve">
+    <value>Femte Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4" xml:space="preserve">
+    <value>Femte Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4_1" xml:space="preserve">
+    <value>Femte Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_5" xml:space="preserve">
+    <value>Femte Maxim femte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_6" xml:space="preserve">
+    <value>Femte Maxim sjette datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_7" xml:space="preserve">
+    <value>Femte Maxim syvende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_8" xml:space="preserve">
+    <value>Femte Maxim åttende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_9" xml:space="preserve">
+    <value>Femte Maxim niende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_10" xml:space="preserve">
+    <value>Femte Maxim tiende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_11" xml:space="preserve">
+    <value>Femte Maxim ellevte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_12" xml:space="preserve">
+    <value>Femte Maxim tolvte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_1" xml:space="preserve">
+    <value>Sjette Maxim første datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_2" xml:space="preserve">
+    <value>Sjette Maxim andre datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_3" xml:space="preserve">
+    <value>Sjette Maxim tredje datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_4" xml:space="preserve">
+    <value>Sjette Maxim fjerde datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_5" xml:space="preserve">
+    <value>Sjette Maxim femte datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_6" xml:space="preserve">
+    <value>Sjette Maxim sjette datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_7" xml:space="preserve">
+    <value>Sjette Maxim syvende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_1" xml:space="preserve">
+    <value>Sjette Maxim åttende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_2" xml:space="preserve">
+    <value>Sjette Maxim åttende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_9" xml:space="preserve">
+    <value>Sjette Maxim niende datterselskap Maxim</value>
+  </data>
+  <data name="IslamInfo_GoldCoinOf2_975Grams" xml:space="preserve">
+    <value>Gull mynt 2.975 gram</value>
+  </data>
+  <data name="IslamInfo_SilverOf2_975Grams" xml:space="preserve">
+    <value>Sølv 2.975 gram</value>
+  </data>
+  <data name="IslamInfo_WeightMeasureOf4_25Grams" xml:space="preserve">
+    <value>Vekt mål på 4_25 gram</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch2" xml:space="preserve">
+    <value>Alle hører alt seende originalen hjelperen den øverste hos avlatskremmer kraftig kjenner nyanser alle oppmerksom en odde vakre sjenert Coverer en stor den ekstremt opphøyet en eneste alle rådende en</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch1" xml:space="preserve">
+    <value>Den Beneficent den barmhjertige evige Herre det helligste legemliggjørelsen av fred Infuser troens beskytter av sikkerhet den mektige alle overbevisende dominerende skaperen Evolver feilfri utformeren første uendelig siste det merkbar på umerkelig</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch3" xml:space="preserve">
+    <value>Legemliggjørelsen av sannheten klart en sterk en fast den stadig levende selvet livnærer seg en sublim en fantastisk en anerkjenner en Clement en alle altoverskyggende en alle vite en noensinne Acceptor omvendelsens en klok selv nok en overflod en eneste en øverste leverandøren nær svarer en hos avlatskremmer en kjærlig</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch6" xml:space="preserve">
+    <value>Den store Forgiver en godartet øverste skjenkeren den mest sjenerøse den mest hellige fra alle svakhet den evige Inheritor Master den høyeste Gud Final1</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch4" xml:space="preserve">
+    <value>Den beskytter knytte den eneste prisverdig som vokter en strålende en øverste Problemløseren alle observere vitnet påskynde en somlekopp allmektige kongen alle autoritative en briljant Taker Extender leverandøren den uimotståelig som Recompenses</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
+    <value>Håndskriftgjenkjenneren skjenkeren en allmektig kontinuerlig skaperen eier totale leverandøren Universal Tillitsmann vaktsom en Doer av gode tidsregning ett som kurer milde Giver opprettholde en Herren godt den upartisk dommer Høyesterett ære fontene-hode sannhetens</value>
   </data>
 </root>

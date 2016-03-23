@@ -306,9 +306,6 @@
   <data name="IslamInfo_Name" xml:space="preserve">
     <value>ᏚᏙᎥ</value>
   </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N- ᎠᎵ ᎣᏂ ᎦᏟᏐᏅ ᎦᏬᏂᏍᏗ</value>
-  </data>
   <data name="IslamInfo_New" xml:space="preserve">
     <value>ᎢᏤ</value>
   </data>
@@ -611,5 +608,8 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>ᎾᏛᏁᎲ</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N- ᎠᎵ ᎣᏂ ᎦᏟᏐᏅ ᎦᏬᏂᏍᏗ</value>
   </data>
 </root>

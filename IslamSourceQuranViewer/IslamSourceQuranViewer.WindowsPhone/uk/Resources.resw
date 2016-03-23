@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Арабська шрифту</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Зменшити розмір шрифту</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Розмір шрифту за промовчанням</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Коран Арабська, транслітерації та перекладу слово і вірші вірші для навчання, вивчення, дослідження, запам'ятовування, роздумів і майстерності tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Слово Коран</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Збільшити розмір шрифту</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Інші шрифт тексту</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Відтворення</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Показати перекладу</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Показати Транслітерація</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Показати слово</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Розмір</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Використання декламація правило забарвлення</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Мова за промовчанням</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Додати закладку</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Закладки</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Копіювати до буфера обміну</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Перейти до вірш</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Відтворити</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Читця</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Видалити закладку</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Встановити відтворення вірш</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Показати екзегеза</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Спільний доступ</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Додаткові вірш заздалегідь затримка</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Заздалегідь вірш автоматично</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Затримка довжина вірша до просування</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Музикальний режим</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Про програму</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Арабська Корані з метаданими і всі переклади і деякі аудіо мови, крім вищезазначеної зараховуються до проекту Tanzil (http://tanzil.net). 
+Угорська Переклад з Корану за поцілунок Halima ж. зараховуються до Magyar Iszlam (http://magyariszlam.hu). 
+Англійська Переклад Qu'ran, Мауле Мухаммед Алі зараховані на Лахор Ахмаді руху в ісламі (http://www.aaiil.org). 
+Морфології даних і англійський переклад слова за словом честь Quranic Арабська корпус (http://corpus.quran.com). 
+Індонезійська Переклад слова за словом кредит для Аль Коран Індонезія (http://www.alquran-indonesia.com/web/quran). 
+Урду переклад слова за словом за Хафіз Назар Мухаммад зараховані на легко Корану Wa Hadees (http://www.easyquranwahadees.com). 
+Інші переклади слово за словом, а також інші переклади у програмі зараховуються до постачальника Microsoft перекладу (http://www.microsoft.com/en-us/translator) і Перекладач Google (http://translate.google.com) і не можуть бути точними.  Для Малайзії--слово Коран джерелом є Індонезійська.  Для всіх інших--слово Коран джерелом є Англійська Арабська Corpus Quranic. 
+Інших аудіо мови з бітрейт показано зараховані на кожен Ayah (http://www.everyayah.com). 
+Дані в кодуванні Юнікод, зарахованих до The Unicode консорціуму (http://www.unicode.org)</value>
+  </data>
+</root>

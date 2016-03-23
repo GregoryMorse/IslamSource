@@ -960,42 +960,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>ନାମ</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N-ଆରି ବୃତ୍ତିୟ ଡଟ୍ ଅପରେଟର୍</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N-ଆରି ବୃତ୍ତିୟ ଯୋଗ ଅପରେଟର୍</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N-ଆରି ବୃତ୍ତିୟ ସମୟ ଅପରେଟର୍</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N-ଆରି ଇଣ୍ଟର୍‌ସେକ୍ସନ୍</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N-ଆରି ଲଜିକାଲ୍ ଏବଂ</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N-ଆରି ଲଜିକାଲ୍ କିମ୍ବା</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N-ଆରି ବର୍ଗାକାର ଇଣ୍ଟର୍‌ସେକ୍ସନ୍ ଅପରେଟର୍</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N-ଆରି ବର୍ଗାକାର ୟୁନିଅନ୍ ଅପରେଟର୍</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N-Ary ମିଶାଣ</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N-ଆରି ୟୁନିଅନ୍</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>ଡଟ୍ ସହିତ N-ଆରି ୟୁନିଅନ୍ ଅପରେଟର୍</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>ଯୋଗ ସହିତ N-ଆରି ୟୁନିଅନ୍ ଅପରେଟର୍</value>
-  </data>
   <data name="IslamInfo_Near" xml:space="preserve">
     <value>ନିକଟସ୍ଥ</value>
   </data>
@@ -1850,5 +1814,41 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>ସକ୍ରିୟ</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N-ଆରି ବୃତ୍ତିୟ ଡଟ୍ ଅପରେଟର୍</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N-ଆରି ବୃତ୍ତିୟ ଯୋଗ ଅପରେଟର୍</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N-ଆରି ବୃତ୍ତିୟ ସମୟ ଅପରେଟର୍</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N-ଆରି ଇଣ୍ଟର୍‌ସେକ୍ସନ୍</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N-ଆରି ଲଜିକାଲ୍ ଏବଂ</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N-ଆରି ଲଜିକାଲ୍ କିମ୍ବା</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-ଆରି ବର୍ଗାକାର ଇଣ୍ଟର୍‌ସେକ୍ସନ୍ ଅପରେଟର୍</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N-ଆରି ବର୍ଗାକାର ୟୁନିଅନ୍ ଅପରେଟର୍</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N-Ary ମିଶାଣ</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N-ଆରି ୟୁନିଅନ୍</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>ଡଟ୍ ସହିତ N-ଆରି ୟୁନିଅନ୍ ଅପରେଟର୍</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>ଯୋଗ ସହିତ N-ଆରି ୟୁନିଅନ୍ ଅପରେଟର୍</value>
   </data>
 </root>

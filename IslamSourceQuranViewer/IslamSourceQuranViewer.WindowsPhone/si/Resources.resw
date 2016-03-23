@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Back.Label" xml:space="preserve">
+    <value>ආපසු</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>අකුරු තරම අඩු කරන්න</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>අකුරු තරම වැඩි කරන්න</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>සිටුවම්</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>ප්‍රමාණය</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>පිටුසන &amp;එක් කරන්න</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;පිටුසන්</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>පසුරු පුවරුවට පිටපත් කරන්න</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>විරාම කරන්න</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>ධාවනය කරන්න</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>හවුල</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ගැන</value>
+  </data>
+</root>

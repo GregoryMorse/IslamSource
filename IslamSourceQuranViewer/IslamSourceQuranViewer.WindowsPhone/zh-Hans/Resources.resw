@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>阿拉伯语字体</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>上一页</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>减小字号</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>默认字号</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>其阿拉伯文、 音译与翻译词对词和诗句学习、 学习、 研究、 记忆、 反射和掌握 tajweed 古兰经。</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>古兰经 》 词对词</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>增大字号</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>其他文本字体</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>输出</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>显示翻译</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>显示音译</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>显示字</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>使用背诵规则着色</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>預設語言</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>添加书签</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>书签</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>复制到剪贴板</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>去的诗句</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>播放</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>诵经</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>删除书签</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>设置的回放诗句</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>显示的注释</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>共享</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>额外的诗句前进延迟</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>自动推进的诗句</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>延迟的长度之前，推进的诗句</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>循环模式</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>阿拉伯文古兰经 》 与元数据和所有翻译及一些音频的复习资料除了列出的那些贷记给 Tanzil 项目 (http://tanzil.net)。
+古兰经 》 由吻苏珊娜哈利玛的匈牙利翻译归功于马扎尔人 Iszlam (http://magyariszlam.hu)。
+英语翻译古兰经大毛拉穆罕默德 · 阿里贷记到拉合尔 Ahmadiyya 运动在伊斯兰教 (http://www.aaiil.org)。古兰经阿拉伯语语料库 (http://corpus.quran.com) 信用证
+形态学数据和英语词对词的翻译。
+印度尼西亚词对词翻译信贷向 Al-古兰经 》 印度尼西亚 (http://www.alquran-indonesia.com/web/quran)。
+乌尔都语词对词翻译的哈菲兹纳扎尔穆罕默德贷容易古兰经洼北爱尔兰 (http://www.easyquranwahadees.com)。
+其他词对词的翻译，以及在程序中的其他翻译贷微软翻译供应商 (http://www.microsoft.com/en-us/translator) 和谷歌翻译 (http://translate.google.com)，可能不准确。 对于古兰经 》 词对词马来西亚源是印度尼西亚。 对于所有其他词对词古兰经 》，源是古兰经阿拉伯语语料库。
+其他音频比特率显示复习记入每个保姆卡 (http://www.everyayah.com) 的事。
+Unicode 数据记入 Unicode 协会 (http://www.unicode.org)</value>
+  </data>
+</root>

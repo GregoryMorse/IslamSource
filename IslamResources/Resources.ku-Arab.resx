@@ -867,9 +867,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>ناوەکان</value>
   </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>كۆكردنەوەی N-Ary</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>ستونی باری دووانی هەڵوەشاوەی شێوە سوڕاوەی دووانی ڕاست</value>
   </data>
@@ -1586,5 +1583,8 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Active</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>كۆكردنەوەی N-Ary</value>
   </data>
 </root>

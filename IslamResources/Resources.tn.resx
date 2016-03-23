@@ -951,42 +951,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>Maina</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N-ary e e Sekeleditsweng Lerontho Setsamaisi</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N-ary e e sekeleditsweng e Tlhakane Le Setsamaisi</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N-ary e e Sekeleditsweng e Ntsifaditswe ka Setsamaisi</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N-ary kgabaganyo</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N-ary e e Utlwalang Le</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N-ary e e Utlwalang  Kgotsa</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>Setsamaisi sa Sekwere sa N-ary se kgabaganya </value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>Setsamaisi sa Kopano ya Sekwere sa Kopano ya N-ary</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>Tlhakanyo ya N-Ary</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N-ary Kopano</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>Setsamaisi sa Kopano ya N-ary le Lerontho</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>Setsamaisi sa Kopano ya N-ary le Tlhakanya</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>Kganetso Turnstile Gararo Bara Moja Tsepamo</value>
   </data>
@@ -1817,5 +1781,41 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Dirisiwang</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N-ary e e Sekeleditsweng Lerontho Setsamaisi</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N-ary e e sekeleditsweng e Tlhakane Le Setsamaisi</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N-ary e e Sekeleditsweng e Ntsifaditswe ka Setsamaisi</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N-ary kgabaganyo</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N-ary e e Utlwalang Le</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N-ary e e Utlwalang  Kgotsa</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>Setsamaisi sa Sekwere sa N-ary se kgabaganya </value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>Setsamaisi sa Kopano ya Sekwere sa Kopano ya N-ary</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>Tlhakanyo ya N-Ary</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N-ary Kopano</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>Setsamaisi sa Kopano ya N-ary le Lerontho</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>Setsamaisi sa Kopano ya N-ary le Tlhakanya</value>
   </data>
 </root>

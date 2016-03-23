@@ -804,39 +804,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>Atiit</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N-ary Ammaluqsisimajuq Taqsaq Aulattijjut</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N-ary Ammaluqsisimajuq Ilasijjut Aulattijjut</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N-ary Ammaluqsisimajuq Ikarranut Aulattijjut</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N-ary Apurvik</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N-ary Logical Amma</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N-ary Logical Uvvalu</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N-ary Kipaarittuq Apurvik Aulattijjut</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N-ary Kippaarittuq Union Aulattijjut</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N-ary Union</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N-ary Union Aulattijjut Taqsalik</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N-ary Union Aulattijjut Katitittijjutilik</value>
-  </data>
   <data name="IslamInfo_Near" xml:space="preserve">
     <value>saniani</value>
   </data>
@@ -1559,5 +1526,38 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Pigiaqtisimajuq</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N-ary Ammaluqsisimajuq Taqsaq Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N-ary Ammaluqsisimajuq Ilasijjut Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N-ary Ammaluqsisimajuq Ikarranut Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N-ary Apurvik</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N-ary Logical Amma</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N-ary Logical Uvvalu</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N-ary Kipaarittuq Apurvik Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N-ary Kippaarittuq Union Aulattijjut</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N-ary Union</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N-ary Union Aulattijjut Taqsalik</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N-ary Union Aulattijjut Katitittijjutilik</value>
   </data>
 </root>

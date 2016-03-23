@@ -91,7 +91,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.VisualBasic.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(ProgramFiles)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\sgen.exe" /assembly:"$(ProjectDir)$(OutDir)IslamMetadata.dll" /type:IslamMetadata.IslamData /force
+    <PostBuildEvent>REM "$(ProgramFiles)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\sgen.exe" /assembly:"$(ProjectDir)$(OutDir)IslamMetadata.dll" /type:IslamMetadata.IslamData /force
 REM "$(SolutionDir)BuildUtility\bin\$(ConfigurationName)\BuildUtility.exe"
 REM "$(ProgramFiles)\Microsoft\ILMerge\ILMerge.exe" /lib:"$(ProgramFiles)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0.3" /out:"$(ProjectDir)$(OutDir)IslamMetadataMerged.dll" "$(ProjectDir)$(OutDir)IslamMetadata.dll" "$(SolutionDir)BuildUtility\bin\$(ConfigurationName)\IslamMetadataRegEx.dll" /targetplatform:v4</PostBuildEvent>
   </PropertyGroup>

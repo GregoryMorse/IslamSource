@@ -966,25 +966,9 @@
           <source>Anticlockwise Top Semicircle Arrow</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Anticlockwise Top Semicircle Arrow</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Bottom U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形頭下部 U 字矢印</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Left U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形に向かって左 U 字矢印</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" translate="yes" xml:space="preserve">
           <source>Anticlockwise Triangle Headed Open Circle Arrow</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形方向オープン サークル矢印</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Right U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形に向かって右 U - 矢印の形</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Top U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形に向かったトップ U - 矢印の形</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AnyKindOfHurt" translate="yes" xml:space="preserve">
           <source>Any Kind Of Hurt</source>
@@ -6154,94 +6138,6 @@
           <source>Cjk Radical Cow</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル牛</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedBird" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Bird</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 鳥を簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedCart" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Cart</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易カート</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedDragon" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Dragon</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - ドラゴンを簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedEat" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Eat</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡体字を食べる</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedEven" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Even</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - も簡体字</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedFish" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Fish</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 魚を簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedFly" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Fly</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - フライを簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedFrog" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Frog</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - カエルを簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedGate" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Gate</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易ゲート</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedGold" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Gold</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - ゴールドを簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedHorse" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Horse</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 馬を簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedLeaf" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Leaf</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 葉を簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedLong" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Long</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 長い簡体字</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSalt" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Salt</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易塩</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSee" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified See</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡を参照</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedShell" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Shell</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - シェルを簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSilk" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Silk</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易シルク</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSpeech" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Speech</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易音声</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Tanned Leather</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">鞣し革の Cjk ラジカル C-簡体字</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedTooth" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Tooth</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 歯を簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedTurtle" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Turtle</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - カメを簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedWind" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Wind</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易風</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_CjkRadicalDeath" translate="yes" xml:space="preserve">
           <source>Cjk Radical Death</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル死</target>
@@ -6321,22 +6217,6 @@
         <trans-unit id="IslamInfo_CjkRadicalJade" translate="yes" xml:space="preserve">
           <source>Cjk Radical Jade</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk 根本的な玉</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedDragon" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Dragon</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - ドラゴンを簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedEven" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Even</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - も簡体字</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedTooth" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Tooth</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - 歯を簡略化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedTurtle" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Turtle</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - カメを簡略化</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CjkRadicalKnifeOne" translate="yes" xml:space="preserve">
           <source>Cjk Radical Knife One</source>
@@ -9810,10 +9690,6 @@
           <source>Double Stroke Not Sign</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Double Stroke Not Sign</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_DoubleStruckN-ArySummation" translate="yes" xml:space="preserve">
-          <source>Double Struck N- Ary Summation</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ダブルを打った N - 進和</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_DoubleSubset" translate="yes" xml:space="preserve">
           <source>Double Subset</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">二重部分集合</target>
@@ -12197,10 +12073,6 @@
         <trans-unit id="IslamInfo_Gold" translate="yes" xml:space="preserve">
           <source>Gold</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">ゴールド</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GoldCoinOf2.975Grams" translate="yes" xml:space="preserve">
-          <source>Gold Coin Of2.975 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">金貨 Of2.975 グラム</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Goliath" translate="yes" xml:space="preserve">
           <source>Goliath</source>
@@ -16862,10 +16734,6 @@
           <source>Left Square Bracket With Underbar</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Left Square Bracket With Underbar</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_LeftS-ShapedBagDelimiter" translate="yes" xml:space="preserve">
-          <source>Left S- Shaped Bag Delimiter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">左 S 字袋区切り記号</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_LeftSubstitutionBracket" translate="yes" xml:space="preserve">
           <source>Left Substitution Bracket</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Left Substitution Bracket</target>
@@ -20022,70 +19890,6 @@
           <source>Narrow No Break Space</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">休憩スペースの狭いないです。</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCircledDotOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Circled Dot Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木丸付きドット</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCircledPlusOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Circled Plus Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 丸付きプラス演算子</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCircledTimesOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Circled Times Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項演算子回丸</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCoproduct" translate="yes" xml:space="preserve">
-          <source>N- Ary Coproduct</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の直和</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryIntersection" translate="yes" xml:space="preserve">
-          <source>N- Ary Intersection</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木交差点</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryLogicalAnd" translate="yes" xml:space="preserve">
-          <source>N- Ary Logical And</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項論理と</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryLogicalOr" translate="yes" xml:space="preserve">
-          <source>N- Ary Logical Or</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項論理または</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryProduct" translate="yes" xml:space="preserve">
-          <source>N- Ary Product</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の製品</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-ArySquareIntersectionOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Square Intersection Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木正方形の共通部分の演算子</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-ArySquareUnionOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Square Union Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木正方形 Union 演算子</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-ArySummation" translate="yes" xml:space="preserve">
-          <source>N- Ary Summation</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の総和</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryTimesOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Times Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N-Ary 回演算子</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryUnion" translate="yes" xml:space="preserve">
-          <source>N- Ary Union</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の連合</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryUnionOperatorWithDot" translate="yes" xml:space="preserve">
-          <source>N- Ary Union Operator With Dot</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N ドットの項演算子</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryUnionOperatorWithPlus" translate="yes" xml:space="preserve">
-          <source>N- Ary Union Operator With Plus</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N プラス項演算子</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryWhiteVerticalBar" translate="yes" xml:space="preserve">
-          <source>N- Ary White Vertical Bar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木白い垂直バー</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Nasalization" translate="yes" xml:space="preserve">
           <source>Nasalization</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">鼻音化</target>
@@ -21045,14 +20849,6 @@
         <trans-unit id="IslamInfo_OpenCentreTeardropSpokedAsterisk" translate="yes" xml:space="preserve">
           <source>Open Centre Teardrop Spoked Asterisk</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">オープン センター涙スポーク アスタリスク</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_OpenCircuitOutputH-TypeSymbol" translate="yes" xml:space="preserve">
-          <source>Open Circuit Output H- Type Symbol</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">開放回路出力 H 型シンボル</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_OpenCircuitOutputL-TypeSymbol" translate="yes" xml:space="preserve">
-          <source>Open Circuit Output L- Type Symbol</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">開放回路出力 L 型シンボル</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Openers" translate="yes" xml:space="preserve">
           <source>Openers</source>
@@ -24422,10 +24218,6 @@
           <source>Right Square Bracket With Underbar</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Right Square Bracket With Underbar</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_RightS-ShapedBagDelimiter" translate="yes" xml:space="preserve">
-          <source>Right S- Shaped Bag Delimiter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">右 S 字袋区切り記号</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_RightSubstitutionBracket" translate="yes" xml:space="preserve">
           <source>Right Substitution Bracket</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Right Substitution Bracket</target>
@@ -25577,10 +25369,6 @@
         <trans-unit id="IslamInfo_Silver" translate="yes" xml:space="preserve">
           <source>Silver</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">銀色</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_SilverOf2.975Grams" translate="yes" xml:space="preserve">
-          <source>Silver Of2.975 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">銀 Of2.975 グラム</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" translate="yes" xml:space="preserve">
           <source>Similar Above Greater Than Above Equals Sign</source>
@@ -28374,10 +28162,6 @@
           <source>The All Hearer The All Seeing</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">すべての聞き手すべて見る</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" translate="yes" xml:space="preserve">
-          <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">すべての聞き手見て強力な最高の免罪ヘルパー マスター機微すべてを知って 1 つの全知すべて奇数美しい恥ずかしがり屋 Coverer 大きな 1 つ、非常に高貴な 1 つ 1 つだけ勝つ 1 つすべて</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TheAllHearerTheClose" translate="yes" xml:space="preserve">
           <source>The All Hearer The Close</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">近くのすべての聞き手</target>
@@ -28441,10 +28225,6 @@
         <trans-unit id="IslamInfo_TheBeneficent" translate="yes" xml:space="preserve">
           <source>The Beneficent</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">慈悲、</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" translate="yes" xml:space="preserve">
-          <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">慈悲、慈悲深い永遠主最も神聖な平和信仰偉大な 1 つの安全の禁猟区の溜めの化身すべて作成者 Evolver の非常に最初の完璧なシェーパー支配的な 1 つを魅力的な無限最後の 1 つ、知覚感知できません。</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheBenignOne" translate="yes" xml:space="preserve">
           <source>The Benign One</source>
@@ -28565,10 +28345,6 @@
         <trans-unit id="IslamInfo_TheEmbodimentOfTruth" translate="yes" xml:space="preserve">
           <source>The Embodiment of Truth</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">真実の具現化</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" translate="yes" xml:space="preserve">
-          <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">真実クリアの実施形態強いもの確固としたもの、これまで住んでいる 1 つに崇高なものを自給自己壮大な 1 つ承認の 1 つクレメント 1 浸透している 1 つ 1 つに悔い改め賢明な 1 つのこれまでのアクセプターを知っているすべてのすべて自己十分な 1 つ豊かなもの唯一の 1 つ近くの最高のプロバイダー応答の 1 つ免罪愛情の 1 つ</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheEternalInheritor" translate="yes" xml:space="preserve">
           <source>The Eternal Inheritor</source>
@@ -28709,10 +28485,6 @@
         <trans-unit id="IslamInfo_TheGreatForgiver" translate="yes" xml:space="preserve">
           <source>The Great Forgiver</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">偉大な寛容</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" translate="yes" xml:space="preserve">
-          <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">偉大な寛容良性の 1 つ最も寛大な最高の Bestower すべて弱点永遠の相続人マスターの最も高いから最も神聖な 1 つ神 Final1</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheGreatOne" translate="yes" xml:space="preserve">
           <source>The Great One</source>
@@ -29086,10 +28858,6 @@
           <source>The Protecting Associate</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">保護准</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" translate="yes" xml:space="preserve">
-          <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">唯一称賛に値する 1 つのガードの 1 つを関連付ける保護栄光の 1 つすべて観察証人迅速化の 1 つの最高のソルバー先延ばし全能王すべて権限のある 1 つの華麗な係エクステンダー プロバイダー、魅力的な報いる人</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TheProvider" translate="yes" xml:space="preserve">
           <source>The Provider</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">プロバイダー</target>
@@ -29113,10 +28881,6 @@
         <trans-unit id="IslamInfo_TheRecognizerTheAllKnowingOne" translate="yes" xml:space="preserve">
           <source>The Recognizer The All Knowing One</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">認識エンジンのすべてを知るもの</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" translate="yes" xml:space="preserve">
-          <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">認識エンジン Bestower ぜんのう連続作成者所有者総プロバイダー普遍的な管財人監視 1 善意のやり手清算 1 つ一人治療の穏やかな維持の 1 つは、贈り主主良い中立的な判断する真実の泉長に敬意を表して最高</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheRecognizerTheClementOne" translate="yes" xml:space="preserve">
           <source>The Recognizer The Clement One</source>
@@ -29634,10 +29398,6 @@
           <source>Thunderstorm</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Thunderstorm</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TibetanAstrologicalSign-KhyudPa" translate="yes" xml:space="preserve">
-          <source>Tibetan Astrological Sign- Khyud Pa</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">チベット占星術記号 Khyud Pa</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TibetanAstrologicalSignSdongTshugs" translate="yes" xml:space="preserve">
           <source>Tibetan Astrological Sign Sdong Tshugs</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Tibetan Astrological Sign Sdong Tshugs</target>
@@ -29670,10 +29430,6 @@
           <source>Tibetan Mark Ngas Bzung Sgor Rtags</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Tibetan Mark Ngas Bzung Sgor Rtags</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TibetanMarkTsa-Phru" translate="yes" xml:space="preserve">
-          <source>Tibetan Mark Tsa- Phru</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">チベット マーク Tsa Phru</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TibetanSignLciRtags" translate="yes" xml:space="preserve">
           <source>Tibetan Sign Lci Rtags</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Tibetan Sign Lci Rtags</target>
@@ -29697,10 +29453,6 @@
         <trans-unit id="IslamInfo_TibetanSubjoinedLetterA" translate="yes" xml:space="preserve">
           <source>Tibetan Subjoined Letter A</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">チベット Subjoined a</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TibetanSubjoinedLetter-A" translate="yes" xml:space="preserve">
-          <source>Tibetan Subjoined Letter- A</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">チベット Subjoined 文字 A</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TibetanSubjoinedLetterBa" translate="yes" xml:space="preserve">
           <source>Tibetan Subjoined Letter Ba</source>
@@ -32271,20 +32023,19 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">強制延長言葉の重み</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf130320Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of130320 Grams</source>
+          <source>Weight Measure Of 130320 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">重量測定 Of130320 グラム</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf2172Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of2172 Grams</source>
+          <source>Weight Measure Of 2172 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">重量測定 Of2172 グラム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_WeightMeasureOf4.25Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of4.25 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">重量測定 Of4.25 グラム</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf543Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of543 Grams</source>
+          <source>Weight Measure Of 543 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">重量測定 Of543 グラム</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="IslamInfo_WellGrounded" translate="yes" xml:space="preserve">
           <source>Well Grounded</source>
@@ -35702,23 +35453,7 @@
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece12-1" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece12-2" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece12-3" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_GreatMasterpiece13" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece13-1" translate="yes" xml:space="preserve">
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
         </trans-unit>
@@ -35755,10 +35490,6 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GreatMasterpiece22" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece22-1" translate="yes" xml:space="preserve">
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
         </trans-unit>
@@ -35823,10 +35554,6 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GreatMasterpiece38" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece38-1" translate="yes" xml:space="preserve">
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
         </trans-unit>
@@ -35994,281 +35721,25 @@
           <source>First Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-1" translate="yes" xml:space="preserve">
-          <source>First Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-2" translate="yes" xml:space="preserve">
-          <source>First Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム秒子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-3" translate="yes" xml:space="preserve">
-          <source>First Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-4" translate="yes" xml:space="preserve">
-          <source>First Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-5" translate="yes" xml:space="preserve">
-          <source>First Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム 5 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-6-1" translate="yes" xml:space="preserve">
-          <source>First Maxim First Exceptional Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム最初例外的な格言</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-6-2" translate="yes" xml:space="preserve">
-          <source>First Maxim Second Exceptional Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム秒優れた格言</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Maxim2" translate="yes" xml:space="preserve">
           <source>Second Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-1-1" translate="yes" xml:space="preserve">
-          <source>Second Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-1-2" translate="yes" xml:space="preserve">
-          <source>Second Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-1-3" translate="yes" xml:space="preserve">
-          <source>Second Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-2" translate="yes" xml:space="preserve">
-          <source>Second Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目の名言第 2 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-3" translate="yes" xml:space="preserve">
-          <source>Second Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目の格言 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-4" translate="yes" xml:space="preserve">
-          <source>Second Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-5" translate="yes" xml:space="preserve">
-          <source>Second Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 5 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-6" translate="yes" xml:space="preserve">
-          <source>Second Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 6 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-7" translate="yes" xml:space="preserve">
-          <source>Second Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 7 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-8" translate="yes" xml:space="preserve">
-          <source>Second Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 8 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-9" translate="yes" xml:space="preserve">
-          <source>Second Maxim Ninth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 9 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-10" translate="yes" xml:space="preserve">
-          <source>Second Maxim Tenth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 10 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-11" translate="yes" xml:space="preserve">
-          <source>Second Maxim Eleventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 11 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-12" translate="yes" xml:space="preserve">
-          <source>Second Maxim Twelfth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 12 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-13" translate="yes" xml:space="preserve">
-          <source>Second Maxim Thirteenth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 13 子会社マキシム</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Maxim3" translate="yes" xml:space="preserve">
           <source>Third Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">第三の名言</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-1" translate="yes" xml:space="preserve">
-          <source>Third Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目のマキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-2" translate="yes" xml:space="preserve">
-          <source>Third Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 2 番目子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-3-1" translate="yes" xml:space="preserve">
-          <source>Third Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-3-2" translate="yes" xml:space="preserve">
-          <source>Third Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-4-1" translate="yes" xml:space="preserve">
-          <source>Third Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目のマキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-4-2" translate="yes" xml:space="preserve">
-          <source>Third Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目のマキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-5" translate="yes" xml:space="preserve">
-          <source>Third Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 5 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-6" translate="yes" xml:space="preserve">
-          <source>Third Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 6 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-7" translate="yes" xml:space="preserve">
-          <source>Third Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 7 子会社マキシム</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Maxim4" translate="yes" xml:space="preserve">
           <source>Fourth Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">4 番目の格言</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-1" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-2" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム秒子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-1" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-2" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-3" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-4" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-4" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-5" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 5 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-6" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">4 番目の格言 6 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-7" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">4 番目の格言 7 子会社マキシム</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Maxim5" translate="yes" xml:space="preserve">
           <source>Fifth Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-1" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-2" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム秒子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-3" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-4" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-4-1" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-5" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 5 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-6" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 6 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-7" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 7 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-8" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 8 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-9" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Ninth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 9 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-10" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Tenth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 10 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-11" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Eleventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 11 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-12" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Twelfth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 12 子会社マキシム</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Maxim6" translate="yes" xml:space="preserve">
           <source>Sixth Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-1" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム最初子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-2" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム秒子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-3" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム 3 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-4" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム 4 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-5" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム 5 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-6" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 6 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-7" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 7 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-8-1" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 8 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-8-2" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 8 子会社マキシム</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-9" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Ninth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 9 子会社マキシム</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MaximComp1" translate="yes" xml:space="preserve">
           <source>First Comprehensive Maxim</source>
@@ -36613,10 +36084,6 @@
         <trans-unit id="IslamInfo_CombiningXBelow" translate="yes" xml:space="preserve">
           <source>Combining X  Below</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">X 以下を組み合わせること</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CombiningX-XBelow" translate="yes" xml:space="preserve">
-          <source>Combining X- X  Below</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">X X 以下を組み合わせること</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleHighReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double High Reversed9  Quotation Mark</source>
@@ -37241,6 +36708,538 @@
         <trans-unit id="IslamInfo_RemembranceAfterPrayer" translate="yes" xml:space="preserve">
           <source>Remembrance After Prayer</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">祈りの後の記憶</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Bottom U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形頭下部 U 字矢印</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Left U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形に向かって左 U 字矢印</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Right U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形に向かって右 U - 矢印の形</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Top U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">反時計回りの三角形に向かったトップ U - 矢印の形</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedBird" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Bird</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 鳥を簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedCart" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Cart</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易カート</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedDragon" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Dragon</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - ドラゴンを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedEat" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Eat</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡体字を食べる</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedEven" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Even</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - も簡体字</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedFish" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Fish</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 魚を簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedFly" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Fly</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - フライを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedFrog" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Frog</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - カエルを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedGate" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Gate</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易ゲート</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedGold" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Gold</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - ゴールドを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedHorse" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Horse</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 馬を簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedLeaf" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Leaf</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 葉を簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedLong" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Long</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 長い簡体字</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSalt" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Salt</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易塩</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSee" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified See</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡を参照</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedShell" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Shell</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - シェルを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSilk" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Silk</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易シルク</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSpeech" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Speech</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易音声</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedTannedLeather" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Tanned Leather</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">鞣し革の Cjk ラジカル C-簡体字</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedTooth" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Tooth</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - 歯を簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedTurtle" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Turtle</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C - カメを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedWind" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Wind</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル C-簡易風</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedDragon" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Dragon</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - ドラゴンを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedEven" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Even</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - も簡体字</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedTooth" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Tooth</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - 歯を簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedTurtle" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Turtle</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cjk ラジカル J - カメを簡略化</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CombiningXXBelow" translate="yes" xml:space="preserve">
+          <source>Combining X- X  Below</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">X X 以下を組み合わせること</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DoubleStruckNArySummation" translate="yes" xml:space="preserve">
+          <source>Double Struck N- Ary Summation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ダブルを打った N - 進和</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeftSShapedBagDelimiter" translate="yes" xml:space="preserve">
+          <source>Left S- Shaped Bag Delimiter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">左 S 字袋区切り記号</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCircledDotOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Circled Dot Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木丸付きドット</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCircledPlusOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Circled Plus Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 丸付きプラス演算子</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCircledTimesOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Circled Times Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項演算子回丸</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCoproduct" translate="yes" xml:space="preserve">
+          <source>N- Ary Coproduct</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の直和</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryIntersection" translate="yes" xml:space="preserve">
+          <source>N- Ary Intersection</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木交差点</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryLogicalAnd" translate="yes" xml:space="preserve">
+          <source>N- Ary Logical And</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項論理と</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryLogicalOr" translate="yes" xml:space="preserve">
+          <source>N- Ary Logical Or</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項論理または</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryProduct" translate="yes" xml:space="preserve">
+          <source>N- Ary Product</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の製品</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NArySquareIntersectionOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Square Intersection Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木正方形の共通部分の演算子</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NArySquareUnionOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Square Union Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木正方形 Union 演算子</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NArySummation" translate="yes" xml:space="preserve">
+          <source>N- Ary Summation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の総和</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryTimesOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Times Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N-Ary 回演算子</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryUnion" translate="yes" xml:space="preserve">
+          <source>N- Ary Union</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 項の連合</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryUnionOperatorWithDot" translate="yes" xml:space="preserve">
+          <source>N- Ary Union Operator With Dot</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N ドットの項演算子</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryUnionOperatorWithPlus" translate="yes" xml:space="preserve">
+          <source>N- Ary Union Operator With Plus</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N プラス項演算子</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryWhiteVerticalBar" translate="yes" xml:space="preserve">
+          <source>N- Ary White Vertical Bar</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N 分木白い垂直バー</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OpenCircuitOutputHTypeSymbol" translate="yes" xml:space="preserve">
+          <source>Open Circuit Output H- Type Symbol</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">開放回路出力 H 型シンボル</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OpenCircuitOutputLTypeSymbol" translate="yes" xml:space="preserve">
+          <source>Open Circuit Output L- Type Symbol</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">開放回路出力 L 型シンボル</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RightSShapedBagDelimiter" translate="yes" xml:space="preserve">
+          <source>Right S- Shaped Bag Delimiter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">右 S 字袋区切り記号</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TibetanAstrologicalSignKhyudPa" translate="yes" xml:space="preserve">
+          <source>Tibetan Astrological Sign- Khyud Pa</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">チベット占星術記号 Khyud Pa</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TibetanMarkTsaPhru" translate="yes" xml:space="preserve">
+          <source>Tibetan Mark Tsa- Phru</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">チベット マーク Tsa Phru</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece12_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece12_2" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece12_3" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece13_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece22_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece38_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">素晴らしい傑作</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_1" translate="yes" xml:space="preserve">
+          <source>First Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_2" translate="yes" xml:space="preserve">
+          <source>First Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム秒子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_3" translate="yes" xml:space="preserve">
+          <source>First Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_4" translate="yes" xml:space="preserve">
+          <source>First Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_5" translate="yes" xml:space="preserve">
+          <source>First Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム 5 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_6_1" translate="yes" xml:space="preserve">
+          <source>First Maxim First Exceptional Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム最初例外的な格言</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_6_2" translate="yes" xml:space="preserve">
+          <source>First Maxim Second Exceptional Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最初マキシム秒優れた格言</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_1_1" translate="yes" xml:space="preserve">
+          <source>Second Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_1_2" translate="yes" xml:space="preserve">
+          <source>Second Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_1_3" translate="yes" xml:space="preserve">
+          <source>Second Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_2" translate="yes" xml:space="preserve">
+          <source>Second Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目の名言第 2 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_3" translate="yes" xml:space="preserve">
+          <source>Second Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目の格言 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_4" translate="yes" xml:space="preserve">
+          <source>Second Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 番目のマキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_5" translate="yes" xml:space="preserve">
+          <source>Second Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 5 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_6" translate="yes" xml:space="preserve">
+          <source>Second Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 6 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_7" translate="yes" xml:space="preserve">
+          <source>Second Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 7 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_8" translate="yes" xml:space="preserve">
+          <source>Second Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 8 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_9" translate="yes" xml:space="preserve">
+          <source>Second Maxim Ninth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 9 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_10" translate="yes" xml:space="preserve">
+          <source>Second Maxim Tenth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 10 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_11" translate="yes" xml:space="preserve">
+          <source>Second Maxim Eleventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 11 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_12" translate="yes" xml:space="preserve">
+          <source>Second Maxim Twelfth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 12 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_13" translate="yes" xml:space="preserve">
+          <source>Second Maxim Thirteenth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2 つ目の格言 13 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_1" translate="yes" xml:space="preserve">
+          <source>Third Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目のマキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_2" translate="yes" xml:space="preserve">
+          <source>Third Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 2 番目子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_3_1" translate="yes" xml:space="preserve">
+          <source>Third Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_3_2" translate="yes" xml:space="preserve">
+          <source>Third Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_4_1" translate="yes" xml:space="preserve">
+          <source>Third Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目のマキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_4_2" translate="yes" xml:space="preserve">
+          <source>Third Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目のマキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_5" translate="yes" xml:space="preserve">
+          <source>Third Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 5 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_6" translate="yes" xml:space="preserve">
+          <source>Third Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 6 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_7" translate="yes" xml:space="preserve">
+          <source>Third Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">3 番目の格言 7 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_1" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_2" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム秒子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_1" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_2" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_3" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_4" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_4" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_5" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">第 4 回マキシム 5 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_6" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">4 番目の格言 6 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_7" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">4 番目の格言 7 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_1" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_2" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム秒子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_3" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_4" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_4_1" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_5" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 5 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_6" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 6 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_7" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 7 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_8" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 マキシム 8 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_9" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Ninth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 9 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_10" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Tenth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 10 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_11" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Eleventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 11 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_12" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Twelfth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">5 番目の格言 12 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_1" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム最初子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_2" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム秒子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_3" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム 3 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_4" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム 4 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_5" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 マキシム 5 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_6" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 6 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_7" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 7 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_8_1" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 8 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_8_2" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 8 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_9" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Ninth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">6 格言 9 子会社マキシム</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GoldCoinOf2_975Grams" translate="yes" xml:space="preserve">
+          <source>Gold Coin Of 2.975 Grams</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2.975 グラムの金貨</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SilverOf2_975Grams" translate="yes" xml:space="preserve">
+          <source>Silver Of 2.975 Grams</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">2.975 グラムの銀</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_WeightMeasureOf4_25Grams" translate="yes" xml:space="preserve">
+          <source>Weight Measure Of 4_25 Grams</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">4_25 グラムの重量測定</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch2" translate="yes" xml:space="preserve">
+          <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">すべての聞き手見て強力な最高の免罪ヘルパー マスター機微すべてを知って 1 つの全知すべて奇数美しい恥ずかしがり屋 Coverer 大きな 1 つ、非常に高貴な 1 つ 1 つだけ勝つ 1 つすべて</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch1" translate="yes" xml:space="preserve">
+          <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">慈悲、慈悲深い永遠主最も神聖な平和信仰偉大な 1 つの安全の禁猟区の溜めの化身すべて作成者 Evolver の非常に最初の完璧なシェーパー支配的な 1 つを魅力的な無限最後の 1 つ、知覚感知できません。</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch3" translate="yes" xml:space="preserve">
+          <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">真実クリアの実施形態強いもの確固としたもの、これまで住んでいる 1 つに崇高なものを自給自己壮大な 1 つ承認の 1 つクレメント 1 浸透している 1 つ 1 つに悔い改め賢明な 1 つのこれまでのアクセプターを知っているすべてのすべて自己十分な 1 つ豊かなもの唯一の 1 つ近くの最高のプロバイダー応答の 1 つ免罪愛情の 1 つ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch6" translate="yes" xml:space="preserve">
+          <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">偉大な寛容良性の 1 つ最も寛大な最高の Bestower すべて弱点永遠の相続人マスターの最も高いから最も神聖な 1 つ神 Final1</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch4" translate="yes" xml:space="preserve">
+          <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">唯一称賛に値する 1 つのガードの 1 つを関連付ける保護栄光の 1 つすべて観察証人迅速化の 1 つの最高のソルバー先延ばし全能王すべて権限のある 1 つの華麗な係エクステンダー プロバイダー、魅力的な報いる人</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch5" translate="yes" xml:space="preserve">
+          <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">認識エンジン Bestower ぜんのう連続作成者所有者総プロバイダー普遍的な管財人監視 1 善意のやり手清算 1 つ一人治療の穏やかな維持の 1 つは、贈り主主良い中立的な判断する真実の泉長に敬意を表して最高</target>
         </trans-unit>
       </group>
     </body>

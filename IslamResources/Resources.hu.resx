@@ -732,20 +732,8 @@
   <data name="IslamInfo_AnticlockwiseTopSemicircleArrow" xml:space="preserve">
     <value>Anticlockwise Top Semicircle Arrow</value>
   </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" xml:space="preserve">
-    <value>Ellentétes irányba háromszög alsó U-alakú Arrow élén</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" xml:space="preserve">
-    <value>Ellentétes irányba háromszög élén bal U-alakú nyíl</value>
-  </data>
   <data name="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" xml:space="preserve">
     <value>Ellentétes irányba háromszög élén nyitott kör nyíl</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" xml:space="preserve">
-    <value>Ellentétes irányba háromszög élén jobb U-alakú nyíl</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" xml:space="preserve">
-    <value>Ellentétes irányba háromszög élén tetején U alakú nyíl</value>
   </data>
   <data name="IslamInfo_AnyKindOfHurt" xml:space="preserve">
     <value>Bármilyen Baja</value>
@@ -4623,72 +4611,6 @@
   <data name="IslamInfo_CjkRadicalCow" xml:space="preserve">
     <value>CJK radikális tehén</value>
   </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedBird" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített madár</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedCart" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített kosár</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedDragon" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített sárkány</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEat" xml:space="preserve">
-    <value>CJK radikális C-egyszerűsített enni</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEven" xml:space="preserve">
-    <value>CJK radikális C-egyszerűsített még</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFish" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített hal</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFly" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített Fly</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFrog" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített béka</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGate" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített kapu</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGold" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített arany</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedHorse" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített ló</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLeaf" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített levél</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLong" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített hosszú</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSalt" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített só</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSee" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített lásd</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedShell" xml:space="preserve">
-    <value>CJK radikális C - Shell egyszerűsített</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSilk" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített selyem</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSpeech" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített beszéd</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" xml:space="preserve">
-    <value>CJK radikális C-egyszerűsített cserzett bőr</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTooth" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített fogat</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített teknős</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedWind" xml:space="preserve">
-    <value>CJK radikális C - egyszerűsített szél</value>
-  </data>
   <data name="IslamInfo_CjkRadicalDeath" xml:space="preserve">
     <value>CJK radikális halála</value>
   </data>
@@ -4748,18 +4670,6 @@
   </data>
   <data name="IslamInfo_CjkRadicalJade" xml:space="preserve">
     <value>CJK radikális Jade</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedDragon" xml:space="preserve">
-    <value>CJK radikális J - egyszerűsített sárkány</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedEven" xml:space="preserve">
-    <value>CJK radikális J-egyszerűsített még</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTooth" xml:space="preserve">
-    <value>CJK radikális J - egyszerűsített fogat</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK radikális J - egyszerűsített teknős</value>
   </data>
   <data name="IslamInfo_CjkRadicalKnifeOne" xml:space="preserve">
     <value>CJK radikális kés egy</value>
@@ -7365,9 +7275,6 @@
   <data name="IslamInfo_DoubleStrokeNotSign" xml:space="preserve">
     <value>Double Stroke Not Sign</value>
   </data>
-  <data name="IslamInfo_DoubleStruckN-ArySummation" xml:space="preserve">
-    <value>Dupla ütött az N - áris összegzése</value>
-  </data>
   <data name="IslamInfo_DoubleSubset" xml:space="preserve">
     <value>Kettős részhalmaz</value>
   </data>
@@ -9155,9 +9062,6 @@
   </data>
   <data name="IslamInfo_Gold" xml:space="preserve">
     <value>Arany</value>
-  </data>
-  <data name="IslamInfo_GoldCoinOf2.975Grams" xml:space="preserve">
-    <value>Arany érme Of2.975 gramm</value>
   </data>
   <data name="IslamInfo_Goliath" xml:space="preserve">
     <value>Góliát</value>
@@ -12648,9 +12552,6 @@
   <data name="IslamInfo_LeftSquareBracketWithUnderbar" xml:space="preserve">
     <value>Left Square Bracket With Underbar</value>
   </data>
-  <data name="IslamInfo_LeftS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Bal S-alakú táska elválasztó</value>
-  </data>
   <data name="IslamInfo_LeftSubstitutionBracket" xml:space="preserve">
     <value>Left Substitution Bracket</value>
   </data>
@@ -15012,54 +14913,6 @@
   <data name="IslamInfo_NarrowNoBreakSpace" xml:space="preserve">
     <value>Nincs szünet leszűkített</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N - áris direkt szorzat ponttal</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N - áris direkt szorzat</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N - áris Tenzoriális</value>
-  </data>
-  <data name="IslamInfo_N-AryCoproduct" xml:space="preserve">
-    <value>N - áris Koproduktum</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N - áris kereszteződés</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N - áris logikai és</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N - áris logikai vagy</value>
-  </data>
-  <data name="IslamInfo_N-AryProduct" xml:space="preserve">
-    <value>N - áris termék</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N - áris tér metszetoperátor</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N - áris operátor méretezése szögletes Unió</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N - áris összegzése</value>
-  </data>
-  <data name="IslamInfo_N-AryTimesOperator" xml:space="preserve">
-    <value>N - áris alkalommal üzemeltető</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N - áris uniós</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N - áris uniós üzemeltető pont</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N - áris uniós üzemeltető Plus</value>
-  </data>
-  <data name="IslamInfo_N-AryWhiteVerticalBar" xml:space="preserve">
-    <value>N - áris fehér függőleges sáv</value>
-  </data>
   <data name="IslamInfo_Nasalization" xml:space="preserve">
     <value>Nasalization</value>
   </data>
@@ -15758,12 +15611,6 @@
   </data>
   <data name="IslamInfo_OpenCentreTeardropSpokedAsterisk" xml:space="preserve">
     <value>Nyitott található csepp küllõs csillag</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputH-TypeSymbol" xml:space="preserve">
-    <value>Nyitott áramkör kimeneti típus H - szimbólum</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputL-TypeSymbol" xml:space="preserve">
-    <value>Nyitott áramkör kimeneti típus L - szimbólum</value>
   </data>
   <data name="IslamInfo_Openers" xml:space="preserve">
     <value>Nyitók</value>
@@ -18288,9 +18135,6 @@
   <data name="IslamInfo_RightSquareBracketWithUnderbar" xml:space="preserve">
     <value>Right Square Bracket With Underbar</value>
   </data>
-  <data name="IslamInfo_RightS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Jobb S-alakú táska elválasztó</value>
-  </data>
   <data name="IslamInfo_RightSubstitutionBracket" xml:space="preserve">
     <value>Right Substitution Bracket</value>
   </data>
@@ -19154,9 +18998,6 @@
   </data>
   <data name="IslamInfo_Silver" xml:space="preserve">
     <value>ezüstszínű</value>
-  </data>
-  <data name="IslamInfo_SilverOf2.975Grams" xml:space="preserve">
-    <value>Gramm ezüst Of2.975</value>
   </data>
   <data name="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" xml:space="preserve">
     <value>Hasonló a fenti nagyobb, mint a fenti egyenlőségjel</value>
@@ -21252,9 +21093,6 @@
   <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
     <value>Az összes hallgató All Seeing</value>
   </data>
-  <data name="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" xml:space="preserve">
-    <value>Az összes hallgató az összes látta a mester, a segítő a Legfelsőbb Pardoner, a nagy teljesítményű finomságok a tisztában egy ismerője a furcsa gyönyörű a félénk a Coverer a nagy ember a rendkívül magasztos egy az egyetlen, aki az összes érvényes egy</value>
-  </data>
   <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
     <value>Az összes hallgató szoros</value>
   </data>
@@ -21302,9 +21140,6 @@
   </data>
   <data name="IslamInfo_TheBeneficent" xml:space="preserve">
     <value>A jótékony</value>
-  </data>
-  <data name="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" xml:space="preserve">
-    <value>A jótékony az irgalmas az örök úr a legszentebb a megtestesült béke a hit a fenntartó a biztonság a hatalmas egy Infuser az összes kényszerítő a domináns egy, a teremtő a Evolver első hibátlan alak a végtelen utolsó az érzékelhető az észrevétlen</value>
   </data>
   <data name="IslamInfo_TheBenignOne" xml:space="preserve">
     <value>A jóindulatú egy</value>
@@ -21395,9 +21230,6 @@
   </data>
   <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
     <value>Az igazság megtestesítője</value>
-  </data>
-  <data name="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" xml:space="preserve">
-    <value>A tiszta igazság megtestesítője az erős egy a cég egy a valaha is él az önálló fennálló, egy fenséges egy csodálatos egy tudomásul véve egy Clement egy átható egy mindentudó egy a bűnbánat bölcs valaha elfogadó minden az önálló elegendő egy a bőséges egy az egyetlen, aki a Legfelsőbb szolgáltató szoros a válaszoló egy a Pardoner a szerető egy</value>
   </data>
   <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
     <value>Az örök örökös</value>
@@ -21503,9 +21335,6 @@
   </data>
   <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
     <value>A nagy Forgiver</value>
-  </data>
-  <data name="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" xml:space="preserve">
-    <value>A nagy Forgiver a jóindulatú egyik legbőkezűbb Legfelsőbb megőrzője a legszentebb minden gyengeség az örök örökös a mester a Magasságos az egy Isten Final1</value>
   </data>
   <data name="IslamInfo_TheGreatOne" xml:space="preserve">
     <value>A nagy egy</value>
@@ -21779,9 +21608,6 @@
   </data>
   <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
     <value>A védő társult</value>
-  </data>
-  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" xml:space="preserve">
-    <value>A védő társult az egyedüli dicséretes egyik az őrzési egyik a dicsőséges egy a Legfelsőbb megoldó minden megfigyelő tanúja a szállító egy a Procrastinator a mindenható király az összes mérvadó egy ragyogó a mumus az Extender az ellenállhatatlan szolgáltató az, aki Recompenses</value>
   </data>
   <data name="IslamInfo_TheProvider" xml:space="preserve">
     <value>A szolgáltató</value>
@@ -22185,9 +22011,6 @@
   <data name="IslamInfo_Thunderstorm" xml:space="preserve">
     <value>Thunderstorm</value>
   </data>
-  <data name="IslamInfo_TibetanAstrologicalSign-KhyudPa" xml:space="preserve">
-    <value>Tibeti asztrológiai jele-Khyud Pa</value>
-  </data>
   <data name="IslamInfo_TibetanAstrologicalSignSdongTshugs" xml:space="preserve">
     <value>Tibetan Astrological Sign Sdong Tshugs</value>
   </data>
@@ -22212,9 +22035,6 @@
   <data name="IslamInfo_TibetanMarkNgasBzungSgorRtags" xml:space="preserve">
     <value>Tibetan Mark Ngas Bzung Sgor Rtags</value>
   </data>
-  <data name="IslamInfo_TibetanMarkTsa-Phru" xml:space="preserve">
-    <value>Tibeti Mark Tsa-Phru</value>
-  </data>
   <data name="IslamInfo_TibetanSignLciRtags" xml:space="preserve">
     <value>Tibetan Sign Lci Rtags</value>
   </data>
@@ -22232,9 +22052,6 @@
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterA" xml:space="preserve">
     <value>A tibeti Subjoined betű</value>
-  </data>
-  <data name="IslamInfo_TibetanSubjoinedLetter-A" xml:space="preserve">
-    <value>Tibeti Subjoined levél-A</value>
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterBa" xml:space="preserve">
     <value>Tibetan Subjoined Letter Ba</value>
@@ -24167,9 +23984,6 @@
   </data>
   <data name="IslamInfo_WeightMeasureOf2172Grams" xml:space="preserve">
     <value>Intézkedés Of2172 gramm súly</value>
-  </data>
-  <data name="IslamInfo_WeightMeasureOf4.25Grams" xml:space="preserve">
-    <value>Intézkedés Of4.25 gramm súly</value>
   </data>
   <data name="IslamInfo_WeightMeasureOf543Grams" xml:space="preserve">
     <value>Intézkedés Of543 gramm súly</value>
@@ -26742,19 +26556,7 @@
   <data name="IslamInfo_GreatMasterpiece12" xml:space="preserve">
     <value>Nagyszerű mestermű</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece12-1" xml:space="preserve">
-    <value>Nagyszerű mestermű</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-2" xml:space="preserve">
-    <value>Nagyszerű mestermű</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-3" xml:space="preserve">
-    <value>Nagyszerű mestermű</value>
-  </data>
   <data name="IslamInfo_GreatMasterpiece13" xml:space="preserve">
-    <value>Nagyszerű mestermű</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece13-1" xml:space="preserve">
     <value>Nagyszerű mestermű</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece14" xml:space="preserve">
@@ -26782,9 +26584,6 @@
     <value>Nagyszerű mestermű</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece22" xml:space="preserve">
-    <value>Nagyszerű mestermű</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece22-1" xml:space="preserve">
     <value>Nagyszerű mestermű</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece23" xml:space="preserve">
@@ -26833,9 +26632,6 @@
     <value>Nagyszerű mestermű</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece38" xml:space="preserve">
-    <value>Nagyszerű mestermű</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece38-1" xml:space="preserve">
     <value>Nagyszerű mestermű</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece39" xml:space="preserve">
@@ -26961,212 +26757,20 @@
   <data name="IslamInfo_Maxim1" xml:space="preserve">
     <value>Első Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
-    <value>Első Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
-    <value>Első Maxim második kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
-    <value>Első Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
-    <value>Első Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
-    <value>Első Maxim ötödik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
-    <value>Első Maxim első kivételes Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
-    <value>Első Maxim második kivételes Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim2" xml:space="preserve">
     <value>Második Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
-    <value>Második Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
-    <value>Második Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
-    <value>Második Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
-    <value>Második Maxim második kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
-    <value>Második Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
-    <value>Második Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
-    <value>Második ötödik Maxim kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
-    <value>Második Maxim hatodik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
-    <value>Második Maxim hetedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
-    <value>Második Maxim nyolcadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
-    <value>Második Maxim kilencedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
-    <value>Második Maxim tizedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
-    <value>Második Maxim tizenegyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
-    <value>Második Maxim tizenkettedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
-    <value>Második Maxim tizenharmadik kiegészítő Maxim</value>
   </data>
   <data name="IslamInfo_Maxim3" xml:space="preserve">
     <value>Harmadik Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
-    <value>Harmadik Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
-    <value>Harmadik Maxim második kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
-    <value>Harmadik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
-    <value>Harmadik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
-    <value>Harmadik Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
-    <value>Harmadik Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
-    <value>Harmadik Maxim ötödik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
-    <value>Harmadik Maxim hatodik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
-    <value>Harmadik Maxim hetedik kiegészítő Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim4" xml:space="preserve">
     <value>Negyedik Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
-    <value>Negyedik Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
-    <value>Negyedik Maxim második kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
-    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
-    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
-    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
-    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
-    <value>Negyedik Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
-    <value>Negyedik-ötödik Maxim kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
-    <value>Negyedik Maxim hatodik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
-    <value>Negyedik, hetedik Maxim kiegészítő Maxim</value>
   </data>
   <data name="IslamInfo_Maxim5" xml:space="preserve">
     <value>Ötödik Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
-    <value>Ötödik Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
-    <value>Ötödik Maxim második kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
-    <value>Ötödik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
-    <value>Ötödik Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
-    <value>Ötödik Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
-    <value>Ötödik Maxim ötödik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
-    <value>Ötödik Maxim hatodik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
-    <value>Ötödik-hetedik Maxim kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
-    <value>Ötödik Maxim nyolcadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
-    <value>Ötödik-kilencedik Maxim kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
-    <value>Ötödik a tizedik Maxim kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
-    <value>Ötödik Maxim tizenegyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
-    <value>Ötödik-tizenkettedik Maxim kiegészítő Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Hatodik Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
-    <value>Hatodik Maxim első kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
-    <value>Hatodik Maxim második kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
-    <value>Hatodik Maxim harmadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
-    <value>Hatodik Maxim negyedik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
-    <value>Hatodik Maxim ötödik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
-    <value>Hatodik Maxim hatodik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
-    <value>Hatodik hetedik Maxim kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
-    <value>Hatodik Maxim nyolcadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
-    <value>Hatodik Maxim nyolcadik kiegészítő Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
-    <value>Hatodik Maxim kilencedik kiegészítő Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp1" xml:space="preserve">
     <value>Első átfogó Maxim</value>
@@ -27381,9 +26985,6 @@
   <data name="IslamInfo_ThePossessorOfMajestyAndHonor" xml:space="preserve">
     <value>A tulajdonos a felség és becsület</value>
   </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
-    <value>A felismerő megőrzője a mindenható egy folyamatos alkotója a tulajdonosa az összes szolgáltató az egyetemes Trustee éber az egyik a tettes a jó számítása egy, aki gyógyít a szelíd az ajándékozó az önfenntartó egy az Úr, a jó a pártatlan bíró a legfelsőbb igazság kút feje tiszteletére</value>
-  </data>
   <data name="IslamInfo_TheSupremeInHonor" xml:space="preserve">
     <value>A Legfelsőbb tiszteletére</value>
   </data>
@@ -27467,9 +27068,6 @@
   </data>
   <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Kombinálása X alatt</value>
-  </data>
-  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
-    <value>X - X alább kombinálása</value>
   </data>
   <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Kettős magas Reversed9 idézőjel</value>
@@ -27938,5 +27536,404 @@
   </data>
   <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
     <value>Emlékezés ima után</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" xml:space="preserve">
+    <value>Ellentétes irányba háromszög alsó U-alakú Arrow élén</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" xml:space="preserve">
+    <value>Ellentétes irányba háromszög élén bal U-alakú nyíl</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" xml:space="preserve">
+    <value>Ellentétes irányba háromszög élén jobb U-alakú nyíl</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" xml:space="preserve">
+    <value>Ellentétes irányba háromszög élén tetején U alakú nyíl</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedBird" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített madár</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedCart" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített kosár</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedDragon" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített sárkány</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEat" xml:space="preserve">
+    <value>CJK radikális C-egyszerűsített enni</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEven" xml:space="preserve">
+    <value>CJK radikális C-egyszerűsített még</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFish" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített hal</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFly" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített Fly</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFrog" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített béka</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGate" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített kapu</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGold" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített arany</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedHorse" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített ló</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLeaf" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített levél</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLong" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített hosszú</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSalt" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített só</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSee" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített lásd</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedShell" xml:space="preserve">
+    <value>CJK radikális C - Shell egyszerűsített</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSilk" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített selyem</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSpeech" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített beszéd</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTannedLeather" xml:space="preserve">
+    <value>CJK radikális C-egyszerűsített cserzett bőr</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTooth" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített fogat</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTurtle" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített teknős</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedWind" xml:space="preserve">
+    <value>CJK radikális C - egyszerűsített szél</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedDragon" xml:space="preserve">
+    <value>CJK radikális J - egyszerűsített sárkány</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedEven" xml:space="preserve">
+    <value>CJK radikális J-egyszerűsített még</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTooth" xml:space="preserve">
+    <value>CJK radikális J - egyszerűsített fogat</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTurtle" xml:space="preserve">
+    <value>CJK radikális J - egyszerűsített teknős</value>
+  </data>
+  <data name="IslamInfo_CombiningXXBelow" xml:space="preserve">
+    <value>X - X alább kombinálása</value>
+  </data>
+  <data name="IslamInfo_DoubleStruckNArySummation" xml:space="preserve">
+    <value>Dupla ütött az N - áris összegzése</value>
+  </data>
+  <data name="IslamInfo_LeftSShapedBagDelimiter" xml:space="preserve">
+    <value>Bal S-alakú táska elválasztó</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N - áris direkt szorzat ponttal</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N - áris direkt szorzat</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N - áris Tenzoriális</value>
+  </data>
+  <data name="IslamInfo_NAryCoproduct" xml:space="preserve">
+    <value>N - áris Koproduktum</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N - áris kereszteződés</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N - áris logikai és</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N - áris logikai vagy</value>
+  </data>
+  <data name="IslamInfo_NAryProduct" xml:space="preserve">
+    <value>N - áris termék</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N - áris tér metszetoperátor</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N - áris operátor méretezése szögletes Unió</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N - áris összegzése</value>
+  </data>
+  <data name="IslamInfo_NAryTimesOperator" xml:space="preserve">
+    <value>N - áris alkalommal üzemeltető</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N - áris uniós</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N - áris uniós üzemeltető pont</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N - áris uniós üzemeltető Plus</value>
+  </data>
+  <data name="IslamInfo_NAryWhiteVerticalBar" xml:space="preserve">
+    <value>N - áris fehér függőleges sáv</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputHTypeSymbol" xml:space="preserve">
+    <value>Nyitott áramkör kimeneti típus H - szimbólum</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputLTypeSymbol" xml:space="preserve">
+    <value>Nyitott áramkör kimeneti típus L - szimbólum</value>
+  </data>
+  <data name="IslamInfo_RightSShapedBagDelimiter" xml:space="preserve">
+    <value>Jobb S-alakú táska elválasztó</value>
+  </data>
+  <data name="IslamInfo_TibetanAstrologicalSignKhyudPa" xml:space="preserve">
+    <value>Tibeti asztrológiai jele-Khyud Pa</value>
+  </data>
+  <data name="IslamInfo_TibetanMarkTsaPhru" xml:space="preserve">
+    <value>Tibeti Mark Tsa-Phru</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_1" xml:space="preserve">
+    <value>Nagyszerű mestermű</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_2" xml:space="preserve">
+    <value>Nagyszerű mestermű</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_3" xml:space="preserve">
+    <value>Nagyszerű mestermű</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece13_1" xml:space="preserve">
+    <value>Nagyszerű mestermű</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece22_1" xml:space="preserve">
+    <value>Nagyszerű mestermű</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece38_1" xml:space="preserve">
+    <value>Nagyszerű mestermű</value>
+  </data>
+  <data name="IslamInfo_Maxim1_1" xml:space="preserve">
+    <value>Első Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_2" xml:space="preserve">
+    <value>Első Maxim második kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_3" xml:space="preserve">
+    <value>Első Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_4" xml:space="preserve">
+    <value>Első Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_5" xml:space="preserve">
+    <value>Első Maxim ötödik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_1" xml:space="preserve">
+    <value>Első Maxim első kivételes Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_2" xml:space="preserve">
+    <value>Első Maxim második kivételes Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_1" xml:space="preserve">
+    <value>Második Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_2" xml:space="preserve">
+    <value>Második Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_3" xml:space="preserve">
+    <value>Második Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_2" xml:space="preserve">
+    <value>Második Maxim második kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_3" xml:space="preserve">
+    <value>Második Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_4" xml:space="preserve">
+    <value>Második Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_5" xml:space="preserve">
+    <value>Második ötödik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_6" xml:space="preserve">
+    <value>Második Maxim hatodik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_7" xml:space="preserve">
+    <value>Második Maxim hetedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_8" xml:space="preserve">
+    <value>Második Maxim nyolcadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_9" xml:space="preserve">
+    <value>Második Maxim kilencedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_10" xml:space="preserve">
+    <value>Második Maxim tizedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_11" xml:space="preserve">
+    <value>Második Maxim tizenegyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_12" xml:space="preserve">
+    <value>Második Maxim tizenkettedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_13" xml:space="preserve">
+    <value>Második Maxim tizenharmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_1" xml:space="preserve">
+    <value>Harmadik Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_2" xml:space="preserve">
+    <value>Harmadik Maxim második kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_1" xml:space="preserve">
+    <value>Harmadik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_2" xml:space="preserve">
+    <value>Harmadik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_1" xml:space="preserve">
+    <value>Harmadik Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_2" xml:space="preserve">
+    <value>Harmadik Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_5" xml:space="preserve">
+    <value>Harmadik Maxim ötödik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_6" xml:space="preserve">
+    <value>Harmadik Maxim hatodik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_7" xml:space="preserve">
+    <value>Harmadik Maxim hetedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_1" xml:space="preserve">
+    <value>Negyedik Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_2" xml:space="preserve">
+    <value>Negyedik Maxim második kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_1" xml:space="preserve">
+    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_2" xml:space="preserve">
+    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_3" xml:space="preserve">
+    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_4" xml:space="preserve">
+    <value>Negyedik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_4" xml:space="preserve">
+    <value>Negyedik Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_5" xml:space="preserve">
+    <value>Negyedik-ötödik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_6" xml:space="preserve">
+    <value>Negyedik Maxim hatodik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_7" xml:space="preserve">
+    <value>Negyedik, hetedik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_1" xml:space="preserve">
+    <value>Ötödik Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_2" xml:space="preserve">
+    <value>Ötödik Maxim második kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_3" xml:space="preserve">
+    <value>Ötödik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4" xml:space="preserve">
+    <value>Ötödik Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4_1" xml:space="preserve">
+    <value>Ötödik Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_5" xml:space="preserve">
+    <value>Ötödik Maxim ötödik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_6" xml:space="preserve">
+    <value>Ötödik Maxim hatodik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_7" xml:space="preserve">
+    <value>Ötödik-hetedik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_8" xml:space="preserve">
+    <value>Ötödik Maxim nyolcadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_9" xml:space="preserve">
+    <value>Ötödik-kilencedik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_10" xml:space="preserve">
+    <value>Ötödik a tizedik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_11" xml:space="preserve">
+    <value>Ötödik Maxim tizenegyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_12" xml:space="preserve">
+    <value>Ötödik-tizenkettedik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_1" xml:space="preserve">
+    <value>Hatodik Maxim első kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_2" xml:space="preserve">
+    <value>Hatodik Maxim második kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_3" xml:space="preserve">
+    <value>Hatodik Maxim harmadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_4" xml:space="preserve">
+    <value>Hatodik Maxim negyedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_5" xml:space="preserve">
+    <value>Hatodik Maxim ötödik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_6" xml:space="preserve">
+    <value>Hatodik Maxim hatodik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_7" xml:space="preserve">
+    <value>Hatodik hetedik Maxim kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_1" xml:space="preserve">
+    <value>Hatodik Maxim nyolcadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_2" xml:space="preserve">
+    <value>Hatodik Maxim nyolcadik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_9" xml:space="preserve">
+    <value>Hatodik Maxim kilencedik kiegészítő Maxim</value>
+  </data>
+  <data name="IslamInfo_GoldCoinOf2_975Grams" xml:space="preserve">
+    <value>Gold Coin 2.975 gramm</value>
+  </data>
+  <data name="IslamInfo_SilverOf2_975Grams" xml:space="preserve">
+    <value>Ezüst 2.975 gramm</value>
+  </data>
+  <data name="IslamInfo_WeightMeasureOf4_25Grams" xml:space="preserve">
+    <value>4_25 g testsúly mérésére</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch2" xml:space="preserve">
+    <value>Az összes hallgató az összes látta a mester, a segítő a Legfelsőbb Pardoner, a nagy teljesítményű finomságok a tisztában egy ismerője a furcsa gyönyörű a félénk a Coverer a nagy ember a rendkívül magasztos egy az egyetlen, aki az összes érvényes egy</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch1" xml:space="preserve">
+    <value>A jótékony az irgalmas az örök úr a legszentebb a megtestesült béke a hit a fenntartó a biztonság a hatalmas egy Infuser az összes kényszerítő a domináns egy, a teremtő a Evolver első hibátlan alak a végtelen utolsó az érzékelhető az észrevétlen</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch3" xml:space="preserve">
+    <value>A tiszta igazság megtestesítője az erős egy a cég egy a valaha is él az önálló fennálló, egy fenséges egy csodálatos egy tudomásul véve egy Clement egy átható egy mindentudó egy a bűnbánat bölcs valaha elfogadó minden az önálló elegendő egy a bőséges egy az egyetlen, aki a Legfelsőbb szolgáltató szoros a válaszoló egy a Pardoner a szerető egy</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch6" xml:space="preserve">
+    <value>A nagy Forgiver a jóindulatú egyik legbőkezűbb Legfelsőbb megőrzője a legszentebb minden gyengeség az örök örökös a mester a Magasságos az egy Isten Final1</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch4" xml:space="preserve">
+    <value>A védő társult az egyedüli dicséretes egyik az őrzési egyik a dicsőséges egy a Legfelsőbb megoldó minden megfigyelő tanúja a szállító egy a Procrastinator a mindenható király az összes mérvadó egy ragyogó a mumus az Extender az ellenállhatatlan szolgáltató az, aki Recompenses</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
+    <value>A felismerő megőrzője a mindenható egy folyamatos alkotója a tulajdonosa az összes szolgáltató az egyetemes Trustee éber az egyik a tettes a jó számítása egy, aki gyógyít a szelíd az ajándékozó az önfenntartó egy az Úr, a jó a pártatlan bíró a legfelsőbb igazság kút feje tiszteletére</value>
   </data>
 </root>

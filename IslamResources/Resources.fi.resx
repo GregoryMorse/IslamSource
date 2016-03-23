@@ -732,20 +732,8 @@
   <data name="IslamInfo_AnticlockwiseTopSemicircleArrow" xml:space="preserve">
     <value>Anticlockwise Top Semicircle Arrow</value>
   </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" xml:space="preserve">
-    <value>Vastapäivään kolmio otsikko alhaalta U-muotoinen nuoli</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" xml:space="preserve">
-    <value>Vastapäivään kolmio menossa vasemmalle U-muotoinen nuoli</value>
-  </data>
   <data name="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" xml:space="preserve">
     <value>Vastapäivään kolmio johtaa avoin ympyrä nuoli</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" xml:space="preserve">
-    <value>Vastapäivään kolmio lähti aivan U-muotoinen nuoli</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" xml:space="preserve">
-    <value>Vastapäivään kolmio lähti Top U-muotoinen nuoli</value>
   </data>
   <data name="IslamInfo_AnyKindOfHurt" xml:space="preserve">
     <value>Kaikenlaista satuttaa</value>
@@ -4623,72 +4611,6 @@
   <data name="IslamInfo_CjkRadicalCow" xml:space="preserve">
     <value>Cjk radikaalien lehmä</value>
   </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedBird" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu lintu</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedCart" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu Cart</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedDragon" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEat" xml:space="preserve">
-    <value>Cjk Radical C-yksinkertaistettu syödä</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEven" xml:space="preserve">
-    <value>Cjk Radical C-yksinkertaistettu jopa</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFish" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu kala</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFly" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu lentää</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFrog" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu sammakko</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGate" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu Gate</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGold" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu kultaa</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedHorse" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu hevonen</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLeaf" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu lehtiä</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLong" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu pitkä</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSalt" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu suolaa</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSee" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu ks.</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedShell" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu Shell</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSilk" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu silkki</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSpeech" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu puhe</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" xml:space="preserve">
-    <value>Cjk Radical C-yksinkertaistettu parkittu nahka</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTooth" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu hammas</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTurtle" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu kilpikonna</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedWind" xml:space="preserve">
-    <value>Cjk Radical C - yksinkertaistettu tuuli</value>
-  </data>
   <data name="IslamInfo_CjkRadicalDeath" xml:space="preserve">
     <value>Cjk radikaalien kuolema</value>
   </data>
@@ -4748,18 +4670,6 @@
   </data>
   <data name="IslamInfo_CjkRadicalJade" xml:space="preserve">
     <value>Cjk-radikaalit Jade</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedDragon" xml:space="preserve">
-    <value>Cjk Radical J - yksinkertaistettu Dragon</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedEven" xml:space="preserve">
-    <value>Cjk Radical J-yksinkertaistettu jopa</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTooth" xml:space="preserve">
-    <value>Cjk Radical J - yksinkertaistettu hammas</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTurtle" xml:space="preserve">
-    <value>Cjk Radical J - yksinkertaistettu kilpikonna</value>
   </data>
   <data name="IslamInfo_CjkRadicalKnifeOne" xml:space="preserve">
     <value>Cjk radikaalien veitsi yksi</value>
@@ -7365,9 +7275,6 @@
   <data name="IslamInfo_DoubleStrokeNotSign" xml:space="preserve">
     <value>Double Stroke Not Sign</value>
   </data>
-  <data name="IslamInfo_DoubleStruckN-ArySummation" xml:space="preserve">
-    <value>Kahden iski N - lukuinen summaus</value>
-  </data>
   <data name="IslamInfo_DoubleSubset" xml:space="preserve">
     <value>Kaksinkertainen osajoukko</value>
   </data>
@@ -9155,9 +9062,6 @@
   </data>
   <data name="IslamInfo_Gold" xml:space="preserve">
     <value>Kulta</value>
-  </data>
-  <data name="IslamInfo_GoldCoinOf2.975Grams" xml:space="preserve">
-    <value>Kultakolikoita Of2.975 grammaa</value>
   </data>
   <data name="IslamInfo_Goliath" xml:space="preserve">
     <value>Goljat</value>
@@ -12654,9 +12558,6 @@
   <data name="IslamInfo_LeftSquareBracketWithUnderbar" xml:space="preserve">
     <value>Left Square Bracket With Underbar</value>
   </data>
-  <data name="IslamInfo_LeftS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Vasemmalle S-muotoinen laukku erotin</value>
-  </data>
   <data name="IslamInfo_LeftSubstitutionBracket" xml:space="preserve">
     <value>Left Substitution Bracket</value>
   </data>
@@ -15024,54 +14925,6 @@
   <data name="IslamInfo_NarrowNoBreakSpace" xml:space="preserve">
     <value>Kapea tauko tilaa</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>N-lukuinen Pisteoperaattori ympyrässä</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>N - lukuinen plusoperaattori ympyrässä</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>N - lukuinen operaattori ympyrässä</value>
-  </data>
-  <data name="IslamInfo_N-AryCoproduct" xml:space="preserve">
-    <value>N - lukuinen Vastatulo, jolla</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>N - lukuinen leikkaus</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N - lukuinen looginen ja</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N - lukuinen looginen tai</value>
-  </data>
-  <data name="IslamInfo_N-AryProduct" xml:space="preserve">
-    <value>N - lukuinen tuote</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>N - lukuinen neliön Leikkausoperaattori</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>N - Square lukuinen yhdistysoperaattori</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N - lukuinen summaus</value>
-  </data>
-  <data name="IslamInfo_N-AryTimesOperator" xml:space="preserve">
-    <value>N - lukuinen kertaa operaattori</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>N - lukuinen yhdistys</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>N - lukuinen yhdistysoperaattori ja piste</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>N - lukuinen yhdistysoperaattori ja Plus</value>
-  </data>
-  <data name="IslamInfo_N-AryWhiteVerticalBar" xml:space="preserve">
-    <value>N - lukuinen valkoinen pystyviiva</value>
-  </data>
   <data name="IslamInfo_Nasalization" xml:space="preserve">
     <value>Nasalization</value>
   </data>
@@ -15791,12 +15644,6 @@
   </data>
   <data name="IslamInfo_OpenCentreTeardropSpokedAsterisk" xml:space="preserve">
     <value>Kauppakeskuksessa pisaran Spoked tähti</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputH-TypeSymbol" xml:space="preserve">
-    <value>Avoin piiri lähtö H - tyypin symbolia</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputL-TypeSymbol" xml:space="preserve">
-    <value>Avoin piiri lähtö L - tyypin symbolia</value>
   </data>
   <data name="IslamInfo_Openers" xml:space="preserve">
     <value>Avaajina</value>
@@ -18324,9 +18171,6 @@
   <data name="IslamInfo_RightSquareBracketWithUnderbar" xml:space="preserve">
     <value>Right Square Bracket With Underbar</value>
   </data>
-  <data name="IslamInfo_RightS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Oikea S-muotoinen laukku erotin</value>
-  </data>
   <data name="IslamInfo_RightSubstitutionBracket" xml:space="preserve">
     <value>Right Substitution Bracket</value>
   </data>
@@ -19190,9 +19034,6 @@
   </data>
   <data name="IslamInfo_Silver" xml:space="preserve">
     <value>hopea</value>
-  </data>
-  <data name="IslamInfo_SilverOf2.975Grams" xml:space="preserve">
-    <value>Hopea Of2.975 grammaa</value>
   </data>
   <data name="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" xml:space="preserve">
     <value>Samanlainen edellä suurempi kuin edellä yhtäläisyysmerkki</value>
@@ -21288,9 +21129,6 @@
   <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
     <value>Kaikki kuulija All Seeing</value>
   </data>
-  <data name="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" xml:space="preserve">
-    <value>Kaikki kuulija nähdä Master apulainen ylin anteeksiantaja voimakas vivahteet kaikki tiedämme yhden tietää kaikki outoa kaunis ujo Coverer suuren erittäin korkea yksi ainoa kaikki vallitsevat yksi</value>
-  </data>
   <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
     <value>Kaikki kuulija lähellä</value>
   </data>
@@ -21338,9 +21176,6 @@
   </data>
   <data name="IslamInfo_TheBeneficent" xml:space="preserve">
     <value>Auttajan nimeen</value>
-  </data>
-  <data name="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" xml:space="preserve">
-    <value>Auttajan nimeen armollinen ikuisen herra pyhin rauhan usko turvallisuuden mahtavan edessä säilyttäjä Infuser ruumiillistuma kaikki pakottavia dominantti ainoa luoja Evolver virheetön Shaper ensimmäinen ääretön viimeinen havaittavissa huomaamaton</value>
   </data>
   <data name="IslamInfo_TheBenignOne" xml:space="preserve">
     <value>Hyvänlaatuinen yksi</value>
@@ -21431,9 +21266,6 @@
   </data>
   <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
     <value>Totuuden ruumiillistuma</value>
-  </data>
-  <data name="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" xml:space="preserve">
-    <value>Totuus selkeä ruumiillistuma vahva yksi yrityksen yksi koskaan elää itse oikeuteen yksi ylevä yksi upea yksi tunnustamalla yksi Clement yksi kaikki suodattuu yksi tietää yksi koskaan Acceptor parannuksen viisas kaikki itse riittävän runsas yksi ainoa ainoa korkeimman tarjoaja lähellä vastaa yksi anteeksiantaja rakastava se</value>
   </data>
   <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
     <value>Ikuinen perijä</value>
@@ -21539,9 +21371,6 @@
   </data>
   <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
     <value>Suuri se</value>
-  </data>
-  <data name="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" xml:space="preserve">
-    <value>Suuri pitkämielinen hyvänlaatuinen yksi kaikkein antelias korkeimman lahjoittaja kaikkein pyhin kaikki heikkoudesta ikuinen perijä Korkeimman Mestari yksi Jumala lopullinen1</value>
   </data>
   <data name="IslamInfo_TheGreatOne" xml:space="preserve">
     <value>Suuren</value>
@@ -21822,9 +21651,6 @@
   <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
     <value>Suojella Associate</value>
   </data>
-  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" xml:space="preserve">
-    <value>Suojella liittää ainoa kiitettävä vartiointi yksi loistava yksi korkeimman Ratkaisin kaikki tarkkailemalla todistaja rautatiekuljetuksen yksi Procrastinator kaikkivoipa kuningas kaikki arvovaltaa loistava ottaja Extender vastustamaton tarjoaja se, joka Recompenses</value>
-  </data>
   <data name="IslamInfo_TheProvider" xml:space="preserve">
     <value>Toimittaja</value>
   </data>
@@ -21842,9 +21668,6 @@
   </data>
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>Tunnistin kaikki tietää yhden</value>
-  </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
-    <value>Tunnistin lahjoittaja kaikkivoipa yksi jatkuva luoja omistaja yhteensä tarjoaja yleinen toimitsijamiehen valvovan yksi mies hyvää päivä yksi ainoa, joka kovettuu lempeä antaja yllä yksi herra hyvä puolueeton tuomari Korkein totuus Fountain-pään kunniaksi</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>Tunnistin Clement yksi</value>
@@ -22233,9 +22056,6 @@
   <data name="IslamInfo_Thunderstorm" xml:space="preserve">
     <value>Thunderstorm</value>
   </data>
-  <data name="IslamInfo_TibetanAstrologicalSign-KhyudPa" xml:space="preserve">
-    <value>Tiibetin astrologinen merkki Khyud Pa</value>
-  </data>
   <data name="IslamInfo_TibetanAstrologicalSignSdongTshugs" xml:space="preserve">
     <value>Tibetan Astrological Sign Sdong Tshugs</value>
   </data>
@@ -22260,9 +22080,6 @@
   <data name="IslamInfo_TibetanMarkNgasBzungSgorRtags" xml:space="preserve">
     <value>Tibetan Mark Ngas Bzung Sgor Rtags</value>
   </data>
-  <data name="IslamInfo_TibetanMarkTsa-Phru" xml:space="preserve">
-    <value>Tiibetin Mark Tsa-Phru</value>
-  </data>
   <data name="IslamInfo_TibetanSignLciRtags" xml:space="preserve">
     <value>Tibetan Sign Lci Rtags</value>
   </data>
@@ -22280,9 +22097,6 @@
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterA" xml:space="preserve">
     <value>Tiibetin Subjoined kirje</value>
-  </data>
-  <data name="IslamInfo_TibetanSubjoinedLetter-A" xml:space="preserve">
-    <value>Tiibetin Subjoined A kirjain</value>
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterBa" xml:space="preserve">
     <value>Tibetan Subjoined Letter Ba</value>
@@ -24215,9 +24029,6 @@
   </data>
   <data name="IslamInfo_WeightMeasureOf2172Grams" xml:space="preserve">
     <value>Paino toimenpide Of2172 grammaa</value>
-  </data>
-  <data name="IslamInfo_WeightMeasureOf4.25Grams" xml:space="preserve">
-    <value>Paino toimenpide Of4.25 grammaa</value>
   </data>
   <data name="IslamInfo_WeightMeasureOf543Grams" xml:space="preserve">
     <value>Paino toimenpide Of543 grammaa</value>
@@ -26784,19 +26595,7 @@
   <data name="IslamInfo_GreatMasterpiece12" xml:space="preserve">
     <value>Suuri mestariteos</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece12-1" xml:space="preserve">
-    <value>Suuri mestariteos</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-2" xml:space="preserve">
-    <value>Suuri mestariteos</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-3" xml:space="preserve">
-    <value>Suuri mestariteos</value>
-  </data>
   <data name="IslamInfo_GreatMasterpiece13" xml:space="preserve">
-    <value>Suuri mestariteos</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece13-1" xml:space="preserve">
     <value>Suuri mestariteos</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece14" xml:space="preserve">
@@ -26824,9 +26623,6 @@
     <value>Suuri mestariteos</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece22" xml:space="preserve">
-    <value>Suuri mestariteos</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece22-1" xml:space="preserve">
     <value>Suuri mestariteos</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece23" xml:space="preserve">
@@ -26875,9 +26671,6 @@
     <value>Suuri mestariteos</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece38" xml:space="preserve">
-    <value>Suuri mestariteos</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece38-1" xml:space="preserve">
     <value>Suuri mestariteos</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece39" xml:space="preserve">
@@ -27003,212 +26796,20 @@
   <data name="IslamInfo_Maxim1" xml:space="preserve">
     <value>Ensimmäinen Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
-    <value>Ensimmäinen Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
-    <value>Ensimmäinen Maxim toisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
-    <value>Ensimmäinen Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
-    <value>Ensimmäinen Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
-    <value>Ensimmäinen Maxim viidennen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
-    <value>Ensimmäinen Maxim ensimmäinen poikkeuksellisen Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
-    <value>Ensimmäinen Maxim toinen poikkeuksellinen Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim2" xml:space="preserve">
     <value>Toinen Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
-    <value>Toinen Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
-    <value>Toinen Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
-    <value>Toinen Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
-    <value>Toinen Maxim toisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
-    <value>Toinen Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
-    <value>Toinen Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
-    <value>Toinen Maxim viidennen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
-    <value>Toinen Maxim kuudes toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
-    <value>Toinen Maxim seitsemäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
-    <value>Toinen Maxim kahdeksas toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
-    <value>Toinen Maxim yhdeksännen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
-    <value>Toinen Maxim kymmenesosaa tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
-    <value>Toinen Maxim yhdestoista toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
-    <value>Toinen Maxim kahdestoista toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
-    <value>Toinen Maxim kolmastoista toissijaista Maxim</value>
   </data>
   <data name="IslamInfo_Maxim3" xml:space="preserve">
     <value>Kolmas Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
-    <value>Kolmas Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
-    <value>Kolmas Maxim toisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
-    <value>Kolmas Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
-    <value>Kolmas Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
-    <value>Kolmas Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
-    <value>Kolmas Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
-    <value>Kolmas Maxim viidennen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
-    <value>Kolmas Maxim kuudes toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
-    <value>Kolmas Maxim seitsemäs toissijaista Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim4" xml:space="preserve">
     <value>Neljäs Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
-    <value>Neljäs Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
-    <value>Neljäs Maxim toisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
-    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
-    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
-    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
-    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
-    <value>Neljäs Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
-    <value>Neljäs Maxim viidennen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
-    <value>Neljäs Maxim kuudes toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
-    <value>Neljäs Maxim seitsemäs toissijaista Maxim</value>
   </data>
   <data name="IslamInfo_Maxim5" xml:space="preserve">
     <value>Viides Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
-    <value>Viides Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
-    <value>Viides Maxim toisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
-    <value>Viides Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
-    <value>Viides Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
-    <value>Viides Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
-    <value>Viides Maxim viidennen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
-    <value>Viides Maxim kuudes toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
-    <value>Viides Maxim seitsemäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
-    <value>Viides Maxim kahdeksas toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
-    <value>Viides Maxim yhdeksännen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
-    <value>Viides Maxim kymmenesosaa tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
-    <value>Viides Maxim yhdestoista toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
-    <value>Viides Maxim kahdestoista toissijaista Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Kuudes Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
-    <value>Kuudes Maxim ensimmäisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
-    <value>Kuudes Maxim toisen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
-    <value>Kuudes Maxim kolmannen toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
-    <value>Kuudes Maxim neljäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
-    <value>Kuudes Maxim viidennen tytäryhtiön Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
-    <value>Kuudes Maxim kuudes toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
-    <value>Kuudes Maxim seitsemäs toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
-    <value>Kuudes Maxim kahdeksas toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
-    <value>Kuudes Maxim kahdeksas toissijaista Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
-    <value>Kuudes Maxim yhdeksännen toissijaista Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp1" xml:space="preserve">
     <value>Ensimmäinen kattava Maxim</value>
@@ -27467,9 +27068,6 @@
   </data>
   <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Yhdistämällä X alla</value>
-  </data>
-  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
-    <value>Yhdistämällä X - X alla</value>
   </data>
   <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Double korkea Reversed9 lainausmerkki</value>
@@ -27938,5 +27536,404 @@
   </data>
   <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
     <value>Muisto rukouksen</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" xml:space="preserve">
+    <value>Vastapäivään kolmio otsikko alhaalta U-muotoinen nuoli</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" xml:space="preserve">
+    <value>Vastapäivään kolmio menossa vasemmalle U-muotoinen nuoli</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" xml:space="preserve">
+    <value>Vastapäivään kolmio lähti aivan U-muotoinen nuoli</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" xml:space="preserve">
+    <value>Vastapäivään kolmio lähti Top U-muotoinen nuoli</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedBird" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu lintu</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedCart" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu Cart</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedDragon" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEat" xml:space="preserve">
+    <value>Cjk Radical C-yksinkertaistettu syödä</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEven" xml:space="preserve">
+    <value>Cjk Radical C-yksinkertaistettu jopa</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFish" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu kala</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFly" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu lentää</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFrog" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu sammakko</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGate" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu Gate</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGold" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu kultaa</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedHorse" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu hevonen</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLeaf" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu lehtiä</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLong" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu pitkä</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSalt" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu suolaa</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSee" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu ks.</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedShell" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu Shell</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSilk" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu silkki</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSpeech" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu puhe</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTannedLeather" xml:space="preserve">
+    <value>Cjk Radical C-yksinkertaistettu parkittu nahka</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTooth" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu hammas</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTurtle" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu kilpikonna</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedWind" xml:space="preserve">
+    <value>Cjk Radical C - yksinkertaistettu tuuli</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedDragon" xml:space="preserve">
+    <value>Cjk Radical J - yksinkertaistettu Dragon</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedEven" xml:space="preserve">
+    <value>Cjk Radical J-yksinkertaistettu jopa</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTooth" xml:space="preserve">
+    <value>Cjk Radical J - yksinkertaistettu hammas</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTurtle" xml:space="preserve">
+    <value>Cjk Radical J - yksinkertaistettu kilpikonna</value>
+  </data>
+  <data name="IslamInfo_CombiningXXBelow" xml:space="preserve">
+    <value>Yhdistämällä X - X alla</value>
+  </data>
+  <data name="IslamInfo_DoubleStruckNArySummation" xml:space="preserve">
+    <value>Kahden iski N - lukuinen summaus</value>
+  </data>
+  <data name="IslamInfo_LeftSShapedBagDelimiter" xml:space="preserve">
+    <value>Vasemmalle S-muotoinen laukku erotin</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>N-lukuinen Pisteoperaattori ympyrässä</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>N - lukuinen plusoperaattori ympyrässä</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>N - lukuinen operaattori ympyrässä</value>
+  </data>
+  <data name="IslamInfo_NAryCoproduct" xml:space="preserve">
+    <value>N - lukuinen Vastatulo, jolla</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>N - lukuinen leikkaus</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N - lukuinen looginen ja</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N - lukuinen looginen tai</value>
+  </data>
+  <data name="IslamInfo_NAryProduct" xml:space="preserve">
+    <value>N - lukuinen tuote</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>N - lukuinen neliön Leikkausoperaattori</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>N - Square lukuinen yhdistysoperaattori</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N - lukuinen summaus</value>
+  </data>
+  <data name="IslamInfo_NAryTimesOperator" xml:space="preserve">
+    <value>N - lukuinen kertaa operaattori</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>N - lukuinen yhdistys</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>N - lukuinen yhdistysoperaattori ja piste</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>N - lukuinen yhdistysoperaattori ja Plus</value>
+  </data>
+  <data name="IslamInfo_NAryWhiteVerticalBar" xml:space="preserve">
+    <value>N - lukuinen valkoinen pystyviiva</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputHTypeSymbol" xml:space="preserve">
+    <value>Avoin piiri lähtö H - tyypin symbolia</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputLTypeSymbol" xml:space="preserve">
+    <value>Avoin piiri lähtö L - tyypin symbolia</value>
+  </data>
+  <data name="IslamInfo_RightSShapedBagDelimiter" xml:space="preserve">
+    <value>Oikea S-muotoinen laukku erotin</value>
+  </data>
+  <data name="IslamInfo_TibetanAstrologicalSignKhyudPa" xml:space="preserve">
+    <value>Tiibetin astrologinen merkki Khyud Pa</value>
+  </data>
+  <data name="IslamInfo_TibetanMarkTsaPhru" xml:space="preserve">
+    <value>Tiibetin Mark Tsa-Phru</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_1" xml:space="preserve">
+    <value>Suuri mestariteos</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_2" xml:space="preserve">
+    <value>Suuri mestariteos</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_3" xml:space="preserve">
+    <value>Suuri mestariteos</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece13_1" xml:space="preserve">
+    <value>Suuri mestariteos</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece22_1" xml:space="preserve">
+    <value>Suuri mestariteos</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece38_1" xml:space="preserve">
+    <value>Suuri mestariteos</value>
+  </data>
+  <data name="IslamInfo_Maxim1_1" xml:space="preserve">
+    <value>Ensimmäinen Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_2" xml:space="preserve">
+    <value>Ensimmäinen Maxim toisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_3" xml:space="preserve">
+    <value>Ensimmäinen Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_4" xml:space="preserve">
+    <value>Ensimmäinen Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_5" xml:space="preserve">
+    <value>Ensimmäinen Maxim viidennen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_1" xml:space="preserve">
+    <value>Ensimmäinen Maxim ensimmäinen poikkeuksellisen Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_2" xml:space="preserve">
+    <value>Ensimmäinen Maxim toinen poikkeuksellinen Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_1" xml:space="preserve">
+    <value>Toinen Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_2" xml:space="preserve">
+    <value>Toinen Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_3" xml:space="preserve">
+    <value>Toinen Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_2" xml:space="preserve">
+    <value>Toinen Maxim toisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_3" xml:space="preserve">
+    <value>Toinen Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_4" xml:space="preserve">
+    <value>Toinen Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_5" xml:space="preserve">
+    <value>Toinen Maxim viidennen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_6" xml:space="preserve">
+    <value>Toinen Maxim kuudes toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_7" xml:space="preserve">
+    <value>Toinen Maxim seitsemäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_8" xml:space="preserve">
+    <value>Toinen Maxim kahdeksas toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_9" xml:space="preserve">
+    <value>Toinen Maxim yhdeksännen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_10" xml:space="preserve">
+    <value>Toinen Maxim kymmenesosaa tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_11" xml:space="preserve">
+    <value>Toinen Maxim yhdestoista toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_12" xml:space="preserve">
+    <value>Toinen Maxim kahdestoista toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_13" xml:space="preserve">
+    <value>Toinen Maxim kolmastoista toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_1" xml:space="preserve">
+    <value>Kolmas Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_2" xml:space="preserve">
+    <value>Kolmas Maxim toisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_1" xml:space="preserve">
+    <value>Kolmas Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_2" xml:space="preserve">
+    <value>Kolmas Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_1" xml:space="preserve">
+    <value>Kolmas Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_2" xml:space="preserve">
+    <value>Kolmas Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_5" xml:space="preserve">
+    <value>Kolmas Maxim viidennen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_6" xml:space="preserve">
+    <value>Kolmas Maxim kuudes toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_7" xml:space="preserve">
+    <value>Kolmas Maxim seitsemäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_1" xml:space="preserve">
+    <value>Neljäs Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_2" xml:space="preserve">
+    <value>Neljäs Maxim toisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_1" xml:space="preserve">
+    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_2" xml:space="preserve">
+    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_3" xml:space="preserve">
+    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_4" xml:space="preserve">
+    <value>Neljäs Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_4" xml:space="preserve">
+    <value>Neljäs Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_5" xml:space="preserve">
+    <value>Neljäs Maxim viidennen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_6" xml:space="preserve">
+    <value>Neljäs Maxim kuudes toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_7" xml:space="preserve">
+    <value>Neljäs Maxim seitsemäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_1" xml:space="preserve">
+    <value>Viides Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_2" xml:space="preserve">
+    <value>Viides Maxim toisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_3" xml:space="preserve">
+    <value>Viides Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4" xml:space="preserve">
+    <value>Viides Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4_1" xml:space="preserve">
+    <value>Viides Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_5" xml:space="preserve">
+    <value>Viides Maxim viidennen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_6" xml:space="preserve">
+    <value>Viides Maxim kuudes toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_7" xml:space="preserve">
+    <value>Viides Maxim seitsemäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_8" xml:space="preserve">
+    <value>Viides Maxim kahdeksas toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_9" xml:space="preserve">
+    <value>Viides Maxim yhdeksännen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_10" xml:space="preserve">
+    <value>Viides Maxim kymmenesosaa tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_11" xml:space="preserve">
+    <value>Viides Maxim yhdestoista toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_12" xml:space="preserve">
+    <value>Viides Maxim kahdestoista toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_1" xml:space="preserve">
+    <value>Kuudes Maxim ensimmäisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_2" xml:space="preserve">
+    <value>Kuudes Maxim toisen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_3" xml:space="preserve">
+    <value>Kuudes Maxim kolmannen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_4" xml:space="preserve">
+    <value>Kuudes Maxim neljäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_5" xml:space="preserve">
+    <value>Kuudes Maxim viidennen tytäryhtiön Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_6" xml:space="preserve">
+    <value>Kuudes Maxim kuudes toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_7" xml:space="preserve">
+    <value>Kuudes Maxim seitsemäs toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_1" xml:space="preserve">
+    <value>Kuudes Maxim kahdeksas toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_2" xml:space="preserve">
+    <value>Kuudes Maxim kahdeksas toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_9" xml:space="preserve">
+    <value>Kuudes Maxim yhdeksännen toissijaista Maxim</value>
+  </data>
+  <data name="IslamInfo_GoldCoinOf2_975Grams" xml:space="preserve">
+    <value>Kultakolikoita 2.975 grammaa</value>
+  </data>
+  <data name="IslamInfo_SilverOf2_975Grams" xml:space="preserve">
+    <value>Silver 2.975 grammaa</value>
+  </data>
+  <data name="IslamInfo_WeightMeasureOf4_25Grams" xml:space="preserve">
+    <value>Paino toimenpide 4_25 grammaa</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch2" xml:space="preserve">
+    <value>Kaikki kuulija nähdä Master apulainen ylin anteeksiantaja voimakas vivahteet kaikki tiedämme yhden tietää kaikki outoa kaunis ujo Coverer suuren erittäin korkea yksi ainoa kaikki vallitsevat yksi</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch1" xml:space="preserve">
+    <value>Auttajan nimeen armollinen ikuisen herra pyhin rauhan usko turvallisuuden mahtavan edessä säilyttäjä Infuser ruumiillistuma kaikki pakottavia dominantti ainoa luoja Evolver virheetön Shaper ensimmäinen ääretön viimeinen havaittavissa huomaamaton</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch3" xml:space="preserve">
+    <value>Totuus selkeä ruumiillistuma vahva yksi yrityksen yksi koskaan elää itse oikeuteen yksi ylevä yksi upea yksi tunnustamalla yksi Clement yksi kaikki suodattuu yksi tietää yksi koskaan Acceptor parannuksen viisas kaikki itse riittävän runsas yksi ainoa ainoa korkeimman tarjoaja lähellä vastaa yksi anteeksiantaja rakastava se</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch6" xml:space="preserve">
+    <value>Suuri pitkämielinen hyvänlaatuinen yksi kaikkein antelias korkeimman lahjoittaja kaikkein pyhin kaikki heikkoudesta ikuinen perijä Korkeimman Mestari yksi Jumala lopullinen1</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch4" xml:space="preserve">
+    <value>Suojella liittää ainoa kiitettävä vartiointi yksi loistava yksi korkeimman Ratkaisin kaikki tarkkailemalla todistaja rautatiekuljetuksen yksi Procrastinator kaikkivoipa kuningas kaikki arvovaltaa loistava ottaja Extender vastustamaton tarjoaja se, joka Recompenses</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
+    <value>Tunnistin lahjoittaja kaikkivoipa yksi jatkuva luoja omistaja yhteensä tarjoaja yleinen toimitsijamiehen valvovan yksi mies hyvää päivä yksi ainoa, joka kovettuu lempeä antaja yllä yksi herra hyvä puolueeton tuomari Korkein totuus Fountain-pään kunniaksi</value>
   </data>
 </root>

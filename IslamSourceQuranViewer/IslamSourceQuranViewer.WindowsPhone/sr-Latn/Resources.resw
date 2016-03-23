@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arapski fonta</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Nazad</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Smanji veličinu fonta</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Podrazumevana veličina fonta</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kuran sa svojim arapski, transliteration i prevođenje reč po reč i stih po stih, za ucenje i studiram, istraživanje, poиeti, odraz i gospodarenje tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Kur'an reč po reč</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Povećaj veličinu fonta</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Drugi Font teksta</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Prikazivanje</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Postavke</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Prikaži prevođenja</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Prikaži Transliteration</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Prikaži reč po reč</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Veličina</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Koristite recitacije pravilo za bojenje</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Podrazumevani jezik</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Dodavanje obeleživač</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Obeleživači</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopiraj u ostavu</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>U stihu</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pauza</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Reprodukuj</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Ukloni oznaku</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Postavljanje reprodukcije stih</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Prikaži Exegesis</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Deljenje</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Dodatni stih Advance odlaganja</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Automatski prelazi stih</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Odlaganje dužina stih pre napreduju</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Petlje režim</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Osnovni podaci</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arapski Kuran sa metapodataka i sve prevode i neke audio Recitativa osim onih navedenih pripisuje Tanzil projekta (http://tanzil.net). 
+Mađarski Kuran prevođenja od strane poljubi Zsuzsanna Halima pripisuje Mađar Iszlam (http://magyariszlam.hu). 
+Engleski Prevod Kuranu po Maulana Muhammad Ali pripisuje Lahore Ahmadiyya pokret u Islamu (http://www.aaiil.org). 
+Morfologija podataka i engleskim prevodom reč po reč kreditni da citate arapski Corpus (http://corpus.quran.com). 
+Zasluge indonežanski prevođenje reč po reč da Al-Kur'an Indonezije (http://www.alquran-indonesia.com/web/quran). 
+Roрen reč po reč Prevod Hafiz Nazar Muhammad pripisuje lako Kur'an Wa Hadees (http://www.easyquranwahadees.com). 
+Druga reč po reč prevoda, kao i ostale prevode u programu Microsoft dobavljač prevodilačkih usluga (http://www.microsoft.com/en-us/translator) i Gugl Translator (http://translate.google.com)-a i možda neće biti tačna.  Za malezijske reč po reč Kuran, izvor je indonežanski.  Za sve druge reč po reč Kuran, izvor je engleski navod iz Kurana arapski Corpus. 
+Druge audio Recitativa sa brzina protoka prikazani pripisuje svaki pasus (http://www.everyayah.com). 
+Unicode podatke pripisuje The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>

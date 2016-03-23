@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabiese Font</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Terug</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Maak Font kleiner</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Standaard lettergrootte</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Koran met sy Arabiese, transliterasie en vertaling woord vir woord en vers vir vers vir leer, studeer, navorsing, memorisering, besinning en bemeestering van tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Koran woord vir woord</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Maak Font groter</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Ander teks Font</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>lewer</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Instellings</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Wys Vertaling</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Wys Transliterasie</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Wys woord vir woord</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Grootte</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Gebruik Voordrag Reël kleur</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>standaard taal</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Voeg &amp;Boekmerk by</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Boekmerke</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopieer na knipbord</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Gaan na Vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pouseer</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Speel</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>verteller</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>verwyder Boekmerk</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Stel speel Vers</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Wys Eksegese</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Deel</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Bykomende Vers Advance Vertraging</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance Vers outomaties</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Vertraging Duur van Vers Voor Die bevordering</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>herhaling af</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Inligting oor</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabiese Koran met metadata en al vertalings en 'n paar klank recitaties behalwe dié wat toegeskryf aan Tanzil Projek (http://tanzil.net).&lt;br&gt;</value>
+  </data>
+</root>

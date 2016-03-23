@@ -732,20 +732,8 @@
   <data name="IslamInfo_AnticlockwiseTopSemicircleArrow" xml:space="preserve">
     <value>Θετικής φοράς επάνω ημικυκλικό βέλος</value>
   </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" xml:space="preserve">
-    <value>Θετικής φοράς τρίγωνο με επικεφαλής κάτω U-σχήμα βέλους</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" xml:space="preserve">
-    <value>Θετικής φοράς τρίγωνο με επικεφαλής αριστερά U-σχήμα βέλους</value>
-  </data>
   <data name="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" xml:space="preserve">
     <value>Θετικής φοράς τρίγωνο με επικεφαλής ανοικτού κύκλου βέλος</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" xml:space="preserve">
-    <value>Θετικής φοράς τρίγωνο με επικεφαλής δικαίωμα U-σχήμα βέλους</value>
-  </data>
-  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" xml:space="preserve">
-    <value>Θετικής φοράς τρίγωνο με επικεφαλής το Top U-σχήμα βέλους</value>
   </data>
   <data name="IslamInfo_AnyKindOfHurt" xml:space="preserve">
     <value>Οποιοδήποτε είδος της βλάψει</value>
@@ -4623,72 +4611,6 @@
   <data name="IslamInfo_CjkRadicalCow" xml:space="preserve">
     <value>CJK Βασικό ιδεόγραμμα αγελάδα</value>
   </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedBird" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο πουλί</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedCart" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο κάρο</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedDragon" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο δράκος</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEat" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C-Απλοποιημένο Φαγητό</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedEven" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C-Απλοποιημένο ακόμη και</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFish" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο ψάρι</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFly" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο μύγα</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedFrog" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο βάτραχος</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGate" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο πύλη</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedGold" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο χρυσός</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedHorse" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο άλογο</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLeaf" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο φύλλο</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedLong" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο Μακρύ</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSalt" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο αλάτι</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSee" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο βλ.</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedShell" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο κοχύλι</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSilk" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο μετάξι</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedSpeech" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο Ομιλία</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C-Απλοποιημένο Κατεργασμένο δέρμα</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTooth" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο δόντι</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο Χελώνα</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalC-SimplifiedWind" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο άνεμος</value>
-  </data>
   <data name="IslamInfo_CjkRadicalDeath" xml:space="preserve">
     <value>CJK Βασικό ιδεόγραμμα θανάτου</value>
   </data>
@@ -4748,18 +4670,6 @@
   </data>
   <data name="IslamInfo_CjkRadicalJade" xml:space="preserve">
     <value>CJK Βασικό ιδεόγραμμα Νεφρίτης</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedDragon" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα J - Απλοποιημένο δράκος</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedEven" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα J-Απλοποιημένο ακόμη και</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTooth" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα J - Απλοποιημένο δόντι</value>
-  </data>
-  <data name="IslamInfo_CjkRadicalJ-SimplifiedTurtle" xml:space="preserve">
-    <value>CJK Βασικό ιδεόγραμμα J - Απλοποιημένο Χελώνα</value>
   </data>
   <data name="IslamInfo_CjkRadicalKnifeOne" xml:space="preserve">
     <value>CJK Βασικό ιδεόγραμμα μαχαίρι ένα</value>
@@ -7365,9 +7275,6 @@
   <data name="IslamInfo_DoubleStrokeNotSign" xml:space="preserve">
     <value>Σύμβολο άρνησης με διπλή μολυβιά</value>
   </data>
-  <data name="IslamInfo_DoubleStruckN-ArySummation" xml:space="preserve">
-    <value>Διπλό χτύπησε Ν - αδικών άθροιση</value>
-  </data>
   <data name="IslamInfo_DoubleSubset" xml:space="preserve">
     <value>Διπλό υποσύνολο</value>
   </data>
@@ -9155,9 +9062,6 @@
   </data>
   <data name="IslamInfo_Gold" xml:space="preserve">
     <value>Χρυσό</value>
-  </data>
-  <data name="IslamInfo_GoldCoinOf2.975Grams" xml:space="preserve">
-    <value>Χρυσού νομίσματος γραμμάρια Of2.975</value>
   </data>
   <data name="IslamInfo_Goliath" xml:space="preserve">
     <value>Γολιάθ</value>
@@ -12654,9 +12558,6 @@
   <data name="IslamInfo_LeftSquareBracketWithUnderbar" xml:space="preserve">
     <value>Αριστερή τετράγωνη αγκύλη με κάτω γραμμή</value>
   </data>
-  <data name="IslamInfo_LeftS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Αριστερό S-σχήμα τσάντα οριοθέτη</value>
-  </data>
   <data name="IslamInfo_LeftSubstitutionBracket" xml:space="preserve">
     <value>Αριστερή αγκύλη αντικατάστασης</value>
   </data>
@@ -15024,54 +14925,6 @@
   <data name="IslamInfo_NarrowNoBreakSpace" xml:space="preserve">
     <value>Τα στενά δεν διαχωρίσιμο κενό</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>Ν-αδικός τελεστής κουκκίδας σε κύκλο</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>Ν - αδικός τελεστής συν σε κύκλο</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>Ν - αδικός τελεστής επί σε κύκλο</value>
-  </data>
-  <data name="IslamInfo_N-AryCoproduct" xml:space="preserve">
-    <value>Ν - αδικός συμπληρωματικό γινόμενο</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>Ν - αδική διατομή</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>Ν - αδικός λογικός και</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>Ν - αδικός λογικός ή</value>
-  </data>
-  <data name="IslamInfo_N-AryProduct" xml:space="preserve">
-    <value>Ν - αδικός προϊόντος</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>Ν - αδική διατομή τετράγωνο χειριστή</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>Ν - αδικός τελεστής Ένωσης τετράγωνο</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>Ν - αδικός άθροιση</value>
-  </data>
-  <data name="IslamInfo_N-AryTimesOperator" xml:space="preserve">
-    <value>Ν - αδικός φορές χειριστή</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>Ν - αδική Ένωση</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>Ν - αδικός τελεστής Ένωσης με κουκκίδα</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>Ν - αδικός τελεστής Ένωσης με συν</value>
-  </data>
-  <data name="IslamInfo_N-AryWhiteVerticalBar" xml:space="preserve">
-    <value>Ν - αδικός Λευκή κατακόρυφη γραμμή</value>
-  </data>
   <data name="IslamInfo_Nasalization" xml:space="preserve">
     <value>Ρινικό σημείο</value>
   </data>
@@ -15791,12 +15644,6 @@
   </data>
   <data name="IslamInfo_OpenCentreTeardropSpokedAsterisk" xml:space="preserve">
     <value>Ανοιχτός στο κέντρο σταγονοειδής αστερίσκος</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputH-TypeSymbol" xml:space="preserve">
-    <value>Εξόδου ανοικτού κυκλώματος τύπου H σύμβολο</value>
-  </data>
-  <data name="IslamInfo_OpenCircuitOutputL-TypeSymbol" xml:space="preserve">
-    <value>Εξόδου ανοικτού κυκλώματος τύπου L σύμβολο</value>
   </data>
   <data name="IslamInfo_Openers" xml:space="preserve">
     <value>Ανοιχτήρια</value>
@@ -18324,9 +18171,6 @@
   <data name="IslamInfo_RightSquareBracketWithUnderbar" xml:space="preserve">
     <value>Δεξιά τετράγωνη αγκύλη με κάτω γραμμή</value>
   </data>
-  <data name="IslamInfo_RightS-ShapedBagDelimiter" xml:space="preserve">
-    <value>Δεξιά S-σχήμα τσάντα οριοθέτη</value>
-  </data>
   <data name="IslamInfo_RightSubstitutionBracket" xml:space="preserve">
     <value>Δεξιά αγκύλη αντικατάστασης</value>
   </data>
@@ -19190,9 +19034,6 @@
   </data>
   <data name="IslamInfo_Silver" xml:space="preserve">
     <value>Ασημί</value>
-  </data>
-  <data name="IslamInfo_SilverOf2.975Grams" xml:space="preserve">
-    <value>Ασημένια Of2.975 γραμμάρια</value>
   </data>
   <data name="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" xml:space="preserve">
     <value>Παρόμοια ανωτέρω υπερβαίνει πάνω από σύμβολο ίσον</value>
@@ -21288,9 +21129,6 @@
   <data name="IslamInfo_TheAllHearerTheAllSeeing" xml:space="preserve">
     <value>Ο κάθε ακροατής τη όλοι που βλέπουν</value>
   </data>
-  <data name="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" xml:space="preserve">
-    <value>Ο κάθε ακροατής το όλα βλέποντας το Master της βοηθητικής εφαρμογής το ανώτατο Pardoner το ισχυρό ο Knower λεπτές όλοι γνωρίζουμε αυτό το παράξενο το όμορφο το ντροπαλό Coverer η μεγάλη αυτή την εξαιρετικά εξυψώνεται ένας μοναδικός την όλα που επικρατούν σε ένα</value>
-  </data>
   <data name="IslamInfo_TheAllHearerTheClose" xml:space="preserve">
     <value>Ο κάθε ακροατής το κλείσιμο</value>
   </data>
@@ -21338,9 +21176,6 @@
   </data>
   <data name="IslamInfo_TheBeneficent" xml:space="preserve">
     <value>Το θεάρεστο</value>
-  </data>
-  <data name="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" xml:space="preserve">
-    <value>Το θεάρεστο ο Ελεήμων το αιώνιο Λόρδος το πιο ιερά η ενσάρκωση της ειρήνης το ενσταλακτής της πίστης ο συντηρητής της ασφάλειας το ισχυρό χαρακτήρα το όλα αναγκάζοντας το κυρίαρχο μέρος ο δημιουργός του Evolver την άψογη διαπλάσσων το πρώτο το άπειρο το τελευταίο το αισθητό την ανεπαίσθητη</value>
   </data>
   <data name="IslamInfo_TheBenignOne" xml:space="preserve">
     <value>Η καλοήθης μία</value>
@@ -21431,9 +21266,6 @@
   </data>
   <data name="IslamInfo_TheEmbodimentOfTruth" xml:space="preserve">
     <value>Η ενσάρκωση της αλήθειας</value>
-  </data>
-  <data name="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" xml:space="preserve">
-    <value>Η ενσάρκωση της αλήθειας η σαφής ισχυρός μία επιχείρηση το ποτέ ζουν τον εαυτό που υφίστανται μία πανέμορφη εκείνο το υπέροχο ένα αναγνωρίζοντας αυτό το επιεικές ένα το ολόκληρο ένα διεισδύει το ολόκληρο ένα γνωρίζοντας το ποτέ αποδοχή της μετάνοιας το σοφέ εαυτού επαρκής άφθονη αυτός αποκλειστική αυτή το ανώτατο παροχής η στενή αποκριμένος αυτός Pardoner ο τρυφερός αυτός</value>
   </data>
   <data name="IslamInfo_TheEternalInheritor" xml:space="preserve">
     <value>Η αιώνια κληρονόμος</value>
@@ -21539,9 +21371,6 @@
   </data>
   <data name="IslamInfo_TheGreatForgiver" xml:space="preserve">
     <value>Η μεγάλη συγχωρών</value>
-  </data>
-  <data name="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" xml:space="preserve">
-    <value>Η μεγάλη συγχωρών καλοήθεις αυτή την υπέρτατη απονεμών τα πιο γενναιόδωρα πιο ιερό από όλα αδυναμία αιώνια κληρονόμος του πλοιάρχου ο Ύψιστος ο ένας Θεός τελικό1</value>
   </data>
   <data name="IslamInfo_TheGreatOne" xml:space="preserve">
     <value>Η μεγάλη για ένα</value>
@@ -21822,9 +21651,6 @@
   <data name="IslamInfo_TheProtectingAssociate" xml:space="preserve">
     <value>Η προστασία των Αναπληρωτής</value>
   </data>
-  <data name="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" xml:space="preserve">
-    <value>Την προστασία συσχετίσετε την αποκλειστική αξιέπαινος φρούρησης αυτός ένδοξη εκείνη το ανώτατο Solver ο μάρτυρας όλα παρατηρώντας το αποστολής ένα Procrastinator του Παντοδύναμου, βασιλιάς όλα στην ιστοδελίδα τα λαμπρά ο κτήτορας της επέκτασης ο παρέχων την ακαταμάχητη αυτός που Recompenses</value>
-  </data>
   <data name="IslamInfo_TheProvider" xml:space="preserve">
     <value>Η υπηρεσία παροχής</value>
   </data>
@@ -21842,9 +21668,6 @@
   </data>
   <data name="IslamInfo_TheRecognizerTheAllKnowingOne" xml:space="preserve">
     <value>Στην αναγνώριση όλη η γνώση αυτή</value>
-  </data>
-  <data name="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" xml:space="preserve">
-    <value>Στην αναγνώριση την απονεμών Παντοδύναμος αυτός ο συνεχής δημιουργός ο ιδιοκτήτης το συνολικό πάροχος την καθολική διαχειριστικές άγρυπνο εκείνη την πράττων των καλών της αναμέτρησης μία εκείνος που θεραπεύει την απαλή το δωρητή συντηρούμενη αυτός ο κύριος το καλό το αμερόληπτο δικαστή στο ανώτατο προς τιμήν τη νερομάνα της αλήθειας</value>
   </data>
   <data name="IslamInfo_TheRecognizerTheClementOne" xml:space="preserve">
     <value>Στην αναγνώριση το επιεικές ένα</value>
@@ -22233,9 +22056,6 @@
   <data name="IslamInfo_Thunderstorm" xml:space="preserve">
     <value>Θύελλα</value>
   </data>
-  <data name="IslamInfo_TibetanAstrologicalSign-KhyudPa" xml:space="preserve">
-    <value>Θιβετανικό αστρολογικό σύμβολο-Khyud Pa</value>
-  </data>
   <data name="IslamInfo_TibetanAstrologicalSignSdongTshugs" xml:space="preserve">
     <value>Θιβετανικό αστρολογικό σύμβολο Sdong Tshugs</value>
   </data>
@@ -22260,9 +22080,6 @@
   <data name="IslamInfo_TibetanMarkNgasBzungSgorRtags" xml:space="preserve">
     <value>Θιβετανικό σημείο Ngas Bzung Sgor Rtags</value>
   </data>
-  <data name="IslamInfo_TibetanMarkTsa-Phru" xml:space="preserve">
-    <value>Θιβέτ Mark Tsa-Phru</value>
-  </data>
   <data name="IslamInfo_TibetanSignLciRtags" xml:space="preserve">
     <value>Θιβετανικό σύμβολο Lci Rtags</value>
   </data>
@@ -22280,9 +22097,6 @@
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterA" xml:space="preserve">
     <value>Θιβετανικό προσαρτήσιμο γράμμα A</value>
-  </data>
-  <data name="IslamInfo_TibetanSubjoinedLetter-A" xml:space="preserve">
-    <value>Θιβετανικό προσαρτήσιμο γράμμα-A</value>
   </data>
   <data name="IslamInfo_TibetanSubjoinedLetterBa" xml:space="preserve">
     <value>Θιβετανικό προσαρτήσιμο γράμμα Ba</value>
@@ -24215,9 +24029,6 @@
   </data>
   <data name="IslamInfo_WeightMeasureOf2172Grams" xml:space="preserve">
     <value>Βάρος γραμμάρια Of2172 μέτρο</value>
-  </data>
-  <data name="IslamInfo_WeightMeasureOf4.25Grams" xml:space="preserve">
-    <value>Βάρος γραμμάρια Of4.25 μέτρο</value>
   </data>
   <data name="IslamInfo_WeightMeasureOf543Grams" xml:space="preserve">
     <value>Βάρος γραμμάρια Of543 μέτρο</value>
@@ -26784,19 +26595,7 @@
   <data name="IslamInfo_GreatMasterpiece12" xml:space="preserve">
     <value>Μεγάλο αριστούργημα</value>
   </data>
-  <data name="IslamInfo_GreatMasterpiece12-1" xml:space="preserve">
-    <value>Μεγάλο αριστούργημα</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-2" xml:space="preserve">
-    <value>Μεγάλο αριστούργημα</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece12-3" xml:space="preserve">
-    <value>Μεγάλο αριστούργημα</value>
-  </data>
   <data name="IslamInfo_GreatMasterpiece13" xml:space="preserve">
-    <value>Μεγάλο αριστούργημα</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece13-1" xml:space="preserve">
     <value>Μεγάλο αριστούργημα</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece14" xml:space="preserve">
@@ -26824,9 +26623,6 @@
     <value>Μεγάλο αριστούργημα</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece22" xml:space="preserve">
-    <value>Μεγάλο αριστούργημα</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece22-1" xml:space="preserve">
     <value>Μεγάλο αριστούργημα</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece23" xml:space="preserve">
@@ -26875,9 +26671,6 @@
     <value>Μεγάλο αριστούργημα</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece38" xml:space="preserve">
-    <value>Μεγάλο αριστούργημα</value>
-  </data>
-  <data name="IslamInfo_GreatMasterpiece38-1" xml:space="preserve">
     <value>Μεγάλο αριστούργημα</value>
   </data>
   <data name="IslamInfo_GreatMasterpiece39" xml:space="preserve">
@@ -27003,212 +26796,20 @@
   <data name="IslamInfo_Maxim1" xml:space="preserve">
     <value>Πρώτη Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim1-1" xml:space="preserve">
-    <value>Πρώτη πρώτη Maxim επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-2" xml:space="preserve">
-    <value>Πρώτη θυγατρική Maxim Maxim δευτερόλεπτο</value>
-  </data>
-  <data name="IslamInfo_Maxim1-3" xml:space="preserve">
-    <value>Πρώτη θυγατρική Maxim Maxim τρίτο</value>
-  </data>
-  <data name="IslamInfo_Maxim1-4" xml:space="preserve">
-    <value>Πρώτο τέταρτο Maxim επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-5" xml:space="preserve">
-    <value>Πρώτη θυγατρική Maxim Maxim πέμπτο</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-1" xml:space="preserve">
-    <value>Πρώτη πρώτη Maxim εξαιρετικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim1-6-2" xml:space="preserve">
-    <value>Πρώτο δευτερόλεπτο Maxim εξαιρετικής Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim2" xml:space="preserve">
     <value>Δεύτερη Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-1" xml:space="preserve">
-    <value>Δεύτερη Maxim πρώτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-2" xml:space="preserve">
-    <value>Δεύτερη Maxim πρώτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-1-3" xml:space="preserve">
-    <value>Δεύτερη Maxim πρώτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-2" xml:space="preserve">
-    <value>Δεύτερη Maxim δεύτερη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-3" xml:space="preserve">
-    <value>Δεύτερο τρίτο Maxim επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-4" xml:space="preserve">
-    <value>Δεύτερη Maxim τέταρτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-5" xml:space="preserve">
-    <value>Δεύτερης θυγατρικής Maxim Maxim πέμπτο</value>
-  </data>
-  <data name="IslamInfo_Maxim2-6" xml:space="preserve">
-    <value>Δεύτερης θυγατρικής Maxim Maxim έκτη</value>
-  </data>
-  <data name="IslamInfo_Maxim2-7" xml:space="preserve">
-    <value>Δεύτερης θυγατρικής Maxim Maxim έβδομη</value>
-  </data>
-  <data name="IslamInfo_Maxim2-8" xml:space="preserve">
-    <value>Δεύτερη Maxim όγδοος θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-9" xml:space="preserve">
-    <value>Δεύτερη θυγατρική Maxim Maxim ένατη</value>
-  </data>
-  <data name="IslamInfo_Maxim2-10" xml:space="preserve">
-    <value>Δεύτερο δέκατο Maxim επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-11" xml:space="preserve">
-    <value>Δεύτερη Maxim ενδέκατη επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim2-12" xml:space="preserve">
-    <value>Δεύτερης θυγατρικής Maxim Maxim δωδέκατο</value>
-  </data>
-  <data name="IslamInfo_Maxim2-13" xml:space="preserve">
-    <value>Δεύτερη θυγατρική Maxim Maxim Δεκατρής</value>
   </data>
   <data name="IslamInfo_Maxim3" xml:space="preserve">
     <value>Τρίτο γνωμικό</value>
   </data>
-  <data name="IslamInfo_Maxim3-1" xml:space="preserve">
-    <value>Τρίτο Maxim πρώτη θυγατρική γνωμικό</value>
-  </data>
-  <data name="IslamInfo_Maxim3-2" xml:space="preserve">
-    <value>Τρίτο Maxim δεύτερη θυγατρική γνωμικό</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-1" xml:space="preserve">
-    <value>Τρίτο Maxim τρίτο γνωμικό επικουρικής</value>
-  </data>
-  <data name="IslamInfo_Maxim3-3-2" xml:space="preserve">
-    <value>Τρίτο Maxim τρίτο γνωμικό επικουρικής</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-1" xml:space="preserve">
-    <value>Τρίτο τέταρτο Maxim επικουρικής γνωμικό</value>
-  </data>
-  <data name="IslamInfo_Maxim3-4-2" xml:space="preserve">
-    <value>Τρίτο τέταρτο Maxim επικουρικής γνωμικό</value>
-  </data>
-  <data name="IslamInfo_Maxim3-5" xml:space="preserve">
-    <value>Τρίτη Πέμπτη Maxim επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim3-6" xml:space="preserve">
-    <value>Τρίτο γνωμικό επικουρικής Maxim έκτη</value>
-  </data>
-  <data name="IslamInfo_Maxim3-7" xml:space="preserve">
-    <value>Τρίτο γνωμικό επικουρικής Maxim έβδομη</value>
-  </data>
   <data name="IslamInfo_Maxim4" xml:space="preserve">
     <value>Τέταρτο γνωμικό</value>
-  </data>
-  <data name="IslamInfo_Maxim4-1" xml:space="preserve">
-    <value>Τέταρτη Maxim πρώτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-2" xml:space="preserve">
-    <value>Τέταρτη Maxim δεύτερη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-1" xml:space="preserve">
-    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-2" xml:space="preserve">
-    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-3" xml:space="preserve">
-    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
-  </data>
-  <data name="IslamInfo_Maxim4-3-4" xml:space="preserve">
-    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
-  </data>
-  <data name="IslamInfo_Maxim4-4" xml:space="preserve">
-    <value>Τέταρτη Maxim τέταρτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-5" xml:space="preserve">
-    <value>Τέταρτο πέμπτο Maxim επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim4-6" xml:space="preserve">
-    <value>Τέταρτη θυγατρική Maxim Maxim έκτη</value>
-  </data>
-  <data name="IslamInfo_Maxim4-7" xml:space="preserve">
-    <value>Τέταρτη θυγατρική Maxim Maxim έβδομη</value>
   </data>
   <data name="IslamInfo_Maxim5" xml:space="preserve">
     <value>Πέμπτο Maxim</value>
   </data>
-  <data name="IslamInfo_Maxim5-1" xml:space="preserve">
-    <value>Πέμπτο Maxim πρώτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-2" xml:space="preserve">
-    <value>Πέμπτο Maxim δεύτερη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-3" xml:space="preserve">
-    <value>Πέμπτο Maxim τρίτο επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4" xml:space="preserve">
-    <value>Πέμπτο Maxim τέταρτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-4-1" xml:space="preserve">
-    <value>Πέμπτο Maxim τέταρτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-5" xml:space="preserve">
-    <value>Πέμπτο Maxim πέμπτο επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-6" xml:space="preserve">
-    <value>Πέμπτο έκτο Maxim επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-7" xml:space="preserve">
-    <value>Πέμπτο Maxim έβδομη επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-8" xml:space="preserve">
-    <value>Πέμπτο Maxim όγδοος θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-9" xml:space="preserve">
-    <value>Πέμπτο Maxim ένατη επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-10" xml:space="preserve">
-    <value>Πέμπτο Maxim δέκατο επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-11" xml:space="preserve">
-    <value>Πέμπτο Maxim ενδέκατη επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim5-12" xml:space="preserve">
-    <value>Πέμπτο Maxim δωδέκατο επικουρικής Maxim</value>
-  </data>
   <data name="IslamInfo_Maxim6" xml:space="preserve">
     <value>Έκτη Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-1" xml:space="preserve">
-    <value>Έκτη Maxim πρώτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-2" xml:space="preserve">
-    <value>Έκτη Maxim δεύτερη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-3" xml:space="preserve">
-    <value>Έκτη Maxim τρίτο επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-4" xml:space="preserve">
-    <value>Έκτη Maxim τέταρτη θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-5" xml:space="preserve">
-    <value>Έκτη Maxim πέμπτο επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-6" xml:space="preserve">
-    <value>Έκτη Maxim έκτη επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-7" xml:space="preserve">
-    <value>Έκτη Maxim έβδομη επικουρικής Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-1" xml:space="preserve">
-    <value>Έκτη Maxim όγδοος θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-8-2" xml:space="preserve">
-    <value>Έκτη Maxim όγδοος θυγατρική Maxim</value>
-  </data>
-  <data name="IslamInfo_Maxim6-9" xml:space="preserve">
-    <value>Έκτη ενάτη Maxim επικουρικής Maxim</value>
   </data>
   <data name="IslamInfo_MaximComp1" xml:space="preserve">
     <value>Πρώτη ολοκληρωμένη Maxim</value>
@@ -27467,9 +27068,6 @@
   </data>
   <data name="IslamInfo_CombiningXBelow" xml:space="preserve">
     <value>Συνδυάζοντας X παρακάτω</value>
-  </data>
-  <data name="IslamInfo_CombiningX-XBelow" xml:space="preserve">
-    <value>Συνδυάζοντας X - X παρακάτω</value>
   </data>
   <data name="IslamInfo_DoubleHighReversed9QuotationMark" xml:space="preserve">
     <value>Εισαγωγικό διπλό υψηλής Reversed9</value>
@@ -27938,5 +27536,404 @@
   </data>
   <data name="IslamInfo_RemembranceAfterPrayer" xml:space="preserve">
     <value>Μνήμης μετά την προσευχή</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" xml:space="preserve">
+    <value>Θετικής φοράς τρίγωνο με επικεφαλής κάτω U-σχήμα βέλους</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" xml:space="preserve">
+    <value>Θετικής φοράς τρίγωνο με επικεφαλής αριστερά U-σχήμα βέλους</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" xml:space="preserve">
+    <value>Θετικής φοράς τρίγωνο με επικεφαλής δικαίωμα U-σχήμα βέλους</value>
+  </data>
+  <data name="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" xml:space="preserve">
+    <value>Θετικής φοράς τρίγωνο με επικεφαλής το Top U-σχήμα βέλους</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedBird" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο πουλί</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedCart" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο κάρο</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedDragon" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο δράκος</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEat" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C-Απλοποιημένο Φαγητό</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedEven" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C-Απλοποιημένο ακόμη και</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFish" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο ψάρι</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFly" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο μύγα</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedFrog" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο βάτραχος</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGate" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο πύλη</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedGold" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο χρυσός</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedHorse" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο άλογο</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLeaf" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο φύλλο</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedLong" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο Μακρύ</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSalt" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο αλάτι</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSee" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο βλ.</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedShell" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο κοχύλι</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSilk" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο μετάξι</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedSpeech" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο Ομιλία</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTannedLeather" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C-Απλοποιημένο Κατεργασμένο δέρμα</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTooth" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο δόντι</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedTurtle" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο Χελώνα</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalCSimplifiedWind" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα C - Απλοποιημένο άνεμος</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedDragon" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα J - Απλοποιημένο δράκος</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedEven" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα J-Απλοποιημένο ακόμη και</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTooth" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα J - Απλοποιημένο δόντι</value>
+  </data>
+  <data name="IslamInfo_CjkRadicalJSimplifiedTurtle" xml:space="preserve">
+    <value>CJK Βασικό ιδεόγραμμα J - Απλοποιημένο Χελώνα</value>
+  </data>
+  <data name="IslamInfo_CombiningXXBelow" xml:space="preserve">
+    <value>Συνδυάζοντας X - X παρακάτω</value>
+  </data>
+  <data name="IslamInfo_DoubleStruckNArySummation" xml:space="preserve">
+    <value>Διπλό χτύπησε Ν - αδικών άθροιση</value>
+  </data>
+  <data name="IslamInfo_LeftSShapedBagDelimiter" xml:space="preserve">
+    <value>Αριστερό S-σχήμα τσάντα οριοθέτη</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>Ν-αδικός τελεστής κουκκίδας σε κύκλο</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>Ν - αδικός τελεστής συν σε κύκλο</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>Ν - αδικός τελεστής επί σε κύκλο</value>
+  </data>
+  <data name="IslamInfo_NAryCoproduct" xml:space="preserve">
+    <value>Ν - αδικός συμπληρωματικό γινόμενο</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>Ν - αδική διατομή</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>Ν - αδικός λογικός και</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>Ν - αδικός λογικός ή</value>
+  </data>
+  <data name="IslamInfo_NAryProduct" xml:space="preserve">
+    <value>Ν - αδικός προϊόντος</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>Ν - αδική διατομή τετράγωνο χειριστή</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>Ν - αδικός τελεστής Ένωσης τετράγωνο</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>Ν - αδικός άθροιση</value>
+  </data>
+  <data name="IslamInfo_NAryTimesOperator" xml:space="preserve">
+    <value>Ν - αδικός φορές χειριστή</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>Ν - αδική Ένωση</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>Ν - αδικός τελεστής Ένωσης με κουκκίδα</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>Ν - αδικός τελεστής Ένωσης με συν</value>
+  </data>
+  <data name="IslamInfo_NAryWhiteVerticalBar" xml:space="preserve">
+    <value>Ν - αδικός Λευκή κατακόρυφη γραμμή</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputHTypeSymbol" xml:space="preserve">
+    <value>Εξόδου ανοικτού κυκλώματος τύπου H σύμβολο</value>
+  </data>
+  <data name="IslamInfo_OpenCircuitOutputLTypeSymbol" xml:space="preserve">
+    <value>Εξόδου ανοικτού κυκλώματος τύπου L σύμβολο</value>
+  </data>
+  <data name="IslamInfo_RightSShapedBagDelimiter" xml:space="preserve">
+    <value>Δεξιά S-σχήμα τσάντα οριοθέτη</value>
+  </data>
+  <data name="IslamInfo_TibetanAstrologicalSignKhyudPa" xml:space="preserve">
+    <value>Θιβετανικό αστρολογικό σύμβολο-Khyud Pa</value>
+  </data>
+  <data name="IslamInfo_TibetanMarkTsaPhru" xml:space="preserve">
+    <value>Θιβέτ Mark Tsa-Phru</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_1" xml:space="preserve">
+    <value>Μεγάλο αριστούργημα</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_2" xml:space="preserve">
+    <value>Μεγάλο αριστούργημα</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece12_3" xml:space="preserve">
+    <value>Μεγάλο αριστούργημα</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece13_1" xml:space="preserve">
+    <value>Μεγάλο αριστούργημα</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece22_1" xml:space="preserve">
+    <value>Μεγάλο αριστούργημα</value>
+  </data>
+  <data name="IslamInfo_GreatMasterpiece38_1" xml:space="preserve">
+    <value>Μεγάλο αριστούργημα</value>
+  </data>
+  <data name="IslamInfo_Maxim1_1" xml:space="preserve">
+    <value>Πρώτη πρώτη Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_2" xml:space="preserve">
+    <value>Πρώτη θυγατρική Maxim Maxim δευτερόλεπτο</value>
+  </data>
+  <data name="IslamInfo_Maxim1_3" xml:space="preserve">
+    <value>Πρώτη θυγατρική Maxim Maxim τρίτο</value>
+  </data>
+  <data name="IslamInfo_Maxim1_4" xml:space="preserve">
+    <value>Πρώτο τέταρτο Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_5" xml:space="preserve">
+    <value>Πρώτη θυγατρική Maxim Maxim πέμπτο</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_1" xml:space="preserve">
+    <value>Πρώτη πρώτη Maxim εξαιρετικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim1_6_2" xml:space="preserve">
+    <value>Πρώτο δευτερόλεπτο Maxim εξαιρετικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_1" xml:space="preserve">
+    <value>Δεύτερη Maxim πρώτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_2" xml:space="preserve">
+    <value>Δεύτερη Maxim πρώτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_1_3" xml:space="preserve">
+    <value>Δεύτερη Maxim πρώτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_2" xml:space="preserve">
+    <value>Δεύτερη Maxim δεύτερη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_3" xml:space="preserve">
+    <value>Δεύτερο τρίτο Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_4" xml:space="preserve">
+    <value>Δεύτερη Maxim τέταρτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_5" xml:space="preserve">
+    <value>Δεύτερης θυγατρικής Maxim Maxim πέμπτο</value>
+  </data>
+  <data name="IslamInfo_Maxim2_6" xml:space="preserve">
+    <value>Δεύτερης θυγατρικής Maxim Maxim έκτη</value>
+  </data>
+  <data name="IslamInfo_Maxim2_7" xml:space="preserve">
+    <value>Δεύτερης θυγατρικής Maxim Maxim έβδομη</value>
+  </data>
+  <data name="IslamInfo_Maxim2_8" xml:space="preserve">
+    <value>Δεύτερη Maxim όγδοος θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_9" xml:space="preserve">
+    <value>Δεύτερη θυγατρική Maxim Maxim ένατη</value>
+  </data>
+  <data name="IslamInfo_Maxim2_10" xml:space="preserve">
+    <value>Δεύτερο δέκατο Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_11" xml:space="preserve">
+    <value>Δεύτερη Maxim ενδέκατη επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim2_12" xml:space="preserve">
+    <value>Δεύτερης θυγατρικής Maxim Maxim δωδέκατο</value>
+  </data>
+  <data name="IslamInfo_Maxim2_13" xml:space="preserve">
+    <value>Δεύτερη θυγατρική Maxim Maxim Δεκατρής</value>
+  </data>
+  <data name="IslamInfo_Maxim3_1" xml:space="preserve">
+    <value>Τρίτο Maxim πρώτη θυγατρική γνωμικό</value>
+  </data>
+  <data name="IslamInfo_Maxim3_2" xml:space="preserve">
+    <value>Τρίτο Maxim δεύτερη θυγατρική γνωμικό</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_1" xml:space="preserve">
+    <value>Τρίτο Maxim τρίτο γνωμικό επικουρικής</value>
+  </data>
+  <data name="IslamInfo_Maxim3_3_2" xml:space="preserve">
+    <value>Τρίτο Maxim τρίτο γνωμικό επικουρικής</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_1" xml:space="preserve">
+    <value>Τρίτο τέταρτο Maxim επικουρικής γνωμικό</value>
+  </data>
+  <data name="IslamInfo_Maxim3_4_2" xml:space="preserve">
+    <value>Τρίτο τέταρτο Maxim επικουρικής γνωμικό</value>
+  </data>
+  <data name="IslamInfo_Maxim3_5" xml:space="preserve">
+    <value>Τρίτη Πέμπτη Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim3_6" xml:space="preserve">
+    <value>Τρίτο γνωμικό επικουρικής Maxim έκτη</value>
+  </data>
+  <data name="IslamInfo_Maxim3_7" xml:space="preserve">
+    <value>Τρίτο γνωμικό επικουρικής Maxim έβδομη</value>
+  </data>
+  <data name="IslamInfo_Maxim4_1" xml:space="preserve">
+    <value>Τέταρτη Maxim πρώτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_2" xml:space="preserve">
+    <value>Τέταρτη Maxim δεύτερη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_1" xml:space="preserve">
+    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_2" xml:space="preserve">
+    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_3" xml:space="preserve">
+    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
+  </data>
+  <data name="IslamInfo_Maxim4_3_4" xml:space="preserve">
+    <value>Τέταρτο Maxim τρίτο γνωμικό επικουρικής</value>
+  </data>
+  <data name="IslamInfo_Maxim4_4" xml:space="preserve">
+    <value>Τέταρτη Maxim τέταρτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_5" xml:space="preserve">
+    <value>Τέταρτο πέμπτο Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim4_6" xml:space="preserve">
+    <value>Τέταρτη θυγατρική Maxim Maxim έκτη</value>
+  </data>
+  <data name="IslamInfo_Maxim4_7" xml:space="preserve">
+    <value>Τέταρτη θυγατρική Maxim Maxim έβδομη</value>
+  </data>
+  <data name="IslamInfo_Maxim5_1" xml:space="preserve">
+    <value>Πέμπτο Maxim πρώτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_2" xml:space="preserve">
+    <value>Πέμπτο Maxim δεύτερη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_3" xml:space="preserve">
+    <value>Πέμπτο Maxim τρίτο επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4" xml:space="preserve">
+    <value>Πέμπτο Maxim τέταρτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_4_1" xml:space="preserve">
+    <value>Πέμπτο Maxim τέταρτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_5" xml:space="preserve">
+    <value>Πέμπτο Maxim πέμπτο επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_6" xml:space="preserve">
+    <value>Πέμπτο έκτο Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_7" xml:space="preserve">
+    <value>Πέμπτο Maxim έβδομη επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_8" xml:space="preserve">
+    <value>Πέμπτο Maxim όγδοος θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_9" xml:space="preserve">
+    <value>Πέμπτο Maxim ένατη επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_10" xml:space="preserve">
+    <value>Πέμπτο Maxim δέκατο επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_11" xml:space="preserve">
+    <value>Πέμπτο Maxim ενδέκατη επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim5_12" xml:space="preserve">
+    <value>Πέμπτο Maxim δωδέκατο επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_1" xml:space="preserve">
+    <value>Έκτη Maxim πρώτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_2" xml:space="preserve">
+    <value>Έκτη Maxim δεύτερη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_3" xml:space="preserve">
+    <value>Έκτη Maxim τρίτο επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_4" xml:space="preserve">
+    <value>Έκτη Maxim τέταρτη θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_5" xml:space="preserve">
+    <value>Έκτη Maxim πέμπτο επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_6" xml:space="preserve">
+    <value>Έκτη Maxim έκτη επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_7" xml:space="preserve">
+    <value>Έκτη Maxim έβδομη επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_1" xml:space="preserve">
+    <value>Έκτη Maxim όγδοος θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_8_2" xml:space="preserve">
+    <value>Έκτη Maxim όγδοος θυγατρική Maxim</value>
+  </data>
+  <data name="IslamInfo_Maxim6_9" xml:space="preserve">
+    <value>Έκτη ενάτη Maxim επικουρικής Maxim</value>
+  </data>
+  <data name="IslamInfo_GoldCoinOf2_975Grams" xml:space="preserve">
+    <value>Χρυσό νόμισμα 2.975 γραμμάρια</value>
+  </data>
+  <data name="IslamInfo_SilverOf2_975Grams" xml:space="preserve">
+    <value>Ασήμι 2.975 γραμμάρια</value>
+  </data>
+  <data name="IslamInfo_WeightMeasureOf4_25Grams" xml:space="preserve">
+    <value>Μέτρο βάρους 4_25 γραμμαρίων</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch2" xml:space="preserve">
+    <value>Ο κάθε ακροατής το όλα βλέποντας το Master της βοηθητικής εφαρμογής το ανώτατο Pardoner το ισχυρό ο Knower λεπτές όλοι γνωρίζουμε αυτό το παράξενο το όμορφο το ντροπαλό Coverer η μεγάλη αυτή την εξαιρετικά εξυψώνεται ένας μοναδικός την όλα που επικρατούν σε ένα</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch1" xml:space="preserve">
+    <value>Το θεάρεστο ο Ελεήμων το αιώνιο Λόρδος το πιο ιερά η ενσάρκωση της ειρήνης το ενσταλακτής της πίστης ο συντηρητής της ασφάλειας το ισχυρό χαρακτήρα το όλα αναγκάζοντας το κυρίαρχο μέρος ο δημιουργός του Evolver την άψογη διαπλάσσων το πρώτο το άπειρο το τελευταίο το αισθητό την ανεπαίσθητη</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch3" xml:space="preserve">
+    <value>Η ενσάρκωση της αλήθειας η σαφής ισχυρός μία επιχείρηση το ποτέ ζουν τον εαυτό που υφίστανται μία πανέμορφη εκείνο το υπέροχο ένα αναγνωρίζοντας αυτό το επιεικές ένα το ολόκληρο ένα διεισδύει το ολόκληρο ένα γνωρίζοντας το ποτέ αποδοχή της μετάνοιας το σοφέ εαυτού επαρκής άφθονη αυτός αποκλειστική αυτή το ανώτατο παροχής η στενή αποκριμένος αυτός Pardoner ο τρυφερός αυτός</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch6" xml:space="preserve">
+    <value>Η μεγάλη συγχωρών καλοήθεις αυτή την υπέρτατη απονεμών τα πιο γενναιόδωρα πιο ιερό από όλα αδυναμία αιώνια κληρονόμος του πλοιάρχου ο Ύψιστος ο ένας Θεός τελικό1</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch4" xml:space="preserve">
+    <value>Την προστασία συσχετίσετε την αποκλειστική αξιέπαινος φρούρησης αυτός ένδοξη εκείνη το ανώτατο Solver ο μάρτυρας όλα παρατηρώντας το αποστολής ένα Procrastinator του Παντοδύναμου, βασιλιάς όλα στην ιστοδελίδα τα λαμπρά ο κτήτορας της επέκτασης ο παρέχων την ακαταμάχητη αυτός που Recompenses</value>
+  </data>
+  <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
+    <value>Στην αναγνώριση την απονεμών Παντοδύναμος αυτός ο συνεχής δημιουργός ο ιδιοκτήτης το συνολικό πάροχος την καθολική διαχειριστικές άγρυπνο εκείνη την πράττων των καλών της αναμέτρησης μία εκείνος που θεραπεύει την απαλή το δωρητή συντηρούμενη αυτός ο κύριος το καλό το αμερόληπτο δικαστή στο ανώτατο προς τιμήν τη νερομάνα της αλήθειας</value>
   </data>
 </root>

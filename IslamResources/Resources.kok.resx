@@ -951,42 +951,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>नांवां</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>एन-ऍरी वर्तूळ केल्लो डॉट ऑपरेटर</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>एन-ऍरी वर्तूळ केल्लें अदीक ऑपरेटर</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>एन-ऍरी वर्तूळ केल्लें वेळ</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>एन-ऍरी इंटरसॅक्शन</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>एन-ऍरी लॉजिकल आनी</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>एन-ऍरी लॉजिकल वा</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>एन-ऍरी वर्ग इंटरसॅक्शन ऑपरेटर</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>एन-ऍरी वर्ग युनियन ऑपरेटर</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N-ऍरे बेरीज</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>एन-ऍरी युनियन</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>डॉट वांगडा एन-ऍरी युनियन ऑपरेटर</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>अदीक वांगडा एन-ऍरी युनियन ऑपरेटर</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>अस्विकृती दुप्पट उबी पट्टी दुप्पट उजवी टर्नस्टायल</value>
   </data>
@@ -1820,5 +1784,41 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>सक्रीय</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>एन-ऍरी वर्तूळ केल्लो डॉट ऑपरेटर</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>एन-ऍरी वर्तूळ केल्लें अदीक ऑपरेटर</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>एन-ऍरी वर्तूळ केल्लें वेळ</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>एन-ऍरी इंटरसॅक्शन</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>एन-ऍरी लॉजिकल आनी</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>एन-ऍरी लॉजिकल वा</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>एन-ऍरी वर्ग इंटरसॅक्शन ऑपरेटर</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>एन-ऍरी वर्ग युनियन ऑपरेटर</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N-ऍरे बेरीज</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>एन-ऍरी युनियन</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>डॉट वांगडा एन-ऍरी युनियन ऑपरेटर</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>अदीक वांगडा एन-ऍरी युनियन ऑपरेटर</value>
   </data>
 </root>

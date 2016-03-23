@@ -864,9 +864,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>ኣስማት</value>
   </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>ጠቐር ኣገብብራ N-Ary</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>ዝተነጽገ ድርብ ትኹል ሸራጥ ድርብ የማናይ ንእሽቶ ማዕጾ</value>
   </data>
@@ -1583,5 +1580,8 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Active</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>ጠቐር ኣገብብራ N-Ary</value>
   </data>
 </root>

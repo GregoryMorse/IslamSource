@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>アラビア語フォント</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>フォント サイズの縮小</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>既定のフォント サイズ</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>クルアーンはアラビア語、翻字翻訳単語単位での学習、勉強、研究、記憶、反射、tajweed の習得によって詩と。</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>コーラン単語単位で</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>フォント サイズの拡大</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>その他のフォント</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>レンダー</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>翻訳を見る</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>音訳を表示します。</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>単語単位で表示</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>サイズ</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>朗読ルール着色を使用します。</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Default Language  </value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>ブックマークの追加</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>ブックマーク</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>クリップボードにコピー</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>詩に行く</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>再生</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>朗読</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>ブックマークを削除します。</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>セットのプレイバック詩</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>評釈を表示します。</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>共有</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>追加詩事前遅延</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>詩を自動的に進む</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>進む前に詩の遅延時間</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>ループ モード</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>バージョン情報</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>メタデータを持つアラビア語 qur ' an およびすべての翻訳といくつかの音声朗読を除く Tanzil プロジェクト (http://tanzil.net) に示されています。
+キス ズザンナ鈴木によるクルアーンのハンガリー語翻訳は Magyar Iszlam (http://magyariszlam.hu) に入金されます。
+Maulana ムハンマド ・ アリによってコーランの英語翻訳は、イスラム教 (http://www.aaiil.org) で、ラホール Ahmadiyya の動きに入金されます。
+形態データおよび英語の単語単位で翻訳コーラン アラビア語コーパス (http://corpus.quran.com) への信用します。
+Al コーラン インドネシア (http://www.alquran-indonesia.com/web/quran) にインドネシア語の単語単位で翻訳クレジット。
+ハーフィズ Nazar ムハンマド ウルドゥ語単語単位で翻訳は簡単なコーラン ワシントン州 Hadees (http://www.easyquranwahadees.com) に入金されます。
+プログラムで他の翻訳と同様、他の単語単位で翻訳マイクロソフト翻訳プロバイダー (http://www.microsoft.com/en-us/translator) と Google 翻訳 (http://translate.google.com) に入金し、正確なできない場合があります。 マレーシア単語単位で qur ' an のソースはインドネシアです。 他のすべての単語でクルアーンのソースは英語のコーラン アラビア語コーパスです。
+ビットレートが表示の他の音声朗読すべてアーヤ (http://www.everyayah.com) に入金します。
+Unicode データ、Unicode コンソーシアム (http://www.unicode.org) に入金</value>
+  </data>
+</root>

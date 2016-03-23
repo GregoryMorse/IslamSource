@@ -966,25 +966,9 @@
           <source>Anticlockwise Top Semicircle Arrow</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mũi tên hình bán nguyệt trên anticlockwise</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedBottomU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Bottom U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác đầu dưới U-hình mũi tên</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Left U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác đầu trái U-hình mũi tên</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedOpenCircleArrow" translate="yes" xml:space="preserve">
           <source>Anticlockwise Triangle Headed Open Circle Arrow</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác hướng mũi tên vòng kết nối mở</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Right U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác đầu phải U-hình mũi tên</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow" translate="yes" xml:space="preserve">
-          <source>Anticlockwise Triangle Headed Top U- Shaped Arrow</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác quay đỉnh U-hình mũi tên</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AnyKindOfHurt" translate="yes" xml:space="preserve">
           <source>Any Kind Of Hurt</source>
@@ -6154,94 +6138,6 @@
           <source>Cjk Radical Cow</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical bò</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedBird" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Bird</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa chim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedCart" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Cart</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản giỏ hàng</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedDragon" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Dragon</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa rồng</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedEat" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Eat</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C-đơn giản hóa ăn</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedEven" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Even</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C-đơn giản hóa thậm chí</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedFish" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Fish</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa cá</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedFly" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Fly</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa bay</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedFrog" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Frog</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa ếch</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedGate" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Gate</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa Gate</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedGold" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Gold</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa vàng</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedHorse" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Horse</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa ngựa</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedLeaf" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Leaf</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa lá</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedLong" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Long</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa Long</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSalt" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Salt</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa muối</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSee" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified See</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa xem</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedShell" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Shell</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa vỏ</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSilk" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Silk</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa lụa</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedSpeech" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Speech</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa bài phát biểu</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedTannedLeather" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Tanned Leather</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C-đơn giản hóa Tanned da</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedTooth" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Tooth</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa răng</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedTurtle" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Turtle</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa rùa</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalC-SimplifiedWind" translate="yes" xml:space="preserve">
-          <source>Cjk Radical C- Simplified Wind</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa Gió</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_CjkRadicalDeath" translate="yes" xml:space="preserve">
           <source>Cjk Radical Death</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Cái chết cực đoan CJK</target>
@@ -6321,22 +6217,6 @@
         <trans-unit id="IslamInfo_CjkRadicalJade" translate="yes" xml:space="preserve">
           <source>Cjk Radical Jade</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK cấp tiến Ngọc</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedDragon" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Dragon</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J - đơn giản hóa rồng</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedEven" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Even</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J-đơn giản hóa thậm chí</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedTooth" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Tooth</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J - đơn giản hóa răng</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CjkRadicalJ-SimplifiedTurtle" translate="yes" xml:space="preserve">
-          <source>Cjk Radical J- Simplified Turtle</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J - đơn giản hóa rùa</target>
         </trans-unit>
         <trans-unit id="IslamInfo_CjkRadicalKnifeOne" translate="yes" xml:space="preserve">
           <source>Cjk Radical Knife One</source>
@@ -9810,10 +9690,6 @@
           <source>Double Stroke Not Sign</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Đôi nét không đăng</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_DoubleStruckN-ArySummation" translate="yes" xml:space="preserve">
-          <source>Double Struck N- Ary Summation</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đôi tấn công N - Ary tổng kết</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_DoubleSubset" translate="yes" xml:space="preserve">
           <source>Double Subset</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Tập con Kép</target>
@@ -12197,10 +12073,6 @@
         <trans-unit id="IslamInfo_Gold" translate="yes" xml:space="preserve">
           <source>Gold</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Vàng kim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GoldCoinOf2.975Grams" translate="yes" xml:space="preserve">
-          <source>Gold Coin Of2.975 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tiền xu vàng Of2.975 gram</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Goliath" translate="yes" xml:space="preserve">
           <source>Goliath</source>
@@ -16862,10 +16734,6 @@
           <source>Left Square Bracket With Underbar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Khung hình vuông bên trái với Underbar</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_LeftS-ShapedBagDelimiter" translate="yes" xml:space="preserve">
-          <source>Left S- Shaped Bag Delimiter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Trái S-hình túi Delimiter</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_LeftSubstitutionBracket" translate="yes" xml:space="preserve">
           <source>Left Substitution Bracket</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Thay thế trái khung</target>
@@ -20022,70 +19890,6 @@
           <source>Narrow No Break Space</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Thu hẹp không gian không phá vỡ</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCircledDotOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Circled Dot Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary khoanh tròn Dot Operator</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCircledPlusOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Circled Plus Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary khoanh cộng với nhà điều hành</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCircledTimesOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Circled Times Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary khoanh lần nhà điều hành</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryCoproduct" translate="yes" xml:space="preserve">
-          <source>N- Ary Coproduct</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary Coproduct</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryIntersection" translate="yes" xml:space="preserve">
-          <source>N- Ary Intersection</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary giao</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryLogicalAnd" translate="yes" xml:space="preserve">
-          <source>N- Ary Logical And</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary hợp lý và</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryLogicalOr" translate="yes" xml:space="preserve">
-          <source>N- Ary Logical Or</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary logic hay</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryProduct" translate="yes" xml:space="preserve">
-          <source>N- Ary Product</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary sản phẩm</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-ArySquareIntersectionOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Square Intersection Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary vuông giao nhà điều hành</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-ArySquareUnionOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Square Union Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary toán tử Square Union</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-ArySummation" translate="yes" xml:space="preserve">
-          <source>N- Ary Summation</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary tổng kết</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryTimesOperator" translate="yes" xml:space="preserve">
-          <source>N- Ary Times Operator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - Ary lần nhà điều hành.</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryUnion" translate="yes" xml:space="preserve">
-          <source>N- Ary Union</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary Union</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryUnionOperatorWithDot" translate="yes" xml:space="preserve">
-          <source>N- Ary Union Operator With Dot</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary nhà điều hành liên minh với Dot</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryUnionOperatorWithPlus" translate="yes" xml:space="preserve">
-          <source>N- Ary Union Operator With Plus</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary nhà điều hành liên minh Plus</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_N-AryWhiteVerticalBar" translate="yes" xml:space="preserve">
-          <source>N- Ary White Vertical Bar</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary trắng dọc Bar</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Nasalization" translate="yes" xml:space="preserve">
           <source>Nasalization</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Nasalization</target>
@@ -21045,14 +20849,6 @@
         <trans-unit id="IslamInfo_OpenCentreTeardropSpokedAsterisk" translate="yes" xml:space="preserve">
           <source>Open Centre Teardrop Spoked Asterisk</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mở Trung tâm Teardrop Spoked Asterisk</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_OpenCircuitOutputH-TypeSymbol" translate="yes" xml:space="preserve">
-          <source>Open Circuit Output H- Type Symbol</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mạch mở ra H - loại biểu tượng</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_OpenCircuitOutputL-TypeSymbol" translate="yes" xml:space="preserve">
-          <source>Open Circuit Output L- Type Symbol</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mạch mở ra L - loại biểu tượng</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Openers" translate="yes" xml:space="preserve">
           <source>Openers</source>
@@ -24422,10 +24218,6 @@
           <source>Right Square Bracket With Underbar</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Phải quảng trường khung với Underbar</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_RightS-ShapedBagDelimiter" translate="yes" xml:space="preserve">
-          <source>Right S- Shaped Bag Delimiter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngay S-hình túi Delimiter</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_RightSubstitutionBracket" translate="yes" xml:space="preserve">
           <source>Right Substitution Bracket</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Khung bên phải thay thế</target>
@@ -25577,10 +25369,6 @@
         <trans-unit id="IslamInfo_Silver" translate="yes" xml:space="preserve">
           <source>Silver</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Bạc</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_SilverOf2.975Grams" translate="yes" xml:space="preserve">
-          <source>Silver Of2.975 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bạc Of2.975 gram</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SimilarAboveGreaterThanAboveEqualsSign" translate="yes" xml:space="preserve">
           <source>Similar Above Greater Than Above Equals Sign</source>
@@ -28374,10 +28162,6 @@
           <source>The All Hearer The All Seeing</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Mọi người nghe thấy tất cả</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne" translate="yes" xml:space="preserve">
-          <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Người nghe tất cả tất cả nhìn thấy thầy Helper Pardoner tối cao mạnh mẽ Knower Subtleties là một nhận thức được tất cả các lẻ xinh đẹp nhút nhát của Coverer tuyệt vời nhất các vô cùng sôi nổi một người duy nhất tất cả thịnh hành một</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TheAllHearerTheClose" translate="yes" xml:space="preserve">
           <source>The All Hearer The Close</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Người nghe tất cả kết thúc</target>
@@ -28441,10 +28225,6 @@
         <trans-unit id="IslamInfo_TheBeneficent" translate="yes" xml:space="preserve">
           <source>The Beneficent</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Các Beneficent</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible" translate="yes" xml:space="preserve">
-          <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Các Beneficent sự thương xót vĩnh cửu Chúa linh thiêng nhất hiện thân của hòa bình Infuser Faith Preserver an toàn một Mighty tất cả hấp dẫn chi phối một trong những người sáng tạo Evolver Shaper hoàn hảo đầu tiên vô hạn tác phẩm các thể nhận những không thể trông thấy</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheBenignOne" translate="yes" xml:space="preserve">
           <source>The Benign One</source>
@@ -28565,10 +28345,6 @@
         <trans-unit id="IslamInfo_TheEmbodimentOfTruth" translate="yes" xml:space="preserve">
           <source>The Embodiment of Truth</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiện thân của sự thật</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne" translate="yes" xml:space="preserve">
-          <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiện thân của sự thật rõ ràng là một mạnh mẽ là một công ty là bao giờ sống tự tồn một một trong những Sublime là một tuyệt vời là một Acknowledging Clement một tất cả bao trùm một tất cả hiểu biết một trong những tìm bao giờ của sự hối cải là một khôn ngoan tự đầy đủ một trong là một phong phú là một duy nhất cung cấp tối cao đóng một Responding Pardoner những yêu thương</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheEternalInheritor" translate="yes" xml:space="preserve">
           <source>The Eternal Inheritor</source>
@@ -28709,10 +28485,6 @@
         <trans-unit id="IslamInfo_TheGreatForgiver" translate="yes" xml:space="preserve">
           <source>The Great Forgiver</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Forgiver tuyệt vời</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1" translate="yes" xml:space="preserve">
-          <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Forgiver tuyệt vời một lành tính tối cao Bestower hào phóng nhất thần thánh nhất từ tất cả điểm yếu vĩnh cửu Inheritor Master cao nhất Final1 một Thiên Chúa</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheGreatOne" translate="yes" xml:space="preserve">
           <source>The Great One</source>
@@ -29086,10 +28858,6 @@
           <source>The Protecting Associate</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Nhân viên bảo vệ</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses" translate="yes" xml:space="preserve">
-          <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bảo vệ các liên kết duy nhất một trong những đáng khen ngợi là một bảo vệ là một vinh quang Solver tối cao chứng kiến tất cả quan sát một Expediting Procrastinator toàn năng của vua là một thẩm quyền tất cả rực rỡ Taker Extender cung cấp cưỡng lại những người Recompenses</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TheProvider" translate="yes" xml:space="preserve">
           <source>The Provider</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Các nhà cung cấp</target>
@@ -29113,10 +28881,6 @@
         <trans-unit id="IslamInfo_TheRecognizerTheAllKnowingOne" translate="yes" xml:space="preserve">
           <source>The Recognizer The All Knowing One</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Bộ nhận dạng là một tất cả hiểu biết</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth" translate="yes" xml:space="preserve">
-          <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Recognizer Bestower toàn năng một trong những người sáng tạo liên tục của chủ sở hữu nhà cung cấp tất cả Universal Trustee là một con người thực hiện tốt Reckoning của một người chữa nhẹ nhàng Giver duy trì một Chúa tốt các khách quan thẩm phán tối cao để vinh danh người đứng đầu đài phun nước của sự thật</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheRecognizerTheClementOne" translate="yes" xml:space="preserve">
           <source>The Recognizer The Clement One</source>
@@ -29634,10 +29398,6 @@
           <source>Thunderstorm</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Trời Ðẹp</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TibetanAstrologicalSign-KhyudPa" translate="yes" xml:space="preserve">
-          <source>Tibetan Astrological Sign- Khyud Pa</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng chiêm tinh đăng-Khyud Pa</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TibetanAstrologicalSignSdongTshugs" translate="yes" xml:space="preserve">
           <source>Tibetan Astrological Sign Sdong Tshugs</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng các dấu hiệu chiêm tinh Sdong Tshugs</target>
@@ -29670,10 +29430,6 @@
           <source>Tibetan Mark Ngas Bzung Sgor Rtags</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng Mark Ngas Bzung Sgor Rtags</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_TibetanMarkTsa-Phru" translate="yes" xml:space="preserve">
-          <source>Tibetan Mark Tsa- Phru</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng Mark Tsa-Phru</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_TibetanSignLciRtags" translate="yes" xml:space="preserve">
           <source>Tibetan Sign Lci Rtags</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng đăng Lci Rtags</target>
@@ -29697,10 +29453,6 @@
         <trans-unit id="IslamInfo_TibetanSubjoinedLetterA" translate="yes" xml:space="preserve">
           <source>Tibetan Subjoined Letter A</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng Subjoined chữ A</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_TibetanSubjoinedLetter-A" translate="yes" xml:space="preserve">
-          <source>Tibetan Subjoined Letter- A</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng Subjoined thư-A</target>
         </trans-unit>
         <trans-unit id="IslamInfo_TibetanSubjoinedLetterBa" translate="yes" xml:space="preserve">
           <source>Tibetan Subjoined Letter Ba</source>
@@ -32271,20 +32023,19 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Trọng bắt buộc từ Lengthening</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf130320Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of130320 Grams</source>
+          <source>Weight Measure Of 130320 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Cân đo Of130320 gram</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf2172Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of2172 Grams</source>
+          <source>Weight Measure Of 2172 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Cân đo Of2172 gram</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_WeightMeasureOf4.25Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of4.25 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cân đo Of4.25 gram</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf543Grams" translate="yes" xml:space="preserve">
-          <source>Weight Measure Of543 Grams</source>
+          <source>Weight Measure Of 543 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Cân đo Of543 gram</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
         <trans-unit id="IslamInfo_WellGrounded" translate="yes" xml:space="preserve">
           <source>Well Grounded</source>
@@ -35702,23 +35453,7 @@
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece12-1" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece12-2" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece12-3" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_GreatMasterpiece13" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece13-1" translate="yes" xml:space="preserve">
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
         </trans-unit>
@@ -35755,10 +35490,6 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GreatMasterpiece22" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece22-1" translate="yes" xml:space="preserve">
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
         </trans-unit>
@@ -35823,10 +35554,6 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
         </trans-unit>
         <trans-unit id="IslamInfo_GreatMasterpiece38" translate="yes" xml:space="preserve">
-          <source>Great Masterpiece</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_GreatMasterpiece38-1" translate="yes" xml:space="preserve">
           <source>Great Masterpiece</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
         </trans-unit>
@@ -35994,281 +35721,25 @@
           <source>First Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên Maxim</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-1" translate="yes" xml:space="preserve">
-          <source>First Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên đầu tiên của câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-2" translate="yes" xml:space="preserve">
-          <source>First Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên câu châm ngôn thứ hai công ty con Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-3" translate="yes" xml:space="preserve">
-          <source>First Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-4" translate="yes" xml:space="preserve">
-          <source>First Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-5" translate="yes" xml:space="preserve">
-          <source>First Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ năm Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-6-1" translate="yes" xml:space="preserve">
-          <source>First Maxim First Exceptional Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên đầu tiên Maxim xuất sắc Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim1-6-2" translate="yes" xml:space="preserve">
-          <source>First Maxim Second Exceptional Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ hai Maxim xuất sắc Maxim</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Maxim2" translate="yes" xml:space="preserve">
           <source>Second Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Câu châm ngôn thứ hai</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-1-1" translate="yes" xml:space="preserve">
-          <source>Second Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai đầu tiên Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-1-2" translate="yes" xml:space="preserve">
-          <source>Second Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai đầu tiên Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-1-3" translate="yes" xml:space="preserve">
-          <source>Second Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai đầu tiên Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-2" translate="yes" xml:space="preserve">
-          <source>Second Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai câu châm ngôn thứ hai công ty con Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-3" translate="yes" xml:space="preserve">
-          <source>Second Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-4" translate="yes" xml:space="preserve">
-          <source>Second Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-5" translate="yes" xml:space="preserve">
-          <source>Second Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ năm Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-6" translate="yes" xml:space="preserve">
-          <source>Second Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ sáu câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-7" translate="yes" xml:space="preserve">
-          <source>Second Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim Seventh chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-8" translate="yes" xml:space="preserve">
-          <source>Second Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim 8 chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-9" translate="yes" xml:space="preserve">
-          <source>Second Maxim Ninth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai lần thứ IX Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-10" translate="yes" xml:space="preserve">
-          <source>Second Maxim Tenth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim phần mười chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-11" translate="yes" xml:space="preserve">
-          <source>Second Maxim Eleventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ mười một câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-12" translate="yes" xml:space="preserve">
-          <source>Second Maxim Twelfth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ mười hai câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim2-13" translate="yes" xml:space="preserve">
-          <source>Second Maxim Thirteenth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim 13 chi nhánh Maxim</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Maxim3" translate="yes" xml:space="preserve">
           <source>Third Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba Maxim</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-1" translate="yes" xml:space="preserve">
-          <source>Third Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba đầu tiên Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-2" translate="yes" xml:space="preserve">
-          <source>Third Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba câu châm ngôn thứ hai công ty con Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-3-1" translate="yes" xml:space="preserve">
-          <source>Third Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-3-2" translate="yes" xml:space="preserve">
-          <source>Third Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-4-1" translate="yes" xml:space="preserve">
-          <source>Third Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-4-2" translate="yes" xml:space="preserve">
-          <source>Third Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-5" translate="yes" xml:space="preserve">
-          <source>Third Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ năm Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-6" translate="yes" xml:space="preserve">
-          <source>Third Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ sáu câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim3-7" translate="yes" xml:space="preserve">
-          <source>Third Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ bảy Maxim chi nhánh Maxim</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Maxim4" translate="yes" xml:space="preserve">
           <source>Fourth Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-1" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư đầu tiên Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-2" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư câu châm ngôn thứ hai công ty con Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-1" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-2" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-3" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-3-4" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-4" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-5" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ năm Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-6" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ sáu câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim4-7" translate="yes" xml:space="preserve">
-          <source>Fourth Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư Maxim Seventh chi nhánh Maxim</target>
         </trans-unit>
         <trans-unit id="IslamInfo_Maxim5" translate="yes" xml:space="preserve">
           <source>Fifth Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm Maxim</target>
         </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-1" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm đầu tiên Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-2" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm câu châm ngôn thứ hai công ty con Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-3" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ ba của câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-4" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-4-1" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-5" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ 5 Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-6" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ sáu câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-7" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ bảy Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-8" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ tám câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-9" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Ninth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ chín Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-10" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Tenth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ mười Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-11" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Eleventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ mười một câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim5-12" translate="yes" xml:space="preserve">
-          <source>Fifth Maxim Twelfth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ mười hai câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
         <trans-unit id="IslamInfo_Maxim6" translate="yes" xml:space="preserve">
           <source>Sixth Maxim</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-1" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim First Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu đầu tiên của câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-2" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Second Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu câu châm ngôn thứ hai công ty con Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-3" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Third Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ ba câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-4" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Fourth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ tư Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-5" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Fifth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu Maxim 5 chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-6" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Sixth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ sáu câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-7" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Seventh Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ bảy Maxim chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-8-1" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ tám câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-8-2" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ tám câu châm ngôn chi nhánh Maxim</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_Maxim6-9" translate="yes" xml:space="preserve">
-          <source>Sixth Maxim Ninth Subsidiary Maxim</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ chín Maxim chi nhánh Maxim</target>
         </trans-unit>
         <trans-unit id="IslamInfo_MaximComp1" translate="yes" xml:space="preserve">
           <source>First Comprehensive Maxim</source>
@@ -36613,10 +36084,6 @@
         <trans-unit id="IslamInfo_CombiningXBelow" translate="yes" xml:space="preserve">
           <source>Combining X  Below</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Kết hợp X dưới đây</target>
-        </trans-unit>
-        <trans-unit id="IslamInfo_CombiningX-XBelow" translate="yes" xml:space="preserve">
-          <source>Combining X- X  Below</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kết hợp X - X dưới đây</target>
         </trans-unit>
         <trans-unit id="IslamInfo_DoubleHighReversed9QuotationMark" translate="yes" xml:space="preserve">
           <source>Double High Reversed9  Quotation Mark</source>
@@ -37241,6 +36708,538 @@
         <trans-unit id="IslamInfo_RemembranceAfterPrayer" translate="yes" xml:space="preserve">
           <source>Remembrance After Prayer</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Nhớ sau khi cầu nguyện</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedBottomUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Bottom U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác đầu dưới U-hình mũi tên</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Left U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác đầu trái U-hình mũi tên</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Right U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác đầu phải U-hình mũi tên</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow" translate="yes" xml:space="preserve">
+          <source>Anticlockwise Triangle Headed Top U- Shaped Arrow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anticlockwise tam giác quay đỉnh U-hình mũi tên</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedBird" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Bird</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa chim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedCart" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Cart</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản giỏ hàng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedDragon" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Dragon</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa rồng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedEat" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Eat</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C-đơn giản hóa ăn</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedEven" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Even</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C-đơn giản hóa thậm chí</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedFish" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Fish</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa cá</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedFly" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Fly</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa bay</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedFrog" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Frog</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa ếch</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedGate" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Gate</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa Gate</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedGold" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Gold</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa vàng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedHorse" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Horse</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa ngựa</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedLeaf" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Leaf</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa lá</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedLong" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Long</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa Long</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSalt" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Salt</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa muối</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSee" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified See</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa xem</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedShell" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Shell</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa vỏ</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSilk" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Silk</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa lụa</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedSpeech" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Speech</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa bài phát biểu</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedTannedLeather" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Tanned Leather</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C-đơn giản hóa Tanned da</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedTooth" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Tooth</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa răng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedTurtle" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Turtle</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa rùa</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalCSimplifiedWind" translate="yes" xml:space="preserve">
+          <source>Cjk Radical C- Simplified Wind</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical C - đơn giản hóa Gió</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedDragon" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Dragon</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J - đơn giản hóa rồng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedEven" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Even</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J-đơn giản hóa thậm chí</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedTooth" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Tooth</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J - đơn giản hóa răng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CjkRadicalJSimplifiedTurtle" translate="yes" xml:space="preserve">
+          <source>Cjk Radical J- Simplified Turtle</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CJK Radical J - đơn giản hóa rùa</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_CombiningXXBelow" translate="yes" xml:space="preserve">
+          <source>Combining X- X  Below</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kết hợp X - X dưới đây</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_DoubleStruckNArySummation" translate="yes" xml:space="preserve">
+          <source>Double Struck N- Ary Summation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đôi tấn công N - Ary tổng kết</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_LeftSShapedBagDelimiter" translate="yes" xml:space="preserve">
+          <source>Left S- Shaped Bag Delimiter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Trái S-hình túi Delimiter</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCircledDotOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Circled Dot Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary khoanh tròn Dot Operator</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCircledPlusOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Circled Plus Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary khoanh cộng với nhà điều hành</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCircledTimesOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Circled Times Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary khoanh lần nhà điều hành</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryCoproduct" translate="yes" xml:space="preserve">
+          <source>N- Ary Coproduct</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary Coproduct</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryIntersection" translate="yes" xml:space="preserve">
+          <source>N- Ary Intersection</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary giao</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryLogicalAnd" translate="yes" xml:space="preserve">
+          <source>N- Ary Logical And</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary hợp lý và</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryLogicalOr" translate="yes" xml:space="preserve">
+          <source>N- Ary Logical Or</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary logic hay</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryProduct" translate="yes" xml:space="preserve">
+          <source>N- Ary Product</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary sản phẩm</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NArySquareIntersectionOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Square Intersection Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary vuông giao nhà điều hành</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NArySquareUnionOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Square Union Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary toán tử Square Union</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NArySummation" translate="yes" xml:space="preserve">
+          <source>N- Ary Summation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary tổng kết</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryTimesOperator" translate="yes" xml:space="preserve">
+          <source>N- Ary Times Operator</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - Ary lần nhà điều hành.</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryUnion" translate="yes" xml:space="preserve">
+          <source>N- Ary Union</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary Union</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryUnionOperatorWithDot" translate="yes" xml:space="preserve">
+          <source>N- Ary Union Operator With Dot</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary nhà điều hành liên minh với Dot</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryUnionOperatorWithPlus" translate="yes" xml:space="preserve">
+          <source>N- Ary Union Operator With Plus</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary nhà điều hành liên minh Plus</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_NAryWhiteVerticalBar" translate="yes" xml:space="preserve">
+          <source>N- Ary White Vertical Bar</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">N - ary trắng dọc Bar</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OpenCircuitOutputHTypeSymbol" translate="yes" xml:space="preserve">
+          <source>Open Circuit Output H- Type Symbol</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mạch mở ra H - loại biểu tượng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OpenCircuitOutputLTypeSymbol" translate="yes" xml:space="preserve">
+          <source>Open Circuit Output L- Type Symbol</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mạch mở ra L - loại biểu tượng</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_RightSShapedBagDelimiter" translate="yes" xml:space="preserve">
+          <source>Right S- Shaped Bag Delimiter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ngay S-hình túi Delimiter</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TibetanAstrologicalSignKhyudPa" translate="yes" xml:space="preserve">
+          <source>Tibetan Astrological Sign- Khyud Pa</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng chiêm tinh đăng-Khyud Pa</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_TibetanMarkTsaPhru" translate="yes" xml:space="preserve">
+          <source>Tibetan Mark Tsa- Phru</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tây Tạng Mark Tsa-Phru</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece12_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece12_2" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece12_3" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece13_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece22_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpiece38_1" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kiệt tác tuyệt vời</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_1" translate="yes" xml:space="preserve">
+          <source>First Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên đầu tiên của câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_2" translate="yes" xml:space="preserve">
+          <source>First Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên câu châm ngôn thứ hai công ty con Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_3" translate="yes" xml:space="preserve">
+          <source>First Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_4" translate="yes" xml:space="preserve">
+          <source>First Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_5" translate="yes" xml:space="preserve">
+          <source>First Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ năm Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_6_1" translate="yes" xml:space="preserve">
+          <source>First Maxim First Exceptional Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên đầu tiên Maxim xuất sắc Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim1_6_2" translate="yes" xml:space="preserve">
+          <source>First Maxim Second Exceptional Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đầu tiên thứ hai Maxim xuất sắc Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_1_1" translate="yes" xml:space="preserve">
+          <source>Second Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai đầu tiên Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_1_2" translate="yes" xml:space="preserve">
+          <source>Second Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai đầu tiên Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_1_3" translate="yes" xml:space="preserve">
+          <source>Second Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai đầu tiên Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_2" translate="yes" xml:space="preserve">
+          <source>Second Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai câu châm ngôn thứ hai công ty con Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_3" translate="yes" xml:space="preserve">
+          <source>Second Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_4" translate="yes" xml:space="preserve">
+          <source>Second Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_5" translate="yes" xml:space="preserve">
+          <source>Second Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ năm Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_6" translate="yes" xml:space="preserve">
+          <source>Second Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ sáu câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_7" translate="yes" xml:space="preserve">
+          <source>Second Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim Seventh chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_8" translate="yes" xml:space="preserve">
+          <source>Second Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim 8 chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_9" translate="yes" xml:space="preserve">
+          <source>Second Maxim Ninth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai lần thứ IX Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_10" translate="yes" xml:space="preserve">
+          <source>Second Maxim Tenth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim phần mười chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_11" translate="yes" xml:space="preserve">
+          <source>Second Maxim Eleventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ mười một câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_12" translate="yes" xml:space="preserve">
+          <source>Second Maxim Twelfth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai thứ mười hai câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim2_13" translate="yes" xml:space="preserve">
+          <source>Second Maxim Thirteenth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ hai Maxim 13 chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_1" translate="yes" xml:space="preserve">
+          <source>Third Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba đầu tiên Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_2" translate="yes" xml:space="preserve">
+          <source>Third Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba câu châm ngôn thứ hai công ty con Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_3_1" translate="yes" xml:space="preserve">
+          <source>Third Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_3_2" translate="yes" xml:space="preserve">
+          <source>Third Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_4_1" translate="yes" xml:space="preserve">
+          <source>Third Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_4_2" translate="yes" xml:space="preserve">
+          <source>Third Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_5" translate="yes" xml:space="preserve">
+          <source>Third Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ năm Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_6" translate="yes" xml:space="preserve">
+          <source>Third Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ sáu câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim3_7" translate="yes" xml:space="preserve">
+          <source>Third Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ ba thứ bảy Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_1" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư đầu tiên Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_2" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư câu châm ngôn thứ hai công ty con Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_1" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_2" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_3" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_3_4" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_4" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_5" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ năm Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_6" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư thứ sáu câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim4_7" translate="yes" xml:space="preserve">
+          <source>Fourth Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ tư Maxim Seventh chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_1" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm đầu tiên Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_2" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm câu châm ngôn thứ hai công ty con Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_3" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ ba của câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_4" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_4_1" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_5" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ 5 Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_6" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ sáu câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_7" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ bảy Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_8" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ tám câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_9" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Ninth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ chín Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_10" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Tenth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ mười Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_11" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Eleventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ mười một câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim5_12" translate="yes" xml:space="preserve">
+          <source>Fifth Maxim Twelfth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ năm thứ mười hai câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_1" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim First Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu đầu tiên của câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_2" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Second Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu câu châm ngôn thứ hai công ty con Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_3" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Third Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ ba câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_4" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Fourth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ tư Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_5" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Fifth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu Maxim 5 chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_6" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Sixth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ sáu câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_7" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Seventh Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ bảy Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_8_1" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ tám câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_8_2" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Eighth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ tám câu châm ngôn chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Maxim6_9" translate="yes" xml:space="preserve">
+          <source>Sixth Maxim Ninth Subsidiary Maxim</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thứ sáu thứ chín Maxim chi nhánh Maxim</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GoldCoinOf2_975Grams" translate="yes" xml:space="preserve">
+          <source>Gold Coin Of 2.975 Grams</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Các đồng xu vàng 2.975 gram</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SilverOf2_975Grams" translate="yes" xml:space="preserve">
+          <source>Silver Of 2.975 Grams</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bạc 2.975 gram</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_WeightMeasureOf4_25Grams" translate="yes" xml:space="preserve">
+          <source>Weight Measure Of 4_25 Grams</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cân đo 4_25 gram</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch2" translate="yes" xml:space="preserve">
+          <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Người nghe tất cả tất cả nhìn thấy thầy Helper Pardoner tối cao mạnh mẽ Knower Subtleties là một nhận thức được tất cả các lẻ xinh đẹp nhút nhát của Coverer tuyệt vời nhất các vô cùng sôi nổi một người duy nhất tất cả thịnh hành một</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch1" translate="yes" xml:space="preserve">
+          <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Các Beneficent sự thương xót vĩnh cửu Chúa linh thiêng nhất hiện thân của hòa bình Infuser Faith Preserver an toàn một Mighty tất cả hấp dẫn chi phối một trong những người sáng tạo Evolver Shaper hoàn hảo đầu tiên vô hạn tác phẩm các thể nhận những không thể trông thấy</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch3" translate="yes" xml:space="preserve">
+          <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hiện thân của sự thật rõ ràng là một mạnh mẽ là một công ty là bao giờ sống tự tồn một một trong những Sublime là một tuyệt vời là một Acknowledging Clement một tất cả bao trùm một tất cả hiểu biết một trong những tìm bao giờ của sự hối cải là một khôn ngoan tự đầy đủ một trong là một phong phú là một duy nhất cung cấp tối cao đóng một Responding Pardoner những yêu thương</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch6" translate="yes" xml:space="preserve">
+          <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Forgiver tuyệt vời một lành tính tối cao Bestower hào phóng nhất thần thánh nhất từ tất cả điểm yếu vĩnh cửu Inheritor Master cao nhất Final1 một Thiên Chúa</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch4" translate="yes" xml:space="preserve">
+          <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bảo vệ các liên kết duy nhất một trong những đáng khen ngợi là một bảo vệ là một vinh quang Solver tối cao chứng kiến tất cả quan sát một Expediting Procrastinator toàn năng của vua là một thẩm quyền tất cả rực rỡ Taker Extender cung cấp cưỡng lại những người Recompenses</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_AsmaAlHusnaBatch5" translate="yes" xml:space="preserve">
+          <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Recognizer Bestower toàn năng một trong những người sáng tạo liên tục của chủ sở hữu nhà cung cấp tất cả Universal Trustee là một con người thực hiện tốt Reckoning của một người chữa nhẹ nhàng Giver duy trì một Chúa tốt các khách quan thẩm phán tối cao để vinh danh người đứng đầu đài phun nước của sự thật</target>
         </trans-unit>
       </group>
     </body>

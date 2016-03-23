@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Atzera</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Txikitu letra-tamaina</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Handitu letra-tamaina</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Ezarpenak</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Tamaina</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Hizkuntza lehenetsia</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;Gehitu laster-marka</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Laster-markak</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopiatu arbelera</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausatu</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Erreproduzitu</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Partekatu</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Honi buruz</value>
+  </data>
+</root>

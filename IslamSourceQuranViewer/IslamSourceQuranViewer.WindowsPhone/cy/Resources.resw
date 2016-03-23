@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Ffont Arabeg</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Yn ôl</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Lleihau Maint y Ffont</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Maint ffont diofyn</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Qur'an gyda ei Arabeg, trawslythreniad a cyfieithu fesul gair ac adnod gan adnod ar gyfer dysgu, sy'n astudio, ymchwil, memorization, myfyrio a meistrolaeth o tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Cŵran fesul gair</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Cynyddu Maint y Ffont</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Eraill ffont testun</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Rendr</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Gosodiadau</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Dangos cyfieithu</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Dangos trawslythreniad</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Dangos gair gan</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Maint</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Defnyddio'r rheol lefaru lliwio</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Iaith Ddiofyn</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Ychwanegu nod tudalen</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Nodau Tudalen</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Copїo ar y Clipfwrdd</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Ewch i adnod</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Rhewi</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Chwarae</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Tynnu Dalennod</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Adnod chwarae set</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Esbonio dehongliadol sioe</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Rhannu</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Adnod ychwanegol ymlaen llaw oedi</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Ymlaen llaw adnod yn awtomatig</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Oedi darn o farddoniaeth cyn hyrwyddo</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Modd mae'r broses gylchu</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Manylion</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Qur'an Arabeg â metadata a holl gyfieithiadau a rhai recitations sain ac eithrio'r rhai a restrir yn cael ei gredydu i Tanzil prosiect (http://tanzil.net). 
+Hwngari cyfieithu Qur'an gan Kiss Zsuzsanna Halima ei gredydu Magyar Iszlam (http://magyariszlam.hu). 
+Cyfieithu Saesneg Qu'ran gan Maulana Muhammad Ali ei gredydu y mudiad Ahmadiyya Lahore yn Islam (http://www.aaiil.org). Cyfieithiad gan gair Saesneg a data 
+morffoleg credyd i corpws Arabeg Quranic (http://corpus.quran.com). 
+Cyfieithu fesul gair Indoneseg credyd i Al-Cŵran Indonesia (http://www.alquran-indonesia.com/web/quran). Roedd 
+Wrdw cyfieithu fesul gair gan Hafiz Nazar Muhammad ei gredydu hawdd Cŵran Wa Hadees (http://www.easyquranwahadees.com). 
+Mae cyfieithiadau eraill fesul gair yn ogystal â'r cyfieithiadau eraill yn y rhaglen ei gredydu i ddarparwr cyfieithu Microsoft (http://www.microsoft.com/en-us/translator) a Google Translate (http://translate.google.com) ac efallai na fydd yn gywir.  Malaysia-gair Qur'an, y ffynhonnell yn Indonesia.  Ar gyfer pob Qur'an gair gan eraill, y ffynhonnell yw y corpws Arabeg Quranic Saesneg. 
+Roedd eraill recitations sain gyda cyfradd didau dangos ei gredydu i bob Ayah (http://www.everyayah.com). 
+Data Unicode ei gredydu y consortiwm Unicode (http://www.unicode.org)</value>
+  </data>
+</root>

@@ -870,9 +870,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>Atlar</value>
   </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>N-Ary jemi</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>Otrisatel bolan we Goşa Sag Postamenli Goşa Dik Çyzyk</value>
   </data>
@@ -1601,5 +1598,8 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>işjeň</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>N-Ary jemi</value>
   </data>
 </root>

@@ -864,9 +864,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>Ainmean</value>
   </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>Suimeachadh N-araidh</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>Bàr inghearach dùbailte le bàr àichidh dùbailte gu deas</value>
   </data>
@@ -1586,5 +1583,8 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Active</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>Suimeachadh N-araidh</value>
   </data>
 </root>

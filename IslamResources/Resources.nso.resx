@@ -951,42 +951,6 @@
   <data name="IslamInfo_Names" xml:space="preserve">
     <value>Maina</value>
   </data>
-  <data name="IslamInfo_N-AryCircledDotOperator" xml:space="preserve">
-    <value>Sediriši sa Dikhutlwana sa go Raretšwa ka N-ari</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledPlusOperator" xml:space="preserve">
-    <value>Sediriši sa Leswao la go Hlakanya sa go Raretšwa ka N-ari</value>
-  </data>
-  <data name="IslamInfo_N-AryCircledTimesOperator" xml:space="preserve">
-    <value>Sediriši sa Katišo sa go Raretšwa ka N-ari</value>
-  </data>
-  <data name="IslamInfo_N-AryIntersection" xml:space="preserve">
-    <value>Magahlano a N-ari</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalAnd" xml:space="preserve">
-    <value>N-ari ya Lotšiki Le</value>
-  </data>
-  <data name="IslamInfo_N-AryLogicalOr" xml:space="preserve">
-    <value>N-ari ya Lotšiki Goba</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareIntersectionOperator" xml:space="preserve">
-    <value>Sediriši sa Magahlano ya Sekwere sa N-ari</value>
-  </data>
-  <data name="IslamInfo_N-ArySquareUnionOperator" xml:space="preserve">
-    <value>Sediriši sa Kopanyo a Sekwere sa N-ari</value>
-  </data>
-  <data name="IslamInfo_N-ArySummation" xml:space="preserve">
-    <value>Kopanya ka Ari ya N</value>
-  </data>
-  <data name="IslamInfo_N-AryUnion" xml:space="preserve">
-    <value>Kopano ya N-ari</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithDot" xml:space="preserve">
-    <value>Sediriši sa Kopanyo ya N-ari sa Dikhutlwana</value>
-  </data>
-  <data name="IslamInfo_N-AryUnionOperatorWithPlus" xml:space="preserve">
-    <value>Sediriši sa Kopanyo ya N-ari sa Leswao la go Hlakanya</value>
-  </data>
   <data name="IslamInfo_NegatedDoubleVerticalBarDoubleRightTurnstile" xml:space="preserve">
     <value>Thensetaele ya go ya ka Gojeng ya Dipara tše Pedi tša go Tsepama tša go Ganetšwa Gabedi</value>
   </data>
@@ -1820,5 +1784,41 @@
   </data>
   <data name="IslamInfo_Active" xml:space="preserve">
     <value>Ekthibe</value>
+  </data>
+  <data name="IslamInfo_NAryCircledDotOperator" xml:space="preserve">
+    <value>Sediriši sa Dikhutlwana sa go Raretšwa ka N-ari</value>
+  </data>
+  <data name="IslamInfo_NAryCircledPlusOperator" xml:space="preserve">
+    <value>Sediriši sa Leswao la go Hlakanya sa go Raretšwa ka N-ari</value>
+  </data>
+  <data name="IslamInfo_NAryCircledTimesOperator" xml:space="preserve">
+    <value>Sediriši sa Katišo sa go Raretšwa ka N-ari</value>
+  </data>
+  <data name="IslamInfo_NAryIntersection" xml:space="preserve">
+    <value>Magahlano a N-ari</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalAnd" xml:space="preserve">
+    <value>N-ari ya Lotšiki Le</value>
+  </data>
+  <data name="IslamInfo_NAryLogicalOr" xml:space="preserve">
+    <value>N-ari ya Lotšiki Goba</value>
+  </data>
+  <data name="IslamInfo_NArySquareIntersectionOperator" xml:space="preserve">
+    <value>Sediriši sa Magahlano ya Sekwere sa N-ari</value>
+  </data>
+  <data name="IslamInfo_NArySquareUnionOperator" xml:space="preserve">
+    <value>Sediriši sa Kopanyo a Sekwere sa N-ari</value>
+  </data>
+  <data name="IslamInfo_NArySummation" xml:space="preserve">
+    <value>Kopanya ka Ari ya N</value>
+  </data>
+  <data name="IslamInfo_NAryUnion" xml:space="preserve">
+    <value>Kopano ya N-ari</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithDot" xml:space="preserve">
+    <value>Sediriši sa Kopanyo ya N-ari sa Dikhutlwana</value>
+  </data>
+  <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
+    <value>Sediriši sa Kopanyo ya N-ari sa Leswao la go Hlakanya</value>
   </data>
 </root>
