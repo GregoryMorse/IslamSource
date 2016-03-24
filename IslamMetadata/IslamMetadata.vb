@@ -459,7 +459,7 @@ Public Class Arabic
         Dim Renderers As New List(Of RenderArray.RenderText)
         For Count = 0 To RuleIndexes.Count - 1
             If Count = RuleIndexes.Count - 1 Or (ArabicString(Count) = " "c And BreakWords) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
+                If (If((ArabicString(Count) = " "c And BreakWords), Count - Base <> 0, Base <> ArabicString.Length)) Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = CachedData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod CachedData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
                 WordRenderers.Add(Renderers.ToArray())
                 Renderers = New List(Of RenderArray.RenderText)
                 Base = Count + 1

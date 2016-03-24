@@ -331,7 +331,7 @@ namespace IslamSourceQuranViewer
             }
             FrameworkElement ItemContainer = MainControl.ContainerFromItem(ViewModel.RenderModels[count]) as FrameworkElement;
             //Point pos = ItemContainer.TransformToVisual(sv).TransformPoint(new Point());
-            sv.ChangeView(null, count/*sv.VerticalOffset + pos.Y*/, null);
+            sv.ChangeView(null, count + 2/*sv.VerticalOffset + pos.Y*/, null, true);
         }
         private int CurrentPlayingItem;
         private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)

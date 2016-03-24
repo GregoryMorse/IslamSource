@@ -25,8 +25,13 @@ namespace IslamSourceQuranViewer.Xam
         public AppSettings() { }
         public static void InitDefaultSettings()
         {
+#if WINDOWS_PHONE
+            XMLRender.PortableMethods.FileIO = new WindowsRTFileIO();
+            XMLRender.PortableMethods.Settings = new WindowsRTSettings();
+#else
             XMLRender.PortableMethods.FileIO = new AndroidiOSFileIO();
             XMLRender.PortableMethods.Settings = new AndroidiOSSettings();
+#endif
             //if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))
             //{
             //    strSelectedFont = "Times New Roman";
@@ -156,10 +161,10 @@ namespace IslamSourceQuranViewer.Xam
         //        return Windows.Globalization.ApplicationLanguages.ManifestLanguages.Select((Item) => new Windows.Globalization.Language(Item).DisplayName + " (" + Item + ")").ToList();
         //    }
         //}
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
 }

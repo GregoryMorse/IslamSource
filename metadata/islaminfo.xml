@@ -5619,6 +5619,72 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<language code="ur" rtl="true"></language>
 		<language code="ug" rtl="true"></language>
 		<language code="uz"></language>
+		
+		<language code="af"></language>
+		<language code="as"></language>
+		<language code="be"></language>
+		<language code="bs-Cyrl"></language>
+		<language code="ca"></language>
+		<language code="chr-Cher"></language>
+		<language code="cy"></language>
+		<language code="da"></language>
+		<language code="el"></language>
+		<language code="et"></language>
+		<language code="eu"></language>
+		<language code="fi"></language>
+		<language code="fil"></language>
+		<language code="ga"></language>
+		<language code="gd-GB"></language>
+		<language code="gl"></language>
+		<language code="gu"></language>
+		<language code="he"></language>
+		<language code="hr"></language>
+		<language code="hu"></language>
+		<language code="hy"></language>
+		<language code="ig-NG"></language>
+		<language code="is"></language>
+		<language code="iu-Latn"></language>
+		<language code="ka"></language>
+		<language code="kk"></language>
+		<language code="km"></language>
+		<language code="kn"></language>
+		<language code="kok"></language>
+		<language code="ky-KG"></language>
+		<language code="lb"></language>
+		<language code="lo"></language>
+		<language code="lt"></language>
+		<language code="lv"></language>
+		<language code="mi"></language>
+		<language code="mk"></language>
+		<language code="mn-MN"></language>
+		<language code="mr"></language>
+		<language code="mt"></language>
+		<language code="nb"></language>
+		<language code="ne"></language>
+		<language code="nn"></language>
+		<language code="nso"></language>
+		<language code="or"></language>
+		<language code="pa-Arab"></language>
+		<language code="pa"></language>
+		<language code="prs"></language>
+		<language code="quz"></language>
+		<language code="rw"></language>
+		<language code="si"></language>
+		<language code="sk"></language>
+		<language code="sl"></language>
+		<language code="sr-Cyrl"></language>
+		<language code="sr-Latn"></language>
+		<language code="te"></language>
+		<language code="tg-Cyrl"></language>
+		<language code="ti"></language>
+		<language code="tk-TM"></language>
+		<language code="tn"></language>
+		<language code="uk"></language>
+		<language code="vi"></language>
+		<language code="wo"></language>
+		<language code="xh"></language>
+		<language code="yo-NG"></language>
+		<language code="zu"></language>
 	</languages>
 	<arabicfonts>
 		<arabicfont id="def" name="Default" family="" embedname="" file=""></arabicfont>
@@ -6719,7 +6785,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		</metaruleset>
 		<metaruleset name="UthmaniQuran" from="ClassicArabicDialect">
 	    <metarule name="DivisionMarkers" match="(?:({ArabicSmallHighMeemInitialForm})|({ArabicStartOfRubElHizb})|({ArabicEndOfAyah})|({ArabicPlaceOfSajdah}))(?={EndOfWord})" evaluator="compulsorystop;startofhizb;endofversestop;prostration"></metarule>
-	    <metarule name="ContinueStopMarkers" match="(?:({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})({EndOfWord})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura}))({EndOfWord})|(\s+)({ArabicSmallHighSeen})(?={EndOfWord})" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;empty;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;empty;empty;subtlestopwithoutbreath"></metarule>
+	    <metarule name="ContinueStopMarkers" match="(?:({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})({EndOfWord})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura}))(?:\s*{ArabicEndOfAyah}|({EndOfWord}))|(\s+)({ArabicSmallHighSeen})(?={EndOfWord})" evaluator="canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;empty;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;empty;empty;subtlestopwithoutbreath"></metarule>
 	    <metarule name="ContinueStopMarkersAtEnding" match="({StartOfWord})(?:({ArabicSmallHighJeem})|({ArabicSmallHighLamAlef})|({ArabicSmallHighThreeDots})({EndOfWord})(.*)({ArabicSmallHighThreeDots})|({ArabicSmallHighLigatureQafWithLamWithAlefMaksura})|({ArabicSmallHighLigatureSadWithLamWithAlefMaksura})|({ArabicSmallHighSeen}))$" evaluator="empty;canstoporcontinue;prohibitedtostop;stopatfirstnotsecond;empty;;stopatsecondnotfirst;bettertostopbutpermissibletocontinue;bettertocontinuebutpermissibletostop;subtlestopwithoutbreath"></metarule>
 
 			<metarule name="MaddahObligatoryLightened" match="{MaddahObligatoryLightened}" evaluator="necessaryprolong;null;necessaryprolong;null;necessaryprolong;null;necessaryprolong;null;necessaryprolong;null;necessaryprolong;null"></metarule>
