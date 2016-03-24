@@ -32024,18 +32024,15 @@
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf130320Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 130320 Grams</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gewig Meet Of130320 g</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Gewig mate van 130320 g</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf2172Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 2172 Grams</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gewig Meet Of2172 g</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Gewig maatstaf van 2172 g</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf543Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 543 Grams</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gewig Meet Of543 g</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Gewig maatstaf van 543 g</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WellGrounded" translate="yes" xml:space="preserve">
           <source>Well Grounded</source>
@@ -37207,39 +37204,39 @@
         </trans-unit>
         <trans-unit id="IslamInfo_GoldCoinOf2_975Grams" translate="yes" xml:space="preserve">
           <source>Gold Coin Of 2.975 Grams</source>
-          <target state="new">Gold Coin Of 2.975 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gold Coin Van 2,975 g</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SilverOf2_975Grams" translate="yes" xml:space="preserve">
           <source>Silver Of 2.975 Grams</source>
-          <target state="new">Silver Of 2.975 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Silwer Van 2,975 g</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf4_25Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 4_25 Grams</source>
-          <target state="new">Weight Measure Of 4_25 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gewig mate van 4_25 g</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch2" translate="yes" xml:space="preserve">
           <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
-          <target state="new">The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Die All Hoorder die All Seeing die Meester die Helper Die Hoogste Inschikkelijke die kragtige Die Kenner van Subtiliteite die almal bewus Een Die Odd Die Beautiful Die Skaam Die Coverer die Groot Een van die uiters verhewe Een die enigste een van die All Heersende Een</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch1" translate="yes" xml:space="preserve">
           <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
-          <target state="new">The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Die Barmhartige die Barmhartige die ewige Heer van die mees heilige die verpersoonliking van Vrede Die Infuser van geloof die Bewaarder van Veiligheid Die Magtige die All Dwang die dominante Een van die Skepper die Evolver die Flawless Shaper die heel eerste die Oneindige laaste een die Waarneembare die onsigbare</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch3" translate="yes" xml:space="preserve">
           <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
-          <target state="new">The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Die verpersoonliking van Waarheid Die Duidelike die Magtige Die firma Een van die ewiglewende die Self wat bestaan Een die sublieme Een The Magnificent Een van die erkenning Een Die Clement Een van die All deurdringende Een van die Alwetende Een die immer ontvanger van Bekering die wyse besluit die selfvoorsienend</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch6" translate="yes" xml:space="preserve">
           <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
-          <target state="new">The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Die Groot Vergewer die gunstige Een van die Hooggeregshof Milddadige die mees vrygewige die Allerheiligste van alle swakheid van die ewige Erfgenaam die Meester die Allerhoogste die Een God Final1</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch4" translate="yes" xml:space="preserve">
           <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
-          <target state="new">The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Die beskerming van Mede Die Enig lofwaardige Een van die Guarding Een van die Heerlike Een van die Hooggeregshof Solver die All Waarneming Getuie die bespoediging Een van die procrastinator die Almagtige Koning Die All Gesaghebbende Een Die Brilliant die moordenaar die Uitgebreide Die Verskaffer onweerstaanbare Die Een Wie vergelding</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch5" translate="yes" xml:space="preserve">
           <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
-          <target state="new">The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Die Recognizer die Milddadige die Almagtige die voortdurende Skepper die Eienaar van die Total Verskaffer die Universele Trustee die wakende Een van die niemand wat goed doen die afrekening Een Die Een Wie Geneeskrag die Gentle die Gewer die handhawing van Een van die Here die Goeie die onpartydige regter die Hooggeregshof ter ere</target>
         </trans-unit>
       </group>
     </body>

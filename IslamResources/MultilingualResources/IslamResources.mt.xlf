@@ -37207,39 +37207,39 @@
         </trans-unit>
         <trans-unit id="IslamInfo_GoldCoinOf2_975Grams" translate="yes" xml:space="preserve">
           <source>Gold Coin Of 2.975 Grams</source>
-          <target state="new">Gold Coin Of 2.975 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Deheb Coin Ta 2.975 Gramma</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SilverOf2_975Grams" translate="yes" xml:space="preserve">
           <source>Silver Of 2.975 Grams</source>
-          <target state="new">Silver Of 2.975 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Fidda Ta 2.975 Gramma</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf4_25Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 4_25 Grams</source>
-          <target state="new">Weight Measure Of 4_25 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Piż Miżura Ta 4_25 Gramma</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch2" translate="yes" xml:space="preserve">
           <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
-          <target state="new">The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">L-All hearer l-All Jaraw Il-Master Il helper il Pardoner Suprema Il Qawwija l-knower ta 'dettalji żgħar l-All Konxji One Il Odd il Beautiful Il mistħi il Coverer Il-Gran One L Estremament Exalted One-unika waħda l-All Prevalenti One</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch1" translate="yes" xml:space="preserve">
           <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
-          <target state="new">The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Il Beneficent Il ħniena L Dejjiema Mulej l-aktar Sagra l-inkarnazzjoni ta 'Paċi Il infuser Ta Fidi Il Preserver Ta Sigurtà L Mighty One L All Evidenza il Dominanti One L Ħallieq il Evolver il Difetti Shaper l-ħafna Ewwel Il infinita aħħar wieħed il perċettibbli Il imperċettibbli</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch3" translate="yes" xml:space="preserve">
           <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
-          <target state="new">The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">-Inkarnazzjoni ta Verità il Ċar Il-One Strong Il-One Ditta il Ever Ħajja Il-Self sussistenti One Il Sublime One L magnífico One L jirrikonoxxi One L Klement One L All Karabakh jeffettwa One L All Jafu One L Ever aċċettatur Ta Indiema Il Wise One L awtosuffiċjenti</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch6" translate="yes" xml:space="preserve">
           <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
-          <target state="new">The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Il Forgiver Gran Il-One beninna l-Bestower Suprema Il-biċċa l-kbira Ġenerużi Il Mqaddsa Mill All Dgħjufija il Dejjiema werriet Il-Master Il-Għoli l-Alla finali1 One</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch4" translate="yes" xml:space="preserve">
           <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
-          <target state="new">The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Il-ħarsien Assoċjat Il min ifaħħru Lingwata One L għassa One-One Glorious Il Suprema Solver Il All Osservazzjoni Xhud Il tħaffef One L procrastinator Il omnipotent Re L All Awtoritattiva One Il Brilliant min jakkwista l-dilwenti-Fornitur il irresistibbli Il-One Min Recompenses</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch5" translate="yes" xml:space="preserve">
           <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
-          <target state="new">The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Il recognizer il Bestower Il omnipotent One L kontinwu Ħallieq Il-Sid l-Fornitur Totali It-Trustee Universali Il attenti One L doer Ta Tajba Il Kalkolu One-One Min Ifejjaq il Ġentili l giver Il-tisħiħ tas One-Mulej Il-Tajba Il imparzjali Imħallef l-Suprema fl-unur</target>
         </trans-unit>
       </group>
     </body>

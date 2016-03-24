@@ -189,10 +189,10 @@ Public Class Utility
         Return CInt(clrDict(Clr))
     End Function
     Public Class PrefixComparer
-        Implements Collections.IComparer
-        Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements System.Collections.IComparer.Compare
-            Dim StrLeft As String() = CStr(x).Substring(0, CInt(If(CStr(x).IndexOf(":") <> -1, CStr(x).IndexOf(":"), CStr(x).Length))).Split(New Char() {"."c})
-            Dim StrRight As String() = CStr(y).Substring(0, CInt(If(CStr(y).IndexOf(":") <> -1, CStr(y).IndexOf(":"), CStr(y).Length))).Split(New Char() {"."c})
+        Implements IComparer(Of String)
+        Public Function Compare(ByVal x As String, ByVal y As String) As Integer Implements IComparer(Of String).Compare
+            Dim StrLeft As String() = x.Substring(0, CInt(If(x.IndexOf(":") <> -1, x.IndexOf(":"), x.Length))).Split(New Char() {"."c})
+            Dim StrRight As String() = y.Substring(0, CInt(If(y.IndexOf(":") <> -1, y.IndexOf(":"), y.Length))).Split(New Char() {"."c})
             If StrLeft.Length = 0 And StrRight.Length = 0 Then Return 0
             If StrLeft.Length = 0 Then Return -1
             If StrRight.Length = 0 Then Return 1
@@ -247,7 +247,7 @@ Public Class Utility
         LoadResourceString = Nothing
         If resourceKey Is Nothing Then Return Nothing
         For Each Pair In PortableMethods.Settings.Resources
-            If Array.FindIndex(Pair.Value, Function(Str As String) Str = resourceKey Or resourceKey.StartsWith(Str + "_")) <> -1 Then
+            If Linq.Enumerable.TakeWhile(Pair.Value, Function(Str As String) Not (Str = resourceKey Or resourceKey.StartsWith(Str + "_"))).Count() <> Pair.Value.Count() Then
                 LoadResourceString = PortableMethods.Settings.GetResourceString(Pair.Key, resourceKey)
             End If
         Next
@@ -838,9 +838,9 @@ Public Class ArabicData
                 SubCount = CheckLigatureMatch(Str.Substring(Count), Count, Indexes)
                 'transform ligatures are not processed here
                 If SubCount <> -1 AndAlso Combos(SubCount).Shaping <> Nothing AndAlso Combos(SubCount).Shaping.Length <> 1 Then
-                    Dim Index As Integer = Array.FindIndex(Combos(SubCount).Symbol, Function(Ch As Char) Ch = " " Or FindLetterBySymbol(Ch) <> -1 AndAlso (ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T" Or ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "C"))
+                    Dim Index As Integer = Linq.Enumerable.TakeWhile(Combos(SubCount).Symbol, Function(Ch As Char) Not (Ch = " " Or FindLetterBySymbol(Ch) <> -1 AndAlso (ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T" Or ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "C"))).Count()
                     'diacritics always use isolated form sitting on a space which is actually optional
-                    Dim Shape As Integer = If(Index = 0, If(FindLetterBySymbol(Combos(SubCount).Symbol(Index)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Combos(SubCount).Symbol(Index))).JoiningStyle = "C", 3, 0), GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = -1, 0, Index)))
+                    Dim Shape As Integer = If(Index = 0, If(FindLetterBySymbol(Combos(SubCount).Symbol(Index)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Combos(SubCount).Symbol(Index))).JoiningStyle = "C", 3, 0), GetShapeIndexFromString(Str, Count, Indexes(Indexes.Length - 1) - Count + 1 - If(Index = Combos(SubCount).Symbol.Length, 0, Index)))
                     If Combos(SubCount).Shaping(Shape) <> ChrW(0) AndAlso Array.IndexOf(SupportedForms, Combos(SubCount).Shaping(Shape)) <> -1 Then
                         Ligatures.Add(New LigatureInfo With {.Ligature = Combos(SubCount).Shaping(Shape), .Indexes = Indexes})
                         'Ligatures can surround other ligatures which represents significant challenge
@@ -848,7 +848,7 @@ Public Class ArabicData
                 End If
             End If
             Count += 1
-            While Array.FindIndex(Ligatures.ToArray(), Function(Lig As LigatureInfo) Array.IndexOf(Lig.Indexes, Count) <> -1) <> -1
+            While Linq.Enumerable.TakeWhile(Ligatures, Function(Lig As LigatureInfo) Array.IndexOf(Lig.Indexes, Count) = -1).Count() <> Ligatures.Count
                 Count += 1
             End While
         End While

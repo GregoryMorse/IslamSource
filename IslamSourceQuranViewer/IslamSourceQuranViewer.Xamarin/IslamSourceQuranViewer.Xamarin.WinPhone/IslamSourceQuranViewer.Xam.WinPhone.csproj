@@ -102,8 +102,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="HostPage.xaml.cs">
+      <DependentUpon>HostPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
@@ -117,7 +117,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="HostPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +192,20 @@
       <HintPath>..\..\..\packages\Xamarin.Forms.1.3.3.6323\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\IslamMetadata\IslamMetadata.vbproj">
+      <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
+      <Name>IslamMetadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\IslamResources\IslamResources.vbproj">
+      <Project>{0a2a299b-a9d7-4a06-b810-de0fcd3bbdd7}</Project>
+      <Name>IslamResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\XMLRender\XMLRender.vbproj">
+      <Project>{8ac9d06f-320d-4cf4-8a73-725a5ef177ad}</Project>
+      <Name>XMLRender</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems" Label="Shared" Condition="Exists('..\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />

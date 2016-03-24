@@ -10,9 +10,9 @@ using Microsoft.Phone.Shell;
 
 namespace IslamSourceQuranViewer.Xam.WinPhone
 {
-	public partial class MainPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage
+	public partial class HostPage : global::Xamarin.Forms.Platform.WinPhone.FormsApplicationPage
 	{
-		public MainPage ()
+		public HostPage ()
 		{
 			InitializeComponent ();
 			SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;

@@ -32024,18 +32024,15 @@
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf130320Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 130320 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Маса міра Of130320 г</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Міра ваги 130320 г</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf2172Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 2172 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Маса міра Of2172 г</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Міра ваги 2172 грамів</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf543Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 543 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Маса міра Of543 г</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Міра ваги 543 грамів</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WellGrounded" translate="yes" xml:space="preserve">
           <source>Well Grounded</source>

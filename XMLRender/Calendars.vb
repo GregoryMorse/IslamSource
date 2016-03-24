@@ -382,7 +382,8 @@ Public Class UmAlQuraCalendar
         End Sub
     End Structure
 End Class
-<Runtime.Serialization.DataContract, ComVisible(True)> _
+'<Runtime.Serialization.DataContract, ComVisible(True)> _
+<Runtime.Serialization.DataContract>
 Public Class HijriCalendar
     Inherits Calendar
     ' Methods
@@ -479,7 +480,7 @@ Public Class HijriCalendar
         Return ((((Me.DaysUpToHijriYear(y) + HijriCalendar.HijriMonthDays((m - 1))) + d) - 1) - Me.HijriAdjustment)
     End Function
 
-    <SecurityCritical> _
+    <SecurityCritical>
     Private Shared Function GetAdvanceHijriDate() As Integer
         Dim num As Integer = 0
         'Dim key As RegistryKey = Nothing
@@ -605,7 +606,7 @@ Public Class HijriCalendar
         Return HijriCalendar.HijriEra
     End Function
 
-    <ComVisible(False)> _
+    '<ComVisible(False)> _
     Public Overrides Function GetLeapMonth(ByVal year As Integer, ByVal era As Integer) As Integer
         HijriCalendar.CheckYearRange(year, era)
         Return 0
@@ -689,7 +690,7 @@ Public Class HijriCalendar
     End Property
 
     Public Property HijriAdjustment As Integer
-        <SecuritySafeCritical> _
+        <SecuritySafeCritical>
         Get
             If (Me.m_HijriAdvance = -2147483648) Then
                 Me.m_HijriAdvance = HijriCalendar.GetAdvanceHijriDate
@@ -711,14 +712,14 @@ Public Class HijriCalendar
         End Get
     End Property
 
-    <ComVisible(False)> _
+    '<ComVisible(False)> _
     Public Overrides ReadOnly Property MaxSupportedDateTime As DateTime
         Get
             Return HijriCalendar.calendarMaxValue
         End Get
     End Property
 
-    <ComVisible(False)> _
+    '<ComVisible(False)> _
     Public Overrides ReadOnly Property MinSupportedDateTime As DateTime
         Get
             Return HijriCalendar.calendarMinValue

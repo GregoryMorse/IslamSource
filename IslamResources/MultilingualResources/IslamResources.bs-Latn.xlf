@@ -32024,18 +32024,15 @@
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf130320Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 130320 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Težina mjera Of130320 g</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Mjera težine 130320 grama</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf2172Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 2172 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Težina mjera Of2172 g</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Težina mjera 2172 grama</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf543Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 543 Grams</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Težina mjera Of543 g</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Težina mjera 543 grama</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WellGrounded" translate="yes" xml:space="preserve">
           <source>Well Grounded</source>
@@ -37219,27 +37216,27 @@
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch2" translate="yes" xml:space="preserve">
           <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
-          <target state="new">The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Svih Slušatelja svom gledanju učitelj pomagač Vrhovno moćni Pardoner poznavatelj suptilnosti svi znate onaj ak lijepe sramežljivi Coverer divan je izuzetno uzvišenosti jedini All prevladava jedan</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch1" translate="yes" xml:space="preserve">
           <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
-          <target state="new">The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Na Blagotvornih je Milostivi vječni Bože najsvetije utjelovljenje mira Infuser vjere spasavanje sigurnost silno je sve primoravanje dominantan kreator Evolver besprijekoran Oblikovatelj prvi beskonačno trajati jednu stranu privida je neprimjetan</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch3" translate="yes" xml:space="preserve">
           <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
-          <target state="new">The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Utjelovljenje istine na čistom jaka čvrsto jedan je ikada živjeti Self preživljavaju jedan uzvišen onaj Veličanstveni priznala onaj Klement taj sve Prožimajući jedna sveznajući jedan je ikada Akceptorskih pokajanja mudar onaj Self dovoljan jedan bogatoga jedan jedini Vrhovni Davatelj pravilnu reagira onaj Pardoner voli onaj</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch6" translate="yes" xml:space="preserve">
           <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
-          <target state="new">The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veliki opraštaju benigni onaj Vrhovni Darovatelj većinu velikodušan najsvetije od svih slabosti vječni naslednicu Svevišnji gospodar jedan Bog Final1</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch4" translate="yes" xml:space="preserve">
           <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
-          <target state="new">The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Zaštiti povezati jedini hvale vrijedan čuvanje onaj slavnim Vrhovni Rješavača u promatranje svjedok ubrzanja onaj Oklijevalo je svemoguć kralj sve Mjerodavne jedan briljantan Taker Extender Davatelj je neodoljiva onaj koji Recompenses</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch5" translate="yes" xml:space="preserve">
           <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
-          <target state="new">The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Prepoznavanje Darovatelj Svemogućega Kontinuirano kreator vlasnik ukupno Davatelj univerzalno Trustee budnim jedan izvršitelj dobar obračun jedan onaj koji liječi u nježnim davalac braneći taj Gospod dobar je nepristran sudac Vrhovnog u čast fontana glave od istine</target>
         </trans-unit>
       </group>
     </body>

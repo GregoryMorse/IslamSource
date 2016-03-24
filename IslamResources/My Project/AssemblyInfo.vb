@@ -13,14 +13,14 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("IslamResources")> 
 <Assembly: AssemblyDescription("")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("IslamResources")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyProduct("IslamResources")>
+<Assembly: AssemblyCopyright("Copyright ©  2016")>
+<Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)> 
+'<Assembly: ComVisible(False)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("510f128a-acfb-480a-8b2d-3bda57ec310d")> 
+'<Assembly: Guid("510f128a-acfb-480a-8b2d-3bda57ec310d")> 
 
 ' Version information for an assembly consists of the following four values:
 '

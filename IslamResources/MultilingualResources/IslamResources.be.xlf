@@ -32024,18 +32024,15 @@
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf130320Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 130320 Grams</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вага Мера Of130320 Грам</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Вага Мера 130320 грам</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf2172Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 2172 Grams</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вага Мера Of2172 грам</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Вага Мера 2172 грам</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf543Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 543 Grams</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вага Мера Of543 грам</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="translated">Вага Мера 543 грам</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WellGrounded" translate="yes" xml:space="preserve">
           <source>Well Grounded</source>
@@ -37207,39 +37204,39 @@
         </trans-unit>
         <trans-unit id="IslamInfo_GoldCoinOf2_975Grams" translate="yes" xml:space="preserve">
           <source>Gold Coin Of 2.975 Grams</source>
-          <target state="new">Gold Coin Of 2.975 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Залатая манета 2.975 грам</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SilverOf2_975Grams" translate="yes" xml:space="preserve">
           <source>Silver Of 2.975 Grams</source>
-          <target state="new">Silver Of 2.975 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Срэбра 2.975 грам</target>
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf4_25Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 4_25 Grams</source>
-          <target state="new">Weight Measure Of 4_25 Grams</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вага Мера 4_25 грам</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch2" translate="yes" xml:space="preserve">
           <source>The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</source>
-          <target state="new">The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Усе Слухач Усёвідушчае майстар Helper Вярхоўны прадавец індульгенцыяў Магутны дасведчаным Тонкасці ўсе Aware One Одд Прыгожыя Shy Coverer Вялікі Надзвычай ўзвышшах Only One ўсе Пераможцу</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch1" translate="yes" xml:space="preserve">
           <source>The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</source>
-          <target state="new">The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Літасцівага Міласэрнага Вечны Гасподзь Патаемнае Варыянт свету Заварочный веры ахоўнікам бяспекі валадару ВЦСПС Прымус дамінуючы Стваральнік Evolver Бездакорны Shaper Вельмі Першы Бясконцы Апошняя Адна Прыкметнае непрыкметных</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch3" translate="yes" xml:space="preserve">
           <source>The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</source>
-          <target state="new">The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ўвасабленне ісціны Празрысты моцны Фірма One Ever Living The Self сілкуючыся One Бліскучая One велічным Прызнанне Адзін Клімента адным з ўсёпранікальным One The Дасведчаны One калі-небудзь акцептором Пакаянне Мудрага The самадастатковым</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch6" translate="yes" xml:space="preserve">
           <source>The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</source>
-          <target state="new">The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Вялікі Бывай Дабраякасная Адзін Вярхоўны Bestower Прещедрый Найсвяцейшая З усіх Слабасці Вечны спадчынадаўца Майстар Усявышні Адзіны Бог Final1</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch4" translate="yes" xml:space="preserve">
           <source>The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</source>
-          <target state="new">The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Абарона Асацыіраваны Адзіны пахвальна Агароджа One Слаўныя Адзін Вярхоўны Solver Усе назірання Сведка экспедавання Адзін прокрастинатор Усёмагутны Цар Усе Аўтарытэтны Адзін Brilliant Taker Extender Provider захапляльнай Той, Хто аддачаў</target>
         </trans-unit>
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch5" translate="yes" xml:space="preserve">
           <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
-          <target state="new">The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Распознаватель Bestower Omnipotent Адзін Бесперапынны Стваральнік Уладальнік Агульная Правайдэр Універсальны даверны Надта пільны Адзін што зьдзяйсьняе Добра Reckoning Адзін Той, хто ацаляе Пяшчотны дарыльшчыка Ўмацоўваюцца One The Lord Добра бесстаронні суддзя Вярхоўнага У гонар</target>
         </trans-unit>
       </group>
     </body>

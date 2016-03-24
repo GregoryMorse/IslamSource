@@ -2473,9 +2473,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Anticlockwise Triangle Headed Left U- Shaped Arrow.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_AnticlockwiseTriangleHeadedLeftU_ShapedArrow() As String
+        Friend Shared ReadOnly Property IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_AnticlockwiseTriangleHeadedLeftU-ShapedArrow", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_AnticlockwiseTriangleHeadedLeftUShapedArrow", resourceCulture)
             End Get
         End Property
         
@@ -2491,18 +2491,18 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Anticlockwise Triangle Headed Right U- Shaped Arrow.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_AnticlockwiseTriangleHeadedRightU_ShapedArrow() As String
+        Friend Shared ReadOnly Property IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_AnticlockwiseTriangleHeadedRightU-ShapedArrow", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_AnticlockwiseTriangleHeadedRightUShapedArrow", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized string similar to Anticlockwise Triangle Headed Top U- Shaped Arrow.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_AnticlockwiseTriangleHeadedTopU_ShapedArrow() As String
+        Friend Shared ReadOnly Property IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_AnticlockwiseTriangleHeadedTopU-ShapedArrow", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_AnticlockwiseTriangleHeadedTopUShapedArrow", resourceCulture)
             End Get
         End Property
         
@@ -6058,6 +6058,60 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_AsLikeSimilarity() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_AsLikeSimilarity", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_AsmaAlHusnaBatch1() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsmaAlHusnaBatch1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_AsmaAlHusnaBatch2() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsmaAlHusnaBatch2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_AsmaAlHusnaBatch3() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsmaAlHusnaBatch3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_AsmaAlHusnaBatch4() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsmaAlHusnaBatch4", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_AsmaAlHusnaBatch5() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsmaAlHusnaBatch5", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_AsmaAlHusnaBatch6() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_AsmaAlHusnaBatch6", resourceCulture)
             End Get
         End Property
         
@@ -14459,204 +14513,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Bird.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedBird() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedBird", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Cart.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedCart() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedCart", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Dragon.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedDragon() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedDragon", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Eat.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedEat() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedEat", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Even.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedEven() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedEven", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Fish.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedFish() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedFish", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Fly.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedFly() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedFly", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Frog.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedFrog() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedFrog", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Gate.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedGate() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedGate", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Gold.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedGold() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedGold", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Horse.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedHorse() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedHorse", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Leaf.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedLeaf() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedLeaf", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Long.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedLong() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedLong", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Salt.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedSalt() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedSalt", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified See.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedSee() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedSee", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Shell.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedShell() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedShell", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Silk.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedSilk() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedSilk", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Speech.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedSpeech() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedSpeech", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Tanned Leather.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedTannedLeather() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedTannedLeather", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Tooth.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedTooth() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedTooth", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Turtle.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedTurtle() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedTurtle", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical C- Simplified Wind.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalC_SimplifiedWind() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalC-SimplifiedWind", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to Cjk Radical Choke.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_CjkRadicalChoke() As String
@@ -14707,6 +14563,204 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_CjkRadicalCow() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_CjkRadicalCow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Bird.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedBird() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedBird", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Cart.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedCart() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedCart", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Dragon.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedDragon() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedDragon", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Eat.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedEat() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedEat", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Even.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedEven() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedEven", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Fish.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedFish() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedFish", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Fly.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedFly() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedFly", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Frog.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedFrog() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedFrog", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Gate.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedGate() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedGate", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Gold.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedGold() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedGold", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Horse.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedHorse() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedHorse", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Leaf.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedLeaf() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedLeaf", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Long.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedLong() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedLong", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Salt.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedSalt() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedSalt", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified See.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedSee() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedSee", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Shell.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedShell() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedShell", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Silk.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedSilk() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedSilk", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Speech.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedSpeech() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedSpeech", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Tanned Leather.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedTannedLeather() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedTannedLeather", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Tooth.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedTooth() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedTooth", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Turtle.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedTurtle() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedTurtle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical C- Simplified Wind.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalCSimplifiedWind() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalCSimplifiedWind", resourceCulture)
             End Get
         End Property
         
@@ -14882,47 +14936,47 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Cjk Radical Jade.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJade() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalJade", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Cjk Radical J- Simplified Dragon.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJ_SimplifiedDragon() As String
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJSimplifiedDragon() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalJ-SimplifiedDragon", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalJSimplifiedDragon", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized string similar to Cjk Radical J- Simplified Even.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJ_SimplifiedEven() As String
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJSimplifiedEven() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalJ-SimplifiedEven", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalJSimplifiedEven", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized string similar to Cjk Radical J- Simplified Tooth.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJ_SimplifiedTooth() As String
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJSimplifiedTooth() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalJ-SimplifiedTooth", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalJSimplifiedTooth", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized string similar to Cjk Radical J- Simplified Turtle.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJ_SimplifiedTurtle() As String
+        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJSimplifiedTurtle() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalJ-SimplifiedTurtle", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Cjk Radical Jade.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CjkRadicalJade() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CjkRadicalJade", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_CjkRadicalJSimplifiedTurtle", resourceCulture)
             End Get
         End Property
         
@@ -18870,15 +18924,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Combining X- X  Below.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_CombiningX_XBelow() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_CombiningX-XBelow", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to Combining X  Above.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_CombiningXAbove() As String
@@ -18893,6 +18938,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_CombiningXBelow() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_CombiningXBelow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Combining X- X  Below.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_CombiningXXBelow() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_CombiningXXBelow", resourceCulture)
             End Get
         End Property
         
@@ -23309,9 +23363,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Double Struck N- Ary Summation.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_DoubleStruckN_ArySummation() As String
+        Friend Shared ReadOnly Property IslamInfo_DoubleStruckNArySummation() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_DoubleStruckN-ArySummation", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_DoubleStruckNArySummation", resourceCulture)
             End Get
         End Property
         
@@ -28961,11 +29015,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Gold Coin Of2.975 Grams.
+        '''  Looks up a localized string similar to Gold Coin Of 2.975 Grams.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_GoldCoinOf2_975Grams() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_GoldCoinOf2.975Grams", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_GoldCoinOf2_975Grams", resourceCulture)
             End Get
         End Property
         
@@ -29487,7 +29541,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_GreatMasterpiece12_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece12-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece12_1", resourceCulture)
             End Get
         End Property
         
@@ -29496,7 +29550,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_GreatMasterpiece12_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece12-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece12_2", resourceCulture)
             End Get
         End Property
         
@@ -29505,7 +29559,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_GreatMasterpiece12_3() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece12-3", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece12_3", resourceCulture)
             End Get
         End Property
         
@@ -29523,7 +29577,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_GreatMasterpiece13_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece13-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece13_1", resourceCulture)
             End Get
         End Property
         
@@ -29631,7 +29685,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_GreatMasterpiece22_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece22-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece22_1", resourceCulture)
             End Get
         End Property
         
@@ -29802,7 +29856,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_GreatMasterpiece38_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece38-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_GreatMasterpiece38_1", resourceCulture)
             End Get
         End Property
         
@@ -40454,15 +40508,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Left S- Shaped Bag Delimiter.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_LeftS_ShapedBagDelimiter() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_LeftS-ShapedBagDelimiter", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to Left Semidirect Product.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_LeftSemidirectProduct() As String
@@ -40585,6 +40630,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_LeftSquareBracketWithUnderbar() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_LeftSquareBracketWithUnderbar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Left S- Shaped Bag Delimiter.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_LeftSShapedBagDelimiter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_LeftSShapedBagDelimiter", resourceCulture)
             End Get
         End Property
         
@@ -44175,7 +44229,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim1_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim1-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim1_1", resourceCulture)
             End Get
         End Property
         
@@ -44184,7 +44238,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim1_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim1-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim1_2", resourceCulture)
             End Get
         End Property
         
@@ -44193,7 +44247,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim1_3() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim1-3", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim1_3", resourceCulture)
             End Get
         End Property
         
@@ -44202,7 +44256,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim1_4() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim1-4", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim1_4", resourceCulture)
             End Get
         End Property
         
@@ -44211,7 +44265,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim1_5() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim1-5", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim1_5", resourceCulture)
             End Get
         End Property
         
@@ -44220,7 +44274,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim1_6_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim1-6-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim1_6_1", resourceCulture)
             End Get
         End Property
         
@@ -44229,7 +44283,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim1_6_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim1-6-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim1_6_2", resourceCulture)
             End Get
         End Property
         
@@ -44247,7 +44301,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_1_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-1-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_1_1", resourceCulture)
             End Get
         End Property
         
@@ -44256,7 +44310,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_1_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-1-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_1_2", resourceCulture)
             End Get
         End Property
         
@@ -44265,7 +44319,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_1_3() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-1-3", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_1_3", resourceCulture)
             End Get
         End Property
         
@@ -44274,7 +44328,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_10() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-10", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_10", resourceCulture)
             End Get
         End Property
         
@@ -44283,7 +44337,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_11() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-11", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_11", resourceCulture)
             End Get
         End Property
         
@@ -44292,7 +44346,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_12() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-12", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_12", resourceCulture)
             End Get
         End Property
         
@@ -44301,7 +44355,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_13() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-13", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_13", resourceCulture)
             End Get
         End Property
         
@@ -44310,7 +44364,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_2", resourceCulture)
             End Get
         End Property
         
@@ -44319,7 +44373,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_3() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-3", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_3", resourceCulture)
             End Get
         End Property
         
@@ -44328,7 +44382,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_4() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-4", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_4", resourceCulture)
             End Get
         End Property
         
@@ -44337,7 +44391,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_5() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-5", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_5", resourceCulture)
             End Get
         End Property
         
@@ -44346,7 +44400,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_6() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-6", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_6", resourceCulture)
             End Get
         End Property
         
@@ -44355,7 +44409,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_7() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-7", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_7", resourceCulture)
             End Get
         End Property
         
@@ -44364,7 +44418,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_8() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-8", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_8", resourceCulture)
             End Get
         End Property
         
@@ -44373,7 +44427,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim2_9() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim2-9", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim2_9", resourceCulture)
             End Get
         End Property
         
@@ -44391,7 +44445,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_1", resourceCulture)
             End Get
         End Property
         
@@ -44400,7 +44454,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_2", resourceCulture)
             End Get
         End Property
         
@@ -44409,7 +44463,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_3_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-3-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_3_1", resourceCulture)
             End Get
         End Property
         
@@ -44418,7 +44472,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_3_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-3-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_3_2", resourceCulture)
             End Get
         End Property
         
@@ -44427,7 +44481,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_4_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-4-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_4_1", resourceCulture)
             End Get
         End Property
         
@@ -44436,7 +44490,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_4_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-4-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_4_2", resourceCulture)
             End Get
         End Property
         
@@ -44445,7 +44499,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_5() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-5", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_5", resourceCulture)
             End Get
         End Property
         
@@ -44454,7 +44508,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_6() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-6", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_6", resourceCulture)
             End Get
         End Property
         
@@ -44463,7 +44517,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim3_7() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim3-7", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim3_7", resourceCulture)
             End Get
         End Property
         
@@ -44481,7 +44535,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_1", resourceCulture)
             End Get
         End Property
         
@@ -44490,7 +44544,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_2", resourceCulture)
             End Get
         End Property
         
@@ -44499,7 +44553,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_3_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-3-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_3_1", resourceCulture)
             End Get
         End Property
         
@@ -44508,7 +44562,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_3_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-3-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_3_2", resourceCulture)
             End Get
         End Property
         
@@ -44517,7 +44571,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_3_3() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-3-3", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_3_3", resourceCulture)
             End Get
         End Property
         
@@ -44526,7 +44580,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_3_4() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-3-4", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_3_4", resourceCulture)
             End Get
         End Property
         
@@ -44535,7 +44589,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_4() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-4", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_4", resourceCulture)
             End Get
         End Property
         
@@ -44544,7 +44598,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_5() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-5", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_5", resourceCulture)
             End Get
         End Property
         
@@ -44553,7 +44607,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_6() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-6", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_6", resourceCulture)
             End Get
         End Property
         
@@ -44562,7 +44616,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim4_7() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim4-7", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim4_7", resourceCulture)
             End Get
         End Property
         
@@ -44580,7 +44634,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_1", resourceCulture)
             End Get
         End Property
         
@@ -44589,7 +44643,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_10() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-10", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_10", resourceCulture)
             End Get
         End Property
         
@@ -44598,7 +44652,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_11() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-11", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_11", resourceCulture)
             End Get
         End Property
         
@@ -44607,7 +44661,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_12() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-12", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_12", resourceCulture)
             End Get
         End Property
         
@@ -44616,7 +44670,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_2", resourceCulture)
             End Get
         End Property
         
@@ -44625,7 +44679,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_3() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-3", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_3", resourceCulture)
             End Get
         End Property
         
@@ -44634,7 +44688,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_4() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-4", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_4", resourceCulture)
             End Get
         End Property
         
@@ -44643,7 +44697,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_4_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-4-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_4_1", resourceCulture)
             End Get
         End Property
         
@@ -44652,7 +44706,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_5() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-5", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_5", resourceCulture)
             End Get
         End Property
         
@@ -44661,7 +44715,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_6() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-6", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_6", resourceCulture)
             End Get
         End Property
         
@@ -44670,7 +44724,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_7() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-7", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_7", resourceCulture)
             End Get
         End Property
         
@@ -44679,7 +44733,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_8() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-8", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_8", resourceCulture)
             End Get
         End Property
         
@@ -44688,7 +44742,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim5_9() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim5-9", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim5_9", resourceCulture)
             End Get
         End Property
         
@@ -44706,7 +44760,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_1", resourceCulture)
             End Get
         End Property
         
@@ -44715,7 +44769,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_2", resourceCulture)
             End Get
         End Property
         
@@ -44724,7 +44778,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_3() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-3", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_3", resourceCulture)
             End Get
         End Property
         
@@ -44733,7 +44787,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_4() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-4", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_4", resourceCulture)
             End Get
         End Property
         
@@ -44742,7 +44796,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_5() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-5", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_5", resourceCulture)
             End Get
         End Property
         
@@ -44751,7 +44805,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_6() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-6", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_6", resourceCulture)
             End Get
         End Property
         
@@ -44760,7 +44814,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_7() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-7", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_7", resourceCulture)
             End Get
         End Property
         
@@ -44769,7 +44823,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_8_1() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-8-1", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_8_1", resourceCulture)
             End Get
         End Property
         
@@ -44778,7 +44832,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_8_2() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-8-2", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_8_2", resourceCulture)
             End Get
         End Property
         
@@ -44787,7 +44841,7 @@ Namespace My.Resources
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Maxim6_9() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_Maxim6-9", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_Maxim6_9", resourceCulture)
             End Get
         End Property
         
@@ -49274,150 +49328,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to N- Ary Circled Dot Operator.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryCircledDotOperator() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryCircledDotOperator", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Circled Plus Operator.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryCircledPlusOperator() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryCircledPlusOperator", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Circled Times Operator.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryCircledTimesOperator() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryCircledTimesOperator", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Coproduct.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryCoproduct() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryCoproduct", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Intersection.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryIntersection() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryIntersection", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Logical And.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryLogicalAnd() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryLogicalAnd", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Logical Or.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryLogicalOr() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryLogicalOr", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Product.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryProduct() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryProduct", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Square Intersection Operator.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_ArySquareIntersectionOperator() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-ArySquareIntersectionOperator", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Square Union Operator.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_ArySquareUnionOperator() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-ArySquareUnionOperator", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Summation.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_ArySummation() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-ArySummation", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Times Operator.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryTimesOperator() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryTimesOperator", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Union.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryUnion() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryUnion", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Union Operator With Dot.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryUnionOperatorWithDot() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryUnionOperatorWithDot", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary Union Operator With Plus.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryUnionOperatorWithPlus() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryUnionOperatorWithPlus", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to N- Ary White Vertical Bar.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_N_AryWhiteVerticalBar() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_N-AryWhiteVerticalBar", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to Naafi.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_Naafi() As String
@@ -49567,6 +49477,150 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_NarrowNoBreakSpace() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_NarrowNoBreakSpace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Circled Dot Operator.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryCircledDotOperator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryCircledDotOperator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Circled Plus Operator.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryCircledPlusOperator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryCircledPlusOperator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Circled Times Operator.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryCircledTimesOperator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryCircledTimesOperator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Coproduct.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryCoproduct() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryCoproduct", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Intersection.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryIntersection() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryIntersection", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Logical And.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryLogicalAnd() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryLogicalAnd", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Logical Or.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryLogicalOr() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryLogicalOr", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Product.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryProduct() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryProduct", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Square Intersection Operator.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NArySquareIntersectionOperator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NArySquareIntersectionOperator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Square Union Operator.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NArySquareUnionOperator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NArySquareUnionOperator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Summation.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NArySummation() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NArySummation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Times Operator.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryTimesOperator() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryTimesOperator", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Union.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryUnion() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryUnion", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Union Operator With Dot.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryUnionOperatorWithDot() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryUnionOperatorWithDot", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary Union Operator With Plus.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryUnionOperatorWithPlus() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryUnionOperatorWithPlus", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to N- Ary White Vertical Bar.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_NAryWhiteVerticalBar() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_NAryWhiteVerticalBar", resourceCulture)
             End Get
         End Property
         
@@ -51805,18 +51859,18 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Open Circuit Output H- Type Symbol.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_OpenCircuitOutputH_TypeSymbol() As String
+        Friend Shared ReadOnly Property IslamInfo_OpenCircuitOutputHTypeSymbol() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_OpenCircuitOutputH-TypeSymbol", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_OpenCircuitOutputHTypeSymbol", resourceCulture)
             End Get
         End Property
         
         '''<summary>
         '''  Looks up a localized string similar to Open Circuit Output L- Type Symbol.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_OpenCircuitOutputL_TypeSymbol() As String
+        Friend Shared ReadOnly Property IslamInfo_OpenCircuitOutputLTypeSymbol() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_OpenCircuitOutputL-TypeSymbol", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_OpenCircuitOutputLTypeSymbol", resourceCulture)
             End Get
         End Property
         
@@ -59994,15 +60048,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Right S- Shaped Bag Delimiter.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_RightS_ShapedBagDelimiter() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_RightS-ShapedBagDelimiter", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to Right Semidirect Product.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_RightSemidirectProduct() As String
@@ -60116,6 +60161,15 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_RightSquareBracketWithUnderbar() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_RightSquareBracketWithUnderbar", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Right S- Shaped Bag Delimiter.
+        '''</summary>
+        Friend Shared ReadOnly Property IslamInfo_RightSShapedBagDelimiter() As String
+            Get
+                Return ResourceManager.GetString("IslamInfo_RightSShapedBagDelimiter", resourceCulture)
             End Get
         End Property
         
@@ -62839,11 +62893,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Silver Of2.975 Grams.
+        '''  Looks up a localized string similar to Silver Of 2.975 Grams.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_SilverOf2_975Grams() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_SilverOf2.975Grams", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_SilverOf2_975Grams", resourceCulture)
             End Get
         End Property
         
@@ -69437,17 +69491,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to The All Hearer The All Seeing The Master The Helper The Supreme Pardoner The Powerful The Knower Of Subtleties The All Aware One The Odd The Beautiful The Shy The Coverer The Great One The Extremely Exalted One The Only One The All Prevailing One.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerfulTheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOneTheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_TheAllHearerTheAllSeeingTheMasterTheHelperTheSupremePardonerThePowerful"& _ 
-                        "TheKnowerOfSubtletiesTheAllAwareOneTheOddTheBeautifulTheShyTheCovererTheGreatOne"& _ 
-                        "TheExtremelyExaltedOneTheOnlyOneTheAllPrevailingOne", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to The All Hearer The Close.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_TheAllHearerTheClose() As String
@@ -69588,18 +69631,6 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_TheBeneficent() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheBeneficent", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to The Beneficent The Merciful The Eternal Lord The Most Sacred The Embodiment Of Peace The Infuser Of Faith The Preserver Of Safety The Mighty One The All Compelling The Dominant One The Creator The Evolver The Flawless Shaper The Very First The Infinite Last One The Perceptible The Imperceptible.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeaceTheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneTheCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptibleTheImperceptible() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_TheBeneficentTheMercifulTheEternalLordTheMostSacredTheEmbodimentOfPeace"& _ 
-                        "TheInfuserOfFaithThePreserverOfSafetyTheMightyOneTheAllCompellingTheDominantOneT"& _ 
-                        "heCreatorTheEvolverTheFlawlessShaperTheVeryFirstTheInfiniteLastOneThePerceptible"& _ 
-                        "TheImperceptible", resourceCulture)
             End Get
         End Property
         
@@ -69906,19 +69937,6 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_TheEmbodimentOfTruthTheClear() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheEmbodimentOfTruthTheClear", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to The Embodiment Of Truth The Clear The Strong One The Firm One The Ever Living The Self Subsisting One The Sublime One The Magnificent One The Acknowledging One The Clement One The All Pervading One The All Knowing One The Ever Acceptor Of Repentance The Wise One The Self Sufficient One The Bountiful One The Sole One The Supreme Provider The Close The Responding One The Pardoner The Loving One.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfSubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAllPervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficientOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardonerTheLovingOne() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_TheEmbodimentOfTruthTheClearTheStrongOneTheFirmOneTheEverLivingTheSelfS"& _ 
-                        "ubsistingOneTheSublimeOneTheMagnificentOneTheAcknowledgingOneTheClementOneTheAll"& _ 
-                        "PervadingOneTheAllKnowingOneTheEverAcceptorOfRepentanceTheWiseOneTheSelfSufficie"& _ 
-                        "ntOneTheBountifulOneTheSoleOneTheSupremeProviderTheCloseTheRespondingOneThePardo"& _ 
-                        "nerTheLovingOne", resourceCulture)
             End Get
         End Property
         
@@ -70252,16 +70270,6 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_TheGreatForgiver() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheGreatForgiver", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to The Great Forgiver The Benign One The Supreme Bestower The Most Generous The Most Holy From All Weakness The Eternal Inheritor The Master The Most High The One God Final1.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHolyFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_TheGreatForgiverTheBenignOneTheSupremeBestowerTheMostGenerousTheMostHol"& _ 
-                        "yFromAllWeaknessTheEternalInheritorTheMasterTheMostHighTheOneGodFinal1", resourceCulture)
             End Get
         End Property
         
@@ -71274,18 +71282,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to The Protecting Associate The Sole Laudable One The Guarding One The Glorious One The Supreme Solver The All Observing Witness The Expediting One The Procrastinator The Omnipotent King The All Authoritative One The Brilliant The Taker The Extender The Provider The Irresistable The One Who Recompenses.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneTheSupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipotentKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresistableTheOneWhoRecompenses() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_TheProtectingAssociateTheSoleLaudableOneTheGuardingOneTheGloriousOneThe"& _ 
-                        "SupremeSolverTheAllObservingWitnessTheExpeditingOneTheProcrastinatorTheOmnipoten"& _ 
-                        "tKingTheAllAuthoritativeOneTheBrilliantTheTakerTheExtenderTheProviderTheIrresist"& _ 
-                        "ableTheOneWhoRecompenses", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Looks up a localized string similar to The Provider.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_TheProvider() As String
@@ -71345,18 +71341,6 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_TheRecognizerTheAllKnowingOne() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TheRecognizerTheAllKnowingOne", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerTheTotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOneWhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupremeInHonorTheFountainHeadOfTruth() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_TheRecognizerTheBestowerTheOmnipotentOneTheContinuousCreatorTheOwnerThe"& _ 
-                        "TotalProviderTheUniversalTrusteeTheWatchfulOneTheDoerOfGoodTheReckoningOneTheOne"& _ 
-                        "WhoCuresTheGentleTheGiverTheSustainingOneTheLordTheGoodTheImpartialJudgeTheSupre"& _ 
-                        "meInHonorTheFountainHeadOfTruth", resourceCulture)
             End Get
         End Property
         
@@ -72668,9 +72652,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Tibetan Astrological Sign- Khyud Pa.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TibetanAstrologicalSign_KhyudPa() As String
+        Friend Shared ReadOnly Property IslamInfo_TibetanAstrologicalSignKhyudPa() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_TibetanAstrologicalSign-KhyudPa", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_TibetanAstrologicalSignKhyudPa", resourceCulture)
             End Get
         End Property
         
@@ -72749,9 +72733,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to Tibetan Mark Tsa- Phru.
         '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TibetanMarkTsa_Phru() As String
+        Friend Shared ReadOnly Property IslamInfo_TibetanMarkTsaPhru() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_TibetanMarkTsa-Phru", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_TibetanMarkTsaPhru", resourceCulture)
             End Get
         End Property
         
@@ -72797,15 +72781,6 @@ Namespace My.Resources
         Friend Shared ReadOnly Property IslamInfo_TibetanSignYangRtags() As String
             Get
                 Return ResourceManager.GetString("IslamInfo_TibetanSignYangRtags", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Tibetan Subjoined Letter- A.
-        '''</summary>
-        Friend Shared ReadOnly Property IslamInfo_TibetanSubjoinedLetter_A() As String
-            Get
-                Return ResourceManager.GetString("IslamInfo_TibetanSubjoinedLetter-A", resourceCulture)
             End Get
         End Property
         
@@ -78912,7 +78887,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Weight Measure Of130320 Grams.
+        '''  Looks up a localized string similar to Weight Measure Of 130320 Grams.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_WeightMeasureOf130320Grams() As String
             Get
@@ -78921,7 +78896,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Weight Measure Of2172 Grams.
+        '''  Looks up a localized string similar to Weight Measure Of 2172 Grams.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_WeightMeasureOf2172Grams() As String
             Get
@@ -78930,16 +78905,16 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Weight Measure Of4.25 Grams.
+        '''  Looks up a localized string similar to Weight Measure Of 4_25 Grams.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_WeightMeasureOf4_25Grams() As String
             Get
-                Return ResourceManager.GetString("IslamInfo_WeightMeasureOf4.25Grams", resourceCulture)
+                Return ResourceManager.GetString("IslamInfo_WeightMeasureOf4_25Grams", resourceCulture)
             End Get
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Weight Measure Of543 Grams.
+        '''  Looks up a localized string similar to Weight Measure Of 543 Grams.
         '''</summary>
         Friend Shared ReadOnly Property IslamInfo_WeightMeasureOf543Grams() As String
             Get
