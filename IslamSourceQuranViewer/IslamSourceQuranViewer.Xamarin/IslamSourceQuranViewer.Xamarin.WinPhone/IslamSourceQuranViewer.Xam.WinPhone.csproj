@@ -26,9 +26,10 @@
     <ValidateXaml>true</ValidateXaml>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
-    <NuGetPackageImportStamp>1432c900</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>en</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -133,6 +134,60 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\..\metadata\en.*">
+      <Link>metadata\en\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\hu.*">
+      <Link>metadata\hu\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\id.*">
+      <Link>metadata\id\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\zh-Hans.*">
+      <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\zh-Hant.*">
+      <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\zh.*">
+      <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\zh.*">
+      <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\fr.*">
+      <Link>metadata\fr\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\es.*">
+      <Link>metadata\es\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ru.*">
+      <Link>metadata\ru\$([System.String]::Copy('%(FileName)').Replace('-','.'))%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\de.*">
+      <Link>metadata\de\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\ms.*">
+      <Link>metadata\ms\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\ur.*">
+      <Link>metadata\ur\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\quranic-corpus-morphology-0.4.txt">
+      <Link>metadata\quranic-corpus-morphology-0.4.txt</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\islaminfo.xml">
+      <Link>metadata\islaminfo.xml</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\quran-data.xml">
+      <Link>metadata\quran-data.xml</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\quran-hafs.xml">
+      <Link>metadata\quran-hafs.xml</Link>
+    </Content>
+    <Content Include="..\..\..\metadata\UnicodeData.txt">
+      <Link>metadata\UnicodeData.txt</Link>
+    </Content>
     <Content Include="Assets\BadgeLogo.png" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SplashScreen.png" />
@@ -180,16 +235,20 @@
       <HintPath>..\..\..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Forms.Core, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.1.3.3.6323\lib\WP80\Xamarin.Forms.Core.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Xamarin.Forms.2.1.0.6529\lib\WP80\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Forms.Platform.WP8, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.1.3.3.6323\lib\WP80\Xamarin.Forms.Platform.WP8.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Xamarin.Forms.2.1.0.6529\lib\WP80\Xamarin.Forms.Platform.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Forms.Xaml, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.1.3.3.6323\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
+    <Reference Include="Xamarin.Forms.Platform.WP8, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Xamarin.Forms.2.1.0.6529\lib\WP80\Xamarin.Forms.Platform.WP8.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Xamarin.Forms.2.1.0.6529\lib\WP80\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -218,11 +277,11 @@
   </Target>
   -->
   <ProjectExtensions />
-  <Import Project="..\..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\..\..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Xamarin.Forms.2.1.0.6529\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
   </Target>
 </Project>
