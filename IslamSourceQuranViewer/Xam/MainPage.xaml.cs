@@ -10,9 +10,10 @@ using System.Collections;
 using System.Diagnostics;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System.Globalization;
 
 #if WINDOWS_PHONE
-public class WindowsRTFileIO : XMLRender.PortableFileIO
+public class WindowsRTXamFileIO : XMLRender.PortableFileIO
 {
     public /*async*/ string[] GetDirectoryFiles(string Path)
     {
@@ -120,15 +121,13 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         //await(await file.OpenTransactedWriteAsync()).CommitAsync();
     }
 }
-public class WindowsRTSettings : XMLRender.PortableSettings
+public class WindowsRTXamSettings : XMLRender.PortableSettings
 {
     public string CacheDirectory
     {
         get
         {
-            //Windows.Storage.ApplicationData.Current.LocalFolder.InstalledLocation;
-            //Windows.ApplicationModel.Package.Current.InstalledLocation.Path;
-            return Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
+            return System.IO.Path.GetTempPath();
         }
     }
     public KeyValuePair<string, string[]>[] Resources
@@ -376,6 +375,21 @@ namespace IslamSourceQuranViewer.Xam
         protected readonly StackLayout ItemsStackLayout;
         protected Boolean Wait = false;
 
+        public class TapCommand : ICommand
+        {
+            public event EventHandler CanExecuteChanged;
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public void Execute(object parameter)
+            {
+                dynamic par = parameter;
+                par.ItemsView.SelectedItem = par.Item;
+            }
+        }
 
         private Boolean _isScrollAutomaticInitialized;
 
@@ -412,7 +426,9 @@ namespace IslamSourceQuranViewer.Xam
             };
             Children.Add(PagingStackLayout);
 
-            var leftArrow = new Image()
+            SelectedCommand = new TapCommand();
+
+            /*var leftArrow = new Image()
             {
                 // Replace with your own arrow image
                 Source = ImageSource.FromResource("IslamSourceQuranViewer.Xam.Images.ItemsView.LeftArrow.png"),
@@ -448,16 +464,7 @@ namespace IslamSourceQuranViewer.Xam
                     await ScrollToActualAsync();
                 })
             });
-            Children.Add(rightArrow);
-
-            SelectedCommand = new Command<object>(item =>
-            {
-                var selectable = item as ISelectable;
-                if (selectable == null) return;
-
-                SetSelected(selectable);
-                SelectedItem = selectable.IsSelected ? selectable : null;
-            });
+            Children.Add(rightArrow);*/
 
             PropertyChanged += (sender, e) =>
             {
@@ -469,15 +476,19 @@ namespace IslamSourceQuranViewer.Xam
             };
         }
 
+        public ItemsView(ListViewCachingStrategy cachingStrategy) : this()
+        {
+            if ((Device.OS == TargetPlatform.Android) || (Device.OS == TargetPlatform.iOS))
+            {
+                this.CachingStrategy = cachingStrategy;
+            }
+        }
+
+        internal ListViewCachingStrategy CachingStrategy { get; private set; }
 
         public int ItemsCount
         {
             get { return this.ItemsStackLayout.Children.Count; }
-        }
-
-        protected virtual void SetSelected(ISelectable selectable)
-        {
-            selectable.IsSelected = true;
         }
 
         public View ActualElement
@@ -490,37 +501,65 @@ namespace IslamSourceQuranViewer.Xam
         public int ActualElementIndex { get; set; }
 
         public bool ScrollToStartOnSelected { get; set; }
-
-        public event EventHandler SelectedItemChanged;
-
+        
         public static readonly BindableProperty ItemsSourceProperty =
-            BindableProperty.Create<ItemsView, IEnumerable>(p => p.ItemsSource, default(IEnumerable<object>), BindingMode.TwoWay, null, ItemsSourceChanged);
+            BindableProperty.Create("ItemsSource", typeof(IEnumerable), typeof(ItemsView), null, BindingMode.OneWay, null, new BindableProperty.BindingPropertyChangedDelegate(ItemsView.OnItemsSourceChanged), null, null, null);
 
         public IEnumerable ItemsSource
         {
-            get { return (IEnumerable)GetValue(ItemsSourceProperty); }
-            set { SetValue(ItemsSourceProperty, value); }
+            get
+            {
+                return (IEnumerable)base.GetValue(ItemsView.ItemsSourceProperty);
+            }
+            set
+            {
+                base.SetValue(ItemsView.ItemsSourceProperty, value);
+            }
         }
 
+        public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
+
         public static readonly BindableProperty SelectedItemProperty =
-            BindableProperty.Create<ItemsView, object>(p => p.SelectedItem, default(object), BindingMode.TwoWay, null, OnSelectedItemChanged);
+            BindableProperty.Create("SelectedItem", typeof(object), typeof(ItemsView), null, BindingMode.OneWayToSource, null, new BindableProperty.BindingPropertyChangedDelegate(ItemsView.OnSelectedItemChanged), null, null, null);
 
         public object SelectedItem
         {
-            get { return (object)GetValue(SelectedItemProperty); }
-            set { SetValue(SelectedItemProperty, value); }
+            get
+            {
+                return base.GetValue(SelectedItemProperty);
+            }
+            set
+            {
+                base.SetValue(SelectedItemProperty, value);
+            }
         }
 
         public static readonly BindableProperty ItemTemplateProperty =
-            BindableProperty.Create<ItemsView, DataTemplate>(p => p.ItemTemplate, default(DataTemplate));
+            BindableProperty.Create("ItemTemplate", typeof(DataTemplate), typeof(ItemsView), null, BindingMode.OneWay, new BindableProperty.ValidateValueDelegate(ItemsView.ValidateItemTemplate), null, null, null, null);
 
         public DataTemplate ItemTemplate
         {
-            get { return (DataTemplate)GetValue(ItemTemplateProperty); }
-            set { SetValue(ItemTemplateProperty, value); }
+            get
+            {
+                return (DataTemplate)base.GetValue(ItemsView.ItemTemplateProperty);
+            }
+            set
+            {
+                base.SetValue(ItemsView.ItemTemplateProperty, value);
+            }
         }
 
-        private static void ItemsSourceChanged(BindableObject bindable, IEnumerable oldValue, IEnumerable newValue)
+        private static bool ValidateItemTemplate(BindableObject b, object v)
+        {
+            ItemsView view = b as ItemsView;
+            if ((view != null) && (view.CachingStrategy == ListViewCachingStrategy.RetainElement))
+            {
+                return !(view.ItemTemplate is DataTemplateSelector);
+            }
+            return true;
+        }
+
+        private static void OnItemsSourceChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var itemsLayout = (ItemsView)bindable;
             itemsLayout.SetItems();
@@ -539,7 +578,7 @@ namespace IslamSourceQuranViewer.Xam
             foreach (var item in ItemsSource)
                 ItemsStackLayout.Children.Add(GetItemView(item));
 
-            SelectedItem = ItemsSource.OfType<ISelectable>().FirstOrDefault(x => x.IsSelected);
+            SelectedItem = ItemsSource.OfType<object>().FirstOrDefault(x => SelectedItem == x);
         }
 
         protected virtual View GetItemView(object item)
@@ -553,7 +592,7 @@ namespace IslamSourceQuranViewer.Xam
             var gesture = new TapGestureRecognizer
             {
                 Command = SelectedCommand,
-                CommandParameter = item
+                CommandParameter = new { ItemsView = this, Item = item }
             };
 
             AddGesture(view, gesture);
@@ -576,24 +615,11 @@ namespace IslamSourceQuranViewer.Xam
 
         private static void OnSelectedItemChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var itemsView = (ItemsView)bindable;
-            if (newValue == oldValue)
-                return;
-
-            var selectable = newValue as ISelectable;
-            itemsView.SetSelectedItem(selectable ?? oldValue as ISelectable);
-        }
-
-        protected virtual void SetSelectedItem(ISelectable selectedItem)
-        {
-            var items = ItemsSource;
-
-            foreach (var item in items.OfType<ISelectable>())
-                item.IsSelected = selectedItem != null && item == selectedItem && selectedItem.IsSelected;
-
-            var handler = SelectedItemChanged;
-            if (handler != null)
-                handler(this, EventArgs.Empty);
+            ItemsView view = (ItemsView)bindable;
+            if (view.ItemSelected != null)
+            {
+                view.ItemSelected(view, new SelectedItemChangedEventArgs(newValue));
+            }
         }
 
         protected virtual async void ScrollAutomaticAsync()
@@ -675,13 +701,6 @@ namespace IslamSourceQuranViewer.Xam
                 }
             }
         }
-    }
-
-    public interface ISelectable
-    {
-        bool IsSelected { get; set; }
-
-        ICommand SelectCommand { get; set; }
     }
 
     public partial class MainPage : ContentPage
@@ -804,6 +823,27 @@ namespace IslamSourceQuranViewer.Xam
         public event PropertyChangedEventHandler PropertyChanged;
 
 #endregion
+    }
+
+    public class ListFormattedText : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            List<string> val = value as List<string>;
+            FormattedString fs = new FormattedString();
+            fs.Spans.Add(new Span { Text = val[0] });//, FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
+            if (val.Count > 1)
+            {
+                fs.Spans.Add(new Span { Text = "(" + val[1] + ")", FontAttributes = FontAttributes.Bold });//, FlowDirection = FlowDirection.RightToLeft, FontFamily = new FontFamily(AppSettings.strSelectedFont), FontSize = AppSettings.dFontSize });
+                fs.Spans.Add(new Span { Text = val[2] });//, FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
+            }
+            return fs;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class MyTabItem

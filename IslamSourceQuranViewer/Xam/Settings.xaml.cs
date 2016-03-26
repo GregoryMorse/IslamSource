@@ -26,8 +26,8 @@ namespace IslamSourceQuranViewer.Xam
         public static void InitDefaultSettings()
         {
 #if WINDOWS_PHONE
-            XMLRender.PortableMethods.FileIO = new WindowsRTFileIO();
-            XMLRender.PortableMethods.Settings = new WindowsRTSettings();
+            XMLRender.PortableMethods.FileIO = new WindowsRTXamFileIO();
+            XMLRender.PortableMethods.Settings = new WindowsRTXamSettings();
 #else
             XMLRender.PortableMethods.FileIO = new AndroidiOSFileIO();
             XMLRender.PortableMethods.Settings = new AndroidiOSSettings();

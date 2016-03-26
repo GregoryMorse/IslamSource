@@ -9,6 +9,7 @@
           <Setter Property="TextColor" Value="Black"/>
           <Setter Property="FontFamily" Value="Global User Interface"/>
         </Style>
+        <local:ListFormattedText x:Key="ListFormattedText"></local:ListFormattedText>
       </ResourceDictionary>
     </ContentPage.Resources>
     <Grid x:Name="MainGrid" BackgroundColor="White">
@@ -21,12 +22,8 @@
                         BackgroundColor="White">
           <local:ItemsView.ItemTemplate>
             <DataTemplate>
-              <ViewCell>
-                <ViewCell.View>
-                  <Label Text="{Binding Title}"
-                    Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
-                </ViewCell.View>
-              </ViewCell>
+              <Label Text="{Binding Title}"
+                Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
             </DataTemplate>
           </local:ItemsView.ItemTemplate>
         </local:ItemsView>
@@ -38,7 +35,7 @@
                 <DataTemplate>
                   <ViewCell>
                     <ViewCell.View>
-                      <Label Text="{Binding TextItems}"
+                      <Label FormattedText="{Binding TextItems, Converter={StaticResource ListFormattedText}}"
                           Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
                     </ViewCell.View>
                   </ViewCell>
