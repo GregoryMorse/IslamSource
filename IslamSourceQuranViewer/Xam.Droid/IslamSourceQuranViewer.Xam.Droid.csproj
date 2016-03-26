@@ -117,13 +117,16 @@
       <Link>Resources\raw-id\$([System.String]::Copy('%(FileName)').Replace('.','_'))%(Extension)</Link>
     </AndroidResource>
     <AndroidResource Include="..\..\metadata\zh-Hans.*">
-      <Link>Resources\raw-zh-rCN\$([System.String]::Copy('%(FileName)').Replace('.','_'))%(Extension)</Link>
+      <Link>Resources\raw-zh-rCN\$([System.String]::Copy('%(FileName)').Replace('-','_').Replace('.','_'))%(Extension)</Link>
     </AndroidResource>
     <AndroidResource Include="..\..\metadata\zh-Hant.*">
-      <Link>Resources\raw-zh-rTW\$([System.String]::Copy('%(FileName)').Replace('.','_'))%(Extension)</Link>
+      <Link>Resources\raw-zh-rTW\$([System.String]::Copy('%(FileName)').Replace('-','_').Replace('.','_'))%(Extension)</Link>
     </AndroidResource>
-    <AndroidResource Include="..\..\metadata\zh.*">
-      <Link>Resources\raw-zh\$([System.String]::Copy('%(FileName)').Replace('.','_'))%(Extension)</Link>
+    <AndroidResource Include="..\..\metadata\zh.jian.*">
+      <Link>Resources\raw-zh-rCN\$([System.String]::Copy('%(FileName)').Replace('-','_').Replace('.','_'))%(Extension)</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\..\metadata\zh.majian.*">
+      <Link>Resources\raw-zh-rTW\$([System.String]::Copy('%(FileName)').Replace('-','_').Replace('.','_'))%(Extension)</Link>
     </AndroidResource>
     <AndroidResource Include="..\..\metadata\fr.*">
       <Link>Resources\raw-fr\$([System.String]::Copy('%(FileName)').Replace('.','_'))%(Extension)</Link>

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:IslamSourceQuranViewer.Xam"
              x:Class="IslamSourceQuranViewer.Xam.MainPage">
     <ContentPage.Resources>
       <ResourceDictionary>
@@ -15,24 +16,20 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-      <AbsoluteLayout x:Name="MessagesLayoutFrame" Padding="0" HorizontalOptions="FillAndExpand">
-        <ContentView x:Name="MessagesLayoutFrameInner" Padding="0" HorizontalOptions="FillAndExpand">
-          <ListView x:Name="tabListBox" Rotation="270" ItemsSource="{Binding ViewModel.Items}" 
-                          SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}"
-                          BackgroundColor="White" RowHeight="240" HeightRequest="240" HorizontalOptions="Center" VerticalOptions="Start">
-              <ListView.ItemTemplate>
-                  <DataTemplate>
-                    <ViewCell>
-                      <ViewCell.View>
-                        <Label Text="{Binding Title}" Rotation="90"
-                          Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
-                      </ViewCell.View>
-                    </ViewCell>
-                  </DataTemplate>
-              </ListView.ItemTemplate>
-          </ListView>
-        </ContentView>
-      </AbsoluteLayout>
+        <local:ItemsView x:Name="tabListBox" ItemsSource="{Binding ViewModel.Items}" 
+                        SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}"
+                        BackgroundColor="White">
+          <local:ItemsView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <ViewCell.View>
+                  <Label Text="{Binding Title}"
+                    Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
+                </ViewCell.View>
+              </ViewCell>
+            </DataTemplate>
+          </local:ItemsView.ItemTemplate>
+        </local:ItemsView>
         <!--Binding Converter={StaticResource converter},RelativeSource={RelativeSource AncestorType={x:Type ListView}}}-->
         <ListView x:Name="sectionListBox" Grid.Row="1" ItemsSource="{Binding ViewModel.ListItems}" 
                         SelectedItem="{Binding Path=ViewModel.ListSelectedItem, Mode=TwoWay}"

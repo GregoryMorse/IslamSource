@@ -96,11 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources.*.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>$([System.String]::Copy('%(FileName)').Replace('.Designer.cs','').Replace('Resources.',''))\Resources.resw</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -147,10 +142,10 @@
     <Content Include="..\..\metadata\zh-Hant.*">
       <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\zh.*">
+    <Content Include="..\..\metadata\zh.jian.*">
       <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
     </Content>
-    <Content Include="..\..\metadata\zh.*">
+    <Content Include="..\..\metadata\zh.majian.*">
       <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\fr.*">
@@ -189,7 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include=".\**\Resources.resw">
-      <LastGenOutput>%(FileName).$([System.String]::Copy('%(PRIResource.RecursiveDir)').TrimEnd('\\')).Designer.cs</LastGenOutput>
     </PRIResource>
   </ItemGroup>
   <ItemGroup>

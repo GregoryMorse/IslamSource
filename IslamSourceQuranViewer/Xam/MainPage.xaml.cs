@@ -693,14 +693,6 @@ namespace IslamSourceQuranViewer.Xam
             UIChanger = new MyUIChanger();
             InitializeComponent();
             ViewModel.Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
-            double padding = (MainGrid.Width - tabListBox.Height) / 2;
-            tabListBox.HeightRequest = MessagesLayoutFrame.Width;
-            MessagesLayoutFrameInner.WidthRequest = MessagesLayoutFrame.Width;
-            MessagesLayoutFrameInner.Padding = new Thickness(0);
-            MessagesLayoutFrame.Padding = new Thickness(0);
-            MessagesLayoutFrame.IsClippedToBounds = true;
-            Xamarin.Forms.AbsoluteLayout.SetLayoutBounds(MessagesLayoutFrameInner, new Rectangle(0, 0 - padding, AbsoluteLayout.AutoSize, tabListBox.Height - padding));
-            MessagesLayoutFrameInner.IsClippedToBounds = true;
         }
         public MyUIChanger UIChanger { get; set; }
         public MyTabViewModel ViewModel { get; set; }
