@@ -41,25 +41,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Stor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.StoreToolkit.WindowsPhone", "IslamSourceQuranViewer\IslamSourceQuranViewer.StoreToolkit.WindowsPhone\IslamSourceQuranViewer.StoreToolkit.WindowsPhone.csproj", "{DF9CA61E-C790-4DD6-9846-40AEFE4DA12B}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "IslamSourceQuranViewer.Xam", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xam.shproj", "{E83B66D5-0687-4731-8ED7-8C03F1256485}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "IslamSourceQuranViewer.Xam", "IslamSourceQuranViewer\Xam\IslamSourceQuranViewer.Xam.shproj", "{E83B66D5-0687-4731-8ED7-8C03F1256485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.WinPhone", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.WinPhone\IslamSourceQuranViewer.Xam.WinPhone.csproj", "{7938A73B-820D-4B8D-862D-7C93621C7CC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.WinPhone", "IslamSourceQuranViewer\Xam.WinPhone\IslamSourceQuranViewer.Xam.WinPhone.csproj", "{7938A73B-820D-4B8D-862D-7C93621C7CC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.iOS", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.iOS\IslamSourceQuranViewer.Xam.iOS.csproj", "{F3F0D2B7-C929-4C72-9E8D-AB5C2AE237F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.iOS", "IslamSourceQuranViewer\Xam.iOS\IslamSourceQuranViewer.Xam.iOS.csproj", "{F3F0D2B7-C929-4C72-9E8D-AB5C2AE237F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.Droid", "IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.Droid\IslamSourceQuranViewer.Xam.Droid.csproj", "{AFE36D4E-C30B-4FB0-A390-415894D6CC18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.Droid", "IslamSourceQuranViewer\Xam.Droid\IslamSourceQuranViewer.Xam.Droid.csproj", "{AFE36D4E-C30B-4FB0-A390-415894D6CC18}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildUtility", "BuildUtility\BuildUtility.vbproj", "{0278DC9D-0919-4678-855B-08D27B228F86}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems*{7938a73b-820d-4b8d-862d-7c93621c7cc5}*SharedItemsImports = 4
+		IslamSourceQuranViewer\Xam\IslamSourceQuranViewer.Xamarin.projitems*{7938a73b-820d-4b8d-862d-7c93621c7cc5}*SharedItemsImports = 4
 		IslamSourceQuranViewer\IslamSourceQuranViewer.Shared\IslamSourceQuranViewer.Shared.projitems*{b4110b72-6d5c-44ce-afa9-5464dcd7dc5a}*SharedItemsImports = 4
-		IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems*{f3f0d2b7-c929-4c72-9e8d-ab5c2ae237f3}*SharedItemsImports = 4
+		IslamSourceQuranViewer\Xam\IslamSourceQuranViewer.Xamarin.projitems*{f3f0d2b7-c929-4c72-9e8d-ab5c2ae237f3}*SharedItemsImports = 4
 		IslamSourceQuranViewer\IslamSourceQuranViewer.Shared\IslamSourceQuranViewer.Shared.projitems*{893d2788-4d7a-4136-8ece-6a3394fc8265}*SharedItemsImports = 13
-		IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems*{afe36d4e-c30b-4fb0-a390-415894d6cc18}*SharedItemsImports = 4
+		IslamSourceQuranViewer\Xam\IslamSourceQuranViewer.Xamarin.projitems*{afe36d4e-c30b-4fb0-a390-415894d6cc18}*SharedItemsImports = 4
 		IslamSourceQuranViewer\IslamSourceQuranViewer.Shared\IslamSourceQuranViewer.Shared.projitems*{df9ca61e-c790-4dd6-9846-40aefe4da12b}*SharedItemsImports = 4
-		IslamSourceQuranViewer\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin\IslamSourceQuranViewer.Xamarin.projitems*{e83b66d5-0687-4731-8ed7-8c03f1256485}*SharedItemsImports = 13
+		IslamSourceQuranViewer\Xam\IslamSourceQuranViewer.Xamarin.projitems*{e83b66d5-0687-4731-8ed7-8c03f1256485}*SharedItemsImports = 13
 		IslamSourceQuranViewer\IslamSourceQuranViewer.Shared\IslamSourceQuranViewer.Shared.projitems*{9e56bc3c-7d94-4ff2-9118-89c72063c55b}*SharedItemsImports = 4
 		IslamSourceQuranViewer\IslamSourceQuranViewer.Shared\IslamSourceQuranViewer.Shared.projitems*{cef1d892-d233-4299-ab8b-71ffc431cadf}*SharedItemsImports = 4
 	EndGlobalSection

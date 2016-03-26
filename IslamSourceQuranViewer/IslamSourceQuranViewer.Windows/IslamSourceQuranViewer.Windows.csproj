@@ -174,7 +174,7 @@
       <Link>metadata\es\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\ru.*">
-      <Link>metadata\ru\$([System.String]::Copy('%(FileName)').Replace('-','.'))%(Extension)</Link>
+      <Link>metadata\ru\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\de.*">
       <Link>metadata\de\%(FileName)%(Extension)</Link>
