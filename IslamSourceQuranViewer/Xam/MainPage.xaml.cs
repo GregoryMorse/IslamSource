@@ -405,8 +405,8 @@ namespace IslamSourceQuranViewer.Xam
             ItemsStackLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
-                Padding = new Thickness(0),
-                Spacing = 0,
+                Padding = new Thickness(2, 0, 2, 0),
+                Spacing = 1,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
@@ -419,9 +419,9 @@ namespace IslamSourceQuranViewer.Xam
                 Orientation = StackOrientation.Horizontal,
                 VerticalOptions = LayoutOptions.End,
                 Padding = Device.OnPlatform<Thickness>(
-                new Thickness(0, 0, 0, 36),
-                new Thickness(0, 0, 0, 36),
-                new Thickness(0, 0, 0, 60)),
+                new Thickness(0, 0, 0, 5),
+                new Thickness(0, 0, 0, 5),
+                new Thickness(0, 0, 0, 5)),
                 Opacity = 0.5
             };
             Children.Add(PagingStackLayout);
@@ -500,8 +500,14 @@ namespace IslamSourceQuranViewer.Xam
         }
         public int ActualElementIndex { get; set; }
 
-        public bool ScrollToStartOnSelected { get; set; }
-        
+        public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
+        public event EventHandler<ItemTappedEventArgs> ItemTapped;
+
+        public static readonly BindableProperty HasUnevenColumnsProperty = BindableProperty.Create("HasUnevenColumns", typeof(bool), typeof(ListView), (bool)false, BindingMode.OneWay, null, null, null, null, null);
+        public static readonly BindableProperty ColumnWidthProperty = BindableProperty.Create("ColumnWidth", typeof(int), typeof(ListView), (int)(-1), BindingMode.OneWay, null, null, null, null, null);
+        public static readonly BindableProperty SeparatorColorProperty = BindableProperty.Create("SeparatorColor", typeof(Color), typeof(ListView), Color.Default, BindingMode.OneWay, null, null, null, null, null);
+        public static readonly BindableProperty SeparatorVisibilityProperty = BindableProperty.Create("SeparatorVisibility", typeof(Xamarin.Forms.SeparatorVisibility), typeof(ListView), Xamarin.Forms.SeparatorVisibility.Default, BindingMode.OneWay, null, null, null, null, null);
+
         public static readonly BindableProperty ItemsSourceProperty =
             BindableProperty.Create("ItemsSource", typeof(IEnumerable), typeof(ItemsView), null, BindingMode.OneWay, null, new BindableProperty.BindingPropertyChangedDelegate(ItemsView.OnItemsSourceChanged), null, null, null);
 
@@ -516,8 +522,6 @@ namespace IslamSourceQuranViewer.Xam
                 base.SetValue(ItemsView.ItemsSourceProperty, value);
             }
         }
-
-        public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
 
         public static readonly BindableProperty SelectedItemProperty =
             BindableProperty.Create("SelectedItem", typeof(object), typeof(ItemsView), null, BindingMode.OneWayToSource, null, new BindableProperty.BindingPropertyChangedDelegate(ItemsView.OnSelectedItemChanged), null, null, null);
@@ -616,12 +620,85 @@ namespace IslamSourceQuranViewer.Xam
         private static void OnSelectedItemChanged(BindableObject bindable, object oldValue, object newValue)
         {
             ItemsView view = (ItemsView)bindable;
+            for (int count = 0; count < view.ItemsStackLayout.Children.Count - 1; count++)
+            {
+                if (view.ItemsStackLayout.Children[count].BindingContext == newValue)
+                {
+                    view.ItemsStackLayout.Children[count].BackgroundColor = Xamarin.Forms.Color.Blue;
+                } else
+                {
+                    view.ItemsStackLayout.Children[count].BackgroundColor = Xamarin.Forms.Color.White;
+                }
+            }
             if (view.ItemSelected != null)
             {
                 view.ItemSelected(view, new SelectedItemChangedEventArgs(newValue));
             }
         }
 
+        //protected override SizeRequest OnSizeRequest(double widthConstraint, double heightConstraint)
+        //{
+        //    Size size2;
+        //    Size minimum = new Size(40.0, 40.0);
+            
+        //    double width = Math.Min(Device.Info.ScaledScreenSize.Width, Device.Info.ScaledScreenSize.Height);
+        //    IList itemsSource = ItemsSource as IList;
+        //    if (((itemsSource != null) && !this.HasUnevenColumns) && ((this.ColumnWidth > 0) && !this.IsGroupingEnabled))
+        //    {
+        //        size2 = new Size(width, (double)(itemsSource.Count * this.ColumnWidth));
+        //    }
+        //    else
+        //    {
+        //        size2 = new Size(width, Math.Max(Device.Info.ScaledScreenSize.Width, Device.Info.ScaledScreenSize.Height));
+        //    }
+        //    return new SizeRequest(size2, minimum);
+        //}
+
+        public bool HasUnevenColumns
+        {
+            get
+            {
+                return (bool)((bool)base.GetValue(HasUnevenColumnsProperty));
+            }
+            set
+            {
+                base.SetValue(HasUnevenColumnsProperty, (bool)value);
+            }
+        }
+        public int ColumnWidth
+        {
+            get
+            {
+                return (int)((int)base.GetValue(ColumnWidthProperty));
+            }
+            set
+            {
+                base.SetValue(ColumnWidthProperty, (int)value);
+            }
+        }
+        public Color SeparatorColor
+        {
+            get
+            {
+                return (Color)base.GetValue(SeparatorColorProperty);
+            }
+            set
+            {
+                base.SetValue(SeparatorColorProperty, value);
+            }
+        }
+
+        public Xamarin.Forms.SeparatorVisibility SeparatorVisibility
+        {
+            get
+            {
+                return (Xamarin.Forms.SeparatorVisibility)base.GetValue(SeparatorVisibilityProperty);
+            }
+            set
+            {
+                base.SetValue(SeparatorVisibilityProperty, value);
+            }
+        }
         protected virtual async void ScrollAutomaticAsync()
         {
             while (!_isScrollAutomaticInitialized)
@@ -718,49 +795,30 @@ namespace IslamSourceQuranViewer.Xam
         private void sectionListBox_DoubleTapped(object sender, ItemTappedEventArgs e)
         {
             if (ViewModel.ListSelectedItem == null) return;
-            //this.Frame.Navigate(typeof(WordForWordUC), new { Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index });
+            this.Navigation.PushAsync(new WordForWordUC(new { Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index }));
         }
     }
-    //public static class ListFormattedTextBehavior
-    //{
-    //    #region FormattedText Attached dependency property
 
-    //    public static List<string> GetFormattedText(DependencyObject obj)
-    //    {
-    //        return (List<string>)obj.GetValue(FormattedTextProperty);
-    //    }
+    public class ListFormattedText : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            List<string> val = value as List<string>;
+            FormattedString fs = new FormattedString();
+            fs.Spans.Add(new Span { Text = val[0] });//, FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
+            if (val.Count > 1)
+            {
+                fs.Spans.Add(new Span { Text = "(" + val[1] + ")", FontAttributes = FontAttributes.Bold });//, FlowDirection = FlowDirection.RightToLeft, FontFamily = new FontFamily(AppSettings.strSelectedFont), FontSize = AppSettings.dFontSize });
+                fs.Spans.Add(new Span { Text = val[2] });//, FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
+            }
+            return fs;
+        }
 
-    //    public static void SetFormattedText(DependencyObject obj, List<string> value)
-    //    {
-    //        obj.SetValue(FormattedTextProperty, value);
-    //    }
-
-    //    public static readonly DependencyProperty FormattedTextProperty =
-    //        DependencyProperty.RegisterAttached("FormattedText",
-    //        typeof(List<string>),
-    //        typeof(ListFormattedTextBehavior),
-    //        new PropertyMetadata(null, FormattedTextChanged));
-
-    //    private static void FormattedTextChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
-    //    {
-    //        List<string> value = e.NewValue as List<string>;
-
-    //        TextBlock textBlock = sender as TextBlock;
-
-    //        if (textBlock != null)
-    //        {
-    //            textBlock.Inlines.Clear();
-    //            textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = value[0], FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
-    //            if (value.Count > 1)
-    //            {
-    //                textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = "(" + value[1] + ")", FontWeight = Windows.UI.Text.FontWeights.Bold, FlowDirection = FlowDirection.RightToLeft, FontFamily = new FontFamily(AppSettings.strSelectedFont), FontSize = AppSettings.dFontSize });
-    //                textBlock.Inlines.Add(new Windows.UI.Xaml.Documents.Run() { Text = value[2], FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
-    //            }
-    //        }
-    //    }
-
-    //    #endregion
-    //}
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public class MyTabViewModel : INotifyPropertyChanged
     {
         public MyTabViewModel()
@@ -823,27 +881,6 @@ namespace IslamSourceQuranViewer.Xam
         public event PropertyChangedEventHandler PropertyChanged;
 
 #endregion
-    }
-
-    public class ListFormattedText : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            List<string> val = value as List<string>;
-            FormattedString fs = new FormattedString();
-            fs.Spans.Add(new Span { Text = val[0] });//, FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
-            if (val.Count > 1)
-            {
-                fs.Spans.Add(new Span { Text = "(" + val[1] + ")", FontAttributes = FontAttributes.Bold });//, FlowDirection = FlowDirection.RightToLeft, FontFamily = new FontFamily(AppSettings.strSelectedFont), FontSize = AppSettings.dFontSize });
-                fs.Spans.Add(new Span { Text = val[2] });//, FontFamily = new FontFamily(AppSettings.strOtherSelectedFont), FontSize = AppSettings.dOtherFontSize });
-            }
-            return fs;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class MyTabItem
