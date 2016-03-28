@@ -43,9 +43,8 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
-    <ContentPage.BottomAppBar>
-        <!--<CommandBar>
-            <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
-        </CommandBar>-->
-    </ContentPage.BottomAppBar>
+    <ContentPage.ToolBarItems>
+        <ToolBarItem Name="Settings" Activated="Settings_Click" x:Uid="Settings" Icon="Setting"></ToolBarItem>
+        <ToolBarItem Name="About" Activated="About_Click" x:Uid="About" Icon="ContactInfo"></ToolBarItem>
+    </ContentPage.ToolBarItems>
 </ContentPage>

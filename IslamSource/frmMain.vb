@@ -123,8 +123,9 @@ Public Class frmMain
             Next
         Next
     End Sub
+
     Private Sub UtilityTestCode()
-        CheckMorphology()
+        'CheckMorphology()
         'Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
         'dataroot -> ayat -> TarjumaLafziDrFarhatHashmi, TarjumaLafziFahmulQuran, TarjumaLafziNazarAhmad
         'CompareWordCounts()
@@ -180,7 +181,7 @@ Public Class frmMain
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
         'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.he.resx", "..\..\..\metadata\he.w4w.corpus.txt")
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
-        Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.ms.resx", "..\..\..\metadata\ms.w4w.txt")
+        'Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.ms.resx", "..\..\..\metadata\ms.w4w.txt")
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
@@ -203,7 +204,8 @@ Public Class frmMain
         'TanzilReader.CheckMutualExclusiveRules(True, 4)
 
         Dim IndexToVerse As Integer()() = Nothing
-        'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse, 18, 13)
+        'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
+        IslamMetadata.Arabic.MakeQuranCacheMetarules()
         'Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
         Arabic.TransliterateWithRulesColor(Arabic.TransliterateFromBuckwalter("wa{lomurosala`ti EurofFA"), "PlainRoman", True, False, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("wa{lomurosala`ti EurofFA"), Nothing, CachedData.RuleMetas("UthmaniQuran")))
         Text = TanzilReader.GetQuranText(CachedData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
