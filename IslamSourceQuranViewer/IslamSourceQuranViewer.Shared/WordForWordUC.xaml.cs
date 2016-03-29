@@ -270,14 +270,14 @@ namespace IslamSourceQuranViewer
                             if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[2].Name) {
                                 CurrentPlayingItem = 0;
                             } else {
-                                int max = IslamMetadata.TanzilReader.GetSelectionNames(Division.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty).Count();
-                                if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[0].Name && Selection + 1 != max) {
+                                int max = (int)IslamMetadata.TanzilReader.GetSelectionNames(Division.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty).Last().GetValue(1);
+                                if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[0].Name && Selection != max) {
                                     this.Frame.Navigate(typeof(WordForWordUC), new { Division = Division, Selection = Selection + 1, JumpToChapter = -1, JumpToVerse = -1, StartPlaying = true });
                                     this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
                                     return;
                                 }
                                 else if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[3].Name) {
-                                    this.Frame.Navigate(typeof(WordForWordUC), new { Division = Division, Selection = (Selection + 1) == max ? 0 : (Selection + 1), JumpToChapter = -1, JumpToVerse = -1, StartPlaying = true });
+                                    this.Frame.Navigate(typeof(WordForWordUC), new { Division = Division, Selection = Selection == max ? 0 : (Selection + 1), JumpToChapter = -1, JumpToVerse = -1, StartPlaying = true });
                                     this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
                                     return;
                                 } else {

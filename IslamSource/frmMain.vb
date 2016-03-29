@@ -205,12 +205,12 @@ Public Class frmMain
 
         Dim IndexToVerse As Integer()() = Nothing
         'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
-        IslamMetadata.Arabic.MakeQuranCacheMetarules()
+        'IslamMetadata.Arabic.MakeQuranCacheMetarules()
         'Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
-        Arabic.TransliterateWithRulesColor(Arabic.TransliterateFromBuckwalter("wa{lomurosala`ti EurofFA"), "PlainRoman", True, False, Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("wa{lomurosala`ti EurofFA"), Nothing, CachedData.RuleMetas("UthmaniQuran")))
+        Arabic.TransliterateWithRulesColor(Arabic.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), "PlainRoman", True, False, Arabic.FilterMetadataStops(Arabic.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), CachedData.RuleMetas("UthmaniQuran")), Nothing))
         Text = TanzilReader.GetQuranText(CachedData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
         'Debug.Print(Arabic.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
-        Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, Arabic.GetMetarules(Text, TanzilReader.GenerateDefaultStops(Text), CachedData.RuleMetas("UthmaniQuran"))))
+        Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, Arabic.FilterMetadataStops(Text, Arabic.GetMetarules(Text, CachedData.RuleMetas("UthmaniQuran")), TanzilReader.GenerateDefaultStops(Text))))
         For Selection = 33 To TanzilReader.GetChapterCount()
             TanzilReader.GetRenderedQuranText(ArabicData.TranslitScheme.RuleBased, String.Empty, String.Empty, "0", Selection.ToString(), String.Empty, "0", "1")
             Debug.Print(CStr(Selection))

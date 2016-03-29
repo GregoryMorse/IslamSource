@@ -32025,17 +32025,14 @@
         <trans-unit id="IslamInfo_WeightMeasureOf130320Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 130320 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">اندازه گیری Of130320 گرم وزن</target>
-          
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf2172Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 2172 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">اندازه گیری Of2172 گرم وزن</target>
-          
         </trans-unit>
         <trans-unit id="IslamInfo_WeightMeasureOf543Grams" translate="yes" xml:space="preserve">
           <source>Weight Measure Of 543 Grams</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">اندازه گیری Of543 گرم وزن</target>
-          
         </trans-unit>
         <trans-unit id="IslamInfo_WellGrounded" translate="yes" xml:space="preserve">
           <source>Well Grounded</source>
@@ -37240,6 +37237,90 @@
         <trans-unit id="IslamInfo_AsmaAlHusnaBatch5" translate="yes" xml:space="preserve">
           <source>The Recognizer The Bestower The Omnipotent One The Continuous Creator The Owner The Total Provider The Universal Trustee The Watchful One The Doer Of Good The Reckoning One The One Who Cures The Gentle The Giver The Sustaining One The Lord The Good The Impartial Judge The Supreme In Honor The Fountain Head Of Truth</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Recognizer واهب یک قادر مطلق خالق مستمر مالک کل ارائه دهنده جهانی Trustee یک ناظر Doer خوب حساب یک کسی آرام دهنده حفظ یک درمان پروردگار خوب قضاوت بی طرفانه عالی به افتخار سر چشمه حقیقت</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_GreatMasterpieceVocabulary" translate="yes" xml:space="preserve">
+          <source>Great Masterpiece Vocabulary</source>
+          <target state="new">Great Masterpiece Vocabulary</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson</source>
+          <target state="new">Morphology Lesson</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Hungarian" translate="yes" xml:space="preserve">
+          <source>Hungarian</source>
+          <target state="new">Hungarian</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Malay" translate="yes" xml:space="preserve">
+          <source>Malay</source>
+          <target state="new">Malay</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Xinhua" translate="yes" xml:space="preserve">
+          <source>Xinhua</source>
+          <target state="new">Xinhua</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Russian" translate="yes" xml:space="preserve">
+          <source>Russian</source>
+          <target state="new">Russian</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_French" translate="yes" xml:space="preserve">
+          <source>French</source>
+          <target state="new">French</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Spanish" translate="yes" xml:space="preserve">
+          <source>Spanish</source>
+          <target state="new">Spanish</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_German" translate="yes" xml:space="preserve">
+          <source>German</source>
+          <target state="new">German</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Arabic" translate="yes" xml:space="preserve">
+          <source>Arabic</source>
+          <target state="new">Arabic</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Hebrew" translate="yes" xml:space="preserve">
+          <source>Hebrew</source>
+          <target state="new">Hebrew</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson1" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 1</source>
+          <target state="new">Morphology Lesson 1</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson2" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 2</source>
+          <target state="new">Morphology Lesson 2</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson3" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 3</source>
+          <target state="new">Morphology Lesson 3</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson4" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 4</source>
+          <target state="new">Morphology Lesson 4</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson5" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 5</source>
+          <target state="new">Morphology Lesson 5</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson6" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 6</source>
+          <target state="new">Morphology Lesson 6</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson7" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 7</source>
+          <target state="new">Morphology Lesson 7</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson8" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 8</source>
+          <target state="new">Morphology Lesson 8</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson9" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 9</source>
+          <target state="new">Morphology Lesson 9</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson10" translate="yes" xml:space="preserve">
+          <source>Morphology Lesson 10</source>
+          <target state="new">Morphology Lesson 10</target>
         </trans-unit>
       </group>
     </body>

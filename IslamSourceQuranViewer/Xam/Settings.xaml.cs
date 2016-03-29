@@ -32,10 +32,6 @@ namespace IslamSourceQuranViewer.Xam
             XMLRender.PortableMethods.FileIO = new AndroidiOSFileIO();
             XMLRender.PortableMethods.Settings = new AndroidiOSSettings();
 #endif
-            //if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))
-            //{
-            //    strSelectedFont = "Times New Roman";
-            //}
             //if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("OtherCurrentFont"))
             //{
             //    strOtherSelectedFont = "Arial";
@@ -70,7 +66,7 @@ namespace IslamSourceQuranViewer.Xam
             //}
 
         }
-        //public static string strSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"] = value; } }
+        public static string strSelectedFont { get { return Plugin.Settings.CrossSettings.Current.GetValueOrDefault("CurrentFont", "Times New Roman"); } set { Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("CurrentFont", value); } }
         //public static string strOtherSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"] = value; } }
         //public string SelectedFont { get { return strSelectedFont; } set { strSelectedFont = value; } }
         //public string OtherSelectedFont { get { return strOtherSelectedFont; } set { strOtherSelectedFont = value; } }
