@@ -694,11 +694,49 @@ Public Class Arabic
     End Function
     Private Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
     Public Shared Function FilterMetadataStops(ByVal ArabicString As String, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer) As Generic.List(Of RuleMetadata)
-        Return New List(Of RuleMetadata)(Linq.Enumerable.Where(MetadataList, Function(Item)
-                                                                                 Return Item.Dependencies Is Nothing OrElse
+        MetadataList = New List(Of RuleMetadata)(Linq.Enumerable.Where(MetadataList, Function(Item)
+                                                                                         Return Item.Dependencies Is Nothing OrElse
                 (Not (Item.Dependencies(0).Type(0).RuleName = "optionalstop" AndAlso (OptionalStops Is Nothing AndAlso (ArabicString.Substring(Item.Dependencies(0).Index, Item.Dependencies(0).Length) = ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura OrElse (Item.Dependencies(0).Index <> 0 And Item.Dependencies(0).Index <> ArabicString.Length)) OrElse (Not OptionalStops Is Nothing AndAlso ArabicString.Substring(Item.Dependencies(0).Index, Item.Dependencies(0).Length) <> String.Empty AndAlso Linq.Enumerable.All(OptionalStops, Function(Idx) Not (Idx >= Item.Dependencies(0).Index And Idx < Item.Dependencies(0).Index + Item.Dependencies(0).Length))))) AndAlso
                 Not (Item.Dependencies(0).Type(0).RuleName = "optionalnotstop" AndAlso (OptionalStops Is Nothing AndAlso ArabicString.Substring(Item.Dependencies(0).Index, Item.Dependencies(0).Length) <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso (Item.Dependencies(0).Length = 0 AndAlso (Item.Dependencies(0).Index = 0 Or Item.Dependencies(0).Index = ArabicString.Length)) OrElse (Not OptionalStops Is Nothing AndAlso ArabicString.Substring(Item.Dependencies(0).Index, Item.Dependencies(0).Length) <> String.Empty AndAlso Linq.Enumerable.Any(OptionalStops, Function(Idx) Idx >= Item.Dependencies(0).Index And Idx < Item.Dependencies(0).Index + Item.Dependencies(0).Length)))))
-                                                                             End Function))
+                                                                                     End Function))
+        Dim Index As Integer = 0
+        Dim RemoveIndexes As List(Of Integer) = New List(Of Integer)(Linq.Enumerable.Range(0, MetadataList.Count))
+        While Index <= MetadataList.Count - 1
+            Do While Index <> MetadataList.Count - 1 AndAlso MetadataList(Index).Index = MetadataList(Index + 1).Index AndAlso MetadataList(Index).Length = MetadataList(Index + 1).Length AndAlso CompareRuleMetadata(MetadataList(Index).Children, MetadataList(Index + 1).Children)
+                Dim FirstRule As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = MetadataList(Index).Type
+                Dim SecondRule As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)
+                SecondRule.AddRange(MetadataList(Index + 1).Type)
+                Dim FirstUpdate As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)
+                For FirstIndex As Integer = 0 To FirstRule.Length - 1
+                    Dim SecondIndex As Integer
+                    For SecondIndex = 0 To SecondRule.Count - 1
+                        If FirstRule(FirstIndex).RuleName = SecondRule(SecondIndex).RuleName And Not FirstRule(FirstIndex).Args Is Nothing Then
+                            Dim Matches As String()() = FirstRule(FirstIndex).Args
+                            If Matches.Length <> 1 Then
+                                Dim ArgList As New List(Of String())
+                                For Count = 0 To Matches.Length - 1
+                                    ArgList.Add(New List(Of String)(Linq.Enumerable.Concat(Matches(Count), SecondRule(SecondIndex).Args(Count))).ToArray())
+                                Next
+                                FirstUpdate.Add(New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs With {.RuleName = FirstRule(FirstIndex).RuleName, .Args = ArgList.ToArray()})
+                            Else
+                                FirstUpdate.Add(FirstRule(FirstIndex))
+                            End If
+                            SecondRule.RemoveAt(SecondIndex)
+                            SecondIndex -= 1
+                            Exit For
+                        End If
+                    Next
+                    If SecondIndex = SecondRule.Count Then FirstUpdate.Add(FirstRule(FirstIndex))
+                Next
+                SecondRule.InsertRange(0, FirstUpdate)
+                'Debug.WriteLine("First: " + MetadataList(Index).Type + " Second: " + MetadataList(Index + 1).Type + " After: " + String.Join("|"c, SecondRule.ToArray()))
+                MetadataList(Index + 1) = New RuleMetadata(MetadataList(Index).Index, MetadataList(Index).Length, SecondRule.ToArray(), MetadataList(Index).OrigOrder) With {.Children = MetadataList(Index).Children, .Dependencies = MetadataList(Index).Dependencies}
+                RemoveIndexes(Index) = -1
+                Index += 1
+            Loop
+            Index += 1
+        End While
+        Return New List(Of RuleMetadata)(Linq.Enumerable.Where(MetadataList, Function(Item, Idx) RemoveIndexes(Idx) <> -1))
     End Function
     Public Shared Function TransliterateWithRules(ByVal ArabicString As String, Scheme As String, LearningMode As Boolean, MetadataList As Generic.List(Of RuleMetadata)) As String
         If Scheme = String.Empty Then Scheme = CachedData.IslamData.LanguageDefaultInfo.GetLanguageByID(String.Empty).TranslitScheme
