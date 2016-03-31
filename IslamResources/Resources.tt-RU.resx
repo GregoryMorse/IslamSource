@@ -1818,4 +1818,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>Плюс белән кушылучы Nлы оператор</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Венгр</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>малай</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Рус</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Француз</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>испан</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Алман</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Гарәп</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Иврит</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Төрек</value>
+  </data>
 </root>

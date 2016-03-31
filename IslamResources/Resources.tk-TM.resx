@@ -1602,4 +1602,31 @@
   <data name="IslamInfo_NArySummation" xml:space="preserve">
     <value>N-Ary jemi</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Wengerçe</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malaýça</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Rusça</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Fransuzça</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Ispança</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Nemesçe</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arapça</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Ýewreý</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Türkçe</value>
+  </data>
 </root>

@@ -1821,4 +1821,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>अदीक वांगडा एन-ऍरी युनियन ऑपरेटर</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>हंगेरीयाई</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>मलय</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>रूसी</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>फ्रेंच</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>स्पॅनीश</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>जर्मन</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>अरबी</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>हिब्रु</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>तुर्की</value>
+  </data>
 </root>

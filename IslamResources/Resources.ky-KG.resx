@@ -1803,4 +1803,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>Биригүүнүн N-ary оператору кошуу менен</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Венгр тили</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Малай тили</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Орус</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Француз</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Испандык</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Немец</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Араб</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Чебрю</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Түрк</value>
+  </data>
 </root>

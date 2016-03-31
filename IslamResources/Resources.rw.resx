@@ -1584,4 +1584,31 @@
   <data name="IslamInfo_NArySummation" xml:space="preserve">
     <value>Iteranya rya N-Ary</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ikinyahungariya</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Ikimaleyi</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Ikirusiya</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Igifaransa</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Icyesipanyoro</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Ikidage</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Icyarabu</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Igiheburayu</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Ikinyaturukiya</value>
+  </data>
 </root>

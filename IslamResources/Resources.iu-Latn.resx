@@ -1560,4 +1560,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>N-ary Union Aulattijjut Katitittijjutilik</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Hungarian</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malay</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Uiviititut</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Spainmiutitut</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hebrew</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
 </root>

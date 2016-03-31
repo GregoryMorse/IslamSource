@@ -12,20 +12,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>забони арабӣ ҳарф</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Бозгашт</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>Хурд кардани андозаи шрифт</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default ҳарф Андоза</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Қуръон бо забони арабӣ, забони қадимии он ва калима тарҷума бо сухан ва ояти аз тарафи ояти барои омӯзиш, таҳсил, илмию тањќиќотї, memorization, инъикоси ва азхуд намудани tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Қуръон каломи Word</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Зиёд кардани андозаи шрифт</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Дигар ҳарф матн</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Сазояшро</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Танзимот</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Намоиши Translation</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Намоиши забони қадимии</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Нишон додани Каломи Бо Word</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>Андоза</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Истифода хондемаш, волоияти ранги</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>забони пешфарз</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Иловаи Bookmark</value>
   </data>
   <data name="Bookmarks.Text" xml:space="preserve">
     <value>&amp;Хатбаракҳо</value>
@@ -33,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>Нусха ба буфери мубодила</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Бирав ба Verse</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>Таваққуф кардан</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>Пахш</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>хориҷ Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Танзими Навозиш Verse</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>нишон Exegesis</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>Дастрасии муштарак</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Иловагӣ Verse Пешпардохт зудтар</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Пешпардохт Verse худкор</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Таъхир Дарозии Verse Пеш аз он ки дар соҳаи</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Усули Looping</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>Оиди барнома</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Қуръоне ба забони арабӣ бо луѓати ва ҳамаи тарҷума ва баъзе recitations аудио ба ғайр аз сархатҳои іисоб ба лоиҳаи Tanzil (http://tanzil.net).&lt;br&gt;</value>
   </data>
 </root>

@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>അറബിക് ഫോണ്ട്</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>പിന്നോട്ട്</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>ഫോണ്ട് വലുപ്പം കുറയ്ക്കുക</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>ഫോണ്ട് സൈസ്</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>അതിന്റെ അറബിക്, പഠന, പഠിക്കുന്ന, ഗവേഷണം, memorization, നിയമങ്ങള് പ്രതിഫലനവും അഗ്രഗണ്യനാക്കുന്നു വേണ്ടി വാക്യം വാക്കിൽ വാക്യം വഴി ലിപ്യന്തരണം പരിഭാഷയെ വചനം ഖുർആൻ.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>ഖുർആൻ വാക്കുകളായോ</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>ഫോണ്ട് വലുപ്പം വര്‍ധിപ്പിക്കുക</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>മറ്റു ടെക്സ്റ്റ് ഫോണ്ട്</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>റെൻഡർ</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>സജ്ജീകരണം</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>പരിഭാഷ കാണിക്കുക</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>ലിപ്യന്തരണം കാണിക്കുക</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>വാക്കുകളായോ കാണിക്കുക</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>വലുപ്</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>പാരായണവും റൂൾ നിറംകൊടുക്കലും ഉപയോഗിക്കുക</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>സ്വതേ ഭാഷ</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>&amp;ബുക്ക്‌മാർക്ക് ചേർക്കുക</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>പകര്‍പ്പിടത്തിലേക്ക് പകര്‍ത്തുക</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>വാക്യം പോകുക</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>അല്‍‌പംനിര്‍ത്തുക</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>പ്ലേചെയ്യുക</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>ഖാരി</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>ബുക്ക്മാർക്ക് നീക്കം</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>പ്ലേബാക്ക് Verse സെറ്റ്</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>വിതർക്കം കാണിക്കുക</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>പങ്കിടുക</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>കൂടുതൽ Verse മുൻകൂർ കാലതാമസം</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>മുൻകൂർ Verse യാന്ത്രികമായി</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>പുരോഗതിയാണ് മുമ്പ് വാക്യത്തിൻറെ ദൈർഘ്യം വൈകും</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>വളയത്തിൽ മോഡ്</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>കുറിച്ച്</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;മെറ്റാഡാറ്റ, തൻസീൽ പദ്ധതി (http://tanzil.net) ക്രെഡിറ്റ് പട്ടികപ്പെടുത്തിയതിനേക്കാളും ഒഴികെ എല്ലാ പരിഭാഷകൾ ചില ഓഡിയോ പാരായണ കൂടെ അറബിക് ഖുർആൻ.&lt;br&gt;</value>
   </data>
 </root>

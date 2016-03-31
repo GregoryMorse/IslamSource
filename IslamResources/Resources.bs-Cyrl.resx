@@ -1482,4 +1482,28 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>Н-ти оператор за унију са плусом</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Мађарски</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Руски</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Француски</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Шпански</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Њемачки</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Арапски</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Хебрејски</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Турски</value>
+  </data>
 </root>

@@ -1821,4 +1821,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>যোগৰ সৈতে এন-এৰী ইউনিয়ন অপাৰেটৰ</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>হাংগেৰিয়ান</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>মালয়</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>ৰাছিয়ান</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ফ্ৰেন্স</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>স্পেনিছ</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>জাৰ্মান</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>আৰবী</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>হিব্ৰু</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>তুৰ্কী</value>
+  </data>
 </root>

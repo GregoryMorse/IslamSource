@@ -1587,4 +1587,31 @@
   <data name="IslamInfo_NArySummation" xml:space="preserve">
     <value>Booleg N-Ary</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ongaariyaan</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malee (Buruneey Daarussalaam)</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Riis</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Faranse</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Espaanol</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Almaa</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Araab</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Yawuud</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Wu-Turk</value>
+  </data>
 </root>

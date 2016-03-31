@@ -1587,4 +1587,31 @@
   <data name="IslamInfo_NArySummation" xml:space="preserve">
     <value>Suimeachadh N-araidh</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ungairis</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malaidhis</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Ruisis</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Fraingis</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Spàinntis</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Gearmailtis</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabais</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Eabhra</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turcais</value>
+  </data>
 </root>

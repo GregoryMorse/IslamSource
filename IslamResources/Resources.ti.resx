@@ -1584,4 +1584,31 @@
   <data name="IslamInfo_NArySummation" xml:space="preserve">
     <value>ጠቐር ኣገብብራ N-Ary</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ሃንጋሪያኛ</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>ማላይ</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>ሩስያኛ</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ፈረንሳይ</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>ስፓኒሽ</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>ጀርመን</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>ዓረብ</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ኢብራይስጥ</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ቱርካኛ</value>
+  </data>
 </root>

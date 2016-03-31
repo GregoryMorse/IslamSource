@@ -37248,11 +37248,11 @@
         </trans-unit>
         <trans-unit id="IslamSource_Hungarian" translate="yes" xml:space="preserve">
           <source>Hungarian</source>
-          <target state="new">Hungarian</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ungairis</target>
         </trans-unit>
         <trans-unit id="IslamSource_Malay" translate="yes" xml:space="preserve">
           <source>Malay</source>
-          <target state="new">Malay</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Malaidhis</target>
         </trans-unit>
         <trans-unit id="IslamSource_Xinhua" translate="yes" xml:space="preserve">
           <source>Xinhua</source>
@@ -37260,27 +37260,27 @@
         </trans-unit>
         <trans-unit id="IslamSource_Russian" translate="yes" xml:space="preserve">
           <source>Russian</source>
-          <target state="new">Russian</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ruisis</target>
         </trans-unit>
         <trans-unit id="IslamSource_French" translate="yes" xml:space="preserve">
           <source>French</source>
-          <target state="new">French</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Fraingis</target>
         </trans-unit>
         <trans-unit id="IslamSource_Spanish" translate="yes" xml:space="preserve">
           <source>Spanish</source>
-          <target state="new">Spanish</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Spàinntis</target>
         </trans-unit>
         <trans-unit id="IslamSource_German" translate="yes" xml:space="preserve">
           <source>German</source>
-          <target state="new">German</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Gearmailtis</target>
         </trans-unit>
         <trans-unit id="IslamSource_Arabic" translate="yes" xml:space="preserve">
           <source>Arabic</source>
-          <target state="new">Arabic</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Arabais</target>
         </trans-unit>
         <trans-unit id="IslamSource_Hebrew" translate="yes" xml:space="preserve">
           <source>Hebrew</source>
-          <target state="new">Hebrew</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Eabhra</target>
         </trans-unit>
         <trans-unit id="IslamInfo_SarfLesson1" translate="yes" xml:space="preserve">
           <source>Morphology Lesson 1</source>
@@ -37332,7 +37332,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Turkish" translate="yes" xml:space="preserve">
           <source>Turkish</source>
-          <target state="new">Turkish</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Turcais</target>
         </trans-unit>
       </group>
     </body>

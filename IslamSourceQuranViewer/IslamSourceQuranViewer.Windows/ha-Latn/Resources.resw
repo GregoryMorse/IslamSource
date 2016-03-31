@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabic Font</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Baya</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>Rage Girman Salon Rubutu</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default Font Size</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kur'ani tare da Larabci, kalma da wani harshen da translation kalma da kalma da kuma aya ta aya ga koyo, nazarin, bincike, karatu, gani da kuma rinjãye tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran kalma-kalma</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Ƙara Girman Salon Rubutu</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Other Text Font</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>sa</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Saittuna</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>show Translation</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>show kalma da wani harshen</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Nuna kalma-kalma</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>Girma</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Yi amfani da Surah Rule canza launi</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Default Harshe</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>Ƙara &amp;Ma'ajiyar rubutu</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>rubuta zuwa ga Clipboard</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Ka tafi zuwa ga aya</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>Dakata</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>Wasa</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>cire Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Kafa sake kunnawa Verse</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>show Tafsiri</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>Raba</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Ƙarin Verse Advance Dakata</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance Verse ta atomatik</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Dakata Length na Verse Kafin inganta</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping Mode</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>Game da</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabic Kur'ani da metadata da dukan Fassarori da kuma wasu audio karatun fãce waɗanda aka jera lasafta Tanzil Project (http://tanzil.net).&lt;br&gt;</value>
   </data>
 </root>

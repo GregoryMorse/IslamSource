@@ -1836,4 +1836,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>Unionoperator med pluss for n-ær</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ungarsk</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malayisk</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Russisk</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Fransk</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Spansk</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Tysk</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabisk</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hebraisk</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Tyrkisk</value>
+  </data>
 </root>

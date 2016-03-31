@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>ភាសាអារ៉ាប់ពុម្ពអក្សរ</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>ថយក្រោយ</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>បន្ថយទំហំពុម្ពអក្សរ</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>ទំហំពុម្ពអក្សរលំនាំដើម</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Qur'an ជាមួយភាសាអារ៉ាប់របស់ខ្លួនសរសេរតាមសូរស័ព្ទនិងពាក្យបកប្រែដោយពាក្យនិងខដោយខសម្រាប់ការសិក្សា, ការសិក្សាស្រាវជ្រាវការទន្ទេញ, ការឆ្លុះបញ្ចាំងនិងពូកែ tajweed ។</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>គម្ពីគូរ៉ាពាក្យដោយពាក្យ</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>បង្កើនទំហំពុម្ពអក្សរ</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>ពុម្ពអក្សរអត្ថបទផ្សេងទៀត</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>បង្ហាញ</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>ការកំណត់</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>បង្ហាញការបកប្រែ</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>បង្ហាញការសរសេរតាមសូរស័ព្ទ</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>បង្ហាញពាក្យដោយពាក្យ</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>ទំហំ</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>ប្រើទន្ទិញមេរៀនវិធាន color</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>ភាសាលំនាំដើម</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>បន្ថែ&amp;មទីចំណាំ</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>ចម្លងទៅឃ្លីបបត</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>ចូលទៅកាន់ខ</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>ការផ្អាក</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>ចាក់</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>recital</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>យកចំណាំ</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>កំណត់ការចាក់សារថ្មីខ</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>បង្ហាញ exegesis</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>&amp;ចែករំលែក...</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>ការពន្យាពេលបន្ថែមទៀតខជាមុន</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>មុនខដោយស្វ័យប្រវត្តិ</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>ប្រវែងពន្យាពេលនៃខមុនពេល</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>របៀបតជាប់គ្នា</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>អំពី</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;ភាសាអារ៉ាប់ Qur'an ជាមួយទិន្នន័យមេតានិងបកប្រែទាំងអស់និងការ recitations អូឌីយ៉ូមួយចំនួនលើកលែងតែអ្នកដែលបានចុះបញ្ជីបានបញ្ចូលទៅក្នុងគម្រោង Tanzil (http://tanzil.net) ។&lt;br&gt;</value>
   </data>
 </root>

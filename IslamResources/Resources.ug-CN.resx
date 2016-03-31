@@ -1590,4 +1590,31 @@
   <data name="IslamInfo_NArySummation" xml:space="preserve">
     <value>N ئەزالىق جەملەش</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ۋېنگىرچە</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>مالايچە</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>رۇسچە</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>فرانسۇزچە</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>ئىسپانچە</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>گېرمانچە</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>ئەرەبچە</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ئىبرانىچە</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>تۈركچە</value>
+  </data>
 </root>

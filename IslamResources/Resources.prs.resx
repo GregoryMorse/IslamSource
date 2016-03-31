@@ -1695,4 +1695,31 @@
   <data name="IslamInfo_NArySummation" xml:space="preserve">
     <value>جمع N-Ary</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>هنگری</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>ماله</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>روسی</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>فرانسوی</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>هسپانوی</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>آلمانی</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>عربی</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>عبرانی</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ترکی</value>
+  </data>
 </root>

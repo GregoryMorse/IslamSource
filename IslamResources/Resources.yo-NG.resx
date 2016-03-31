@@ -1824,4 +1824,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>N-ary Olùṣe Àpapọ̀ pẹ̀lú Àròpọ̀</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Họ̀ngéríàn</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Maleyi</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Rọ́síà</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Faransé</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Sípáníìṣì</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Ará Jámánì</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Árábìkì</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hébérù</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Tọ́kíìsì</value>
+  </data>
 </root>

@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>認識エンジン Bestower ぜんのう連続作成者所有者総プロバイダー普遍的な管財人監視 1 善意のやり手清算 1 つ一人治療の穏やかな維持の 1 つは、贈り主主良い中立的な判断する真実の泉長に敬意を表して最高</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>偉大な傑作の語彙</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>レッスン形態</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ハンガリー語</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>マレー語</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>新華社</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>ロシア語</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>フランス語</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>スペイン語</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>ドイツ語</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>アラビア語</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ヘブライ語</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>レッスン形態 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>レッスン形態 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>レッスン形態 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>レッスン形態 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>レッスン形態 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>レッスン形態 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>レッスン形態 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>形態のレッスン 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>形態のレッスン 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>形態のレッスン 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>単語のビルダー</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>拡張 Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>トルコ語</value>
+  </data>
 </root>
