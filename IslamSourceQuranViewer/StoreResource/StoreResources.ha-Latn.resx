@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Quran Kalmar da Kalmar Translation</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>kalma da wani harshen</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Larabci</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Verse da Verse</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Kalmar da kalmar</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>Quran</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>Quran viewer</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kur'ani tare da Larabci, kalma da wani harshen da translation kalma da kalma da kuma aya ta aya ga koyo, nazarin, bincike, karatu, gani da kuma rinjãye tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Main Quran viewer.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>Quran</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Fassara</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>kalma da wani harshen</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Larabci</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Kur'ani</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Koran</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al-Quran</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Main Quran viewer.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Harufan Version.</value>
   </data>
 </root>

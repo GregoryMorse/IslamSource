@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Қуръон Каломи Каломи Translation</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>забони қадимии</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Арабӣ</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Verse бо Verse</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Каломи Каломи</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>Қуръон</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>тамошобин Қуръон</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(В) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Қуръон бо забони арабӣ, забони қадимии он ва калима тарҷума бо сухан ва ояти аз тарафи ояти барои омӯзиш, таҳсил, илмию тањќиќотї, memorization, инъикоси ва азхуд намудани tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>тамошобин Қуръон асосӣ.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>Қуръон</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Тарҷума</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>забони қадимии</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Арабӣ</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Қуръон</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Қуръон</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al-Қуръон</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>тамошобин Қуръон асосӣ.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Version ибтидоӣ.</value>
   </data>
 </root>

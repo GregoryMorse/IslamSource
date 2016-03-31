@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>የ ማወቂያ ያስጫነች ሁለን አንድ የ ተከታታይ ፈጣሪ ባለቤት ወደ ጠቅላላ አገልግሎት አቅራቢ የአለምአቀፍ የባለአደራ አክብሩ ውስጥ አንዱ ጌታ ዘ ጉድ ያለው አያዳላም ዳኛ ጠቅላይ በዘላቂነት ማስቀጠል ገራገር የ ሰጪ በመጣራቸው ማን ጥሩ ምርመራው አንድ በአንድ ሰው ነቅቶ አንድ የ ያደርጋል</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>ታላቁ የፈጠራ መዝገበ ቃላት</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ሃንጋሪያን</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>ማላይ</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>ሲንሁኣ</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>ሩሲያኛ</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ፈረንሳይኛ</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>ስፓኒሽ</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>ጀርመንኛ</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>አረቢኛ</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>እብራይስጥ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>ሞርፎሎጂ ትምህርት 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>ቃል ገንቢ</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>የተስፋፉ Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ተርኪሽ</value>
+  </data>
 </root>

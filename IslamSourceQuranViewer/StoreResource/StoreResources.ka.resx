@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Quran სიტყვა-სიტყვით თარგმანი</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>ტრანსლიტერაცია</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>არაბული</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>ლექსი by ლექსი</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>სიტყვა-სიტყვით</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>Quran</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>Quran მაყურებელს</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>ყურანი თავისი არაბული, ტრანსლიტერაცია და თარგმანი სიტყვა-სიტყვით და ლექსი by ლექსი სწავლა, შესწავლა, კვლევა, დამახსოვრების, ასახვა და ოსტატობის tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>მთავარი Quran მაყურებელს.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>Quran</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>თარგმანი</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>ტრანსლიტერაცია</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>არაბული</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>ყურანი</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>ყურანის</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>ალ ყურანის</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>მთავარი Quran მაყურებელს.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>თავდაპირველი ვერსია.</value>
   </data>
 </root>

@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>پہچان عطا فرمانے غالب ایک مسلسل خالق مالک کل مھیا یونیورسل ٹرسٹی گڈ حساب وکتاب ایک ایک کے ہوشیار ایک مطیع اور تابع نرم سوات برقرار رکھنے اعزاز میں ایک رب گڈ غیر جانبدار جج سپریم شفا دیتا</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>عظیم شاہکار الفاظ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>morphology کے سبق</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ہنگريائى</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>‏‏ملائی</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>ژنہوا</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>‏‏روسی</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>فرانسیسی</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>ہسپانوی</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>جرمن</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>عربی</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>‏‏ہیبریو</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>morphology کے سبق 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>morphology کے سبق 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>morphology کے سبق 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>morphology کے سبق 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>morphology کے سبق 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>morphology کے سبق 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>morphology کے سبق 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>morphology کے سبق 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>morphology کے سبق 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>morphology کے سبق 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>کلام بلڈر</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>توسیعی Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>‏‏ترکی</value>
+  </data>
 </root>

@@ -193,7 +193,7 @@
       <Link>metadata\es\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\ru.*">
-      <Link>metadata\ru\$([System.String]::Copy('%(FileName)').Replace('-','.'))%(Extension)</Link>
+      <Link>metadata\ru\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\de.*">
       <Link>metadata\de\%(FileName)%(Extension)</Link>
@@ -203,6 +203,9 @@
     </Content>
     <Content Include="..\..\metadata\ur.*">
       <Link>metadata\ur\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\tr.*">
+      <Link>metadata\tr\%(FileName)%(Extension)</Link>
     </Content>
     <Content Include="..\..\metadata\quranic-corpus-morphology-0.4.txt">
       <Link>metadata\quranic-corpus-morphology-0.4.txt</Link>

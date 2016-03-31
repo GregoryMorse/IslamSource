@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>The Recognizer The bestower The Omnipotent One Etengabeko Sortzailea jabea Provider Guztira The Universal Patronatuko Watchful One The duenarentzat Good The Reckoning One One Of salbatzaile The Gentle The Giver sostengua One The Lord The Good inpartzial Epaile Gorenak Honor</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Great Masterpiece Hiztegia</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Morfologia ikasgaia</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Hungariera</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malaysiera</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Errusiera</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Frantsesa</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Espainiera</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Alemana</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabiera</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hebreera</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morfologia 1 ikasgaia</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morfologia Ikasgai 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morfologia Ikasgai 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morfologia 4. ikasgaia</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfologia 5 ikasgaia</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morfologia Ikasgai 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfologia 7. ikasgaia</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morfologia 8 ikasgaia</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morfologia 9 ikasgaia</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morfologia 10 ikasgaia</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Word Builder</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Extended BUCKWALTER</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turkiera</value>
+  </data>
 </root>

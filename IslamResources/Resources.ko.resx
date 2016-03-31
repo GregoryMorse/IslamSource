@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>인식기 Bestower 전 능 하나 지속적인 창조 자 소유자 총 공급자 보편적인 관리 감시 한 좋은 두려움 레크 닝 한 치료 부드러운 주는 유지 한 사람이 좋은 주 님은 공정한 판단 명예 진리의 분수 머리에에서 최고</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>위대한 걸작 어휘</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>형태학 강의</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>헝가리어</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>말레이어</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>신화</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>러시아어</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>프랑스어</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>스페인어</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>독일어</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>아랍어</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>히브리어</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>1 형태학 단원</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>2 형태학 단원</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>3 형태학 단원</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>4 형태학 단원</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>제 5과 형태학</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>6 단원 형태학</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>형태 7 단원</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>형태학 강의 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>형태학 강의 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>형태학 강의 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>단어 빌더</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>확장된 Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>터키어</value>
+  </data>
 </root>

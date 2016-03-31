@@ -12,6 +12,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>араб Қаріп</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Артқа</value>
   </data>
@@ -21,14 +24,38 @@
   <data name="DefaultFontSize.Label" xml:space="preserve">
     <value>Қаріптің әдепкі өлшемі</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>оның араб, tajweed үйрену, зерттеу, ғылыми-зерттеу, есте, рефлексия және шеберлігі үшін өлеңдер арқылы сөзбен және өлеңдер арқылы транслитерация және аударма сөз Құран.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Құран сөзімен Word</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Қаріп өлшемін ұлғайту</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Басқа Мәтін Қаріп</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Render</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Параметрлер</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>көрсету аударма</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>көрсету транслитерация</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Сөзден көрсету</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>Өлшем</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Құран оқу ереже Раскраски пайдаланыңыз</value>
   </data>
   <data name="DefaultLanguage.Text" xml:space="preserve">
     <value>Әдепкі тіл</value>
@@ -42,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>Копировать в буфер</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Өлеңдер өтіңіз</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>Тоқтата тұру</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>Ойнату</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Бетбелгіні алып тастау</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set Ойнату тармақ</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>көрсету түсіндіру</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>Ортақ пайдалану</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Қосымша тармақ Advance Delay</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Аванстық тармақ автоматты түрде</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Алға алдында өлең ұзындығы кешіктіріп</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>цикл режимі</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>Туралы</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;метадеректер және Tanzil жобасы (http://tanzil.net) есептелген аталған адамдарды қоспағанда, барлық Аудармалар және кейбір аудио мәнерлеп араб Құран.&lt;br&gt;</value>
   </data>
 </root>

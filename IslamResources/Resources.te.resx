@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>గుర్తిస్తాడు ది అందజేయువాడిగా ది ఈశ్వరుడు కంటిన్యువస్ సృష్టికర్త ది యజమాని మొత్తం ప్రొవైడర్ యూనివర్సల్ ట్రస్టీ గుడ్ సమస్య పరిష్కారం వన్ అఫ్ వన్ శ్రద్దగల వన్ చేసేవాడు ఎవరు జెంటిల్ ది ఇవ్వగలిగినవాడు ది సస్టైనింగ్ ఒకటి ఇన్ ఆనర్ లార్డ్ ది గుడ్ ది ఇంపార్షియల్ జడ్జ్ ది సుప్రీం క్యూర్స్</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>గ్రేట్ మాస్టర్ పదజాలం</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం లెసన్</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>హంగేరియన్</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>మలాయ్</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>జిన్హువా</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>రష్యన్</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ఫ్రెంచ్</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>స్పానిష్</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>జర్మన్</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>అరబిక్</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>హిబ్రూ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం పాఠం 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం పాఠం 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం పాఠం 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం లెసన్ 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం లెసన్ 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం లెసన్ 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం లెసన్ 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం లెసన్ 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం పాఠం 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>స్వరూప శాస్త్రం పాఠం 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>పద బిల్డర్</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>విస్తరించిన Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>టర్కిష్</value>
+  </data>
 </root>

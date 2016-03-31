@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Word tarjima tomonidan Qur'on Word</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>Transliteratsiya</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Arabcha</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Oyati tomonidan Verse</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Word tomonidan Word</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>Qur'on</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>Qur'on tomoshabin</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>tajvid</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>ta'lim, o'rganish, ilmiy tadqiqotlar, yod, aks ettirish va tajvid yaratuvchanlik uchun oyatda so'z va oyatda tomonidan uning arab, transliteratorlar va tarjima so'z bilan Qur'on.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Asosiy Qur'on tomoshabin.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>Qur'on</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Tarjima</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>Transliteratsiya</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Arabcha</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Qur'on</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Qur'on</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al-Qur'on</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Asosiy Qur'on tomoshabin.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Boshlang'ich Version.</value>
   </data>
 </root>

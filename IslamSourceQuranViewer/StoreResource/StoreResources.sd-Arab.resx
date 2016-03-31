@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>ڪلام ۾ ترجمو ڪندي قرآن ڪلام</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>Transliteration</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>عربي</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>وڃڻو جي وڃڻو</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>حڪم جي ڪلام</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>قرآن</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>قرآن ڏسندڙن</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(ج) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>ان عربي، سکيا، زير تعليم، تحقيق، حفظ، سوچ ۽ tajweed جي غالب لاء آيت جي لفظ ۽ آيت جي transliteration ۽ ترجمي لفظ سان (قرآن).</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>مادري قرآن ڏسندڙن.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>قرآن</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>ترجمو</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>Transliteration</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>عربي</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>قرآن</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>قرآن</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>امام قرآن</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>مادري قرآن ڏسندڙن.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>ابتدائي نسخو.</value>
   </data>
 </root>

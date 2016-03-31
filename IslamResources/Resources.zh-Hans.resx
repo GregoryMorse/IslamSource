@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>识别器安放全能一连续创建者所有者总供应商普遍受托人警惕一个行善推算一个人治愈温柔送礼者维持一个主好公正判断在荣誉的真理的喷泉头最高</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>伟大的杰作词汇</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>形态的教训</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>匈牙利语</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>马来语</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>新华社</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>俄语</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>法语</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>西班牙语</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>德语</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>阿拉伯语</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>希伯来语</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>第 1 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>第 2 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>第 3 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>第 4 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>第 5 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>第 6 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>第 7 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>第 8 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>第 9 课形态</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>第 10 课形态</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>词生成器</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>扩展的 Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>土耳其语</value>
+  </data>
 </root>

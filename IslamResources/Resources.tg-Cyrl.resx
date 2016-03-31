@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Дар Recognizer The бахшояндаӣ The яктои Яке The пайвастаи Офаридгори The соҳиби The Њамагї Таъминкунандаи The Universal парастор биност Яке аз некӯкор The ҳисоб Яке Он кӣ таъом The мушфиқу The Атокунандаи The устувории Яке аз Худованд The ​​хуб The беғараз Довари The Олӣ ба ифтихори</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Бузург шоҳасари луғат</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Дарс Morphology</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Венгерӣ</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>малайӣ</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Синхуа</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>русӣ</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>франсузӣ</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>испанӣ</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>олмонӣ</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Арабӣ</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Ибрӣ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morphology Дарси 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morphology Дарси 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morphology Дарси 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morphology Дарси 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morphology Дарси 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morphology Дарси 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morphology Дарси 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morphology Дарси 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morphology Дарси 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morphology Дарси 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Каломи бурдем</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>васеи Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>туркӣ</value>
+  </data>
 </root>

@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Tanıyıcı'ya The ato The g'olibdir biri doimiy yaratguvchi The egasi Jami Provayder Universal ishonchli qadrlash yili One Lord The Good The beg'araz sudyasi Oliy ta'minlash Gentle The berguvchidir The shamollashini o'chiradi yaxshi The Reckoning biri The birining o'ta ko'rguvchidir biri The qilguvchi</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Buyuk Masterpiece Vocabulary</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>morfologik dars</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Vengrcha</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malayacha</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Ruscha</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Fransuzcha</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Ispancha</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Nemischa</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabcha</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Yahudiy</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morfologik 1-dars</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morfologik dars 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morfologik 3-dars</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morfologik dars 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfologik 5-dars</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morfologik dars 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfologik 7-dars</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morfologik dars 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morfologik dars 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morfologik dars 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Word Builder</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>kengaytirilgan Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turkcha</value>
+  </data>
 </root>

@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>ओळखणारे द Bestower द सर्वशक्तीमान एक सतत निर्माता द मालक एकूण प्रदाता युनिव्हर्सल विश्वस्त चांगले द हिशेब एक द एक प्रेमळपणे नजर ठेवतो, एक द सांगते कोण सभ्य द दाता द कायम एक सन्मान परमेश्वर द गुड द योग्य न्यायाधीश सर्वोच्च उपचारांच्या</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>ग्रेट उत्कृष्ट शब्दसंग्रह</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>हंगेरियन</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>मलय</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>वृत्तसंस्था सिन्हुआनुसार</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>रशियन</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>फ्रेंच</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>स्पॅनिश</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>जर्मन</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>अरबी</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>हिब्रू</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>शब्द कसे बनतात त्याचे शास्त्र पाठ 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>शब्द बिल्डर</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>विस्तारित Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>तुर्की</value>
+  </data>
 </root>

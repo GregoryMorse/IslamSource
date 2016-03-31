@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Iziqapheli The noMuphi The Okhona nomaphi eqhubekayo UMdali Umnikazi Umhlinzeki Ubude Universal Trustee The Qaphani One UMenzi Of Ezinhle Reckoning One Lowo uphilisa The Gentle The uMuphi The Ukusekela One INkosi The Good Ongakhethi UMahluleli Omkhulu In Dumisa</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Great Uqobo Silulumagama</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>morphology Isifundo</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Isi-Hungarian</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>IsiMalay</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>XINHUA</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>IsiRashiya</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>IsiFulentshi</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>I-Spanish</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>IsiJalimane</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Isi-Arabhu</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>IsiHebheru</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morphology Isifundo 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morphology Isifundo 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morphology Isifundo 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morphology Isifundo 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morphology Isifundo 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morphology Isifundo 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morphology Isifundo 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morphology Isifundo 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morphology Isifundo 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morphology Isifundo 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>iZwi Builder</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Buckwalter Extended</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Isi-Turkey</value>
+  </data>
 </root>

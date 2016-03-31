@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>கண்டறிதல்கள் தி கொடையாளியுமாகிய தி சர்வ சக்தியுடையவர் தொடர்ச்சியான படைப்பாளர் தி உரிமையாளர் மொத்த வழங்குநர் யுனிவர்சல் அறங்காவலர் கூர்மையான ஒரு தி செய்பவர் நல்ல த ரெக்னாயிங் ஒரு தி கனிவான ஒரு தி கொடுப்பவர் தி நீட்டித்து நினைவாக ஒரு இறைவன் தி குட் தி பாரபட்சமற்ற நீதிபதி உச்ச குணப்படுத்துகிறான்</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>கிரேட் மாஸ்டர்பீஸ் சொல்லகராதி</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>உருபனியல் பாடம்</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ஹங்கேரியன்</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>மலாய்</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>சின்குவா</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>ரஷ்யன்</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>பிரெஞ்ச்</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>ஸ்பானிஷ்</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>ஜெர்மன்</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>அரபு</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ஹீப்ரு</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>உருபனியல் பாடம் 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>உருபனியல் பாடம் 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>உருபனியல் பாடம் 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>உருபனியல் பாடம் 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>உருபனியல் பாடம் 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>உருபனியல் பாடம் 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>உருபனியல் பாடம் 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>உருபனியல் பாடம் 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>உருபனியல் பாடம் 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>உருபனியல் பாடம் 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>வார்த்தை பில்டர்</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>விரிவாக்கப்பட்ட Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>துர்கிஷ்</value>
+  </data>
 </root>

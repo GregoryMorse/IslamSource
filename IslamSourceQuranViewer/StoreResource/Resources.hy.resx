@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>արաբերեն Տառատեսակի</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>Հետ</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>Փոքրացնել տառատեսակի չափը</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default Font Size</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Ղուրանը իր արաբերեն, տառադարձման եւ թարգմանութեան խոսքի խօսքով ու չափածո կողմից չափածո ուսուցման համար, ուսումնասիրելու, հետազոտություններ, memorization, մտորումների եւ վարպետությամբ tajweed:</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran Բառի Ըստ Բառի</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>Մեծացնել տառատեսակի չափը</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Այլ Text տառատեսակի</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>մատուցել</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>Կարգավորումներ</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Ցույց տալ Translation</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Ցույց տալ թարգմանություն</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Ցույց տալ, բառ առ բառ</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>Չափ</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Օգտագործեք ասմունքի կանոն Գունավորում</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>լռելյայն լեզու</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>Հավելել &amp;էջանիշ</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>Պատճենել Սեղմատախտակում</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Գնալ չափածո</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>Դադար</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>Նվագարկել</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>ասմունքող</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>հեռացնել Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Սահմանել նվագարկումը չափածո</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Ցույց տալ exegesis</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>Համօգտագործել</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Լրացուցիչ Հատված Advance ձգձգումը</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance Հատված Ավտոմատ</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Ձգձգումը երկարությունը Verse առաջ տանելու</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping Mode</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>Մասին</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Արաբերեն Ղուրանը հետ մետատվյալների եւ բոլոր Թարգմանություններ եւ որոշ աուդիո ասմունքներ, բացի թվարկված հաշվեգրվում Tanzil ծրագրի (http://tanzil.net):&lt;br&gt;</value>
   </data>
 </root>

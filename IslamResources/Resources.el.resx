@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Στην αναγνώριση την απονεμών Παντοδύναμος αυτός ο συνεχής δημιουργός ο ιδιοκτήτης το συνολικό πάροχος την καθολική διαχειριστικές άγρυπνο εκείνη την πράττων των καλών της αναμέτρησης μία εκείνος που θεραπεύει την απαλή το δωρητή συντηρούμενη αυτός ο κύριος το καλό το αμερόληπτο δικαστή στο ανώτατο προς τιμήν τη νερομάνα της αλήθειας</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Μεγάλο αριστούργημα λεξιλόγιο</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Μάθημα μορφολογίας</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ουγγρικά</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Μαλαϊκά</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Ρωσικά</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Γαλλικά</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Ισπανικά</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Γερμανικά</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Αραβικά</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Εβραϊκά</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Μορφολογία μάθημα 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Μορφολογία μάθημα 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Μορφολογία μάθημα 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Μορφολογία μάθημα 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Μορφολογία μάθημα 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Μορφολογία μάθημα 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Μορφολογία μάθημα 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Μορφολογία μάθημα 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Μορφολογία μάθημα 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Μορφολογία μάθημα 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Οικοδόμος λέξη</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Εκτεταμένη Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Τουρκικά</value>
+  </data>
 </root>

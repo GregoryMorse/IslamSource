@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>ಗುರುತಿಸುವಿಕೆ ದಿ ದಾನಿ ದಿ ಸರ್ವಶಕ್ತ ಒಂದು ನಿರಂತರ ಕ್ರಿಯೇಟರ್ ದಿ ಮಾಲೀಕ ಒಟ್ಟು ಒದಗಿಸುವವರು ಯುನಿವರ್ಸಲ್ ಟ್ರಸ್ಟೀ ಕಾದು ಒಂದು ದಿ ಆಫ್ ಗುದ್ ದಿ ರೆಕನಿಂಗ್ ಒಂದು ದಿ ಒಂದು ಮಾಡಾಳು ಯಾರು ಜೆಂಟಲ್ ದಿ ನೀಡುವ ದಿ ಉಳಿಸಿಕೊಳ್ಳುವುದು ಒಂದು ಲಾರ್ಡ್ ಒಳ್ಳೆ ದಿ ನಿಷ್ಪಕ್ಷಪಾತ ನಿರ್ಣಾಯಕ ಸುಪ್ರೀಂ ಇನ್ ಹಾನರ್ ಕ್ಯೂರ್ಸ್</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>ಗ್ರೇಟ್ ಮಾಸ್ಟರ್ಪೀಸ್ ಶಬ್ದಕೋಶ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ಹಂಗೇರಿಯನ್</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>ಮಾಲೆ</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>ಕ್ಸಿನ್ಹುಆ</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>ರಷ್ಯನ್</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ಫ್ರೆಂಚ್</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>ಸ್ಪ್ಯಾನಿಶ್</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>ಜರ್ಮನ್</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>ಅರೇಬಿಕ್</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ಹೀಬ್ರೂ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>ಮಾರ್ಫಾಲಜಿ ಪಾಠ 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>ಪದಗಳ ಬಿಲ್ಡರ್</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>ವಿಸ್ತೃತ Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ತುರ್ಕಿ</value>
+  </data>
 </root>

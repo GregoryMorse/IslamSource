@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>នេះសម្គាល់នេះប្រគល់ omnipotent មួយនេះបន្តអ្នកបង្កើតម្ចាស់ក្រុមហ៊ុនផ្តល់ចំនួនសរុបទទួលបានជាសកលនេះមើលមួយនេះបានប្រព្រឹត្ដល្អគិតគូរមួយនេះអ្នកដែលមិនអាចព្យាបាលបានទន់ភ្លន់អ្នកផ្ដល់ដែលបានទ្រទ្រង់មួយនេះព្រះអម្ចាស់បានល្អមិនលំអៀងចៅក្រមកំពូលនៅក្នុងកិត្តិយស</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>មហាស្នាដៃវាក្យសព្ទ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>morphology មេរៀន</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ហុងគ្រី</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>ម៉ាឡេ</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>ស៊ីនហួ</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>រូស្ស៊ី</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>បារាំង</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>អេស្ប៉ាញ</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>អាល្លឺម៉ង់</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>អារ៉ាប់</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ហ៊េបប្រ៊ូ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>morphology មេរៀនទី 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>morphology មេរៀនទី 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>morphology មេរៀនទី 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>morphology មេរៀនទី 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>morphology មេរៀន 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>morphology មេរៀនទី 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>morphology មេរៀន 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>morphology មេរៀន 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>morphology មេរៀនទី 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>morphology មេរៀន 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>សាងសង់ព្រះបន្ទូល</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>ពង្រីក Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ទូរគី</value>
+  </data>
 </root>

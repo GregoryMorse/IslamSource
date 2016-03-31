@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>ਪਛਾਣ ਕਰਤਾ, The ਦਾਤਾਰ, The ਸ਼ਕਤੀਵਾਨ ਇਕ ਲਗਾਤਾਰ ਸਿਰਜਣਹਾਰ ਹੈ ਵਾਚਟਾਵਰ ਮਾਲਕ ਕੁੱਲ ਪ੍ਰੋਵਾਈਡਰ ਯੂਨੀਵਰਸਲ ਟਰੱਸਟੀ ਦੀ ਖ਼ੁਸ਼ ਵਾਚਟਾਵਰ ਆਖ਼ ਇਕ ਹੈ ਵਾਚਟਾਵਰ ਇਕ ਜਾਗਦੇ ਰਹਿਣ ਦਾ ਇਕ ਵਾਚਟਾਵਰ ਕਰਤਾ ਕੌਣ ਹੈ ਕੋਮਲਤਾ ਨਾਲ ਪੇਸ਼ The ਦੇਣ ਵਾਲਾ ਹੈ ਵਾਚਟਾਵਰ ਕਾਇਮ ਇਕ ਪ੍ਰਭੂ ਹੈ ਵਾਚਟਾਵਰ ਚੰਗਾ ਵਾਚਟਾਵਰ ਨਿਰਪੱਖ ਜੱਜ ਸੁਪਰੀਮ ਸਨਮਾਨ ਵਿਚ ਕੱਢਣ ਦਾ</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>ਮਹਾਨ ਮਾਅਨਿਆ ਸ਼ਬਦਾਵਲੀ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ਹੰਗੇਰਿਅਨ</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>ਮਲਯ</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>ਸਿਨਹੂਆ</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>ਰੂਸੀ</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ਫ਼੍ਰੈਂਚ</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>ਸਪੈਨਿਸ਼</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>ਜਰਮਨ</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>ਅਰਬੀ</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ਹਿਬਰੂ</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>ਵਿਗਿਆਨ ਪਾਠ 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>ਬਚਨ ਬਿਲਡਰ</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>ਐਕਸਟੈਡਿਡ Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ਤੁਰਕੀ</value>
+  </data>
 </root>

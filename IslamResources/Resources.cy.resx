@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Y Recognizer y Bestower yr un Omnipotent y crëwr parhaus y perchennog y darparwr cyfanswm cyffredinol y Ymddiriedolwr yr un barcud berson sy'n gweithredu o da y prysur bwyso un yr un sy'n iacháu y dyner y rhoddwr yr un gynhaliol yr Arglwydd da farnu y diduedd y Goruchaf yn fraint Pennaeth ffownten gwir</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Geirfa campwaith mawr</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Morffoleg wers</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Hwngareg</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Maleieg</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Rwsieg</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Ffrangeg</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Sbaeneg</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Almaeneg</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabeg</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hebraeg</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morffoleg gwers 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morffoleg gwers 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morffoleg gwers 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morffoleg gwers 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morffoleg gwers 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morffoleg gwers 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morffoleg gwers 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morffoleg gwers 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morffoleg gwers 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morffoleg gwers 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Adeiladwr gair</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Buckwalter estynedig</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Twrceg</value>
+  </data>
 </root>

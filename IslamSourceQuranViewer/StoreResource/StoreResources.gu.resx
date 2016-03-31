@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>શબ્દ અનુવાદ દ્વારા કુરાન શબ્દ</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>ટ્રેન્સલીટરેશન</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>અરબી</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>શ્લોક દ્વારા શ્લોક</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>શબ્દ દ્વારા શબ્દ</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>કુરાન</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>કુરાન દર્શક</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>શિક્ષણ, અભ્યાસ, સંશોધન, યાદ, પ્રતિબિંબ અને tajweed નિપુણતા માટે તેના અરેબિક, લિવ્યંતર અને અનુવાદ શબ્દ શબ્દ અને શ્લોક દ્વારા શ્લોક દ્વારા કુરાન.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>મુખ્ય કુરાન દર્શક.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>કુરાન</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>અનુવાદ</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>ટ્રેન્સલીટરેશન</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>અરબી</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>કુરાન</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>મુસલમાનોનો મુખ્ય ધર્મગ્રંથ</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>અલ-કુરાન</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>મુખ્ય કુરાન દર્શક.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>પ્રારંભિક આવૃત્તિ.</value>
   </data>
 </root>

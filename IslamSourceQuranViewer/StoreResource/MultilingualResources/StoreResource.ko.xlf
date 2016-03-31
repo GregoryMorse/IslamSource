@@ -245,6 +245,7 @@ Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszl
 English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
 Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
 Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Turkish word-by-word translation credit to Süleyman Ateş (http://www.kuranmeali.com/kelime.asp).
 Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
@@ -258,6 +259,7 @@ Zsuzsanna Halima 키스에 의해 Qur'an의 헝가리어 번역 마 자르 Iszla
 프로그램에 다른 번역 뿐만 아니라 다른 단어 대 단어 번역 마이크로소프트 번역 공급자 (http://www.microsoft.com/en-us/translator) 및 Google 번역 (http://translate.google.com)에 적립 하 고 정확 하지 않을 수 있습니다.  말레이시아--단어 Qur'an에 대 한 인도네시아입니다.  다른 모든 단어에 의해 Qur'an에 대 한 영어 Quranic 아랍어 모음입니다. 
 비트 레이트 표시와 다른 오디오 낭독 모든 녀 (http://www.everyayah.com)에 적립. 
 는 유니코드 컨소시엄 (http://www.unicode.org)에 적립 하는 유니코드 데이터</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
       </group>
     </body>

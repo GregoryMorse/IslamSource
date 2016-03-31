@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>जे भाषांतर कुराण शब्द</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>लिप्यंतरण</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>अरबी</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>काव्य करून काव्य</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>शब्द जे</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>कुराण</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>कुराण दर्शक</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(क) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>त्याच्या अरबी, शिक्षण, अभ्यास, संशोधन, memorization, प्रतिबिंब आणि tajweed च्या प्रभुत्व साठी काव्य जे आणि पद्य करून लिप्यंतरण आणि अनुवाद शब्द, कुराण.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>मुख्य कुराण युअर.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>कुराण</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>अनुवाद</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>लिप्यंतरण</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>अरबी</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>कुराण</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>कुराण</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>अल-कुराण</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>मुख्य कुराण युअर.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>प्रारंभिक आवृत्ती.</value>
   </data>
 </root>

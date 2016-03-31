@@ -245,6 +245,7 @@ Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszl
 English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
 Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
 Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Turkish word-by-word translation credit to Süleyman Ateş (http://www.kuranmeali.com/kelime.asp).
 Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
@@ -258,6 +259,7 @@ Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source
 อื่น ๆ แปลคำโดยคำรวมทั้งคำแปลอื่น ๆ ในโปรแกรมเครดิตที่ผู้ให้บริการการแปลของ Microsoft (http://www.microsoft.com/en-us/translator) และ Google แปล (http://translate.google.com) และอาจไม่ถูกต้อง  สำหรับอัลกุรอานคำโดยคำมาเลเซีย แหล่งที่มาคืออินโดนีเซีย  สำหรับทั้งหมดอื่น ๆ คำโดยคำอัลกุรอาน แหล่งที่มาคือ Corpus Quranic ภาษาอาหรับ ภาษาอังกฤษ 
 การอ่านอื่น ๆ เสียงกับอัตราบิตที่แสดงเครดิตทุก Ayah (http://www.everyayah.com) 
 ข้อมูล Unicode ที่เข้าใน Unicode Consortium (http://www.unicode.org)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
       </group>
     </body>

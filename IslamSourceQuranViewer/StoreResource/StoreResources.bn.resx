@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>ওয়ার্ড অনুবাদ দ্বারা কুরআন ওয়ার্ড</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>লিপ্যন্তর</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>আরবী</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>আয়াত দ্বারা পদ্য</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>শব্দ করে শব্দ</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>কুরআন</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>কুরআন ভিউয়ার</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(গ) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>শিক্ষা, পড়াশুনা, গবেষণা, মুখস্থ, প্রতিফলন এবং tajweed প্রভুত্ব জন্য তার আরবি, ট্রান্সলিটারেশন এবং অনুবাদ শব্দ শব্দ এবং আয়াত দ্বারা আয়াতে কুরআন.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>মূল কুরআন ভিউয়ার.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>কুরআন</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>অনুবাদ</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>লিপ্যন্তর</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>আরবী</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>কোরআন</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>কোরান</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>আল কোরআন</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>মূল কুরআন ভিউয়ার.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>প্রাথমিক সংস্করণ.</value>
   </data>
 </root>

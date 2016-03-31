@@ -37322,6 +37322,18 @@
           <source>Morphology Lesson 10</source>
           <target state="new">Morphology Lesson 10</target>
         </trans-unit>
+        <trans-unit id="IslamSource_WordBuilder" translate="yes" xml:space="preserve">
+          <source>Word Builder</source>
+          <target state="new">Word Builder</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_ExtendedBuckwalter" translate="yes" xml:space="preserve">
+          <source>Extended Buckwalter</source>
+          <target state="new">Extended Buckwalter</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_Turkish" translate="yes" xml:space="preserve">
+          <source>Turkish</source>
+          <target state="new">Turkish</target>
+        </trans-unit>
       </group>
     </body>
   </file>

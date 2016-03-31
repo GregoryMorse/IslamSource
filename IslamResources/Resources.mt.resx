@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Il recognizer il Bestower Il omnipotent One L kontinwu Ħallieq Il-Sid l-Fornitur Totali It-Trustee Universali Il attenti One L doer Ta Tajba Il Kalkolu One-One Min Ifejjaq il Ġentili l giver Il-tisħiħ tas One-Mulej Il-Tajba Il imparzjali Imħallef l-Suprema fl-unur</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Great Masterpiece Vokabolarju</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Lezzjoni morfoloġija</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ungeriż</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malaj</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Russu</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Franċiż</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Spanjol</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Ġermaniż</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Għarbi</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Ebrajk</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morfoloġija Lezzjoni 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morfoloġija Lezzjoni 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morfoloġija Lezzjoni 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Lezzjoni Morfoloġija 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfoloġija Lezzjoni 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Lezzjoni Morfoloġija 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfoloġija Lezzjoni 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Lezzjoni Morfoloġija 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Lezzjoni Morfoloġija 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Lezzjoni Morfoloġija 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>kelma bennej</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>estiża Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Tork</value>
+  </data>
 </root>

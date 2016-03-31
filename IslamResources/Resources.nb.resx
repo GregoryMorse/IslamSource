@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Håndskriftgjenkjenneren skjenkeren en allmektig kontinuerlig skaperen eier totale leverandøren Universal Tillitsmann vaktsom en Doer av gode tidsregning ett som kurer milde Giver opprettholde en Herren godt den upartisk dommer Høyesterett ære fontene-hode sannhetens</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Stor mesterverk ordforråd</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Morfologi leksjon</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ungarsk</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>malayisk</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>russisk</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>fransk</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>spansk</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>tysk</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>arabisk</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>hebraisk</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morfologi leksjon 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morfologi Leksjon 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morfologi Leksjon 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morfologi leksjon 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfologi Leksjon 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morfologi Leksjon 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfologi Leksjon 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morfologi leksjon 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morfologi Leksjon 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morfologi leksjon 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Word Builder</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Utvidet Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>tyrkisk</value>
+  </data>
 </root>

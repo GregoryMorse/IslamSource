@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>هن Recognizer ئي بخشڻھار هن جو چرخو هلائڻ هڪ مسلسل بڻائيندڙ مالڪ ڪل فراهم ڪرڻ جنهن کي آفاقي ڇڏ سٺي حساب هڪ هڪ جنھن کي شفا ڏيندو جڏهن ته سائر ئي بخشڻھار هن جي مد ۾ ھڪ پالڻھار ڪهاڻي هن غيرجانبدار جج سپريم شان ۾ ادراڪ هڪ ڪندو</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>وڏي Masterpiece ڪن لفظن</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Morphology عبرت</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ھنگري جو رھندڙ</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>ملائي</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>روسي</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>فرانسيسي</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>هسپانوي</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>جرمن</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>عربي</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>عبراني</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morphology عبرت 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morphology عبرت 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morphology عبرت 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morphology عبرت 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morphology عبرت 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morphology عبرت 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morphology عبرت 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morphology عبرت 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morphology عبرت 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morphology عبرت 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>ڪلام ٺاھيندڙ</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>پکڙيل Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ترڪي</value>
+  </data>
 </root>

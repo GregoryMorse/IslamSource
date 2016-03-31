@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>വാക്ക് പരിഭാഷ ഖുർആൻ വചനം</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>ലിപ്യന്തരണം</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>അറബിക്</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>വാക്യം വഴി വാക്യം</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>വാക്കുകളായോ</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>ഖുർആൻ</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>ഖുർആൻ കാഴ്ചക്കാരൻ</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>നിയമങ്ങള്</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(സി) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>അതിന്റെ അറബിക്, പഠന, പഠിക്കുന്ന, ഗവേഷണം, memorization, നിയമങ്ങള് പ്രതിഫലനവും അഗ്രഗണ്യനാക്കുന്നു വേണ്ടി വാക്യം വാക്കിൽ വാക്യം വഴി ലിപ്യന്തരണം പരിഭാഷയെ വചനം ഖുർആൻ.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>മെയിൻ ഖുർആൻ വ്യൂവർ.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>ഖുർആൻ</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>തര്‍ജ്ജമ</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>ലിപ്യന്തരണം</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>അറബിക്</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>ഖുർആൻ</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>ഖുര്ആന്</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>അൽ ഖുർആൻ</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>മെയിൻ ഖുർആൻ വ്യൂവർ.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>പ്രാരംഭ പതിപ്പ്.</value>
   </data>
 </root>

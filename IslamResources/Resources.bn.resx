@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>শনাক্তকারী দ্য দয়াবান দ্য সর্বশক্তিমান এক ক্রমাগত সৃষ্টিকর্তা দ্য মালিক মোট প্রোভাইডার ইউনিভার্সাল ট্রাস্টি ভাল দ্য হিসাব ওয়ান দি ওয়ান সতর্ক ওয়ান দি কর্তার কে সবিনয় দ্য দাতা দ্য সাসটেনিং একজন রব দ্য গুড দ্য নিরপেক্ষ বিচারক সুপ্রীম সম্মানে যাদুকরী</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>গ্রেট মাস্টারপিস শব্দভাণ্ডার</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>হাঙ্গেরীয়</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>মালয়ি</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>সিনহুয়া</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>রুশ</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ফরাসি</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>স্প্যানিশ</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>জার্মান</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>আরবী</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>হিব্রু</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>বহিঃ অঙ্গ সংস্থান পাঠ 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>শব্দ রচয়িতা</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>এক্সটেন্ডেড Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>তুর্কি</value>
+  </data>
 </root>

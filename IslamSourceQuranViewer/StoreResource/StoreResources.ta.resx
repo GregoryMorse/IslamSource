@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>வேர்ட் மொழிபெயர்ப்பு குர்ஆன் வார்த்தை</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>ஒலிபெயர்ப்பு</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>அரபு</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>வசனம் மூலம் வசனம்</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>வார்த்தை வார்த்தையாக</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>குர்ஆன்</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>குர்ஆன் பார்வையாளர்</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>தஜ்வீத்</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(இ) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>அதன் அரபு, வார்த்தை மற்றும் வசனம் மூலம் கற்றல், படிக்கும், ஆராய்ச்சி, நினைவாற்றலுக்கு, பிரதிபலிப்பு மற்றும் தஜ்வீத் தேர்ச்சிக்கு, வசனம் மூலம் ஒலிபெயர்ப்பு மற்றும் மொழிபெயர்ப்பு வார்த்தை குர்ஆன்.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>முதன்மை குர்ஆன் பார்வையாளர்.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>குர்ஆன்</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>மொழிபெயர்ப்பு</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>ஒலிபெயர்ப்பு</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>அரபு</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>குர்ஆன்</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>குரானை</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>அல்-குர்ஆன்</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>முதன்மை குர்ஆன் பார்வையாளர்.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>ஆரம்ப பதிப்பு.</value>
   </data>
 </root>

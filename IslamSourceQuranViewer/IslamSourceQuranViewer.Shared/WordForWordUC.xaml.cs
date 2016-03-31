@@ -648,7 +648,7 @@ namespace IslamSourceQuranViewer
         private List<MyRenderItem> _VerseReferences;
         public List<MyRenderItem> VerseReferences { get { return _VerseReferences; } set { _VerseReferences = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("VerseReferences")); } }
         private MyRenderItem _CurrentVerse;
-        public MyRenderItem CurrentVerse { get { return _CurrentVerse; } set { if (_CurrentVerse != null) _CurrentVerse.IsSelected = false; _CurrentVerse = value; _CurrentVerse.IsSelected = true; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("CurrentVerse")); } }
+        public MyRenderItem CurrentVerse { get { return _CurrentVerse; } set { if (_CurrentVerse != null) _CurrentVerse.IsSelected = false; _CurrentVerse = value; if (_CurrentVerse != null) _CurrentVerse.IsSelected = true; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("CurrentVerse")); } }
 #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;

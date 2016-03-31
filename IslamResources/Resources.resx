@@ -28110,4 +28110,7 @@
   <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
     <value>Extended Buckwalter</value>
   </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
 </root>

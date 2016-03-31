@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>ਬਚਨ ਅਨੁਵਾਦ ਕੇ ਕੁਰਾਨ ਦਾ ਬਚਨ</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>ਲਿਪੀਅੰਤਰਨ</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>ਅਰਬੀ</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>ਆਇਤ ਕੇ ਆਇਤ</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>ਬਚਨ ਕੇ ਬਚਨ</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>ਕੁਰਾਨ</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>ਕੁਰਾਨ ਦਰਸ਼ਕ</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(ੲ) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>ਸਿੱਖਣ, ਦਾ ਅਧਿਐਨ, ਖੋਜ, ਯਾਦ, ਰਿਫਲਿਕਸ਼ਨ ਅਤੇ tajweed ਦੀ ਮੁਹਾਰਤ ਦੇ ਲਈ ਇਸ ਦੇ ਅਰਬੀ, ਅੰਤਰਨ ਅਤੇ ਅਨੁਵਾਦ ਸ਼ਬਦ ਦਾ ਸ਼ਬਦ ਹੈ ਅਤੇ ਆਇਤ ਕੇ ਆਇਤ ਨਾਲ ਕੁਰਆਨ.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>ਮੁੱਖ ਕੁਰਾਨ ਦਰਸ਼ਕ ਹੈ.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>ਕੁਰਾਨ</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>ਤਰਜੁਮਾ</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>ਲਿਪੀਅੰਤਰਨ</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>ਅਰਬੀ</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>ਕੁਰਆਨ</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>ਕੁਰਾਨ</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>ਅਲ-ਕੁਰਾਨ</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>ਮੁੱਖ ਕੁਰਾਨ ਦਰਸ਼ਕ ਹੈ.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>ਸ਼ੁਰੂਆਤੀ ਵਰਜਨ.</value>
   </data>
 </root>

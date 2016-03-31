@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>The Recognizer The yawan kyauta The, Mai iya zartaswa Daya A Cigaba Mahaliccin The Owner The Total azurtãwa The Universal wakĩli The gani Daya The kyautatãwa The hisãbi Daya Wanda warkar The tausayi da mai bayarwa The riƙe Daya Ubangiji The Good The son zuciya a Alkalin Babbar A Daraja</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Great fitacciyar ƙamus</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>ilimin halittar jiki Warau</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Hungarian</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Faranci</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Sifanish</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Jaman</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Larabci</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Yahudanci</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Ilimin halittar jiki Darasi na 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Ilimin halittar jiki Warau 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Ilimin halittar jiki Darasi na 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Kalmar magini</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Extended Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
 </root>

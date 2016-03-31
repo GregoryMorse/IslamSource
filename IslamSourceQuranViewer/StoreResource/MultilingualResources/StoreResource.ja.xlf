@@ -245,6 +245,7 @@ Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszl
 English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
 Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
 Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Turkish word-by-word translation credit to Süleyman Ateş (http://www.kuranmeali.com/kelime.asp).
 Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
@@ -258,6 +259,7 @@ Al コーラン インドネシア (http://www.alquran-indonesia.com/web/quran) 
 プログラムで他の翻訳と同様、他の単語単位で翻訳マイクロソフト翻訳プロバイダー (http://www.microsoft.com/en-us/translator) と Google 翻訳 (http://translate.google.com) に入金し、正確なできない場合があります。 マレーシア単語単位で qur ' an のソースはインドネシアです。 他のすべての単語でクルアーンのソースは英語のコーラン アラビア語コーパスです。
 ビットレートが表示の他の音声朗読すべてアーヤ (http://www.everyayah.com) に入金します。
 Unicode データ、Unicode コンソーシアム (http://www.unicode.org) に入金</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
       </group>
     </body>

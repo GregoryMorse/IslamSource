@@ -245,6 +245,7 @@ Hungarian Translation of Qur'an by Kiss Zsuzsanna Halima credited to Magyar Iszl
 English Translation of Qu'ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
 Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
 Indonesian word-by-word translation credit to Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran).
+Turkish word-by-word translation credit to Süleyman Ateş (http://www.kuranmeali.com/kelime.asp).
 Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa Hadees (http://www.easyquranwahadees.com).
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
@@ -258,6 +259,7 @@ Traducció paraula-a prop-paraula urdú per Hafiz Nazar Muhammad acreditat a fà
 Altres traduccions paraula per paraula, així com altres traduccions en el programa acreditat a proveïdor de traducció de Microsoft (http://www.microsoft.com/en-us/translator) i Google Translate (http://translate.google.com) i poden no ser acurats.  Per a Malàisia paraula-a prop-paraula Qur ' an, la font és l'indonesi.  Per a tots els altres paraula-a prop-paraula Qur ' an, la font és anglès Alcorà àrab Corpus. 
 Altres recitacions amb Mostra bitrate d'àudio acreditat a cada Aleia (http://www.everyayah.com). 
 Amb les dades Unicode acreditat al Consorci Unicode (http://www.unicode.org)</target>
+          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
         </trans-unit>
       </group>
     </body>

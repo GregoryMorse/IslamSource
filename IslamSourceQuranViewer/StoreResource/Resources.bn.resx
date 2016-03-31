@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>আরবি হরফ</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>ফিরে যান</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>ফন্টের আকার কমান</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>ডিফল্ট ফন্ট সাইজ</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>শিক্ষা, পড়াশুনা, গবেষণা, মুখস্থ, প্রতিফলন এবং tajweed প্রভুত্ব জন্য তার আরবি, ট্রান্সলিটারেশন এবং অনুবাদ শব্দ শব্দ এবং আয়াত দ্বারা আয়াতে কুরআন.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>কুরআন শব্দ করে শব্দ</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>ফন্টের আকার বাড়ান</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>অন্যান্য টেক্সট ফন্ট</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>পারিশ্রমিক</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>বিন্যাসন</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>দেখান অনুবাদ</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>দেখান লিপ্যন্তর</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>দেখান শব্দ করে শব্দ</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>আকার</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>তেলাওয়াত রুল শোভা ব্যবহার</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>নির্ধারিত ভাষা</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>যোগ ও বুকমার্ক</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>ক্লিপবোর্ডে অনুলিপি করুন</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>শ্লোক যান</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>বিরতি দিন</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>চালান</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>পাঠক</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>পুস্তক সরান</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>সেট প্লেব্যাক আয়াত</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>দেখান বাইবেলের সমালোচনা ও ভাষ্য</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>অংশীদারি</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>অতিরিক্ত আয়াত অগ্রিম বিলম্ব</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>অগ্রিম আয়াত স্বয়ংক্রিয়ভাবে</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>আয়াতের বিলম্ব দৈর্ঘ্য আগুয়ান আগে</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping মোড</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>সম্পর্কে</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;মেটাডেটা এবং সব অনুবাদ এবং তানজিল প্রজেক্ট (http://tanzil.net) জমা তালিকাভুক্ত ব্যতীত কিছু অডিও কোরআন তেলাওয়াত দিয়ে আরবি কোরআন দিয়েছি.&lt;br&gt;</value>
   </data>
 </root>

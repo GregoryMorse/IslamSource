@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>არაბული Font</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>უკან</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>შრიფტის ზომის შემცირება</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default ფონტის ზომა</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>ყურანი თავისი არაბული, ტრანსლიტერაცია და თარგმანი სიტყვა-სიტყვით და ლექსი by ლექსი სწავლა, შესწავლა, კვლევა, დამახსოვრების, ასახვა და ოსტატობის tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran სიტყვა-სიტყვით</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>შრიფტის ზომის გაზრდა</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>სხვა ტექსტის ფონტის</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>მიეცით</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>პარამეტრები</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Show თარგმანი</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Show ტრანსლიტერაცია</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>აჩვენეთ სიტყვა-სიტყვით</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>ზომა</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>გამოიყენეთ Recitation წესის Coloring</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>ნაგულისხმები ენა</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>Add &amp;Bookmark</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>გაცვლის ბუფერში კოპირება</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>გადასვლა ლექსი</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>პაუზა</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>დაკვრა</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>წაშლა Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>დაკვრის Verse</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Show Exegesis</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>ზიარი</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>დამატებითი ლექსის Advance Delay</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance ლექსის ავტომატურად</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Delay სიგრძე ლექსის წინ მიიწევს</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping რეჟიმი</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>შესახებ</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;არაბული ყურანი მეტადატის და ყველა თარგმანები და რამდენიმე აუდიო recitations გარდა ჩამოთვლილი ჩაირიცხება Tanzil Project (http://tanzil.net).&lt;br&gt;</value>
   </data>
 </root>

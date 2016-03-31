@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>عربي اکرن ۾</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>واپس</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>فانٽ سائيز گھٽايو</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>ھونئن اکرن ۾ ماپ</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>ان عربي، سکيا، زير تعليم، تحقيق، حفظ، سوچ ۽ tajweed جي غالب لاء آيت جي لفظ ۽ آيت جي transliteration ۽ ترجمي لفظ سان (قرآن).</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>قرآن ڪلام جو قسم حڪم</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>فانٽ سائيز وڌايو</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>ٻي لکت</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>وڃايو</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>سيٽنگون</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>نظر ترجمو</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>نظر Transliteration</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>ڏيکاريو ڪلام جو قسم حڪم</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>سائيز</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>هائيه نقطا Coloring استعمال ڪريو</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>ھونئن ٻولي</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>&amp;بوڪ مارڪ اضافو ڪريو</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>ڪلپ بورڊ ڏانهن نقل ڪريو</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>وڃڻو ڏانھن وڃو</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>روڪيو</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>کيڏو</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>فهد ميمڻ هٽائي ڇڏيو</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>سيٽ Playback وڃڻو</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>نظر Exegesis</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>حصيداري ڪريو</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>ايڊيشنل وڃڻو اڳواٽ دير</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>اڳواٽ وڃڻو خودبخود</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>وڃڻو جي ڊگھائي دير وڌڻ کان اڳ</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Looping موڊ</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>بابت</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;بازارن ۽ Tanzil پروجيڪٽ (http://tanzil.net) کي ڏنل آھن تن کان سواء سڀني ترجمو ۽ ڪجهه ٻڌڻ recitations سان گڏ عربي قرآن.&lt;br&gt;</value>
   </data>
 </root>

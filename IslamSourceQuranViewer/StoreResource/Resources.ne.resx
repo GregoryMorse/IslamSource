@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>अरबी फन्ट</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>पछाडि</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>फन्ट साइज घटाउनुहोस्</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>पूर्वनिर्धारित फन्ट साइज</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>यसको अरबी, सिक्ने, अध्ययन, अनुसन्धान, कण्ठ, विचार र tajweed को महारत लागि रूपान्तरण र अनुवाद शब्द शब्द र पद द्वारा पद द्वारा संग कुरान।</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>कुरान अपरान्ह</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>फन्ट साइज बढाउनुहोस्</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>अन्य पाठ फन्ट</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>प्रस्तुत</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>सेटिङहरू</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>अनुवाद शो</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>ट्रान्सलिटेरेशन शो</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>अपरान्ह देखाउन</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>साइज</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>मन्त्रोच्चारण नियम रंग प्रयोग</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>पूर्वनिर्धारित भाषा</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>पुस्तक चिन्ह &amp;थप्नुहोस्</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>क्लिपबोर्डमा प्रतिलिपि बनाउनुहोस्</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>पद जानुहोस्</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>पज गर्नुहोस्</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>प्ले गर्नुहोस्</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>बुकमार्क हटाउन</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>प्लेब्याक पद सेट</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Exegesis शो</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>साझा गर्नुहोस्</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>थप पद अग्रिम ढिलाइ</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>अग्रिम पद स्वत</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>पद को ढिलाइ लंबाई अग्रिम अघि</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>लुप मोड</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>बारेमा</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;मेटाडाटा र सबै अनुवाद र Tanzil परियोजना (http://tanzil.net) जम्मा सूचीबद्ध ती बाहेक केही अडियो recitations संग अरबी कुरान।&lt;br&gt;</value>
   </data>
 </root>

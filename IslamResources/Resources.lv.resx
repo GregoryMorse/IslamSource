@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Atpazinēja Bestower visvarens vienu nepārtrauktu radītājs īpašnieka kopējā pakalpojuma sniedzējs universālā Trustee uzmanīgas viens labs izpildītājs ieskaita vienu, kurš dziedina maigu Giver uzturēt viens kungam labu objektīvu spriest par godu no pirmavota patiesības augstākās</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Liels šedevru Vocabulary</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Morfoloģijas mācību</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ungāru</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malajiešu</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Krievu</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Franču</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Spāņu</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Vācu</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arābu</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Ivrits</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>1. nodarbība morfoloģija</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>2. nodarbība morfoloģija</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morfoloģijas nodarbība 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>4. nodarbība morfoloģija</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfoloģijas nodarbība 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morfoloģijas nodarbība 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfoloģijas Nodarbība 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morfoloģijas nodarbība 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morfoloģijas nodarbība 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morfoloģijas nodarbība 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Word celtnieks</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Paplašinātā Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turku</value>
+  </data>
 </root>

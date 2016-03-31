@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Разпознаване дарителят всемогъщ една непрекъсната създател собственик общата доставчик на универсалната Trustee зоркото един изпълнител на добро Reckoning едно този, който лекува леко даващия поддържане една Господ добро безпристрастен съдия на Всевишния в чест на фонтан главата на истината</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Голям шедьовър речник</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Морфология урок</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Унгарски</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Малайски</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Синхуа</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Руски</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Френски</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Испански</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Немски</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Арабски</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Иврит</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Морфология урок 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Морфология урок 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Морфология урок 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Морфология урок 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Морфология урок 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Морфология урок 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Морфология урок 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Морфология урок 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Морфология урок 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Морфология урок 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Строител дума</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Разширено Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Турски</value>
+  </data>
 </root>

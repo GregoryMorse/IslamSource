@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>รู้ Bestower หนึ่งอำนาจทุกอย่างการผู้ดูแลผู้สร้างเจ้าของผู้ให้บริการทั้งหมดสากลต่อเนื่องผลประโยชน์หนึ่งจับ Doer ดี Reckoning ที่หนึ่งผู้รักษาอ่อนโยนเป็นผู้ให้หนึ่งเครือพระดีที่เป็นกลางตัดสินฎีกาเกียรติหัวน้ำพุของความจริง</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>คำศัพท์ดีผลงานชิ้นเอก</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>บทเรียนสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>ฮังการี</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>มลายู</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>ซินหัว</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>รัสเซีย</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>ฝรั่งเศส</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>สเปน</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>เยอรมัน</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>อาหรับ</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>ฮิบรู</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>บทที่ 1 ลักษณะทางสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>บทที่ 2 ลักษณะทางสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>บทที่ 3 ลักษณะทางสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>สัณฐานวิทยาบทที่ 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>บทที่ 5 ลักษณะทางสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>บทที่ 6 ลักษณะทางสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>สัณฐานวิทยาบทที่ 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>บทที่ 8 ลักษณะทางสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>บทที่ 9 สัณฐานวิทยา</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>บทที่ 10 ลักษณะทางสัณฐานวิทยา</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>สร้างคำ</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>ขยาย Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>ตุรกี</value>
+  </data>
 </root>

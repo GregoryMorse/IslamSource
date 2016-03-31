@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>Nodeems Wuert vum Wuert Iwwersetzung</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>Transliteration</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>Arabesch</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>Strof vun engem Aufsatz</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>Wuert vum Wuert</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>nodeems</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>nodeems zoumaachen</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(C) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Koran mat sengem arabesch, transliteration an Iwwersetzung Wuert vum Wuert a verschaaft vun verschaaft fir Léieren, ënnersicht, Fuerschung, memorization, Reflexiounen a Meeschterleeschtung vum tajweed.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>Main nodeems bastelen.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>nodeems</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>Iwwersetzung</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>Transliteration</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>Arabesch</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>Koran</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>Koran</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>Al-nodeems</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>Main nodeems bastelen.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>Initialen Version.</value>
   </data>
 </root>

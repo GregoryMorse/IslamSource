@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Te kaitohu Te Horo'ai te puai hope One te mutukore Kaihanga Te Owner te Kaiwhakaratonga Tapeke te Kaitiaki Universal te Tausiga One te Tokotaha O pai te E whakairia One te One wai Utaina te mahaki Te horoa te patururaa Kotahi te Ariki te pai te Ta'efilifilimānako Tiati te Hupirimi I roto i Honor</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Great faahiahia Vocabulary</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Akoranga Morphology</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Hanekariana</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Marei</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Ruhiana</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Wīwī</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Pāniora</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Tiamana</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arapika</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hiperu</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morphology Akoranga 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morphology Akoranga 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morphology Akoranga 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morphology Akoranga 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morphology Akoranga 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morphology Akoranga 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morphology Akoranga 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morphology Akoranga 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morphology Akoranga 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morphology Akoranga 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>kupu Kaihanga</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>roa Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Tākoru</value>
+  </data>
 </root>

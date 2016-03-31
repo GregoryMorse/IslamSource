@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Recognizer The verəndir The hakimi-mütləqdir bir davamlı Creator The Owner Ümumi Provider Universal Trustee Fəxri In One Lord The Good The qərəzsiz hakim Ali saxlanılması Gentle The qoyanın The Tedaviler Good The Reckoning One The One Of Ayıq One The edəndir</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Great Masterpiece Vocabulary</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>morfologiyası Dərs</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Macar</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malay</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Rus</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Fransız</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>İspan</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Alman</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Ərəb</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Yəhudi</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morfologiyası Dərs 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morfologiyası Dərs 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morfologiyası Dərs 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morfologiyası Dərs 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfologiyası Dərs 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morfologiyası Dərs 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfologiyası Dərs 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morfologiyası Dərs 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morfologiyası Dərs 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morfologiyası Dərs 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Word Builder</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Genişləndirilmiş Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Türk</value>
+  </data>
 </root>

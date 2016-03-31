@@ -12,20 +12,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>అరబిక్ ఫాంట్</value>
+  </data>
   <data name="Back.Label" xml:space="preserve">
     <value>వెనుకకు</value>
   </data>
   <data name="DecreaseFontSize.Label" xml:space="preserve">
     <value>ఫాంట్ పరిమాణం తగ్గించు</value>
   </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>డిఫాల్ట్ ఫాంట్ సైజు</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>అభ్యాసం, అధ్యయనం, పరిశోధన, కంఠస్థం, ప్రతిబింబం మరియు tajweed కుశలత కోసం దాని అరబిక్, లిప్యంతరీకరణ మరియు పద్యం ద్వారా పదం మరియు పద్యం ద్వారా అనువాదం పదంతో ఖురాన్.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran పద ద్వారా పద</value>
+  </data>
   <data name="IncreaseFontSize.Label" xml:space="preserve">
     <value>ఫాంట్ పరిమాణం పెంచు</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>ఇతర టెక్స్ట్ ఫాంట్</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>రెండర్</value>
   </data>
   <data name="Settings.Label" xml:space="preserve">
     <value>అమర్పులు</value>
   </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>అనువాద షో</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>ట్రాన్స్లిటరేషన్ షో</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>పద ద్వారా పద చూపించు</value>
+  </data>
   <data name="Size.Text" xml:space="preserve">
     <value>పరిమాణం</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>ఖుర్ఆన్ రూల్ కలరింగ్ ఉపయోగించండి</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>డిఫాల్ట్ భాషా</value>
   </data>
   <data name="AddBookmark.Text" xml:space="preserve">
     <value>&amp;బుక్‌మార్క్‌ను జోడించు</value>
@@ -36,16 +69,46 @@
   <data name="CopyToClipboard.Text" xml:space="preserve">
     <value>క్లిప్‌బోర్డ్‌కు కాపీ చేయి...</value>
   </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>పద్యం వెళ్ళండి</value>
+  </data>
   <data name="Pause.Label" xml:space="preserve">
     <value>Pause</value>
   </data>
   <data name="Play.Label" xml:space="preserve">
     <value>ప్లే చెయ్యి</value>
   </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>వల్లించేవాడు</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>బుక్మార్క్ తొలగించు</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>ప్లేబ్యాక్ వెర్స్ సెట్</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>షో ఎక్సజెసిస్</value>
+  </data>
   <data name="Share.Text" xml:space="preserve">
     <value>భాగస్వామ్యం</value>
   </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>అదనపు వెర్స్ అడ్వాన్స్ ఆలస్యం</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>అడ్వాన్స్ వెర్స్ స్వయంచాలకంగా</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>చేరుకుంటున్న ముందు వెర్స్ ఆలస్యం పొడవు</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>మళ్ళీ వెతికినా మోడ్</value>
+  </data>
   <data name="About.Label" xml:space="preserve">
     <value>గురించి</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;మెటాడేటా మరియు అన్ని అనువాదాలు మరియు Tanzil ప్రాజెక్ట్ (http://tanzil.net) జమ జాబితా ఆ తప్ప కొన్ని ఆడియో పారాయణాలు తో అరబిక్ ఖురాన్.&lt;br&gt;</value>
   </data>
 </root>

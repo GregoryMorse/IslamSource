@@ -15,16 +15,67 @@
   <data name="AdditionalLicenseTerms" xml:space="preserve">
     <value></value>
   </data>
+  <data name="AppFeature1" xml:space="preserve">
+    <value>ቃል ትርጉም በ ሳኒ ቃል</value>
+  </data>
+  <data name="AppFeature2" xml:space="preserve">
+    <value>በቋንቋ ፊደል</value>
+  </data>
   <data name="AppFeature3" xml:space="preserve">
     <value>አረቢኛ</value>
+  </data>
+  <data name="AppFeature4" xml:space="preserve">
+    <value>ቁጥር በ ቁጥር</value>
+  </data>
+  <data name="AppFeature5" xml:space="preserve">
+    <value>ቃል በቃል</value>
+  </data>
+  <data name="AppFeature6" xml:space="preserve">
+    <value>ሳኒ</value>
+  </data>
+  <data name="AppFeature7" xml:space="preserve">
+    <value>ሳኒ ተመልካች</value>
+  </data>
+  <data name="AppFeature8" xml:space="preserve">
+    <value>Tajweed</value>
+  </data>
+  <data name="CopyrightTrademarkInfo" xml:space="preserve">
+    <value>(ሐ) GMorseCode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>የመማር, ማጥናት, ምርምር, ማጥናት, ነጸብራቅ እና tajweed በቁጥጥር የሚሆን ጥቅስ ቃል ጥቅስ በውስጡ አረብኛ, በቋንቋ እና የትርጉም ቃል ጋር ቁርኣን.</value>
+  </data>
+  <data name="DesktopScreenshotDescription1" xml:space="preserve">
+    <value>ዋና ቁርአን ተመልካች.</value>
+  </data>
+  <data name="Keyword1" xml:space="preserve">
+    <value>ሳኒ</value>
   </data>
   <data name="Keyword2" xml:space="preserve">
     <value>ትርጉም</value>
   </data>
+  <data name="Keyword3" xml:space="preserve">
+    <value>በቋንቋ ፊደል</value>
+  </data>
   <data name="Keyword4" xml:space="preserve">
     <value>አረቢኛ</value>
   </data>
+  <data name="Keyword5" xml:space="preserve">
+    <value>ቁርአን</value>
+  </data>
+  <data name="Keyword6" xml:space="preserve">
+    <value>ቁርዓን</value>
+  </data>
+  <data name="Keyword7" xml:space="preserve">
+    <value>አል-ሳኒ</value>
+  </data>
+  <data name="MobileScreenshotDescription1" xml:space="preserve">
+    <value>ዋና ቁርአን ተመልካች.</value>
+  </data>
   <data name="PrivacyPolicy" xml:space="preserve">
     <value></value>
+  </data>
+  <data name="ReleaseNotes" xml:space="preserve">
+    <value>የመጀመሪያ ስሪት.</value>
   </data>
 </root>

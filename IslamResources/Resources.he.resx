@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>מזהה Bestower האחד יכול הבורא רציפה בעל הספק הכולל האוניברסלי נאמן האחד הבוחנות את הרוצחת של הטוב החשבון אחד מי מרפא העדינה הנותן האחד מתפעל לשפוט משוא פנים האל הטוב העליון לכבוד ראש מזרקה האמת</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>אוצר מילים יצירת מופת נהדרת</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>מורפולוגיה שיעור</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>‏‏הונגרית</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>‏‏מלזית</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>שין-הואה</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>‏‏רוסית</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>צרפתית</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>‏‏ספרדית</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>גרמנית</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>‏‏ערבית</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>‏‏עברית</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>מורפולוגיה שיעור 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>מורפולוגיה שיעור 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>מורפולוגיה שיעור 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>מורפולוגיה שיעור 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>מורפולוגיה שיעור 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>מורפולוגיה שיעור 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>מורפולוגיה שיעור 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>מורפולוגיה-שיעור 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>מורפולוגיה שיעור 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>מורפולוגיה שיעור 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>הקבלן המילה</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Buckwalter מורחבת</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>‏‏טורקית</value>
+  </data>
 </root>

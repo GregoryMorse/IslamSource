@@ -27933,4 +27933,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>An aitheantóir An Bestower An Omnipotent hAon An Cruthaitheoir Leanúnach An Úinéir an Soláthraí Iomlán An Iontaobhaí Uilíoch An watchful One An doer Chéasta An Reckoning One One Cé Cures An Gentle An giver An Coinneáil hAon An Tiarna An Chéasta An Breitheamh Neamhchlaonta An Uachtarach I Honor</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Mór Masterpiece Stór Focal</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Ungáiris</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malaeis</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Rúisis</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Fraincis</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Spáinnis</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Gearmáinis</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabach</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Eabhrais</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Déantar moirfeolaíocht Ceacht 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>focal Tógálaí</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Breisithe BUCKWALTER</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Tuircis</value>
+  </data>
 </root>

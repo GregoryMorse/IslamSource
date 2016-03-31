@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>Atpažinimą Bestower visagalis vienas nuolat kūrėjas savininkas viso universaliųjų paslaugų teikėjo Trustee akylas vienas geros darytojas, procesinius vienas tas, kuris gydo švelniai davėjas palaikyti vienas Viešpats geras ir nešališkai spręsti Aukščiausiojo garbei fontanas vedėjas tiesos</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Didelis šedevras žodyną</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Morfologija pamoka</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Vengrų</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malajiečių</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Rusų</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Prancūzų</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Ispanų</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Vokiečių</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Arabų</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hebrajų</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Morfologija pamoka 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Morfologija pamoka 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Morfologija pamoka 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Morfologija pamoka 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfologija pamoka 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morfologija pamoka 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfologija pamoka 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morfologija pamoka 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morfologija pamoka 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morfologija pamoka 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Žodžio statybininkas</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Išplėstas Buckwalter</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turkų</value>
+  </data>
 </root>

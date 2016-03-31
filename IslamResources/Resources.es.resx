@@ -27936,4 +27936,76 @@
   <data name="IslamInfo_AsmaAlHusnaBatch5" xml:space="preserve">
     <value>El reconocedor el iniciador uno omnipotente creador continuo el titular el proveedor Total el Universal trasteos que atenta el hacedor del bien el cómputo uno quien cura el apacible el dador de una sustentante el Señor bien el imparcial Juez Supremo en Honor a la cabeza de la fuente de la verdad</value>
   </data>
+  <data name="IslamInfo_GreatMasterpieceVocabulary" xml:space="preserve">
+    <value>Vocabulario de la gran obra maestra</value>
+  </data>
+  <data name="IslamInfo_SarfLesson" xml:space="preserve">
+    <value>Lección de morfología</value>
+  </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Húngaro</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Malayo</value>
+  </data>
+  <data name="IslamSource_Xinhua" xml:space="preserve">
+    <value>Xinhua</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Ruso</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Francés</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Español</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Alemán</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Árabe</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Hebreo</value>
+  </data>
+  <data name="IslamInfo_SarfLesson1" xml:space="preserve">
+    <value>Lección de morfología 1</value>
+  </data>
+  <data name="IslamInfo_SarfLesson2" xml:space="preserve">
+    <value>Lección de morfología 2</value>
+  </data>
+  <data name="IslamInfo_SarfLesson3" xml:space="preserve">
+    <value>Lección de morfología 3</value>
+  </data>
+  <data name="IslamInfo_SarfLesson4" xml:space="preserve">
+    <value>Lección de morfología 4</value>
+  </data>
+  <data name="IslamInfo_SarfLesson5" xml:space="preserve">
+    <value>Morfología Lección 5</value>
+  </data>
+  <data name="IslamInfo_SarfLesson6" xml:space="preserve">
+    <value>Morfología Lección 6</value>
+  </data>
+  <data name="IslamInfo_SarfLesson7" xml:space="preserve">
+    <value>Morfología lección 7</value>
+  </data>
+  <data name="IslamInfo_SarfLesson8" xml:space="preserve">
+    <value>Morfología lección 8</value>
+  </data>
+  <data name="IslamInfo_SarfLesson9" xml:space="preserve">
+    <value>Morfología Lección 9</value>
+  </data>
+  <data name="IslamInfo_SarfLesson10" xml:space="preserve">
+    <value>Morfología lección 10</value>
+  </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Constructor de la palabra</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Buckwalter extendido</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Turco</value>
+  </data>
 </root>
