@@ -28104,4 +28104,10 @@
   <data name="IslamInfo_SarfLesson10" xml:space="preserve">
     <value>Morphology Lesson 10</value>
   </data>
+  <data name="IslamSource_WordBuilder" xml:space="preserve">
+    <value>Word Builder</value>
+  </data>
+  <data name="IslamInfo_ExtendedBuckwalter" xml:space="preserve">
+    <value>Extended Buckwalter</value>
+  </data>
 </root>

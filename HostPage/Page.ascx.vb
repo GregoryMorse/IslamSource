@@ -119,7 +119,7 @@ Partial Class Page
                 AddToJSFunctions(Renderer.GetRenderJS())
             Else
                 RenderArrayWeb.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, Item.Name)
-                For Each Strs As String() In DirectCast(Output, Object())
+                For Each Strs As String() In RenderArrayWeb.GetTableJSFunctions(DirectCast(Output, Object()))
                     AddToJSFunctions(Strs)
                 Next
             End If
@@ -274,12 +274,20 @@ Partial Class Page
             writer.WriteFullBeginTag("br")
         ElseIf Not UsePrint And (PageLoader.IsEditItem(Item)) Then
             writer.Write(vbCrLf + BaseTabs)
+            Dim OnChangeJS() As String = Nothing
+            If Not DirectCast(Item, PageLoader.EditItem).OnChangeFunction Is Nothing Then
+                OnChangeJS = CType(DirectCast(Item, PageLoader.EditItem).OnChangeFunction.Invoke(Nothing, Nothing), String())
+                AddToJSFunctions(OnChangeJS)
+            End If
             If (DirectCast(Item, PageLoader.EditItem).Rows > 1) Then
                 writer.WriteBeginTag("textarea")
                 writer.WriteAttribute("name", DirectCast(Item, PageLoader.EditItem).Name)
                 writer.WriteAttribute("id", DirectCast(Item, PageLoader.EditItem).Name)
                 writer.WriteAttribute("cols", "80")
                 writer.WriteAttribute("rows", DirectCast(Item, PageLoader.EditItem).Rows.ToString())
+                If Not DirectCast(Item, PageLoader.EditItem).OnChangeFunction Is Nothing Then
+                    writer.WriteAttribute("oninput", OnChangeJS(0))
+                End If
                 writer.Write(HtmlTextWriter.TagRightChar)
                 If Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
                     writer.Write(Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name))
@@ -300,6 +308,9 @@ Partial Class Page
                 End If
 
                 If DirectCast(Item, PageLoader.EditItem).Rows <> 0 Then writer.WriteAttribute("size", "20")
+                If Not DirectCast(Item, PageLoader.EditItem).OnChangeFunction Is Nothing Then
+                    writer.WriteAttribute("oninput", OnChangeJS(0))
+                End If
                 writer.Write(HtmlTextWriter.TagRightChar)
             End If
         ElseIf Not UsePrint And (PageLoader.IsDateItem(Item)) Then

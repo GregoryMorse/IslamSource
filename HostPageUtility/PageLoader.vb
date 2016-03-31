@@ -969,11 +969,13 @@ Public Class PageLoader
         Dim DefaultValue As String
         Dim Rows As Integer
         Dim Password As Boolean
-        Public Sub New(ByVal NewName As String, ByVal NewDefaultValue As String, ByVal NewRows As Integer, Optional ByVal NewPassword As Boolean = False)
+        Dim OnChangeFunction As Reflection.MethodInfo
+        Public Sub New(ByVal NewName As String, ByVal NewDefaultValue As String, ByVal NewRows As Integer, Optional ByVal NewPassword As Boolean = False, Optional ByVal NewOnChange As String = "")
             Name = NewName
             DefaultValue = NewDefaultValue
             Rows = NewRows
             Password = NewPassword
+            If NewOnChange <> String.Empty Then OnChangeFunction = UtilityWeb.LookupClassMember(NewOnChange)
         End Sub
     End Structure
     Structure DateItem
@@ -1145,9 +1147,10 @@ Public Class PageLoader
                                     Utility.ParseValue(XMLChildNode.Attribute("onclick"), String.Empty), _
                                     Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)))
         ElseIf XMLChildNode.Name = "edit" Then
-            List.Add(New EditItem(XMLChildNode.Attribute("name").Value, _
-                                  Utility.ParseValue(XMLChildNode.Attribute("defaultvalue"), String.Empty), _
-                                  CInt(Utility.ParseValue(XMLChildNode.Attribute("rows"), "1"))))
+            List.Add(New EditItem(XMLChildNode.Attribute("name").Value,
+                                  Utility.ParseValue(XMLChildNode.Attribute("defaultvalue"), String.Empty),
+                                  CInt(Utility.ParseValue(XMLChildNode.Attribute("rows"), "1")), False,
+                                   Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty)))
         ElseIf XMLChildNode.Name = "date" Then
             List.Add(New DateItem(XMLChildNode.Attribute("name").Value, _
                                   XMLChildNode.Attribute("description").Value))

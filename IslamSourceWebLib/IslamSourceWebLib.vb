@@ -23,11 +23,6 @@ Public Class PrayerTimeWeb
     End Function
 End Class
 Public Class ArabicWeb
-    Public Shared Sub CompileRegexes()
-        Dim regexinfos As New List(Of System.Text.RegularExpressions.RegexCompilationInfo)
-        'regexinfos.Add(New System.Text.RegularExpressions.RegexCompilationInfo(pattern, System.Text.RegularExpressions.RegexOptions.None, name:=, "TranslitRegexes", False))
-        System.Text.RegularExpressions.Regex.CompileToAssembly(regexinfos.ToArray(), New Reflection.AssemblyName("IslamSourceRegex, Version=1.0.0.1001, Culture=neutral, PublicKeyToken=null"))
-    End Sub
     Public Shared Function DecodeTranslitScheme() As String
         'QueryString instead of Params?
         Return Arabic.DecodeTranslitScheme(HttpContext.Current.Request.Params("translitscheme"))
@@ -727,7 +722,10 @@ Public Class ArabicWeb
         Return GetJS.ToArray()
     End Function
     Public Shared Function GetSchemeChangeJS() As String()
-        Return New String() {"javascript: doSchemeChange();", String.Empty, "function doSchemeChange() { $('#operation_').css('display', $('#scheme2').prop('checked') ? 'block' : 'none'); $('#fromscript_').css('display', $('#scheme1').prop('checked') ? 'block' : 'none'); $('#toscript_').css('display', $('#scheme1').prop('checked') ? 'block' : 'none'); $('#translitscheme_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); $('#translitscheme').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); $('#direction_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); }"}
+        Return New String() {"javascript: doSchemeChange();", String.Empty, "function doSchemeChange() { $('#wordbywordedit').css('display', $('#scheme3').prop('checked') ? 'block' : 'none'); $('#operation_').css('display', $('#scheme2').prop('checked') ? 'block' : 'none'); $('#fromscript_').css('display', $('#scheme1').prop('checked') ? 'block' : 'none'); $('#toscript_').css('display', $('#scheme1').prop('checked') ? 'block' : 'none'); $('#translitscheme_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); $('#translitscheme').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); $('#direction_').css('display', $('#scheme0').prop('checked') ? 'block' : 'none'); }"}
+    End Function
+    Public Shared Function GetSchemeChangeUpdateJS() As String()
+        Return New String() {"javascript: doSchemeChangeUpdate()", String.Empty, "function doSchemeChangeUpdate() { if (!$('#scheme3').prop('checked')) return; $('#translitvalue').attr('dir', 'rtl').css('height', '400px').css('overflow-y', 'scroll'); var srcs = doTransliterate($('#translitedit').val(), $('#direction0').prop('checked'), parseInt($('#translitscheme').val(), 10)).split(' '), tsrcs = $('#translitedit').val().split(' '), words = $('#wordbywordedit').val().split('|'), ctls = $('#translitvalue').children(), ct; for (ct = 0; ct < Math.max(srcs.length, words.length); ct++) { if (ct >= ctls.length) { $('#translitvalue').append(document.createElement('div')); ctls = $('#translitvalue').children(); ctls.eq(ct).addClass('multidisplay'); ctls.eq(ct).append(document.createElement('span')); ctls.eq(ct).append(document.createElement('span')); ctls.eq(ct).append(document.createElement('span')); ctls.eq(ct).children().eq(0).addClass('arabic'); ctls.eq(ct).children().eq(0).attr('dir', 'rtl'); ctls.eq(ct).children().eq(1).addClass('transliteration'); ctls.eq(ct).children().eq(1).attr('dir', 'ltr'); ctls.eq(ct).children().eq(2).addClass('translation'); ctls.eq(ct).children().eq(2).attr('dir', 'ltr'); } if (srcs[ct] !== ctls.eq(ct).children().eq(0).text()) ctls.eq(ct).children().eq(0).text(srcs[ct]); if (tsrcs[ct] !== ctls.eq(ct).children().eq(1).text()) ctls.eq(ct).children().eq(1).text(tsrcs[ct]); if (words[ct] !== ctls.eq(ct).children().eq(2).text()) ctls.eq(ct).children().eq(2).text(words[ct]); } for (; ct < ctls.length; ct++) { ctls.eq(ct).remove(); } }"}
     End Function
 End Class
 Public Class ArabicFont
