@@ -1818,4 +1818,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>iOphareyitha yoMbutho ye-N-ary ngoPlasi</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>i-Hungarian</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>I-Malay</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>isiRashiya</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>isiFrentshi</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Isi-Spanish</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>isiJamani</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>IsiArabhu</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>isiHebhere</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>isi-Turkey</value>
+  </data>
 </root>

@@ -127,12 +127,16 @@
     </Grid>
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="ZoomIn" Click="ZoomIn_Click" x:Uid="IncreaseFontSize" Icon="FontIncrease"></AppBarButton>
-            <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" x:Uid="DecreaseFontSize" Icon="FontDecrease"></AppBarButton>
-            <AppBarButton Name="PlayPause" Click="PlayPause_Click" x:Uid="Play" Icon="Play"></AppBarButton>
-            <AppBarButton Name="GoToVerse" Click="GoToVerse_Click" x:Uid="GoToVerse" Icon="List"></AppBarButton>
-            <AppBarButton Name="Default" Click="Default_Click" x:Uid="DefaultFontSize" Icon="FontSize"></AppBarButton>
-            <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Name="ZoomIn" Click="ZoomIn_Click" x:Uid="IncreaseFontSize" Icon="FontIncrease"></AppBarButton>
+                <AppBarButton Name="ZoomOut" Click="ZoomOut_Click" x:Uid="DecreaseFontSize" Icon="FontDecrease"></AppBarButton>
+                <AppBarButton Name="PlayPause" Click="PlayPause_Click" x:Uid="Play" Icon="Play"></AppBarButton>
+                <AppBarButton Name="GoToVerse" Click="GoToVerse_Click" x:Uid="GoToVerse" Icon="List"></AppBarButton>
+            </CommandBar.PrimaryCommands>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Name="Default" Click="Default_Click" x:Uid="DefaultFontSize" Icon="FontSize"></AppBarButton>
+                <AppBarButton Name="Settings" Click="Settings_Click" x:Uid="Settings" Icon="Setting"></AppBarButton>
+            </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

@@ -1818,4 +1818,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>Setsamaisi sa Kopano ya N-ary le Tlhakanya</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Se-Hungary</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Se-Malay</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Se-Russia</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Sefora</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Sepaniše</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Sejeremane</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Searabia</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Sehebero</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>SeTurk</value>
+  </data>
 </root>

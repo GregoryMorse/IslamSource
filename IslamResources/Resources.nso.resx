@@ -1821,4 +1821,31 @@
   <data name="IslamInfo_NAryUnionOperatorWithPlus" xml:space="preserve">
     <value>Sediriši sa Kopanyo ya N-ari sa Leswao la go Hlakanya</value>
   </data>
+  <data name="IslamSource_Hungarian" xml:space="preserve">
+    <value>Sehankari</value>
+  </data>
+  <data name="IslamSource_Malay" xml:space="preserve">
+    <value>Semalayi</value>
+  </data>
+  <data name="IslamSource_Russian" xml:space="preserve">
+    <value>Serašia</value>
+  </data>
+  <data name="IslamSource_French" xml:space="preserve">
+    <value>Mofora</value>
+  </data>
+  <data name="IslamSource_Spanish" xml:space="preserve">
+    <value>Sepeniše</value>
+  </data>
+  <data name="IslamSource_German" xml:space="preserve">
+    <value>Mojeremane</value>
+  </data>
+  <data name="IslamSource_Arabic" xml:space="preserve">
+    <value>Searapo</value>
+  </data>
+  <data name="IslamSource_Hebrew" xml:space="preserve">
+    <value>Seheberu</value>
+  </data>
+  <data name="IslamInfo_Turkish" xml:space="preserve">
+    <value>Setheki</value>
+  </data>
 </root>

@@ -287,8 +287,10 @@ namespace IslamSourceQuranViewer
             this.NavigationCacheMode = NavigationCacheMode.Required;
 #endif
             gestRec = new Windows.UI.Input.GestureRecognizer();
-            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse;
+            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse | Windows.UI.Input.GestureSettings.Hold | Windows.UI.Input.GestureSettings.Tap | Windows.UI.Input.GestureSettings.DoubleTap | Windows.UI.Input.GestureSettings.RightTap;
             gestRec.Holding += OnHolding;
+            gestRec.RightTapped += OnRightTapped;
+            gestRec.Tapped += OnTapped;
         }
         private Windows.UI.Input.GestureRecognizer gestRec;
         private object _holdObj;
@@ -340,6 +342,18 @@ namespace IslamSourceQuranViewer
             {
                 DoHolding(_holdObj);
                 gestRec.CompleteGesture();
+            }
+        }
+        void OnRightTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.RightTappedEventArgs args)
+        {
+            DoHolding(_holdObj);
+            gestRec.CompleteGesture();
+        }
+        void OnTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.TappedEventArgs args)
+        {
+            sectionListBox.SelectedItem = (_holdObj as TextBlock).DataContext;
+            if (args.TapCount >= 2) {
+                sectionListBox_DoubleTapped(null, null);
             }
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)

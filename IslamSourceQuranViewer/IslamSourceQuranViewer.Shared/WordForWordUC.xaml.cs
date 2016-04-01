@@ -48,8 +48,9 @@ namespace IslamSourceQuranViewer
             (this.BottomAppBar as CommandBar).PrimaryCommands.Add(RenderButton);
 #endif
             gestRec = new Windows.UI.Input.GestureRecognizer();
-            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse;
+            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse | Windows.UI.Input.GestureSettings.Hold | Windows.UI.Input.GestureSettings.RightTap;
             gestRec.Holding += OnHolding;
+            gestRec.RightTapped += OnRightTapped;
         }
         private Windows.UI.Input.GestureRecognizer gestRec;
         private object _holdObj;
@@ -102,6 +103,11 @@ namespace IslamSourceQuranViewer
                 DoHolding(_holdObj);
                 gestRec.CompleteGesture();
             }
+        }
+        void OnRightTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.RightTappedEventArgs args)
+        {
+            DoHolding(_holdObj);
+            gestRec.CompleteGesture();
         }
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
