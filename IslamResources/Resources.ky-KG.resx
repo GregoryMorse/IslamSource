@@ -1830,4 +1830,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Түрк</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Жок</value>
+  </data>
 </root>

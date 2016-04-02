@@ -900,4 +900,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>ຕຸຣະກີ</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>ບໍ່ມີ</value>
+  </data>
 </root>

@@ -1851,4 +1851,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Tọ́kíìsì</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Kòsí</value>
+  </data>
 </root>

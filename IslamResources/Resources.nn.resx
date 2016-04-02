@@ -1863,4 +1863,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Tyrkisk</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Ingen</value>
+  </data>
 </root>

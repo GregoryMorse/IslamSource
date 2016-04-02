@@ -1848,4 +1848,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Setheki</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Ga e gona</value>
+  </data>
 </root>

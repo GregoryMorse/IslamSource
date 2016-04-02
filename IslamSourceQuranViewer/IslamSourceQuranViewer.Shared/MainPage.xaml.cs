@@ -299,10 +299,10 @@ namespace IslamSourceQuranViewer
             var ps = e.GetIntermediatePoints(null);
             if (ps != null && ps.Count > 0)
             {
-                _holdObj = null;
                 gestRec.ProcessUpEvent(ps[0]);
                 e.Handled = true;
                 gestRec.CompleteGesture();
+                _holdObj = null;
             }
         }
         void OnPointerPressed(object sender, PointerRoutedEventArgs e)
@@ -340,20 +340,21 @@ namespace IslamSourceQuranViewer
         {
             if (args.HoldingState == Windows.UI.Input.HoldingState.Started)
             {
-                DoHolding(_holdObj);
+                if (_holdObj != null) DoHolding(_holdObj);
                 gestRec.CompleteGesture();
             }
         }
         void OnRightTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.RightTappedEventArgs args)
         {
-            DoHolding(_holdObj);
-            gestRec.CompleteGesture();
+            if (_holdObj != null) DoHolding(_holdObj);
         }
         void OnTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.TappedEventArgs args)
         {
-            sectionListBox.SelectedItem = (_holdObj as TextBlock).DataContext;
-            if (args.TapCount >= 2) {
-                sectionListBox_DoubleTapped(null, null);
+            if (_holdObj != null) {
+                sectionListBox.SelectedItem = (_holdObj as TextBlock).DataContext;
+                if (args.TapCount >= 2) {
+                    sectionListBox_DoubleTapped(null, null);
+                }
             }
         }
         protected override async void OnNavigatedTo(NavigationEventArgs e)

@@ -1629,4 +1629,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Türkçe</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Ýok</value>
+  </data>
 </root>

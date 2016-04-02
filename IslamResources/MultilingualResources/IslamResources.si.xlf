@@ -37334,6 +37334,10 @@
           <source>Turkish</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">තූර්කි</target>
         </trans-unit>
+        <trans-unit id="IslamInfo_None" translate="yes" xml:space="preserve">
+          <source>None</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">කිසිත් නැත</target>
+        </trans-unit>
       </group>
     </body>
   </file>

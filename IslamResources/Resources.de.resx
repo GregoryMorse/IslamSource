@@ -28008,4 +28008,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Türkisch</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Keine</value>
+  </data>
 </root>

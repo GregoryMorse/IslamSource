@@ -59,10 +59,10 @@ namespace IslamSourceQuranViewer
             var ps = e.GetIntermediatePoints(null);
             if (ps != null && ps.Count > 0)
             {
-                _holdObj = null;
                 gestRec.ProcessUpEvent(ps[0]);
                 e.Handled = true;
                 gestRec.CompleteGesture();
+                _holdObj = null;
             }
         }
         void OnPointerPressed(object sender, PointerRoutedEventArgs e)
@@ -100,13 +100,13 @@ namespace IslamSourceQuranViewer
         {
             if (args.HoldingState == Windows.UI.Input.HoldingState.Started)
             {
-                DoHolding(_holdObj);
+                if (_holdObj != null) DoHolding(_holdObj);
                 gestRec.CompleteGesture();
             }
         }
         void OnRightTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.RightTappedEventArgs args)
         {
-            DoHolding(_holdObj);
+            if (_holdObj != null) DoHolding(_holdObj);
             gestRec.CompleteGesture();
         }
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
@@ -123,7 +123,7 @@ namespace IslamSourceQuranViewer
             Selection = c.Selection;
             int JumpToChapter = c.JumpToChapter;
             int JumpToVerse = c.JumpToVerse;
-            this.ViewModel.RenderModels = await System.Threading.Tasks.Task.Run(() => VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), curWidth));
+            this.ViewModel.RenderModels = await System.Threading.Tasks.Task.Run(() => VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetRenderedQuranText(AppSettings.bShowTransliteration ? XMLRender.ArabicData.TranslitScheme.RuleBased : XMLRender.ArabicData.TranslitScheme.None, String.Empty, String.Empty, Division.ToString(), Selection.ToString(), !AppSettings.bShowTranslation ? "None" : IslamMetadata.CachedData.IslamData.Translations.TranslationList[AppSettings.iSelectedTranslation].FileName, AppSettings.bShowW4W ? "0" : "4", AppSettings.bUseColoring ? "0" : "1").Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), curWidth));
             if (curWidth == 0 && UIChanger.MaxWidth != 0) OnSizeChanged(this, null);
             if (JumpToChapter != -1)
             {
@@ -258,7 +258,7 @@ namespace IslamSourceQuranViewer
             sv.ChangeView(null, count + 2/*sv.VerticalOffset + pos.Y*/, null, true);
         }
         private int CurrentPlayingItem;
-        private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
+        private async void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
         {
             MediaElement mediaElement = sender as MediaElement;
             if (mediaElement != null) {
@@ -269,6 +269,11 @@ namespace IslamSourceQuranViewer
                     PlayPause.Icon = new SymbolIcon(Symbol.Play);
                     PlayPause.Label = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Play/Label");
                 } else if (((PlayPause.Icon as SymbolIcon).Symbol == Symbol.Pause) && mediaElement.CurrentState == Windows.UI.Xaml.Media.MediaElementState.Paused) {
+                    if (!AppSettings.bAutomaticAdvanceVerse) return;
+                    if (AppSettings.bDelayVerseLengthBeforeAdvancing || AppSettings.iAdditionalVerseAdvanceDelay != 0) {
+                        await System.Threading.Tasks.Task.Delay((AppSettings.bDelayVerseLengthBeforeAdvancing ? (int)VersePlayer.NaturalDuration.TimeSpan.TotalMilliseconds : 0) + AppSettings.iAdditionalVerseAdvanceDelay * 1000);
+                        if (PlayPause.Label == new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Play/Label")) { return; }
+                    }
                     if (AppSettings.LoopingMode == IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes[1].Name) { VersePlayer.Play(); return; }
                     do {
                         CurrentPlayingItem++;

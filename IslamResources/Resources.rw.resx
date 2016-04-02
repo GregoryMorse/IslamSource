@@ -1611,4 +1611,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Ikinyaturukiya</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Nta n'imwe</value>
+  </data>
 </root>

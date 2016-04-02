@@ -639,4 +639,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>ᎠᎬᎾ</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>ᎧᏂᎩᏓ</value>
+  </data>
 </root>

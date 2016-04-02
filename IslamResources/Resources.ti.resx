@@ -1611,4 +1611,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>ቱርካኛ</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>የለን</value>
+  </data>
 </root>

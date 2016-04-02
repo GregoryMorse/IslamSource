@@ -28005,4 +28005,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>துர்கிஷ்</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>எதுவுமில்லை</value>
+  </data>
 </root>

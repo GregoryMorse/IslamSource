@@ -1845,4 +1845,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Төрек</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Юк</value>
+  </data>
 </root>

@@ -1614,4 +1614,7 @@
   <data name="IslamInfo_Turkish" xml:space="preserve">
     <value>Wu-Turk</value>
   </data>
+  <data name="IslamInfo_None" xml:space="preserve">
+    <value>Darra</value>
+  </data>
 </root>
