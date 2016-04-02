@@ -2998,7 +2998,7 @@ Public Class CachedData
             Dim Pieces As String() = Lines(_MorphDataToLineNumber(New Integer() {Chapter, Verse, Word, LineTest})).Split(CChar(vbTab))
             Dim Renderers As New List(Of RenderArray.RenderText)
             Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter(Pieces(1))))
-            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetPartOfSpeech(Pieces(2)).Id)) With {.Clr = GetPartOfSpeech(Pieces(2)).Color})
+            Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, Utility.LoadResourceString("IslamInfo_" + GetPartOfSpeech(Pieces(2)).Id) + " ") With {.Clr = GetPartOfSpeech(Pieces(2)).Color})
             Dim Parts As String() = Pieces(3).Split("|"c)
             Dim bNotDefaultPresent As Boolean = False
             For Count As Integer = 0 To Parts.Length - 1
@@ -5774,6 +5774,7 @@ Public Class TanzilReader
                                 Else
                                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, String.Empty))
                                 End If
+                            Else
                                 Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text))
                                 Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arabic.TransliterateToScheme(Text, SchemeType, Scheme, MetaRules).Trim(), String.Empty)))
                             End If

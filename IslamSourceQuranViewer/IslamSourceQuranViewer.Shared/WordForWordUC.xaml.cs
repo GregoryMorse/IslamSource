@@ -604,7 +604,9 @@ namespace IslamSourceQuranViewer
         private List<object> _Items;
         public List<object> Items { get { return _Items; } set { _Items = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Items")); } }
         private bool _IsSelected;
-        public bool IsSelected { get { return _IsSelected; } set { _IsSelected = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsSelected")); } }
+        public bool IsSelected { get { return _IsSelected; } set { _IsSelected = value;
+                for (int count = 0; count < _Items.Count; count++) { if (_Items[count].GetType() != typeof(MyChildRenderItem)) { for (int subc = 0; subc < ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels.Count; subc++) { for (int itc = 0; itc < ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels[subc].RenderItems.Count; itc++) { ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels[subc].RenderItems[itc].IsSelected = value; } } } }
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsSelected")); } }
         public int Chapter;
         public int Verse;
         public int Word;

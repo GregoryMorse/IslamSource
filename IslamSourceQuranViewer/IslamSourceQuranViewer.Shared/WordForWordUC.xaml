@@ -100,7 +100,7 @@
         <MediaElement Name="VersePlayer" CurrentStateChanged="MediaElement_CurrentStateChanged" AreTransportControlsEnabled="False" AutoPlay="True"></MediaElement>
         <Popup x:Name="GoToVersePopup" IsLightDismissEnabled="True">
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
-                Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+                Background="White">
                 <ListBox ItemsSource="{Binding Source={StaticResource VerseNumbers}, Mode=OneWay}" 
                         SelectedItem="{Binding Path=ViewModel.CurrentVerse, Mode=TwoWay}">
                     <ItemsControl.ItemTemplate>
