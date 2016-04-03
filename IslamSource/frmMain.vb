@@ -40,45 +40,45 @@ Public Class frmMain
             Return New System.Resources.ResourceManager(baseName + ".Resources", Reflection.Assembly.Load(baseName)).GetString(resourceKey, Threading.Thread.CurrentThread.CurrentUICulture)
         End Function
     End Class
-    'Private Shared Function ReadByteArray(ByVal s As IO.Stream) As Byte()
-    '    Dim buffer As Byte() = New Byte(4 - 1) {}
-    '    If (s.Read(buffer, 0, buffer.Length) <> buffer.Length) Then
-    '        Throw New SystemException("Stream did not contain properly formatted byte array")
-    '    End If
-    '    Dim buffer2 As Byte() = New Byte(BitConverter.ToInt32(buffer, 0) - 1) {}
-    '    If (s.Read(buffer2, 0, buffer2.Length) <> buffer2.Length) Then
-    '        Throw New SystemException("Did not read byte array properly")
-    '    End If
-    '    Return buffer2
-    'End Function
-    'Public Shared Function Decrypt(ByVal cipherText As String, ByVal unknown As String) As String
-    '    If String.IsNullOrEmpty(cipherText) Then
-    '        Throw New ArgumentNullException("cipherText")
-    '    End If
-    '    If String.IsNullOrEmpty(unknown) Then
-    '        Throw New ArgumentNullException("unknown")
-    '    End If
-    '    Dim managed As Security.Cryptography.RijndaelManaged = Nothing
-    '    Try
-    '        Dim bytes As New Security.Cryptography.Rfc2898DeriveBytes(unknown, System.Text.Encoding.ASCII.GetBytes("o6B06642kbM7c5"))
-    '        Using stream As IO.MemoryStream = New IO.MemoryStream(Convert.FromBase64String(cipherText))
-    '            managed = New Security.Cryptography.RijndaelManaged
-    '            managed.Key = bytes.GetBytes((managed.KeySize \ 8))
-    '            managed.IV = ReadByteArray(stream)
-    '            Dim transform As Security.Cryptography.ICryptoTransform = managed.CreateDecryptor(managed.Key, managed.IV)
-    '            Using stream2 As Security.Cryptography.CryptoStream = New Security.Cryptography.CryptoStream(stream, transform, Security.Cryptography.CryptoStreamMode.Read)
-    '                Using reader As IO.StreamReader = New IO.StreamReader(stream2)
-    '                    Return reader.ReadToEnd
-    '                End Using
-    '            End Using
-    '        End Using
-    '    Finally
-    '        If (Not managed Is Nothing) Then
-    '            managed.Clear()
-    '        End If
-    '    End Try
-    '    Return Nothing
-    'End Function
+    Private Shared Function ReadByteArray(ByVal s As IO.Stream) As Byte()
+        Dim buffer As Byte() = New Byte(4 - 1) {}
+        If (s.Read(buffer, 0, buffer.Length) <> buffer.Length) Then
+            Throw New SystemException("Stream did not contain properly formatted byte array")
+        End If
+        Dim buffer2 As Byte() = New Byte(BitConverter.ToInt32(buffer, 0) - 1) {}
+        If (s.Read(buffer2, 0, buffer2.Length) <> buffer2.Length) Then
+            Throw New SystemException("Did not read byte array properly")
+        End If
+        Return buffer2
+    End Function
+    Public Shared Function Decrypt(ByVal cipherText As String, ByVal unknown As String) As String
+        If String.IsNullOrEmpty(cipherText) Then
+            Throw New ArgumentNullException("cipherText")
+        End If
+        If String.IsNullOrEmpty(unknown) Then
+            Throw New ArgumentNullException("unknown")
+        End If
+        Dim managed As Security.Cryptography.RijndaelManaged = Nothing
+        Try
+            Dim bytes As New Security.Cryptography.Rfc2898DeriveBytes(unknown, System.Text.Encoding.ASCII.GetBytes("o6B06642kbM7c5"))
+            Using stream As IO.MemoryStream = New IO.MemoryStream(Convert.FromBase64String(cipherText))
+                managed = New Security.Cryptography.RijndaelManaged
+                managed.Key = bytes.GetBytes((managed.KeySize \ 8))
+                managed.IV = ReadByteArray(stream)
+                Dim transform As Security.Cryptography.ICryptoTransform = managed.CreateDecryptor(managed.Key, managed.IV)
+                Using stream2 As Security.Cryptography.CryptoStream = New Security.Cryptography.CryptoStream(stream, transform, Security.Cryptography.CryptoStreamMode.Read)
+                    Using reader As IO.StreamReader = New IO.StreamReader(stream2)
+                        Return reader.ReadToEnd
+                    End Using
+                End Using
+            End Using
+        Finally
+            If (Not managed Is Nothing) Then
+                managed.Clear()
+            End If
+        End Try
+        Return Nothing
+    End Function
     Private Sub CheckMorphology()
         For TestCount = 0 To CachedData.IslamData.PartsOfSpeech.Length - 1
             Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PartsOfSpeech(TestCount).Id)
@@ -126,6 +126,8 @@ Public Class frmMain
     End Sub
 
     Private Sub UtilityTestCode()
+        Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
+        clsWarshQuran.HindiW4W()
         'Dim Strs As New List(Of String)
         'For Chapter = 1 To 114
         '    For SubCount = 1 To TanzilReader.GetVerseCount(Chapter)
@@ -154,8 +156,7 @@ Public Class frmMain
         '    Next
         'Next
         'Utility.WriteAllLines("..\..\..\metadata\tr.w4w.suleyman.ates.txt", Strs.ToArray())
-        'CheckMorphology()
-        'Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
+        'CheckMorphology()        
         'dataroot -> ayat -> TarjumaLafziDrFarhatHashmi, TarjumaLafziFahmulQuran, TarjumaLafziNazarAhmad
         CompareWordCounts()
         'Dim AvailableTranslationProviders() As String = "af,af-ZA,am,am-ET,ar,ar-AE,ar-BH,ar-DZ,ar-EG,ar-IQ,ar-JO,ar-KW,ar-LB,ar-LY,ar-MA,ar-OM,ar-QA,ar-SA,ar-SY,ar-TN,ar-YE,as,as-IN,az-Latn,az-Latn-AZ,be,be-BY,bg,bg-BG,bn,bn-BD,bn-IN,bs-Cyrl,bs-Cyrl-BA,bs-Latn,bs-Latn-BA,ca,ca-ES,chr-Cher,chr-Cher-US,cs,cs-CZ,cy,cy-GB,da,da-DK,de,de-AT,de-CH,de-DE,de-LI,de-LU,el,el-GR,en,en-029,en-AU,en-BZ,en-CA,en-GB,en-HK,en-IE,en-IN,en-JM,en-MY,en-NG,en-NZ,en-PH,en-PK,en-SG,en-TT,en-US,en-ZA,en-ZW,es,es-AR,es-BO,es-CL,es-CO,es-CR,es-DO,es-EC,es-ES,es-GT,es-HN,es-MX,es-NI,es-PA,es-PE,es-PR,es-PY,es-SV,es-US,es-UY,es-VE,et,et-EE,eu,eu-ES,fa,fa-IR,fi,fi-FI,fil,fil-PH,fr,fr-BE,fr-CA,fr-CH,fr-DZ,fr-FR,fr-LU,fr-MA,fr-MC,fr-TN,ga,ga-IE,gd,gd-GB,gl,gl-ES,gu,gu-IN,ha-Latn,ha-Latn-NG,he,he-IL,hi,hi-IN,hr,hr-HR,hu,hu-HU,hy,hy-AM,id,id-ID,ig,ig-NG,is,is-IS,it,it-CH,it-IT,iu-Latn,iu-Latn-CA,ja,ja-JP,ka,ka-GE,kk,kk-KZ,km,km-KH,kn,kn-IN,ko,ko-KR,kok,kok-IN,ku-Arab,ku-Arab-IQ,ky,ky-KG,lb,lb-LU,lo,lo-LA,lt,lt-LT,lv,lv-LV,mi,mi-NZ,mk,mk-MK,ml,ml-IN,mn-MN,mr,mr-IN,ms,ms-BN,ms-MY,mt,mt-MT,my-MM,nb,nb-NO,ne,ne-NP,nl,nl-BE,nl-NL,nn,nn-NO,nso,nso-ZA,or,or-IN,pa,pa-Arab,pa-Arab-PK,pa-IN,pl,pl-PL,prs,prs-AF,ps,ps-AF,pt,pt-BR,pt-PT,qps-ploc,quc-Latn-GT,quz,quz-PE,rm,rm-CH,ro,ro-MD,ro-RO,ru,ru-KZ,ru-RU,rw,rw-RW,sd-Arab,sd-Arab-PK,si,si-LK,sk,sk-SK,sl,sl-SI,sq,sq-AL,sr-Cyrl,sr-Cyrl-BA,sr-Cyrl-RS,sr-Latn,sr-Latn-ME,sr-Latn-RS,sv,sv-FI,sv-SE,sw,sw-KE,ta,ta-IN,te,te-IN,tg-Cyrl,tg-Cyrl-TJ,th,th-TH,ti,ti-ET,tk,tk-TM,tn,tn-ZA,tr,tr-TR,tt,tt-RU,ug,ug-CN,uk,uk-UA,ur,ur-PK,uz-Cyrl-UZ,uz-Latn,uz-Latn-UZ,vi,vi-VN,wo,wo-SN,xh,xh-ZA,yo,yo-NG,zh-CN,zh-HK,zh-Hans,zh-Hant,zh-SG,zh-TW,zu,zu-ZA".ToLower().Split(","c)

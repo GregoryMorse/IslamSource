@@ -1,4 +1,6 @@
-﻿Public Class clsWarshQuran
+﻿Imports iTextSharp.text.pdf.parser
+
+Public Class clsWarshQuran
     Shared TimesNewRomanPSMT As New Dictionary(Of String, Integer()) From {
 {"0", New Integer() {&H660}},
 {"1", New Integer() {&H661}},
@@ -473,7 +475,7 @@
                                 End If
                             ElseIf KeyValue.Key = "~a" Or KeyValue.Key = "~u" Or KeyValue.Key = "~F" Or KeyValue.Key = "~F[" Then
                                 If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "_"c Then Str = Str.Remove(Str.Length - 1)
-                                If (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HE7)) Or _
+                                If (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HE7)) Or
                                     (Chunks(Count + 1).FontName.EndsWith("+MSH-Quraan1") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H26)) Then
                                 ElseIf Str.Length > 1 AndAlso Str.Chars(Str.Length - 1) = "A"c Then
                                     Str = Str.Insert(Str.Length - 1, KeyValue.Key)
@@ -488,8 +490,8 @@
                                 End If
                             ElseIf KeyValue.Key = "a" Then
                                 If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "_"c Then Str = Str.Remove(Str.Length - 1)
-                                If (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HE7)) Or _
-                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF7)) Or _
+                                If (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HE7)) Or
+                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF7)) Or
                                     (Chunks(Count + 1).FontName.EndsWith("+HQPB5") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF0AF)) Then
                                 ElseIf (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H28)) Or
                                     (Chunks(Count + 1).FontName.EndsWith("+MSH-Quraan1") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2203)) Then
@@ -505,9 +507,9 @@
                                 End If
                             ElseIf KeyValue.Key = "i" Or KeyValue.Key = "u" Or KeyValue.Key = "o" Or KeyValue.Key = "^" Or KeyValue.Key = "N" Or KeyValue.Key = "K" Then
                                 If Str.Length <> 0 AndAlso Str.Chars(Str.Length - 1) = "_"c Then Str = Str.Remove(Str.Length - 1)
-                                If (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HE7)) Or _
-                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF7)) Or _
-                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HCF)) Or _
+                                If (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HE7)) Or
+                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HF7)) Or
+                                    (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&HCF)) Or
                                     (Chunks(Count + 1).FontName.EndsWith("+MSH-Quraan1") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2217)) Then
                                 ElseIf (Chunks(Count + 1).FontName.EndsWith("+HQPB4") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H28)) Or
                                     (Chunks(Count + 1).FontName.EndsWith("+MSH-Quraan1") AndAlso Chunks(Count + 1).Str.Chars(0) = ChrW(&H2203)) Then
@@ -625,34 +627,34 @@
     End Class
     Shared Sub ParseQuran()
         Dim Reader As New iTextSharp.text.pdf.PdfReader("..\..\..\IslamMetadata\quranwarsh.pdf")
-        Dim Str As String = "<?xml version=""1.0"" encoding=""utf-8""?>" + vbCrLf + _
-            "<!--" + vbCrLf + vbCrLf + "# PLEASE DO NOT REMOVE OR CHANGE THIS COPYRIGHT BLOCK" + vbCrLf + _
-"#====================================================================" + vbCrLf + _
-"#" + vbCrLf + _
-"#  IslamSource Quran Text (Warsh, version 1.0.0)" + vbCrLf + _
-"#  Copyright (C) 2014-2014 IslamSource.Info" + vbCrLf + _
-"#  License: Creative Commons Attribution 3.0" + vbCrLf + _
-"#" + vbCrLf + _
-"#  This copy of quran text is carefully produced, " + vbCrLf + _
-"#  verified and continuously monitored by a specialist " + vbCrLf + _
-"#  at IslamSource project." + vbCrLf + _
-"#" + vbCrLf + _
-"#  TERMS OF USE:" + vbCrLf + _
-"#" + vbCrLf + _
-"#  - Permission is granted to copy and distribute verbatim copies " + vbCrLf + _
-"#    of this text, but CHANGING IT IS NOT ALLOWED." + vbCrLf + _
-"#" + vbCrLf + _
-"#  - This quran text can be used in any website or application, " + vbCrLf + _
-"#    provided its source (IslamSource.info) is clearly indicated, and " + vbCrLf + _
-"#    a link is made to http://islamsource.info to enable users to " + vbCrLf + _
-"#    track changes." + vbCrLf + "#" + vbCrLf + _
-"#  - This copyright notice shall be included in all verbatim copies " + vbCrLf + _
-"#    of the text, and shall be reproduced appropriately in all files " + vbCrLf + _
-"#    derived from or containing substantial portion of this text." + vbCrLf + _
-"#" + vbCrLf + _
-"#  Please check updates at: http://islamsource.info" + vbCrLf + _
-"# " + vbCrLf + _
-"#====================================================================" + vbCrLf + vbCrLf + _
+        Dim Str As String = "<?xml version=""1.0"" encoding=""utf-8""?>" + vbCrLf +
+            "<!--" + vbCrLf + vbCrLf + "# PLEASE DO NOT REMOVE OR CHANGE THIS COPYRIGHT BLOCK" + vbCrLf +
+"#====================================================================" + vbCrLf +
+"#" + vbCrLf +
+"#  IslamSource Quran Text (Warsh, version 1.0.0)" + vbCrLf +
+"#  Copyright (C) 2014-2014 IslamSource.Info" + vbCrLf +
+"#  License: Creative Commons Attribution 3.0" + vbCrLf +
+"#" + vbCrLf +
+"#  This copy of quran text is carefully produced, " + vbCrLf +
+"#  verified and continuously monitored by a specialist " + vbCrLf +
+"#  at IslamSource project." + vbCrLf +
+"#" + vbCrLf +
+"#  TERMS OF USE:" + vbCrLf +
+"#" + vbCrLf +
+"#  - Permission is granted to copy and distribute verbatim copies " + vbCrLf +
+"#    of this text, but CHANGING IT IS NOT ALLOWED." + vbCrLf +
+"#" + vbCrLf +
+"#  - This quran text can be used in any website or application, " + vbCrLf +
+"#    provided its source (IslamSource.info) is clearly indicated, and " + vbCrLf +
+"#    a link is made to http://islamsource.info to enable users to " + vbCrLf +
+"#    track changes." + vbCrLf + "#" + vbCrLf +
+"#  - This copyright notice shall be included in all verbatim copies " + vbCrLf +
+"#    of the text, and shall be reproduced appropriately in all files " + vbCrLf +
+"#    derived from or containing substantial portion of this text." + vbCrLf +
+"#" + vbCrLf +
+"#  Please check updates at: http://islamsource.info" + vbCrLf +
+"# " + vbCrLf +
+"#====================================================================" + vbCrLf + vbCrLf +
 "-->" + vbCrLf + "<quran>" + vbCrLf
         Dim Strat As New TextExtractionStrategy
         For Cnt As Integer = 0 To Reader.NumberOfPages - 1
@@ -672,5 +674,34 @@
         Next
         Str += "  </sura>" + vbCrLf + "</quran>" + vbCrLf
         IO.File.WriteAllText(XMLRender.PortableMethods.Settings.GetFilePath("metadata\quran-warsh.xml"), Str)
+    End Sub
+    Class HindiTextExtractionStrategy
+        Implements iTextSharp.text.pdf.parser.ITextExtractionStrategy
+
+        Public Sub BeginTextBlock() Implements IRenderListener.BeginTextBlock
+        End Sub
+
+        Public Sub EndTextBlock() Implements IRenderListener.EndTextBlock
+        End Sub
+
+        Public Sub RenderImage(renderInfo As ImageRenderInfo) Implements IRenderListener.RenderImage
+        End Sub
+
+        Public Sub RenderText(renderInfo As TextRenderInfo) Implements IRenderListener.RenderText
+            renderInfo.GetText().Replace("%"c, ChrW(&H901)).Replace("&"c, ChrW(&H971)).Replace("'"c, ChrW(&H901)).Replace("-"c, ChrW(&H92D)).Replace("+"c, ChrW(&H900)).Replace("0"c, ChrW(&H927)).Replace("2"c, ChrW(&H91B)).Replace("3"c, ChrW(&H918)).Replace("4"c, ChrW(&H91F)).Replace("5"c, ChrW(&H920)).Replace("6"c, ChrW(&H921)).Replace("7"c, ChrW(&H922)).Replace("9"c, ChrW(&H925)).Replace(":"c, ChrW(&H908)).Replace(";"c, ChrW(&H907)).Replace("="c, ChrW(&H936)).Replace("@"c, ChrW(&H90F)).Replace("A"c, ChrW(&H905)).Replace("A"c, ChrW(&H905)).Replace("D"c, ChrW(&H921)).Replace("y"c, ChrW(&H92F))
+            Debug.Print(renderInfo.GetText())
+        End Sub
+
+        Public Function GetResultantText() As String Implements ITextExtractionStrategy.GetResultantText
+            Return String.Empty
+        End Function
+    End Class
+    Public Shared Sub HindiW4W()
+        Dim Reader As New iTextSharp.text.pdf.PdfReader("..\..\..\Resources\hi.w4w\Para1.pdf")
+        Dim Strat As New HindiTextExtractionStrategy
+        For Cnt As Integer = 0 To Reader.NumberOfPages - 1
+            Dim parse As New iTextSharp.text.pdf.parser.PdfContentStreamProcessor(Strat)
+            parse.ProcessContent(Reader.GetPageContent(Cnt + 1), Reader.GetPageResources(Cnt + 1))
+        Next
     End Sub
 End Class
