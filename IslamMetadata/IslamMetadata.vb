@@ -163,13 +163,11 @@ Public Class Arabic
         Next
         Return ArabicString.ToString()
     End Function
-    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, MetadataList As Generic.List(Of RuleMetadata), Optional PreString As String = "", Optional PostString As String = "", Optional PreStop As Boolean = True, Optional PostStop As Boolean = True) As String
+    Public Shared Function TransliterateToScheme(ByVal ArabicString As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, MetadataList As Generic.List(Of RuleMetadata)) As String
         If SchemeType = ArabicData.TranslitScheme.LearningMode Then
             Return TransliterateWithRules(ArabicString, Scheme, True, MetadataList)
-        ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased And PreString = "" And PostString = "" Then
-            Return TransliterateWithRules(ArabicString, Scheme, False, MetadataList)
         ElseIf SchemeType = ArabicData.TranslitScheme.RuleBased Then
-            Return TransliterateContigWithRules(ArabicString, PreString, PostString, PreStop, PostStop, Scheme, MetadataList)
+            Return TransliterateWithRules(ArabicString, Scheme, False, MetadataList)
         ElseIf SchemeType = ArabicData.TranslitScheme.Literal Then
             Return TransliterateToLiteral(ArabicString, Scheme)
         Else
@@ -415,27 +413,6 @@ Public Class Arabic
             End If
         End Function
     End Class
-    Public Shared Function ApplyContigColorRules(ByVal ArabicString As String, PreString As String, PostString As String, PreStop As Boolean, PostStop As Boolean, BreakWords As Boolean, MetadataList As Generic.List(Of RuleMetadata)) As RenderArray.RenderText()()
-        Dim RendererList As New List(Of RenderArray.RenderText())
-        RendererList.AddRange(ApplyColorRules(JoinContig(ArabicString, PreString, PostString, PreStop, PostStop), True, MetadataList))
-        Dim Index As Integer = ArabicString.IndexOf(ArabicData.ArabicEndOfAyah)
-        If PreString <> String.Empty AndAlso Index <> -1 Then
-            RendererList.RemoveAt(0)
-        End If
-        Index = ArabicString.LastIndexOf(ArabicData.ArabicEndOfAyah)
-        If PostString <> String.Empty AndAlso Index <> -1 Then
-            RendererList.RemoveAt(RendererList.Count - 1)
-        End If
-        If Not BreakWords Then
-            Dim RenderTexts As New List(Of RenderArray.RenderText)
-            For Count As Integer = 0 To RendererList.Count - 1
-                RenderTexts.AddRange(RendererList(Count))
-            Next
-            RendererList.Clear()
-            RendererList.Add(RenderTexts.ToArray())
-        End If
-        Return RendererList.ToArray()
-    End Function
     Public Shared Function ApplyColorRules(ByVal ArabicString As String, BreakWords As Boolean, MetadataList As Generic.List(Of RuleMetadata)) As RenderArray.RenderText()()
         Dim Count As Integer
         Dim Index As Integer
@@ -689,10 +666,13 @@ Public Class Arabic
         End If
         Return ArabicString
     End Function
-    Public Shared Function TransliterateContigWithRules(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String, PreStop As Boolean, PostStop As Boolean, Scheme As String, MetadataList As Generic.List(Of RuleMetadata)) As String
-        Return UnjoinContig(TransliterateWithRules(JoinContig(ArabicString, PreString, PostString, PreStop, PostStop), Scheme, False, MetadataList), PreString, PostString)
-    End Function
     Private Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
+    Public Shared Function FilterMetadataStopsContig(ByVal ArabicString As String, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer, PreStringLength As Integer, Optional PreStop As Boolean = True, Optional PostStop As Boolean = True) As Generic.List(Of RuleMetadata)
+        MetadataList = New List(Of RuleMetadata)(Linq.Enumerable.Select(Linq.Enumerable.Where(MetadataList, Function(Item) Item.Index >= PreStringLength And Item.Index + Item.Length <= ArabicString.Length - PreStringLength), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = Item.Dependencies, .Children = Item.Children}))
+        'If PreStop Then OptionalStops.Add(0)
+        'If PostStop Then OptionalStops.Add(ArabicString.Length - 1)
+        Return FilterMetadataStops(ArabicString, MetadataList, OptionalStops)
+    End Function
     Public Shared Function FilterMetadataStops(ByVal ArabicString As String, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer) As Generic.List(Of RuleMetadata)
         MetadataList = New List(Of RuleMetadata)(Linq.Enumerable.Where(MetadataList, Function(Item)
                                                                                          Return Item.Dependencies Is Nothing OrElse

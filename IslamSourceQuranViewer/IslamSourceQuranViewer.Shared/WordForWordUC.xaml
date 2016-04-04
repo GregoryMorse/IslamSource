@@ -13,6 +13,7 @@
         </Style>
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
         <local:ArabicFlowConverter x:Key="ArabicFlow"/>
+        <local:StopContinueTextConverter x:Key="StopContinueText"/>
         <local:BackgroundSelectedConverter x:Key="BackgroundSelected"/>
         <CollectionViewSource x:Name="VerseNumbers" Source="{Binding Path=ViewModel.VerseReferences, Mode=OneWay}"></CollectionViewSource>
         <ItemsPanelTemplate x:Key="VirtualPanelTemplate">
@@ -52,7 +53,20 @@
                 </TextBlock>
             </Grid>
         </DataTemplate>
-        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}"></local:NormalWordTemplateSelector>
+        <DataTemplate x:Key="StopContinueTemplate">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" Text="{Binding IsStop, Converter={StaticResource StopContinueTextConverter}}"
+                        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}">
+                </TextBlock>
+            </Grid>
+        </DataTemplate>
+        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}" StopContinueTemplate="{StaticResource StopContinueTemplate}"></local:NormalWordTemplateSelector>
         <DataTemplate x:Key="MyTemplate">
             <ItemsControl ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}" MaxWidth="{Binding MaxWidth, Converter={StaticResource WidthLimiter}, Mode=OneWay}">
                 <ItemsControl.ItemsPanel>

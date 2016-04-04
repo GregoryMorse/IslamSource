@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)clsMain.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ExtSplashScreen.xaml.cs">
       <DependentUpon>ExtSplashScreen.xaml</DependentUpon>
     </Compile>

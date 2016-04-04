@@ -200,22 +200,22 @@ namespace IslamSourceQuranViewer
             await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFolderAsync("appstore", Windows.Storage.CreationCollisionOption.OpenIfExists);
             for (int count = 0; count <= Win8Logos.GetUpperBound(0); count++)
             {
-                await WindowsRTSettings.SavePathImageAsFile((int)Win8Logos[count, 0], (int)Win8Logos[count, 1], "win8\\" + (string)Win8Logos[count, 2], MainGrid);
+                await SavePathImageAsFile((int)Win8Logos[count, 0], (int)Win8Logos[count, 1], "win8\\" + (string)Win8Logos[count, 2], MainGrid);
             }
             for (int count = 0; count <= Win81PhoneLogos.GetUpperBound(0); count++) {
-                await WindowsRTSettings.SavePathImageAsFile((int)Win81PhoneLogos[count, 0], (int)Win81PhoneLogos[count, 1], "win81phone\\" + (string)Win81PhoneLogos[count, 2], MainGrid);
+                await SavePathImageAsFile((int)Win81PhoneLogos[count, 0], (int)Win81PhoneLogos[count, 1], "win81phone\\" + (string)Win81PhoneLogos[count, 2], MainGrid);
             }
             for (int count = 0; count <= Win81Logos.GetUpperBound(0); count++)
             {
-                await WindowsRTSettings.SavePathImageAsFile((int)Win81Logos[count, 0], (int)Win81Logos[count, 1], "win81\\" + (string)Win81Logos[count, 2], MainGrid);
+                await SavePathImageAsFile((int)Win81Logos[count, 0], (int)Win81Logos[count, 1], "win81\\" + (string)Win81Logos[count, 2], MainGrid);
             }
             for (int count = 0; count <= WinUniversalLogos.GetUpperBound(0); count++)
             {
-                await WindowsRTSettings.SavePathImageAsFile((int)WinUniversalLogos[count, 0], (int)WinUniversalLogos[count, 1], "winuniversal\\" + (string)WinUniversalLogos[count, 2], MainGrid);
+                await SavePathImageAsFile((int)WinUniversalLogos[count, 0], (int)WinUniversalLogos[count, 1], "winuniversal\\" + (string)WinUniversalLogos[count, 2], MainGrid);
             }
             for (int count = 0; count <= AppStoreLogos.GetUpperBound(0); count++)
             {
-                await WindowsRTSettings.SavePathImageAsFile((int)AppStoreLogos[count, 0], (int)AppStoreLogos[count, 1], "appstore\\" + (string)AppStoreLogos[count, 2], MainGrid);
+                await SavePathImageAsFile((int)AppStoreLogos[count, 0], (int)AppStoreLogos[count, 1], "appstore\\" + (string)AppStoreLogos[count, 2], MainGrid);
             }
             GC.Collect(); //causes streams and files to properly close 
         }
@@ -226,6 +226,109 @@ namespace IslamSourceQuranViewer
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
+        }
+        public static async System.Threading.Tasks.Task SavePathImageAsFile(int Width, int Height, string fileName, FrameworkElement element, bool UseRenderTarget = true)
+        {
+            double oldWidth = element.Width;
+            double oldHeight = element.Height;
+            double actOldWidth = element.ActualWidth;
+            double actOldHeight = element.ActualHeight;
+            //if (!UseRenderTarget)
+            {
+                //engine takes the Ceiling so make sure its below or sometimes off by 1 rounding up from ActualWidth/Height
+                element.Width = !UseRenderTarget ? Math.Floor((float)Math.Min(Window.Current.Bounds.Width, Width)) : (float)Math.Min(Window.Current.Bounds.Width, Width);
+                element.Height = !UseRenderTarget ? Math.Floor((float)Math.Min(Window.Current.Bounds.Height, Height)) : (float)Math.Min(Window.Current.Bounds.Height, Height);
+                //bool bHasCalledUpdateLayout = false;
+                //should wrap into another event handler and check a bHasCalledUpdateLayout to ignore early calls and race condition
+                //object lockVar = new object();
+                //EventHandler<object> eventHandler = null;
+                //System.Threading.Tasks.TaskCompletionSource<object> t = new System.Threading.Tasks.TaskCompletionSource<object>();
+                //eventHandler = (sender, e) => { lock (lockVar) { if (bHasCalledUpdateLayout && Math.Abs(element.ActualWidth - element.Width) <= 1 && Math.Abs(element.ActualHeight - element.Height) <= 1) { lock (lockVar) { if (bHasCalledUpdateLayout) { bHasCalledUpdateLayout = false; t.SetResult(e); } } } } };
+                //element.LayoutUpdated += eventHandler;
+                //lock (lockVar) {
+                //    element.UpdateLayout();
+                //    bHasCalledUpdateLayout = true;
+                //}
+                ////await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, new Windows.UI.Core.DispatchedHandler(() => element.Dispatcher.ProcessEvents(Windows.UI.Core.CoreProcessEventsOption.ProcessAllIfPresent)));
+                //await t.Task;
+                //element.LayoutUpdated -= eventHandler;
+                await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
+                if (!UseRenderTarget && (element.ActualWidth > element.Width || element.ActualHeight > element.Height))
+                {
+                    if (element.ActualWidth > element.Width) element.Width -= 1;
+                    if (element.ActualHeight > element.Height) element.Height -= 1;
+                    //bHasCalledUpdateLayout = false;
+                    //t = new System.Threading.Tasks.TaskCompletionSource<object>();
+                    //eventHandler = (sender, e) => { lock (lockVar) { if (bHasCalledUpdateLayout && Math.Abs(element.ActualWidth - element.Width) <= 1 && Math.Abs(element.ActualHeight - element.Height) <= 1) { lock (lockVar) { if (bHasCalledUpdateLayout) { bHasCalledUpdateLayout = false; t.SetResult(e); } } } } };
+                    //element.LayoutUpdated += eventHandler;
+                    //lock (lockVar)
+                    //{
+                    //    element.UpdateLayout();
+                    //    bHasCalledUpdateLayout = true;
+                    //}
+                    //await t.Task;
+                    //element.LayoutUpdated -= eventHandler;
+                    await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
+                }
+            }
+#if WINDOWS_APP && STORETOOLKIT
+            if (!UseRenderTarget)
+            {
+                System.IO.MemoryStream memstream = await WinRTXamlToolkit.Composition.WriteableBitmapRenderExtensions.RenderToPngStream(element);
+                Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+                Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+                await stream.WriteAsync(memstream.GetWindowsRuntimeBuffer());
+                stream.Dispose();
+            }
+            else
+            {
+#endif
+                //Canvas cvs = new Canvas();
+                //cvs.Width = Width;
+                //cvs.Height = Height;
+                //Windows.UI.Xaml.Shapes.Path path = new Windows.UI.Xaml.Shapes.Path();
+                //object val;
+                //Resources.TryGetValue((object)"PathString", out val);
+                //Binding b = new Binding
+                //{
+                //    Source = (string)val
+                //};
+                //BindingOperations.SetBinding(path, Windows.UI.Xaml.Shapes.Path.DataProperty, b);
+                //cvs.Children.Add(path);
+                float dpi = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().LogicalDpi;
+                Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap wb = new Windows.UI.Xaml.Media.Imaging.RenderTargetBitmap();
+                await wb.RenderAsync(element, (int)((float)Width * 96 / dpi), (int)((float)Height * 96 / dpi));
+                Windows.Storage.Streams.IBuffer buf = await wb.GetPixelsAsync();
+                Windows.Storage.StorageFile file = await Windows.Storage.ApplicationData.Current.LocalFolder.CreateFileAsync(fileName + ".png", Windows.Storage.CreationCollisionOption.ReplaceExisting);
+                Windows.Storage.Streams.IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+                //Windows.Graphics.Imaging.BitmapPropertySet propertySet = new Windows.Graphics.Imaging.BitmapPropertySet();
+                //propertySet.Add("ImageQuality", new Windows.Graphics.Imaging.BitmapTypedValue(1.0, Windows.Foundation.PropertyType.Single)); // Maximum quality
+                Windows.Graphics.Imaging.BitmapEncoder be = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, stream);//, propertySet);
+                be.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied, (uint)wb.PixelWidth, (uint)wb.PixelHeight, dpi, dpi, buf.ToArray());
+                await be.FlushAsync();
+                await stream.GetOutputStreamAt(0).FlushAsync();
+                stream.Dispose();
+#if WINDOWS_APP && STORETOOLKIT
+            }
+#endif
+            //if (!UseRenderTarget)
+            {
+
+                element.Width = oldWidth;
+                element.Height = oldHeight;
+                //bHasCalledUpdateLayout = false;
+                //t = new System.Threading.Tasks.TaskCompletionSource<object>();
+                //eventHandler = (sender, e) => { lock (lockVar) { if (bHasCalledUpdateLayout && Math.Abs(element.ActualWidth - actOldWidth) <= 1 && Math.Abs(element.ActualHeight - actOldHeight) <= 1) { lock (lockVar) { if (bHasCalledUpdateLayout) { bHasCalledUpdateLayout = false; t.SetResult(e); } } } } };
+                //element.LayoutUpdated += eventHandler;
+                //lock (lockVar)
+                //{
+                //    element.UpdateLayout();
+                //    bHasCalledUpdateLayout = true;
+                //}
+                //await t.Task;
+                //element.LayoutUpdated -= eventHandler;
+                await element.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => { });
+            }
         }
     }
 }

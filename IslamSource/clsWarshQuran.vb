@@ -678,6 +678,10 @@ Public Class clsWarshQuran
     Class HindiTextExtractionStrategy
         Implements iTextSharp.text.pdf.parser.ITextExtractionStrategy
 
+        Public Sub New()
+
+        End Sub
+
         Public Sub BeginTextBlock() Implements IRenderListener.BeginTextBlock
         End Sub
 
@@ -688,8 +692,14 @@ Public Class clsWarshQuran
         End Sub
 
         Public Sub RenderText(renderInfo As TextRenderInfo) Implements IRenderListener.RenderText
-            renderInfo.GetText().Replace("%"c, ChrW(&H901)).Replace("&"c, ChrW(&H971)).Replace("'"c, ChrW(&H901)).Replace("-"c, ChrW(&H92D)).Replace("+"c, ChrW(&H900)).Replace("0"c, ChrW(&H927)).Replace("2"c, ChrW(&H91B)).Replace("3"c, ChrW(&H918)).Replace("4"c, ChrW(&H91F)).Replace("5"c, ChrW(&H920)).Replace("6"c, ChrW(&H921)).Replace("7"c, ChrW(&H922)).Replace("9"c, ChrW(&H925)).Replace(":"c, ChrW(&H908)).Replace(";"c, ChrW(&H907)).Replace("="c, ChrW(&H936)).Replace("@"c, ChrW(&H90F)).Replace("A"c, ChrW(&H905)).Replace("A"c, ChrW(&H905)).Replace("D"c, ChrW(&H921)).Replace("y"c, ChrW(&H92F))
-            Debug.Print(renderInfo.GetText())
+            Dim CharSwaps As Char(,) = {{"%"c, ChrW(&H901)}, {"&"c, ChrW(&H971)}, {"'"c, ChrW(&H930)}, {"+"c, ChrW(&H900)}, {"-"c, ChrW(&H92D)},
+                {"0"c, ChrW(&H927)}, {"2"c, ChrW(&H91B)}, {"3"c, ChrW(&H918)}, {"4"c, ChrW(&H91F)}, {"5"c, ChrW(&H920)}, {"6"c, ChrW(&H921)}, {"7"c, ChrW(&H922)}, {"9"c, ChrW(&H925)}, {":"c, ChrW(&H908)}, {";"c, ChrW(&H907)}, {"="c, ChrW(&H936)}, {">"c, ChrW(&H900)},
+                {"@"c, ChrW(&H90F)}, {"A"c, ChrW(&H905)}, {"B"c, ChrW(&H92C)}, {"C"c, ChrW(&H91A)}, {"D"c, ChrW(&H921)}, {"E"c, ChrW(&H948)}, {"F"c, ChrW(&H92B)}, {"G"c, ChrW(&H917)}, {"I"c, ChrW(&H940)}, {"J"c, ChrW(&H91C)}, {"K"c, ChrW(&H915)}, {"L"c, ChrW(&H932)}, {"M"c, ChrW(&H92E)}, {"N"c, ChrW(&H926)}, {"O"c, ChrW(&H94C)},
+                {"P"c, ChrW(&H92A)}, {"R"c, ChrW(&H900)}, {"S"c, ChrW(&H938)}, {"T"c, ChrW(&H924)}, {"U"c, ChrW(&H942)}, {"W"c, ChrW(&H90A)}, {"]"c, ChrW(&H924)},
+                {"b"c, ChrW(&H92C)}, {"c"c, ChrW(&H91A)}, {"d"c, ChrW(&H926)}, {"e"c, ChrW(&H947)}, {"f"c, ChrW(&H92B)}, {"g"c, ChrW(&H917)}, {"h"c, ChrW(&H939)}, {"i"c, ChrW(&H93F)}, {"j"c, ChrW(&H91C)}, {"k"c, ChrW(&H915)}, {"l"c, ChrW(&H932)}, {"m"c, ChrW(&H92E)}, {"n"c, ChrW(&H926)}, {"o"c, ChrW(&H94B)},
+                {"p"c, ChrW(&H92A)}, {"r"c, ChrW(&H930)}, {"s"c, ChrW(&H938)}, {"t"c, ChrW(&H924)}, {"u"c, ChrW(&H941)}, {"v"c, ChrW(&H935)}, {"w"c, ChrW(&H909)}, {"y"c, ChrW(&H92F)}, {"z"c, ChrW(&H91D)}, {"~"c, ChrW(&H916)},
+                {ChrW(&H91), ChrW(&H930)}, {ChrW(&H92), ChrW(&H930)}, {ChrW(&H94), ChrW(&H930)}, {ChrW(&H95), "("c}, {ChrW(&H96), ")"c}}
+            If renderInfo.GetFont().PostscriptFontName = "FPCJCD+Hsheel53" Then Debug.Print(renderInfo.GetText())
         End Sub
 
         Public Function GetResultantText() As String Implements ITextExtractionStrategy.GetResultantText
