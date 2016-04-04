@@ -667,11 +667,11 @@ Public Class Arabic
         Return ArabicString
     End Function
     Private Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
-    Public Shared Function FilterMetadataStopsContig(ByVal ArabicString As String, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer, PreStringLength As Integer, Optional PreStop As Boolean = True, Optional PostStop As Boolean = True) As Generic.List(Of RuleMetadata)
-        MetadataList = New List(Of RuleMetadata)(Linq.Enumerable.Select(Linq.Enumerable.Where(MetadataList, Function(Item) Item.Index >= PreStringLength And Item.Index + Item.Length <= ArabicString.Length - PreStringLength), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = Item.Dependencies, .Children = Item.Children}))
+    Public Shared Function FilterMetadataStopsContig(ByVal ArabicStringLength As Integer, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer, PreStringLength As Integer, Optional PreStop As Boolean = True, Optional PostStop As Boolean = True) As Generic.List(Of RuleMetadata)
+        MetadataList = New List(Of RuleMetadata)(Linq.Enumerable.Select(Linq.Enumerable.Where(MetadataList, Function(Item) Item.Index >= PreStringLength And Item.Index + Item.Length <= ArabicStringLength - PreStringLength), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = Item.Dependencies, .Children = Item.Children}))
         'If PreStop Then OptionalStops.Add(0)
         'If PostStop Then OptionalStops.Add(ArabicString.Length - 1)
-        Return FilterMetadataStops(ArabicString, MetadataList, OptionalStops)
+        Return MetadataList 'FilterMetadataStops(ArabicString, MetadataList, OptionalStops)
     End Function
     Public Shared Function FilterMetadataStops(ByVal ArabicString As String, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer) As Generic.List(Of RuleMetadata)
         MetadataList = New List(Of RuleMetadata)(Linq.Enumerable.Where(MetadataList, Function(Item)
@@ -5609,7 +5609,9 @@ Public Class TanzilReader
                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " " + If(Colorize, String.Join(String.Empty, Linq.Enumerable.Select(WordColors(Count), Function(Item) CStr(Item.Text))), Words(Count))))
                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " "))
                     'Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count), String.Empty)))
-                    If Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, Array.IndexOf(DefStops, Pos) = -1))
+                    If Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) = -1, Arabic.FilterMetadataStopsContig(If(Count = 0, 0, If(Colorize, Linq.Enumerable.Sum(WordColors(Count - 1), Function(Item) CStr(Item.Text).Length), Words(Count - 1).Length) + 1) + If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1 + If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length), MetaRules, DefStops, Pos - If(Count = 0, 0, If(Colorize, Linq.Enumerable.Sum(WordColors(Count - 1), Function(Item) CStr(Item.Text).Length), Words(Count - 1).Length) + 1))}))
+                    End If
                 End If
                 If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
@@ -5630,8 +5632,8 @@ Public Class TanzilReader
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Words(Count)))
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count - PauseMarks), String.Empty)))
                     End If
-                    If If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicEndOfAyah Then
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False))
+                    If If(Colorize, CStr(WordColors(Count)(0).Text)(0), Words(Count)(0)) = ArabicData.ArabicEndOfAyah And Count <> 0 Then
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) = -1, Arabic.FilterMetadataStopsContig(If(Colorize, Linq.Enumerable.Sum(WordColors(Count - 1), Function(Item) CStr(Item.Text).Length), Words(Count - 1).Length) + 1 + If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1 + If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length), MetaRules, DefStops, Pos - If(Colorize, Linq.Enumerable.Sum(WordColors(Count - 1), Function(Item) CStr(Item.Text).Length), Words(Count - 1).Length) - 1)}))
                     End If
                 End If
                 'If Translation <> String.Empty Then
@@ -5645,7 +5647,9 @@ Public Class TanzilReader
                 'End If
                 If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                If Not NoArabic AndAlso Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, True)}))
+                If Not NoArabic AndAlso Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then
+                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) = -1), Arabic.FilterMetadataStopsContig(If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1 + If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length), MetaRules, DefStops, Pos)})}))
+                End If
                 Texts.Clear()
             End If
             Pos += If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1
@@ -5762,7 +5766,7 @@ Public Class TanzilReader
                         If Translation <> String.Empty Then Texts.Add(New RenderArray.RenderText(If(IsTranslationTextLTR(TranslationIndex), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), If(NoRef, String.Empty, "(" + CStr(CInt(If(Chapter = 0, BaseVerse, 1)) + Verse) + ") ") + TanzilReader.GetTranslationVerse(Lines, BaseChapter + Chapter, CInt(If(Chapter = 0, BaseVerse, 1)) + Verse)))
                     End If
                     Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                    If Not NoArabic Then Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, False)}))
+                    If Not NoArabic Then Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {False, Nothing})}))
                     Texts.Clear()
                 Next
             Next

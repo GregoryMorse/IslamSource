@@ -18,24 +18,12 @@ using WinRTXamlToolkit.Controls;
 
 namespace IslamSourceQuranViewer
 {
-    public class VirtualizingWrapPanelAdapterSource : VirtualizingWrapPanelAdapter
-    {
-        private CollectionViewSource _RenderSource;
-        public ICollectionView RenderSource
-        {
-            get
-            {
-                if (_RenderSource == null) { _RenderSource = new CollectionViewSource(); BindingOperations.SetBinding(_RenderSource, CollectionViewSource.SourceProperty, new Binding() { Source = this, Path = new PropertyPath("RenderModels"), Mode = BindingMode.OneWay }); }
-                return _RenderSource.View;
-            }
-        }
-    }
     public sealed partial class WordForWordUC : Page
     {
         public WordForWordUC()
         {
             this.DataContext = this;
-            this.ViewModel = new VirtualizingWrapPanelAdapterSource();
+            this.ViewModel = new VirtualizingWrapPanelAdapter();
             UIChanger = new MyUIChanger();
             this.InitializeComponent();
 
@@ -51,7 +39,7 @@ namespace IslamSourceQuranViewer
             (this.BottomAppBar as CommandBar).PrimaryCommands.Add(RenderButton);
 #endif
             gestRec = new Windows.UI.Input.GestureRecognizer();
-            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse | Windows.UI.Input.GestureSettings.Hold | Windows.UI.Input.GestureSettings.RightTap;
+            gestRec.GestureSettings = Windows.UI.Input.GestureSettings.HoldWithMouse | Windows.UI.Input.GestureSettings.Hold | Windows.UI.Input.GestureSettings.RightTap | Windows.UI.Input.GestureSettings.Tap;
             gestRec.Holding += OnHolding;
             gestRec.RightTapped += OnRightTapped;
             gestRec.Tapped += OnTapped;
@@ -116,8 +104,12 @@ namespace IslamSourceQuranViewer
         void OnTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.TappedEventArgs args)
         {
             if (_holdObj != null) {
-                object obj = ((_holdObj as StackPanel).DataContext as MyRenderItem).Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderStopContinue));
-                if (obj != null) { (obj as MyChildRenderStopContinue).IsStop = !(obj as MyChildRenderStopContinue).IsStop; }
+                int idx = 0;
+                object obj = ((_holdObj as StackPanel).DataContext as MyRenderItem).Items.FirstOrDefault((Item) => { idx++; return Item.GetType() == typeof(MyChildRenderStopContinue); });
+                if (obj != null) {
+                    (obj as MyChildRenderStopContinue).IsStop = !(obj as MyChildRenderStopContinue).IsStop;
+                    //(((_holdObj as StackPanel).DataContext as MyRenderItem).Items[idx - 1] as MyChildRenderItem).GetText
+                }
             }
             gestRec.CompleteGesture();
         }
@@ -150,7 +142,7 @@ namespace IslamSourceQuranViewer
             LoadingRing.IsActive = false;
         }
         public MyUIChanger UIChanger { get; set; }
-        public VirtualizingWrapPanelAdapterSource ViewModel { get; set; }
+        public VirtualizingWrapPanelAdapter ViewModel { get; set; }
         private async void RenderPngs_Click(object sender, RoutedEventArgs e)
         {
             string origLang = Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
@@ -337,15 +329,15 @@ namespace IslamSourceQuranViewer
                 (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) =>
                 {
 #if WINDOWS_APP || WINDOWS_UWP
-                Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
+                    Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
 #else
-            global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
-            options.PreferredApplicationDisplayName = "Clipboarder"; 
-            options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
-            options.DisplayApplicationPicker = false; 
-            global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
+                    global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
+                    options.PreferredApplicationDisplayName = "Clipboarder"; 
+                    options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
+                    options.DisplayApplicationPicker = false; 
+                    global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
 #endif
-            };
+                };
                 Panel.Children.Add(new Button() { Content = new TextBlock() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") } });
                 (Panel.Children.Last() as Button).Click += (object _sender, RoutedEventArgs _e) =>
                 {
@@ -365,7 +357,7 @@ namespace IslamSourceQuranViewer
 //            shareStatusTask.Status = string.Empty;
 //            shareStatusTask.Show(); 
 //#endif
-            };
+                };
                 FlyoutBase.SetAttachedFlyout(sender as StackPanel, ContextFlyout);
                 FlyoutBase.ShowAttachedFlyout(sender as StackPanel);
             }
@@ -377,11 +369,9 @@ namespace IslamSourceQuranViewer
                 (ContextFlyout.Items.Last() as MenuFlyoutItem).Click += (object _sender, RoutedEventArgs _e) =>
                 {
                     List<int[]> marks = AppSettings.Bookmarks.ToList();
-                    if (idxMark != -1)
-                    {
+                    if (idxMark != -1) {
                         marks.RemoveAt(idxMark);
-                    }
-                    else {
+                    } else {
                         marks.Add(new int[] { Division, Selection, ((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse });
                     }
                     AppSettings.Bookmarks = marks.ToArray();
@@ -392,11 +382,11 @@ namespace IslamSourceQuranViewer
 #if WINDOWS_APP || WINDOWS_UWP
                     Windows.ApplicationModel.DataTransfer.DataPackage package = new Windows.ApplicationModel.DataTransfer.DataPackage(); package.SetText(((sender as StackPanel).DataContext as MyRenderItem).GetText); Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
 #else
-            global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
-            options.PreferredApplicationDisplayName = "Clipboarder"; 
-            options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
-            options.DisplayApplicationPicker = false; 
-            global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
+                    global::Windows.System.LauncherOptions options = new global::Windows.System.LauncherOptions(); 
+                    options.PreferredApplicationDisplayName = "Clipboarder"; 
+                    options.PreferredApplicationPackageFamilyName = "InTheHandLtd.Clipboarder"; 
+                    options.DisplayApplicationPicker = false; 
+                    global::Windows.System.Launcher.LaunchUriAsync(new Uri(string.Format("clipboard:Set?Text={0}", Uri.EscapeDataString(string.Empty))), options); 
 #endif
                 };
                 ContextFlyout.Items.Add(new MenuFlyoutItem() { Text = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Share/Text") });
@@ -460,7 +450,7 @@ namespace IslamSourceQuranViewer
             throw new NotImplementedException();
         }
     }
-public static class FormattedTextBehavior
+    public static class FormattedTextBehavior
     {
 #region FormattedText Attached dependency property
 
@@ -495,6 +485,20 @@ public static class FormattedTextBehavior
 
 #endregion
     }
+    public class RenderSourceConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            CollectionViewSource _RenderSource = new CollectionViewSource();
+            BindingOperations.SetBinding(_RenderSource, CollectionViewSource.SourceProperty, new Binding() { Source = value, Path = new PropertyPath("RenderModels"), Mode = BindingMode.OneWay });
+            return _RenderSource.View;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public class BackgroundSelectedConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -519,11 +523,23 @@ public static class FormattedTextBehavior
             throw new NotImplementedException();
         }
     }
-    public class StopContinueText : IValueConverter
+    public class StopContinueTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            return (bool)value ? "\u2B45" : "\u2B59";
+            return (bool)value ? "\u2B59" : "\u2B45";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class StopContinueTextColorConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return new SolidColorBrush((bool)value ? Windows.UI.Colors.Red : Windows.UI.Colors.Green);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

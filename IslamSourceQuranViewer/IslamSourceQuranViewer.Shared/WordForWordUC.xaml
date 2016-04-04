@@ -12,15 +12,17 @@
             <Setter Property="Foreground" Value="Black"/>
         </Style>
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
+        <local:RenderSourceConverter x:Key="RenderSource"/>
         <local:ArabicFlowConverter x:Key="ArabicFlow"/>
         <local:StopContinueTextConverter x:Key="StopContinueText"/>
+        <local:StopContinueTextColorConverter x:Key="StopContinueTextColor"/>
         <local:BackgroundSelectedConverter x:Key="BackgroundSelected"/>
         <CollectionViewSource x:Name="VerseNumbers" Source="{Binding Path=ViewModel.VerseReferences, Mode=OneWay}"></CollectionViewSource>
         <ItemsPanelTemplate x:Key="VirtualPanelTemplate">
             <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>
         </ItemsPanelTemplate>
         <DataTemplate x:Key="WordTemplate">
-            <ItemsControl ItemsSource="{Binding Mode=OneWay, Path=RenderSource}" ItemTemplate="{StaticResource WrapTemplate}">
+            <ItemsControl ItemsSource="{Binding Mode=OneWay, Path=RenderSource, Converter={StaticResource RenderSource}}" ItemTemplate="{StaticResource WrapTemplate}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <!--<local:MyWrapPanel FlowDirection="RightToLeft"></local:MyWrapPanel>-->
@@ -54,14 +56,13 @@
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="StopContinueTemplate">
-
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" Text="{Binding IsStop, Converter={StaticResource StopContinueTextConverter}}"
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" Text="{Binding IsStop, Converter={StaticResource StopContinueText}}" Foreground="{Binding IsStop, Converter={StaticResource StopContinueTextColor}}"
                         TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}">
                 </TextBlock>
             </Grid>
@@ -96,7 +97,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding Mode=OneWay, Path=ViewModel.RenderSource}" VirtualizingStackPanel.VirtualizationMode="Recycling">
+        <ItemsControl Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding Mode=OneWay, Path=ViewModel.RenderSource, Converter={StaticResource RenderSource}}" VirtualizingStackPanel.VirtualizationMode="Recycling">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>

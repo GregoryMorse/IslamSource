@@ -1387,18 +1387,18 @@ using Android.Graphics;
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
             if (RendItem.TextItems.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eReference) { Chapter = ((int[])RendItem.TextItems.First().Text)[0]; Verse = ((int[])RendItem.TextItems.First().Text)[1]; Word = ((int[])RendItem.TextItems.First().Text).Count() == 2 ? -1 : ((int[])RendItem.TextItems.First().Text)[2]; } else { Chapter = -1; Verse = -1; Word = -1; }
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)).ToList()) } } : ((Arr.First().Text.GetType() == typeof(bool)) ? (object)new MyChildRenderStopContinue((bool)Arr.First().Text) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = ArrItem.Clr }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) : null))).Where(Arr => Arr != null).ToList();
+            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)).ToList()) } } : ((Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eContinueStop) ? (object)new MyChildRenderStopContinue((bool)((object[])Arr.First().Text)[0], (List<IslamMetadata.Arabic.RuleMetadata>)((object[])Arr.First().Text)[1]) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = ArrItem.Clr }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) : null))).Where(Arr => Arr != null).ToList();
             MaxWidth = CalculateWidth();
         }
         public double MaxWidth { get; set; }
         private double CalculateWidth()
         {
             if (Items.Count() == 0) return 0.0;
-            return _Items.Select((Item) => Item.GetType() == typeof(MyChildRenderItem) ? ((MyChildRenderItem)Item).MaxWidth : ((VirtualizingWrapPanelAdapter)Item).RenderModels.Select((It) => It.MaxWidth).Max()).Max();
+            return _Items.Select((Item) => Item.GetType() == typeof(MyChildRenderItem) ? ((MyChildRenderItem)Item).MaxWidth : (Item.GetType() == typeof(MyChildRenderStopContinue) ? ((MyChildRenderStopContinue)Item).MaxWidth : ((VirtualizingWrapPanelAdapter)Item).RenderModels.Select((It) => It.MaxWidth).Max())).Max();
         }
         public void RegroupRenderModels(double maxWidth)
         {
-            _Items.FirstOrDefault((Item) => { if (Item.GetType() != typeof(MyChildRenderItem)) { ((VirtualizingWrapPanelAdapter)Item).RegroupRenderModels(maxWidth); } return false; });
+            _Items.FirstOrDefault((Item) => { if (Item.GetType() != typeof(MyChildRenderItem) && Item.GetType() != typeof(MyChildRenderStopContinue)) { ((VirtualizingWrapPanelAdapter)Item).RegroupRenderModels(maxWidth); } return false; });
         }
         private List<object> _Items;
         public List<object> Items { get { return _Items; } set { _Items = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Items")); } }
@@ -1409,7 +1409,7 @@ using Android.Graphics;
             set
             {
                 _IsSelected = value;
-                for (int count = 0; count < _Items.Count; count++) { if (_Items[count].GetType() != typeof(MyChildRenderItem)) { for (int subc = 0; subc < ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels.Count; subc++) { for (int itc = 0; itc < ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels[subc].RenderItems.Count; itc++) { ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels[subc].RenderItems[itc].IsSelected = value; } } } }
+                for (int count = 0; count < _Items.Count; count++) { if (_Items[count].GetType() != typeof(MyChildRenderItem) && _Items[count].GetType() != typeof(MyChildRenderStopContinue)) { for (int subc = 0; subc < ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels.Count; subc++) { for (int itc = 0; itc < ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels[subc].RenderItems.Count; itc++) { ((VirtualizingWrapPanelAdapter)_Items[count]).RenderModels[subc].RenderItems[itc].IsSelected = value; } } } }
                 if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsSelected"));
             }
         }
@@ -1427,6 +1427,7 @@ using Android.Graphics;
     }
     public class VirtualizingWrapPanelAdapter : INotifyPropertyChanged
     {
+        public VirtualizingWrapPanelAdapter RenderSource { get { return this; } }
         private List<MyRenderModel> _RenderModels;
         public List<MyRenderModel> RenderModels
         {
@@ -1470,7 +1471,15 @@ using Android.Graphics;
     }
     public class MyChildRenderStopContinue : INotifyPropertyChanged
     {
-        public MyChildRenderStopContinue(bool NewIsStop) { IsStop = NewIsStop; }
+        public MyChildRenderStopContinue(bool NewIsStop, List<IslamMetadata.Arabic.RuleMetadata> NewRules) { IsStop = NewIsStop; _Rules = NewRules; MaxWidth = CalculateWidth(); }
+        private double _MaxWidth;
+        public double MaxWidth { get { return _MaxWidth; } set { _MaxWidth = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("MaxWidth")); } }
+        public double CalculateWidth()
+        {
+            //5 margin on both sides
+            return 5 + 5 + 1 + 1 + TextShaping.CalculateWidth(IsStop ? "\u2B59" : "\u2B45", false, (float)float.MaxValue, float.MaxValue);
+        }
+        private List<IslamMetadata.Arabic.RuleMetadata> _Rules;
         private bool _IsStop;
         public bool IsStop { get { return _IsStop; } set { _IsStop = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsStop")); } }
         #region Implementation of INotifyPropertyChanged
