@@ -104,9 +104,21 @@ namespace IslamSourceQuranViewer
         void OnTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.TappedEventArgs args)
         {
             if (_holdObj != null) {
-                int idx = 0;
-                object obj = ((_holdObj as StackPanel).DataContext as MyRenderItem).Items.FirstOrDefault((Item) => { idx++; return Item.GetType() == typeof(MyChildRenderStopContinue); });
+                object obj = ((_holdObj as StackPanel).DataContext as MyRenderItem).Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderStopContinue));
                 if (obj != null) {
+                    MyRenderModel model = (((_holdObj as StackPanel).Parent as ItemsControl).DataContext as MyRenderModel);
+                    int index = model.RenderItems.IndexOf((_holdObj as StackPanel).DataContext as MyRenderItem);
+                    string text = (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
+                    text += " " + (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText + " ";
+                    text += (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
+                    if (AppSettings.bUseColoring)
+                    {
+                        IslamMetadata.Arabic.ApplyColorRules(text, true, (obj as MyChildRenderStopContinue).MetaRules);
+                        IslamMetadata.Arabic.TransliterateWithRulesColor(text, String.Empty, true, false, (obj as MyChildRenderStopContinue).MetaRules);
+                    } else
+                    {
+                        IslamMetadata.Arabic.TransliterateWithRules(text, String.Empty, false, (obj as MyChildRenderStopContinue).MetaRules);
+                    }
                     (obj as MyChildRenderStopContinue).IsStop = !(obj as MyChildRenderStopContinue).IsStop;
                     //(((_holdObj as StackPanel).DataContext as MyRenderItem).Items[idx - 1] as MyChildRenderItem).GetText
                 }

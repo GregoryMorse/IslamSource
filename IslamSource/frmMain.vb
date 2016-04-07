@@ -103,7 +103,7 @@ Public Class frmMain
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.shehnazshaikh.txt")
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\id.w4w.terjemah.txt")
         'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\ur.w4w.hafiznazarmuhammad.txt")
-        Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\tr.w4w.suleyman.ates.txt")
+        Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\tr.w4w.suleymanates.txt")
         Dim LineCount As Integer = 0
         For Count As Integer = 0 To 113
             For VerseCount = 0 To Text(Count).Length - 1
@@ -126,8 +126,9 @@ Public Class frmMain
     End Sub
 
     Private Sub UtilityTestCode()
-        Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
-        clsWarshQuran.HindiW4W()
+        IslamMetadata.CachedData.GetMorphologicalDataByVerbScale()
+        'Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
+        'clsWarshQuran.HindiW4W()
         'Dim Strs As New List(Of String)
         'For Chapter = 1 To 114
         '    For SubCount = 1 To TanzilReader.GetVerseCount(Chapter)
@@ -158,7 +159,7 @@ Public Class frmMain
         'Utility.WriteAllLines("..\..\..\metadata\tr.w4w.suleyman.ates.txt", Strs.ToArray())
         'CheckMorphology()        
         'dataroot -> ayat -> TarjumaLafziDrFarhatHashmi, TarjumaLafziFahmulQuran, TarjumaLafziNazarAhmad
-        CompareWordCounts()
+        'CompareWordCounts()
         'Dim AvailableTranslationProviders() As String = "af,af-ZA,am,am-ET,ar,ar-AE,ar-BH,ar-DZ,ar-EG,ar-IQ,ar-JO,ar-KW,ar-LB,ar-LY,ar-MA,ar-OM,ar-QA,ar-SA,ar-SY,ar-TN,ar-YE,as,as-IN,az-Latn,az-Latn-AZ,be,be-BY,bg,bg-BG,bn,bn-BD,bn-IN,bs-Cyrl,bs-Cyrl-BA,bs-Latn,bs-Latn-BA,ca,ca-ES,chr-Cher,chr-Cher-US,cs,cs-CZ,cy,cy-GB,da,da-DK,de,de-AT,de-CH,de-DE,de-LI,de-LU,el,el-GR,en,en-029,en-AU,en-BZ,en-CA,en-GB,en-HK,en-IE,en-IN,en-JM,en-MY,en-NG,en-NZ,en-PH,en-PK,en-SG,en-TT,en-US,en-ZA,en-ZW,es,es-AR,es-BO,es-CL,es-CO,es-CR,es-DO,es-EC,es-ES,es-GT,es-HN,es-MX,es-NI,es-PA,es-PE,es-PR,es-PY,es-SV,es-US,es-UY,es-VE,et,et-EE,eu,eu-ES,fa,fa-IR,fi,fi-FI,fil,fil-PH,fr,fr-BE,fr-CA,fr-CH,fr-DZ,fr-FR,fr-LU,fr-MA,fr-MC,fr-TN,ga,ga-IE,gd,gd-GB,gl,gl-ES,gu,gu-IN,ha-Latn,ha-Latn-NG,he,he-IL,hi,hi-IN,hr,hr-HR,hu,hu-HU,hy,hy-AM,id,id-ID,ig,ig-NG,is,is-IS,it,it-CH,it-IT,iu-Latn,iu-Latn-CA,ja,ja-JP,ka,ka-GE,kk,kk-KZ,km,km-KH,kn,kn-IN,ko,ko-KR,kok,kok-IN,ku-Arab,ku-Arab-IQ,ky,ky-KG,lb,lb-LU,lo,lo-LA,lt,lt-LT,lv,lv-LV,mi,mi-NZ,mk,mk-MK,ml,ml-IN,mn-MN,mr,mr-IN,ms,ms-BN,ms-MY,mt,mt-MT,my-MM,nb,nb-NO,ne,ne-NP,nl,nl-BE,nl-NL,nn,nn-NO,nso,nso-ZA,or,or-IN,pa,pa-Arab,pa-Arab-PK,pa-IN,pl,pl-PL,prs,prs-AF,ps,ps-AF,pt,pt-BR,pt-PT,qps-ploc,quc-Latn-GT,quz,quz-PE,rm,rm-CH,ro,ro-MD,ro-RO,ru,ru-KZ,ru-RU,rw,rw-RW,sd-Arab,sd-Arab-PK,si,si-LK,sk,sk-SK,sl,sl-SI,sq,sq-AL,sr-Cyrl,sr-Cyrl-BA,sr-Cyrl-RS,sr-Latn,sr-Latn-ME,sr-Latn-RS,sv,sv-FI,sv-SE,sw,sw-KE,ta,ta-IN,te,te-IN,tg-Cyrl,tg-Cyrl-TJ,th,th-TH,ti,ti-ET,tk,tk-TM,tn,tn-ZA,tr,tr-TR,tt,tt-RU,ug,ug-CN,uk,uk-UA,ur,ur-PK,uz-Cyrl-UZ,uz-Latn,uz-Latn-UZ,vi,vi-VN,wo,wo-SN,xh,xh-ZA,yo,yo-NG,zh-CN,zh-HK,zh-Hans,zh-Hant,zh-SG,zh-TW,zu,zu-ZA".ToLower().Split(","c)
         'Dim StoreCultures() As String = "ar,ar-sa,ar-ae,ar-bh,ar-dz,ar-eg,ar-iq,ar-jo,ar-kw,ar-lb,ar-ly,ar-ma,ar-om,ar-qa,ar-sy,ar-tn,ar-ye,af,af-za,sq,sq-al,am,am-et,hy,hy-am,as,as-in,az,az-arab,az-arab-az,az-cyrl,az-cyrl-az,az-latn,az-latn-az,eu,eu-es,be,be-by,bn,bn-bd,bn-in,bs,bs-cyrl,bs-cyrl-ba,bs-latn,bs-latn-ba,bg,bg-bg,ca,ca-es,ca-es-valencia,chr-cher,chr-cher-us,chr-latn,zh,zh-Hans,zh-cn,zh-hans-cn,zh-sg,zh-hans-sg,zh-Hant,zh-hk,zh-mo,zh-tw,zh-hant-hk,zh-hant-mo,zh-hant-tw,hr,hr-hr,hr-ba,cs,cs-cz,da,da-dk,prs,prs-af,prs-arab,nl,nl-nl,nl-be,en,en-au,en-ca,en-gb,en-ie,en-in,en-nz,en-sg,en-us,en-za,en-bz,en-hk,en-id,en-jm,en-kz,en-mt,en-my,en-ph,en-pk,en-tt,en-vn,en-zw,en-053,en-021,en-029,en-011,en-018,en-014,et,et-ee,fil,fil-latn,fil-ph,fi,fi-fi,fr,fr-be,fr-ca,fr-ch,fr-fr,fr-lu,fr-015,fr-cd,fr-ci,fr-cm,fr-ht,fr-ma,fr-mc,fr-ml,fr-re,frc-latn,frp-latn,fr-155,fr-029,fr-021,fr-011,gl,gl-es,ka,ka-ge,de,de-at,de-ch,de-de,de-lu,de-li,el,el-gr,gu,gu-in,ha,ha-latn,ha-latn-ng,he,he-il,hi,hi-in,hu,hu-hu,is,is-is,ig-latn,ig-ng,id,id-id,iu-cans,iu-latn,iu-latn-ca,ga,ga-ie,xh,xh-za,zu,zu-za,it,it-it,it-ch,ja,ja-jp,kn,kn-in,kk,kk-kz,km,km-kh,quc-latn,qut-gt,qut-latn,rw,rw-rw,sw,sw-ke,kok,kok-in,ko,ko-kr,ku-arab,ku-arab-iq,ky-kg,ky-cyrl,lo,lo-la,lv,lv-lv,lt,lt-lt,lb,lb-lu,mk,mk-mk,ms,ms-bn,ms-my,ml,ml-in,mt,mt-mt,mi,mi-latn,mi-nz,mr,mr-in,mn-cyrl,mn-mong,mn-mn,mn-phag,ne,ne-np,nb,nb-no,nn,nn-no,no,no-no,or,or-in,fa,fa-ir,pl,pl-pl,pt-br,pt,pt-pt,pa,pa-arab,pa-arab-pk,pa-deva,pa-in,quz,quz-bo,quz-ec,quz-pe,ro,ro-ro,ru,ru-ru,gd-gb,gd-latn,sr-Latn,sr-latn-cs,sr,sr-latn-ba,sr-latn-me,sr-latn-rs,sr-cyrl,sr-cyrl-ba,sr-cyrl-cs,sr-cyrl-me,sr-cyrl-rs,nso,nso-za,tn,tn-bw,tn-za,sd-arab,sd-arab-pk,sd-deva,si,si-lk,sk,sk-sk,sl,sl-si,es,es-cl,es-co,es-es,es-mx,es-ar,es-bo,es-cr,es-do,es-ec,es-gt,es-hn,es-ni,es-pa,es-pe,es-pr,es-py,es-sv,es-us,es-uy,es-ve,es-019,es-419,sv,sv-se,sv-fi,tg-arab,tg-cyrl,tg-cyrl-tj,tg-latn,ta,ta-in,tt-arab,tt-cyrl,tt-latn,tt-ru,te,te-in,th,th-th,ti,ti-et,tr,tr-tr,tk-cyrl,tk-latn,tk-tm,tk-latn-tr,tk-cyrl-tr,uk,uk-ua,ur,ur-pk,ug-arab,ug-cn,ug-cyrl,ug-latn,uz,uz-cyrl,uz-latn,uz-latn-uz,vi,vi-vn,cy,cy-gb,wo,wo-sn,yo-latn,yo-ng".ToLower().Split(","c)
         'StoreCultures = New List(Of String)(Linq.Enumerable.Intersect(AvailableTranslationProviders, StoreCultures)).ToArray()
@@ -216,7 +217,7 @@ Public Class frmMain
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.UthmaniMin, TanzilReader.ArabicPresentation.None)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
+        TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Simple, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleClean, TanzilReader.ArabicPresentation.Buckwalter)

@@ -640,11 +640,11 @@ Public Class Arabic
         'end of ayah sign without number is used as a proper place holder
         If Index <> -1 And PreString.Length - 2 = Index Then Index = PreString.LastIndexOf(" "c, Index - 1)
         If Index <> -1 Then PreString = PreString.Substring(Index + 1)
-        If PreString <> String.Empty Then PreString += " " + ArabicData.ArabicEndOfAyah + " "
+        If PreString <> String.Empty Then PreString += String.Join(Of Char)(String.Empty, New Char() {" "c, ArabicData.ArabicEndOfAyah, " "c})
         Index = PostString.IndexOf(" "c)
         If Index = 1 Then Index = PostString.IndexOf(" "c, Index + 1)
         If Index <> -1 Then PostString = PostString.Substring(0, Index)
-        If PostString <> String.Empty Then PostString = " " + ArabicData.ArabicEndOfAyah + " " + PostString
+        If PostString <> String.Empty Then PostString = String.Join(String.Empty, {" "c, ArabicData.ArabicEndOfAyah, " "c, PostString})
         'If Not OptionalStops Is Nothing Then
         '    Dim Stops As New List(Of Integer)
         '    If PreString <> String.Empty Then Stops.Add(PreString.Length - 2)
@@ -653,7 +653,7 @@ Public Class Arabic
         '    Next
         '    If PostString <> String.Empty Then Stops.Add(PreString.Length + ArabicString.Length + 1)
         'End If
-        Return PreString + ArabicString + PostString
+        Return String.Join(String.Empty, {PreString, ArabicString, PostString})
     End Function
     Public Shared Function UnjoinContig(ByVal ArabicString As String, ByVal PreString As String, ByVal PostString As String) As String
         Dim Index As Integer = ArabicString.IndexOf(ArabicData.ArabicEndOfAyah)
@@ -2958,6 +2958,177 @@ Public Class CachedData
             Return obj(0) + (obj(1) << 7) + (obj(2) << 16) + (obj(3) << 24)
         End Function
     End Class
+    Public Shared Sub GetMorphologicalDataByVerbScale()
+        Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
+        Dim RootDictionary As New Dictionary(Of String, String())
+        For Count = 0 To Lines.Length - 1
+            If Lines(Count).Length <> 0 AndAlso Lines(Count).Chars(0) <> "#" Then
+                Dim Pieces As String() = Lines(Count).Split(CChar(vbTab))
+                If Pieces(0).Chars(0) = "(" AndAlso Pieces(2) = "V" Then
+                    Dim Parts As String() = Pieces(3).Split("|"c)
+                    Dim bNotDefaultPresent As Boolean = False
+                    Dim bPassive As Boolean = False
+                    Dim Type As Integer = 1
+                    Dim Tense As Integer = 0
+                    Dim Root As String = String.Empty
+                    Dim Lemma As String = String.Empty
+                    For SubCount As Integer = 0 To Parts.Length - 1
+                        Dim Types As String() = Parts(SubCount).Split(":"c)
+                        If Types(0) = "ROOT" Then
+                            Root = Types(1)
+                        ElseIf Types(0) = "LEM" Then
+                            Lemma = Types(1)
+                        ElseIf Types(0) = "MOOD" Then
+                            bNotDefaultPresent = True
+                        ElseIf Types(0) = "(II)" Then
+                            Type = 2
+                        ElseIf Types(0) = "(III)" Then
+                            Type = 3
+                        ElseIf Types(0) = "(IV)" Then
+                            Type = 4
+                        ElseIf Types(0) = "(V)" Then
+                            Type = 5
+                        ElseIf Types(0) = "(VI)" Then
+                            Type = 6
+                        ElseIf Types(0) = "(VII)" Then
+                            Type = 7
+                        ElseIf Types(0) = "(VIII)" Then
+                            Type = 8
+                        ElseIf Types(0) = "(IX)" Then
+                            Type = 9
+                        ElseIf Types(0) = "(X)" Then
+                            Type = 10
+                        ElseIf Types(0) = "(XI)" Then
+                            Type = 11
+                        ElseIf Types(0) = "(XII)" Then
+                            Type = 12
+                        ElseIf Types(0) = "PASS" Then
+                            bPassive = True
+                        ElseIf Types(0) = "PERF" Then
+                            Tense = 1
+                        ElseIf Types(0) = "IMPF" Then
+                            Tense = 2
+                        ElseIf Types(0) = "IMPV" Then
+                            Tense = 3
+                        End If
+                    Next
+                    If Type = 1 Then
+                        If Not RootDictionary.ContainsKey(Root) Then RootDictionary.Add(Root, New String() {String.Empty, String.Empty})
+                        If RootDictionary(Root)(1) = String.Empty And Tense = 1 Then
+                            If Root(2) = "w" Then
+                            ElseIf Root(2) = "y" Then
+                            ElseIf Root(1) = Root(2) Then
+                            ElseIf Root(1) = "w" Or Root(1) = "y" Then
+                                Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0)) + "aA" + If(Root(2) = "A", "(?:>|'|_#|&)", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                If Match.Success And Match.Captures.Count = 1 Then
+                                    RootDictionary(Root)(0) = Match.Groups(1).Value
+                                    'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "aA" + If(Root(2) = "A", "'", Root(2)) + "a"
+                                Else
+                                    Debug.WriteLine(Root + " - " + Pieces(1))
+                                End If
+                            Else
+                                Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0)) + "a" + If(Root(1) = "A", "_#", Root(1)) + "(.)" + If(Root(2) = "A", "(?:>|'|_#|&)", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                If Match.Success And Match.Captures.Count = 1 Then
+                                    RootDictionary(Root)(0) = Match.Groups(1).Value
+                                    'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "a" + Root(1) + Match.Groups(1).Value + If(Root(2) = "A", If(Match.Groups(1).Value = "u", "&", If(Match.Groups(1).Value = "a", ">", "{")), Root(2)) + "a"
+                                Else
+                                    Debug.WriteLine(Root + " - " + Pieces(1))
+                                End If
+                            End If
+                        ElseIf RootDictionary(Root)(1) = String.Empty And Tense = 2 Then
+                            If Root.Length = 3 And Not bPassive Then
+                                    If Root(2) = "w" Then
+                                        '-oona merges into it
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "o" + Root(1) + "(.)" + Root(2) + "?").Replace("$", "\$").Replace("*", "\*"))
+                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", ">", Root(0)) + "o" + Root(1) + Match.Groups(1).Value + Root(2)
+                                    Else
+                                            Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    ElseIf Root(2) = "y" And Root(1) = "A" And Root(0) = "r" Then
+                                        'rAy is a special unique exception
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "(.)" + "(?:" + Root(2) + "|Y)").Replace("$", "\$").Replace("*", "\*"))
+                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + Root(0) + Match.Groups(1).Value + Root(2)
+                                    Else
+                                            Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    ElseIf Root(0) = "w" And Root(2) = "y" Then
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
+                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + Root(1) + Match.Groups(1).Value + Root(2)
+                                    Else
+                                            Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    ElseIf Root(2) = "y" Then
+                                        '-oona changes to -awna fatha
+                                        '"AhHxgE" of ayn makes ayn on a, others on i
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "(?:A|>)", Root(0)) + "o?" + If(Root(1) = "y", "(?:y|Y)", If(Root(1) = "A", "_#", Root(1))) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
+                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", ">", Root(0)) + "o" + If(Root(1) = "A", "_#", Root(1)) + Match.Groups(1).Value + Root(2)
+                                    Else
+                                            Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    ElseIf Root(1) = Root(2) Then
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "&", Root(0)) + "(.)" + Root(1) + "~").Replace("$", "\$").Replace("*", "\*"))
+                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", "&", Root(0)) + Match.Groups(1).Value + Root(1) + "~u"
+                                    Else
+                                            Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    ElseIf Root(0) = "w" Then
+                                        '"AhHxgE" of lam makes ayn on a, others on i
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + If(Root(2) = "A", "_#", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + Root(1) + Match.Groups(1).Value + If(Root(2) = "A", ">", Root(2)) + "u"
+                                    Else
+                                            Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    ElseIf Root(1) = "w" Then
+                                        'kwd, xwf exceptions with ayn on a
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "_#", Root(0)) + "(.)" + "(?:" + Root(1) + "|A)?" + If(Root(2) = "A", "\^>|&", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", "_#", Root(0)) + Match.Groups(1).Value + If(Match.Groups(1).Value = "a", "A", Root(1)) + If(Root(2) = "A", "^>", Root(2)) + "u"
+                                    Else
+                                            Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    ElseIf Root(1) = "y" Then
+                                    'hamza of lam can make ayn on a, others on i
+                                    'nyl and zyl exceptions with ayn on a
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(0) + "(.)" + If(Root(2) = "A", "A?", "(?:" + Root(1) + "|Y|A)?") + If(Root(2) = "A", "\^'", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + Root(0) + Match.Groups(1).Value + If(Root(2) = "A", "A", If(Match.Groups(1).Value = "a", "A", Root(1))) + If(Root(2) = "A", "\^'", Root(2)) + "u"
+                                    Else
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                    Else
+                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "(?:A|>)", Root(0)) + "(?:o|\[)?" + If(Root(1) = "A", "_#", If(Root(1) = "s", "(?:S:|s)", Root(1))) + "(.)" + If(Root(2) = "A", "(?:>|'|_#|&)", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
+                                        RootDictionary(Root)(1) = Match.Groups(1).Value
+                                        'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", ">", Root(0)) + "o" + Root(1) + Match.Groups(1).Value + If(Root(2) = "A", If(Match.Groups(1).Value = "u", "&", If(Match.Groups(1).Value = "a", ">", "{")), Root(2)) + "u"
+                                    Else
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                        End If
+                                    End If
+                                ElseIf RootDictionary(Root)(1) = String.Empty And Tense = 3 Then
+                                End If
+                        End If
+                    End If
+                End If
+            End If
+        Next
+        For Each KeyValue In RootDictionary
+            Debug.WriteLine(KeyValue.Key + ": " + KeyValue.Value(0) + "-" + KeyValue.Value(1))
+        Next
+    End Sub
     Public Shared Function GetMorphologicalDataForWord(Chapter As Integer, Verse As Integer, Word As Integer) As RenderArray
         Dim Lines As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
         If _MorphDataToLineNumber Is Nothing Then
@@ -4934,7 +5105,7 @@ Public Class TanzilReader
         If SrcScriptType = QuranScripts.Uthmani Then
             Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(BaseText) + ".xml")))
         Else
-            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("IslamMetadata", "quran-" + QuranFileNames(SrcScriptType) + ".xml")))
+            Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("Resources", "quran-" + QuranFileNames(SrcScriptType) + ".xml")))
         End If
         Doc = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
@@ -5648,7 +5819,7 @@ Public Class TanzilReader
                 If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
                 If Not NoArabic AndAlso Count <> If(Colorize, WordColors.Length, Words.Length) - 1 AndAlso If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length) <> 1 Then
-                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) = -1), Arabic.FilterMetadataStopsContig(If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1 + If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length), MetaRules, DefStops, Pos)})}))
+                    Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) = -1, Arabic.FilterMetadataStopsContig(If(Colorize, Linq.Enumerable.Sum(WordColors(Count), Function(Item) CStr(Item.Text).Length), Words(Count).Length) + 1 + If(Colorize, Linq.Enumerable.Sum(WordColors(Count + 1), Function(Item) CStr(Item.Text).Length), Words(Count + 1).Length), MetaRules, DefStops, Pos)})}))
                 End If
                 Texts.Clear()
             End If
