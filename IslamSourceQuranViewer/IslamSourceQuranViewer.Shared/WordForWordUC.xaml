@@ -38,7 +38,7 @@
                 </Grid.RowDefinitions>
 
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding IsRTL, Converter={StaticResource ArabicFlow}}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}"
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding IsRTL, Converter={StaticResource ArabicFlow}}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns, Mode=OneWay}"
                         TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" Language="ar" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}">
                 </TextBlock>
             </Grid>
@@ -50,7 +50,7 @@
                 </Grid.RowDefinitions>
 
                 <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding IsRTL, Converter={StaticResource ArabicFlow}}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns}"
+                <TextBlock Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding IsRTL, Converter={StaticResource ArabicFlow}}" local:FormattedTextBehavior.FormattedText="{Binding ItemRuns, Mode=OneWay}"
                         TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}">
                 </TextBlock>
             </Grid>
@@ -117,25 +117,25 @@
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                 Background="White">
                 <ListBox ItemsSource="{Binding Source={StaticResource VerseNumbers}, Mode=OneWay}" 
-                        SelectedItem="{Binding Path=ViewModel.CurrentVerse, Mode=TwoWay}">
-                    <ItemsControl.ItemTemplate>
+                        SelectedItem="{Binding Path=ViewModel.CurrentVerse, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Enabled">
+                    <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding VerseText}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}"
                                        FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}"></TextBlock>
                         </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                    <ItemsControl.ItemsPanel>
+                    </ListBox.ItemTemplate>
+                    <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"></StackPanel>
                         </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.Template>
-                        <ControlTemplate TargetType="ItemsControl">
-                            <ScrollViewer HorizontalScrollMode="Disabled" VerticalScrollBarVisibility="Auto" ZoomMode="Disabled">
+                    </ListBox.ItemsPanel>
+                    <ListBox.Template>
+                        <ControlTemplate TargetType="ListBox">
+                            <ScrollViewer Background="White" HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" ZoomMode="Disabled">
                                 <ItemsPresenter/>
                             </ScrollViewer>
                         </ControlTemplate>
-                    </ItemsControl.Template>
+                    </ListBox.Template>
                 </ListBox>
             </Border>
         </Popup>

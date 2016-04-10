@@ -106,20 +106,33 @@ namespace IslamSourceQuranViewer
             if (_holdObj != null) {
                 object obj = ((_holdObj as StackPanel).DataContext as MyRenderItem).Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderStopContinue));
                 if (obj != null) {
-                    MyRenderModel model = (((_holdObj as StackPanel).Parent as ItemsControl).DataContext as MyRenderModel);
+                    //ContentPresenter, ItemsControl and ItemsPresenter in middle layer between higher and lower StackPanel
+                    MyRenderModel model = ((VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(_holdObj as StackPanel)))) as StackPanel).DataContext as MyRenderModel);
                     int index = model.RenderItems.IndexOf((_holdObj as StackPanel).DataContext as MyRenderItem);
                     string text = (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
-                    text += " " + (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText + " ";
+                    MyChildRenderItem MainItem = (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem);
+                    int stopSpot = text.Length + (MainItem != null ? 1: 0);
+                    text += " " + (MainItem != null ? (MainItem.GetText + " ") : string.Empty);
                     text += (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
+                    (obj as MyChildRenderStopContinue).IsStop = !(obj as MyChildRenderStopContinue).IsStop;
                     if (AppSettings.bUseColoring)
                     {
-                        IslamMetadata.Arabic.ApplyColorRules(text, true, (obj as MyChildRenderStopContinue).MetaRules);
-                        IslamMetadata.Arabic.TransliterateWithRulesColor(text, String.Empty, true, false, (obj as MyChildRenderStopContinue).MetaRules);
-                    } else
-                    {
-                        IslamMetadata.Arabic.TransliterateWithRules(text, String.Empty, false, (obj as MyChildRenderStopContinue).MetaRules);
+                        XMLRender.RenderArray.RenderText[][] strs = IslamMetadata.Arabic.ApplyColorRules(text, true, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, (obj as MyChildRenderStopContinue).IsStop ? new int[] { stopSpot } : null));
+                        (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        if (MainItem != null) MainItem.ItemRuns = strs[1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        strs = IslamMetadata.Arabic.TransliterateWithRulesColor(text, String.Empty, true, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, (obj as MyChildRenderStopContinue).IsStop ? new int[] { stopSpot } : null));
+                        (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        if (MainItem != null) (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
                     }
-                    (obj as MyChildRenderStopContinue).IsStop = !(obj as MyChildRenderStopContinue).IsStop;
+                    else
+                    {
+                        string[] strs = IslamMetadata.Arabic.TransliterateWithRules(text, String.Empty, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, (obj as MyChildRenderStopContinue).IsStop ? new int[] { stopSpot } : null)).Split(' ');
+                        (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[0] } };
+                        if (MainItem != null) MainItem.ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[1] } };
+                        (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[(MainItem != null) ? 2 : 1] } };
+                    }
                     //(((_holdObj as StackPanel).DataContext as MyRenderItem).Items[idx - 1] as MyChildRenderItem).GetText
                 }
             }
@@ -334,6 +347,9 @@ namespace IslamSourceQuranViewer
             {
                 Flyout ContextFlyout = new Flyout();
                 StackPanel Panel = new StackPanel();
+                //Panel.SetValue(NameProperty, "TopLevel");
+                Panel.Name = "TopLevel";
+                Panel.DataContext = this;
                 ContextFlyout.Content = Panel;
                 Panel.Children.Add(new ItemsControl() { ItemsPanel = Resources["VirtualPanelTemplate"] as ItemsPanelTemplate, ItemTemplate = Resources["WrapTemplate"] as DataTemplate, ItemsSource = VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word).Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), UIChanger.MaxWidth) });
                 VirtualizingStackPanel.SetVirtualizationMode((Panel.Children.Last() as ItemsControl), VirtualizationMode.Recycling);
@@ -364,11 +380,11 @@ namespace IslamSourceQuranViewer
                         Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView().DataRequested -= null;
                     };
                     Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
-//#else
-//            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
-//            shareStatusTask.Status = string.Empty;
-//            shareStatusTask.Show(); 
-//#endif
+                //#else
+                //            Microsoft.Phone.Tasks.ShareStatusTask shareStatusTask = new Microsoft.Phone.Tasks.ShareStatusTask(); 
+                //            shareStatusTask.Status = string.Empty;
+                //            shareStatusTask.Show(); 
+                //#endif
                 };
                 FlyoutBase.SetAttachedFlyout(sender as StackPanel, ContextFlyout);
                 FlyoutBase.ShowAttachedFlyout(sender as StackPanel);

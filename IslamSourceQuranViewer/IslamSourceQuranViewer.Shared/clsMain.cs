@@ -1480,6 +1480,7 @@ using Android.Graphics;
             return 5 + 5 + 1 + 1 + TextShaping.CalculateWidth(IsStop ? "\u2B59" : "\u2B45", false, (float)float.MaxValue, float.MaxValue);
         }
         private List<IslamMetadata.Arabic.RuleMetadata> _Rules;
+        public List<IslamMetadata.Arabic.RuleMetadata> MetaRules { get { return _Rules; } }
         private bool _IsStop;
         public bool IsStop { get { return _IsStop; } set { _IsStop = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsStop")); } }
         #region Implementation of INotifyPropertyChanged
@@ -1579,6 +1580,7 @@ using Android.Graphics;
                     }
                 }
                 _ItemRuns = value;
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("ItemRuns"));
             }
         }
         public bool IsArabic { get; set; }

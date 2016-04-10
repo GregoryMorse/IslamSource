@@ -36,6 +36,13 @@
                         Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <ListBox.Template>
+                <ControlTemplate TargetType="ListBox">
+                    <ScrollViewer Background="White" VerticalScrollMode="Disabled" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" ZoomMode="Disabled">
+                        <ItemsPresenter/>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ListBox.Template>
         </ListBox>
         <!--Binding Converter={StaticResource converter},RelativeSource={RelativeSource AncestorType={x:Type ListView}}}-->
         <ListBox x:Name="sectionListBox" Grid.Row="1" ItemsSource="{Binding Source={StaticResource QuranDivision}, Mode=OneWay}" 
