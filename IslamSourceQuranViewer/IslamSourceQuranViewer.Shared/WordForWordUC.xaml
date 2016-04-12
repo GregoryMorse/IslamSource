@@ -114,30 +114,32 @@
         <ProgressRing Name="LoadingRing" IsActive="True" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch"></ProgressRing>
         <MediaElement Name="VersePlayer" CurrentStateChanged="MediaElement_CurrentStateChanged" AreTransportControlsEnabled="False" AutoPlay="True"></MediaElement>
         <Popup x:Name="GoToVersePopup" IsLightDismissEnabled="True">
-            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
-                Background="White">
-                <ListBox ItemsSource="{Binding Source={StaticResource VerseNumbers}, Mode=OneWay}" 
-                        SelectedItem="{Binding Path=ViewModel.CurrentVerse, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Enabled">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding VerseText}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}"
-                                       FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}"></TextBlock>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"></StackPanel>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                    <ListBox.Template>
-                        <ControlTemplate TargetType="ListBox">
-                            <ScrollViewer Background="White" HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" ZoomMode="Disabled">
-                                <ItemsPresenter/>
-                            </ScrollViewer>
-                        </ControlTemplate>
-                    </ListBox.Template>
-                </ListBox>
-            </Border>
+            <Grid MaxHeight="{Binding ElementName=TopLevel, Path=UIChanger.MaxHeight}">
+                <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                    Background="White">
+                    <ListBox ItemsSource="{Binding Source={StaticResource VerseNumbers}, Mode=OneWay}" 
+                            SelectedItem="{Binding Path=ViewModel.CurrentVerse, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollMode="Enabled">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding VerseText}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}"
+                                           FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}"></TextBlock>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.Template>
+                            <ControlTemplate TargetType="ListBox">
+                                <ScrollViewer Background="White" HorizontalScrollMode="Disabled" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" ZoomMode="Disabled">
+                                    <ItemsPresenter/>
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ListBox.Template>
+                    </ListBox>
+                </Border>
+            </Grid>
         </Popup>
     </Grid>
     <Page.BottomAppBar>

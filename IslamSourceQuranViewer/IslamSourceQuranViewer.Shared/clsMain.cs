@@ -1354,6 +1354,19 @@ using Android.Graphics;
                 if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("MaxWidth"));
             }
         }
+        private double _MaxHeight;
+        public double MaxHeight
+        {
+            get
+            {
+                return _MaxHeight;
+            }
+            set
+            {
+                _MaxHeight = value;
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("MaxHeight"));
+            }
+        }
 
         #region Implementation of INotifyPropertyChanged
 

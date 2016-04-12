@@ -107,31 +107,36 @@ namespace IslamSourceQuranViewer
                 object obj = ((_holdObj as StackPanel).DataContext as MyRenderItem).Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderStopContinue));
                 if (obj != null) {
                     //ContentPresenter, ItemsControl and ItemsPresenter in middle layer between higher and lower StackPanel
-                    MyRenderModel model = ((VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(_holdObj as StackPanel)))) as StackPanel).DataContext as MyRenderModel);
-                    int index = model.RenderItems.IndexOf((_holdObj as StackPanel).DataContext as MyRenderItem);
-                    string text = (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
-                    MyChildRenderItem MainItem = (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem);
-                    int stopSpot = text.Length + (MainItem != null ? 1: 0);
-                    text += " " + (MainItem != null ? (MainItem.GetText + " ") : string.Empty);
-                    text += (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
                     (obj as MyChildRenderStopContinue).IsStop = !(obj as MyChildRenderStopContinue).IsStop;
+                    VirtualizingWrapPanelAdapter panel = ((VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(_holdObj as StackPanel)))))))) as VirtualizingStackPanel).DataContext as VirtualizingWrapPanelAdapter);
+                    MyRenderModel model = ((VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(VisualTreeHelper.GetParent(_holdObj as StackPanel)))) as StackPanel).DataContext as MyRenderModel);
+                    int mmodel = panel.RenderModels.IndexOf(model);
+                    int index = model.RenderItems.IndexOf((_holdObj as StackPanel).DataContext as MyRenderItem);
+                    List<int> stops = new List<int>();
+                    if ((mmodel >= 1 || index >= 2) && (panel.RenderModels[mmodel - (index <= 1 ? 1 : 0)].RenderItems[index <= 1 ? panel.RenderModels[mmodel - 1].RenderItems.Count - 2 + index : index - 2].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderStopContinue) && (Item as MyChildRenderStopContinue).IsStop) as MyChildRenderStopContinue) != null) stops.Add(-1);
+                    string text = (panel.RenderModels[mmodel - (index == 0 ? 1 : 0)].RenderItems[index == 0 ? panel.RenderModels[mmodel - 1].RenderItems.Count - 1 : index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
+                    MyChildRenderItem MainItem = (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem);
+                    if ((obj as MyChildRenderStopContinue).IsStop) stops.Add(text.Length + (MainItem != null ? 1 : 0));
+                    text += " " + (MainItem != null ? (MainItem.GetText.Trim() + " ") : string.Empty);
+                    text += (panel.RenderModels[mmodel + (index + 1 == model.RenderItems.Count ? 1 : 0)].RenderItems[index + 1 == model.RenderItems.Count ? 0 : index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).GetText;
+                    if ((panel.RenderModels[mmodel + (index + 2 >= model.RenderItems.Count ? 1 : 0)].RenderItems[index + 2 == model.RenderItems.Count ? 0 : (index + 1 == model.RenderItems.Count ? 1 : index + 2)].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderStopContinue) && (Item as MyChildRenderStopContinue).IsStop) as MyChildRenderStopContinue) != null) stops.Add(text.Length);
                     if (AppSettings.bUseColoring)
                     {
-                        XMLRender.RenderArray.RenderText[][] strs = IslamMetadata.Arabic.ApplyColorRules(text, true, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, (obj as MyChildRenderStopContinue).IsStop ? new int[] { stopSpot } : null));
-                        (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        XMLRender.RenderArray.RenderText[][] strs = IslamMetadata.Arabic.ApplyColorRules(text, true, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, stops.ToArray()));
+                        (panel.RenderModels[mmodel - (index == 0 ? 1 : 0)].RenderItems[index == 0 ? panel.RenderModels[mmodel - 1].RenderItems.Count - 1 : index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
                         if (MainItem != null) MainItem.ItemRuns = strs[1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
-                        (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
-                        strs = IslamMetadata.Arabic.TransliterateWithRulesColor(text, String.Empty, true, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, (obj as MyChildRenderStopContinue).IsStop ? new int[] { stopSpot } : null));
-                        (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
-                        if (MainItem != null) (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
-                        (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        (panel.RenderModels[mmodel + (index + 1 == model.RenderItems.Count ? 1 : 0)].RenderItems[index + 1 == model.RenderItems.Count ? 0 : index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        strs = IslamMetadata.Arabic.TransliterateWithRulesColor(text, String.Empty, true, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, stops.ToArray()));
+                        (panel.RenderModels[mmodel - (index == 0 ? 1 : 0)].RenderItems[index == 0 ? panel.RenderModels[mmodel - 1].RenderItems.Count - 1 : index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        if (MainItem != null && MainItem.GetText.Trim().Length != 1) (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
+                        (panel.RenderModels[mmodel + (index + 1 == model.RenderItems.Count ? 1 : 0)].RenderItems[index + 1 == model.RenderItems.Count ? 0 : index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null && MainItem.GetText.Trim().Length != 1) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
                     }
                     else
                     {
-                        string[] strs = IslamMetadata.Arabic.TransliterateWithRules(text, String.Empty, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, (obj as MyChildRenderStopContinue).IsStop ? new int[] { stopSpot } : null)).Split(' ');
-                        (model.RenderItems[index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[0] } };
-                        if (MainItem != null) MainItem.ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[1] } };
-                        (model.RenderItems[index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[(MainItem != null) ? 2 : 1] } };
+                        string[] strs = IslamMetadata.Arabic.TransliterateWithRules(text, String.Empty, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, stops.ToArray())).Split(' ');
+                        (panel.RenderModels[mmodel - (index == 0 ? 1 : 0)].RenderItems[index == 0 ? panel.RenderModels[mmodel - 1].RenderItems.Count - 1 : index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[0] } };
+                        if (MainItem != null && MainItem.GetText.Trim().Length != 1) MainItem.ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[1] } };
+                        (panel.RenderModels[mmodel + (index + 1 == model.RenderItems.Count ? 1 : 0)].RenderItems[index + 1 == model.RenderItems.Count ? 0 : index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = new List<MyChildRenderBlockItem>() { new MyChildRenderBlockItem() { ItemText = strs[(MainItem != null && MainItem.GetText.Trim().Length != 1) ? 2 : 1] } };
                     }
                     //(((_holdObj as StackPanel).DataContext as MyRenderItem).Items[idx - 1] as MyChildRenderItem).GetText
                 }
@@ -141,6 +146,7 @@ namespace IslamSourceQuranViewer
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
             UIChanger.MaxWidth = MainGrid.ActualWidth;
+            UIChanger.MaxHeight = MainGrid.ActualHeight;
             this.ViewModel.RegroupRenderModels(UIChanger.MaxWidth);
         }
 
@@ -348,7 +354,7 @@ namespace IslamSourceQuranViewer
                 Flyout ContextFlyout = new Flyout();
                 StackPanel Panel = new StackPanel();
                 //Panel.SetValue(NameProperty, "TopLevel");
-                Panel.Name = "TopLevel";
+                //Panel.Name = "TopLevel";
                 Panel.DataContext = this;
                 ContextFlyout.Content = Panel;
                 Panel.Children.Add(new ItemsControl() { ItemsPanel = Resources["VirtualPanelTemplate"] as ItemsPanelTemplate, ItemTemplate = Resources["WrapTemplate"] as DataTemplate, ItemsSource = VirtualizingWrapPanelAdapter.GroupRenderModels(System.Linq.Enumerable.Select(IslamMetadata.CachedData.GetMorphologicalDataForWord(((sender as StackPanel).DataContext as MyRenderItem).Chapter, ((sender as StackPanel).DataContext as MyRenderItem).Verse, ((sender as StackPanel).DataContext as MyRenderItem).Word).Items, (Arr) => new MyRenderItem((XMLRender.RenderArray.RenderItem)Arr)).ToList(), UIChanger.MaxWidth) });
