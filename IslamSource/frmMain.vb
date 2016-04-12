@@ -207,12 +207,20 @@ Public Class frmMain
         'For Count = 0 To StoreCultureNames.Length - 1
         '    If StoreCultureNames(Count) <> String.Empty Then Debug.Print(StoreCultureNames(Count))
         'Next
+        'state=".*".*>(?:(?!.*trans-unit.*).*\n)*?.*</target>\r\n.*</note> -> state="new"></target>
+        'state="needs-review-translation"(.*)&lt;html&gt;(?:(?!.*trans-unit.*).*\n)+?.*&gt;</ -> state="new"></
+        '\s*<it id="1" pos="open">&lt;(.*)&gt;</it> -> $1
         'TanzilReader.WordFileToResource("..\..\..\metadata\id.w4w.terjemah.txt", "..\..\..\ResourceToolkitTempForeign\QuranResources.resx")
         'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTempForeign\QuranResources.ms.resx", "..\..\..\metadata\ms.w4w.terjemah.txt")
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
-        TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTemp\QuranResources.it.resx", "..\..\..\metadata\it.w4w.corpus.txt")
+        'TanzilReader.FileToResource("..\..\..\metadata\en.sahih.txt", "..\..\..\ResourceToolkitQuran\QuranResources.resx")
+        For Each File As IO.FileInfo In New IO.DirectoryInfo("..\..\..\ResourceToolkitTemp\").EnumerateFiles("QuranResources.hi.resx")
+            TanzilReader.ResourceToWordFile(File.FullName, "..\..\..\metadata\" + File.Name.Replace("QuranResources.", String.Empty).Replace(".resx", String.Empty) + ".w4w.corpus.txt")
+        Next
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
-        'Utility.ResourceToWordFile("..\..\..\ResourceToolkit\W4WResources.ms.resx", "..\..\..\metadata\ms.w4w.txt")
+        For Each File As IO.FileInfo In New IO.DirectoryInfo("..\..\..\ResourceToolkit\").EnumerateFiles("W4WResources.*.resx")
+            Utility.ResourceToWordFile(File.FullName, "..\..\..\metadata\" + File.Name.Replace("W4WResources.", String.Empty).Replace(".resx", String.Empty) + ".w4w.txt")
+        Next
         'clsWarshQuran.ParseQuran()
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
         'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)

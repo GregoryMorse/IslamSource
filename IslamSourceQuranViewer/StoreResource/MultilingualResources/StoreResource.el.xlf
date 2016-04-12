@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Αραβικά Qur'an με μεταδεδομένα και όλες οι μεταφράσεις και κάποια ήχου απαγγελίες εκτός αυτών που παρατίθενται πιστώνονται στο έργο Tanzil (http://tanzil.net). 
-Ουγγρική μετάφραση του Κορανίου από φιλί Χαλιμάς Zsuzsanna πιστώνεται Magyar Iszlam (http://magyariszlam.hu). 
-Αγγλική μετάφραση του Κορανίου από Maulana Muhammad Ali πιστώνεται η Λαχόρη κινήσεως Ahmadiyya στο Ισλάμ (http://www.aaiil.org). Δεδομένα 
-μορφολογία και αγγλική λέξη προς λέξη μετάφραση πιστωτικών να Quranic Αραβικά Corpus (http://corpus.quran.com). 
-Πιστωτική ινδονησιακή λέξη προς λέξη μετάφραση στην Ινδονησία Al-Quran (http://www.alquran-indonesia.com/web/quran). 
-Ουρντού λέξη προς λέξη μετάφραση από Hafiz Nazar Muhammad πιστώνονται στο εύκολο Quran Wa Hadees (http://www.easyquranwahadees.com). 
-Άλλες μεταφράσεις λέξη προς λέξη, καθώς και άλλες μεταφράσεις στο πρόγραμμα παροχής Microsoft μετάφραση (http://www.microsoft.com/en-us/translator) και το Google Translate (http://translate.google.com) και μπορεί να μην είναι ακριβής.  Για Μαλαισίας λέξη προς λέξη Qur'an, η πηγή είναι Ινδονησιακά.  Για όλα τα άλλα λέξη προς λέξη Qur'an, η πηγή είναι η αγγλική Quranic Αραβικά Corpus. 
-Άλλες ήχου απαγγελίες με bitrate δείξει πιστώνεται κάθε Ayah (http://www.everyayah.com). 
-Δεδομένα Unicode που πιστώνεται για τον όμιλο Unicode (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

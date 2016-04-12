@@ -2983,13 +2983,13 @@ var rs, next, str = '', sura = 1; func = function() { if (next.document.readySta
 		<word text="raDiYa {ll~ahu EanohumaA" id="MayAllahBePleasedWithBothOfThem"></word>
 		<word text="raDiYa {ll~ahu Eanohu" id="MayAllahBePleasedWithHim"></word>
 		<word text="raDiYa {ll~ahu EanohaA" id="MayAllahBePleasedWithHer"></word>
-		<word text="raDiYa {ll~ahu taEaAlaY` Eanohumo" id="MayGloriousAllahBePleasedWithThemMasculine"></word>
-		<word text="raDiYa {ll~ahu taEaAlaY` Eanohun~a" id="MayGloriousAllahBePleasedWithThemFeminine"></word>
-		<word text="raDiYa {ll~ahu taEaAlaY` EanohumaA" id="MayGloriousAllahBePleasedWithBothOfThem"></word>
-		<word text="raDiYa {ll~ahu taEaAlaY` Eanohu" id="MayGloriousAllahBePleasedWithHim"></word>
-		<word text="raDiYa {ll~ahu taEaAlaY` EanohaA" id="MayGloriousAllahBePleasedWithHer"></word>
-		<word text="suboHaAnahu wataEaAlaY`" id="GloriousAndExaltedBeHe"></word>
-		<word text="tabaAraka wataEaAlaY`" id="BlessedAndExaltedBeHe"></word>
+		<word text="raDiYa {ll~ahu taEa`laY` Eanohumo" id="MayGloriousAllahBePleasedWithThemMasculine"></word>
+		<word text="raDiYa {ll~ahu taEa`laY` Eanohun~a" id="MayGloriousAllahBePleasedWithThemFeminine"></word>
+		<word text="raDiYa {ll~ahu taEa`laY` EanohumaA" id="MayGloriousAllahBePleasedWithBothOfThem"></word>
+		<word text="raDiYa {ll~ahu taEa`laY` Eanohu" id="MayGloriousAllahBePleasedWithHim"></word>
+		<word text="raDiYa {ll~ahu taEa`laY` EanohaA" id="MayGloriousAllahBePleasedWithHer"></word>
+		<word text="suboHa`nahu, wataEa`laY``" id="GloriousAndExaltedBeHe"></word>
+		<word text="tabaAraka wataEa`laY`" id="BlessedAndExaltedBeHe"></word>
 		<word text="Eaz~a wajal~a" id="SublimeAndMighty"></word>
 		<word text="jal~a jalaAluhu" id="MayHisGloryBeGlorified"></word>
 		<word text="jal~a waEalaA" id="MayHisGloryBeRaised"></word>
@@ -6892,7 +6892,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<scheme name="Xinhua" alphabet="阿|布|特|丝|奇|赫|克|德|丝|尔|兹|斯|什|斯|德|特|丝|‧|格|弗|奇|库|尔|姆|恩|胡|夫|伊" hamza="。|。阿|。|夫。|。|伊。||阿|" literals="胡|特|阿胡|阿胡|伊|阿|伊|昂|昂|昂|阿|阿|阿||昂|昂|昂|&amp;first;&amp;first;|厄|乌" multis="阿|欧|伊|奥|艾" fathadammakasratanweenlongvowelsdipthongsshaddasukun="阿|乌|厄|昂|温|因||" gutterals="夫阿|奥|厄欧|奥|阿伊|厄|昂|宏|恩|库|阿厄|阿胡|欧胡|奥|伊胡|厄" tajweed="|||||||恩|胡|伊|阿" silent="||||||||||||||||||" punctuation="　|！|&quot;|，|‧|。|：|［|］|{|}| |《|》|，|；|？|　|　|）|（" number="〇|一|二|三|四|五|六|七|八|九" nonarabic="普|格|夫|古"></scheme>
 		<scheme name="Russian" alphabet="a|б|t|ф|й|x|x|д|ž|р|з|с|ш|с|д|t|ž|ъ|г|ф|к|к|л|м|н|х|в|ы" hamza="ь|ьa|ь|вь|ь|ыь||a|" literals="x|t|aax|aax|ы|aa|ee|aн|aн|aн|aa|aa|aa||aн|aн|aн|&amp;first;&amp;first;|i|u" multis="aa|y|и|aв|aы" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|aн|uн|iн||" gutterals="вaa|aв|eу|o|aи|e|aвн|oн|eн|к|aae|ax|уx|o|иx|e" tajweed="|||||||н|x|ы|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="п|й|в|г"></scheme>
 		<scheme name="French" alphabet="a|b|t|th|j|h|ch|d|th|r|z|s|sh|s|d|t|th|`|g|f|q|k|l|m|n|h|w|y" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|y&apos;||a|" literals="h|t|aah|aah|y|aa|ee|an|an|an|aa|aa|aa||an|an|an|&amp;first;&amp;first;|i|u" multis="aa|oo|ee|aw|ay" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="waa|aw|eoo|o|aee|e|awn|on|en|k|aae|ah|ooh|o|eeh|e" tajweed="|||||||n|h|y|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
-		<scheme name="Spanish" alphabet="a|b|t|z|y|h|j|d|s|r|s|z|sh|s|d|t|s|`|g|f|q|k|l|m|n|h|w|y" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|y&apos;||a|" literals="h|t|áh|áh|y|á|í|an|an|an|á|á|á||an|an|an|&amp;first;&amp;first;|i|u" multis="á|ú|í|aw|ay" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="wá|aw|eú|o|aí|e|awn|on|en|k|áe|ah|úh|o|íh|e" tajweed="|||||||n|h|y|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|h|v|g"></scheme>
+		<scheme name="Spanish" alphabet="a|b|t|z|y|h|j|d|s|r|s|z|sh|s|d|t|s|`|g|f|q|k|l|m|n|h|w|y" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|y&apos;||a|" literals="h|t|áh|áh|y|á|í|an|an|an|á|á|á||an|an|an|&amp;first;&amp;first;|i|u" multis="á|ú|í|ó|ie" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="wá|aw|eú|o|aí|e|awn|on|en|k|áe|ah|úh|o|íh|e" tajweed="|||||||n|h|y|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|h|v|g"></scheme>
 		<scheme name="German" alphabet="a|b|t|th|j|h|ch|d|th|r|z|s|sh|s|d|t|th|`|g|f|q|k|l|m|n|h|w|y" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|y&apos;||a|" literals="h|t|aah|aah|y|aa|ee|an|an|an|aa|aa|aa||an|an|an|&amp;first;&amp;first;|i|u" multis="aa|oo|ee|au|ay" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="waa|au|eoo|o|aee|e|aun|on|en|k|aae|ah|ooh|o|eeh|e" tajweed="|||||||n|h|y|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 		<scheme name="Turkish" alphabet="a|b|t|s|c|h|ç|d|j|r|z|s|ş|s|d|t|j|`|g|f|k|k|l|m|n|h|v|y" hamza="&apos;|&apos;a|&apos;|v&apos;|&apos;|y&apos;||a|" literals="h|t|âh|âh|y|â|î|an|an|an|â|â|â||an|an|an|&amp;first;&amp;first;|ı|u" multis="â|û|î|av|ay" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|ı|an|un|ın||" gutterals="vâ|av|eû|o|aî|e|avn|on|en|k|âe|ah|ûh|o|îh|e" tajweed="|||||||n|h|y|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 		<scheme name="Arabic" alphabet="ا|ب|ت|ث|ج|ح|خ|د|ذ|ر|ز|س|ش|ص|ض|ط|ظ|ع|غ|ف|ق|ك|ل|م|ن|ه|و|ي" hamza="ء|آ|أ|ؤ|إ|ئ||ٱ|" literals="ه|ت|َاه|َاه|ي|َا|ِي|َن|َن|َن|َا|َا|َا||َن|َن|َن|&amp;first;&amp;first;|إِ|أُ" multis="َا|ُو|ِي|َو|َي" fathadammakasratanweenlongvowelsdipthongsshaddasukun="َ|ُ|ِ|ً|ٌ|ٍ|ّ|ْ" gutterals="|||||||||||||||" tajweed="|||||||ن|ه|ي|ا" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
@@ -6900,6 +6900,9 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<scheme name="Wolof" alphabet="a|b|t|s|j|h|x|d|s|r|s|s|s|s|d|t|s|`|g|f|q|k|l|m|n|h|w|y" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|y&apos;||a|" literals="h|t|aah|aah|y|aa|ii|an|an|an|aa|aa|aa||an|an|an|&amp;first;&amp;first;|i|u" multis="aa|uu|ii|aw|ay" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="waa|aw|euu|o|aii|e|awn|on|en|k|aae|ah|uuh|o|iih|e" tajweed="|||||||n|h|y|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 		<scheme name="Italian" alphabet="a|b|t|s|g|h|kh|d|z|r|z|s|sc|s|d|t|s|`|gh|f|q|c|l|m|n|h|w|i" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|i&apos;||a|" literals="h|t|aah|aah|i|aa|ii|an|an|an|aa|aa|aa||an|an|an|&amp;first;&amp;first;|i|u" multis="aa|uu|ii|aw|ai" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="waa|aw|euu|o|aii|e|awn|on|en|c|aae|ah|uuh|o|iih|e" tajweed="|||||||n|h|i|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 		<scheme name="Korean" alphabet="ㅣ|ㅂ|ㄸ|ㅅ|ㅈ|ㅎ|ㅋ|ㄷ|ㅅ|ㄹ|ㅅ|ㅅ|ㅆ|ㅆ|ㄷ|ㅌ|ㅅ|`|ㄱ|ㄽ|ㄲ|ㄱ|ㄹ|ㅁ|ㄴ|ㅎ|ㅙ|ㅒ" hamza="ㅇ|ㅇㅏ|ㅇ|ㅙㅇ|ㅇ|ㅒㅇ||ㅏ|" literals="ㅎ|ㄸ|ㅏㅏㅎ|ㅏㅏㅎ|ㅒ|ㅏㅏ|ㅣㅣ|ㅏㄴ|ㅏㄴ|ㅏㄴ|ㅏㅏ|ㅏㅏ|ㅏㅏ||ㅏㄴ|ㅏㄴ|ㅏㄴ|&amp;first;&amp;first;|ㅣ|ㅜ" multis="ㅏㅏ|ㅜㅜ|ㅣㅣ|ㅏㅙ|ㅏㅒ" fathadammakasratanweenlongvowelsdipthongsshaddasukun="ㅏ|ㅜ|ㅣ|ㅏㄴ|ㅜㄴ|ㅣㄴ||" gutterals="ㅘㅏ|ㅏㅙ|ㅔㅜㅜ|ㅗ|ㅏㅣㅣ|ㅔ|ㅏㅙㄴ|ㅗㄴ|ㅔㄴ|ㄱ|ㅣㅣㅔ|ㅏㅎ|ㅜㅜㅎ|ㅗ|ㅣㅣㅎ|ㅔ" tajweed="|||||||ㄴ|ㅎ|ㅒ|ㅏ" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
+		<scheme name="Malayalam" alphabet="അ|ബ|ത|സ|ജ|ഹ|ഖ|ദ|സ|ര|സ|സ|ശ|ഷ|ഡ|ട|സ|`|ഘ|ഫ|ക|ക|ല|മ|ന|ഹ|വ|യ" hamza="&apos;|&apos;അ|&apos;|വ&apos;|&apos;|യ&apos;||അ|" literals="ഹ|ത|ആഹ|ആഹ|യ|ആ|ഈ|അന|അന|അന|ആ|ആ|ആ||അന|അന|അന|&amp;first;&amp;first;|ഇ|ഉ" multis="ആ|ഊ|ഈ|ഔ|ഐ" fathadammakasratanweenlongvowelsdipthongsshaddasukun="അ|ഉ|ഇ|അന|ഉന|ഇന||" gutterals="വആ|അവ|എഊ|ഒ|അഈ|എ|അവന|ഒന|എന|ക|ആഎ|അഹ|ഊഹ|ഒ|ഈഹ|എ" tajweed="|||||||ന|ഹ|യ|അ" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
+		<scheme name="Portuguese" alphabet="a|b|t|z|j|h|rr|d|d|r|s|z|ch|s|d|t|d|`|g|f|q|k|l|m|n|h|w|i" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|i&apos;||a|" literals="h|t|áh|áh|i|á|í|an|an|an|á|á|á||an|an|an|&amp;first;&amp;first;|i|u" multis="á|ú|í|ou|é" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="wá|aw|eú|o|aí|e|awn|on|en|k|áe|ah|úh|o|íh|e" tajweed="|||||||n|h|i|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|h|v|g"></scheme>
+		<scheme name="Hindi" alphabet="अ|ब|ट|थ|ज|ह|ख|द|ध|र|ज़|स|श|ष|ढ|ट|झ़|`|ग़|फ़|क़|क|ल|म|न|ह|व|य" hamza="&apos;|&apos;अ|&apos;|व&apos;|&apos;|य&apos;||अ|" literals="ह|त|आह|आह|य|आ|ई|अन|अन|अन|आ|आ|आ||अन|अन|अन|&amp;first;&amp;first;|इ|उ" multis="आ|ऊ|ई|औ|ऐ" fathadammakasratanweenlongvowelsdipthongsshaddasukun="अ|उ|इ|अन|उन|इन||" gutterals="वआ|अव|एऊ|ओ|अई|ए|औन|ओन|एन|क|आए|अह|ऊह|ओ|ईह|ए" tajweed="|||||||न|ह|य|अ" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 	</translitschemes>
 
 	<!-- Bukhari 2nd book shows 2nd missing is from 8.73.075? -->
@@ -7855,7 +7858,21 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<languagedefault language="tr" quran="tr.ates" quranw4w="tr.w4w.suleymanates" transliteration="Turkish"></languagedefault>
 		<languagedefault language="he" quran="" quranw4w="he.w4w.corpus" transliteration="Hebrew"></languagedefault>
 		<languagedefault language="it" quran="it.piccardo" quranw4w="it.w4w.corpus" transliteration="Italian"></languagedefault>
+		<languagedefault language="ko" quran="ko.korean" quranw4w="ko.w4w.corpus" transliteration="Korean"></languagedefault>
+		<languagedefault language="ml" quran="ml.abdulhameed" quranw4w="ml.w4w.corpus" transliteration="Malayalam"></languagedefault>
+		<languagedefault language="pt" quran="pt.elhayek" quranw4w="pt.w4w.corpus" transliteration="Portuguese"></languagedefault>
+		<languagedefault language="hi" quran="hi.hindi" quranw4w="hi.w4w.corpus" transliteration="Hindi"></languagedefault>
 	</languagedefaults>
+	<!--
+	Have original translation: ber|dv|so
+	Have original translation and online translator: sq|am|ar|az-latn|bn|bs-cyrl|bs-latn|bg|ku-arab|zh-Hans|zh-Hant|cs|nl|en|fr|de|ha-latn|hi|hu|id|it|ja|sw|ko|ms|ml|fa|pl|pt|ro|ru|sd-arab|es|sv|tg-cyrl|ta|tt-ru|th|tr|ur|ug-cn|uz-latn
+	(am|ar|az|bg|bn|bs|cs|de|en|es|fa|fr|ha|hi|hu|id|it|ja|ko|ku|ml|ms|nl|no|pl|pt|ro|ru|sd|sq|sv|sw|ta|tg|th|tr|tt|ug|ur|uz|zh)
+	Have online translator: af|hy|as|eu|be|ca|chr-cher|hr|da|prs|et|fil|fi|gl|ka|el|gu|he|is|ig-ng|iu-latn|ga|xh|zu|kn|kk|km|rw|kok|ky-kg|lo|lv|lt|lb|mk|mt|mi|mr|mn-mn|ne|nb|nn|or|pa-arab|pa|quz|gd-gb|sr-cyrl|sr-Latn|nso|tn|si|sk|sl|te|ti|tk-tm|uk|vi|cy|wo|yo-ng
+	af|sq|am|ar|hy|as|az-latn|bn|eu|be|bs-cyrl|bs-latn|bg|ca|ku-arab|chr-cher|zh-Hans|zh-Hant|hr|cs|da|prs|nl|en|et|fil|fi|fr|gl|ka|de|el|gu|ha-latn|he|hi|hu|is|ig-ng|id|iu-latn|ga|xh|zu|it|ja|kn|kk|km|rw|sw|kok|ko|ky-kg|lo|lv|lt|lb|mk|ms|ml|mt|mi|mr|mn-mn|ne|nb|nn|or|fa|pl|pt|pa-arab|pa|quz|ro|ru|gd-gb|sr-cyrl|sr-Latn|nso|tn|sd-arab|si|sk|sl|es|sv|tg-cyrl|ta|tt-ru|te|th|ti|tr|tk-tm|uk|ur|ug-cn|uz-latn|vi|cy|wo|yo-ng
+	
+	(?:^|\|)([Have original translation])(?:\-.*?)?(?=\||$)
+	(?:^|\|)(?!([Have original translation])(?:\-.*?)?).*?(?=\||$)
+	-->
 	<partsofspeech>
 		<pos symbol="N" id="NounName" color="84,141,212"></pos>
 		<pos symbol="PN" id="ProperNoun" color="37,126,156"></pos>

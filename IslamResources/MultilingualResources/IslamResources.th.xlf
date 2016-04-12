@@ -28120,7 +28120,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_The" translate="yes" xml:space="preserve">
           <source>The</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">&lt;!-- _blank --&gt;</target>
+          <target state="new" state-qualifier="tm-suggestion"></target>
         </trans-unit>
         <trans-unit id="IslamInfo_TheAbaser" translate="yes" xml:space="preserve">
           <source>The Abaser</source>

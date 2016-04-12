@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabische Koran met metagegevens en alle vertalingen en sommige audio recitaties behalve deze lijst gecrediteerd aan Tanzil Project (http://tanzil.net). 
-Hongaarse vertaling van Qur'an door Kiss Zsuzsanna Halima bijgeschreven op Magyar Iszlam (http://magyariszlam.hu). 
-Engelse vertaling van Qu'ran door Maulana Muhammad Ali bijgeschreven op de Lahore Ahmadiyya beweging in de Islam (http://www.aaiil.org). 
-Morfologie gegevens en Engelse vertaling van het woord-van-woord krediet aan Quranic Arabisch Corpus (http://corpus.quran.com). 
-Indonesisch-per-woord vertaling krediet aan Al-Quran Indonesië (http://www.alquran-indonesia.com/web/quran). 
-Urdu-per-woord vertaling door Hafiz Nazar Muhammad bijgeschreven op gemakkelijk Quran Wa Hadees (http://www.easyquranwahadees.com). 
-Andere-per-woord-vertalingen, alsmede andere vertalingen in het programma toegeschreven aan Microsoft vertaling Provider (http://www.microsoft.com/en-us/translator) en Google Translate (http://translate.google.com) en niet nauwkeurig kan worden.  De bron is voor Maleisische woord-van-woord Qur'an, Indonesische.  Voor alle andere-per-woord Qur'an is de bron de Engelse Quranic Arabisch Corpus. 
-Andere audio recitaties met bitrate weergegeven bijgeschreven op elke Ayah (http://www.everyayah.com). 
-Unicode-gegevens gecrediteerd aan het Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

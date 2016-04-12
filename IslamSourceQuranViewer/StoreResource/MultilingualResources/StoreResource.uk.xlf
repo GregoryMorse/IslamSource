@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Арабська Корані з метаданими і всі переклади і деякі аудіо мови, крім вищезазначеної зараховуються до проекту Tanzil (http://tanzil.net). 
-Угорська Переклад з Корану за поцілунок Halima ж. зараховуються до Magyar Iszlam (http://magyariszlam.hu). 
-Англійська Переклад Qu'ran, Мауле Мухаммед Алі зараховані на Лахор Ахмаді руху в ісламі (http://www.aaiil.org). 
-Морфології даних і англійський переклад слова за словом честь Quranic Арабська корпус (http://corpus.quran.com). 
-Індонезійська Переклад слова за словом кредит для Аль Коран Індонезія (http://www.alquran-indonesia.com/web/quran). 
-Урду переклад слова за словом за Хафіз Назар Мухаммад зараховані на легко Корану Wa Hadees (http://www.easyquranwahadees.com). 
-Інші переклади слово за словом, а також інші переклади у програмі зараховуються до постачальника Microsoft перекладу (http://www.microsoft.com/en-us/translator) і Перекладач Google (http://translate.google.com) і не можуть бути точними.  Для Малайзії--слово Коран джерелом є Індонезійська.  Для всіх інших--слово Коран джерелом є Англійська Арабська Corpus Quranic. 
-Інших аудіо мови з бітрейт показано зараховані на кожен Ayah (http://www.everyayah.com). 
-Дані в кодуванні Юнікод, зарахованих до The Unicode консорціуму (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

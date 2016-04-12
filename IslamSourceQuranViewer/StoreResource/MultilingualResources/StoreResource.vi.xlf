@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tiếng ả Rập Qur'an với siêu dữ liệu và tất cả bản dịch và một số recitations âm thanh ngoại trừ những người được liệt kê ghi cho dự án Tanzil (http://tanzil.net). 
-Hungary dịch kinh Koran bởi hôn Zsuzsanna Halima ghi cho Magyar Iszlam (http://magyariszlam.hu). 
-Tiếng Anh dịch Âu bởi Maulana Muhammad Ali ghi có vào các phong trào Ahmadiyya Lahore trong Islam (http://www.aaiil.org). Dữ liệu 
-hình Thái và bản dịch tiếng Anh từ bằng chữ tín dụng trong kinh Qur'an tiếng ả Rập Corpus (http://corpus.quran.com). 
-Tín dụng Indonesia chữ bằng chữ dịch kinh Qur'an Al Indonesia (http://www.alquran-indonesia.com/web/quran). 
-Tiếng Urdu chữ bằng chữ dịch bởi Hafiz Nazar Muhammad ghi để dễ dàng Kinh Qur'an Wa Hadees (http://www.easyquranwahadees.com). 
-Các bản dịch chữ bằng chữ khác cũng như các bản dịch khác trong chương trình ghi có vào nhà cung cấp công cụ Microsoft dịch (http://www.microsoft.com/en-us/translator) và Google Translate (http://translate.google.com) và có thể không chính xác.  Cho Malaysia chữ bằng chữ kinh Koran, nguồn gốc là tiếng Indonesia.  Cho tất cả kinh Koran chữ bằng chữ, nguồn gốc là tiếng Anh trong kinh Qur'an tiếng ả Rập Corpus. 
-Khác recitations âm thanh với bitrate Hiển thị ghi có vào mỗi Ayah (http://www.everyayah.com). 
-Unicode dữ liệu ghi The Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

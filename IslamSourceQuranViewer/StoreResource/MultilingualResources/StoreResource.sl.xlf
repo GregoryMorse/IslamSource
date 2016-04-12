@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabščina Qur'an z metapodatki in vsi prevodi in nekaj avdio recitacije, razen tistih, navedenih v dobro Tanzil projekta (http://tanzil.net). 
-Madžarski prevod Korana z poljub Zsuzsanna Halima dobro Magyar Iszlam (http://magyariszlam.hu). 
-Angleški prevod Qu'ran ga Maulana Muhammad Ali dobro Lahore Ahmadiyya gibanje v islamu (http://www.aaiil.org). 
-Morfologijo podatkov in angleško besedo za besedo prevajanje kreditov Quranic arabsko Corpus (http://corpus.quran.com). 
-Indonezijskih besedo za besedo prevajanje kredita za Al-Korana Indoneziji (http://www.alquran-indonesia.com/web/quran). 
-Urdu besedo za besedo prevajanje Hafiz Nazar Mohamed dobro enostavno Korana Wa Babbar Khalsa ureditev Gia (http://www.easyquranwahadees.com). 
-Drugi besedo za besedo prevajanje, kot tudi druge prevode v program knjiži Microsoft ponudnik prevajalskih storitev (http://www.microsoft.com/en-us/translator) in Google Translate (http://translate.google.com) in ne sme biti točni.  Za Malaysian Koran dobesedno, vir je indonezijski.  Za vse druge-dobesedno Koran, vir je angleški Corpus Quranic arabščina. 
-Druge avdio recitacije z bitrate pokazala dobro vsak Ayah (http://www.everyayah.com). 
-Podatke Unicode, v dobro The Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

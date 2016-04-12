@@ -37336,7 +37336,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_None" translate="yes" xml:space="preserve">
           <source>None</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion"><it id="1" pos="open">&lt;Dada&gt;</it></target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dada</target>
         </trans-unit>
       </group>
     </body>

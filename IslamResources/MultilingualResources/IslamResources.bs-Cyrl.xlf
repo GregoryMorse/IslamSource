@@ -10248,7 +10248,7 @@
         </trans-unit>
         <trans-unit id="IslamInfo_Enter" translate="yes" xml:space="preserve">
           <source>Enter</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion"> <it id="1" pos="open">&lt;Enter&gt;</it></target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion"> Enter</target>
         </trans-unit>
         <trans-unit id="IslamInfo_EnteringMasjidilHaram" translate="yes" xml:space="preserve">
           <source>O Allah! Thou art peace and peace is from Thee! Our Lord! Cause us to live with peace, and cause us to enter The House of Peace. Our Lord, Owner of Honor and Majesty, Thou art most Blessed and Exalted! O Allah! Grant me with Thou blessings and forgiveness, live me in it in the Name of Allah, and all Praise is to Allah, salawat and Salam to our Master Sayyidina Muhammad.</source>

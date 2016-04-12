@@ -5701,6 +5701,39 @@ Public Class TanzilReader
         Next
         Return DefStops.ToArray()
     End Function
+    Public Shared Sub FileToResource(FilePath As String, ResFilePath As String)
+        Dim Lines As String() = Utility.ReadAllLines(FilePath)
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
+        Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
+        Stream.Dispose()
+        For Count = 0 To Lines.Length - 1
+            Dim NewData As New Xml.Linq.XElement("data")
+            NewData.Add(New Xml.Linq.XAttribute("name", "Quran" + CStr(Count + 1)))
+            NewData.Add(New Xml.Linq.XAttribute(Xml.Linq.XNamespace.Xml + "space", "preserve"))
+            Dim Inner As New Xml.Linq.XElement("value")
+            Inner.Value = Lines(Count)
+            NewData.Add(Inner)
+            XMLDoc.Root.Add(NewData)
+        Next
+        Dim MemStream As New IO.MemoryStream
+        XMLDoc.Save(MemStream)
+        PortableMethods.FileIO.SaveStream(ResFilePath, MemStream)
+        MemStream.Dispose()
+    End Sub
+    Public Shared Sub ResourceToFile(ResFilePath As String, FilePath As String)
+        Dim Lines As New List(Of String)
+        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
+        Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
+        Stream.Dispose()
+        Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(Linq.Enumerable.Where(XMLDoc.Root.Elements, Function(elem) elem.Name = "data" And Not elem.Attribute("name") Is Nothing))).ToArray()
+        For Each Item As Xml.Linq.XElement In AllNodes
+            If System.Text.RegularExpressions.Regex.Match(Item.Attribute("name").Value, "^Quran\d+$").Success Then
+                Dim Line As Integer = Integer.Parse(Item.Attribute("name").Value.Substring(5))
+                Lines.Insert(Line - 1, New List(Of Xml.Linq.XElement)(Item.Elements).Item(0).Value)
+            End If
+        Next
+        Utility.WriteAllLines(FilePath, Lines.ToArray())
+    End Sub
     Public Shared Sub WordFileToResource(WordFilePath As String, ResFilePath As String)
         Dim W4WLines As String() = Utility.ReadAllLines(WordFilePath)
         Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)

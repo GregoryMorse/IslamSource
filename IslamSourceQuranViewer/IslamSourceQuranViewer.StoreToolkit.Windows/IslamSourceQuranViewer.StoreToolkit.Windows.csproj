@@ -207,6 +207,21 @@
     <Content Include="..\..\metadata\tr.*">
       <Link>metadata\tr\%(FileName)%(Extension)</Link>
     </Content>
+    <Content Include="..\..\metadata\ml.*">
+      <Link>metadata\ml\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\pt.*">
+      <Link>metadata\pt\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\it.*">
+      <Link>metadata\it\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ko.*">
+      <Link>metadata\ko\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\hi.*">
+      <Link>metadata\hi\%(FileName)%(Extension)</Link>
+    </Content>
     <Content Include="..\..\metadata\quranic-corpus-morphology-0.4.txt">
       <Link>metadata\quranic-corpus-morphology-0.4.txt</Link>
     </Content>

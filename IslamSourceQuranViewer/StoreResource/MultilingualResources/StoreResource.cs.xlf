@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabský Korán s metadaty a všechny překlady a některé audio recitace, s výjimkou druhů uvedených připsány na projektu Aneta (http://tanzil.net). 
-Maďarský překlad Koránu tím Kiss Zsuzsanna Halima připsány Magyar Iszlam (http://magyariszlam.hu). 
-Anglický překlad Koránu o Maulana Muhammad Ali připsány na The Lahore Ahmadiyya hnutí v islámu (http://www.aaiil.org). Údaje 
-morfologie a anglické slovo za slovem překlad úvěru Koránu Arabština Corpus (http://corpus.quran.com). 
-Indonéské-doslovným překladem úvěrů Al-Korán Indonésie (http://www.alquran-indonesia.com/web/quran). 
-Urdština Překlad slovo za slovem Muhammad Háfiz Nazar připsány na snadné Koránu Wa Měsíc Hadees (http://www.easyquranwahadees.com). 
-Jiné překlady slovo za slovem, ale i jiné překlady v programu Microsoft překlad Provider (http://www.microsoft.com/en-us/translator) a Google Translate (http://translate.google.com) a nemusí být přesné.  Pro malajské Koranu slovo za slovem zdroj je indonéské.  Pro všechny ostatní slovo za slovem Koránu zdroj je angličtina arabština Corpus Koránu. 
-Jiné audio recitaci s bitrate zobrazena připsána na každý verš (http://www.everyayah.com). 
-Data ve formátu Unicode, které jsou připsány na Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

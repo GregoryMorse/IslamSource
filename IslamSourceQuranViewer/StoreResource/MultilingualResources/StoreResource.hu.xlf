@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arab korán metaadatok és néhány audio mozgássorozatokat kivéve felsorolt jóváírt Kálmán projekt (http://tanzil.net) és az összes fordítást. 
-Magyar fordítás a Korán által Kiss Zsuzsanna Halima jóváírásra Magyar Iszlam (http://magyariszlam.hu). 
-Angol fordítás liberalizálják által Maulana Muhammad Ali jóváírni a Lahore Ahmadiyya mozgalom az iszlám (http://www.aaiil.org). 
-Morfológiai adatok és angol szó szerint fordításban hitel korán Arab Corpus (http://corpus.quran.com). 
-Fordítás szóra hitel belefér Indonézia (http://www.alquran-indonesia.com/web/quran). 
-Ágnes Judit fordításában Urdu szó szerint jóváírásra könnyű korán Wa Hoang Zoli (http://www.easyquranwahadees.com). 
-Más szó szerint fordítások, valamint egyéb fordítások a program Microsoft fordítási szolgáltató (http://www.microsoft.com/en-us/translator) és a Google Translate (http://translate.google.com), és nem lehet pontos.  Maláj szó szerint korán a forrás az indonéz.  Az összes többi szó szerint korán a forrás az angol korán Arab Corpus. 
-Más audio mozgássorozatokat bitráta jelenik meg a jóváírt minden hindu dajka (http://www.everyayah.com). 
-Unicode-adatokat jóváírásra az Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

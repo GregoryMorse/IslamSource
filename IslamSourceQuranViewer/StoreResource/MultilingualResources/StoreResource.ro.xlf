@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Coranul arabă cu metadate şi toate traducerile şi unele recitaluri de audio cu excepţia cele enumerate creditate georgy proiect (http://tanzil.net). 
-Maghiar traducere a Coranului de sărut Zsuzsanna Halima creditate în Magyar Iszlam (http://magyariszlam.hu). 
-Englez traducere de Qu'ran de Maulana Muhammad Ali creditate în mișcarea Ahmadiyya Lahore în Islam (http://www.aaiil.org). 
-Morfologiei date şi Engleză Traducere cuvant cu cuvant credita Quranic Arabă Corpus (http://corpus.quran.com). 
-Indoneziană Traducere cuvant cu cuvant creditului pentru Al-Quran Indonezia (http://www.alquran-indonesia.com/web/quran). 
-Urdu traducere cuvant cu cuvant de Hafiz Nazar Muhammad creditul simplu Coranul Wa Hadees (http://www.easyquranwahadees.com). 
-Alte traduceri cuvant cu cuvant, precum şi alte traduceri în programul creditul furnizor de traduceri Microsoft (http://www.microsoft.com/en-us/translator) şi Google Translate (http://translate.google.com) şi nu pot fi corecte.  Pentru Malaysian cuvant cu cuvant Coranul, sursa este indoneziană.  Pentru toate celelalte Coranul cuvant cu cuvant, sursa este limba engleză Quranic Arabă Corpus. 
-Alte recitations audio cu bitrate indicat creditate fiecare David (http://www.everyayah.com). 
-Date Unicode creditate Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

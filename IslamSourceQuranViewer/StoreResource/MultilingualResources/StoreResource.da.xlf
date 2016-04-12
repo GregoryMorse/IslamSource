@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabisk Koranen med metadata og alle oversættelser og nogle audio recitationer undtagen nævnt krediteres Tanzil projekt (http://tanzil.net). 
-Ungarsk Oversættelse af Koranen af Kiss Zsuzsanna Halima krediteres Magyar Iszlam (http://magyariszlam.hu). 
-Engelsk oversættelse af Koranen af Maulana Muhammad Ali krediteres den Lahore Ahmadiyya bevægelse i Islam (http://www.aaiil.org). 
-Morfologi data og engelske ord-for-ord oversættelse kredit til Koranens arabisk Corpus (http://corpus.quran.com). 
-Indonesiske ord-for-ord oversættelse kredit til Al-Quran Indonesien (http://www.alquran-indonesia.com/web/quran). 
-Urdu ord-for-ord oversættelse af Hafiz Nazar Muhammad krediteret til nem Koranen Wa Hadees (http://www.easyquranwahadees.com). 
-Andre ord-for-ord oversættelser samt andre oversættelser i programmet krediteret til Microsoft af oversættelsesydelser (http://www.microsoft.com/en-us/translator) og Google Translate (http://translate.google.com) og må ikke være nøjagtig.  For malaysiske ord for ord Koranen er kilden indonesisk.  For alle andre ord for ord Koranen er kilden den engelske Koranens arabisk Corpus. 
-Andre audio recitationer med bitrate vist krediteres hver Ayah (http://www.everyayah.com). 
-Unicode-data krediteret The Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

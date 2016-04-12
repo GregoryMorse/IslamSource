@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Арабски Корана с метаданни и всички преводи и някои аудио декламации Освен изброените кредитират Tanzil проект (http://tanzil.net). 
-Унгарски превод на Корана от целувка Жужана Христофор кредитират Magyar Iszlam (http://magyariszlam.hu). 
-Английски превод на Корана от Maulana Мохамед Али кредитирани в Лахор Ahmadiyya движение в исляма (http://www.aaiil.org). 
-Морфология данни и английската дума по дума превод кредита за Корана арабски корпус (http://corpus.quran.com). 
-Кредит на индонезийски дума по дума превод на Ал-Корана Индонезия (http://www.alquran-indonesia.com/web/quran). 
-Урду дума по дума превод от Мохамед Хафъз Nazar кредитират лесно Коран Wa Hadees (http://www.easyquranwahadees.com). 
-Други дума по дума преводи, както и други преводи в програмата Microsoft Превод доставчик (http://www.microsoft.com/en-us/translator) и Google Translate (http://translate.google.com) и не могат да бъдат точни.  За Малайзия дума по дума Корана източникът е индонезийски.  За всички други дума по дума Корана източникът е английски Корана арабски корпус. 
-Други аудио декламации с битрейт показани кредитирани всеки Аят (http://www.everyayah.com). 
-Данни на Unicode, кредитирани в Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

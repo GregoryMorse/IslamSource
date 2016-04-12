@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arapski Kuran sa metapodataka i sve prevode i neke audio Recitativa osim onih navedenih pripisuje Tanzil projekta (http://tanzil.net). 
-Mađarski Kuran prevođenja od strane poljubi Zsuzsanna Halima pripisuje Mađar Iszlam (http://magyariszlam.hu). 
-Engleski Prevod Kuranu po Maulana Muhammad Ali pripisuje Lahore Ahmadiyya pokret u Islamu (http://www.aaiil.org). 
-Morfologija podataka i engleskim prevodom reč po reč kreditni da citate arapski Corpus (http://corpus.quran.com). 
-Zasluge indonežanski prevođenje reč po reč da Al-Kur'an Indonezije (http://www.alquran-indonesia.com/web/quran). 
-Roрen reč po reč Prevod Hafiz Nazar Muhammad pripisuje lako Kur'an Wa Hadees (http://www.easyquranwahadees.com). 
-Druga reč po reč prevoda, kao i ostale prevode u programu Microsoft dobavljač prevodilačkih usluga (http://www.microsoft.com/en-us/translator) i Gugl Translator (http://translate.google.com)-a i možda neće biti tačna.  Za malezijske reč po reč Kuran, izvor je indonežanski.  Za sve druge reč po reč Kuran, izvor je engleski navod iz Kurana arapski Corpus. 
-Druge audio Recitativa sa brzina protoka prikazani pripisuje svaki pasus (http://www.everyayah.com). 
-Unicode podatke pripisuje The Unicode Consortium (http://www.unicode.org)</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>

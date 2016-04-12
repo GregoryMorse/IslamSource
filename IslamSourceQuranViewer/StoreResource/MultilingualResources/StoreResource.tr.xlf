@@ -250,16 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Meta veriler ile Arapça Allah'ın ve tüm çeviriler ve bazı ses recitations Tanzil Projesi (http://tanzil.net) alacak bu listelenen hariç. 
-Magyar Iszlam (http://magyariszlam.hu) Macar çeviri Kur'an Zsuzsanna Halima Kiss tarafından alacak. 
-İngilizce çeviri hadisten Maulana Muhammed Ali tarafından İslam (http://www.aaiil.org) Lahore Ahmediye hareketi alacak. 
-Morfoloji veri ve İngilizce kelime kelime çevirisi kuran Arapça Corpus (http://corpus.quran.com) için kredi. 
-Endonezya kelimesi kelimesine çeviri kredi Al-kuran Indonesia (http://www.alquran-indonesia.com/web/quran). 
-Hafız Nazar Muhammed tarafından Urduca kelime kelime çeviri kolay Kur'an-ı Kerim Wa Hadees (http://www.easyquranwahadees.com) alacak. 
-Yanı sıra diğer çeviriler programdaki diğer kelime kelime çevirileri Microsoft çeviri sağlayıcısı (http://www.microsoft.com/en-us/translator) ve Google Translate (http://translate.google.com) ve doğru olmayabilir.  Malezya kelime kelime için Allah'ın, Endonezya kaynağıdır.  Tüm diğer kelime kelime Allah'ın için İngilizce kuran Arapça Corpus kaynağıdır. 
-Gösterilen bitrate ile diğer ses recitations her ayet (http://www.everyayah.com) alacak. 
-Unicode verilerini Unicode Konsorsiyumu (http://www.unicode.org) alacak</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
+          <target state="new"></target>
         </trans-unit>
       </group>
     </body>
