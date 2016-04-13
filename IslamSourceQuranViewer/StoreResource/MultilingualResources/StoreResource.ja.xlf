@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">メタデータを持つアラビア語 qur ' an およびすべての翻訳といくつかの音声朗読を除く Tanzil プロジェクト (http://tanzil.net) に示されています。
+キス ズザンナ鈴木によるクルアーンのハンガリー語翻訳は Magyar Iszlam (http://magyariszlam.hu) に入金されます。
+Maulana ムハンマド ・ アリによってコーランの英語翻訳は、イスラム教 (http://www.aaiil.org) で、ラホール Ahmadiyya の動きに入金されます。
+形態データおよび英語の単語単位で翻訳コーラン アラビア語コーパス (http://corpus.quran.com) への信用します。
+Al コーラン インドネシア (http://www.alquran-indonesia.com/web/quran) にインドネシア語の単語単位で翻訳クレジット。
+Süleyman Ateş (http://www.kuranmeali.com/kelime.asp) にトルコ語の単語単位で翻訳クレジット。
+ハーフィズ Nazar ムハンマド ウルドゥ語単語単位で翻訳は簡単なコーラン ワシントン州 Hadees (http://www.easyquranwahadees.com) に入金されます。
+プログラムで他の翻訳と同様、他の単語単位で翻訳マイクロソフト翻訳プロバイダー (http://www.microsoft.com/en-us/translator) と Google 翻訳 (http://translate.google.com) に入金し、正確なできない場合があります。 マレーシア単語単位で qur ' an のソースはインドネシアです。 他のすべての単語でクルアーンのソースは英語のコーラン アラビア語コーパスです。
+ビットレートが表示の他の音声朗読すべてアーヤ (http://www.everyayah.com) に入金します。
+Unicode データ、Unicode コンソーシアム (http://www.unicode.org) に入金</target>
         </trans-unit>
       </group>
     </body>

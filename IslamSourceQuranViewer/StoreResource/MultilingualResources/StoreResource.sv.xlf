@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabiska Koranen med metadata och alla översättningar och några ljud recitationer utom de som listas krediteras himlarna projekt (http://tanzil.net). 
+Ungerska Översättning av Koranen av Kiss Zsuzsanna Halima krediteras Magyar Iszlam (http://magyariszlam.hu). 
+Engelsk översättning av Qu'ran av Maulana Muhammad Ali krediteras till The Lahore Ahmadiyya rörelsen inom Islam (http://www.aaiil.org). 
+Morfologi data och engelska ord-av-ord översättning beröm koraniska arabiska Corpus (http://corpus.quran.com). 
+Indonesiska ord-av-ord översättning kredit till Al-Quran Indonesien (http://www.alquran-indonesia.com/web/quran). 
+Turkiska ord-av-ord översättning kredit till Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu uttrycka-vid-uttrycka översättning av Hafiz Nazar Muhammad krediteras lätt Koranen Wa Hadees (http://www.easyquranwahadees.com). 
+Andra uttrycka-vid-uttrycka översättningar och andra översättningar i programmet Microsoft översättningsprovider (http://www.microsoft.com/en-us/translator) och Google Translate (http://translate.google.com) samt kanske inte är korrekta.  För Malaysiska uttrycka-vid-uttrycka Koranen är källan indonesiska.  För alla andra uttrycka-vid-uttrycka Koranen är källan den engelska koraniska arabiska Corpus. 
+Andra ljud recitationer med bitrate visas krediteras varje Ayah (http://www.everyayah.com). 
+Unicode-data krediteras The Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

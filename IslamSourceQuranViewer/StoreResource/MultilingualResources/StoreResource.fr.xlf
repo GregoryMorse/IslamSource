@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Coran arabe avec des métadonnées et toutes les traductions et quelques récitations audio sauf ceux énumérés au projet Tanzil (http://tanzil.net). 
+Hongrois traduction du Coran par Kiss Zsuzsanna Halima crédité de Magyar Iszlam (http://magyariszlam.hu). 
+Traduction anglaise de Qu'ran par Maulana Muhammad Ali crédités sur The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org). Données 
+morphologie et traduction en anglais mot par mot crédit à coranique arabe Corpus (http://corpus.quran.com). 
+Crédit indonésien traduction mot à mot à l'Indonésie de Al-Quran (http://www.alquran-indonesia.com/web/quran). 
+Crédit turc traduction mot à mot à Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Yiddish traduction mot à mot par Hafiz Nazar Muhammad crédités au simple Coran Wa Hadees (http://www.easyquranwahadees.com). 
+Autres traductions mot à mot, mais aussi d'autres traductions dans le programme crédité au fournisseur de traduction de Microsoft (http://www.microsoft.com/en-us/translator) et Google Translate (http://translate.google.com) et ne soient pas exactes.  Malaysian mot à mot Qur ' an, la source est indonésienne.  Pour tous les autres mot à mot Qur ' an, la source est le Corpus d'arabe coranique anglais. 
+Autres récitations audio avec un bitrate montré crédité à chaque Ayah (http://www.everyayah.com). 
+Les données Unicode créditées à The Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

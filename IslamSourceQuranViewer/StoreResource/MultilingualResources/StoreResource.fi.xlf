@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabia Koraanin metatiedot ja kaikki käännökset ja audio recitations paitsi edellä lueteltuja hyvitetään Tanzil Project (http://tanzil.net). 
+Unkarin käännös Koraanin by suudella Zsuzsanna Halima hyvitetään Magyar Iszlam (http://magyariszlam.hu). 
+Englanti käännös Koraania Maulana Muhammad Alin hyvitetään Lahore Ahmadiyya liikkeen Islam (http://www.aaiil.org). 
+Morfologia tiedot ja käännös sana kerrallaan kunniaksi Koraanin Arabia Corpus (http://corpus.quran.com). 
+Indonesian sana kerrallaan käännös luottoa Al Quran Indonesia (http://www.alquran-indonesia.com/web/quran). 
+Turkin sana kerrallaan käännös luoton Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu sana kerrallaan käännös Hafiz Nazar Muhammad tilillesi helppoa Koraani Wa Hadees (http://www.easyquranwahadees.com). 
+Muut sana kerrallaan käännökset sekä muut käännökset ohjelmassa hyvitetään Microsoft käännös-palvelu (http://www.microsoft.com/en-us/translator) ja Google Translate (http://translate.google.com) ja voi olla tarkka.  Malesian sana kerrallaan Koraanin lähde on Indonesian.  Muut sana kerrallaan Koraanin lähde on Englanti Koraanin Arabia Corpus. 
+Muut äänen recitations bitrate JavaScript hyvitetään joka Ayah (http://www.everyayah.com). 
+Unicodea hyvitetään The Unicode Consortiumilta (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Araabia Koraani metaandmed ja kõik tõlked ja mõned audio recitations peale loetletud krediteeritakse Tanzil projekt (http://tanzil.net). 
+Ungari tõlge Koraani poolt Kiss Zsuzsanna Halima krediteeritud Magyar Iszlam (http://magyariszlam.hu). 
+Ingliskeelne tõlge Qu'ran Maulana Muhammad Ali poolt krediteeritud Lahore Ahmadiyya liikumise Islam (http://www.aaiil.org). 
+Morfoloogia andmete liikumist ning sõna-sõnalt krediidi Quranic Araabia korpus (http://corpus.quran.com). 
+Indoneesia sõna-sõna tõlge krediidi Al-Koraan Indoneesia (http://www.alquran-indonesia.com/web/quran). 
+Sõna-sõnalt Türgimaal Türgi krediidi Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu sõna-sõna tõlge Hafiz Nazar Muhammad krediteeritud lihtne Koraanis Wa Hadees (http://www.easyquranwahadees.com). 
+Muud sõna-sõnalt tõlked, samuti muud tõlked programm krediteeritud Microsoft tõlkimine pakkuja (http://www.microsoft.com/en-us/translator) ja Google Translate (http://translate.google.com) ja ei pruugi olla täpne.  Malaisia sõna-sõnalt Koraani allikas on Indoneesia.  Muud sõna-sõnalt Koraani allikas on inglise Quranic Araabia korpus. 
+Muud audio bitrate programmi recitations krediteeritud iga Ayah (http://www.everyayah.com). 
+Unicode'i andmeid krediteeritud Unicode Consortiumi (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

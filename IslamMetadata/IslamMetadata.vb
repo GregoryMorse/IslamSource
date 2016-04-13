@@ -1,5 +1,6 @@
 Option Explicit On
 Option Strict On
+Imports IslamMetadata
 Imports XMLRender
 
 Public Class PrayerTime
@@ -37,7 +38,7 @@ Public Class PrayerTime
             Do
                 CType(RetArray(2 + 1 + Calendar.GetWeekOfYear(Calendar.ToDateTime(Calendar.GetYear(TimeNow), Calendar.GetMonth(TimeNow), Count, TimeNow.Hour, TimeNow.Minute, TimeNow.Second, TimeNow.Millisecond), Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Sunday) - Calendar.GetWeekOfYear(Calendar.ToDateTime(Calendar.GetYear(TimeNow), Calendar.GetMonth(TimeNow), 1, TimeNow.Hour, TimeNow.Minute, TimeNow.Second, TimeNow.Millisecond), Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Sunday)), String())(Calendar.GetDayOfWeek(Calendar.ToDateTime(Calendar.GetYear(TimeNow), Calendar.GetMonth(TimeNow), Count, TimeNow.Hour, TimeNow.Minute, TimeNow.Second, TimeNow.Millisecond))) = CStr(If(Calendar.GetDayOfMonth(TimeNow) = Count, ">", String.Empty)) + CStr(Calendar.GetDayOfMonth(Calendar.ToDateTime(Calendar.GetYear(TimeNow), Calendar.GetMonth(TimeNow), Count, TimeNow.Hour, TimeNow.Minute, TimeNow.Second, TimeNow.Millisecond))) + CStr(If(Calendar.GetDayOfMonth(TimeNow) = Count, "<", String.Empty))
                 Count += 1
-            Loop While Count <= Calendar.GetDaysInMonth(Calendar.GetYear(TimeNow), Calendar.GetMonth(TimeNow)) AndAlso _
+            Loop While Count <= Calendar.GetDaysInMonth(Calendar.GetYear(TimeNow), Calendar.GetMonth(TimeNow)) AndAlso
                 Calendar.GetDayOfWeek(Calendar.ToDateTime(Calendar.GetYear(TimeNow), Calendar.GetMonth(TimeNow), Count, TimeNow.Hour, TimeNow.Minute, TimeNow.Second, TimeNow.Millisecond)) <> DayOfWeek.Sunday
             Count -= 1
         Next
@@ -102,7 +103,7 @@ Public Class Arabic
         Private _Scheme As String
         Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer _
             Implements Collections.IComparer.Compare
-            Compare = GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicSymbol), _Scheme).Length - _
+            Compare = GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicSymbol), _Scheme).Length -
                 GetSchemeValueFromSymbol(DirectCast(y, ArabicData.ArabicSymbol), _Scheme).Length
             If Compare = 0 Then Compare = GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicSymbol), _Scheme).CompareTo(GetSchemeValueFromSymbol(DirectCast(y, ArabicData.ArabicSymbol), _Scheme))
         End Function
@@ -792,8 +793,16 @@ Public Class Arabic
         Next
         Return CacheOut.ToArray()
     End Function
+    Public Class MetaruleComparer
+        Implements IComparer(Of Object)
+        Public Function Compare(x As Object, y As Object) As Integer Implements IComparer(Of Object).Compare
+            Return If(CInt(x) >= CType(y, RuleMetadata).Index, 1, -1)
+        End Function
+    End Class
     Public Shared Function GetMetarulesFromCache(ArabicString As String, OptionalStops As Integer(), BasePosition As Integer, Rules As Generic.List(Of RuleMetadata)) As Generic.List(Of RuleMetadata)
-        Return Nothing
+        Dim Index As Integer = Array.BinarySearch(Of Object)(CType(CType(Rules.ToArray(), Array), Object()), BasePosition, New MetaruleComparer) Xor -1
+        Return New List(Of RuleMetadata)(Linq.Enumerable.TakeWhile(Rules, Function(Item) Item.Index < BasePosition + ArabicString.Length))
+        'FilterMetadataStopsContig(ArabicString.Length, , , BasePosition)
     End Function
     Public Shared Function CompareRuleMetadata(RuleMetadata1() As RuleMetadata, RuleMetadata2() As RuleMetadata) As Boolean
         If RuleMetadata1 Is RuleMetadata2 Then Return True
@@ -3037,69 +3046,69 @@ Public Class CachedData
                             End If
                         ElseIf RootDictionary(Root)(1) = String.Empty And Tense = 2 Then
                             If Root.Length = 3 And Not bPassive Then
-                                    If Root(2) = "w" Then
-                                        '-oona merges into it
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "o" + Root(1) + "(.)" + Root(2) + "?").Replace("$", "\$").Replace("*", "\*"))
-                                        If Match.Success And Match.Captures.Count = 1 Then
+                                If Root(2) = "w" Then
+                                    '-oona merges into it
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "o" + Root(1) + "(.)" + Root(2) + "?").Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", ">", Root(0)) + "o" + Root(1) + Match.Groups(1).Value + Root(2)
                                     Else
-                                            Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
-                                    ElseIf Root(2) = "y" And Root(1) = "A" And Root(0) = "r" Then
-                                        'rAy is a special unique exception
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "(.)" + "(?:" + Root(2) + "|Y)").Replace("$", "\$").Replace("*", "\*"))
-                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                ElseIf Root(2) = "y" And Root(1) = "A" And Root(0) = "r" Then
+                                    'rAy is a special unique exception
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "(.)" + "(?:" + Root(2) + "|Y)").Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + Root(0) + Match.Groups(1).Value + Root(2)
                                     Else
-                                            Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
-                                    ElseIf Root(0) = "w" And Root(2) = "y" Then
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
-                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                ElseIf Root(0) = "w" And Root(2) = "y" Then
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + Root(1) + Match.Groups(1).Value + Root(2)
                                     Else
-                                            Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
-                                    ElseIf Root(2) = "y" Then
-                                        '-oona changes to -awna fatha
-                                        '"AhHxgE" of ayn makes ayn on a, others on i
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "(?:A|>)", Root(0)) + "o?" + If(Root(1) = "y", "(?:y|Y)", If(Root(1) = "A", "_#", Root(1))) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
-                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                ElseIf Root(2) = "y" Then
+                                    '-oona changes to -awna fatha
+                                    '"AhHxgE" of ayn makes ayn on a, others on i
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "(?:A|>)", Root(0)) + "o?" + If(Root(1) = "y", "(?:y|Y)", If(Root(1) = "A", "_#", Root(1))) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", ">", Root(0)) + "o" + If(Root(1) = "A", "_#", Root(1)) + Match.Groups(1).Value + Root(2)
                                     Else
-                                            Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
-                                    ElseIf Root(1) = Root(2) Then
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "&", Root(0)) + "(.)" + Root(1) + "~").Replace("$", "\$").Replace("*", "\*"))
-                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                ElseIf Root(1) = Root(2) Then
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "&", Root(0)) + "(.)" + Root(1) + "~").Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", "&", Root(0)) + Match.Groups(1).Value + Root(1) + "~u"
                                     Else
-                                            Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
-                                    ElseIf Root(0) = "w" Then
-                                        '"AhHxgE" of lam makes ayn on a, others on i
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + If(Root(2) = "A", "_#", Root(2))).Replace("$", "\$").Replace("*", "\*"))
-                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                ElseIf Root(0) = "w" Then
+                                    '"AhHxgE" of lam makes ayn on a, others on i
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + If(Root(2) = "A", "_#", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + Root(1) + Match.Groups(1).Value + If(Root(2) = "A", ">", Root(2)) + "u"
                                     Else
-                                            Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
-                                    ElseIf Root(1) = "w" Then
-                                        'kwd, xwf exceptions with ayn on a
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "_#", Root(0)) + "(.)" + "(?:" + Root(1) + "|A)?" + If(Root(2) = "A", "\^>|&", Root(2))).Replace("$", "\$").Replace("*", "\*"))
-                                        If Match.Success And Match.Captures.Count = 1 Then
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                ElseIf Root(1) = "w" Then
+                                    'kwd, xwf exceptions with ayn on a
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "_#", Root(0)) + "(.)" + "(?:" + Root(1) + "|A)?" + If(Root(2) = "A", "\^>|&", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                    If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", "_#", Root(0)) + Match.Groups(1).Value + If(Match.Groups(1).Value = "a", "A", Root(1)) + If(Root(2) = "A", "^>", Root(2)) + "u"
                                     Else
-                                            Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
-                                    ElseIf Root(1) = "y" Then
+                                        Debug.WriteLine(Root + " - " + Pieces(1))
+                                    End If
+                                ElseIf Root(1) = "y" Then
                                     'hamza of lam can make ayn on a, others on i
                                     'nyl and zyl exceptions with ayn on a
                                     Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(0) + "(.)" + If(Root(2) = "A", "A?", "(?:" + Root(1) + "|Y|A)?") + If(Root(2) = "A", "\^'", Root(2))).Replace("$", "\$").Replace("*", "\*"))
@@ -3109,17 +3118,17 @@ Public Class CachedData
                                     Else
                                         Debug.WriteLine(Root + " - " + Pieces(1))
                                     End If
-                                    Else
-                                        Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "(?:A|>)", Root(0)) + "(?:o|\[)?" + If(Root(1) = "A", "_#", If(Root(1) = "s", "(?:S:|s)", Root(1))) + "(.)" + If(Root(2) = "A", "(?:>|'|_#|&)", Root(2))).Replace("$", "\$").Replace("*", "\*"))
+                                Else
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "(?:A|>)", Root(0)) + "(?:o|\[)?" + If(Root(1) = "A", "_#", If(Root(1) = "s", "(?:S:|s)", Root(1))) + "(.)" + If(Root(2) = "A", "(?:>|'|_#|&)", Root(2))).Replace("$", "\$").Replace("*", "\*"))
                                     If Match.Success And Match.Captures.Count = 1 Then
                                         RootDictionary(Root)(1) = Match.Groups(1).Value
                                         'RootDictionary(Root)(1) = "ya" + If(Root(0) = "A", ">", Root(0)) + "o" + Root(1) + Match.Groups(1).Value + If(Root(2) = "A", If(Match.Groups(1).Value = "u", "&", If(Match.Groups(1).Value = "a", ">", "{")), Root(2)) + "u"
                                     Else
                                         Debug.WriteLine(Root + " - " + Pieces(1))
-                                        End If
                                     End If
-                                ElseIf RootDictionary(Root)(1) = String.Empty And Tense = 3 Then
                                 End If
+                            ElseIf RootDictionary(Root)(1) = String.Empty And Tense = 3 Then
+                            End If
                         End If
                     End If
                 End If

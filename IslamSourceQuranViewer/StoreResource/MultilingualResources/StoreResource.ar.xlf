@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">القرآن العربية مع بيانات التعريف وكل الترجمات وبعض التلاوات الصوت ما عدا تلك المدرجة في القائمة المقيدة للمشروع عبد القادر (http://tanzil.net). وتقيد 
+الهنغارية ترجمة القرآن من قبله حليمة سوزانا "إيسزلام المجرية" (http://magyariszlam.hu). 
+"الترجمة الإنكليزية للقرآن" "مولانا محمد على" وتقيد "حركة الأحمدية لاهور" في الإسلام (http://www.aaiil.org). البيانات 
+مورفولوجيا وترجمة كلمة بكلمة باللغة الإنكليزية الائتمان القرآنية العربية الإحضار (http://corpus.quran.com). 
+الائتمان الإندونيسية كل كلمة ترجمة للقرآن إندونيسيا (http://www.alquran-indonesia.com/web/quran). 
+الائتمان التركية الترجمة كلمة بكلمة لسليمان Ateş (http://www.kuranmeali.com/kelime.asp). وتقيد 
+الأردية الترجمة كلمة بكلمة حافظ محمد نزار "الكريم وا القرآن سهل" (http://www.easyquranwahadees.com). 
+ترجمة كلمة بكلمة أخرى، فضلا عن الترجمات الأخرى في البرنامج حساب Microsoft موفر الترجمة (http://www.microsoft.com/en-us/translator) وترجمة جوجل (http://translate.google.com)، وقد لا تكون دقيقة.  للماليزي كلمة بكلمة القرآن، المصدر الإندونيسية.  لجميع القرآن كلمة بكلمة أخرى، هو المصدر "الإحضار القرآنية اللغة الإنجليزية على اللغة العربية". 
+لحساب الأخرى التلاوات الصوتية مع معدل البت سيظهر "كل الآية" (http://www.everyayah.com). 
+بيانات Unicode الفضل Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

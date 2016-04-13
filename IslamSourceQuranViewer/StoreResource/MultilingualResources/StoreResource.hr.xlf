@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arapski Kur'an s metapodacima i sve prijevode i neke audio recitacijama osim onih navedenih pripisana Tanzil projekta (http://tanzil.net). 
+Mađarski prijevod Kur'ana po poljubac Zsuzsanna Halima pripisana Magyar Iszlam (http://magyariszlam.hu). 
+Engleski prijevod Kur'an Maulana Muhammad Ali priznaju Lahore Ahmadiyya pokret u islamu (http://www.aaiil.org). 
+Morfologija podataka i prijevod riječ po riječ kredit da citate Arapski Corpus (http://corpus.quran.com). 
+Indonezijski prijevod riječ po riječ kredit za Al-Quran Indonezije (http://www.alquran-indonesia.com/web/quran). 
+Turski prijevod riječ po riječ kredit Sulejmanom Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu prijevod riječ po riječ Hafiz Nazar Muhammad priznaju lako Kur'an Wa hadis (http://www.easyquranwahadees.com). 
+Drugi prijevod riječ po riječ, kao i ostali prijevodi u programu Microsoft prijevod davatelja (http://www.microsoft.com/en-us/translator) i Google Translate (http://translate.google.com) i ne mora biti točno.  Za Malazijski riječ po riječ Kurana, izvor je indonezijski.  Za sve ostale riječ po riječ Kurana, izvor je engleski citate Arapski korpus. 
+Ostali audio recitacijama s bitrate prikazan pripisana svaki Ayah (http://www.everyayah.com). 
+Unicode podatke pripisana Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

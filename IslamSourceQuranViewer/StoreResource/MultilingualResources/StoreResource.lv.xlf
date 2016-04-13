@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arābu valodā Qur ar metadatiem un visi tulkojumi un daži audio recitations, izņemot uzskaitītos kredītā Tanzil Project (http://tanzil.net). 
+Ungārijas tulkošanas Korāns, skūpsts Žužanna Halima kredītā Magyar Iszlam (http://magyariszlam.hu). 
+Angļu valodas tulkojuma Qu'ran, Maulana Muhammad Ali kredītā Lahore Ahmadiyya kustība islāmā (http://www.aaiil.org). 
+Morfoloģijas datus un pa vārdam angļu translation kredīta Quranic arābu Corpus (http://corpus.quran.com). 
+Indonēzijas pa vārdam tulkošanas kredīta Al-Qur-Indonēzijā (http://www.alquran-indonesia.com/web/quran). 
+Turku pa vārdam tulkošanas kredītu Sīlejmans Ates (http://www.kuranmeali.com/kelime.asp). Urdu-vārdiskam tulkošanas, Hafiz Nazar Muhammad 
+kredītā Wa Hadees viegli Korāns (http://www.easyquranwahadees.com). 
+Citi pa vārdam tulkojumi, kā arī citi tulkojumi programmā ieskaitīti tulkošanas pakalpojumu sniedzējs (http://www.microsoft.com/en-us/translator) Microsoft un Google Translate (http://translate.google.com) un var nebūt precīzi.  Malaizijas pa vārdam Qur ', avots ir Indonēzijas.  Citiem pa vārdam Korāns, avots ir angļu Quranic arābu Corpus. 
+Citas audio recitations ar bitrate parādīta kredītā katru ajai (http://www.everyayah.com). Unikoda datus kredītā Unicode Consortium (http://www.unicode.org) 
+</target>
         </trans-unit>
       </group>
     </body>

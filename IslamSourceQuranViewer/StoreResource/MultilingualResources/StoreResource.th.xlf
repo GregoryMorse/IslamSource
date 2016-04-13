@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">อัลกุ รอานภาษาอาหรับกับข้อมูลเมตา และแปล และอ่านเสียงบางยกเว้นผู้แสดงเข้าโครงการ Tanzil (http://tanzil.net) 
+ฮังการีแปลของอัลกุรอาน โดยจูบฮาลิมา Zsuzsanna เข้า Magyar Iszlam (http://magyariszlam.hu) 
+ภาษาอังกฤษการแปลของ Qu'ran โดย Maulana หมัดอาลีเข้าเคลื่อนไหว Ahmadiyya ฮอร์การในอิสลาม (http://www.aaiil.org) ข้อมูล
+สัณฐานวิทยาและคำโดยคำแปลเครดิตคอร์ปัสอาหรับ Quranic (http://corpus.quran.com) 
+เครดิตแปลคำโดยคำที่อินโดนีเซียอินโดนีเซียคัมภีร์อัลกุรอาน (http://www.alquran-indonesia.com/web/quran) 
+เครดิตตุรกีคำโดยคำแปลการรวมตัวใหม่ Ateş (http://www.kuranmeali.com/kelime.asp) 
+อูรดูคำโดยคำแปล โดยมุมุ Nazar เข้าง่ายอัลกุรอานวา Hadees (http://www.easyquranwahadees.com) 
+อื่น ๆ แปลคำโดยคำรวมทั้งคำแปลอื่น ๆ ในโปรแกรมเครดิตที่ผู้ให้บริการการแปลของ Microsoft (http://www.microsoft.com/en-us/translator) และ Google แปล (http://translate.google.com) และอาจไม่ถูกต้อง  สำหรับอัลกุรอานคำโดยคำมาเลเซีย แหล่งที่มาคืออินโดนีเซีย  สำหรับทั้งหมดอื่น ๆ คำโดยคำอัลกุรอาน แหล่งที่มาคือ Corpus Quranic ภาษาอาหรับ ภาษาอังกฤษ 
+การอ่านอื่น ๆ เสียงกับอัตราบิตที่แสดงเครดิตทุก Ayah (http://www.everyayah.com) 
+ข้อมูล Unicode ที่เข้าใน Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bahasa Arab Al-Qur'an dengan metadata dan semua terjemahan dan Tilawah beberapa audio kecuali mereka terdaftar dikreditkan ke Tanzil proyek (http://tanzil.net). 
+Terjemahan Hungaria Qur'an oleh Kiss Zsuzsanna Halima dikreditkan ke Magyar Iszlam (http://magyariszlam.hu). 
+Terjemahan bahasa Inggris Qu'ran oleh Maulana Muhammad Ali dikreditkan ke The Lahore Gerakan Ahmadiah dalam Islam (http://www.aaiil.org). 
+Morfologi data dan terjemahan kata demi kata bahasa Inggris kredit untuk Corpus Arab Al-Qur'an (http://corpus.quran.com). 
+Kredit Indonesia terjemahan kata demi kata Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran). 
+Turki terjemahan kata demi kata kredit untuk Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Terjemahan kata demi kata bahasa Urdu oleh Hafiz Nazar Muhammad dikreditkan ke mudah Quran Wa hadits (http://www.easyquranwahadees.com). 
+Terjemahan kata demi kata lainnya serta terjemahan lainnya dalam program dikreditkan ke Microsoft terjemahan penyedia (http://www.microsoft.com/en-us/translator) dan Google Translate (http://translate.google.com) dan mungkin tidak akurat.  Al-Qur'an kata demi kata Malaysia, sumber Indonesia.  Untuk semua Al Qur'an kata demi kata lain, sumber adalah Corpus Arab Al-Quran Inggris. 
+Lain Tilawah audio dengan bitrate yang ditunjukkan dikreditkan untuk setiap Ayah (http://www.everyayah.com). 
+Data Unicode dikreditkan ke Unicode The konsorsium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

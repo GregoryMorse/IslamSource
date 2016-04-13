@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabski Koran z metadane i wszystkie tłumaczenia i niektóre audio recytacji, z wyjątkiem tych wymienionych dopisane do projektu Tanzil (http://tanzil.net). 
+Węgierski tłumaczenia Koranu przez pocałunek Zsuzsanna Halima zasili Magyar Iszlam (http://magyariszlam.hu). 
+Angielski tłumaczenie Qu'ran przez Maulana Muhammad Ali dobro The Lahore Ahmadiyya ruch w islamie (http://www.aaiil.org). Dane 
+morfologii i tłumaczenie na język angielski-słowo kredyt do Koranu arabskiego Corpus (http://corpus.quran.com). 
+Indonezyjski Tłumacz słowo kredyt do Indonezji Al-Koran (http://www.alquran-indonesia.com/web/quran). 
+Turecki tłumaczenia słowo po słowie kredytu Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu tłumaczenia słowo po słowie Hafiz Nazar Muhammad dobro łatwe Koran Wa Hadees (http://www.easyquranwahadees.com). 
+Inne tłumaczenia słowo po słowie, a także innych tłumaczenia w programie Microsoft dostawca tłumaczeń (http://www.microsoft.com/en-us/translator) i Google Translate (http://translate.google.com) i może nie być dokładne.  Dla Malezji-słowo Koran źródła jest indonezyjski.  Dla wszystkich innych-słowo Koran źródła jest angielski Koranu arabskiego Corpus. 
+Innych audio recytacje z bitrate się dobro każdego Ayah (http://www.everyayah.com). 
+Danych Unicode zasili The Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

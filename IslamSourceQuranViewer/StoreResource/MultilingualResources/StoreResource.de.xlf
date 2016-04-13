@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Arabisch Koran mit Metadaten und alle Übersetzungen und einige audio-Rezitationen außer den genannten Tanzil-Projekt (http://tanzil.net) gutgeschrieben. Ungarische Übersetzung des Koran von Kiss Zsuzsanna Halima gutgeschrieben 
+Magyar Iszlam (http://magyariszlam.hu). 
+Gutgeschrieben, englische Übersetzung des Qu'ran von Maulana Muhammad Ali der Lahore Ahmadiyya-Bewegung im Islam (http://www.aaiil.org). 
+Morphologie Daten und englische Wort-für-Wort-Übersetzung danken Quranic Arabisch Corpus (http://corpus.quran.com). 
+Indonesisch Wort für Wort Übersetzung Kredit an Al-Quran-Indonesien (http://www.alquran-indonesia.com/web/quran). 
+Türkisch Wort für Wort Übersetzung Gutschrift auf Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu Wort-für-Wort-Übersetzung von Hafiz Nazar Muhammad gutgeschrieben einfach Koran Wa Hadees (http://www.easyquranwahadees.com). 
+Andere Wort-für-Wort-Übersetzungen sowie andere Übersetzungen im Programm Microsoft Übersetzungsanbieter (http://www.microsoft.com/en-us/translator) und Google Translate (http://translate.google.com) gutgeschrieben und kann nicht genau.  Für malaysische Wort für Wort Qur ' an ist die indonesische.  Für alle anderen Wort-für-Wort-Koran ist die Quelle des englischen Quranic Arabisch Korpus. 
+Andere audio Rezitationen mit Bitrate angezeigt gutgeschrieben Every Ayah (http://www.everyayah.com). 
+Unicode-Daten auf das Unicode Consortium (http://www.unicode.org) gutgeschrieben</target>
         </trans-unit>
       </group>
     </body>

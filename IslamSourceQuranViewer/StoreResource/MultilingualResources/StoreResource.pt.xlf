@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alcorão árabe com metadados e todas as traduções e algumas recitações áudio, excepto os listados creditado ao projeto Tanzil (http://tanzil.net). 
+Húngaro Tradução do Alcorão por beijar Zsuzsanna Halima creditada a Magyar Iszlam (http://magyariszlam.hu). 
+Inglês Tradução de Qu'ran por Maulana Muhammad Ali creditado para o movimento de Ahmadiyya Lahore no Islã (http://www.aaiil.org). Dados 
+morfologia e tradução para o Inglês palavra por palavra crédito ao Corpus de árabe corânico (http://corpus.quran.com). 
+Crédito Indonésio Tradução palavra por palavra para Al-Quran Indonésia (http://www.alquran-indonesia.com/web/quran). 
+Crédito Turco Tradução palavra por palavra para Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Tradução de palavra por palavra Urdu por Hafiz Nazar Muhammad creditado para fácil Alcorão Wa Hadees (http://www.easyquranwahadees.com). 
+Outras traduções de palavra por palavra, bem como outras traduções no programa creditado ao provedor de tradução da Microsoft (http://www.microsoft.com/en-us/translator) e o Google Translate (http://translate.google.com) e não pode ser exatas.  Para Malásia Alcorão palavra por palavra, a fonte é Indonésia.  Para todos os outros Alcorão palavra por palavra, a fonte é o inglês Corpus árabe corânico. 
+Outras recitações áudio com bitrate mostrado creditado para cada Ayah (http://www.everyayah.com). 
+Dados Unicode creditados para o Unicode Consortium (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>

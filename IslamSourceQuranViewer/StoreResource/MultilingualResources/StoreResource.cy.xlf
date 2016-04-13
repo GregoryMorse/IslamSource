@@ -250,7 +250,16 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="new"></target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Qur'an Arabeg â metadata a holl gyfieithiadau a rhai recitations sain ac eithrio'r rhai a restrir yn cael ei gredydu i Tanzil prosiect (http://tanzil.net). 
+Hwngari cyfieithu Qur'an gan Kiss Zsuzsanna Halima ei gredydu Magyar Iszlam (http://magyariszlam.hu). 
+Cyfieithu Saesneg Qu'ran gan Maulana Muhammad Ali ei gredydu y mudiad Ahmadiyya Lahore yn Islam (http://www.aaiil.org). Cyfieithiad gan gair Saesneg a data 
+morffoleg credyd i corpws Arabeg Quranic (http://corpus.quran.com). 
+Cyfieithu fesul gair Indoneseg credyd i Al-Cŵran Indonesia (http://www.alquran-indonesia.com/web/quran). 
+Credyd cyfieithu gair gan Dwrci i Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). Roedd 
+Wrdw cyfieithu fesul gair gan Hafiz Nazar Muhammad ei gredydu hawdd Cŵran Wa Hadees (http://www.easyquranwahadees.com). 
+Mae cyfieithiadau eraill fesul gair yn ogystal â'r cyfieithiadau eraill yn y rhaglen ei gredydu i ddarparwr cyfieithu Microsoft (http://www.microsoft.com/en-us/translator) a Google Translate (http://translate.google.com) ac efallai na fydd yn gywir.  Malaysia-gair Qur'an, y ffynhonnell yn Indonesia.  Ar gyfer pob Qur'an gair gan eraill, y ffynhonnell yw y corpws Arabeg Quranic Saesneg. 
+Roedd eraill recitations sain gyda cyfradd didau dangos ei gredydu i bob Ayah (http://www.everyayah.com). 
+Data Unicode ei gredydu y consortiwm Unicode (http://www.unicode.org)</target>
         </trans-unit>
       </group>
     </body>
