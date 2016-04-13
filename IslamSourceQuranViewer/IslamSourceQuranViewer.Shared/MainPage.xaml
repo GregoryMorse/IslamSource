@@ -16,6 +16,7 @@
         </Style>
         <CollectionViewSource x:Name="QuranDivisions" Source="{Binding Path=ViewModel.Items, Mode=OneWay}"></CollectionViewSource>
         <CollectionViewSource x:Name="QuranDivision" Source="{Binding Path=ViewModel.ListItems, Mode=OneWay}"></CollectionViewSource>
+        <local:VisibilitySelectConverter x:Key="VisibilitySelect"></local:VisibilitySelectConverter>
     </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -56,9 +57,12 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Viewbox StretchDirection="DownOnly">
-                        <TextBlock Margin="5" local:ListFormattedTextBehavior.FormattedText="{Binding TextItems}" 
-                            Style="{StaticResource TitleStyle}" FlyoutBase.AttachedFlyout="{StaticResource ContextFlyout}" Holding="TextBlock_Holding" PointerPressed="OnPointerPressed" PointerMoved="OnPointerMoved" PointerReleased="OnPointerReleased" PointerCanceled="OnPointerCanceled" PointerExited="OnPointerExited" PointerCaptureLost="OnPointerCaptureLost">
-                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="5" local:ListFormattedTextBehavior.FormattedText="{Binding TextItems}" 
+                                Style="{StaticResource TitleStyle}" FlyoutBase.AttachedFlyout="{StaticResource ContextFlyout}" Holding="TextBlock_Holding" PointerPressed="OnPointerPressed" PointerMoved="OnPointerMoved" PointerReleased="OnPointerReleased" PointerCanceled="OnPointerCanceled" PointerExited="OnPointerExited" PointerCaptureLost="OnPointerCaptureLost">
+                            </TextBlock>
+                            <Button FontFamily="Segoe UI Symbol" Visibility="{Binding IsSelected, Converter={StaticResource VisibilitySelect}, Mode=OneWay}" Click="OnClick" Tapped="OnTapped">&#xE111;</Button>
+                        </StackPanel>
                     </Viewbox>
                 </DataTemplate>
             </ListBox.ItemTemplate>

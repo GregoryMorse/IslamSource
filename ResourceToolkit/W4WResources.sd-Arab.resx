@@ -15796,7 +15796,7 @@
     <value>اهي هئا</value>
   </data>
   <data name="GreatMasterpiece2.99" xml:space="preserve">
-    <value>&lt;موضوع&gt;</value>
+    <value>موضوع</value>
   </data>
   <data name="GreatMasterpiece2.100" xml:space="preserve">
     <value>طريقو سان</value>
@@ -16438,7 +16438,7 @@
     <value>ويٺو</value>
   </data>
   <data name="GreatMasterpiece2.313" xml:space="preserve">
-    <value>&lt;موضوع&gt;</value>
+    <value>موضوع</value>
   </data>
   <data name="GreatMasterpiece2.314" xml:space="preserve">
     <value>زبان سان</value>
@@ -16930,7 +16930,7 @@
     <value>ويٺو</value>
   </data>
   <data name="GreatMasterpiece2.477" xml:space="preserve">
-    <value>&lt;موضوع&gt;</value>
+    <value>موضوع</value>
   </data>
   <data name="GreatMasterpiece2.478" xml:space="preserve">
     <value>زبان سان</value>
@@ -20320,7 +20320,7 @@
     <value>ته</value>
   </data>
   <data name="GreatMasterpiece5.233" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece5.234" xml:space="preserve">
     <value>ان لاء</value>
@@ -28891,7 +28891,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece15.411" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece15.412" xml:space="preserve">
     <value>کان</value>
@@ -30253,7 +30253,7 @@
     <value>ختم سان</value>
   </data>
   <data name="GreatMasterpiece17.253" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece17.254" xml:space="preserve">
     <value>زمان حال</value>
@@ -34042,7 +34042,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece23.190" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece23.191" xml:space="preserve">
     <value>کان</value>
@@ -37105,7 +37105,7 @@
     <value>ڪال ڪريو</value>
   </data>
   <data name="GreatMasterpiece28.128" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece28.129" xml:space="preserve">
     <value>هاڻوڪي</value>
@@ -37423,7 +37423,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece28.234" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece28.235" xml:space="preserve">
     <value>کان</value>
@@ -37552,7 +37552,7 @@
     <value>ڏنو</value>
   </data>
   <data name="GreatMasterpiece28.277" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece28.278" xml:space="preserve">
     <value>هاڻوڪي</value>
@@ -37864,7 +37864,7 @@
     <value>آهي</value>
   </data>
   <data name="GreatMasterpiece28.381" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece28.382" xml:space="preserve">
     <value>آواز</value>
@@ -37897,7 +37897,7 @@
     <value>آهي</value>
   </data>
   <data name="GreatMasterpiece28.392" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece28.393" xml:space="preserve">
     <value>عيب</value>
@@ -43267,7 +43267,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece36.387" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece36.388" xml:space="preserve">
     <value>کان</value>
@@ -44437,7 +44437,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece38.144" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece38.145" xml:space="preserve">
     <value>گذريل زمان</value>
@@ -44590,7 +44590,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece38.195" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece38.196" xml:space="preserve">
     <value>گذريل زمان</value>
@@ -48853,7 +48853,7 @@
     <value>پهريون</value>
   </data>
   <data name="GreatMasterpiece40.306" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece40.307" xml:space="preserve">
     <value>حالت جي</value>
@@ -50110,7 +50110,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece40.725" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece40.726" xml:space="preserve">
     <value>کان</value>
@@ -52576,7 +52576,7 @@
     <value>هن</value>
   </data>
   <data name="GreatMasterpiece42.179" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece42.180" xml:space="preserve">
     <value>نه آهي</value>
@@ -55417,7 +55417,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece44.524" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece44.525" xml:space="preserve">
     <value>کان</value>
@@ -57598,7 +57598,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece47.206" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece47.207" xml:space="preserve">
     <value>کان</value>
@@ -60028,7 +60028,7 @@
     <value>محمد:</value>
   </data>
   <data name="GreatMasterpiece50.212" xml:space="preserve">
-    <value>&lt;موضوع&gt;</value>
+    <value>موضوع</value>
   </data>
   <data name="GreatMasterpiece50.213" xml:space="preserve">
     <value>nominative صورت</value>
@@ -61960,7 +61960,7 @@
     <value>ڏهه</value>
   </data>
   <data name="GreatMasterpiece52.89" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece52.90" xml:space="preserve">
     <value>پهريون:</value>
@@ -81202,7 +81202,7 @@
     <value>هر هڪ لاء</value>
   </data>
   <data name="GreatMasterpiece64.576" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece64.577" xml:space="preserve">
     <value>کان</value>
@@ -82741,7 +82741,7 @@
     <value>هر</value>
   </data>
   <data name="GreatMasterpiece65.290" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece65.291" xml:space="preserve">
     <value>کان</value>
@@ -82768,7 +82768,7 @@
     <value>هر هڪ لاء</value>
   </data>
   <data name="GreatMasterpiece65.299" xml:space="preserve">
-    <value>&amp;&lt;فعل&gt;</value>
+    <value>&amp;فعل</value>
   </data>
   <data name="GreatMasterpiece65.300" xml:space="preserve">
     <value>ان infinitive سان</value>

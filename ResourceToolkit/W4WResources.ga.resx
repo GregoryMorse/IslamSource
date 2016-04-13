@@ -259,7 +259,7 @@
     <value> (molta)</value>
   </data>
   <data name="InTheEvening1.7" xml:space="preserve">
-    <value>&lt;Dada&gt;</value>
+    <value>Dada</value>
   </data>
   <data name="InTheEvening1.12" xml:space="preserve">
     <value>níl</value>
@@ -385,7 +385,7 @@
     <value>in</value>
   </data>
   <data name="InTheMorning1.7" xml:space="preserve">
-    <value>&lt;Dada&gt;</value>
+    <value>Dada</value>
   </data>
   <data name="InTheMorning1.12" xml:space="preserve">
     <value>níl</value>
@@ -592,7 +592,7 @@
     <value>Cén duine:</value>
   </data>
   <data name="RemembranceFirst.1" xml:space="preserve">
-    <value>&lt;Dada&gt;</value>
+    <value>Dada</value>
   </data>
   <data name="RemembranceFirst.4" xml:space="preserve">
     <value>Tusa</value>
@@ -2212,7 +2212,7 @@
     <value> ó </value>
   </data>
   <data name="GreatMasterpiece5.233" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece5.238" xml:space="preserve">
     <value>gníomhach</value>
@@ -3709,7 +3709,7 @@
     <value>gach</value>
   </data>
   <data name="GreatMasterpiece15.411" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece15.412" xml:space="preserve">
     <value> ó </value>
@@ -3865,7 +3865,7 @@
     <value> ó </value>
   </data>
   <data name="GreatMasterpiece17.253" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece17.260" xml:space="preserve">
     <value>nó</value>
@@ -4402,7 +4402,7 @@
     <value>• %1.</value>
   </data>
   <data name="GreatMasterpiece23.190" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece23.191" xml:space="preserve">
     <value> ó </value>
@@ -4858,7 +4858,7 @@
     <value>glao</value>
   </data>
   <data name="GreatMasterpiece28.128" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece28.172" xml:space="preserve">
     <value>An tríú</value>
@@ -4885,7 +4885,7 @@
     <value>Úsáid $</value>
   </data>
   <data name="GreatMasterpiece28.234" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece28.235" xml:space="preserve">
     <value> ó </value>
@@ -4918,7 +4918,7 @@
     <value> ó </value>
   </data>
   <data name="GreatMasterpiece28.277" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece28.280" xml:space="preserve">
     <value>ansin</value>
@@ -5017,7 +5017,7 @@
     <value>is ea</value>
   </data>
   <data name="GreatMasterpiece28.381" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece28.384" xml:space="preserve">
     <value>Déan</value>
@@ -5026,7 +5026,7 @@
     <value>is ea</value>
   </data>
   <data name="GreatMasterpiece28.392" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece28.395" xml:space="preserve">
     <value>Déan</value>
@@ -5632,7 +5632,7 @@
     <value>in</value>
   </data>
   <data name="GreatMasterpiece36.387" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece36.388" xml:space="preserve">
     <value> ó </value>
@@ -5803,7 +5803,7 @@
     <value>in</value>
   </data>
   <data name="GreatMasterpiece38.144" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece38.164" xml:space="preserve">
     <value> ó </value>
@@ -5821,7 +5821,7 @@
     <value>in</value>
   </data>
   <data name="GreatMasterpiece38.195" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece38.214" xml:space="preserve">
     <value> ó </value>
@@ -6211,7 +6211,7 @@
     <value>IF</value>
   </data>
   <data name="GreatMasterpiece39.706" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.710" xml:space="preserve">
     <value>E</value>
@@ -6277,7 +6277,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece39.766" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.771" xml:space="preserve">
     <value>chuig</value>
@@ -6475,7 +6475,7 @@
     <value>IF</value>
   </data>
   <data name="GreatMasterpiece40.306" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece40.311" xml:space="preserve">
     <value>agus</value>
@@ -6592,7 +6592,7 @@
     <value>Enter</value>
   </data>
   <data name="GreatMasterpiece40.725" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece40.726" xml:space="preserve">
     <value> ó </value>
@@ -6634,7 +6634,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece40.781" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.786" xml:space="preserve">
     <value>E</value>
@@ -6664,7 +6664,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece40.819" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.820" xml:space="preserve">
     <value>Ceann ar bith</value>
@@ -6940,7 +6940,7 @@
     <value>an ceann seo</value>
   </data>
   <data name="GreatMasterpiece42.179" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece42.180" xml:space="preserve">
     <value>níl</value>
@@ -7417,7 +7417,7 @@
     <value>gach</value>
   </data>
   <data name="GreatMasterpiece44.524" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece44.525" xml:space="preserve">
     <value> ó </value>
@@ -7441,7 +7441,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece44.571" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece44.575" xml:space="preserve">
     <value>E</value>
@@ -7729,7 +7729,7 @@
     <value>Déan</value>
   </data>
   <data name="GreatMasterpiece47.206" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece47.207" xml:space="preserve">
     <value> ó </value>
@@ -8308,7 +8308,7 @@
     <value>feidhm</value>
   </data>
   <data name="GreatMasterpiece52.89" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece52.97" xml:space="preserve">
     <value>in</value>
@@ -8650,7 +8650,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece54.352" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.356" xml:space="preserve">
     <value>E</value>
@@ -8716,7 +8716,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece54.449" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.454" xml:space="preserve">
     <value>E</value>
@@ -8767,7 +8767,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece54.515" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.520" xml:space="preserve">
     <value>E</value>
@@ -9496,7 +9496,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece57.179" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.180" xml:space="preserve">
     <value>I</value>
@@ -9562,7 +9562,7 @@
     <value>Cosúil le</value>
   </data>
   <data name="GreatMasterpiece57.256" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.262" xml:space="preserve">
     <value>E</value>
@@ -9982,7 +9982,7 @@
     <value>agus</value>
   </data>
   <data name="GreatMasterpiece59.190" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.193" xml:space="preserve">
     <value>ansin</value>
@@ -10045,7 +10045,7 @@
     <value>ní</value>
   </data>
   <data name="GreatMasterpiece59.251" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.252" xml:space="preserve">
     <value>ní</value>
@@ -10720,7 +10720,7 @@
     <value>gach rud</value>
   </data>
   <data name="GreatMasterpiece62.413" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.421" xml:space="preserve">
     <value>in</value>
@@ -10744,7 +10744,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece62.453" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.457" xml:space="preserve">
     <value>chuig</value>
@@ -10774,7 +10774,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece62.485" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.488" xml:space="preserve">
     <value>mac léinn</value>
@@ -10810,7 +10810,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece62.527" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.528" xml:space="preserve">
     <value>IF</value>
@@ -11122,7 +11122,7 @@
     <value>M</value>
   </data>
   <data name="GreatMasterpiece64.495" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece64.496" xml:space="preserve">
     <value>M</value>
@@ -11170,7 +11170,7 @@
     <value>mise</value>
   </data>
   <data name="GreatMasterpiece64.576" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece64.577" xml:space="preserve">
     <value> ó </value>
@@ -11374,7 +11374,7 @@
     <value>Déan</value>
   </data>
   <data name="GreatMasterpiece65.290" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece65.291" xml:space="preserve">
     <value> ó </value>
@@ -11383,7 +11383,7 @@
     <value>in</value>
   </data>
   <data name="GreatMasterpiece65.299" xml:space="preserve">
-    <value>&lt;briathar&gt;</value>
+    <value>briathar</value>
   </data>
   <data name="GreatMasterpiece65.312" xml:space="preserve">
     <value>(eile)</value>
@@ -11425,7 +11425,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece65.369" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece65.373" xml:space="preserve">
     <value>E</value>
@@ -11992,7 +11992,7 @@
     <value>ní</value>
   </data>
   <data name="GreatMasterpiece67.488" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece67.492" xml:space="preserve">
     <value>E</value>
@@ -12355,7 +12355,7 @@
     <value>c</value>
   </data>
   <data name="GreatMasterpiece68.512" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece68.519" xml:space="preserve">
     <value>E</value>

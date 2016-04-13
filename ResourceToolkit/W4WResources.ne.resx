@@ -15796,7 +15796,7 @@
     <value>तिनीहरू</value>
   </data>
   <data name="GreatMasterpiece2.99" xml:space="preserve">
-    <value>&lt;विषय&gt;</value>
+    <value>विषय</value>
   </data>
   <data name="GreatMasterpiece2.100" xml:space="preserve">
     <value>विधि संग</value>
@@ -16438,7 +16438,7 @@
     <value>हुनुको</value>
   </data>
   <data name="GreatMasterpiece2.313" xml:space="preserve">
-    <value>&lt;विषय&gt;</value>
+    <value>विषय</value>
   </data>
   <data name="GreatMasterpiece2.314" xml:space="preserve">
     <value>भाषा संग</value>
@@ -16930,7 +16930,7 @@
     <value>हुनुको</value>
   </data>
   <data name="GreatMasterpiece2.477" xml:space="preserve">
-    <value>&lt;विषय&gt;</value>
+    <value>विषय</value>
   </data>
   <data name="GreatMasterpiece2.478" xml:space="preserve">
     <value>भाषा संग</value>
@@ -20320,7 +20320,7 @@
     <value>कि</value>
   </data>
   <data name="GreatMasterpiece5.233" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece5.234" xml:space="preserve">
     <value>यसको लागी</value>
@@ -28891,7 +28891,7 @@
     <value>हरेक</value>
   </data>
   <data name="GreatMasterpiece15.411" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece15.412" xml:space="preserve">
     <value>देखि:</value>
@@ -30253,7 +30253,7 @@
     <value>अन्त्य संग</value>
   </data>
   <data name="GreatMasterpiece17.253" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece17.254" xml:space="preserve">
     <value>बर्तमान काल</value>
@@ -34042,7 +34042,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece23.190" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece23.191" xml:space="preserve">
     <value>देखि:</value>
@@ -37105,7 +37105,7 @@
     <value>कल</value>
   </data>
   <data name="GreatMasterpiece28.128" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece28.129" xml:space="preserve">
     <value>वर्तमान</value>
@@ -37423,7 +37423,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece28.234" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece28.235" xml:space="preserve">
     <value>देखि:</value>
@@ -37552,7 +37552,7 @@
     <value>दिइएको</value>
   </data>
   <data name="GreatMasterpiece28.277" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece28.278" xml:space="preserve">
     <value>वर्तमान</value>
@@ -37864,7 +37864,7 @@
     <value>हो</value>
   </data>
   <data name="GreatMasterpiece28.381" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece28.382" xml:space="preserve">
     <value>ध्वनि</value>
@@ -37897,7 +37897,7 @@
     <value>हो</value>
   </data>
   <data name="GreatMasterpiece28.392" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece28.393" xml:space="preserve">
     <value>बिग्रेको</value>
@@ -43267,7 +43267,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece36.387" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece36.388" xml:space="preserve">
     <value>देखि:</value>
@@ -44437,7 +44437,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece38.144" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece38.145" xml:space="preserve">
     <value>भुत काल</value>
@@ -44590,7 +44590,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece38.195" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece38.196" xml:space="preserve">
     <value>भुत काल</value>
@@ -47278,7 +47278,7 @@
     <value>अध्ययन गर्न?</value>
   </data>
   <data name="GreatMasterpiece39.706" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.707" xml:space="preserve">
     <value>जो</value>
@@ -47458,7 +47458,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece39.766" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.767" xml:space="preserve">
     <value>हुदैन</value>
@@ -48853,7 +48853,7 @@
     <value>पहिलो</value>
   </data>
   <data name="GreatMasterpiece40.306" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece40.307" xml:space="preserve">
     <value>अवस्था</value>
@@ -50110,7 +50110,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece40.725" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece40.726" xml:space="preserve">
     <value>देखि:</value>
@@ -50278,7 +50278,7 @@
     <value>तपाईं पछुताउनु हुनेछ।</value>
   </data>
   <data name="GreatMasterpiece40.781" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.782" xml:space="preserve">
     <value>...</value>
@@ -50392,7 +50392,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece40.819" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.820" xml:space="preserve">
     <value>कुनै पनि</value>
@@ -52576,7 +52576,7 @@
     <value>यो</value>
   </data>
   <data name="GreatMasterpiece42.179" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece42.180" xml:space="preserve">
     <value>यो होइन</value>
@@ -55417,7 +55417,7 @@
     <value>हरेक</value>
   </data>
   <data name="GreatMasterpiece44.524" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece44.525" xml:space="preserve">
     <value>देखि:</value>
@@ -55558,7 +55558,7 @@
     <value>आफ्नो भाइ?</value>
   </data>
   <data name="GreatMasterpiece44.571" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece44.572" xml:space="preserve">
     <value>कसरी</value>
@@ -57598,7 +57598,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece47.206" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece47.207" xml:space="preserve">
     <value>देखि:</value>
@@ -60028,7 +60028,7 @@
     <value>मुहम्मद:</value>
   </data>
   <data name="GreatMasterpiece50.212" xml:space="preserve">
-    <value>&lt;विषय&gt;</value>
+    <value>विषय</value>
   </data>
   <data name="GreatMasterpiece50.213" xml:space="preserve">
     <value>निस्क्रियगर्नुहोस् मामला</value>
@@ -61960,7 +61960,7 @@
     <value>दस</value>
   </data>
   <data name="GreatMasterpiece52.89" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece52.90" xml:space="preserve">
     <value>पहिलो:</value>
@@ -64654,7 +64654,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece54.352" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.353" xml:space="preserve">
     <value>थाहा थियो</value>
@@ -64945,7 +64945,7 @@
     <value>सुरक्षा गर्न।</value>
   </data>
   <data name="GreatMasterpiece54.449" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.450" xml:space="preserve">
     <value>...</value>
@@ -65143,7 +65143,7 @@
     <value>अन्धकार / बादल लागेको आकाश मा।</value>
   </data>
   <data name="GreatMasterpiece54.515" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.516" xml:space="preserve">
     <value>मलाई थाहा छ</value>
@@ -69553,7 +69553,7 @@
     <value>जमिन</value>
   </data>
   <data name="GreatMasterpiece57.179" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.180" xml:space="preserve">
     <value>i</value>
@@ -69784,7 +69784,7 @@
     <value>उपयोगी</value>
   </data>
   <data name="GreatMasterpiece57.256" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.257" xml:space="preserve">
     <value>...</value>
@@ -73021,7 +73021,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece59.190" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.191" xml:space="preserve">
     <value>उपस्थित</value>
@@ -73204,7 +73204,7 @@
     <value>केही यो</value>
   </data>
   <data name="GreatMasterpiece59.251" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.252" xml:space="preserve">
     <value>छैन</value>
@@ -77983,7 +77983,7 @@
     <value>र उनको महिलाहरु</value>
   </data>
   <data name="GreatMasterpiece62.413" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.414" xml:space="preserve">
     <value>संयुक्त</value>
@@ -78103,7 +78103,7 @@
     <value>आफ्नो मान्छे / राष्ट्र।</value>
   </data>
   <data name="GreatMasterpiece62.453" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.454" xml:space="preserve">
     <value>यात्रा</value>
@@ -78199,7 +78199,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece62.485" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.486" xml:space="preserve">
     <value>म खुशी छु</value>
@@ -78325,7 +78325,7 @@
     <value>मुहम्मद</value>
   </data>
   <data name="GreatMasterpiece62.527" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.528" xml:space="preserve">
     <value>IF</value>
@@ -80959,7 +80959,7 @@
     <value>को pious।</value>
   </data>
   <data name="GreatMasterpiece64.495" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece64.496" xml:space="preserve">
     <value>ढ</value>
@@ -81202,7 +81202,7 @@
     <value>प्रत्येकको लागी</value>
   </data>
   <data name="GreatMasterpiece64.576" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece64.577" xml:space="preserve">
     <value>देखि:</value>
@@ -82741,7 +82741,7 @@
     <value>प्रत्येक</value>
   </data>
   <data name="GreatMasterpiece65.290" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece65.291" xml:space="preserve">
     <value>देखि:</value>
@@ -82768,7 +82768,7 @@
     <value>प्रत्येकको लागी</value>
   </data>
   <data name="GreatMasterpiece65.299" xml:space="preserve">
-    <value>&lt;क्रिया&gt;</value>
+    <value>क्रिया</value>
   </data>
   <data name="GreatMasterpiece65.300" xml:space="preserve">
     <value>यसको infinitive संग</value>
@@ -82978,7 +82978,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece65.369" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece65.370" xml:space="preserve">
     <value>छोड्न बन्द</value>
@@ -87139,7 +87139,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece67.488" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece67.489" xml:space="preserve">
     <value>राख्न मा / लगाउने</value>
@@ -89407,7 +89407,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece68.512" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece68.513" xml:space="preserve">
     <value>विद्यार्थी</value>

@@ -129,6 +129,14 @@ namespace IslamSourceQuranViewer
             if (ViewModel.ListSelectedItem == null) return;
             this.Frame.Navigate(typeof(WordForWordUC), ViewModel.SelectedItem.IsBookmarks ? new { Division = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][0], Selection = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][1], JumpToChapter = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][2], JumpToVerse = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][3], StartPlaying = false } : new {Division = ViewModel.SelectedItem.Index - 1, Selection = ViewModel.ListSelectedItem.Index, JumpToChapter = -1, JumpToVerse = -1, StartPlaying = false });
         }
+        private void OnClick(object sender, RoutedEventArgs e)
+        {
+            sectionListBox_DoubleTapped(sender, null);
+        }
+        private void OnTapped(object sender, TappedRoutedEventArgs e)
+        {
+            sectionListBox_DoubleTapped(sender, null);
+        }
 
         private void RenderPngs_Click(object sender, RoutedEventArgs e)
         {
@@ -162,6 +170,18 @@ namespace IslamSourceQuranViewer
             {
                 FlyoutBase.ShowAttachedFlyout(sender as TextBlock);
             }
+        }
+    }
+    public class VisibilitySelectConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return (bool)value ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
         }
     }
     public static class ListFormattedTextBehavior

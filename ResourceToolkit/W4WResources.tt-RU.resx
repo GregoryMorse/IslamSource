@@ -1357,7 +1357,7 @@
     <value>аңлатма</value>
   </data>
   <data name="GreatMasterpiece2.99" xml:space="preserve">
-    <value>&lt;тема&gt;</value>
+    <value>тема</value>
   </data>
   <data name="GreatMasterpiece2.101" xml:space="preserve">
     <value>Гарәп</value>
@@ -1486,7 +1486,7 @@
     <value>гамәлдән соң</value>
   </data>
   <data name="GreatMasterpiece2.313" xml:space="preserve">
-    <value>&lt;тема&gt;</value>
+    <value>тема</value>
   </data>
   <data name="GreatMasterpiece2.315" xml:space="preserve">
     <value>Гарәп</value>
@@ -1576,7 +1576,7 @@
     <value>аңлатма</value>
   </data>
   <data name="GreatMasterpiece2.477" xml:space="preserve">
-    <value>&lt;тема&gt;</value>
+    <value>тема</value>
   </data>
   <data name="GreatMasterpiece2.479" xml:space="preserve">
     <value>Гарәп</value>
@@ -2044,7 +2044,7 @@
     <value> кайдан </value>
   </data>
   <data name="GreatMasterpiece5.233" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece5.238" xml:space="preserve">
     <value>актив</value>
@@ -3406,7 +3406,7 @@
     <value>$ куллану</value>
   </data>
   <data name="GreatMasterpiece15.411" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece15.412" xml:space="preserve">
     <value> кайдан </value>
@@ -3556,7 +3556,7 @@
     <value>Беркетелгән</value>
   </data>
   <data name="GreatMasterpiece17.253" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece17.260" xml:space="preserve">
     <value> яки </value>
@@ -4048,7 +4048,7 @@
     <value>• %1.</value>
   </data>
   <data name="GreatMasterpiece23.190" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece23.191" xml:space="preserve">
     <value> кайдан </value>
@@ -4459,7 +4459,7 @@
     <value>шалтырату</value>
   </data>
   <data name="GreatMasterpiece28.128" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece28.172" xml:space="preserve">
     <value>өченче</value>
@@ -4486,7 +4486,7 @@
     <value>$ куллану</value>
   </data>
   <data name="GreatMasterpiece28.234" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece28.235" xml:space="preserve">
     <value> кайдан </value>
@@ -4519,7 +4519,7 @@
     <value> кайдан </value>
   </data>
   <data name="GreatMasterpiece28.277" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece28.284" xml:space="preserve">
     <value>А</value>
@@ -4612,7 +4612,7 @@
     <value>һәм</value>
   </data>
   <data name="GreatMasterpiece28.381" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece28.384" xml:space="preserve">
     <value>Башкарырга</value>
@@ -4621,7 +4621,7 @@
     <value>һәм</value>
   </data>
   <data name="GreatMasterpiece28.392" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece28.395" xml:space="preserve">
     <value>Башкарырга</value>
@@ -5194,7 +5194,7 @@
     <value>дюйм</value>
   </data>
   <data name="GreatMasterpiece36.387" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece36.388" xml:space="preserve">
     <value> кайдан </value>
@@ -5356,7 +5356,7 @@
     <value>дюйм</value>
   </data>
   <data name="GreatMasterpiece38.144" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece38.146" xml:space="preserve">
     <value>Беркетелгән</value>
@@ -5377,7 +5377,7 @@
     <value>дюйм</value>
   </data>
   <data name="GreatMasterpiece38.195" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece38.197" xml:space="preserve">
     <value>Беркетелгән</value>
@@ -5710,7 +5710,7 @@
     <value>Әгәр</value>
   </data>
   <data name="GreatMasterpiece39.706" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.710" xml:space="preserve">
     <value>e</value>
@@ -5767,7 +5767,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece39.766" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.771" xml:space="preserve">
     <value>буенча</value>
@@ -5950,7 +5950,7 @@
     <value>Әгәр</value>
   </data>
   <data name="GreatMasterpiece40.306" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece40.311" xml:space="preserve">
     <value> һәм </value>
@@ -6049,7 +6049,7 @@
     <value>Enter</value>
   </data>
   <data name="GreatMasterpiece40.725" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece40.726" xml:space="preserve">
     <value> кайдан </value>
@@ -6091,7 +6091,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece40.781" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.786" xml:space="preserve">
     <value>e</value>
@@ -6121,7 +6121,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece40.819" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.820" xml:space="preserve">
     <value>теләсә нинди</value>
@@ -6358,7 +6358,7 @@
     <value>һәм</value>
   </data>
   <data name="GreatMasterpiece42.179" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece42.180" xml:space="preserve">
     <value>инкарь</value>
@@ -6796,7 +6796,7 @@
     <value>% моның белән:</value>
   </data>
   <data name="GreatMasterpiece44.524" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece44.525" xml:space="preserve">
     <value> кайдан </value>
@@ -6820,7 +6820,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece44.571" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece44.575" xml:space="preserve">
     <value>e</value>
@@ -7081,7 +7081,7 @@
     <value>Башкарырга</value>
   </data>
   <data name="GreatMasterpiece47.206" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece47.207" xml:space="preserve">
     <value> кайдан </value>
@@ -7381,7 +7381,7 @@
     <value>• %1.</value>
   </data>
   <data name="GreatMasterpiece50.212" xml:space="preserve">
-    <value>&lt;тема&gt;</value>
+    <value>тема</value>
   </data>
   <data name="GreatMasterpiece50.218" xml:space="preserve">
     <value>дюйм</value>
@@ -7621,7 +7621,7 @@
     <value>функция</value>
   </data>
   <data name="GreatMasterpiece52.89" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece52.97" xml:space="preserve">
     <value>дюйм</value>
@@ -7933,7 +7933,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece54.352" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.356" xml:space="preserve">
     <value>e</value>
@@ -7996,7 +7996,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece54.449" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.454" xml:space="preserve">
     <value>e</value>
@@ -8044,7 +8044,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece54.515" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.520" xml:space="preserve">
     <value>e</value>
@@ -8719,7 +8719,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece57.179" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.180" xml:space="preserve">
     <value>Ф</value>
@@ -8782,7 +8782,7 @@
     <value>Охшаган</value>
   </data>
   <data name="GreatMasterpiece57.256" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.262" xml:space="preserve">
     <value>e</value>
@@ -9157,7 +9157,7 @@
     <value> һәм </value>
   </data>
   <data name="GreatMasterpiece59.190" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.195" xml:space="preserve">
     <value>e</value>
@@ -9205,7 +9205,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece59.251" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.257" xml:space="preserve">
     <value>e</value>
@@ -9814,7 +9814,7 @@
     <value>Барысы да</value>
   </data>
   <data name="GreatMasterpiece62.413" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.421" xml:space="preserve">
     <value>дюйм</value>
@@ -9838,7 +9838,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece62.453" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.457" xml:space="preserve">
     <value>буенча</value>
@@ -9868,7 +9868,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece62.485" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.488" xml:space="preserve">
     <value>студент</value>
@@ -9901,7 +9901,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece62.527" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.528" xml:space="preserve">
     <value>Әгәр</value>
@@ -10225,7 +10225,7 @@
     <value>О</value>
   </data>
   <data name="GreatMasterpiece64.495" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece64.496" xml:space="preserve">
     <value>О</value>
@@ -10264,7 +10264,7 @@
     <value>мин</value>
   </data>
   <data name="GreatMasterpiece64.576" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece64.577" xml:space="preserve">
     <value> кайдан </value>
@@ -10468,7 +10468,7 @@
     <value>Башкарырга</value>
   </data>
   <data name="GreatMasterpiece65.290" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece65.291" xml:space="preserve">
     <value> кайдан </value>
@@ -10477,7 +10477,7 @@
     <value>дюйм</value>
   </data>
   <data name="GreatMasterpiece65.299" xml:space="preserve">
-    <value>&amp;&lt;фигыль&gt;</value>
+    <value>&amp;фигыль</value>
   </data>
   <data name="GreatMasterpiece65.312" xml:space="preserve">
     <value>(башка)</value>
@@ -10519,7 +10519,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece65.369" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece65.373" xml:space="preserve">
     <value>e</value>
@@ -11044,7 +11044,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece67.488" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece67.492" xml:space="preserve">
     <value>e</value>
@@ -11374,7 +11374,7 @@
     <value>к</value>
   </data>
   <data name="GreatMasterpiece68.512" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece68.519" xml:space="preserve">
     <value>e</value>

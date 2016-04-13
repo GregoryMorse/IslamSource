@@ -15796,7 +15796,7 @@
     <value>si goufen</value>
   </data>
   <data name="GreatMasterpiece2.99" xml:space="preserve">
-    <value>&lt;Sujet&gt;</value>
+    <value>Sujet</value>
   </data>
   <data name="GreatMasterpiece2.100" xml:space="preserve">
     <value>mat Method</value>
@@ -16438,7 +16438,7 @@
     <value>ginn</value>
   </data>
   <data name="GreatMasterpiece2.313" xml:space="preserve">
-    <value>&lt;Sujet&gt;</value>
+    <value>Sujet</value>
   </data>
   <data name="GreatMasterpiece2.314" xml:space="preserve">
     <value>mat der Sprooch</value>
@@ -16930,7 +16930,7 @@
     <value>ginn</value>
   </data>
   <data name="GreatMasterpiece2.477" xml:space="preserve">
-    <value>&lt;Sujet&gt;</value>
+    <value>Sujet</value>
   </data>
   <data name="GreatMasterpiece2.478" xml:space="preserve">
     <value>mat Sprooch</value>
@@ -20320,7 +20320,7 @@
     <value>datt</value>
   </data>
   <data name="GreatMasterpiece5.233" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece5.234" xml:space="preserve">
     <value>fir se</value>
@@ -28891,7 +28891,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece15.411" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece15.412" xml:space="preserve">
     <value>Vun</value>
@@ -30253,7 +30253,7 @@
     <value>mat gedronk</value>
   </data>
   <data name="GreatMasterpiece17.253" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece17.254" xml:space="preserve">
     <value>Présent</value>
@@ -34042,7 +34042,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece23.190" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece23.191" xml:space="preserve">
     <value>Vun</value>
@@ -37105,7 +37105,7 @@
     <value>Uruff</value>
   </data>
   <data name="GreatMasterpiece28.128" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece28.129" xml:space="preserve">
     <value>presentéieren</value>
@@ -37423,7 +37423,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece28.234" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece28.235" xml:space="preserve">
     <value>Vun</value>
@@ -37552,7 +37552,7 @@
     <value>entscheet</value>
   </data>
   <data name="GreatMasterpiece28.277" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece28.278" xml:space="preserve">
     <value>presentéieren</value>
@@ -37864,7 +37864,7 @@
     <value>ass</value>
   </data>
   <data name="GreatMasterpiece28.381" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece28.382" xml:space="preserve">
     <value>Toun</value>
@@ -37897,7 +37897,7 @@
     <value>ass</value>
   </data>
   <data name="GreatMasterpiece28.392" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece28.393" xml:space="preserve">
     <value>defekt</value>
@@ -43267,7 +43267,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece36.387" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece36.388" xml:space="preserve">
     <value>Vun</value>
@@ -44437,7 +44437,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece38.144" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece38.145" xml:space="preserve">
     <value>Vergaangenheet ugespaant</value>
@@ -44590,7 +44590,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece38.195" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece38.196" xml:space="preserve">
     <value>Vergaangenheet ugespaant</value>
@@ -47278,7 +47278,7 @@
     <value>léieren?</value>
   </data>
   <data name="GreatMasterpiece39.706" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.707" xml:space="preserve">
     <value>wéi</value>
@@ -47458,7 +47458,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece39.766" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.767" xml:space="preserve">
     <value>wäert net</value>
@@ -48853,7 +48853,7 @@
     <value>déi éischt</value>
   </data>
   <data name="GreatMasterpiece40.306" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece40.307" xml:space="preserve">
     <value>vun Konditioun</value>
@@ -50110,7 +50110,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece40.725" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece40.726" xml:space="preserve">
     <value>Vun</value>
@@ -50278,7 +50278,7 @@
     <value>Dir wäert bedaueren.</value>
   </data>
   <data name="GreatMasterpiece40.781" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.782" xml:space="preserve">
     <value>...</value>
@@ -50392,7 +50392,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece40.819" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.820" xml:space="preserve">
     <value>Iergendeen/eng</value>
@@ -52576,7 +52576,7 @@
     <value>dëst</value>
   </data>
   <data name="GreatMasterpiece42.179" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece42.180" xml:space="preserve">
     <value>ass net</value>
@@ -55417,7 +55417,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece44.524" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece44.525" xml:space="preserve">
     <value>Vun</value>
@@ -55558,7 +55558,7 @@
     <value>Äre Brudder?</value>
   </data>
   <data name="GreatMasterpiece44.571" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece44.572" xml:space="preserve">
     <value>wéi</value>
@@ -57598,7 +57598,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece47.206" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece47.207" xml:space="preserve">
     <value>Vun</value>
@@ -60028,7 +60028,7 @@
     <value>Muhammad:</value>
   </data>
   <data name="GreatMasterpiece50.212" xml:space="preserve">
-    <value>&lt;Sujet&gt;</value>
+    <value>Sujet</value>
   </data>
   <data name="GreatMasterpiece50.213" xml:space="preserve">
     <value>Nominativ</value>
@@ -61960,7 +61960,7 @@
     <value>zéng</value>
   </data>
   <data name="GreatMasterpiece52.89" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece52.90" xml:space="preserve">
     <value>d'éischt:</value>
@@ -64654,7 +64654,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece54.352" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.353" xml:space="preserve">
     <value>ech wosst</value>
@@ -64945,7 +64945,7 @@
     <value>Sécherheet.</value>
   </data>
   <data name="GreatMasterpiece54.449" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.450" xml:space="preserve">
     <value>...</value>
@@ -65143,7 +65143,7 @@
     <value>an der Däischtert / gro Himmel.</value>
   </data>
   <data name="GreatMasterpiece54.515" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.516" xml:space="preserve">
     <value>Ech weess</value>
@@ -69553,7 +69553,7 @@
     <value>der Grondsteier</value>
   </data>
   <data name="GreatMasterpiece57.179" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.180" xml:space="preserve">
     <value>I</value>
@@ -69784,7 +69784,7 @@
     <value>nëtzlech</value>
   </data>
   <data name="GreatMasterpiece57.256" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.257" xml:space="preserve">
     <value>...</value>
@@ -73021,7 +73021,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece59.190" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.191" xml:space="preserve">
     <value>assistéiert</value>
@@ -73204,7 +73204,7 @@
     <value>puer vun et</value>
   </data>
   <data name="GreatMasterpiece59.251" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.252" xml:space="preserve">
     <value>net</value>
@@ -77983,7 +77983,7 @@
     <value>an hir Fraen</value>
   </data>
   <data name="GreatMasterpiece62.413" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.414" xml:space="preserve">
     <value>united</value>
@@ -78103,7 +78103,7 @@
     <value>seng Leit / Natioun.</value>
   </data>
   <data name="GreatMasterpiece62.453" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.454" xml:space="preserve">
     <value>reesen</value>
@@ -78199,7 +78199,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece62.485" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.486" xml:space="preserve">
     <value>Ech sinn frou</value>
@@ -78325,7 +78325,7 @@
     <value>Muhammad</value>
   </data>
   <data name="GreatMasterpiece62.527" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.528" xml:space="preserve">
     <value>WANN</value>
@@ -80959,7 +80959,7 @@
     <value>der fromm.</value>
   </data>
   <data name="GreatMasterpiece64.495" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece64.496" xml:space="preserve">
     <value>T</value>
@@ -81202,7 +81202,7 @@
     <value>fir all</value>
   </data>
   <data name="GreatMasterpiece64.576" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece64.577" xml:space="preserve">
     <value>Vun</value>
@@ -82741,7 +82741,7 @@
     <value>all</value>
   </data>
   <data name="GreatMasterpiece65.290" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece65.291" xml:space="preserve">
     <value>Vun</value>
@@ -82768,7 +82768,7 @@
     <value>fir all</value>
   </data>
   <data name="GreatMasterpiece65.299" xml:space="preserve">
-    <value>&lt;Verb&gt;</value>
+    <value>Verb</value>
   </data>
   <data name="GreatMasterpiece65.300" xml:space="preserve">
     <value>mat senge infinitive</value>
@@ -82978,7 +82978,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece65.369" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece65.370" xml:space="preserve">
     <value>verlooss huet</value>
@@ -87139,7 +87139,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece67.488" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece67.489" xml:space="preserve">
     <value>no op / opléisen</value>
@@ -89407,7 +89407,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece68.512" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece68.513" xml:space="preserve">
     <value>d'Schüler</value>

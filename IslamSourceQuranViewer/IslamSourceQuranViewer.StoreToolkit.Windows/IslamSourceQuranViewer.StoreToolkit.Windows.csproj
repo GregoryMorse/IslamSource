@@ -131,8 +131,6 @@
     </AppxManifest>
     <None Include="IslamSourceQuranViewer.StoreToolkit.Windows_TemporaryKey.pfx" />
     <None Include="packages.config" />
-    <PRIResource Include=".\**\Resources.resw">
-    </PRIResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\StoreResource\Resources.resx">
@@ -273,6 +271,10 @@
       <HintPath>..\..\packages\WinRTXamlToolkit.Composition.1.6.1.3\lib\netcore451\WinRTXamlToolkit.Composition.dll</HintPath>
       <Private>True</Private>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include=".\**\Resources.resw">
+    </PRIResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

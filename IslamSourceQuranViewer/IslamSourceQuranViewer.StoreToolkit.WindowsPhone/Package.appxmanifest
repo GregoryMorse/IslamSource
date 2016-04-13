@@ -29,6 +29,7 @@
     <Resource Language="pt" />
     <Resource Language="it" />
     <Resource Language="ko" />
+    <Resource Language="hi" />
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="IslamSourceQuranViewer.StoreToolkit.WindowsPhone.App">

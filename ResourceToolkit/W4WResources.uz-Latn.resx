@@ -15796,7 +15796,7 @@
     <value>Ular bo'lgan</value>
   </data>
   <data name="GreatMasterpiece2.99" xml:space="preserve">
-    <value>&lt;mavzu&gt;</value>
+    <value>mavzu</value>
   </data>
   <data name="GreatMasterpiece2.100" xml:space="preserve">
     <value>usuli bilan</value>
@@ -16438,7 +16438,7 @@
     <value>bo'lish</value>
   </data>
   <data name="GreatMasterpiece2.313" xml:space="preserve">
-    <value>&lt;mavzu&gt;</value>
+    <value>mavzu</value>
   </data>
   <data name="GreatMasterpiece2.314" xml:space="preserve">
     <value>tili bilan</value>
@@ -16930,7 +16930,7 @@
     <value>bo'lish</value>
   </data>
   <data name="GreatMasterpiece2.477" xml:space="preserve">
-    <value>&lt;mavzu&gt;</value>
+    <value>mavzu</value>
   </data>
   <data name="GreatMasterpiece2.478" xml:space="preserve">
     <value>tili bilan</value>
@@ -20320,7 +20320,7 @@
     <value>ekan</value>
   </data>
   <data name="GreatMasterpiece5.233" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece5.234" xml:space="preserve">
     <value>buning uchun</value>
@@ -28891,7 +28891,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece15.411" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece15.412" xml:space="preserve">
     <value>qayerdan:</value>
@@ -30253,7 +30253,7 @@
     <value>tugaydigan bilan</value>
   </data>
   <data name="GreatMasterpiece17.253" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece17.254" xml:space="preserve">
     <value>hozirgi zamon</value>
@@ -34042,7 +34042,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece23.190" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece23.191" xml:space="preserve">
     <value>qayerdan:</value>
@@ -37105,7 +37105,7 @@
     <value>qo'ng'iroq</value>
   </data>
   <data name="GreatMasterpiece28.128" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece28.129" xml:space="preserve">
     <value>hozirgi</value>
@@ -37423,7 +37423,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece28.234" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece28.235" xml:space="preserve">
     <value>qayerdan:</value>
@@ -37552,7 +37552,7 @@
     <value>berilgan</value>
   </data>
   <data name="GreatMasterpiece28.277" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece28.278" xml:space="preserve">
     <value>hozirgi</value>
@@ -37864,7 +37864,7 @@
     <value>namunasi</value>
   </data>
   <data name="GreatMasterpiece28.381" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece28.382" xml:space="preserve">
     <value>ovozli</value>
@@ -37897,7 +37897,7 @@
     <value>namunasi</value>
   </data>
   <data name="GreatMasterpiece28.392" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece28.393" xml:space="preserve">
     <value>nuqsonli</value>
@@ -39943,7 +39943,7 @@
     <value>buyruq tarzidagi</value>
   </data>
   <data name="GreatMasterpiece31.330" xml:space="preserve">
-    <value>&lt;nom&gt;</value>
+    <value>nom</value>
   </data>
   <data name="GreatMasterpiece31.331" xml:space="preserve">
     <value>fe'lining</value>
@@ -43267,7 +43267,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece36.387" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece36.388" xml:space="preserve">
     <value>qayerdan:</value>
@@ -44437,7 +44437,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece38.144" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece38.145" xml:space="preserve">
     <value>o'tgan zamon</value>
@@ -44590,7 +44590,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece38.195" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece38.196" xml:space="preserve">
     <value>o'tgan zamon</value>
@@ -47278,7 +47278,7 @@
     <value>o'rganish?</value>
   </data>
   <data name="GreatMasterpiece39.706" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.707" xml:space="preserve">
     <value>qaysi</value>
@@ -47458,7 +47458,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece39.766" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.767" xml:space="preserve">
     <value>yo'q</value>
@@ -48853,7 +48853,7 @@
     <value>birinchi</value>
   </data>
   <data name="GreatMasterpiece40.306" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece40.307" xml:space="preserve">
     <value>holatini</value>
@@ -50110,7 +50110,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece40.725" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece40.726" xml:space="preserve">
     <value>qayerdan:</value>
@@ -50278,7 +50278,7 @@
     <value>Agar pushaymon bo'ladi.</value>
   </data>
   <data name="GreatMasterpiece40.781" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.782" xml:space="preserve">
     <value>...</value>
@@ -50392,7 +50392,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece40.819" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.820" xml:space="preserve">
     <value>har qanday</value>
@@ -52576,7 +52576,7 @@
     <value>bu</value>
   </data>
   <data name="GreatMasterpiece42.179" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece42.180" xml:space="preserve">
     <value>emas</value>
@@ -55417,7 +55417,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece44.524" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece44.525" xml:space="preserve">
     <value>qayerdan:</value>
@@ -55558,7 +55558,7 @@
     <value>akang?</value>
   </data>
   <data name="GreatMasterpiece44.571" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece44.572" xml:space="preserve">
     <value>Qanday</value>
@@ -57598,7 +57598,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece47.206" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece47.207" xml:space="preserve">
     <value>qayerdan:</value>
@@ -60028,7 +60028,7 @@
     <value>Muhammad:</value>
   </data>
   <data name="GreatMasterpiece50.212" xml:space="preserve">
-    <value>&lt;mavzu&gt;</value>
+    <value>mavzu</value>
   </data>
   <data name="GreatMasterpiece50.213" xml:space="preserve">
     <value>bosh kelishik ishi</value>
@@ -61960,7 +61960,7 @@
     <value>o'n</value>
   </data>
   <data name="GreatMasterpiece52.89" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece52.90" xml:space="preserve">
     <value>birinchi:</value>
@@ -64654,7 +64654,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece54.352" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.353" xml:space="preserve">
     <value>Men bilardim</value>
@@ -64945,7 +64945,7 @@
     <value>xavfsizlik uchun.</value>
   </data>
   <data name="GreatMasterpiece54.449" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.450" xml:space="preserve">
     <value>...</value>
@@ -65143,7 +65143,7 @@
     <value>zulmat / bulutli osmonda.</value>
   </data>
   <data name="GreatMasterpiece54.515" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.516" xml:space="preserve">
     <value>bilaman</value>
@@ -69553,7 +69553,7 @@
     <value>er</value>
   </data>
   <data name="GreatMasterpiece57.179" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.180" xml:space="preserve">
     <value>O</value>
@@ -69784,7 +69784,7 @@
     <value>foydali</value>
   </data>
   <data name="GreatMasterpiece57.256" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.257" xml:space="preserve">
     <value>...</value>
@@ -73021,7 +73021,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece59.190" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.191" xml:space="preserve">
     <value>ishtirok</value>
@@ -73204,7 +73204,7 @@
     <value>uning ba'zi</value>
   </data>
   <data name="GreatMasterpiece59.251" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.252" xml:space="preserve">
     <value>yo'q</value>
@@ -77983,7 +77983,7 @@
     <value>va ularning ayollar</value>
   </data>
   <data name="GreatMasterpiece62.413" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.414" xml:space="preserve">
     <value>birlashgan</value>
@@ -78103,7 +78103,7 @@
     <value>Qavmi / millat.</value>
   </data>
   <data name="GreatMasterpiece62.453" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.454" xml:space="preserve">
     <value>sayohat</value>
@@ -78199,7 +78199,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece62.485" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.486" xml:space="preserve">
     <value>Men baxtliman</value>
@@ -78325,7 +78325,7 @@
     <value>Muhammad</value>
   </data>
   <data name="GreatMasterpiece62.527" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.528" xml:space="preserve">
     <value>IF</value>
@@ -80959,7 +80959,7 @@
     <value>solih.</value>
   </data>
   <data name="GreatMasterpiece64.495" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece64.496" xml:space="preserve">
     <value>M</value>
@@ -81202,7 +81202,7 @@
     <value>har biriga</value>
   </data>
   <data name="GreatMasterpiece64.576" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece64.577" xml:space="preserve">
     <value>qayerdan:</value>
@@ -82741,7 +82741,7 @@
     <value>har bir</value>
   </data>
   <data name="GreatMasterpiece65.290" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece65.291" xml:space="preserve">
     <value>qayerdan:</value>
@@ -82768,7 +82768,7 @@
     <value>har biriga</value>
   </data>
   <data name="GreatMasterpiece65.299" xml:space="preserve">
-    <value>&lt;fe’l&gt;</value>
+    <value>fe’l</value>
   </data>
   <data name="GreatMasterpiece65.300" xml:space="preserve">
     <value>uning dir bilan</value>
@@ -82978,7 +82978,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece65.369" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece65.370" xml:space="preserve">
     <value>off tark</value>
@@ -87139,7 +87139,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece67.488" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece67.489" xml:space="preserve">
     <value>kiyib / kiyish</value>
@@ -89407,7 +89407,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece68.512" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece68.513" xml:space="preserve">
     <value>talaba</value>

@@ -39,18 +39,640 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <EmbeddedResource Include="QuranResources.af.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.af.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.as.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.as.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.be.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.be.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ca.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ca.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.chr-Cher.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.chr-Cher.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.cy.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.cy.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.da.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.da.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.el.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.el.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.et.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.et.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.eu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.eu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.fi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.fi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.fil.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.fil.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ga.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ga.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.gd-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.gd-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.gl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.gl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.gu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.gu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.he.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.he.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.hr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.hr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.hy.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.hy.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ig-NG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ig-NG.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.is.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.is.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.iu-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.iu-Latn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ka.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ka.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.kk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.kk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.km.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.km.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.kn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.kn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.kok.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.kok.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ky-KG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ky-KG.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.lb.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.lb.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.lo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.lo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.lt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.lt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.lv.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.lv.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.mi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.mi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.mk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.mk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.mn-MN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.mn-MN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.mr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.mr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.mt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.mt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.nb.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.nb.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ne.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ne.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.nn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.nn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.nso.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.nso.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.or.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.or.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.pa-Arab.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.pa-Arab.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.pa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.pa.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.prs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.prs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.quz.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.quz.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuranResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>QuranResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.rw.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.rw.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.si.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.si.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.sk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.sk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.sl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.sl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.sr-Cyrl.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.sr-Cyrl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.sr-Latn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.sr-Latn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.te.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.te.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.ti.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.ti.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.tk-TM.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.tk-TM.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.tn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.tn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.uk.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.uk.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.vi.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.vi.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.wo.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.wo.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.xh.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.xh.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.yo-NG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.yo-NG.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuranResources.zu.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>QuranResources.zu.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuranResources.af.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.af.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.as.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.as.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.be.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.be.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ca.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ca.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.chr-Cher.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.chr-Cher.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.cy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.cy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.da.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.da.resx</DependentUpon>
+    </Compile>
     <Compile Include="QuranResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuranResources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QuranResources.el.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.el.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.et.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.et.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.eu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.eu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.fi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.fi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.fil.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.fil.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ga.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ga.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.gd-GB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.gd-GB.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.gl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.gl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.gu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.gu.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.he.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.he.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.hr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.hr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.hy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.hy.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ig-NG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ig-NG.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.is.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.is.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.iu-Latn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.iu-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ka.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ka.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.kk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.kk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.km.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.km.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.kn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.kn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.kok.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.kok.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ky-KG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ky-KG.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.lb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.lb.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.lo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.lo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.lt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.lt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.lv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.lv.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.mi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.mi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.mk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.mk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.mn-MN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.mn-MN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.mr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.mr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.mt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.mt.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.nb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.nb.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ne.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ne.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.nn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.nn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.nso.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.nso.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.or.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.or.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.pa-Arab.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.pa-Arab.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.pa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.pa.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.prs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.prs.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.quz.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.quz.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.rw.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.rw.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.si.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.si.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.sk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.sk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.sl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.sl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.sr-Cyrl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.sr-Cyrl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.sr-Latn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.sr-Latn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.te.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.te.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.ti.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.ti.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.tk-TM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.tk-TM.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.tn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.tn.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.uk.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.uk.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.vi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.vi.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.wo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.wo.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.xh.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.xh.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.yo-NG.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.yo-NG.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuranResources.zu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuranResources.zu.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.af.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.as.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.be.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.ca.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.chr-Cher.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.cy.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.da.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.el.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.et.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.eu.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.fi.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.fil.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.ga.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.gd-GB.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.gl.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.gu.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.he.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.hr.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.hy.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.ig-NG.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.is.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.iu-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.ka.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.kk.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.km.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.kn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.kok.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.ky-KG.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.lb.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.lo.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.lt.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.lv.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.mi.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.mk.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.mn-MN.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.mr.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.mt.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.nb.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.ne.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.nn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.nso.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.or.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.pa-Arab.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.pa.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.prs.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.quz.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.rw.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.si.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.sk.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.sl.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.sr-Cyrl.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.sr-Latn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.te.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.ti.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.tk-TM.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.tn.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.uk.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.vi.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.wo.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.xh.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.yo-NG.xlf" />
+    <XliffResource Include="MultilingualResources\ResourceToolkitQuran.zu.xlf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" />

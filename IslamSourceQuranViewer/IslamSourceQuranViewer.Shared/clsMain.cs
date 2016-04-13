@@ -1286,15 +1286,24 @@ using Android.Graphics;
             get { return _selectedItem; }
             set
             {
+                if (_selectedItem != null) _selectedItem.IsSelected = false;
                 _selectedItem = value;
+                if (_selectedItem != null) _selectedItem.IsSelected = true;
             }
         }
     }
 
-    public class MyListItem
+    public class MyListItem : INotifyPropertyChanged
     {
         public List<string> TextItems { get; set; }
         public int Index { get; set; }
+        private bool _IsSelected;
+        public bool IsSelected { get { return _IsSelected; } set { _IsSelected = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsSelected")); } }
+        #region Implementation of INotifyPropertyChanged
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
     }
     public class MyUIChanger : INotifyPropertyChanged
     {

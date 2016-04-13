@@ -2725,7 +2725,7 @@
     <value>仲間</value>
   </data>
   <data name="IhramPrayerSupplication.46" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="IhramPrayerSupplication.47" xml:space="preserve">
     <value>旅</value>
@@ -5812,7 +5812,7 @@
     <value>称賛し、慈悲を持ってください</value>
   </data>
   <data name="RemembranceFourth.3" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="RemembranceFourth.4" xml:space="preserve">
     <value></value>
@@ -6271,7 +6271,7 @@
     <value>あなたの慈悲を送信します。</value>
   </data>
   <data name="SendBlessingsFirst.3" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsFirst.4" xml:space="preserve">
     <value>ムハンマド</value>
@@ -6292,7 +6292,7 @@
     <value>あなたの慈悲を送信</value>
   </data>
   <data name="SendBlessingsFirst.10" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsFirst.11" xml:space="preserve">
     <value>アブラハム</value>
@@ -6319,7 +6319,7 @@
     <value>送信あなたの祝福</value>
   </data>
   <data name="SendBlessingsFirst.19" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsFirst.20" xml:space="preserve">
     <value>ムハンマド</value>
@@ -6340,7 +6340,7 @@
     <value>あなたの祝福を送信します。</value>
   </data>
   <data name="SendBlessingsFirst.26" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsFirst.27" xml:space="preserve">
     <value>アブラハム</value>
@@ -6376,7 +6376,7 @@
     <value>あなたの慈悲を送信します。</value>
   </data>
   <data name="SendBlessingsSecond.3" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsSecond.4" xml:space="preserve">
     <value>ムハンマド</value>
@@ -6397,7 +6397,7 @@
     <value>あなたの慈悲を送信</value>
   </data>
   <data name="SendBlessingsSecond.10" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsSecond.11" xml:space="preserve">
     <value>アブラハム</value>
@@ -6427,7 +6427,7 @@
     <value>あなたの祝福を送信します。</value>
   </data>
   <data name="SendBlessingsSecond.20" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsSecond.21" xml:space="preserve">
     <value>ムハンマド</value>
@@ -6448,7 +6448,7 @@
     <value>あなたの祝福を送信します。</value>
   </data>
   <data name="SendBlessingsSecond.27" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="SendBlessingsSecond.28" xml:space="preserve">
     <value>アブラハム</value>
@@ -15121,7 +15121,7 @@
     <value>アラビア語の</value>
   </data>
   <data name="GreatMasterpiece1.18" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece1.19" xml:space="preserve">
     <value>複数</value>
@@ -15202,7 +15202,7 @@
     <value>科学者</value>
   </data>
   <data name="GreatMasterpiece1.45" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece1.46" xml:space="preserve">
     <value>(知ること</value>
@@ -16483,7 +16483,7 @@
     <value>サインを</value>
   </data>
   <data name="GreatMasterpiece2.328" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece2.329" xml:space="preserve">
     <value>意味</value>
@@ -16867,7 +16867,7 @@
     <value>質問</value>
   </data>
   <data name="GreatMasterpiece2.456" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece2.457" xml:space="preserve">
     <value>何</value>
@@ -18955,7 +18955,7 @@
     <value>(私は登った</value>
   </data>
   <data name="GreatMasterpiece4.254" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece4.255" xml:space="preserve">
     <value>山)</value>
@@ -19165,7 +19165,7 @@
     <value>除く</value>
   </data>
   <data name="GreatMasterpiece4.324" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece4.325" xml:space="preserve">
     <value>名詞</value>
@@ -40951,7 +40951,7 @@
     <value>2 つの騎手</value>
   </data>
   <data name="GreatMasterpiece33.146" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece33.147" xml:space="preserve">
     <value>2 頭の馬)</value>
@@ -45250,7 +45250,7 @@
     <value>彼らは、</value>
   </data>
   <data name="GreatMasterpiece39.30" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece39.31" xml:space="preserve">
     <value>3</value>
@@ -75104,7 +75104,7 @@
     <value>(I 反映熟考しました。</value>
   </data>
   <data name="GreatMasterpiece60.185" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece60.186" xml:space="preserve">
     <value>本</value>
@@ -83657,7 +83657,7 @@
     <value>起きています。</value>
   </data>
   <data name="GreatMasterpiece66.138" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="GreatMasterpiece66.139" xml:space="preserve">
     <value>この</value>
@@ -100113,7 +100113,7 @@
     <value>処分</value>
   </data>
   <data name="MaximOther6.2" xml:space="preserve">
-    <value>&lt;日付&gt;</value>
+    <value>日付</value>
   </data>
   <data name="MaximOther6.3" xml:space="preserve">
     <value>人/被扶養者のプロパティ</value>

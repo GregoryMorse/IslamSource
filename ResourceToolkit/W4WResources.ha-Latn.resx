@@ -1444,7 +1444,7 @@
     <value>Aiyana alƙaluma</value>
   </data>
   <data name="GreatMasterpiece2.99" xml:space="preserve">
-    <value>&lt;batu&gt;</value>
+    <value>batu</value>
   </data>
   <data name="GreatMasterpiece2.101" xml:space="preserve">
     <value>Larabci</value>
@@ -1585,7 +1585,7 @@
     <value>bayan</value>
   </data>
   <data name="GreatMasterpiece2.313" xml:space="preserve">
-    <value>&lt;batu&gt;</value>
+    <value>batu</value>
   </data>
   <data name="GreatMasterpiece2.315" xml:space="preserve">
     <value>Larabci</value>
@@ -1693,7 +1693,7 @@
     <value>Aiyana alƙaluma</value>
   </data>
   <data name="GreatMasterpiece2.477" xml:space="preserve">
-    <value>&lt;batu&gt;</value>
+    <value>batu</value>
   </data>
   <data name="GreatMasterpiece2.479" xml:space="preserve">
     <value>Larabci</value>
@@ -2167,7 +2167,7 @@
     <value>daga:</value>
   </data>
   <data name="GreatMasterpiece5.233" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece5.238" xml:space="preserve">
     <value>Mai aiki</value>
@@ -3541,7 +3541,7 @@
     <value>Yi Amfani $</value>
   </data>
   <data name="GreatMasterpiece15.411" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece15.412" xml:space="preserve">
     <value>daga:</value>
@@ -3676,7 +3676,7 @@
     <value>daga:</value>
   </data>
   <data name="GreatMasterpiece17.253" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece17.258" xml:space="preserve">
     <value>sam</value>
@@ -4180,7 +4180,7 @@
     <value>• %1.</value>
   </data>
   <data name="GreatMasterpiece23.190" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece23.191" xml:space="preserve">
     <value>daga:</value>
@@ -4603,7 +4603,7 @@
     <value>kira</value>
   </data>
   <data name="GreatMasterpiece28.128" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece28.172" xml:space="preserve">
     <value>na uku</value>
@@ -4630,7 +4630,7 @@
     <value>Yi Amfani $</value>
   </data>
   <data name="GreatMasterpiece28.234" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece28.235" xml:space="preserve">
     <value>daga:</value>
@@ -4663,7 +4663,7 @@
     <value>daga:</value>
   </data>
   <data name="GreatMasterpiece28.277" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece28.284" xml:space="preserve">
     <value>A</value>
@@ -4762,7 +4762,7 @@
     <value>shine</value>
   </data>
   <data name="GreatMasterpiece28.381" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece28.384" xml:space="preserve">
     <value>Ƙera</value>
@@ -4771,7 +4771,7 @@
     <value>shine</value>
   </data>
   <data name="GreatMasterpiece28.392" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece28.395" xml:space="preserve">
     <value>Ƙera</value>
@@ -5338,7 +5338,7 @@
     <value>ciki</value>
   </data>
   <data name="GreatMasterpiece36.387" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece36.388" xml:space="preserve">
     <value>daga:</value>
@@ -5560,7 +5560,7 @@
     <value>kowane</value>
   </data>
   <data name="GreatMasterpiece38.144" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece38.145" xml:space="preserve">
     <value>da siga</value>
@@ -5713,7 +5713,7 @@
     <value>kowane</value>
   </data>
   <data name="GreatMasterpiece38.195" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece38.196" xml:space="preserve">
     <value>da siga</value>
@@ -8401,7 +8401,7 @@
     <value>ya yi nazarin?</value>
   </data>
   <data name="GreatMasterpiece39.706" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.707" xml:space="preserve">
     <value>Wanne</value>
@@ -8581,7 +8581,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece39.766" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece39.767" xml:space="preserve">
     <value>ba zai</value>
@@ -9976,7 +9976,7 @@
     <value>na farko</value>
   </data>
   <data name="GreatMasterpiece40.306" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece40.307" xml:space="preserve">
     <value>na yanayin</value>
@@ -11233,7 +11233,7 @@
     <value>kowane</value>
   </data>
   <data name="GreatMasterpiece40.725" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece40.726" xml:space="preserve">
     <value>daga:</value>
@@ -11401,7 +11401,7 @@
     <value>za ka yi baƙin ciki.</value>
   </data>
   <data name="GreatMasterpiece40.781" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.782" xml:space="preserve">
     <value>...</value>
@@ -11515,7 +11515,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece40.819" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece40.820" xml:space="preserve">
     <value>kowane</value>
@@ -13699,7 +13699,7 @@
     <value>wannan</value>
   </data>
   <data name="GreatMasterpiece42.179" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece42.180" xml:space="preserve">
     <value>bai</value>
@@ -16540,7 +16540,7 @@
     <value>kowane</value>
   </data>
   <data name="GreatMasterpiece44.524" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece44.525" xml:space="preserve">
     <value>daga:</value>
@@ -16681,7 +16681,7 @@
     <value>ɗan'uwanka?</value>
   </data>
   <data name="GreatMasterpiece44.571" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece44.572" xml:space="preserve">
     <value>yaya</value>
@@ -18721,7 +18721,7 @@
     <value>kowane</value>
   </data>
   <data name="GreatMasterpiece47.206" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece47.207" xml:space="preserve">
     <value>daga:</value>
@@ -21151,7 +21151,7 @@
     <value>Muhammad:</value>
   </data>
   <data name="GreatMasterpiece50.212" xml:space="preserve">
-    <value>&lt;batu&gt;</value>
+    <value>batu</value>
   </data>
   <data name="GreatMasterpiece50.213" xml:space="preserve">
     <value>nominative harka</value>
@@ -23083,7 +23083,7 @@
     <value>goma</value>
   </data>
   <data name="GreatMasterpiece52.89" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece52.90" xml:space="preserve">
     <value>na farko:</value>
@@ -25777,7 +25777,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece54.352" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.353" xml:space="preserve">
     <value>na san</value>
@@ -26068,7 +26068,7 @@
     <value>da aminci.</value>
   </data>
   <data name="GreatMasterpiece54.449" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.450" xml:space="preserve">
     <value>...</value>
@@ -26266,7 +26266,7 @@
     <value>a cikin duhu / gizagizai sama.</value>
   </data>
   <data name="GreatMasterpiece54.515" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece54.516" xml:space="preserve">
     <value>na sani</value>
@@ -30676,7 +30676,7 @@
     <value>ƙasar</value>
   </data>
   <data name="GreatMasterpiece57.179" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.180" xml:space="preserve">
     <value>S</value>
@@ -30907,7 +30907,7 @@
     <value>amfani</value>
   </data>
   <data name="GreatMasterpiece57.256" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece57.257" xml:space="preserve">
     <value>...</value>
@@ -34144,7 +34144,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece59.190" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.191" xml:space="preserve">
     <value>halarci</value>
@@ -34327,7 +34327,7 @@
     <value>wasu daga shi</value>
   </data>
   <data name="GreatMasterpiece59.251" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece59.252" xml:space="preserve">
     <value>ba</value>
@@ -39106,7 +39106,7 @@
     <value>da mata</value>
   </data>
   <data name="GreatMasterpiece62.413" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.414" xml:space="preserve">
     <value>united</value>
@@ -39226,7 +39226,7 @@
     <value>mutãnensa / al'umma.</value>
   </data>
   <data name="GreatMasterpiece62.453" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.454" xml:space="preserve">
     <value>tafiya</value>
@@ -39322,7 +39322,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece62.485" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.486" xml:space="preserve">
     <value>Ni mai farin ciki</value>
@@ -39448,7 +39448,7 @@
     <value>Muhammad</value>
   </data>
   <data name="GreatMasterpiece62.527" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece62.528" xml:space="preserve">
     <value>IN</value>
@@ -42082,7 +42082,7 @@
     <value>mãsu taƙawa.</value>
   </data>
   <data name="GreatMasterpiece64.495" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece64.496" xml:space="preserve">
     <value>O</value>
@@ -42325,7 +42325,7 @@
     <value>ga kowane</value>
   </data>
   <data name="GreatMasterpiece64.576" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece64.577" xml:space="preserve">
     <value>daga:</value>
@@ -43864,7 +43864,7 @@
     <value>kowane</value>
   </data>
   <data name="GreatMasterpiece65.290" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece65.291" xml:space="preserve">
     <value>daga:</value>
@@ -43891,7 +43891,7 @@
     <value>ga kowane</value>
   </data>
   <data name="GreatMasterpiece65.299" xml:space="preserve">
-    <value>&lt;fi'ili&gt;</value>
+    <value>fi'ili</value>
   </data>
   <data name="GreatMasterpiece65.300" xml:space="preserve">
     <value>tare da tushen fi'ili</value>
@@ -44101,7 +44101,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece65.369" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece65.370" xml:space="preserve">
     <value>bar</value>
@@ -48262,7 +48262,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece67.488" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece67.489" xml:space="preserve">
     <value>sa a kan / sa</value>
@@ -50530,7 +50530,7 @@
     <value>...</value>
   </data>
   <data name="GreatMasterpiece68.512" xml:space="preserve">
-    <value>... [&lt;d&gt;]</value>
+    <value>... [d]</value>
   </data>
   <data name="GreatMasterpiece68.513" xml:space="preserve">
     <value>The dalibi</value>
