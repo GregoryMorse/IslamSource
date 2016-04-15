@@ -748,15 +748,23 @@ Public Class Arabic
         Dim Rules As New List(Of RuleMetadata)
         For Count As Integer = 0 To CacheIn.Length - 1
             Dim KeyVal As String() = CacheIn(Count).Split("="c)
-            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(KeyVal(0).Split("|"c), Function(Item) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Item})).ToArray()
+            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(KeyVal(0).Substring(0, Math.Max(0, Math.Min(KeyVal(0).IndexOf("["c), KeyVal(0).IndexOf("{"c)))).Split("|"c), Function(Item) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Item})).ToArray()
             Dim Vals As Integer()() = New List(Of Integer())(Linq.Enumerable.Select(KeyVal(1).Split(","c), Function(Item) New List(Of Integer)(Linq.Enumerable.Select(Item.Split(":"c), Function(Frag) Integer.Parse(Frag))).ToArray())).ToArray()
             Dim Length As Integer = 1
             For VerseCount As Integer = 0 To Vals.Length - 1
                 If VerseCount <> Vals.Length - 1 AndAlso Vals(VerseCount)(0) = Vals(VerseCount + 1)(0) AndAlso Vals(VerseCount)(1) = Vals(VerseCount + 1)(1) AndAlso Vals(VerseCount)(2) = Vals(VerseCount + 1)(2) Then
                     Length += 1
                 Else
+                    Dim Ch As RuleMetadata() = If(KeyVal(0).IndexOf("["c) = -1, Nothing, New List(Of RuleMetadata)(Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("["c) + 1, KeyVal(0).IndexOf("]"c) - KeyVal(0).IndexOf("["c) - 1).Split(","c), Function(Item)
+                                                                                                                                                                                                                                                                   Dim Pieces As String() = Item.Split(";"c)
+                                                                                                                                                                                                                                                                   Return New RuleMetadata(CInt(Pieces(1)), CInt(Pieces(2)), New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(Pieces(0).Split(" "c), Function(It) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = It})).ToArray(), 0)
+                                                                                                                                                                                                                                                               End Function))).ToArray()
+                    Dim Dep As RuleMetadata() = If(KeyVal(0).IndexOf("{"c) = -1, Nothing, New List(Of RuleMetadata)(Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("{"c) + 1, KeyVal(0).IndexOf("}"c) - KeyVal(0).IndexOf("{"c) - 1).Split(","c), Function(Item)
+                                                                                                                                                                                                                                                                    Dim Pieces As String() = Item.Split(";"c)
+                                                                                                                                                                                                                                                                    Return New RuleMetadata(CInt(Pieces(1)), CInt(Pieces(2)), New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(Pieces(0).Split(" "c), Function(It) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = It})).ToArray(), 0)
+                                                                                                                                                                                                                                                                End Function))).ToArray()
                     Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {Vals(VerseCount)(0), Vals(VerseCount)(1), Vals(VerseCount)(2)}, New TanzilReader.QuranWordChapterVerseWordComparer)
-                    Rules.Add(New RuleMetadata(IndexToVerse(Idx)(4), Length, Key, -1))
+                    Rules.Add(New RuleMetadata(IndexToVerse(Idx)(4), Length, Key, -1) With {.Children = Ch, .Dependencies = Dep})
                     Length = 1
                 End If
             Next
@@ -766,7 +774,8 @@ Public Class Arabic
     Public Shared Function MakeCacheMetarules(RuleMetadata As Generic.List(Of RuleMetadata), IndexToVerse As Integer()()) As String()
         Dim RuleDictionary As New Dictionary(Of String, List(Of RuleMetadata))
         For Count As Integer = 0 To RuleMetadata.Count - 1
-            Dim Key As String = String.Join("|"c, Linq.Enumerable.Select(RuleMetadata(Count).Type, Function(It) It.RuleName))
+            Dim Idx As Integer = Count
+            Dim Key As String = String.Join("|"c, Linq.Enumerable.Select(RuleMetadata(Count).Type, Function(It) It.RuleName)) + If(RuleMetadata(Count).Children.Length <> 0, "[" + String.Join(","c, Linq.Enumerable.Select(RuleMetadata(Count).Children, Function(Item) String.Join(" "c, Linq.Enumerable.Select(Item.Type, Function(It) It.RuleName)) + ";" + CStr(Item.Index - RuleMetadata(Idx).Index) + ";" + CStr(Item.Length))) + "]", String.Empty) + If(RuleMetadata(Count).Dependencies.Length <> 0, "{" + String.Join(","c, Linq.Enumerable.Select(RuleMetadata(Count).Dependencies, Function(Item) String.Join(" "c, Linq.Enumerable.Select(Item.Type, Function(It) It.RuleName)) + ";" + CStr(Item.Index - RuleMetadata(Idx).Index) + ";" + CStr(Item.Length))) + "}", String.Empty)
             If Not RuleDictionary.ContainsKey(Key) Then RuleDictionary.Add(Key, New List(Of RuleMetadata))
             RuleDictionary(Key).Add(RuleMetadata(Count))
         Next
@@ -5711,7 +5720,7 @@ Public Class TanzilReader
         Return DefStops.ToArray()
     End Function
     Public Shared Sub FileToResource(FilePath As String, ResFilePath As String)
-        Dim Lines As String() = Utility.ReadAllLines(FilePath)
+        Dim Lines As String() = New List(Of String)(Linq.Enumerable.Where(Utility.ReadAllLines(FilePath), Function(Item) Not Item.StartsWith("#") And Item <> String.Empty)).ToArray()
         Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()

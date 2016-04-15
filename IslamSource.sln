@@ -4,8 +4,6 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB9C01A5-B01D-4560-858D-A986B625DF92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrayTime", "..\PrayTime\PrayTime.csproj", "{1C6D65F5-BC68-414D-9ED9-A0420016B95B}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HostPage", "HostPage\HostPage.vbproj", "{14D97CCB-7889-4ACC-BED0-1FDF0E8629EB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8CEF3958-A8D0-4AFA-95F1-80568237F4EE} = {8CEF3958-A8D0-4AFA-95F1-80568237F4EE}
@@ -50,6 +48,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IslamSourceQuranViewer.Xam.Droid", "IslamSourceQuranViewer\Xam.Droid\IslamSourceQuranViewer.Xam.Droid.csproj", "{AFE36D4E-C30B-4FB0-A390-415894D6CC18}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildUtility", "BuildUtility\BuildUtility.vbproj", "{0278DC9D-0919-4678-855B-08D27B228F86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrayTime", "..\PrayTime\PrayTime.csproj", "{1C6D65F5-BC68-414D-9ED9-A0420016B95B}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

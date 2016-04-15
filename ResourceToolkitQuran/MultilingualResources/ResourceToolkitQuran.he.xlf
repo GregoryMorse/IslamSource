@@ -24950,58 +24950,6 @@
           <source>From among the jinn and mankind."</source>
           <target state="new">From among the jinn and mankind."</target>
         </trans-unit>
-        <trans-unit id="Quran6237" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="Quran6238" translate="yes" xml:space="preserve">
-          <source></source>
-          <target state="new"></target>
-        </trans-unit>
-        <trans-unit id="Quran6239" translate="yes" xml:space="preserve">
-          <source>#=====================================================================</source>
-          <target state="new">#=====================================================================</target>
-        </trans-unit>
-        <trans-unit id="Quran6240" translate="yes" xml:space="preserve">
-          <source>#</source>
-          <target state="new">#</target>
-        </trans-unit>
-        <trans-unit id="Quran6241" translate="yes" xml:space="preserve">
-          <source>#  Quran Translation</source>
-          <target state="new">#  Quran Translation</target>
-        </trans-unit>
-        <trans-unit id="Quran6242" translate="yes" xml:space="preserve">
-          <source>#  Name: Saheeh International</source>
-          <target state="new">#  Name: Saheeh International</target>
-        </trans-unit>
-        <trans-unit id="Quran6243" translate="yes" xml:space="preserve">
-          <source>#  Translator: Saheeh International</source>
-          <target state="new">#  Translator: Saheeh International</target>
-        </trans-unit>
-        <trans-unit id="Quran6244" translate="yes" xml:space="preserve">
-          <source>#  Language: English</source>
-          <target state="new">#  Language: English</target>
-        </trans-unit>
-        <trans-unit id="Quran6245" translate="yes" xml:space="preserve">
-          <source>#  ID: en.sahih</source>
-          <target state="new">#  ID: en.sahih</target>
-        </trans-unit>
-        <trans-unit id="Quran6246" translate="yes" xml:space="preserve">
-          <source>#  Last Update: April 24, 2011</source>
-          <target state="new">#  Last Update: April 24, 2011</target>
-        </trans-unit>
-        <trans-unit id="Quran6247" translate="yes" xml:space="preserve">
-          <source>#  Source: Tanzil.net</source>
-          <target state="new">#  Source: Tanzil.net</target>
-        </trans-unit>
-        <trans-unit id="Quran6248" translate="yes" xml:space="preserve">
-          <source>#</source>
-          <target state="new">#</target>
-        </trans-unit>
-        <trans-unit id="Quran6249" translate="yes" xml:space="preserve">
-          <source>#=====================================================================</source>
-          <target state="new">#=====================================================================</target>
-        </trans-unit>
       </group>
     </body>
   </file>
