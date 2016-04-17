@@ -214,7 +214,7 @@ Public Class frmMain
         'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTempForeign\QuranResources.ms.resx", "..\..\..\metadata\ms.w4w.terjemah.txt")
         'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
         'TanzilReader.FileToResource("..\..\..\metadata\en.sahih.txt", "..\..\..\ResourceToolkitQuran\QuranResources.resx")
-        For Each File As IO.FileInfo In New IO.DirectoryInfo("..\..\..\ResourceToolkitTemp\").EnumerateFiles("QuranResources.hi.resx")
+        For Each File As IO.FileInfo In New IO.DirectoryInfo("..\..\..\ResourceToolkitTemp\").EnumerateFiles("QuranResources.*.resx")
             TanzilReader.ResourceToWordFile(File.FullName, "..\..\..\metadata\" + File.Name.Replace("QuranResources.", String.Empty).Replace(".resx", String.Empty) + ".w4w.corpus.txt")
         Next
         'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")

@@ -291,6 +291,9 @@ Public Class Utility
                 If Not W4WLines.ContainsKey(LineKey) Then
                     W4WLines.Add(LineKey, New List(Of String))
                 End If
+                While W4WLines(LineKey).Count <> Word - 1
+                    W4WLines(LineKey).Insert(W4WLines(LineKey).Count, String.Empty)
+                End While
                 W4WLines(LineKey).Insert(Word - 1, New List(Of Xml.Linq.XElement)(Item.Elements).Item(0).Value)
             End If
         Next

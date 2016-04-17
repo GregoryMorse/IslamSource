@@ -6032,6 +6032,9 @@ Public Class TanzilReader
     Public Shared Function GetVerseCount(ByVal Chapter As Integer) As Integer
         Return CInt(GetChapterByIndex(Chapter).Attribute("ayas").Value)
     End Function
+    Public Shared Function GetWordCount(ByVal Chapter As Integer, ByVal Verse As Integer) As Integer
+        Return GetTextVerse(GetTextChapter(CachedData.XMLDocMain, Chapter), Verse).Attribute("text").Value.Split(" "c).Length
+    End Function
     Public Shared Sub GetPreviousChapterVerse(ByRef Chapter As Integer, ByRef Verse As Integer)
         If Verse = 1 Then
             If Chapter <> 1 Then

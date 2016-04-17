@@ -56,7 +56,7 @@
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="StopContinueTemplate">
-            <Grid>
+            <Grid Visibility="Collapsed">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>

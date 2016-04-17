@@ -21096,6 +21096,9 @@
   <data name="IslamInfo_ThatTo" xml:space="preserve">
     <value>ที่จะ</value>
   </data>
+  <data name="IslamInfo_The" xml:space="preserve">
+    <value>&lt;!-- _blank --&gt;</value>
+  </data>
   <data name="IslamInfo_TheAbaser" xml:space="preserve">
     <value>Abaser การ</value>
   </data>

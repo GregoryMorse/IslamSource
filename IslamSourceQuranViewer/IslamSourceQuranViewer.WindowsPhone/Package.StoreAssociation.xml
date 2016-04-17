@@ -372,6 +372,11 @@
       <ReservedName>Al-Quran perkataan demi perkataan</ReservedName>
       <ReservedName>قرآن لفظ سے لفظ</ReservedName>
       <ReservedName>Kur'an kelime kelime</ReservedName>
+      <ReservedName>Corano parola per parola</ReservedName>
+      <ReservedName>꾸 란 단어</ReservedName>
+      <ReservedName>ഖുർആൻ വാക്കുകളായോ</ReservedName>
+      <ReservedName>Alcorão palavra por palavra</ReservedName>
+      <ReservedName>कुरान शब्द शब्द</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -382,72 +387,72 @@
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <OsMinVersion>6.3.1.0</OsMinVersion>
       <PackageArchitecture>Neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.1.0.42</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>1.1.0.43</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>
