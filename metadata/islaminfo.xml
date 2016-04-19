@@ -160,6 +160,16 @@ var rs, next, str = '', sura = 1; func = function() { if (next.document.readySta
 		<identities>
 		</identities>
 		<transforms>
+			<!--
+			{Scale}
+			{VerbAinPast}
+			{VerbAinPresent}
+			{VerbFah}
+			{VerbAin}
+			{VerbLam}
+			{VerbLam2}
+			
+			-->
 			<transform from="{MatchCaseEnding}" text="$1$5$6$7" id="StripCaseEnding" grammar="strip"></transform>
 
 			<transform text="{ArabicDamma}" id="FlexibleDefiniteNominative" grammar="ms|fs|bp,flex,def|const,nom,deft"></transform>
@@ -6902,7 +6912,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 		<scheme name="Korean" alphabet="ㅣ|ㅂ|ㄸ|ㅅ|ㅈ|ㅎ|ㅋ|ㄷ|ㅅ|ㄹ|ㅅ|ㅅ|ㅆ|ㅆ|ㄷ|ㅌ|ㅅ|`|ㄱ|ㄽ|ㄲ|ㄱ|ㄹ|ㅁ|ㄴ|ㅎ|ㅙ|ㅒ" hamza="ㅇ|ㅇㅏ|ㅇ|ㅙㅇ|ㅇ|ㅒㅇ||ㅏ|" literals="ㅎ|ㄸ|ㅏㅏㅎ|ㅏㅏㅎ|ㅒ|ㅏㅏ|ㅣㅣ|ㅏㄴ|ㅏㄴ|ㅏㄴ|ㅏㅏ|ㅏㅏ|ㅏㅏ||ㅏㄴ|ㅏㄴ|ㅏㄴ|&amp;first;&amp;first;|ㅣ|ㅜ" multis="ㅏㅏ|ㅜㅜ|ㅣㅣ|ㅏㅙ|ㅏㅒ" fathadammakasratanweenlongvowelsdipthongsshaddasukun="ㅏ|ㅜ|ㅣ|ㅏㄴ|ㅜㄴ|ㅣㄴ||" gutterals="ㅘㅏ|ㅏㅙ|ㅔㅜㅜ|ㅗ|ㅏㅣㅣ|ㅔ|ㅏㅙㄴ|ㅗㄴ|ㅔㄴ|ㄱ|ㅣㅣㅔ|ㅏㅎ|ㅜㅜㅎ|ㅗ|ㅣㅣㅎ|ㅔ" tajweed="|||||||ㄴ|ㅎ|ㅒ|ㅏ" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 		<scheme name="Malayalam" alphabet="അ|ബ|ത|സ|ജ|ഹ|ഖ|ദ|സ|ര|സ|സ|ശ|ഷ|ഡ|ട|സ|`|ഘ|ഫ|ക|ക|ല|മ|ന|ഹ|വ|യ" hamza="&apos;|&apos;അ|&apos;|വ&apos;|&apos;|യ&apos;||അ|" literals="ഹ|ത|ആഹ|ആഹ|യ|ആ|ഈ|അന|അന|അന|ആ|ആ|ആ||അന|അന|അന|&amp;first;&amp;first;|ഇ|ഉ" multis="ആ|ഊ|ഈ|ഔ|ഐ" fathadammakasratanweenlongvowelsdipthongsshaddasukun="അ|ഉ|ഇ|അന|ഉന|ഇന||" gutterals="വആ|അവ|എഊ|ഒ|അഈ|എ|അവന|ഒന|എന|ക|ആഎ|അഹ|ഊഹ|ഒ|ഈഹ|എ" tajweed="|||||||ന|ഹ|യ|അ" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 		<scheme name="Portuguese" alphabet="a|b|t|z|j|h|rr|d|d|r|s|z|ch|s|d|t|d|`|g|f|q|k|l|m|n|h|w|i" hamza="&apos;|&apos;a|&apos;|w&apos;|&apos;|i&apos;||a|" literals="h|t|áh|áh|i|á|í|an|an|an|á|á|á||an|an|an|&amp;first;&amp;first;|i|u" multis="á|ú|í|ou|é" fathadammakasratanweenlongvowelsdipthongsshaddasukun="a|u|i|an|un|in||" gutterals="wá|aw|eú|o|aí|e|awn|on|en|k|áe|ah|úh|o|íh|e" tajweed="|||||||n|h|i|a" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|h|v|g"></scheme>
-		<scheme name="Hindi" alphabet="अ|ब|ट|थ|ज|ह|ख|द|ध|र|ज़|स|श|ष|ढ|ट|झ़|`|ग़|फ़|क़|क|ल|म|न|ह|व|य" hamza="&apos;|&apos;अ|&apos;|व&apos;|&apos;|य&apos;||अ|" literals="ह|त|आह|आह|य|आ|ई|अन|अन|अन|आ|आ|आ||अन|अन|अन|&amp;first;&amp;first;|इ|उ" multis="आ|ऊ|ई|औ|ऐ" fathadammakasratanweenlongvowelsdipthongsshaddasukun="अ|उ|इ|अन|उन|इन||" gutterals="वआ|अव|एऊ|ओ|अई|ए|औन|ओन|एन|क|आए|अह|ऊह|ओ|ईह|ए" tajweed="|||||||न|ह|य|अ" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
+		<scheme name="Hindi" alphabet="अ|ब|ट|थ|ज|ह|ख|द|ध|र|ज़|स|श|ष|ढ|ट|झ़|`|ग़|फ़|क़|क|ल|म|न|ह|व|य" hamza="&apos;|&apos;अ|&apos;|व&apos;|&apos;|य&apos;||अ|" literals="ह|त|ाह|ाह|य|ा|ी|अन|अन|अन|ा|ा|ा||अन|अन|अन|&amp;first;&amp;first;|ि|ु" multis="ा|ू|ी|ौ|ै" fathadammakasratanweenlongvowelsdipthongsshaddasukun="अ|ु|ि|अन|ुन|िन||" gutterals="वा|अव|ेू|ो|अी|े|ौन|ोन|ेन|क|ाे|अह|ूह|ो|ीह|े" tajweed="|||||||न|ह|य|अ" silent="||||||||||||||||||" punctuation=" |!|&quot;|,|-|.|:|[|]|{|}| |&quot;|&quot;|,|;|?| | |)|(" number="0|1|2|3|4|5|6|7|8|9" nonarabic="p|j|v|g"></scheme>
 	</translitschemes>
 
 	<!-- Bukhari 2nd book shows 2nd missing is from 8.73.075? -->

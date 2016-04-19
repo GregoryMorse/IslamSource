@@ -2258,7 +2258,7 @@ Public Class CachedData
         If _SavedGroups.ContainsKey(Name) Then Return _SavedGroups(Name)
         For Count = 0 To CachedData.IslamData.ArabicGroups.Length - 1
             If CachedData.IslamData.ArabicGroups(Count).Name = Name Then
-                _SavedGroups.Add(Name, New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Array.IndexOf(PatternAllowed, Name) <> -1 Or Array.IndexOf(Characteristics, Name) <> -1))).ToArray())
+                If Not _SavedGroups.ContainsKey(Name) Then _SavedGroups.Add(Name, New List(Of String)(Linq.Enumerable.Select(CachedData.IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Array.IndexOf(PatternAllowed, Name) <> -1 Or Array.IndexOf(Characteristics, Name) <> -1))).ToArray())
                 Return _SavedGroups(Name)
             End If
         Next
