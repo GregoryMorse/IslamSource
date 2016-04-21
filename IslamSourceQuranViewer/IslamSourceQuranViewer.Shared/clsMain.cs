@@ -10,47 +10,47 @@ using Windows.Foundation;
 #if WINDOWS_APP || WINDOWS_PHONE_APP
 public class WindowsRTFileIO : XMLRender.PortableFileIO
 {
-    public /*async*/ string[] GetDirectoryFiles(string Path)
+    public async System.Threading.Tasks.Task<string[]> GetDirectoryFiles(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFolder folder = t.Result; //await Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path);
-        System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.StorageFile>> tn = folder.GetFilesAsync().AsTask();
-        t.Wait();
-        IReadOnlyList<Windows.Storage.StorageFile> files = tn.Result; //await folder.GetFilesAsync();
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path).AsTask();
+        //t.Wait();
+        Windows.Storage.StorageFolder folder = /*t.Result;*/ await Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path);
+        //System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.StorageFile>> tn = folder.GetFilesAsync().AsTask();
+        //t.Wait();
+        IReadOnlyList<Windows.Storage.StorageFile> files = /*tn.Result;*/ await folder.GetFilesAsync();
         return new List<string>(files.Select(file => file.Name)).ToArray();
     }
-    public /*async*/ Stream LoadStream(string FilePath)
+    public async System.Threading.Tasks.Task<Stream> LoadStream(string FilePath)
     {
         Windows.ApplicationModel.Resources.Core.ResourceCandidate rc = null;
         if (IslamSourceQuranViewer.App._resourceContext == null && Windows.UI.Xaml.Window.Current != null && Windows.UI.Xaml.Window.Current.CoreWindow != null) { IslamSourceQuranViewer.App._resourceContext = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView(); } else { IslamSourceQuranViewer.App._resourceContext = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse(); }
         if (IslamSourceQuranViewer.App._resourceContext != null) { rc = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap.GetValue(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"), IslamSourceQuranViewer.App._resourceContext); }
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t;
-        if (rc != null && rc.IsMatch)
-        {
-            t = rc.GetValueAsFileAsync().AsTask();
-        }
-        else
-        {
-            t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
-        }
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
-        System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForReadAsync();
-        tn.Wait();
-        Stream Stream = tn.Result; //await file.OpenStreamForReadAsync();
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFile> t;
+        //if (rc != null && rc.IsMatch)
+        //{
+        //    t = rc.GetValueAsFileAsync().AsTask();
+        //}
+        //else
+        //{
+        //    t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
+        //}
+        //t.Wait();
+        Windows.Storage.StorageFile file = /*t.Result;*/ await ((rc != null && rc.IsMatch) ? rc.GetValueAsFileAsync() : Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath));
+        //System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForReadAsync();
+        //tn.Wait();
+        Stream Stream = /*tn.Result;*/ await file.OpenStreamForReadAsync();
         return Stream;
     }
-    public /*async*/ void SaveStream(string FilePath, Stream Stream)
+    public async void SaveStream(string FilePath, Stream Stream)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> td = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath)).AsTask();
-        td.Wait();
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = td.Result.CreateFileAsync(System.IO.Path.GetFileName(FilePath), Windows.Storage.CreationCollisionOption.ReplaceExisting).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath))).Result.CreateFileAsync(System.IO.Path.GetFileName(FilePath));
-        System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForWriteAsync();
-        tn.Wait();
-        Stream File = tn.Result; //await file.OpenStreamForWriteAsync();
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFolder> td = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath)).AsTask();
+        //td.Wait();
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = td.Result.CreateFileAsync(System.IO.Path.GetFileName(FilePath), Windows.Storage.CreationCollisionOption.ReplaceExisting).AsTask();
+        //t.Wait();
+        Windows.Storage.StorageFile file = /*t.Result;*/ await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath))).CreateFileAsync(System.IO.Path.GetFileName(FilePath), Windows.Storage.CreationCollisionOption.ReplaceExisting);
+        //System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForWriteAsync();
+        //tn.Wait();
+        Stream File = /*tn.Result;*/ await file.OpenStreamForWriteAsync();
         File.Seek(0, SeekOrigin.Begin);
         byte[] Bytes = new byte[4096];
         int Read;
@@ -67,55 +67,56 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
     {
         return System.IO.Path.Combine(Paths);
     }
-    public /*async*/ void DeleteFile(string FilePath)
+    public async void DeleteFile(string FilePath)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
+        //t.Wait();
+        Windows.Storage.StorageFile file = /*t.Result;*/ await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
         file.DeleteAsync().AsTask().Wait();
         //await file.DeleteAsync();
     }
-    public /*async*/ bool PathExists(string Path)
+    public async System.Threading.Tasks.Task<bool> PathExists(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
-        t.Wait();
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
+        //t.Wait();
 #if WINDOWS_PHONE_APP
-        System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.IStorageItem>> files = t.Result.GetItemsAsync().AsTask();
-        files.Wait();
-        return files.Result.FirstOrDefault(p => p.Name == Path) != null;
+        //System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.IStorageItem>> files = t.Result.GetItemsAsync().AsTask();
+        //files.Wait();
+        //return files.Result.FirstOrDefault(p => p.Name == Path) != null;
+        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync().FirstOrDefault(p => p.Name == Path) != null;
 #else
-        System.Threading.Tasks.Task<Windows.Storage.IStorageItem> tn = t.Result.TryGetItemAsync(System.IO.Path.GetFileName(Path)).AsTask();
-        tn.Wait();
-        return tn.Result != null;
+        //System.Threading.Tasks.Task<Windows.Storage.IStorageItem> tn = t.Result.TryGetItemAsync(System.IO.Path.GetFileName(Path)).AsTask();
+        //tn.Wait();
+        //return tn.Result != null;
+        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).TryGetItemAsync(System.IO.Path.GetFileName(Path))) != null;
 #endif
-        //return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).TryGetItemAsync(System.IO.Path.GetFileName(Path))) != null;
     }
-    public /*async*/ void CreateDirectory(string Path)
+    public async void CreateDirectory(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
-        t.Wait();
-        t.Result.CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.OpenIfExists).AsTask().Wait();
-        //await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.FailIfExists);
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
+        //t.Wait();
+        //t.Result.CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.OpenIfExists).AsTask().Wait();
+        await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.OpenIfExists);
     }
-    public /*async*/ DateTime PathGetLastWriteTimeUtc(string Path)
+    public async System.Threading.Tasks.Task<DateTime> PathGetLastWriteTimeUtc(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
-        System.Threading.Tasks.Task<Windows.Storage.FileProperties.BasicProperties> tn = file.GetBasicPropertiesAsync().AsTask();
-        tn.Wait();
-        return tn.Result.DateModified.UtcDateTime;
-        //return (await file.GetBasicPropertiesAsync()).DateModified;
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
+        //t.Wait();
+        Windows.Storage.StorageFile file = /*t.Result;*/ await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
+        //System.Threading.Tasks.Task<Windows.Storage.FileProperties.BasicProperties> tn = file.GetBasicPropertiesAsync().AsTask();
+        //tn.Wait();
+        //return tn.Result.DateModified.UtcDateTime;
+        return (await file.GetBasicPropertiesAsync()).DateModified.UtcDateTime;
     }
-    public /*async*/ void PathSetLastWriteTimeUtc(string Path, DateTime Time)
+    public async void PathSetLastWriteTimeUtc(string Path, DateTime Time)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
-        System.Threading.Tasks.Task<Windows.Storage.StorageStreamTransaction> tn = file.OpenTransactedWriteAsync().AsTask();
-        tn.Wait();
-        tn.Result.CommitAsync().AsTask().Wait();
-        //await(await file.OpenTransactedWriteAsync()).CommitAsync();
+        //System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
+        //t.Wait();
+        Windows.Storage.StorageFile file = /*t.Result;*/ await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
+        //System.Threading.Tasks.Task<Windows.Storage.StorageStreamTransaction> tn = file.OpenTransactedWriteAsync().AsTask();
+        //tn.Wait();
+        //tn.Result.CommitAsync().AsTask().Wait();
+        await(await file.OpenTransactedWriteAsync()).CommitAsync();
     }
 }
 public class WindowsRTSettings : XMLRender.PortableSettings

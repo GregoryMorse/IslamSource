@@ -180,7 +180,7 @@
     </Content>
     <Content Include="..\..\metadata\ko.*">
       <Link>metadata\ko\%(FileName)%(Extension)</Link>
-    </Content>    
+    </Content>
     <Content Include="..\..\metadata\hi.*">
       <Link>metadata\hi\%(FileName)%(Extension)</Link>
     </Content>
@@ -223,6 +223,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

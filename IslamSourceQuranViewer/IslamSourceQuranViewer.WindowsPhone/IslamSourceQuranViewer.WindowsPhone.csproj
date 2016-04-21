@@ -207,6 +207,7 @@
     <Content Include="..\..\metadata\UnicodeData.txt">
       <Link>metadata\UnicodeData.txt</Link>
     </Content>
+    <None Include="app.config" />
     <None Include="Package.StoreAssociation.xml" />
     <PRIResource Include=".\**\Resources.resw">
     </PRIResource>

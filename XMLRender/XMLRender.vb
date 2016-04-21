@@ -10,15 +10,15 @@ Public Interface PortableSettings
     Function GetResourceString(baseName As String, resourceKey As String) As String
 End Interface
 Public Interface PortableFileIO
-    Function LoadStream(FilePath As String) As IO.Stream
-    Sub SaveStream(FilePath As String, Stream As IO.Stream)
-    Function GetDirectoryFiles(Path As String) As String()
+    Function LoadStream(FilePath As String) As Task(Of IO.Stream)
+    Function SaveStream(FilePath As String, Stream As IO.Stream) As Task
+    Function GetDirectoryFiles(Path As String) As Task(Of String())
     Function CombinePath(ParamArray Paths() As String) As String
-    Sub DeleteFile(FilePath As String)
-    Function PathExists(Path As String) As Boolean
-    Sub CreateDirectory(Path As String)
-    Function PathGetLastWriteTimeUtc(Path As String) As Date
-    Sub PathSetLastWriteTimeUtc(Path As String, Time As Date)
+    Function DeleteFile(FilePath As String) As Task
+    Function PathExists(Path As String) As Task(Of Boolean)
+    Function CreateDirectory(Path As String) As Task
+    Function PathGetLastWriteTimeUtc(Path As String) As Task(Of Date)
+    Function PathSetLastWriteTimeUtc(Path As String, Time As Date) As Task
 End Interface
 Public Class PortableMethods
     Public Shared FileIO As PortableFileIO
@@ -256,9 +256,9 @@ Public Class Utility
             System.Diagnostics.Debug.WriteLine("  <data name=""" + resourceKey + """ xml:space=""preserve"">" + vbCrLf + "    <value>" + System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(resourceKey, ".*_", String.Empty), "(.+?)([A-Z])", "$1 $2") + "</value>" + vbCrLf + "  </data>")
         End If
     End Function
-    Public Shared Sub WordFileToResource(WordFilePath As String, ResFilePath As String)
-        Dim W4WLines As String() = Utility.ReadAllLines(WordFilePath)
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
+    Public Shared Async Function WordFileToResource(WordFilePath As String, ResFilePath As String) As Task
+        Dim W4WLines As String() = Await Utility.ReadAllLines(WordFilePath)
+        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(ResFilePath)
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         For Count = 0 To W4WLines.Length - 1
@@ -275,13 +275,13 @@ Public Class Utility
         Next
         Dim MemStream As New IO.MemoryStream
         XMLDoc.Save(MemStream)
-        PortableMethods.FileIO.SaveStream(ResFilePath, MemStream)
+        Await PortableMethods.FileIO.SaveStream(ResFilePath, MemStream)
         MemStream.Dispose()
-    End Sub
-    Public Shared Sub ResourceToWordFile(ResFilePath As String, WordFilePath As String)
+    End Function
+    Public Shared Async Function ResourceToWordFile(ResFilePath As String, WordFilePath As String) As Task
         Dim W4WLines As New Dictionary(Of String, List(Of String))
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(ResFilePath)
-        Dim XMLDoc As Xml.Linq.XDocument = XML.Linq.XDocument.Load(Stream)
+        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(ResFilePath)
+        Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(Linq.Enumerable.Where(XMLDoc.Root.Elements, Function(elem) elem.Name = "data" And Not elem.Attribute("name") Is Nothing))).ToArray()
         For Each Item As Xml.Linq.XElement In AllNodes
@@ -297,9 +297,9 @@ Public Class Utility
                 W4WLines(LineKey).Insert(Word - 1, New List(Of Xml.Linq.XElement)(Item.Elements).Item(0).Value)
             End If
         Next
-        Utility.WriteAllLines(WordFilePath, New List(Of String)(W4WLines.Select(Function(Input As KeyValuePair(Of String, List(Of String))) Input.Key + "=" + String.Join("|"c, Input.Value.ToArray()))).ToArray())
-    End Sub
-    Public Shared Sub WriteAllLines(FilePath As String, Lines() As String)
+        Await Utility.WriteAllLines(WordFilePath, New List(Of String)(W4WLines.Select(Function(Input As KeyValuePair(Of String, List(Of String))) Input.Key + "=" + String.Join("|"c, Input.Value.ToArray()))).ToArray())
+    End Function
+    Public Shared Async Function WriteAllLines(FilePath As String, Lines() As String) As Task
         Dim MemStream As New IO.MemoryStream
         Dim Writer As New IO.StreamWriter(MemStream)
         For Count As Integer = 0 To Lines.Length - 1
@@ -307,11 +307,11 @@ Public Class Utility
         Next
         Writer.Flush()
         MemStream.Seek(0, SeekOrigin.Begin)
-        PortableMethods.FileIO.SaveStream(FilePath, MemStream)
+        Await PortableMethods.FileIO.SaveStream(FilePath, MemStream)
         MemStream.Dispose()
-    End Sub
-    Public Shared Function ReadAllLines(FilePath As String) As String()
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(FilePath)
+    End Function
+    Public Shared Async Function ReadAllLines(FilePath As String) As Task(Of String())
+        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(FilePath)
         Dim Lines As String() = ReadAllLines(Stream)
         Stream.Dispose()
         Return Lines
@@ -393,47 +393,47 @@ Public Class Utility
     End Class
 End Class
 Public Class DiskCache
-    Shared Function GetCacheDirectory() As String
+    Shared Async Function GetCacheDirectory() As Task(Of String)
         Dim Path As String
         Path = PortableMethods.FileIO.CombinePath(PortableMethods.Settings.CacheDirectory, "DiskCache")
-        If Not PortableMethods.FileIO.PathExists(Path) Then PortableMethods.FileIO.CreateDirectory(Path)
+        If Not Await PortableMethods.FileIO.PathExists(Path) Then Await PortableMethods.FileIO.CreateDirectory(Path)
         Return Path
     End Function
-    Public Shared Function GetCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Byte()
-        If Not PortableMethods.FileIO.PathExists(PortableMethods.FileIO.CombinePath(GetCacheDirectory, Name)) OrElse _
-            ModifiedUtc > PortableMethods.FileIO.PathGetLastWriteTimeUtc(PortableMethods.FileIO.CombinePath(GetCacheDirectory(), Name)) Then Return Nothing
-        Dim File As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.FileIO.CombinePath(GetCacheDirectory(), Name))
+    Public Shared Async Function GetCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Task(Of Byte())
+        If Not Await PortableMethods.FileIO.PathExists(PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name)) OrElse
+            ModifiedUtc > Await PortableMethods.FileIO.PathGetLastWriteTimeUtc(PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name)) Then Return Nothing
+        Dim File As IO.Stream = Await PortableMethods.FileIO.LoadStream(PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name))
         Dim Bytes(CInt(File.Length) - 1) As Byte
         File.Read(Bytes, 0, CInt(File.Length))
         File.Dispose()
         Return Bytes
     End Function
-    Public Shared Function GetCacheItemPath(ByVal Name As String, ByVal ModifiedUtc As Date) As String
-        If Not PortableMethods.FileIO.PathExists(PortableMethods.FileIO.CombinePath(GetCacheDirectory, Name)) OrElse _
-            ModifiedUtc > PortableMethods.FileIO.PathGetLastWriteTimeUtc(PortableMethods.FileIO.CombinePath(GetCacheDirectory(), Name)) Then Return String.Empty
-        Return PortableMethods.FileIO.CombinePath(GetCacheDirectory(), Name)
+    Public Shared Async Function GetCacheItemPath(ByVal Name As String, ByVal ModifiedUtc As Date) As Task(Of String)
+        If Not Await PortableMethods.FileIO.PathExists(PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name)) OrElse
+            ModifiedUtc > Await PortableMethods.FileIO.PathGetLastWriteTimeUtc(PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name)) Then Return String.Empty
+        Return PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name)
     End Function
-    Public Shared Sub CacheItem(ByVal Name As String, ByVal LastModifiedUtc As Date, ByVal Data() As Byte)
+    Public Shared Async Function CacheItem(ByVal Name As String, ByVal LastModifiedUtc As Date, ByVal Data() As Byte) As Task
         Dim File As New IO.MemoryStream
         File.Write(Data, 0, Data.Length)
-        PortableMethods.FileIO.SaveStream(PortableMethods.FileIO.CombinePath(GetCacheDirectory(), Name), File)
+        Await PortableMethods.FileIO.SaveStream(PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name), File)
         File.Dispose()
         If LastModifiedUtc = DateTime.MinValue Then LastModifiedUtc = DateTime.Now
-        PortableMethods.FileIO.PathSetLastWriteTimeUtc(PortableMethods.FileIO.CombinePath(GetCacheDirectory(), Name), LastModifiedUtc)
-    End Sub
-    Public Shared Function GetCacheItems() As String()
-        Return PortableMethods.FileIO.GetDirectoryFiles(GetCacheDirectory())
+        Await PortableMethods.FileIO.PathSetLastWriteTimeUtc(PortableMethods.FileIO.CombinePath(Await GetCacheDirectory(), Name), LastModifiedUtc)
     End Function
-    Public Shared Sub DeleteUnusedCacheItems(ByVal ActiveNames() As String)
-        Dim Files() As String = PortableMethods.FileIO.GetDirectoryFiles(GetCacheDirectory())
+    Public Shared Async Function GetCacheItems() As Task(Of String())
+        Return Await PortableMethods.FileIO.GetDirectoryFiles(Await GetCacheDirectory())
+    End Function
+    Public Shared Async Function DeleteUnusedCacheItems(ByVal ActiveNames() As String) As Task
+        Dim Files() As String = Await PortableMethods.FileIO.GetDirectoryFiles(Await GetCacheDirectory())
         Dim Count As Integer
         For Count = 0 To Files.Length - 1
-            If Array.IndexOf(ActiveNames, Files(Count)) = -1 Then DeleteCacheItem(Files(Count))
+            If Array.IndexOf(ActiveNames, Files(Count)) = -1 Then Await DeleteCacheItem(Files(Count))
         Next
-    End Sub
-    Public Shared Sub DeleteCacheItem(ByVal Name As String)
-        PortableMethods.FileIO.DeleteFile(Name)
-    End Sub
+    End Function
+    Public Shared Async Function DeleteCacheItem(ByVal Name As String) As Task
+        Await PortableMethods.FileIO.DeleteFile(Name)
+    End Function
 End Class
 Public Class ArabicData
     <Runtime.Serialization.DataContract> _
@@ -441,18 +441,14 @@ Public Class ArabicData
         <Runtime.Serialization.DataMember> Public UnicodeName As String()
         <Runtime.Serialization.DataMember> Public Symbol As Char()
         <Runtime.Serialization.DataMember> Public Shaping() As Char
-        Public ReadOnly Property Connecting As Boolean
-            Get
-                If Not Shaping Is Nothing And Shaping.Length = 1 Then Return ArabicLetters(FindLetterBySymbol(Shaping(0))).Connecting
-                Return (Not Shaping Is Nothing AndAlso (Shaping(1) <> Nothing Or Shaping(3) <> Nothing))
-            End Get
-        End Property
-        Public ReadOnly Property Terminating As Boolean
-            Get
-                If Not Shaping Is Nothing And Shaping.Length = 1 Then Return ArabicLetters(FindLetterBySymbol(Shaping(0))).Terminating
-                Return (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing))
-            End Get
-        End Property
+        Public Function Connecting(Data As ArabicData) As Boolean
+            If Not Shaping Is Nothing And Shaping.Length = 1 Then Return Data.ArabicLetters(Data.FindLetterBySymbol(Shaping(0))).Connecting
+            Return (Not Shaping Is Nothing AndAlso (Shaping(1) <> Nothing Or Shaping(3) <> Nothing))
+        End Function
+        Public Function Terminating(Data As ArabicData) As Boolean
+            If Not Shaping Is Nothing And Shaping.Length = 1 Then Return Data.ArabicLetters(Data.FindLetterBySymbol(Shaping(0))).Terminating
+            Return (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing))
+        End Function
     End Structure
     Public Shared _ArabicCombos() As ArabicCombo
     <Runtime.Serialization.DataContract> _
@@ -473,17 +469,17 @@ Public Class ArabicData
             End Get
         End Property
     End Structure
-    Public Shared _ArabicLetters() As ArabicSymbol
-    Public Shared Sub LoadArabic()
+    Public _ArabicLetters() As ArabicSymbol
+    Public Async Function LoadArabic() As Task
         If Not DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue) Is Nothing And Not DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue) Is Nothing Then
-            _ArabicLetters = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicSymbol()))).ReadObject(New IO.MemoryStream(DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue))), ArabicData.ArabicSymbol())
-            _ArabicCombos = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicCombo()))).ReadObject(New IO.MemoryStream(DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue))), ArabicData.ArabicCombo())
+            _ArabicLetters = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicSymbol()))).ReadObject(New IO.MemoryStream(Await DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue))), ArabicData.ArabicSymbol())
+            _ArabicCombos = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicCombo()))).ReadObject(New IO.MemoryStream(Await DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue))), ArabicData.ArabicCombo())
             Return
         End If
         Dim CharArr As New List(Of Integer)
         Dim Letters As New List(Of ArabicSymbol)
         Dim Combos As New List(Of ArabicCombo)
-        Dim Ranges As List(Of List(Of Integer)) = MakeUniCategory(ALCategories)
+        Dim Ranges As List(Of List(Of Integer)) = Await MakeUniCategory(ALCategories)
         For Count = 0 To Ranges.Count - 1
             Dim Range As List(Of Integer) = Ranges(Count)
             If Range.Count = 1 Then
@@ -538,7 +534,7 @@ Public Class ArabicData
             End If
         Next
         CharArr = New List(Of Integer)
-        Ranges = MakeUniCategory(WeakCategories)
+        Ranges = Await MakeUniCategory(WeakCategories)
         For Count = 0 To Ranges.Count - 1
             Dim Range As List(Of Integer) = Ranges(Count)
             If Range.Count = 1 Then
@@ -557,7 +553,7 @@ Public Class ArabicData
             Letters.Add(ArabicLet)
         Next
         CharArr = New List(Of Integer)
-        Ranges = MakeUniCategory(NeutralCategories)
+        Ranges = Await MakeUniCategory(NeutralCategories)
         For Count = 0 To Ranges.Count - 1
             Dim Range As List(Of Integer) = Ranges(Count)
             If Range.Count = 1 Then
@@ -580,31 +576,25 @@ Public Class ArabicData
         Dim MemStream As New IO.MemoryStream
         Dim Ser As New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicSymbol()))
         Ser.WriteObject(MemStream, _ArabicLetters)
-        DiskCache.CacheItem("ArabicLetters", DateTime.Now, MemStream.ToArray())
+        Await DiskCache.CacheItem("ArabicLetters", DateTime.Now, MemStream.ToArray())
         MemStream.Dispose()
         MemStream = New IO.MemoryStream
         Ser = New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicCombo()))
         Ser.WriteObject(MemStream, _ArabicCombos)
-        DiskCache.CacheItem("ArabicCombos", DateTime.Now, MemStream.ToArray())
+        Await DiskCache.CacheItem("ArabicCombos", DateTime.Now, MemStream.ToArray())
         MemStream.Dispose()
-    End Sub
-    Public Shared ReadOnly Property ArabicCombos As ArabicCombo()
+    End Function
+    Public ReadOnly Property ArabicCombos() As ArabicCombo()
         Get
-            If _ArabicCombos Is Nothing Then
-                LoadArabic()
-            End If
             Return _ArabicCombos
         End Get
     End Property
-    Public Shared ReadOnly Property ArabicLetters As ArabicSymbol()
+    Public ReadOnly Property ArabicLetters() As ArabicSymbol()
         Get
-            If _ArabicLetters Is Nothing Then
-                LoadArabic()
-            End If
             Return _ArabicLetters
         End Get
     End Property
-    Public Shared Function GetUnicodeName(Character As Char) As String
+    Public Function GetUnicodeName(Character As Char) As String
         Dim Str As String = PortableMethods.Settings.GetUName(Character)
         If Str <> String.Empty Then Return Str
         If FindLetterBySymbol(Character) = -1 Then Return String.Empty
@@ -617,19 +607,19 @@ Public Class ArabicData
         If CamelCaseRegEx Is Nothing Then CamelCaseRegEx = New System.Text.RegularExpressions.Regex("(?:([A-Z])([A-Z]+)?)?(-|\s+|$)")
         Return CamelCaseRegEx.Replace(Str, Function(CamCase As System.Text.RegularExpressions.Match) CamCase.Groups(1).Value + CamCase.Groups(2).Value.ToLowerInvariant())
     End Function
-    Public Shared Function IsTerminating(Str As String, Index As Integer) As Boolean
+    Public Function IsTerminating(Str As String, Index As Integer) As Boolean
         Dim bIsEnd = True 'default to non-connecting end
         'should probably check for any non-arabic letters also
         For CharCount As Integer = Index + 1 To Str.Length - 1
             Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
-            If Idx = -1 OrElse ArabicLetters(Idx).JoiningStyle <> "T" Then
-                bIsEnd = Idx = -1 OrElse Not ArabicLetters(Idx).Connecting
+            If Idx = -1 OrElse ArabicLetters()(Idx).JoiningStyle <> "T" Then
+                bIsEnd = Idx = -1 OrElse Not ArabicLetters()(Idx).Connecting
                 Exit For
             End If
         Next
         Return bIsEnd
     End Function
-    Public Shared Function IsLastConnecting(Str As String, Index As Integer) As Boolean
+    Public Function IsLastConnecting(Str As String, Index As Integer) As Boolean
         Dim bLastConnects = False 'default to non-connecting beginning 
         For CharCount As Integer = Index - 1 To 0 Step -1
             Dim Idx As Integer = FindLetterBySymbol(Str(CharCount))
@@ -652,19 +642,19 @@ Public Class ArabicData
         End If
         Return -1
     End Function
-    Public Shared Function GetShapeIndexFromString(Str As String, Index As Integer, Length As Integer) As Integer
+    Public Function GetShapeIndexFromString(Str As String, Index As Integer, Length As Integer) As Integer
         'ignore all transparent characters
         'isolated - non-connecting + (non-connecting letter | connecting letter + end)
         'final - connecting + (non-connecting letter | connecting letter + end)
         'initial - non-connecting + connecting letter + not end
         'medial - connecting + connecting letter + not end
-        Dim bIsEnd = IsTerminating(Str, Index + Length - 1)
+        Dim bIsEnd As Boolean = IsTerminating(Str, Index + Length - 1)
         Dim Idx As Integer = FindLetterBySymbol(Str.Chars(Index + Length - 1))
-        Dim bConnects As Boolean = Not ArabicLetters(Idx).Terminating
-        Dim bLastConnects As Boolean = ArabicLetters(Idx).Connecting And IsLastConnecting(Str, Index)
+        Dim bConnects As Boolean = Not ArabicLetters()(Idx).Terminating
+        Dim bLastConnects As Boolean = ArabicLetters()(Idx).Connecting And IsLastConnecting(Str, Index)
         Return GetShapeIndex(bConnects, bLastConnects, bIsEnd)
     End Function
-    Public Shared Function TransformChars(Str As String) As String
+    Public Function TransformChars(Str As String) As String
         For Count As Integer = 0 To ArabicCombos.Length - 1
             If ArabicCombos(Count).Shaping.Length = 1 Then
                 Str = Str.Replace(String.Join(String.Empty, Linq.Enumerable.Select(ArabicCombos(Count).Symbol, Function(Sym As Char) CStr(Sym))), ArabicCombos(Count).Shaping(0))
@@ -676,7 +666,7 @@ Public Class ArabicData
         Public Ligature As String
         Public Indexes() As Integer
     End Structure
-    Public Shared Function GetFormsRange(BeginIndex As Char, EndIndex As Char) As Char()
+    Public Function GetFormsRange(BeginIndex As Char, EndIndex As Char) As Char()
         Dim Forms As New List(Of Char)
         For Count As Integer = 0 To ArabicCombos.Length - 1
             If Not ArabicCombos(Count).Shaping Is Nothing Then
@@ -685,9 +675,9 @@ Public Class ArabicData
                 Next
             End If
         Next
-        For Count As Integer = 0 To ArabicLetters.Length - 1
+        For Count As Integer = 0 To ArabicLetters().Length - 1
             If Not ArabicLetters(Count).Shaping Is Nothing Then
-                For Each Shape As Char In ArabicLetters(Count).Shaping
+                For Each Shape As Char In ArabicLetters()(Count).Shaping
                     If Shape >= BeginIndex AndAlso Shape <= EndIndex Then Forms.Add(Shape)
                 Next
             End If
@@ -697,34 +687,28 @@ Public Class ArabicData
     Public Shared _PresentationForms() As Char
     Public Shared _PresentationFormsA() As Char
     Public Shared _PresentationFormsB() As Char
-    Public Shared ReadOnly Property GetPresentationForms As Char()
-        Get
-            If _PresentationForms Is Nothing Then
-                Dim Forms As New List(Of Char)
-                Forms.AddRange(GetPresentationFormsA())
-                Forms.AddRange(GetPresentationFormsB())
-                _PresentationForms = Forms.ToArray()
-            End If
-            Return _PresentationForms
-        End Get
-    End Property
-    Public Shared ReadOnly Property GetPresentationFormsA() As Char()
-        Get
-            If _PresentationFormsA Is Nothing Then
-                _PresentationFormsA = GetFormsRange(ChrW(&HFB50), ChrW(&HFDFF))
-            End If
-            Return _PresentationFormsA
-        End Get
-    End Property
-    Public Shared ReadOnly Property GetPresentationFormsB() As Char()
-        Get
-            If _PresentationFormsB Is Nothing Then
-                _PresentationFormsB = GetFormsRange(ChrW(&HFE70), ChrW(&HFEFF))
-            End If
-            Return _PresentationFormsB
-        End Get
-    End Property
-    Public Shared Function CheckLigatureMatch(Str As String, CurPos As Integer, ByRef Positions As Integer()) As Integer
+    Public Function GetPresentationForms() As Char()
+        If _PresentationForms Is Nothing Then
+            Dim Forms As New List(Of Char)
+            Forms.AddRange(GetPresentationFormsA())
+            Forms.AddRange(GetPresentationFormsB())
+            _PresentationForms = Forms.ToArray()
+        End If
+        Return _PresentationForms
+    End Function
+    Public Function GetPresentationFormsA() As Char()
+        If _PresentationFormsA Is Nothing Then
+            _PresentationFormsA = GetFormsRange(ChrW(&HFB50), ChrW(&HFDFF))
+        End If
+        Return _PresentationFormsA
+    End Function
+    Public Function GetPresentationFormsB() As Char()
+        If _PresentationFormsB Is Nothing Then
+            _PresentationFormsB = GetFormsRange(ChrW(&HFE70), ChrW(&HFEFF))
+        End If
+        Return _PresentationFormsB
+    End Function
+    Public Function CheckLigatureMatch(Str As String, CurPos As Integer, ByRef Positions As Integer()) As Integer
         'if first is 2 diacritics or letter + diacritic
         'letter + diacritic done only unless a space present as 2 diacritics could be nexted in required ligature which would be skipped
         'must check space with 2 diacritics first, second check will already capture space with diacritic
@@ -774,8 +758,8 @@ Public Class ArabicData
         End If
         Return -1
     End Function
-    Public Shared _LigatureCombos() As ArabicCombo
-    Public Shared ReadOnly Property LigatureCombos As ArabicCombo()
+    Public _LigatureCombos() As ArabicCombo
+    Public ReadOnly Property LigatureCombos As ArabicCombo()
         Get
             If _LigatureCombos Is Nothing Then
                 ReDim _LigatureCombos(ArabicLetters.Length + ArabicCombos.Length - 1)
@@ -790,8 +774,8 @@ Public Class ArabicData
             Return _LigatureCombos
         End Get
     End Property
-    Public Shared _LigatureShapes As Dictionary(Of Char, Integer)
-    Public Shared ReadOnly Property LigatureShapes As Dictionary(Of Char, Integer)
+    Public _LigatureShapes As Dictionary(Of Char, Integer)
+    Public ReadOnly Property LigatureShapes As Dictionary(Of Char, Integer)
         Get
             If _LigatureShapes Is Nothing Then
                 Dim Combos As ArabicCombo() = LigatureCombos
@@ -807,8 +791,8 @@ Public Class ArabicData
             Return _LigatureShapes
         End Get
     End Property
-    Public Shared _LigatureLookups As Dictionary(Of String, Integer)
-    Public Shared ReadOnly Property LigatureLookups As Dictionary(Of String, Integer)
+    Public _LigatureLookups As Dictionary(Of String, Integer)
+    Public ReadOnly Property LigatureLookups As Dictionary(Of String, Integer)
         Get
             If _LigatureLookups Is Nothing Then
                 _LigatureLookups = New Dictionary(Of String, Integer)
@@ -823,7 +807,7 @@ Public Class ArabicData
             Return _LigatureLookups
         End Get
     End Property
-    Public Shared Function GetLigatures(Str As String, Dir As Boolean, SupportedForms As Char()) As LigatureInfo()
+    Public Function GetLigatures(Str As String, Dir As Boolean, SupportedForms As Char()) As LigatureInfo()
         Dim Count As Integer
         Dim SubCount As Integer
         Dim Ligatures As New List(Of LigatureInfo)
@@ -857,7 +841,7 @@ Public Class ArabicData
         End While
         Return Ligatures.ToArray()
     End Function
-    Public Shared Function ConvertLigatures(Str As String, Dir As Boolean, SupportedForms As Char()) As String
+    Public Function ConvertLigatures(Str As String, Dir As Boolean, SupportedForms As Char()) As String
         Dim Ligatures() As LigatureInfo = GetLigatures(Str, Dir, SupportedForms)
         For Count = Ligatures.Length - 1 To 0 Step -1
             For Index = 0 To Ligatures(Count).Indexes.Length - 1
@@ -866,8 +850,8 @@ Public Class ArabicData
         Next
         Return Str
     End Function
-    Public Shared _ArabicLetterMap As Dictionary(Of Char, Integer)
-    Public Shared ReadOnly Property ArabicLetterMap As Dictionary(Of Char, Integer)
+    Public _ArabicLetterMap As Dictionary(Of Char, Integer)
+    Public ReadOnly Property ArabicLetterMap() As Dictionary(Of Char, Integer)
         Get
             If _ArabicLetterMap Is Nothing Then
                 _ArabicLetterMap = New Dictionary(Of Char, Integer)
@@ -880,7 +864,7 @@ Public Class ArabicData
             Return _ArabicLetterMap
         End Get
     End Property
-    Public Shared Function FindLetterBySymbol(Symbol As Char) As Integer
+    Public Function FindLetterBySymbol(Symbol As Char) As Integer
         Return If(ArabicLetterMap.ContainsKey(Symbol), ArabicLetterMap.Item(Symbol), -1)
     End Function
     Public Const Space As Char = ChrW(&H20)
@@ -1010,8 +994,8 @@ Public Class ArabicData
     Public Shared WeakCategories As String() = New String() {"EN", "ES", "ET", "AN", "CS", "NSM", "BN"}
     Public Shared ExplicitCategories As String() = New String() {"LRE", "LRO", "RLE", "RLO", "PDF", "LRI", "RLI", "FSI", "PDI"}
     Public Shared CausesJoining As Char() = New Char() {ArabicTatweel, ZeroWidthJoiner}
-    Public Shared Function GetJoiningData() As Dictionary(Of Char, String)
-        Dim Strs As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "ArabicShaping.txt")))
+    Public Shared Async Function GetJoiningData() As Task(Of Dictionary(Of Char, String))
+        Dim Strs As String() = Await Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "ArabicShaping.txt")))
         Dim Joiners As New Dictionary(Of Char, String)
         For Count = 0 To Strs.Length - 1
             If Strs(Count)(0) <> "#" Then
@@ -1034,8 +1018,8 @@ Public Class ArabicData
     Public Shared _DecData As Dictionary(Of Char, DecData)
     Public Shared _Ranges As Dictionary(Of String, List(Of List(Of Integer)))
     Public Shared _Names As Dictionary(Of Char, String())
-    Public Shared Sub GetDecompositionCombiningCatData()
-        Dim Strs As String() = Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "UnicodeData.txt")))
+    Public Shared Async Function GetDecompositionCombiningCatData() As Task
+        Dim Strs As String() = Await Utility.ReadAllLines(PortableMethods.Settings.GetFilePath(PortableMethods.FileIO.CombinePath("metadata", "UnicodeData.txt")))
         _CombPos = New Dictionary(Of Char, Integer)
         _UniClass = New Dictionary(Of Char, String)
         _Ranges = New Dictionary(Of String, List(Of List(Of Integer)))
@@ -1084,9 +1068,9 @@ Public Class ArabicData
                 _Ranges(Vals(4)).Add(New List(Of Integer) From {NewRangeMatch})
             End If
         Next
-    End Sub
-    Public Shared Function MakeUniCategory(Cats As String()) As List(Of List(Of Integer))
-        If _Ranges Is Nothing Then GetDecompositionCombiningCatData()
+    End Function
+    Public Shared Async Function MakeUniCategory(Cats As String()) As Task(Of List(Of List(Of Integer)))
+        If _Ranges Is Nothing Then Await GetDecompositionCombiningCatData()
         Dim Ranges As New List(Of List(Of Integer))
         For Count = 0 To Cats.Length - 1
             If _Ranges.ContainsKey(Cats(Count)) Then
@@ -1095,10 +1079,10 @@ Public Class ArabicData
         Next
         Return Ranges
     End Function
-    Public Shared Function IsDiacritic(Ch As Char) As Boolean
+    Public Function IsDiacritic(Ch As Char) As Boolean
         Return ArabicLetters(FindLetterBySymbol(Ch)).JoiningStyle = "T"
     End Function
-    Public Shared Function FixStartingCombiningSymbol(Str As String) As String
+    Public Function FixStartingCombiningSymbol(Str As String) As String
         Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
     End Function
     Public Shared Function MakeUniRegEx(Input As String) As String
