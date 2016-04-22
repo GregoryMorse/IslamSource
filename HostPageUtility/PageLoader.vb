@@ -41,13 +41,13 @@ Public Class WindowsWebSettings
 End Class
 Public Class WindowsWebFileIO
     Implements PortableFileIO
-    Public Function GetDirectoryFiles(Path As String) As String() Implements PortableFileIO.GetDirectoryFiles
+    Public Async Function GetDirectoryFiles(Path As String) As Threading.Tasks.Task(Of String()) Implements PortableFileIO.GetDirectoryFiles
         Return IO.Directory.GetFiles(Path)
     End Function
-    Public Function LoadStream(FilePath As String) As IO.Stream Implements PortableFileIO.LoadStream
+    Public Async Function LoadStream(FilePath As String) As Threading.Tasks.Task(Of IO.Stream) Implements PortableFileIO.LoadStream
         Return IO.File.Open(FilePath, IO.FileMode.Open, IO.FileAccess.Read)
     End Function
-    Public Sub SaveStream(FilePath As String, Stream As IO.Stream) Implements PortableFileIO.SaveStream
+    Public Async Function SaveStream(FilePath As String, Stream As IO.Stream) As Threading.Tasks.Task Implements PortableFileIO.SaveStream
         Dim File As IO.FileStream = IO.File.Open(FilePath, IO.FileMode.Create, IO.FileAccess.Write)
         Dim Bytes(4096) As Byte
         Dim Read As Integer
@@ -58,25 +58,25 @@ Public Class WindowsWebFileIO
             Read = Stream.Read(Bytes, 0, Bytes.Length)
         End While
         File.Close()
-    End Sub
+    End Function
     Public Function CombinePath(ParamArray Paths() As String) As String Implements PortableFileIO.CombinePath
         Return IO.Path.Combine(Paths)
     End Function
-    Public Sub DeleteFile(FilePath As String) Implements PortableFileIO.DeleteFile
+    Public Async Function DeleteFile(FilePath As String) As Threading.Tasks.Task Implements PortableFileIO.DeleteFile
         IO.File.Delete(FilePath)
-    End Sub
-    Public Function PathExists(Path As String) As Boolean Implements PortableFileIO.PathExists
+    End Function
+    Public Async Function PathExists(Path As String) As Threading.Tasks.Task(Of Boolean) Implements PortableFileIO.PathExists
         Return IO.Directory.Exists(Path)
     End Function
-    Public Sub CreateDirectory(Path As String) Implements PortableFileIO.CreateDirectory
+    Public Async Function CreateDirectory(Path As String) As Threading.Tasks.Task Implements PortableFileIO.CreateDirectory
         IO.Directory.CreateDirectory(Path)
-    End Sub
-    Public Function PathGetLastWriteTimeUtc(Path As String) As Date Implements PortableFileIO.PathGetLastWriteTimeUtc
+    End Function
+    Public Async Function PathGetLastWriteTimeUtc(Path As String) As Threading.Tasks.Task(Of Date) Implements PortableFileIO.PathGetLastWriteTimeUtc
         Return IO.File.GetLastWriteTimeUtc(Path)
     End Function
-    Public Sub PathSetLastWriteTimeUtc(Path As String, Time As Date) Implements PortableFileIO.PathSetLastWriteTimeUtc
+    Public Async Function PathSetLastWriteTimeUtc(Path As String, Time As Date) As Threading.Tasks.Task Implements PortableFileIO.PathSetLastWriteTimeUtc
         IO.File.SetLastWriteTimeUtc(Path, Time)
-    End Sub
+    End Function
 End Class
 Public Class NativeMethods
     Public Structure FIXED
@@ -313,8 +313,8 @@ Public Class UtilityWeb
             Return PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.SiteXMLs()(Index) + ".xml")
         End If
     End Function
-    Public Shared Function TransmitCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Boolean
-        Dim Path As String = DiskCache.GetCacheItemPath(Name, ModifiedUtc)
+    Public Shared Async Function TransmitCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Threading.Tasks.Task(Of Boolean)
+        Dim Path As String = Await DiskCache.GetCacheItemPath(Name, ModifiedUtc)
         If Path = String.Empty Then Return False
         HttpContext.Current.Response.TransmitFile(Path)
         Return True
@@ -339,8 +339,8 @@ Public Class UtilityWeb
         spin.Free()
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
-    Public Shared Sub SortResX(File As String)
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(File)
+    Public Shared Async Sub SortResX(File As String)
+        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(File)
         Dim Doc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(System.Xml.XPath.Extensions.XPathSelectElements(Doc.Root, "data/@name"))).ToArray()
@@ -652,16 +652,16 @@ Public Class UtilityWeb
         End Try
         Return bmp
     End Function
-    Public Shared Function GetThumbSizeFromURL(ByVal URL As String, ByVal CacheURL As String, ByVal MaxWidth As Double) As SizeF
+    Public Shared Async Function GetThumbSizeFromURL(ByVal URL As String, ByVal CacheURL As String, ByVal MaxWidth As Double) As Threading.Tasks.Task(Of SizeF)
         Dim ResultBmp As Bitmap = Nothing
         Dim Bytes() As Byte
         Dim DateModified As Date
-        If CInt(XMLRender.DiskCache.GetCacheItems().Length * New Random().NextDouble()) = 0 Then
+        If CInt((Await XMLRender.DiskCache.GetCacheItems()).Length * New Random().NextDouble()) = 0 Then
             DateModified = GetURLLastModified(URL)
         Else
             DateModified = Date.MinValue
         End If
-        Bytes = DiskCache.GetCacheItem(CacheURL, DateModified)
+        Bytes = Await DiskCache.GetCacheItem(CacheURL, DateModified)
         If Not Bytes Is Nothing Then
             ResultBmp = DirectCast(Bitmap.FromStream(New IO.MemoryStream(Bytes)), Bitmap)
         End If
@@ -674,15 +674,16 @@ Public Class UtilityWeb
                 bmp.Dispose()
                 Dim MemStream As New IO.MemoryStream()
                 ResultBmp.Save(MemStream, DirectCast(If(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
-                DiskCache.CacheItem(CacheURL, DateModified, MemStream.GetBuffer())
+                Await DiskCache.CacheItem(CacheURL, DateModified, MemStream.GetBuffer())
             End If
             'save thumb to cache
         End If
         If ResultBmp Is Nothing Then
-            GetThumbSizeFromURL = SizeF.Empty
+            Return SizeF.Empty
         Else
-            GetThumbSizeFromURL = ResultBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
+            Dim Sz As SizeF = ResultBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
             ResultBmp.Dispose()
+            Return Sz
         End If
     End Function
     Public Shared Sub AddTextLogo(ByVal bmp As Bitmap, ByVal Text As String)
@@ -838,8 +839,8 @@ Public Class Document
     Public Shared Function GetDocument(ByVal Item As PageLoader.TextItem) As String
         Return String.Empty
     End Function
-    Public Shared Function GetXML(ByVal Item As PageLoader.TextItem) As Array
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + UtilityWeb.ConnectionData.DocXML))
+    Public Shared Async Function GetXML(ByVal Item As PageLoader.TextItem) As Threading.Tasks.Task(Of Array)
+        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + UtilityWeb.ConnectionData.DocXML))
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim RetArray As New List(Of String())
@@ -1203,10 +1204,10 @@ Public Class PageLoader
                 Utility.ParseValue(XMLChildNode.Attribute("showinline"), "false") = "true"))
         End If
     End Sub
-    Public Sub New()
+    Public Async Function Init() As Threading.Tasks.Task
         Dim XMLNode As Xml.Linq.XElement
         Dim XMLChildNode As Xml.Linq.XElement
-        Dim Stream As IO.Stream = PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetTemplatePath())
+        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetTemplatePath())
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Title = Utility.ParseValue(XMLDoc.Root.Attribute("title"), String.Empty)
@@ -1223,30 +1224,32 @@ Public Class PageLoader
                         ParseSingleElement(XMLChildNode, PageList, True)
                     End If
                 Next
-                Pages.Add(New PageItem(PageList, XMLNode.Attribute("name").Value, _
+                Pages.Add(New PageItem(PageList, XMLNode.Attribute("name").Value,
                                        XMLNode.Attribute("description").Value))
             End If
         Next
-    End Sub
+    End Function
 End Class
 Public Class ArabicDataWeb
-    Public Shared Function GetUniCats() As String()
-        Return {"function IsLTR(c) { " + MakeUniCategoryJS(ArabicData.LTRCategories) + " }", _
-        "function IsRTL(c) { " + MakeUniCategoryJS(ArabicData.RTLCategories) + " }", _
-        "function IsAL(c) { " + MakeUniCategoryJS(ArabicData.ALCategories) + " }", _
-        "function IsNeutral(c) { " + MakeUniCategoryJS(ArabicData.NeutralCategories) + " }", _
-        "function IsWeak(c) { " + MakeUniCategoryJS(ArabicData.WeakCategories) + " }", _
-        "function IsExplicit(c) { " + MakeUniCategoryJS(ArabicData.ExplicitCategories) + " }"}
+    Public Shared Async Function GetUniCats() As Threading.Tasks.Task(Of String())
+        Return {"function IsLTR(c) { " + Await MakeUniCategoryJS(ArabicData.LTRCategories) + " }",
+        "function IsRTL(c) { " + Await MakeUniCategoryJS(ArabicData.RTLCategories) + " }",
+        "function IsAL(c) { " + Await MakeUniCategoryJS(ArabicData.ALCategories) + " }",
+        "function IsNeutral(c) { " + Await MakeUniCategoryJS(ArabicData.NeutralCategories) + " }",
+        "function IsWeak(c) { " + Await MakeUniCategoryJS(ArabicData.WeakCategories) + " }",
+        "function IsExplicit(c) { " + Await MakeUniCategoryJS(ArabicData.ExplicitCategories) + " }"}
     End Function
-    Public Shared Function MakeUniCategoryJS(Cats As String()) As String
-        Dim Ranges As List(Of List(Of Integer)) = ArabicData.MakeUniCategory(Cats)
+    Public Shared Async Function MakeUniCategoryJS(Cats As String()) As Threading.Tasks.Task(Of String)
+        Dim Ranges As List(Of List(Of Integer)) = Await ArabicData.MakeUniCategory(Cats)
         Return "return " + String.Join("||", Linq.Enumerable.Select(Ranges.ToArray(), Function(Arr As List(Of Integer)) If(Arr.Count = 1, "c===0x" + Convert.ToString(Arr(0), 16), "(c>=0x" + Convert.ToString(Arr(0), 16) + "&&c<=0x" + Convert.ToString(Arr(Arr.Count - 1), 16) + ")"))) + ";"
     End Function
 End Class
 Public Class RenderArrayWeb
+    Private ArbData As ArabicData
     Private _RenderArray As RenderArray
-    Public Sub New(NewRenderArray As RenderArray)
+    Public Sub New(NewRenderArray As RenderArray, NewArbData As ArabicData)
         _RenderArray = NewRenderArray
+        ArbData = NewArbData
     End Sub
     Structure LayoutInfo
         Public Sub New(NewRect As RectangleF, NewBaseline As Single, NewNChar As Integer, NewBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))))
@@ -1381,7 +1384,7 @@ Public Class RenderArrayWeb
         End Sub
 #End Region
     End Class
-    Public Shared Function GetWordDiacriticPositionsDWrite(Str As String, useFont As Font, Forms As Char(), IsRTL As Boolean, ByRef BaseLine As Single, ByRef Pos As CharPosInfo()) As SizeF
+    Public Function GetWordDiacriticPositionsDWrite(Str As String, useFont As Font, Forms As Char(), IsRTL As Boolean, ByRef BaseLine As Single, ByRef Pos As CharPosInfo()) As SizeF
         If Str = String.Empty Then Return New SizeF(0, 0)
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim Analyze As New SharpDX.DirectWrite.TextAnalyzer(Factory)
@@ -1481,7 +1484,7 @@ Public Class RenderArrayWeb
         '    If SupportedGlyphs(Count) = 0 Then Forms(Count) = ChrW(0)
         'Next
         If IsRTL And Not Pos Is Nothing Then
-            Dim LigArray() As ArabicData.LigatureInfo = ArabicData.GetLigatures(Str, False, Forms)
+            Dim LigArray() As ArabicData.LigatureInfo = ArbData.GetLigatures(Str, False, Forms)
             For CharCount = 0 To ClusterMap.Length - 1
                 Dim RunCount As Integer = 0
                 For ResCount As Integer = ClusterMap(CharCount) To If(CharCount = ClusterMap.Length - 1, ActualGlyphCount - 1, ClusterMap(CharCount + 1) - 1)
@@ -1575,7 +1578,7 @@ Public Class RenderArrayWeb
         Factory.Dispose()
         Return Size
     End Function
-    Public Shared Function FitText(Text As String, MaxWidth As Single, MaxSize As Single, IsRTL As Boolean, DrawFont As Font, Forms As Char()) As Single
+    Public Function FitText(Text As String, MaxWidth As Single, MaxSize As Single, IsRTL As Boolean, DrawFont As Font, Forms As Char()) As Single
         Dim MinSize As Single = 0
         Text = System.Text.RegularExpressions.Regex.Replace(Text, "(" + ArabicData.ArabicLetterLam + ArabicData.ArabicKasra + "?)" + ArabicData.ArabicLetterAlefWasla, "$1" + ArabicData.ArabicLetterAlef + ArabicData.ArabicSignSallallahouAlayheWassallam)
         Dim Size As SizeF = GetWordDiacriticPositionsDWrite(Text, DrawFont, Forms, IsRTL, Nothing, Nothing)
@@ -1594,7 +1597,7 @@ Public Class RenderArrayWeb
         Next
         Return MinSize
     End Function
-    Public Shared Function WriteArabicPdfDiacritics(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, DrawFont As Font, FixedFont As iTextSharp.text.Font, Text As String, Rect As RectangleF, Baseline As Single, FirstAdj As Boolean, Forms As Char(), FontFace As SharpDX.DirectWrite.FontFace) As String
+    Public Function WriteArabicPdfDiacritics(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, DrawFont As Font, FixedFont As iTextSharp.text.Font, Text As String, Rect As RectangleF, Baseline As Single, FirstAdj As Boolean, Forms As Char(), FontFace As SharpDX.DirectWrite.FontFace) As String
         Dim ct As iTextSharp.text.pdf.ColumnText
         Dim CharPosInfos() As CharPosInfo = {}
         Dim useFont As New Font(DrawFont.FontFamily, FixedFont.Size, DrawFont.Style)
@@ -1605,15 +1608,15 @@ Public Class RenderArrayWeb
             ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_RTL
             ct.ArabicOptions = iTextSharp.text.pdf.ColumnText.AR_COMPOSEDTASHKEEL
             ct.UseAscender = False
-            If GetWordDiacriticPositionsDWrite(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useFont, Forms, True, Nothing, Nothing).Width <> 0 Then
+            If GetWordDiacriticPositionsDWrite(ArbData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useFont, Forms, True, Nothing, Nothing).Width <> 0 Then
                 ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + Rect.Width - 4 + 2 - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).Width - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - Baseline + CharPosInfos(Index).Y - If(FirstAdj, 2, 0), Rect.Right - 2 + Doc.LeftMargin - CharPosInfos(Index).PriorWidth - CharPosInfos(Index).X, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - Baseline + CharPosInfos(Index).Y - If(FirstAdj, 2, 0), CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), iTextSharp.text.Element.ALIGN_RIGHT Or iTextSharp.text.Element.ALIGN_BASELINE)
                 If CharPosInfos(Index).Length = 1 AndAlso System.Text.RegularExpressions.Regex.Match(Text(CharPosInfos(Index).Index), "[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]").Success And Char.GetUnicodeCategory(Text(CharPosInfos(Index).Index)) = Globalization.UnicodeCategory.DecimalDigitNumber Then
                     'using scaling to emulate the glyph substitutions on end of ayah marker combinations
                     Dim NewFont As New iTextSharp.text.Font(FixedFont)
-                    NewFont.Size = NewFont.Size * GetWordDiacriticPositionsDWrite(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useFont, Forms, True, Nothing, Nothing).Height / CharPosInfos(Index).Height
+                    NewFont.Size = NewFont.Size * GetWordDiacriticPositionsDWrite(ArbData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useFont, Forms, True, Nothing, Nothing).Height / CharPosInfos(Index).Height
                     Dim Chunk As New iTextSharp.text.Chunk(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), NewFont)
                     Dim useNewFont As New Font(DrawFont.FontFamily, NewFont.Size, DrawFont.Style)
-                    Chunk.SetHorizontalScaling(CharPosInfos(Index).Width / GetWordDiacriticPositionsDWrite(ArabicData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useNewFont, Forms, True, Nothing, Nothing).Width)
+                    Chunk.SetHorizontalScaling(CharPosInfos(Index).Width / GetWordDiacriticPositionsDWrite(ArbData.ConvertLigatures(Text.Substring(CharPosInfos(Index).Index, CharPosInfos(Index).Length), False, Forms)(0), useNewFont, Forms, True, Nothing, Nothing).Width)
                     useNewFont.Dispose()
                     ct.AddText(Chunk)
                 Else
@@ -1636,7 +1639,7 @@ Public Class RenderArrayWeb
         Next
         Return Text
     End Function
-    Public Shared Sub DoRenderListPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Font, Forms As Char(), CurRenderText As RenderArray.RenderText, OutArray As Object(), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
+    Public Sub DoRenderListPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Font, Forms As Char(), CurRenderText As RenderArray.RenderText, OutArray As Object(), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
         Dim RowTop As Single = Single.NaN
         Dim MaxRect As RectangleF
         Dim Factory As New SharpDX.DirectWrite.Factory
@@ -1729,7 +1732,7 @@ Public Class RenderArrayWeb
         DFont.Dispose()
         Factory.Dispose()
     End Sub
-    Public Shared Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Font, Forms As Char(), CurRenderArray As List(Of RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
+    Public Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Font, Forms As Char(), CurRenderArray As List(Of RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(DrawFont)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(DFont)
@@ -1863,12 +1866,12 @@ Public Class RenderArrayWeb
         Dim Fonts As String() = {"times.ttf", "me_quran.ttf", "Scheherazade.ttf", "PDMS_Saleem.ttf", "KFC_naskh.otf", "trado.ttf", "arabtype.ttf", "majalla.ttf", "msuighur.ttf", "ARIALUNI.ttf"}
         Return If(Index < 1 Or Index > 4, IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\" + Fonts(Index)), PortableMethods.Settings.GetFilePath("files\" + Fonts(Index)))
     End Function
-    Public Shared Sub OutputFlashcardPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
+    Public Sub OutputFlashcardPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
         Dim fs As New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None)
         OutputFlashcardPdf(fs, CurRenderArray)
         fs.Close()
     End Sub
-    Public Shared Sub OutputFlashcardPdf(Stream As IO.Stream, CurRenderArray As List(Of RenderArray.RenderItem))
+    Public Sub OutputFlashcardPdf(Stream As IO.Stream, CurRenderArray As List(Of RenderArray.RenderItem))
         Dim Doc As New iTextSharp.text.Document
         Dim Writer As iTextSharp.text.pdf.PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(Doc, Stream)
         Doc.Open()
@@ -1880,7 +1883,7 @@ Public Class RenderArrayWeb
         PrivateFontColl.AddFontFile(GetFontPath(0))
         Dim DrawFont As New Font(PrivateFontColl.Families(0), 20, FontStyle.Regular, GraphicsUnit.Point)
         'divide into pages by heights
-        Dim Forms As Char() = ArabicData.GetPresentationForms()
+        Dim Forms As Char() = ArbData.GetPresentationForms()
         For Count = 0 To Forms.Length - 1
             If Not Font.BaseFont.CharExists(AscW(Forms(Count))) Then Forms(Count) = ChrW(0)
         Next
@@ -2024,12 +2027,12 @@ Public Class RenderArrayWeb
         Writer.CloseStream = False
         Doc.Close()
     End Sub
-    Public Shared Sub OutputPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
+    Public Sub OutputPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
         Dim fs As New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None)
         OutputPdf(fs, CurRenderArray)
         fs.Close()
     End Sub
-    Public Shared Sub OutputPdf(Stream As IO.Stream, CurRenderArray As List(Of RenderArray.RenderItem))
+    Public Sub OutputPdf(Stream As IO.Stream, CurRenderArray As List(Of RenderArray.RenderItem))
         Dim Doc As New iTextSharp.text.Document
         Dim Writer As iTextSharp.text.pdf.PdfWriter = iTextSharp.text.pdf.PdfWriter.GetInstance(Doc, Stream)
         Doc.Open()
@@ -2041,7 +2044,7 @@ Public Class RenderArrayWeb
         PrivateFontColl.AddFontFile(GetFontPath(0))
         Dim DrawFont As New Font(PrivateFontColl.Families(0), 20, FontStyle.Regular, GraphicsUnit.Point)
         'divide into pages by heights
-        Dim Forms As Char() = ArabicData.GetPresentationForms()
+        Dim Forms As Char() = ArbData.GetPresentationForms()
         For Count = 0 To Forms.Length - 1
             If Not Font.BaseFont.CharExists(AscW(Forms(Count))) Then Forms(Count) = ChrW(0)
         Next
@@ -2054,10 +2057,10 @@ Public Class RenderArrayWeb
         Doc.Close()
     End Sub
     Delegate Function GetTextWidth(Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
-    Public Shared Function AddDiacriticSpacing(Str As String, Forms As Char()) As String
-        Return System.Text.RegularExpressions.Regex.Replace(Str, "(^|\s)([\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]+)", Function(Match As System.Text.RegularExpressions.Match) Match.Groups(1).Value + If(ArabicData.FindLetterBySymbol(Match.Groups(2).Value(0)) <> -1 AndAlso ArabicData.ArabicLetters(ArabicData.FindLetterBySymbol(Match.Groups(2).Value(0))).JoiningStyle = "T" AndAlso Char.GetUnicodeCategory(Match.Groups(2).Value(0)) <> Globalization.UnicodeCategory.Format And (Match.Groups(1).Value.Length = 0 OrElse ArabicData.GetLigatures(" " + Match.Groups(2).Value, False, Forms).Length <> 0 AndAlso ArabicData.GetLigatures(" " + Match.Groups(2).Value, False, Forms)(0).Indexes(0) = 0), " ", String.Empty) + Match.Groups(2).Value)
+    Public Function AddDiacriticSpacing(Str As String, Forms As Char()) As String
+        Return System.Text.RegularExpressions.Regex.Replace(Str, "(^|\s)([\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]+)", Function(Match As System.Text.RegularExpressions.Match) Match.Groups(1).Value + If(ArbData.FindLetterBySymbol(Match.Groups(2).Value(0)) <> -1 AndAlso ArbData.ArabicLetters(ArbData.FindLetterBySymbol(Match.Groups(2).Value(0))).JoiningStyle = "T" AndAlso Char.GetUnicodeCategory(Match.Groups(2).Value(0)) <> Globalization.UnicodeCategory.Format And (Match.Groups(1).Value.Length = 0 OrElse ArbData.GetLigatures(" " + Match.Groups(2).Value, False, Forms).Length <> 0 AndAlso ArbData.GetLigatures(" " + Match.Groups(2).Value, False, Forms)(0).Indexes(0) = 0), " ", String.Empty) + Match.Groups(2).Value)
     End Function
-    Private Shared Function GetTextWidthDraw(DrawFont As Font, Forms As Char(), Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
+    Private Function GetTextWidthDraw(DrawFont As Font, Forms As Char(), Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
         If FontName <> String.Empty Then
             Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
             PrivateFontColl.AddFontFile(PortableMethods.Settings.GetFilePath("files\" + UtilityWeb.FontFile(Array.IndexOf(UtilityWeb.FontList, FontName))))
@@ -2103,7 +2106,7 @@ Public Class RenderArrayWeb
         End If
         Return Len
     End Function
-    Private Shared Function GetTextWidthFromDraw(DrawFont As Font, Forms As Char()) As GetTextWidth
+    Private Function GetTextWidthFromDraw(DrawFont As Font, Forms As Char()) As GetTextWidth
         Return Function(Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single)
                    Dim Ret As Integer = GetTextWidthDraw(DrawFont, Forms, Str, FontName, MaxWidth - 4, IsRTL, s, Baseline)
                    s.Width += 4 '1 unit for line and 1 for spacing on each side
@@ -2319,7 +2322,7 @@ Public Class RenderArrayWeb
         For Count = 0 To Bounds.Count - 1
             For SubCount = 0 To Bounds(Count).Count - 1
                 Dim CenterAdj As Single = 0
-                If NextOverIndex <> OverIndexes.Count AndAlso (OverIndexes(NextOverIndex).Index < Count Or _
+                If NextOverIndex <> OverIndexes.Count AndAlso (OverIndexes(NextOverIndex).Index < Count Or
                         OverIndexes(NextOverIndex).Index = Count) Then
                     NextOverIndex += 1
                 End If
@@ -2443,14 +2446,14 @@ Public Class RenderArrayWeb
         Next
         Return XML.ToString()
     End Function
-    Public Shared Sub OutputDocX(Stream As IO.Stream, RenderItems As List(Of RenderArray.RenderItem))
+    Public Sub OutputDocX(Stream As IO.Stream, RenderItems As List(Of RenderArray.RenderItem))
         'A4 the international standard and default 210 mm × 297 mm, 8.27 in × 11.69 in
         Dim _Bounds As New Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo)))
         Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
         PrivateFontColl.AddFontFile(GetFontPath(0))
         Dim DrawFont As New Font(PrivateFontColl.Families(0), 20, FontStyle.Regular, GraphicsUnit.Point)
         'divide into pages by heights
-        Dim Forms As Char() = ArabicData.GetPresentationForms()
+        Dim Forms As Char() = ArbData.GetPresentationForms()
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(DrawFont)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(DFont)
@@ -2481,8 +2484,8 @@ Public Class RenderArrayWeb
         Return New String() {"javascript: quoteMode();", String.Empty, UtilityWeb.GetLookupStyleSheetJS(), "function quoteMode() { var rule = findStyleSheetRule('span.copy'); rule.style.display = $('#quotemode').prop('checked') === true ? 'block' : 'none'; }"}
     End Function
     Public Shared Function GetStarRatingJS() As String
-        Return "function changeStarRating(e, item, val, data) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') { Element.style.color = (index < val) ? '#00a4e4' : '#cccccc'; Element.innerText = (index < val) ? '\u2605' : '\u2606'; } }); data['Rating'] = val.toString(); $.ajax({url: '" + UtilityWeb.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().children('span').text(data); }, dataType: 'text'}); } " + _
-            "function restoreStarRating(e, item) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'; }); } " + _
+        Return "function changeStarRating(e, item, val, data) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') { Element.style.color = (index < val) ? '#00a4e4' : '#cccccc'; Element.innerText = (index < val) ? '\u2605' : '\u2606'; } }); data['Rating'] = val.toString(); $.ajax({url: '" + UtilityWeb.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().children('span').text(data); }, dataType: 'text'}); } " +
+            "function restoreStarRating(e, item) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'; }); } " +
             "function updateStarRating(e, item, val) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (index < val) ? '#aa1010' : ((Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'); }); }"
         'Return "function changeStarRating(e, item, data) { $(item).find('div').get(0).style.width = (Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10) * 10).toString() + '%'; data['Rating'] = Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10).toString(); $.ajax({url: '" + host.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().find('span').text(data); }, dataType: 'text'}); } " + _
         '    "function restoreStarRating(e, item) { $(item).find('div').get(1).style.width = '0%'; $(item).find('div').get(1).style.zIndex = 102; } " + _
