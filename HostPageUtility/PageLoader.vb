@@ -42,40 +42,42 @@ End Class
 Public Class WindowsWebFileIO
     Implements PortableFileIO
     Public Async Function GetDirectoryFiles(Path As String) As Threading.Tasks.Task(Of String()) Implements PortableFileIO.GetDirectoryFiles
-        Return IO.Directory.GetFiles(Path)
+        Return Await Threading.Tasks.Task.Factory.StartNew(Function() IO.Directory.GetFiles(Path))
     End Function
     Public Async Function LoadStream(FilePath As String) As Threading.Tasks.Task(Of IO.Stream) Implements PortableFileIO.LoadStream
-        Return IO.File.Open(FilePath, IO.FileMode.Open, IO.FileAccess.Read)
+        Return Await Threading.Tasks.Task.Factory.StartNew(Function() IO.File.Open(FilePath, IO.FileMode.Open, IO.FileAccess.Read))
     End Function
     Public Async Function SaveStream(FilePath As String, Stream As IO.Stream) As Threading.Tasks.Task Implements PortableFileIO.SaveStream
-        Dim File As IO.FileStream = IO.File.Open(FilePath, IO.FileMode.Create, IO.FileAccess.Write)
-        Dim Bytes(4096) As Byte
-        Dim Read As Integer
-        Stream.Seek(0, IO.SeekOrigin.Begin)
-        Read = Stream.Read(Bytes, 0, Bytes.Length)
-        While Read <> 0
-            File.Write(Bytes, 0, Read)
-            Read = Stream.Read(Bytes, 0, Bytes.Length)
-        End While
-        File.Close()
+        Await Threading.Tasks.Task.Factory.StartNew(Sub()
+                                                        Dim File As IO.FileStream = IO.File.Open(FilePath, IO.FileMode.Create, IO.FileAccess.Write)
+                                                        Dim Bytes(4096) As Byte
+                                                        Dim Read As Integer
+                                                        Stream.Seek(0, IO.SeekOrigin.Begin)
+                                                        Read = Stream.Read(Bytes, 0, Bytes.Length)
+                                                        While Read <> 0
+                                                            File.Write(Bytes, 0, Read)
+                                                            Read = Stream.Read(Bytes, 0, Bytes.Length)
+                                                        End While
+                                                        File.Close()
+                                                    End Sub)
     End Function
     Public Function CombinePath(ParamArray Paths() As String) As String Implements PortableFileIO.CombinePath
         Return IO.Path.Combine(Paths)
     End Function
     Public Async Function DeleteFile(FilePath As String) As Threading.Tasks.Task Implements PortableFileIO.DeleteFile
-        IO.File.Delete(FilePath)
+        Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.File.Delete(FilePath))
     End Function
     Public Async Function PathExists(Path As String) As Threading.Tasks.Task(Of Boolean) Implements PortableFileIO.PathExists
-        Return IO.Directory.Exists(Path)
+        Return Await Threading.Tasks.Task.Factory.StartNew(Function() IO.Directory.Exists(Path))
     End Function
     Public Async Function CreateDirectory(Path As String) As Threading.Tasks.Task Implements PortableFileIO.CreateDirectory
-        IO.Directory.CreateDirectory(Path)
+        Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.Directory.CreateDirectory(Path))
     End Function
     Public Async Function PathGetLastWriteTimeUtc(Path As String) As Threading.Tasks.Task(Of Date) Implements PortableFileIO.PathGetLastWriteTimeUtc
-        Return IO.File.GetLastWriteTimeUtc(Path)
+        Return Await Threading.Tasks.Task.Factory.StartNew(Function() IO.File.GetLastWriteTimeUtc(Path))
     End Function
     Public Async Function PathSetLastWriteTimeUtc(Path As String, Time As Date) As Threading.Tasks.Task Implements PortableFileIO.PathSetLastWriteTimeUtc
-        IO.File.SetLastWriteTimeUtc(Path, Time)
+        Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.File.SetLastWriteTimeUtc(Path, Time))
     End Function
 End Class
 Public Class NativeMethods
@@ -182,13 +184,14 @@ Public Class UtilityWeb
     Public Shared IsLoggedIn As _IsLoggedIn
     Delegate Function _GetPageString(Page As String) As String
     Public Shared GetPageString As _GetPageString
+    Public Shared _PortableMethods As PortableMethods
     'HttpContext.Current.Trace.Write(Text)
     Public Shared Sub Initialize(NewGetPageString As _GetPageString, NewGetUserID As _GetUserID, NewIsLoggedIn As _IsLoggedIn)
         GetPageString = NewGetPageString
         GetUserID = NewGetUserID
         IsLoggedIn = NewIsLoggedIn
-        PortableMethods.FileIO = New WindowsWebFileIO
-        PortableMethods.Settings = New WindowsWebSettings
+        _PortableMethods = New PortableMethods
+        _PortableMethods.Init(New WindowsWebFileIO, New WindowsWebSettings)
     End Sub
     Public Const LocalConfig As String = "~/web.config"
     Public Class ConnectionData
@@ -308,13 +311,13 @@ Public Class UtilityWeb
     Public Shared Function GetTemplatePath() As String
         Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) HttpContext.Current.Request.Url.Host.EndsWith(Domain))
         If Index = -1 Then
-            Return PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.DefaultXML + ".xml")
+            Return _PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.DefaultXML + ".xml")
         Else
-            Return PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.SiteXMLs()(Index) + ".xml")
+            Return _PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.SiteXMLs()(Index) + ".xml")
         End If
     End Function
     Public Shared Async Function TransmitCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Threading.Tasks.Task(Of Boolean)
-        Dim Path As String = Await DiskCache.GetCacheItemPath(Name, ModifiedUtc)
+        Dim Path As String = Await _PortableMethods.DiskCache.GetCacheItemPath(Name, ModifiedUtc)
         If Path = String.Empty Then Return False
         HttpContext.Current.Response.TransmitFile(Path)
         Return True
@@ -340,7 +343,7 @@ Public Class UtilityWeb
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
     Public Shared Async Sub SortResX(File As String)
-        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(File)
+        Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(File)
         Dim Doc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(System.Xml.XPath.Extensions.XPathSelectElements(Doc.Root, "data/@name"))).ToArray()
@@ -378,7 +381,7 @@ Public Class UtilityWeb
         Dim EncodeBytes As Byte() = Transform.Encrypt(System.Text.Encoding.UTF8.GetBytes(EncodeStr), False)
         Transform.Clear()
         Array.Reverse(EncodeBytes) '.NET uses reverse from order of CryptEncrypt
-        IO.File.WriteAllBytes(PortableMethods.Settings.GetFilePath("bin\" + UtilityWeb.ConnectionData.KeyFileName), Transform.ExportCspBlob(True))
+        IO.File.WriteAllBytes(_PortableMethods.Settings.GetFilePath("bin\" + UtilityWeb.ConnectionData.KeyFileName), Transform.ExportCspBlob(True))
         Return String.Join(String.Empty, Linq.Enumerable.Select(EncodeBytes, Function(Convert As Byte) Convert.ToString("X2")))
     End Function
     Public Shared Function DoDecrypt(DecryptStr As String) As String
@@ -386,7 +389,7 @@ Public Class UtilityWeb
         cspParams.KeyNumber = System.Security.Cryptography.KeyNumber.Exchange
         cspParams.Flags = System.Security.Cryptography.CspProviderFlags.NoFlags 'user may change to must use machine store
         Dim Transform As New System.Security.Cryptography.RSACryptoServiceProvider(512, cspParams)
-        Dim CspBlob As Byte() = IO.File.ReadAllBytes(PortableMethods.Settings.GetFilePath("bin\" + UtilityWeb.ConnectionData.KeyFileName))
+        Dim CspBlob As Byte() = IO.File.ReadAllBytes(_PortableMethods.Settings.GetFilePath("bin\" + UtilityWeb.ConnectionData.KeyFileName))
         Transform.PersistKeyInCsp = False
         Transform.ImportCspBlob(CspBlob)
         Dim Bytes(DecryptStr.Length \ 2 - 1) As Byte '.NET uses reverse from order of CryptDecrypt
@@ -485,7 +488,7 @@ Public Class UtilityWeb
         Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
         Dim oFont As Font
         If Array.IndexOf(UtilityWeb.FontList, Font) <> -1 Then
-            PrivateFontColl.AddFontFile(PortableMethods.Settings.GetFilePath("files\" + UtilityWeb.FontFile(Array.IndexOf(UtilityWeb.FontList, Font))))
+            PrivateFontColl.AddFontFile(_PortableMethods.Settings.GetFilePath("files\" + UtilityWeb.FontFile(Array.IndexOf(UtilityWeb.FontList, Font))))
             oFont = New Font(PrivateFontColl.Families(0), Size)
         ElseIf Font <> String.Empty Then
             oFont = New Font(Font, Size)
@@ -656,12 +659,12 @@ Public Class UtilityWeb
         Dim ResultBmp As Bitmap = Nothing
         Dim Bytes() As Byte
         Dim DateModified As Date
-        If CInt((Await XMLRender.DiskCache.GetCacheItems()).Length * New Random().NextDouble()) = 0 Then
+        If CInt((Await _PortableMethods.DiskCache.GetCacheItems()).Length * New Random().NextDouble()) = 0 Then
             DateModified = GetURLLastModified(URL)
         Else
             DateModified = Date.MinValue
         End If
-        Bytes = Await DiskCache.GetCacheItem(CacheURL, DateModified)
+        Bytes = Await _PortableMethods.DiskCache.GetCacheItem(CacheURL, DateModified)
         If Not Bytes Is Nothing Then
             ResultBmp = DirectCast(Bitmap.FromStream(New IO.MemoryStream(Bytes)), Bitmap)
         End If
@@ -674,7 +677,7 @@ Public Class UtilityWeb
                 bmp.Dispose()
                 Dim MemStream As New IO.MemoryStream()
                 ResultBmp.Save(MemStream, DirectCast(If(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
-                Await DiskCache.CacheItem(CacheURL, DateModified, MemStream.GetBuffer())
+                Await _PortableMethods.DiskCache.CacheItem(CacheURL, DateModified, MemStream.GetBuffer())
             End If
             'save thumb to cache
         End If
@@ -721,7 +724,7 @@ Public Class UtilityWeb
                 LookupClassMember = CheckType.GetMethod(ClassMember(2))
             End If
             If LookupClassMember Is Nothing Then
-                For Each Key As String In PortableMethods.Settings.FuncLibs
+                For Each Key As String In _PortableMethods.Settings.FuncLibs
                     Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
                     If Not Asm Is Nothing Then
                         CheckType = Asm.GetType(Key + "." + ClassMember(0))
@@ -836,11 +839,12 @@ Public Class JSCoding
     End Function
 End Class
 Public Class Document
+    Public Shared _PortableMethods As PortableMethods
     Public Shared Function GetDocument(ByVal Item As PageLoader.TextItem) As String
         Return String.Empty
     End Function
     Public Shared Async Function GetXML(ByVal Item As PageLoader.TextItem) As Threading.Tasks.Task(Of Array)
-        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetFilePath("metadata\" + UtilityWeb.ConnectionData.DocXML))
+        Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetFilePath("metadata\" + UtilityWeb.ConnectionData.DocXML))
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Dim RetArray As New List(Of String())
@@ -1138,14 +1142,14 @@ Public Class PageLoader
             For Each XMLListNode In XMLChildNode.Nodes
                 ParseSingleElement(XMLListNode, ListArray, False)
             Next
-            List.Add(New ListItem( _
-                XMLChildNode.Attribute("description").Value, _
-                XMLChildNode.Attribute("name").Value, ListArray, IsTopLevel, _
+            List.Add(New ListItem(
+                XMLChildNode.Attribute("description").Value,
+                XMLChildNode.Attribute("name").Value, ListArray, IsTopLevel,
                 Utility.ParseValue(XMLChildNode.Attribute("hasform"), "false") = "true"))
         ElseIf XMLChildNode.Name = "button" Then
-            List.Add(New ButtonItem(XMLChildNode.Attribute("name").Value, _
-                                    XMLChildNode.Attribute("description").Value, _
-                                    Utility.ParseValue(XMLChildNode.Attribute("onclick"), String.Empty), _
+            List.Add(New ButtonItem(XMLChildNode.Attribute("name").Value,
+                                    XMLChildNode.Attribute("description").Value,
+                                    Utility.ParseValue(XMLChildNode.Attribute("onclick"), String.Empty),
                                     Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)))
         ElseIf XMLChildNode.Name = "edit" Then
             List.Add(New EditItem(XMLChildNode.Attribute("name").Value,
@@ -1153,7 +1157,7 @@ Public Class PageLoader
                                   CInt(Utility.ParseValue(XMLChildNode.Attribute("rows"), "1")), False,
                                    Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty)))
         ElseIf XMLChildNode.Name = "date" Then
-            List.Add(New DateItem(XMLChildNode.Attribute("name").Value, _
+            List.Add(New DateItem(XMLChildNode.Attribute("name").Value,
                                   XMLChildNode.Attribute("description").Value))
         ElseIf XMLChildNode.Name = "radio" Then
             Dim XMLOptionNode As Xml.Linq.XElement
@@ -1167,47 +1171,49 @@ Public Class PageLoader
                     OptionArray.Add(New OptionItem(XMLOptionNode.Attribute("name").Value))
                 End If
             Next
-            List.Add(New RadioItem(XMLChildNode.Attribute("name").Value, _
-                                   XMLChildNode.Attribute("description").Value, _
-                                   DefaultValue, _
-                                   OptionArray.ToArray(), _
-                                   Utility.ParseValue(XMLChildNode.Attribute("uselist"), "false") = "true", _
-                                   Utility.ParseValue(XMLChildNode.Attribute("usecheck"), "false") = "true", _
-                                   Utility.ParseValue(XMLChildNode.Attribute("onpopulate"), String.Empty), _
+            List.Add(New RadioItem(XMLChildNode.Attribute("name").Value,
+                                   XMLChildNode.Attribute("description").Value,
+                                   DefaultValue,
+                                   OptionArray.ToArray(),
+                                   Utility.ParseValue(XMLChildNode.Attribute("uselist"), "false") = "true",
+                                   Utility.ParseValue(XMLChildNode.Attribute("usecheck"), "false") = "true",
+                                   Utility.ParseValue(XMLChildNode.Attribute("onpopulate"), String.Empty),
                                    Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty)))
         ElseIf XMLChildNode.Name = "ipaddr" Then
         ElseIf XMLChildNode.Name = "static" Then
-            List.Add(New TextItem( _
-                            XMLChildNode.Attribute("name").Value, _
-                            XMLChildNode.Attribute("description").Value, _
-                            Utility.ParseValue(XMLChildNode.Attribute("url"), String.Empty), _
-                            Utility.ParseValue(XMLChildNode.Attribute("imageurl"), String.Empty), _
+            List.Add(New TextItem(
+                            XMLChildNode.Attribute("name").Value,
+                            XMLChildNode.Attribute("description").Value,
+                            Utility.ParseValue(XMLChildNode.Attribute("url"), String.Empty),
+                            Utility.ParseValue(XMLChildNode.Attribute("imageurl"), String.Empty),
                             Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)))
         ElseIf XMLChildNode.Name = "image" Then
-            List.Add(New ImageItem( _
-                Utility.ParseValue(XMLChildNode.Attribute("name"), String.Empty), _
-                XMLChildNode.Attribute("text").Value, _
-                XMLChildNode.Attribute("source").Value, _
-                Utility.ParseValue(XMLChildNode.Attribute("usethumbonmax"), "false") = "true", _
-                CInt(Utility.ParseValue(XMLChildNode.Attribute("maxwidth"), "0")), _
+            List.Add(New ImageItem(
+                Utility.ParseValue(XMLChildNode.Attribute("name"), String.Empty),
+                XMLChildNode.Attribute("text").Value,
+                XMLChildNode.Attribute("source").Value,
+                Utility.ParseValue(XMLChildNode.Attribute("usethumbonmax"), "false") = "true",
+                CInt(Utility.ParseValue(XMLChildNode.Attribute("maxwidth"), "0")),
                 CInt(Utility.ParseValue(XMLChildNode.Attribute("maxheight"), "0"))))
         ElseIf XMLChildNode.Name = "email" Then
-            List.Add(New EmailItem( _
+            List.Add(New EmailItem(
                Utility.ParseValue(XMLChildNode.Attribute("useimage"), "true") = "true"))
         ElseIf XMLChildNode.Name = "download" Then
-            List.Add(New DownloadItem( _
-                XMLChildNode.Attribute("text").Value, _
-                XMLChildNode.Attribute("path").Value, _
-                Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty), _
-                Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") = "true", _
-                Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") <> "true", _
+            List.Add(New DownloadItem(
+                XMLChildNode.Attribute("text").Value,
+                XMLChildNode.Attribute("path").Value,
+                Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty),
+                Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") = "true",
+                Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") <> "true",
                 Utility.ParseValue(XMLChildNode.Attribute("showinline"), "false") = "true"))
         End If
     End Sub
-    Public Async Function Init() As Threading.Tasks.Task
+    Private _PortableMethods As PortableMethods
+    Public Async Function Init(NewPortableMethods As PortableMethods) As Threading.Tasks.Task
+        _PortableMethods = NewPortableMethods
         Dim XMLNode As Xml.Linq.XElement
         Dim XMLChildNode As Xml.Linq.XElement
-        Dim Stream As IO.Stream = Await PortableMethods.FileIO.LoadStream(PortableMethods.Settings.GetTemplatePath())
+        Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetTemplatePath())
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Title = Utility.ParseValue(XMLDoc.Root.Attribute("title"), String.Empty)
@@ -1231,24 +1237,27 @@ Public Class PageLoader
     End Function
 End Class
 Public Class ArabicDataWeb
-    Public Shared Async Function GetUniCats() As Threading.Tasks.Task(Of String())
-        Return {"function IsLTR(c) { " + Await MakeUniCategoryJS(ArabicData.LTRCategories) + " }",
-        "function IsRTL(c) { " + Await MakeUniCategoryJS(ArabicData.RTLCategories) + " }",
-        "function IsAL(c) { " + Await MakeUniCategoryJS(ArabicData.ALCategories) + " }",
-        "function IsNeutral(c) { " + Await MakeUniCategoryJS(ArabicData.NeutralCategories) + " }",
-        "function IsWeak(c) { " + Await MakeUniCategoryJS(ArabicData.WeakCategories) + " }",
-        "function IsExplicit(c) { " + Await MakeUniCategoryJS(ArabicData.ExplicitCategories) + " }"}
+    Public Shared ArbData As ArabicData
+    Public Shared Function GetUniCats() As String()
+        Return {"function IsLTR(c) { " + MakeUniCategoryJS(ArabicData.LTRCategories) + " }",
+        "function IsRTL(c) { " + MakeUniCategoryJS(ArabicData.RTLCategories) + " }",
+        "function IsAL(c) { " + MakeUniCategoryJS(ArabicData.ALCategories) + " }",
+        "function IsNeutral(c) { " + MakeUniCategoryJS(ArabicData.NeutralCategories) + " }",
+        "function IsWeak(c) { " + MakeUniCategoryJS(ArabicData.WeakCategories) + " }",
+        "function IsExplicit(c) { " + MakeUniCategoryJS(ArabicData.ExplicitCategories) + " }"}
     End Function
-    Public Shared Async Function MakeUniCategoryJS(Cats As String()) As Threading.Tasks.Task(Of String)
-        Dim Ranges As List(Of List(Of Integer)) = Await ArabicData.MakeUniCategory(Cats)
+    Public Shared Function MakeUniCategoryJS(Cats As String()) As String
+        Dim Ranges As List(Of List(Of Integer)) = ArbData.MakeUniCategory(Cats)
         Return "return " + String.Join("||", Linq.Enumerable.Select(Ranges.ToArray(), Function(Arr As List(Of Integer)) If(Arr.Count = 1, "c===0x" + Convert.ToString(Arr(0), 16), "(c>=0x" + Convert.ToString(Arr(0), 16) + "&&c<=0x" + Convert.ToString(Arr(Arr.Count - 1), 16) + ")"))) + ";"
     End Function
 End Class
 Public Class RenderArrayWeb
+    Private _PortableMethods As PortableMethods
     Private ArbData As ArabicData
     Private _RenderArray As RenderArray
-    Public Sub New(NewRenderArray As RenderArray, NewArbData As ArabicData)
+    Public Sub New(NewRenderArray As RenderArray, NewPortableMethods As PortableMethods, NewArbData As ArabicData)
         _RenderArray = NewRenderArray
+        _PortableMethods = NewPortableMethods
         ArbData = NewArbData
     End Sub
     Structure LayoutInfo
@@ -1861,10 +1870,10 @@ Public Class RenderArrayWeb
         DFont.Dispose()
         Factory.Dispose()
     End Sub
-    Public Shared Function GetFontPath(Index As Integer) As String
+    Public Function GetFontPath(Index As Integer) As String
         'Return PortableMethods.Settings.GetFilePath("files\" + "Scheherazade-R.ttf")
         Dim Fonts As String() = {"times.ttf", "me_quran.ttf", "Scheherazade.ttf", "PDMS_Saleem.ttf", "KFC_naskh.otf", "trado.ttf", "arabtype.ttf", "majalla.ttf", "msuighur.ttf", "ARIALUNI.ttf"}
-        Return If(Index < 1 Or Index > 4, IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\" + Fonts(Index)), PortableMethods.Settings.GetFilePath("files\" + Fonts(Index)))
+        Return If(Index < 1 Or Index > 4, IO.Path.Combine(Environment.GetEnvironmentVariable("windir"), "Fonts\" + Fonts(Index)), _PortableMethods.Settings.GetFilePath("files\" + Fonts(Index)))
     End Function
     Public Sub OutputFlashcardPdf(Path As String, CurRenderArray As List(Of RenderArray.RenderItem))
         Dim fs As New IO.FileStream(Path, IO.FileMode.Create, IO.FileAccess.Write, IO.FileShare.None)
@@ -2063,7 +2072,7 @@ Public Class RenderArrayWeb
     Private Function GetTextWidthDraw(DrawFont As Font, Forms As Char(), Str As String, FontName As String, MaxWidth As Single, IsRTL As Boolean, ByRef s As SizeF, ByRef Baseline As Single) As Integer
         If FontName <> String.Empty Then
             Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
-            PrivateFontColl.AddFontFile(PortableMethods.Settings.GetFilePath("files\" + UtilityWeb.FontFile(Array.IndexOf(UtilityWeb.FontList, FontName))))
+            PrivateFontColl.AddFontFile(_PortableMethods.Settings.GetFilePath("files\" + UtilityWeb.FontFile(Array.IndexOf(UtilityWeb.FontList, FontName))))
             Dim PrivFont As New Font(PrivateFontColl.Families(0), 100)
             s = UtilityWeb.GetTextExtent(Str, PrivFont)
             s.Width = CInt(Math.Ceiling(Math.Ceiling(s.Width + 1) * 96.0F / 72.0F))
@@ -2869,6 +2878,10 @@ Public Class RenderArrayWeb
     End Sub
 End Class
 Public Class MailDispatcher
+    Private Shared _PortableMethods As PortableMethods
+    Public Shared Sub Init(NewPortableMethods As PortableMethods)
+        _PortableMethods = NewPortableMethods
+    End Sub
     Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
         Dim SmtpClient As New Net.Mail.SmtpClient
         'encrypt and unencrypt password credential
@@ -2886,24 +2899,24 @@ Public Class MailDispatcher
         End Try
     End Sub
     Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ActivateAccount"), CStr(ActivationCode)))
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ActivateAccount"), CStr(ActivationCode)))
     End Sub
     Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
     End Sub
     Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
     End Sub
     Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
     End Sub
     Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(Utility.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host), _
-            String.Format(Utility.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
     End Sub
 End Class
 Public Class SiteDatabase
