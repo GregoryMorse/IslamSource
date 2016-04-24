@@ -109,6 +109,6 @@
     <value>Maidir le</value>
   </data>
   <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Araibis Qur'an le meiteashonraí agus gach Aistriúcháin agus roinnt aithriseoireacht fuaime uathu sin atá liostaithe chun sochair Tionscadal Tanzil (http://tanzil.net).&lt;br&gt;</value>
+    <value></value>
   </data>
 </root>

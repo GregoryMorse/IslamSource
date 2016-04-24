@@ -41,7 +41,7 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         Stream Stream = /*tn.Result;*/ await file.OpenStreamForReadAsync();
         return Stream;
     }
-    public async void SaveStream(string FilePath, Stream Stream)
+    public async System.Threading.Tasks.Task SaveStream(string FilePath, Stream Stream)
     {
         //System.Threading.Tasks.Task<Windows.Storage.StorageFolder> td = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath)).AsTask();
         //td.Wait();
@@ -67,13 +67,13 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
     {
         return System.IO.Path.Combine(Paths);
     }
-    public async void DeleteFile(string FilePath)
+    public async System.Threading.Tasks.Task DeleteFile(string FilePath)
     {
         //System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
         //t.Wait();
         Windows.Storage.StorageFile file = /*t.Result;*/ await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
-        file.DeleteAsync().AsTask().Wait();
-        //await file.DeleteAsync();
+        //file.DeleteAsync().AsTask().Wait();
+        await file.DeleteAsync();
     }
     public async System.Threading.Tasks.Task<bool> PathExists(string Path)
     {
@@ -91,7 +91,7 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).TryGetItemAsync(System.IO.Path.GetFileName(Path))) != null;
 #endif
     }
-    public async void CreateDirectory(string Path)
+    public async System.Threading.Tasks.Task CreateDirectory(string Path)
     {
         //System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
         //t.Wait();
@@ -108,7 +108,7 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         //return tn.Result.DateModified.UtcDateTime;
         return (await file.GetBasicPropertiesAsync()).DateModified.UtcDateTime;
     }
-    public async void PathSetLastWriteTimeUtc(string Path, DateTime Time)
+    public async System.Threading.Tasks.Task PathSetLastWriteTimeUtc(string Path, DateTime Time)
     {
         //System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
         //t.Wait();
@@ -835,7 +835,7 @@ using Android.Graphics;
             int RunRes = clusterMap[0];
             if (IsRTL)
             {
-                XMLRender.ArabicData.LigatureInfo[] array = XMLRender.ArabicData.GetLigatures(Str, false, Forms);
+                XMLRender.ArabicData.LigatureInfo[] array = AppSettings.ArbData.GetLigatures(Str, false, Forms);
                 for (int CharCount = 0; CharCount < clusterMap.Length - 1; CharCount++)
                 {
                     int RunCount = 0;
@@ -983,11 +983,24 @@ using Android.Graphics;
 #endif
     public class AppSettings : INotifyPropertyChanged
     {
+        public static XMLRender.PortableMethods _PortableMethods;
+        public static XMLRender.ArabicData ArbData;
+        public static IslamMetadata.Arabic Arb;
+        public static IslamMetadata.CachedData ChData;
+        public static IslamMetadata.TanzilReader TR;
         public AppSettings() { }
-        public static void InitDefaultSettings()
+        public async static System.Threading.Tasks.Task InitDefaultSettings()
         {
-            XMLRender.PortableMethods.FileIO = new WindowsRTFileIO();
-            XMLRender.PortableMethods.Settings = new WindowsRTSettings();
+            _PortableMethods = new XMLRender.PortableMethods();
+            await _PortableMethods.Init(new WindowsRTFileIO(), new WindowsRTSettings());
+            ArbData = new XMLRender.ArabicData();
+            await ArbData.Init(_PortableMethods);
+            Arb = new IslamMetadata.Arabic();
+            ChData = new IslamMetadata.CachedData();
+            await Arb.Init(_PortableMethods, ArbData, ChData);
+            await ChData.Init(_PortableMethods, ArbData, Arb);
+            TR = new IslamMetadata.TanzilReader();
+            TR.Init(_PortableMethods, Arb, ArbData, ChData);
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))
             {
                 strSelectedFont = "Times New Roman";
@@ -1022,11 +1035,11 @@ using Android.Graphics;
             }
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentTranslation"))
             {
-                iSelectedTranslation = IslamMetadata.TanzilReader.GetTranslationIndex(String.Empty);
+                iSelectedTranslation = AppSettings.TR.GetTranslationIndex(String.Empty);
             }
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentReciter"))
             {
-                iSelectedReciter = IslamMetadata.AudioRecitation.GetReciterIndex(String.Empty);
+                iSelectedReciter = IslamMetadata.AudioRecitation.GetReciterIndex(String.Empty, AppSettings.ChData.IslamData.ReciterList);
             }
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("Bookmarks"))
             {
@@ -1050,7 +1063,7 @@ using Android.Graphics;
             }
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("LoopingMode"))
             {
-                LoopingMode = IslamMetadata.CachedData.IslamData.LoopingModeList.DefaultLoopingMode;
+                LoopingMode = AppSettings.ChData.IslamData.LoopingModeList.DefaultLoopingMode;
             }
         }
         public static string LoopingMode { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["LoopingMode"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["LoopingMode"] = value; } }
@@ -1058,7 +1071,7 @@ using Android.Graphics;
         {
             get
             {
-                return new List<ComboPair>(IslamMetadata.CachedData.IslamData.LoopingModeList.LoopingModes.Select((Mode) => { return new ComboPair() { KeyString = Mode.Name, ValueString = XMLRender.Utility.LoadResourceString("IslamInfo_" + Mode.Name) }; }));
+                return new List<ComboPair>(AppSettings.ChData.IslamData.LoopingModeList.LoopingModes.Select((Mode) => { return new ComboPair() { KeyString = Mode.Name, ValueString = AppSettings._PortableMethods.LoadResourceString("IslamInfo_" + Mode.Name) }; }));
             }
         }
         public static bool bAutomaticAdvanceVerse { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["AutomaticAdvanceVerse"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["AutomaticAdvanceVerse"] = value; } }
@@ -1126,24 +1139,24 @@ using Android.Graphics;
             public string KeyString { get; set; }
             public string ValueString { get; set; }
         }
-        public ComboPair SelectedReciter { get { return ReciterList.First((Item) => Item.KeyString == IslamMetadata.CachedData.IslamData.ReciterList.Reciters[iSelectedReciter].Name); } set { if (value != null) { iSelectedReciter = Array.FindIndex(IslamMetadata.CachedData.IslamData.ReciterList.Reciters, (Reciter) => Reciter.Name == value.KeyString); } } }
+        public ComboPair SelectedReciter { get { return ReciterList.First((Item) => Item.KeyString == AppSettings.ChData.IslamData.ReciterList.Reciters[iSelectedReciter].Name); } set { if (value != null) { iSelectedReciter = Array.FindIndex(AppSettings.ChData.IslamData.ReciterList.Reciters, (Reciter) => Reciter.Name == value.KeyString); } } }
         public List<ComboPair> _ReciterList;
         public List<ComboPair> ReciterList
         {
             get
             {
-                if (_ReciterList == null) _ReciterList = new List<ComboPair>(IslamMetadata.CachedData.IslamData.ReciterList.Reciters.Select((Reciter) => { return new ComboPair() { KeyString = Reciter.Name, ValueString = Reciter.Reciter + (Reciter.BitRate == 0 ? string.Empty : (" [" + Reciter.BitRate.ToString() + "kbps]")) }; }));
+                if (_ReciterList == null) _ReciterList = new List<ComboPair>(AppSettings.ChData.IslamData.ReciterList.Reciters.Select((Reciter) => { return new ComboPair() { KeyString = Reciter.Name, ValueString = Reciter.Reciter + (Reciter.BitRate == 0 ? string.Empty : (" [" + Reciter.BitRate.ToString() + "kbps]")) }; }));
                 return _ReciterList;
             }
         }
 
         public static int iSelectedTranslation { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"] = value; } }
-        public string SelectedTranslation { get { return IslamMetadata.CachedData.IslamData.Translations.TranslationList[iSelectedTranslation].Name; } set { if (value != null) { iSelectedTranslation = Array.FindIndex(IslamMetadata.CachedData.IslamData.Translations.TranslationList, (Translation) => Translation.Name == value); } } }
+        public string SelectedTranslation { get { return AppSettings.ChData.IslamData.Translations.TranslationList[iSelectedTranslation].Name; } set { if (value != null) { iSelectedTranslation = Array.FindIndex(AppSettings.ChData.IslamData.Translations.TranslationList, (Translation) => Translation.Name == value); } } }
         public List<string> TranslationList
         {
             get
             {
-                return new List<string>(IslamMetadata.CachedData.IslamData.Translations.TranslationList.Where((Translation) => { return Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Name || Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Parent.Name; }).Select((Translation) => Translation.Name));
+                return new List<string>(AppSettings.ChData.IslamData.Translations.TranslationList.Where((Translation) => { return Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Name || Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Parent.Name; }).Select((Translation) => Translation.Name));
             }
         }
         public static bool bUseColoring { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["UseColoring"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["UseColoring"] = value; } }
@@ -1172,7 +1185,7 @@ using Android.Graphics;
                 }
             }
         }
-        public string AppLanguage { get { return new Windows.Globalization.Language(strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage).DisplayName + " (" + (strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage) + ")"; } set { strAppLanguage = value.Substring(value.LastIndexOf("(")).Trim('(', ')'); PropertyChanged(this, new PropertyChangedEventArgs("TranslationList")); iSelectedTranslation = IslamMetadata.TanzilReader.GetTranslationIndex(String.Empty); PropertyChanged(this, new PropertyChangedEventArgs("SelectedTranslation")); } }
+        public string AppLanguage { get { return new Windows.Globalization.Language(strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage).DisplayName + " (" + (strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage) + ")"; } set { strAppLanguage = value.Substring(value.LastIndexOf("(")).Trim('(', ')'); PropertyChanged(this, new PropertyChangedEventArgs("TranslationList")); iSelectedTranslation = AppSettings.TR.GetTranslationIndex(String.Empty); PropertyChanged(this, new PropertyChangedEventArgs("SelectedTranslation")); } }
 
         public List<string> AppLanguageList
         {
@@ -1268,11 +1281,11 @@ using Android.Graphics;
                 {
                     if (IsBookmarks)
                     {
-                        _Items = System.Linq.Enumerable.Select(AppSettings.Bookmarks, (Bookmark, Idx) => new MyListItem { TextItems = new List<string>() { IslamMetadata.TanzilReader.GetSelectionName(Bookmark[0], Bookmark[1], XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty) + " " + Bookmark[2].ToString() + ":" + Bookmark[3].ToString() }, Index = Idx });
+                        _Items = System.Linq.Enumerable.Select(AppSettings.Bookmarks, (Bookmark, Idx) => new MyListItem { TextItems = new List<string>() { AppSettings.TR.GetSelectionName(Bookmark[0], Bookmark[1], XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty) + " " + Bookmark[2].ToString() + ":" + Bookmark[3].ToString() }, Index = Idx });
                     }
                     else
                     {
-                        _Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetSelectionNames((Index - 1).ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() });
+                        _Items = System.Linq.Enumerable.Select(AppSettings.TR.GetSelectionNames((Index - 1).ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty), (Arr, Idx) => new MyListItem { TextItems = new List<string>(((string)(Arr.Cast<object>()).First()).Split('(', ')')), Index = (int)(Arr.Cast<object>()).Last() });
                     }
                 }
                 return _Items;
@@ -1544,7 +1557,7 @@ using Android.Graphics;
             {
                 if (IsArabic)
                 {
-                    char[] Forms = XMLRender.ArabicData.GetPresentationForms;
+                    char[] Forms = AppSettings.ArbData.GetPresentationForms;
                     //XMLRender.ArabicData.LigatureInfo[] ligs = XMLRender.ArabicData.GetLigatures(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), false, Forms);
                     short[] chpos = TextShaping.GetWordDiacriticClusters(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, IsArabic);
                     int pos = value[0].ItemText.Length;
@@ -1553,7 +1566,7 @@ using Android.Graphics;
                     {
                         if (value[count].ItemText.Length != 0 && pos != 0 && chpos[pos] == chpos[pos - 1])
                         {
-                            if (!XMLRender.ArabicData.IsDiacritic(value[count].ItemText.First()) && ((value[count - 1].Clr & 0xFFFFFF) != 0x000000)) { value[count - 1].Clr = value[count].Clr; }
+                            if (!AppSettings.ArbData.IsDiacritic(value[count].ItemText.First()) && ((value[count - 1].Clr & 0xFFFFFF) != 0x000000)) { value[count - 1].Clr = value[count].Clr; }
                             if (chpos[pos] == chpos[pos + value[count].ItemText.Length - 1])
                             {
                                 pos -= value[count - 1].ItemText.Length;

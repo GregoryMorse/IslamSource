@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Inyuma</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Kugabanya ingano y’imyandikire</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Kongera ingano y’imyandikire</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Amagenamiterere</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Ingano</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Ubushyinguropaji</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Gukoporora mu bubikogateganyo</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Gusubika</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Gucuranga</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Gusangira</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Ibyerekeye</value>
+  </data>
+</root>

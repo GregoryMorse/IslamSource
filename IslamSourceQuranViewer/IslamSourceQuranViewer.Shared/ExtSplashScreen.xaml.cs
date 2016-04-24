@@ -136,6 +136,7 @@ namespace IslamSourceQuranViewer
         }
         async System.Threading.Tasks.Task DismissExtendedSplash()
         {
+            await AppSettings.InitDefaultSettings();
             await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,
                 () =>
                 {

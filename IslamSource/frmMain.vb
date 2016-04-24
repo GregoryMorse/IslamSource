@@ -2,6 +2,12 @@
 Imports IslamMetadata
 Imports XMLRender
 Public Class frmMain
+    Private _PortableMethods As PortableMethods
+    Private TR As TanzilReader
+    Private Arb As Arabic
+    Private DocBuild As DocBuilder
+    Private ChData As CachedData
+    Private RAWeb As HostPageUtility.RenderArrayWeb
     Public Class WindowsSettings
         Implements PortableSettings
         Public ReadOnly Property CacheDirectory As String Implements PortableSettings.CacheDirectory
@@ -80,30 +86,30 @@ Public Class frmMain
         Return Nothing
     End Function
     Private Sub CheckMorphology()
-        For TestCount = 0 To CachedData.IslamData.PartsOfSpeech.Length - 1
-            Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.PartsOfSpeech(TestCount).Id)
+        For TestCount = 0 To ChData.IslamData.PartsOfSpeech.Length - 1
+            _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.PartsOfSpeech(TestCount).Id)
         Next
-        For TestCount = 0 To CachedData.IslamData.FeaturesOfSpeech.Length - 1
-            Utility.LoadResourceString("IslamInfo_" + CachedData.IslamData.FeaturesOfSpeech(TestCount).Id)
+        For TestCount = 0 To ChData.IslamData.FeaturesOfSpeech.Length - 1
+            _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.FeaturesOfSpeech(TestCount).Id)
         Next
-        Dim Text As List(Of String()) = TanzilReader.GetQuranText(CachedData.XMLDocMain, 1, 1, 114, 6)
+        Dim Text As List(Of String()) = TR.GetQuranText(ChData.XMLDocMain, 1, 1, 114, 6)
         For Count As Integer = 0 To 113
             For VerseCount = 0 To Text(Count).Length - 1
                 Dim Words As String() = New List(Of String)(Linq.Enumerable.Where(Text(Count)(VerseCount).Split(" "c), Function(It) It.Length <> 1)).ToArray()
                 For WordCount = 0 To Words.Length - 1
-                    CachedData.GetMorphologicalDataForWord(Count + 1, VerseCount + 1, WordCount + 1)
+                    ChData.GetMorphologicalDataForWord(Count + 1, VerseCount + 1, WordCount + 1)
                 Next
             Next
         Next
     End Sub
-    Private Sub CompareWordCounts()
-        Dim Text As List(Of String()) = TanzilReader.GetQuranText(CachedData.XMLDocMain, 1, 1, 114, 6)
-        'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.corpus.txt")
-        'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.qurandev.txt")
-        'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\en.w4w.shehnazshaikh.txt")
-        'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\id.w4w.terjemah.txt")
-        'Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\ur.w4w.hafiznazarmuhammad.txt")
-        Dim Lines As String() = Utility.ReadAllLines("..\..\..\metadata\tr.w4w.suleymanates.txt")
+    Private Async Sub CompareWordCounts()
+        Dim Text As List(Of String()) = TR.GetQuranText(ChData.XMLDocMain, 1, 1, 114, 6)
+        'Dim Lines As String() = Await _PortableMethods.ReadAllLines("..\..\..\metadata\en.w4w.corpus.txt")
+        'Dim Lines As String() = Await _PortableMethods.ReadAllLines("..\..\..\metadata\en.w4w.qurandev.txt")
+        'Dim Lines As String() = Await _PortableMethods.ReadAllLines("..\..\..\metadata\en.w4w.shehnazshaikh.txt")
+        'Dim Lines As String() = Await _PortableMethods.ReadAllLines("..\..\..\metadata\id.w4w.terjemah.txt")
+        'Dim Lines As String() = Await _PortableMethods.ReadAllLines("..\..\..\metadata\ur.w4w.hafiznazarmuhammad.txt")
+        Dim Lines As String() = Await _PortableMethods.ReadAllLines("..\..\..\metadata\tr.w4w.suleymanates.txt")
         Dim LineCount As Integer = 0
         For Count As Integer = 0 To 113
             For VerseCount = 0 To Text(Count).Length - 1
@@ -125,14 +131,14 @@ Public Class frmMain
         Next
     End Sub
 
-    Private Sub UtilityTestCode()
-        IslamMetadata.CachedData.GetMorphologicalDataByVerbScale()
+    Private Async Sub UtilityTestCode()
+        ChData.GetMorphologicalDataByVerbScale()
         'Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
         'clsWarshQuran.HindiW4W()
         'Dim Strs As New List(Of String)
         'For Chapter = 1 To 114
-        '    For SubCount = 1 To TanzilReader.GetVerseCount(Chapter)
-        '        Dim Text As String() = Utility.ReadAllLines("..\..\..\Resources\tr.w4w\kelime.asp@sure=" + CStr(Chapter) + "&ayet=" + CStr(SubCount))
+        '    For SubCount = 1 To TR.GetVerseCount(Chapter)
+        '        Dim Text As String() = _PortableMethods.ReadAllLines("..\..\..\Resources\tr.w4w\kelime.asp@sure=" + CStr(Chapter) + "&ayet=" + CStr(SubCount))
         '        Dim Str As String = String.Empty
         '        Dim SplitStr As String = String.Empty
         '        Dim bComb As Integer = 0
@@ -156,7 +162,7 @@ Public Class frmMain
         '        Strs.Add(Str)
         '    Next
         'Next
-        'Utility.WriteAllLines("..\..\..\metadata\tr.w4w.suleyman.ates.txt", Strs.ToArray())
+        '_PortableMethods.WriteAllLines("..\..\..\metadata\tr.w4w.suleyman.ates.txt", Strs.ToArray())
         'CheckMorphology()        
         'dataroot -> ayat -> TarjumaLafziDrFarhatHashmi, TarjumaLafziFahmulQuran, TarjumaLafziNazarAhmad
         'CompareWordCounts()
@@ -210,79 +216,80 @@ Public Class frmMain
         'state=".*".*>(?:(?!.*trans-unit.*).*\n)*?.*</target>\r\n.*</note> -> state="new"></target>
         'state="needs-review-translation"(.*)&lt;html&gt;(?:(?!.*trans-unit.*).*\n)+?.*&gt;</ -> state="new"></
         '\s*<it id="1" pos="open">&lt;(.*)&gt;</it> -> $1
-        'TanzilReader.WordFileToResource("..\..\..\metadata\id.w4w.terjemah.txt", "..\..\..\ResourceToolkitTempForeign\QuranResources.resx")
-        'TanzilReader.ResourceToWordFile("..\..\..\ResourceToolkitTempForeign\QuranResources.ms.resx", "..\..\..\metadata\ms.w4w.terjemah.txt")
-        'TanzilReader.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
-        'TanzilReader.FileToResource("..\..\..\metadata\en.sahih.txt", "..\..\..\ResourceToolkitQuran\QuranResources.resx")
+        '" onmouseover=.*(?=</target>) ->
+        'TR.WordFileToResource("..\..\..\metadata\id.w4w.terjemah.txt", "..\..\..\ResourceToolkitTempForeign\QuranResources.resx")
+        'TR.ResourceToWordFile("..\..\..\ResourceToolkitTempForeign\QuranResources.ms.resx", "..\..\..\metadata\ms.w4w.terjemah.txt")
+        'TR.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")
+        'TR.FileToResource("..\..\..\metadata\en.sahih.txt", "..\..\..\ResourceToolkitQuran\QuranResources.resx")
         For Each File As IO.FileInfo In New IO.DirectoryInfo("..\..\..\ResourceToolkitTemp\").EnumerateFiles("QuranResources.*.resx")
-            TanzilReader.ResourceToWordFile(File.FullName, "..\..\..\metadata\" + File.Name.Replace("QuranResources.", String.Empty).Replace(".resx", String.Empty) + ".w4w.corpus.txt")
+            Await TR.ResourceToWordFile(File.FullName, "..\..\..\metadata\" + File.Name.Replace("QuranResources.", String.Empty).Replace(".resx", String.Empty) + ".w4w.corpus.txt")
         Next
-        'Utility.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
+        '_PortableMethods.WordFileToResource("..\..\..\metadata\en.w4w.txt", "..\..\..\ResourceToolkit\W4WResources.resx")
         For Each File As IO.FileInfo In New IO.DirectoryInfo("..\..\..\ResourceToolkit\").EnumerateFiles("W4WResources.*.resx")
-            Utility.ResourceToWordFile(File.FullName, "..\..\..\metadata\" + File.Name.Replace("W4WResources.", String.Empty).Replace(".resx", String.Empty) + ".w4w.txt")
+            Await _PortableMethods.ResourceToWordFile(File.FullName, "..\..\..\metadata\" + File.Name.Replace("W4WResources.", String.Empty).Replace(".resx", String.Empty) + ".w4w.txt")
         Next
         'clsWarshQuran.ParseQuran()
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.UthmaniMin, TanzilReader.ArabicPresentation.None)
-        TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Simple, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleClean, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleMin, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.ArabicPresentation.None)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Simple, TanzilReader.ArabicPresentation.None)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleMin, TanzilReader.ArabicPresentation.None)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleClean, TanzilReader.ArabicPresentation.None)
-        'TanzilReader.CompareQuranFormats(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
-        'TanzilReader.CheckNotablePatterns()
-        'TanzilReader.FindMinimalVersesForCoverage()
-        'TanzilReader.CheckSequentialRules()
-        'TanzilReader.CheckMutualExclusiveRules(False, 4)
-        'TanzilReader.CheckMutualExclusiveRules(True, 4)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Warsh, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.UthmaniMin, TanzilReader.ArabicPresentation.None)
+        TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Simple, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleClean, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleMin, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleEnhanced, TanzilReader.ArabicPresentation.None)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.Simple, TanzilReader.ArabicPresentation.None)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleMin, TanzilReader.ArabicPresentation.None)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Hafs, TanzilReader.QuranScripts.SimpleClean, TanzilReader.ArabicPresentation.None)
+        'TR.CompareQuranFormats(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.ChangeQuranFormat(TanzilReader.QuranTexts.Hafs, TanzilReader.QuranTexts.Warsh, TanzilReader.QuranScripts.Uthmani, TanzilReader.ArabicPresentation.Buckwalter)
+        'TR.CheckNotablePatterns()
+        'TR.FindMinimalVersesForCoverage()
+        'TR.CheckSequentialRules()
+        'TR.CheckMutualExclusiveRules(False, 4)
+        'TR.CheckMutualExclusiveRules(True, 4)
 
         Dim IndexToVerse As Integer()() = Nothing
         'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
         'IslamMetadata.Arabic.MakeQuranCacheMetarules()
         'Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
-        Arabic.TransliterateWithRulesColor(Arabic.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), "PlainRoman", True, False, Arabic.FilterMetadataStops(Arabic.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), Arabic.GetMetarules(Arabic.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), CachedData.RuleMetas("UthmaniQuran")), Nothing))
-        Text = TanzilReader.GetQuranText(CachedData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
-        'Debug.Print(Arabic.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
-        Debug.Print(Arabic.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, Arabic.FilterMetadataStops(Text, Arabic.GetMetarules(Text, CachedData.RuleMetas("UthmaniQuran")), TanzilReader.GenerateDefaultStops(Text))))
-        For Selection = 33 To TanzilReader.GetChapterCount()
-            TanzilReader.GetRenderedQuranText(ArabicData.TranslitScheme.RuleBased, String.Empty, String.Empty, "0", Selection.ToString(), String.Empty, "0", "1")
+        Arb.TransliterateWithRulesColor(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), "PlainRoman", True, False, Arabic.FilterMetadataStops(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), Arb.GetMetarules(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), ChData.RuleMetas("UthmaniQuran")), Nothing))
+        Text = TanzilReader.GetQuranText(ChData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
+        'Debug.Print(Arb.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
+        Debug.Print(Arb.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, Arabic.FilterMetadataStops(Text, Arb.GetMetarules(Text, ChData.RuleMetas("UthmaniQuran")), TR.GenerateDefaultStops(Text))))
+        For Selection = 33 To TR.GetChapterCount()
+            Await TR.GetRenderedQuranText(ArabicData.TranslitScheme.RuleBased, String.Empty, String.Empty, "0", Selection.ToString(), String.Empty, "0", "1")
             Debug.Print(CStr(Selection))
         Next
         'Debug.Print(Arabic.TransliterateToScheme(System.Text.RegularExpressions.Regex.Match(Text, CachedData.GetPattern("ContinuousMatch")).Value, ArabicData.TranslitScheme.Literal, String.Empty))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\Resources.en.resx"))
         'Utility.SortResX(Utility.GetFilePath("IslamResources\My Project\Resources.resx"))
-        CachedData.DoErrorCheck()
+        ChData.DoErrorCheck(TR, DocBuild)
         'Dim RenderArr As RenderArray = Phrases.DoGetRenderedCatText(String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.IslamData.Phrases, 0)
         'HostPageUtility.RenderArray.OutputPdf("test.pdf", RenderArr.Items)
-        For Count As Integer = 39 To TanzilReader.GetChapterCount()
-            Dim RA As RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, Count, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TanzilReader.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True)
-            HostPageUtility.RenderArrayWeb.OutputPdf("test" + CStr(Count) + ".pdf", RA.Items)
+        For Count As Integer = 39 To TR.GetChapterCount()
+            Dim RA As RenderArray = Await TR.GetQuranTextBySelection(String.Empty, 0, Count, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TR.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True)
+            RAWeb.OutputPdf("test" + CStr(Count) + ".pdf", RA.Items)
         Next
     End Sub
     Private PageSet As PageLoader
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
-        PortableMethods.FileIO = New WindowsWebFileIO
-        PortableMethods.Settings = New WindowsSettings
+    Private Async Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        _PortableMethods = New PortableMethods
+        Await _PortableMethods.Init(New WindowsWebFileIO, New WindowsSettings)
         PageSet = New PageLoader
         UtilityTestCode()
         For Index = 0 To PageSet.Pages.Count - 1
-            Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, Utility.LoadResourceString(PageSet.Pages.Item(Index).Text))
+            Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, _PortableMethods.LoadResourceString(PageSet.Pages.Item(Index).Text))
             For SubIndex = 0 To PageSet.Pages.Item(Index).Page.Count - 1
                 If PageLoader.IsListItem(PageSet.Pages.Item(Index).Page(SubIndex)) AndAlso DirectCast(PageSet.Pages.Item(Index).Page(SubIndex), PageLoader.ListItem).IsSection Then
-                    newNode.Nodes.Add(PageSet.Pages.Item(Index).PageName + CStr(If(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name <> String.Empty, "#" + DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name, String.Empty)), Utility.LoadResourceString(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Title))
+                    newNode.Nodes.Add(PageSet.Pages.Item(Index).PageName + CStr(If(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name <> String.Empty, "#" + DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name, String.Empty)), _PortableMethods.LoadResourceString(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Title))
                 End If
             Next
         Next
         Dim Renderer As New MultiLangRender
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
-        Renderer.RenderArray = TanzilReader.GetQuranTextBySelection(String.Empty, 0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TanzilReader.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True).Items
+        Renderer.RenderArray = (Await TR.GetQuranTextBySelection(String.Empty, 0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TR.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True)).Items
         gbMain.Controls.Add(Renderer)
     End Sub
 

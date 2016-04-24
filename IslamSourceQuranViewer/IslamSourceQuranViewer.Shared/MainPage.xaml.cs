@@ -113,7 +113,7 @@ namespace IslamSourceQuranViewer
             List<MyTabItem> items = null;
             System.Threading.Tasks.Task t = new System.Threading.Tasks.Task(() =>
             {
-                items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx + 1 }).ToList();
+                items = System.Linq.Enumerable.Select(AppSettings.TR.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx + 1 }).ToList();
                 items.Insert(0, new MyTabItem { IsBookmarks = true, Title = new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Bookmarks/Text"), Index = 0 });
             });
             t.Start();

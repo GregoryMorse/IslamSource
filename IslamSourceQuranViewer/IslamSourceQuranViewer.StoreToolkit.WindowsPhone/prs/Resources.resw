@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Back.Label" xml:space="preserve">
+    <value>عقب</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>کاهش اندازه رسم خط</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>افزایش اندازه رسم خط</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>اندازه</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>لسان حالت اصلی</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>اضافه کردن &amp;محل یاب</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>محل یاب ها</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>به کلیپ بورد رونویسی نمایید</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>مکث</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>پخش کردن</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>شریک سازی</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>در مورد</value>
+  </data>
+</root>

@@ -250,7 +250,7 @@ Urdu word-by-word translation by Hafiz Nazar Muhammad credited to Easy Quran Wa 
 Other word-by-word translations as well as other translations in the program credited to Microsoft Translation Provider (http://www.microsoft.com/en-us/translator) and Google Translate (http://translate.google.com) and may not be accurate.  For Malaysian word-by-word Qur'an, the source is Indonesian.  For all other word-by-word Qur'an, the source is the English Quranic Arabic Corpus.
 Other audio recitations with bitrate shown credited to Every Ayah (http://www.everyayah.com).
 Unicode data credited to The Unicode Consortium (http://www.unicode.org)</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;മെറ്റാഡാറ്റ, തൻസീൽ പദ്ധതി (http://tanzil.net) ക്രെഡിറ്റ് പട്ടികപ്പെടുത്തിയതിനേക്കാളും ഒഴികെ എല്ലാ പരിഭാഷകൾ ചില ഓഡിയോ പാരായണ കൂടെ അറബിക് ഖുർആൻ.&lt;br&gt;</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion"></target>
         </trans-unit>
       </group>
     </body>

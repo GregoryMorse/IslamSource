@@ -42,7 +42,6 @@ namespace IslamSourceQuranViewer
 #if WINDOWS_PHONE_APP
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
 #endif
-            AppSettings.InitDefaultSettings();
 #if STORETOOLKIT
             AppSettings.strAppLanguage = "";
 #endif

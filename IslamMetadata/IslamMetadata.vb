@@ -4,6 +4,7 @@ Imports IslamMetadata
 Imports XMLRender
 
 Public Class PrayerTime
+    Private Shared _PortableMethods As PortableMethods
     Public Shared Function GetMonthName(Name As String) As String
         Dim CultureInfo As Globalization.CultureInfo
         If Name = "hijrimonthname" Then
@@ -44,7 +45,7 @@ Public Class PrayerTime
         Next
         Return RetArray
     End Function
-    Public Shared Function GetPrayerTimes(Strings As String(), GeoData As String, _PortableMethods As PortableMethods) As Array()
+    Public Shared Function GetPrayerTimes(Strings As String(), GeoData As String) As Array()
         Dim PrayTimes As New PrayTime.PrayTime
         Dim Count As Integer
         Dim TimeNow As DateTime = DateTime.Today
@@ -113,7 +114,7 @@ Public Class Arabic
     Private _PortableMethods As PortableMethods
     Private ArbData As ArabicData
     Private ChData As CachedData
-    Public Async Sub Init(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewChData As CachedData)
+    Public Async Function Init(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewChData As CachedData) As Threading.Tasks.Task
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
         ChData = NewChData
@@ -228,7 +229,7 @@ Public Class Arabic
                 Next
             End If
         Next
-    End Sub
+    End Function
     Public Function GetRecitationSymbol(Index As Integer) As String
         Return ArbData.ArabicLetters(Index).UnicodeName + ArabicData.LeftToRightOverride + " (" + ArabicData.PopDirectionalFormatting + ArbData.FixStartingCombiningSymbol(ArbData.ArabicLetters(Index).Symbol) + ArabicData.LeftToRightOverride + ")" + ArabicData.PopDirectionalFormatting
     End Function
@@ -2200,7 +2201,8 @@ Public Class CachedData
     Private _PortableMethods As PortableMethods
     Private ArbData As ArabicData
     Private Arb As Arabic
-    Public Async Function Init(NewArbData As ArabicData, NewArb As Arabic) As Threading.Tasks.Task
+    Public Async Function Init(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewArb As Arabic) As Threading.Tasks.Task
+        _PortableMethods = NewPortableMethods
         ArbData = NewArbData
         Arb = NewArb
         If _ObjIslamData Is Nothing Then
