@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Mō</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabic Qur'an ki metadata me Translations katoa me etahi mau tai'oraa oro anake te hunga i tabulahia i kiia ki a Tanzil Project (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>

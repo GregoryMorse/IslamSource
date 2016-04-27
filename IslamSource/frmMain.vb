@@ -216,7 +216,7 @@ Public Class frmMain
         'state=".*".*>(?:(?!.*trans-unit.*).*\n)*?.*</target>\r\n.*</note> -> state="new"></target>
         'state="needs-review-translation"(.*)&lt;html&gt;(?:(?!.*trans-unit.*).*\n)+?.*&gt;</ -> state="new"></
         '\s*<it id="1" pos="open">&lt;(.*)&gt;</it> -> $1
-        '" onmouseover=.*(?=</target>) ->
+        'state="needs-review-translation"(.*)" onmouseover=.*(?=</target>) -> state="new">
         'TR.WordFileToResource("..\..\..\metadata\id.w4w.terjemah.txt", "..\..\..\ResourceToolkitTempForeign\QuranResources.resx")
         'TR.ResourceToWordFile("..\..\..\ResourceToolkitTempForeign\QuranResources.ms.resx", "..\..\..\metadata\ms.w4w.terjemah.txt")
         'TR.WordFileToResource("..\..\..\metadata\en.w4w.corpus.txt", "..\..\..\ResourceToolkitTemp\QuranResources.resx")

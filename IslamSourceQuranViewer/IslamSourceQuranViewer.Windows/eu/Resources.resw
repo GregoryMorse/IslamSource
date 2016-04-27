@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Honi buruz</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabic metadata eta Translations guztiak eta audio errezitaldi batzuk horiek zerrendatuta Tanzil Project (http://tanzil.net) ordainduko ezik Qur'an.&lt;br&gt;</value>
-  </data>
 </root>

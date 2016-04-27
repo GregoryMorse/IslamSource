@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Acerca de</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Corán árabe con metadatos e todas as traducións e algunhas recitações de audio excepto aqueles listados imputado na Tanzil Proxecto (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>

@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Mayelana</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Arabic Qur'an ne imethadatha zonke Ukuhumusha ezinye recitations audio ngaphandle labo ababaliweyo uyasho Tanzil Project (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>

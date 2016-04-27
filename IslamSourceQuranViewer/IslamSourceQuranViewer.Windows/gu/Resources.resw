@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>આના વિષે</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;મેટાડેટા અને બધા ભાષાંતરો અને Tanzil પ્રોજેક્ટ (http://tanzil.net) જમા સૂચિબદ્ધ સિવાય કેટલાક ઓડિયો પાઠમાં સાથે અરબી કુરાન.&lt;br&gt;</value>
-  </data>
 </root>

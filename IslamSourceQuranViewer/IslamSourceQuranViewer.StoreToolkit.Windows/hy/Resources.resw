@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Մասին</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value></value>
-  </data>
 </root>

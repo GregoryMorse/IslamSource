@@ -236,6 +236,9 @@
     <Content Include="..\..\metadata\UnicodeData.txt">
       <Link>metadata\UnicodeData.txt</Link>
     </Content>
+    <Content Include="..\..\metadata\ArabicShaping.txt">
+      <Link>metadata\ArabicShaping.txt</Link>
+    </Content>
     <Content Include="Assets\storelogo.scale-140.png" />
     <Content Include="Assets\storelogo.scale-180.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />

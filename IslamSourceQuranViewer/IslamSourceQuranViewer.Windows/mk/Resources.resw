@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>За</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Арапски Куранот повеќе податоци и сите преводи и некои аудио рецитали, освен оние кои се наведени се припишани Tanzil проект (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>

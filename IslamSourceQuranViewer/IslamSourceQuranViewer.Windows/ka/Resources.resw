@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>შესახებ</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;არაბული ყურანი მეტადატის და ყველა თარგმანები და რამდენიმე აუდიო recitations გარდა ჩამოთვლილი ჩაირიცხება Tanzil Project (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>

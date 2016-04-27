@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Оиди барнома</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Қуръоне ба забони арабӣ бо луѓати ва ҳамаи тарҷума ва баъзе recitations аудио ба ғайр аз сархатҳои іисоб ба лоиҳаи Tanzil (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>

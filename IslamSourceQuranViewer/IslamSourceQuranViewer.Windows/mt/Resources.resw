@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Dwar</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Għarbi Qur'an b'metadata u Traduzzjonijiet kollha u xi recitations awdjo minbarra dawk elenkati akkreditati lill tanzil Proġett (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>

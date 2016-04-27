@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>ስለ</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;ዲበ ሁሉ ትርጉሞች እና Tanzil ፕሮጀክት (http://tanzil.net) ተቆጠረለት ከተጠቀሱት በስተቀር አንዳንድ የድምጽ recitations ጋር ዐረብኛ ቁርኣን.&lt;br&gt;</value>
-  </data>
 </root>

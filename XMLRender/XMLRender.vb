@@ -486,7 +486,7 @@ Public Class ArabicData
     End Structure
     Private _ArabicLetters() As ArabicSymbol
     Public Async Function LoadArabic() As Task
-        If Not _PortableMethods.DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue) Is Nothing And Not _PortableMethods.DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue) Is Nothing Then
+        If Not Await _PortableMethods.DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue) Is Nothing And Not Await _PortableMethods.DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue) Is Nothing Then
             _ArabicLetters = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicSymbol()))).ReadObject(New IO.MemoryStream(Await _PortableMethods.DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue))), ArabicData.ArabicSymbol())
             _ArabicCombos = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicCombo()))).ReadObject(New IO.MemoryStream(Await _PortableMethods.DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue))), ArabicData.ArabicCombo())
             Return

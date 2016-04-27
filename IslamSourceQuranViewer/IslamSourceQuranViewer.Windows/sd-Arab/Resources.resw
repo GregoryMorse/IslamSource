@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>بابت</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;بازارن ۽ Tanzil پروجيڪٽ (http://tanzil.net) کي ڏنل آھن تن کان سواء سڀني ترجمو ۽ ڪجهه ٻڌڻ recitations سان گڏ عربي قرآن.&lt;br&gt;</value>
-  </data>
 </root>

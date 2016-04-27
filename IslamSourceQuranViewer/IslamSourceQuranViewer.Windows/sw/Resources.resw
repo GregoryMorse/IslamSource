@@ -108,7 +108,4 @@
   <data name="About.Label" xml:space="preserve">
     <value>Kuhusu</value>
   </data>
-  <data name="AboutInfo.Text" xml:space="preserve">
-    <value>" onmouseover="this.style.backgroundColor='#ebeff9'" onmouseout="this.style.backgroundColor='#fff'"&gt;Kiarabu Qur'an na metadata na tafsiri zote na baadhi visomo audio isipokuwa wale waliotajwa sifa kwa Tanzil Project (http://tanzil.net).&lt;br&gt;</value>
-  </data>
 </root>
