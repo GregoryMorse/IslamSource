@@ -486,9 +486,11 @@ Public Class ArabicData
     End Structure
     Private _ArabicLetters() As ArabicSymbol
     Public Async Function LoadArabic() As Task
-        If Not Await _PortableMethods.DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue) Is Nothing And Not Await _PortableMethods.DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue) Is Nothing Then
-            _ArabicLetters = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicSymbol()))).ReadObject(New IO.MemoryStream(Await _PortableMethods.DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue))), ArabicData.ArabicSymbol())
-            _ArabicCombos = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicCombo()))).ReadObject(New IO.MemoryStream(Await _PortableMethods.DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue))), ArabicData.ArabicCombo())
+        Dim LetterBytes As Byte() = Await _PortableMethods.DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue)
+        Dim ComboBytes As Byte() = Await _PortableMethods.DiskCache.GetCacheItem("ArabicCombos", DateTime.MinValue)
+        If Not LetterBytes Is Nothing And Not ComboBytes Is Nothing Then
+            _ArabicLetters = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicSymbol()))).ReadObject(New IO.MemoryStream(LetterBytes)), ArabicData.ArabicSymbol())
+            _ArabicCombos = CType((New Runtime.Serialization.DataContractSerializer(GetType(ArabicData.ArabicCombo()))).ReadObject(New IO.MemoryStream(ComboBytes)), ArabicData.ArabicCombo())
             Return
         End If
         Dim CharArr As New List(Of Integer)
@@ -966,7 +968,7 @@ Public Class ArabicData
     Private _PortableMethods As PortableMethods
     Public Async Function Init(NewPortableMethods As PortableMethods) As Task
         _PortableMethods = NewPortableMethods
-        Await GetJoiningData()
+        'Await GetJoiningData()
         Await GetDecompositionCombiningCatData()
         Await LoadArabic()
         _ArabicLetterMap = New Dictionary(Of Char, Integer)
@@ -994,7 +996,7 @@ Public Class ArabicData
         For Count As Integer = 0 To _LigatureCombos.Length - 1
             If Not _LigatureCombos(Count).Shaping Is Nothing Then
                 For SubCount As Integer = 0 To _LigatureCombos(Count).Shaping.Length - 1
-                    _LigatureShapes.Add(_LigatureCombos(Count).Shaping(SubCount), Count)
+                    If Not _LigatureShapes.ContainsKey(_LigatureCombos(Count).Shaping(SubCount)) Then _LigatureShapes.Add(_LigatureCombos(Count).Shaping(SubCount), Count)
                 Next
             End If
         Next
@@ -1010,11 +1012,11 @@ Public Class ArabicData
         Dim Strs As String() = Await _PortableMethods.ReadAllLines(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", "ArabicShaping.txt")))
         Dim Joiners As New Dictionary(Of Char, String)
         For Count = 0 To Strs.Length - 1
-            If Strs(Count)(0) <> "#" Then
+            If Strs(Count).Length <> 0 AndAlso Strs(Count)(0) <> "#" Then
                 Dim Vals As String() = Strs(Count).Split(";"c)
                 'C Join_Causing on Tatweel and ZeroWidthJoiner could be considered as Dual_Joining
                 'General Category Mn, Me, or Cf are T Transparent and all others are U Non_Joining
-                Joiners.Add(ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)), Vals(4))
+                Joiners.Add(ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)), Vals(3))
             End If
         Next
         Return Joiners

@@ -104,6 +104,7 @@ namespace IslamSourceQuranViewer
         void OnTapped(Windows.UI.Input.GestureRecognizer sender, Windows.UI.Input.TappedEventArgs args)
         {
             if (_holdObj != null) {
+                return;
                 object obj = ((_holdObj as StackPanel).DataContext as MyRenderItem).Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderStopContinue));
                 if (obj != null) {
                     //ContentPresenter, ItemsControl and ItemsPresenter in middle layer between higher and lower StackPanel

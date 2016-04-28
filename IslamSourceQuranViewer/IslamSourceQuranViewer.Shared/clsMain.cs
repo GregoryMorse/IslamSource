@@ -35,7 +35,7 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         //    t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
         //}
         //t.Wait();
-        Windows.Storage.StorageFile file = /*t.Result;*/ await ((rc != null && rc.IsMatch) ? rc.GetValueAsFileAsync() : Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath));
+        Windows.Storage.StorageFile file = /*t.Result;*/ ((rc != null && rc.IsMatch) ? await rc.GetValueAsFileAsync() : await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath));
         //System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForReadAsync();
         //tn.Wait();
         Stream Stream = /*tn.Result;*/ await file.OpenStreamForReadAsync();
@@ -997,8 +997,8 @@ using Android.Graphics;
             await ArbData.Init(_PortableMethods);
             Arb = new IslamMetadata.Arabic();
             ChData = new IslamMetadata.CachedData();
-            await Arb.Init(_PortableMethods, ArbData, ChData);
             await ChData.Init(_PortableMethods, ArbData, Arb);
+            await Arb.Init(_PortableMethods, ArbData, ChData);
             TR = new IslamMetadata.TanzilReader();
             TR.Init(_PortableMethods, Arb, ArbData, ChData);
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))

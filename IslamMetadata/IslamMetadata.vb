@@ -118,117 +118,138 @@ Public Class Arabic
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
         ChData = NewChData
-        If Not _PortableMethods.DiskCache.GetCacheItem("BuckwalterMap", DateTime.MinValue) Is Nothing Then
-            _BuckwalterMap = CType((New Runtime.Serialization.DataContractSerializer(GetType(Dictionary(Of Char, Integer)))).ReadObject(New IO.MemoryStream(Await _PortableMethods.DiskCache.GetCacheItem("BuckwalterMap", DateTime.MinValue))), Dictionary(Of Char, Integer))
-        Else
-            _BuckwalterMap = New Dictionary(Of Char, Integer)
-            For Index = 0 To ArbData.ArabicLetters.Length - 1
-                If (GetSchemeValueFromSymbol(ArbData.ArabicLetters(Index), "ExtendedBuckwalter")).Length <> 0 Then
-                    _BuckwalterMap.Add((GetSchemeValueFromSymbol(ArbData.ArabicLetters(Index), "ExtendedBuckwalter")).Chars(0), Index)
-                End If
+        If _SchemeTable Is Nothing Then
+            _SchemeTable = New Dictionary(Of String, IslamData.TranslitScheme)
+            Await NewChData.Init(_PortableMethods, ArbData, Me, False)
+            Dim Count As Integer
+            For Count = 0 To ChData.IslamData.TranslitSchemes.Length - 1
+                _SchemeTable.Add(ChData.IslamData.TranslitSchemes(Count).Name, ChData.IslamData.TranslitSchemes(Count))
             Next
-            Dim MemStream As New IO.MemoryStream
-            Dim Ser As New Runtime.Serialization.DataContractSerializer(GetType(Dictionary(Of Char, Integer)))
-            Ser.WriteObject(MemStream, _BuckwalterMap)
-            Await _PortableMethods.DiskCache.CacheItem("BuckwalterMap", DateTime.Now, MemStream.ToArray())
-            'MemStream.Close()
-            MemStream = Nothing
         End If
-        _SchemeTable = New Dictionary(Of String, IslamData.TranslitScheme)
-        Dim Count As Integer
-        For Count = 0 To ChData.IslamData.TranslitSchemes.Length - 1
-            _SchemeTable.Add(ChData.IslamData.TranslitSchemes(Count).Name, ChData.IslamData.TranslitSchemes(Count))
-        Next
-        Dim Letters(ArbData.ArabicLetters.Length - 1) As ArabicData.ArabicSymbol
-        ArbData.ArabicLetters.CopyTo(Letters, 0)
-        _Letters = New Dictionary(Of String, Dictionary(Of Char, Integer))
-        For Index = 0 To ChData.IslamData.TranslitSchemes.Length - 1
-            _Letters.Add(ChData.IslamData.TranslitSchemes(Index).Name, New Dictionary(Of Char, Integer))
-            Array.Sort(Letters, New StringLengthComparer(ChData.IslamData.TranslitSchemes(Index).Name, Me))
-            For Count = 0 To Letters.Length - 1
-                _Letters(ChData.IslamData.TranslitSchemes(Index).Name).Add(Letters(Count).Symbol, Count)
+        If _BuckwalterMap Is Nothing Then
+            Dim BuckwalterBytes As Byte() = Await _PortableMethods.DiskCache.GetCacheItem("BuckwalterMap", DateTime.MinValue)
+            If Not BuckwalterBytes Is Nothing Then
+                _BuckwalterMap = CType((New Runtime.Serialization.DataContractSerializer(GetType(Dictionary(Of Char, Integer)))).ReadObject(New IO.MemoryStream(BuckwalterBytes)), Dictionary(Of Char, Integer))
+            Else
+                _BuckwalterMap = New Dictionary(Of Char, Integer)
+                For Index = 0 To ArbData.ArabicLetters.Length - 1
+                    If (GetSchemeValueFromSymbol(ArbData.ArabicLetters(Index), "ExtendedBuckwalter")).Length <> 0 Then
+                        _BuckwalterMap.Add((GetSchemeValueFromSymbol(ArbData.ArabicLetters(Index), "ExtendedBuckwalter")).Chars(0), Index)
+                    End If
+                Next
+                Dim MemStream As New IO.MemoryStream
+                Dim Ser As New Runtime.Serialization.DataContractSerializer(GetType(Dictionary(Of Char, Integer)))
+                Ser.WriteObject(MemStream, _BuckwalterMap)
+                Await _PortableMethods.DiskCache.CacheItem("BuckwalterMap", DateTime.Now, MemStream.ToArray())
+                'MemStream.Close()
+                MemStream = Nothing
+            End If
+        End If
+        If _Letters Is Nothing Then
+            Dim Letters(ArbData.ArabicLetters.Length - 1) As ArabicData.ArabicSymbol
+            ArbData.ArabicLetters.CopyTo(Letters, 0)
+            _Letters = New Dictionary(Of String, Dictionary(Of Char, Integer))
+            For Index = 0 To ChData.IslamData.TranslitSchemes.Length - 1
+                _Letters.Add(ChData.IslamData.TranslitSchemes(Index).Name, New Dictionary(Of Char, Integer))
+                Array.Sort(Letters, New StringLengthComparer(ChData.IslamData.TranslitSchemes(Index).Name, Me))
+                For Count = 0 To Letters.Length - 1
+                    _Letters(ChData.IslamData.TranslitSchemes(Index).Name).Add(Letters(Count).Symbol, Count)
+                Next
             Next
-        Next
-        For Count = 0 To ChData.RuleTranslations("ErrorCheck").Length - 1
-            ErrorRegExDict.Add(ChData.RuleTranslations("ErrorCheck")(Count).Name, New System.Text.RegularExpressions.Regex(ChData.RuleTranslations("ErrorCheck")(Count).Match))
-        Next
-        For RuleSetCount = 0 To ChData.IslamData.MetaRules.Length - 1
-            For Count = 0 To ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules.Length - 1
-                If Not ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules(Count).Evaluator Is Nothing Then
-                    RegExDict.Add(String.Join(String.Empty, ChData.IslamData.MetaRules(RuleSetCount).Name, "_", ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules(Count).Name), New System.Text.RegularExpressions.Regex(ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules(Count).Match))
+        End If
+        If ErrorRegExDict.Count = 0 Or RegExDict.Count = 0 Then Await NewChData.Init(_PortableMethods, ArbData, Me, True)
+        If ErrorRegExDict.Count = 0 Then
+            For Count = 0 To ChData.RuleTranslations("ErrorCheck").Length - 1
+                ErrorRegExDict.Add(ChData.RuleTranslations("ErrorCheck")(Count).Name + CStr(Count), New System.Text.RegularExpressions.Regex(ChData.RuleTranslations("ErrorCheck")(Count).Match))
+            Next
+        End If
+        If RegExDict.Count = 0 Then
+            For RuleSetCount = 0 To ChData.IslamData.MetaRules.Length - 1
+                For Count = 0 To ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules.Length - 1
+                    If Not ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules(Count).Evaluator Is Nothing Then
+                        RegExDict.Add(String.Join(String.Empty, ChData.IslamData.MetaRules(RuleSetCount).Name, "_", ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules(Count).Name, CStr(Count)), New System.Text.RegularExpressions.Regex(ChData.RuleMetas(ChData.IslamData.MetaRules(RuleSetCount).Name).Rules(Count).Match))
+                    End If
+                Next
+            Next
+        End If
+        If _NounIDs Is Nothing Then
+            _NounIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarNoun))
+            For Count = 0 To ChData.IslamData.Grammar.Nouns.Length - 1
+                If Not _NounIDs.ContainsKey(ChData.IslamData.Grammar.Nouns(Count).TranslationID) Then
+                    _NounIDs.Add(ChData.IslamData.Grammar.Nouns(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarNoun) From {ChData.IslamData.Grammar.Nouns(Count)})
+                Else
+                    'Debug.Print("Duplicate Noun ID: " + CachedData.IslamData.Grammar.Nouns(Count).TranslationID)
+                End If
+                Dim Noun As IslamData.GrammarSet.GrammarNoun = ChData.IslamData.Grammar.Nouns(Count)
+                If Not ChData.IslamData.Grammar.Nouns(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Nouns(Count).Grammar.Length <> 0 Then
+                    For Each Str As String In ChData.IslamData.Grammar.Nouns(Count).Grammar.Split(","c)
+                        If Not _NounIDs.ContainsKey(Str) Then
+                            _NounIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarNoun))
+                        End If
+                        _NounIDs(Str).Add(Noun)
+                    Next
                 End If
             Next
-        Next
-        _NounIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarNoun))
-        For Count = 0 To ChData.IslamData.Grammar.Nouns.Length - 1
-            If Not _NounIDs.ContainsKey(ChData.IslamData.Grammar.Nouns(Count).TranslationID) Then
-                _NounIDs.Add(ChData.IslamData.Grammar.Nouns(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarNoun) From {ChData.IslamData.Grammar.Nouns(Count)})
-            Else
-                'Debug.Print("Duplicate Noun ID: " + CachedData.IslamData.Grammar.Nouns(Count).TranslationID)
-            End If
-            Dim Noun As IslamData.GrammarSet.GrammarNoun = ChData.IslamData.Grammar.Nouns(Count)
-            If Not ChData.IslamData.Grammar.Nouns(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Nouns(Count).Grammar.Length <> 0 Then
-                For Each Str As String In ChData.IslamData.Grammar.Nouns(Count).Grammar.Split(","c)
-                    If Not _NounIDs.ContainsKey(Str) Then
-                        _NounIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarNoun))
-                    End If
-                    _NounIDs(Str).Add(Noun)
-                Next
-            End If
-        Next
-        _TransformIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarTransform))
-        For Count = 0 To ChData.IslamData.Grammar.Transforms.Length - 1
-            If Not _TransformIDs.ContainsKey(ChData.IslamData.Grammar.Transforms(Count).TranslationID) Then
-                _TransformIDs.Add(ChData.IslamData.Grammar.Transforms(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarTransform) From {ChData.IslamData.Grammar.Transforms(Count)})
-            Else
-                'Debug.Print("Duplicate Transform ID: " + CachedData.IslamData.Grammar.Transforms(Count).TranslationID)
-            End If
-            Dim Transform As IslamData.GrammarSet.GrammarTransform = ChData.IslamData.Grammar.Transforms(Count)
-            If Not ChData.IslamData.Grammar.Transforms(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Transforms(Count).Grammar.Length <> 0 Then
-                For Each GroupStr As String In ChData.IslamData.Grammar.Transforms(Count).Grammar.Split(","c)
-                    For Each Str As String In GroupStr.Split("|"c)
-                        If Not _TransformIDs.ContainsKey(Str) Then
-                            _TransformIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarTransform))
-                        End If
-                        _TransformIDs(Str).Add(Transform)
+        End If
+        If _TransformIDs Is Nothing Then
+            _TransformIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarTransform))
+            For Count = 0 To ChData.IslamData.Grammar.Transforms.Length - 1
+                If Not _TransformIDs.ContainsKey(ChData.IslamData.Grammar.Transforms(Count).TranslationID) Then
+                    _TransformIDs.Add(ChData.IslamData.Grammar.Transforms(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarTransform) From {ChData.IslamData.Grammar.Transforms(Count)})
+                Else
+                    'Debug.Print("Duplicate Transform ID: " + CachedData.IslamData.Grammar.Transforms(Count).TranslationID)
+                End If
+                Dim Transform As IslamData.GrammarSet.GrammarTransform = ChData.IslamData.Grammar.Transforms(Count)
+                If Not ChData.IslamData.Grammar.Transforms(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Transforms(Count).Grammar.Length <> 0 Then
+                    For Each GroupStr As String In ChData.IslamData.Grammar.Transforms(Count).Grammar.Split(","c)
+                        For Each Str As String In GroupStr.Split("|"c)
+                            If Not _TransformIDs.ContainsKey(Str) Then
+                                _TransformIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarTransform))
+                            End If
+                            _TransformIDs(Str).Add(Transform)
+                        Next
                     Next
-                Next
-            End If
-        Next
-        _ParticleIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarParticle))
-        For Count = 0 To ChData.IslamData.Grammar.Particles.Length - 1
-            If Not _ParticleIDs.ContainsKey(ChData.IslamData.Grammar.Particles(Count).TranslationID) Then
-                _ParticleIDs.Add(ChData.IslamData.Grammar.Particles(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarParticle) From {ChData.IslamData.Grammar.Particles(Count)})
-            Else
-                'Debug.Print("Duplicate Particle ID: " + CachedData.IslamData.Grammar.Particles(Count).TranslationID)
-            End If
-            Dim Particle As IslamData.GrammarSet.GrammarParticle = ChData.IslamData.Grammar.Particles(Count)
-            If Not ChData.IslamData.Grammar.Particles(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Particles(Count).Grammar.Length <> 0 Then
-                For Each Str As String In ChData.IslamData.Grammar.Particles(Count).Grammar.Split(","c)
-                    If Not _ParticleIDs.ContainsKey(Str) Then
-                        _ParticleIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarParticle))
-                    End If
-                    _ParticleIDs(Str).Add(Particle)
-                Next
-            End If
-        Next
-        _VerbIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarVerb))
-        For Count = 0 To ChData.IslamData.Grammar.Verbs.Length - 1
-            If Not _VerbIDs.ContainsKey(ChData.IslamData.Grammar.Verbs(Count).TranslationID) Then
-                _VerbIDs.Add(ChData.IslamData.Grammar.Verbs(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarVerb) From {ChData.IslamData.Grammar.Verbs(Count)})
-            Else
-                'Debug.Print("Duplicate Verb ID: " + CachedData.IslamData.Grammar.Verbs(Count).TranslationID)
-            End If
-            Dim Verb As IslamData.GrammarSet.GrammarVerb = ChData.IslamData.Grammar.Verbs(Count)
-            If Not ChData.IslamData.Grammar.Verbs(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Verbs(Count).Grammar.Length <> 0 Then
-                For Each Str As String In ChData.IslamData.Grammar.Verbs(Count).Grammar.Split(","c)
-                    If Not _VerbIDs.ContainsKey(Str) Then
-                        _VerbIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarVerb))
-                    End If
-                    _VerbIDs(Str).Add(Verb)
-                Next
-            End If
-        Next
+                End If
+            Next
+        End If
+        If _ParticleIDs Is Nothing Then
+            _ParticleIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarParticle))
+            For Count = 0 To ChData.IslamData.Grammar.Particles.Length - 1
+                If Not _ParticleIDs.ContainsKey(ChData.IslamData.Grammar.Particles(Count).TranslationID) Then
+                    _ParticleIDs.Add(ChData.IslamData.Grammar.Particles(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarParticle) From {ChData.IslamData.Grammar.Particles(Count)})
+                Else
+                    'Debug.Print("Duplicate Particle ID: " + CachedData.IslamData.Grammar.Particles(Count).TranslationID)
+                End If
+                Dim Particle As IslamData.GrammarSet.GrammarParticle = ChData.IslamData.Grammar.Particles(Count)
+                If Not ChData.IslamData.Grammar.Particles(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Particles(Count).Grammar.Length <> 0 Then
+                    For Each Str As String In ChData.IslamData.Grammar.Particles(Count).Grammar.Split(","c)
+                        If Not _ParticleIDs.ContainsKey(Str) Then
+                            _ParticleIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarParticle))
+                        End If
+                        _ParticleIDs(Str).Add(Particle)
+                    Next
+                End If
+            Next
+        End If
+        If _VerbIDs Is Nothing Then
+            _VerbIDs = New Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarVerb))
+            For Count = 0 To ChData.IslamData.Grammar.Verbs.Length - 1
+                If Not _VerbIDs.ContainsKey(ChData.IslamData.Grammar.Verbs(Count).TranslationID) Then
+                    _VerbIDs.Add(ChData.IslamData.Grammar.Verbs(Count).TranslationID, New List(Of IslamData.GrammarSet.GrammarVerb) From {ChData.IslamData.Grammar.Verbs(Count)})
+                Else
+                    'Debug.Print("Duplicate Verb ID: " + CachedData.IslamData.Grammar.Verbs(Count).TranslationID)
+                End If
+                Dim Verb As IslamData.GrammarSet.GrammarVerb = ChData.IslamData.Grammar.Verbs(Count)
+                If Not ChData.IslamData.Grammar.Verbs(Count).Grammar Is Nothing AndAlso ChData.IslamData.Grammar.Verbs(Count).Grammar.Length <> 0 Then
+                    For Each Str As String In ChData.IslamData.Grammar.Verbs(Count).Grammar.Split(","c)
+                        If Not _VerbIDs.ContainsKey(Str) Then
+                            _VerbIDs.Add(Str, New List(Of IslamData.GrammarSet.GrammarVerb))
+                        End If
+                        _VerbIDs(Str).Add(Verb)
+                    Next
+                End If
+            Next
+        End If
     End Function
     Public Function GetRecitationSymbol(Index As Integer) As String
         Return ArbData.ArabicLetters(Index).UnicodeName + ArabicData.LeftToRightOverride + " (" + ArabicData.PopDirectionalFormatting + ArbData.FixStartingCombiningSymbol(ArbData.ArabicLetters(Index).Symbol) + ArabicData.LeftToRightOverride + ")" + ArabicData.PopDirectionalFormatting
@@ -712,7 +733,7 @@ Public Class Arabic
         'need to check for decomposed first
         Dim Count As Integer
         For Count = 0 To ChData.RuleTranslations("ErrorCheck").Length - 1
-            Dim Matches As System.Text.RegularExpressions.MatchCollection = ErrorRegExDict(ChData.RuleTranslations("ErrorCheck")(Count).Name).Matches(ArabicString)
+            Dim Matches As System.Text.RegularExpressions.MatchCollection = ErrorRegExDict(ChData.RuleTranslations("ErrorCheck")(Count).Name + CStr(Count)).Matches(ArabicString)
             For MatchIndex As Integer = 0 To Matches.Count - 1
                 If ChData.RuleTranslations("ErrorCheck")(Count).NegativeMatch Is Nothing OrElse Matches(MatchIndex).Result(ChData.RuleTranslations("ErrorCheck")(Count).NegativeMatch) = String.Empty Then
                     'Debug.Print(CachedData.RuleTranslations("ErrorCheck")(Count).Rule + ": " + TransliterateToScheme(ArabicString, ArabicData.TranslitScheme.Literal, String.Empty).Insert(Matches(MatchIndex).Index, "<!-- -->"))
@@ -907,7 +928,7 @@ Public Class Arabic
         Dim MetadataList As New Generic.List(Of RuleMetadata)
         For Count = 0 To RuleSet.Rules.Length - 1
             If Not RuleSet.Rules(Count).Evaluator Is Nothing Then
-                Dim Matches As System.Text.RegularExpressions.MatchCollection = RegExDict(String.Join(String.Empty, RuleSet.Name, "_", RuleSet.Rules(Count).Name)).Matches(ArabicString)
+                Dim Matches As System.Text.RegularExpressions.MatchCollection = RegExDict(String.Join(String.Empty, RuleSet.Name, "_", RuleSet.Rules(Count).Name, CStr(Count))).Matches(ArabicString)
                 Dim MatchIndex As Integer
                 For MatchIndex = 0 To Matches.Count - 1
                     Dim SubCount As Integer
@@ -1918,7 +1939,7 @@ Public Class IslamData
             Public _SplitEvaluator As RuleWithArgs()()
             ReadOnly Property Evaluator As RuleWithArgs()()
                 Get
-                    If _SplitEvaluator Is Nothing Then _SplitEvaluator = New List(Of RuleWithArgs())(Linq.Enumerable.Select(_Evaluator.Split(";"c), Function(Str) New List(Of RuleWithArgs)(Linq.Enumerable.Select(Str.Split("|"c), Function(S) New RuleWithArgs With {.RuleName = System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty), .Args = If(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Success, New List(Of String())(Linq.Enumerable.Select(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Groups(1).Value.Split(","c), Function(InnerStr) InnerStr.Split(" "c))).ToArray(), Nothing)})).ToArray())).ToArray()
+                    If _SplitEvaluator Is Nothing And Not _Evaluator Is Nothing Then _SplitEvaluator = New List(Of RuleWithArgs())(Linq.Enumerable.Select(_Evaluator.Split(";"c), Function(Str) New List(Of RuleWithArgs)(Linq.Enumerable.Select(Str.Split("|"c), Function(S) New RuleWithArgs With {.RuleName = System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty), .Args = If(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Success, New List(Of String())(Linq.Enumerable.Select(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Groups(1).Value.Split(","c), Function(InnerStr) InnerStr.Split(" "c))).ToArray(), Nothing)})).ToArray())).ToArray()
                     Return _SplitEvaluator
                 End Get
             End Property
@@ -2201,7 +2222,7 @@ Public Class CachedData
     Private _PortableMethods As PortableMethods
     Private ArbData As ArabicData
     Private Arb As Arabic
-    Public Async Function Init(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewArb As Arabic) As Threading.Tasks.Task
+    Public Async Function Init(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewArb As Arabic, Optional bRec As Boolean = False, Optional bHadith As Boolean = False) As Threading.Tasks.Task
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
         Arb = NewArb
@@ -2222,7 +2243,7 @@ Public Class CachedData
             Stream.Dispose()
         End If
         Dim Count As Integer
-        If _XMLDocInfos Is Nothing Then
+        If _XMLDocInfos Is Nothing And bHadith Then
             _XMLDocInfos = New Collections.Generic.List(Of Xml.Linq.XDocument)
             For Count = 0 To IslamData.Collections.Length - 1
                 Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", IslamData.Collections(Count).FileName + "-data.xml")))
@@ -2230,94 +2251,102 @@ Public Class CachedData
                 Stream.Dispose()
             Next
         End If
-        MorphLines = Await _PortableMethods.ReadAllLines(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
-        For Count = 0 To IslamData.MetaRules.Length - 1
-            Dim BuildRules As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation)
-            BuildRules.AddRange(IslamData.MetaRules(Count).Rules)
-            For SubCount As Integer = 0 To BuildRules.Count - 1
-                BuildRules(SubCount) = New IslamData.RuleMetaSet.RuleMetadataTranslation With {.Match = TranslateRegEx(BuildRules(SubCount).Match, True), .Name = BuildRules(SubCount).Name, ._Evaluator = BuildRules(SubCount)._Evaluator, ._OptionalNotStopIndexes = BuildRules(SubCount)._OptionalNotStopIndexes, ._OptionalStopIndexes = BuildRules(SubCount)._OptionalStopIndexes, ._SplitEvaluator = BuildRules(SubCount)._SplitEvaluator}
+        If MorphLines Is Nothing Then MorphLines = Await _PortableMethods.ReadAllLines(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", "quranic-corpus-morphology-0.4.txt")))
+        If _ArabicCamelCaseDict Is Nothing Then
+            _ArabicCamelCaseDict = New Dictionary(Of String, Integer)
+            For Count = 0 To ArbData.ArabicLetters.Length - 1
+                Dim camelCase As String = ArbData.ToCamelCase(ArbData.ArabicLetters(Count).UnicodeName)
+                If Not ArbData.ArabicLetters(Count).UnicodeName.StartsWith("<") And Not _ArabicCamelCaseDict.ContainsKey(camelCase) Then _ArabicCamelCaseDict.Add(camelCase, Count)
             Next
-            If IslamData.MetaRules(Count).From <> String.Empty Then BuildRules.AddRange(_RuleMetas(IslamData.MetaRules(Count).From).Rules)
-            _RuleMetas.Add(IslamData.MetaRules(Count).Name, New IslamData.RuleMetaSet With {.Rules = BuildRules.ToArray(), .From = IslamData.MetaRules(Count).From, .Name = IslamData.MetaRules(Count).Name})
-        Next
-        For Count = 0 To IslamData.ColorRuleSets.Length - 1
-            For SubCount As Integer = 0 To IslamData.ColorRuleSets(Count).ColorRules.Length - 1
-                IslamData.ColorRuleSets(Count).ColorRules(SubCount).Evaluator = TranslateRegEx(IslamData.ColorRuleSets(Count).ColorRules(SubCount).Evaluator, False)
+        End If
+        If _ArabicComboCamelCaseDict Is Nothing Then
+            _ArabicComboCamelCaseDict = New Dictionary(Of String, Integer)
+            For Count = 0 To ArbData.ArabicCombos.Length - 1
+                For SubCount = 0 To ArbData.ArabicCombos(Count).UnicodeName.Length - 1
+                    If Not ArbData.ArabicCombos(Count).UnicodeName(SubCount) Is Nothing AndAlso ArbData.ArabicCombos(Count).UnicodeName(SubCount).Length <> 0 Then _ArabicComboCamelCaseDict.Add(ArbData.ToCamelCase(ArbData.ArabicCombos(Count).UnicodeName(SubCount)), Count)
+                Next
             Next
-        Next
-        _ArabicUniqueLetters = GetNum("ArabicUniqueLetters")
-        _ArabicAlphabet = GetNum("ArabicAlphabet")
-        _ArabicNumbers = GetNum("ArabicNumbers")
-        _ArabicWaslKasraExceptions = GetNum("ArabicWaslKasraExceptions")
-        _ArabicBaseNumbers = GetNum("base")
-        _ArabicBaseExtraNumbers = GetNum("baseextras")
-        _ArabicBaseTenNumbers = GetNum("baseten")
-        _ArabicBaseHundredNumbers = GetNum("basehundred")
-        _ArabicBaseThousandNumbers = GetNum("thousands")
-        _ArabicBaseMillionNumbers = GetNum("millions")
-        _ArabicBaseMilliardNumbers = GetNum("milliard")
-        _ArabicBaseBillionNumbers = GetNum("billions")
-        _ArabicBaseTrillionNumbers = GetNum("trillions")
-        _ArabicFractionNumbers = GetNum("fractions")
-        _ArabicOrdinalNumbers = GetNum("ordinals")
-        _ArabicOrdinalExtraNumbers = GetNum("ordinalextras")
-        _ArabicCombiners = GetNum("combiners")
-        _QuranHeaders = GetNum("quranheaders")
-        _CertainStopPattern = GetPattern("CertainStopPattern")
-        _OptionalPattern = GetPattern("OptionalPattern")
-        _OptionalPatternNotEndOfAyah = GetPattern("OptionalPatternNotEndOfAyah")
-        _CertainNotStopPattern = GetPattern("CertainNotStopPattern")
-        _TehMarbutaStopRule = GetPattern("TehMarbutaStopRule")
-        _TehMarbutaContinueRule = GetPattern("TehMarbutaContinueRule")
-        _ArabicLongVowels = GetGroup("ArabicLongVowels")
-        _ArabicTanweens = GetGroup("ArabicTanweens")
-        _ArabicFathaDammaKasra = GetGroup("ArabicFathaDammaKasra")
-        _ArabicStopLetters = GetGroup("ArabicStopLetters")
-        _ArabicSpecialGutteral = GetGroup("ArabicSpecialGutteral")
-        _ArabicSpecialLeadingGutteral = GetGroup("ArabicSpecialLeadingGutteral")
-        _ArabicPunctuationSymbols = GetGroup("ArabicPunctuationSymbols")
-        _ArabicSunLetters = GetGroup("ArabicSunLetters")
-        _ArabicLetters = GetGroup("ArabicLetters")
-        _ArabicSunLettersNoLam = GetGroup("ArabicSunLettersNoLam")
-        _ArabicMoonLettersNoVowels = GetGroup("ArabicMoonLettersNoVowels")
-        _ArabicMoonLetters = GetGroup("ArabicMoonLetters")
-        _RecitationCombiningSymbols = GetGroup("RecitationCombiningSymbols")
-        _RecitationConnectingFollowerSymbols = GetGroup("RecitationConnectingFollowerSymbols")
-        _RecitationSymbols = GetGroup("RecitationSymbols")
-        _ArabicLettersInOrder = GetGroup("ArabicLettersInOrder")
-        _ArabicSpecialLetters = GetGroup("ArabicSpecialLetters")
-        _ArabicHamzas = GetGroup("ArabicHamzas")
-        _ArabicVowels = GetGroup("ArabicVowels")
-        _ArabicMultis = GetGroup("ArabicMultis")
-        _ArabicTajweed = GetGroup("ArabicTajweed")
-        _ArabicSilent = GetGroup("ArabicSilent")
-        _ArabicPunctuation = GetGroup("ArabicPunctuation")
-        _ArabicNums = GetGroup("ArabicNums")
-        _NonArabicLetters = GetGroup("NonArabicLetters")
-        _WhitespaceSymbols = GetGroup("WhitespaceSymbols")
-        _PunctuationSymbols = GetGroup("PunctuationSymbols")
-        _RecitationDiacritics = GetGroup("RecitationDiacritics")
-        _RecitationLettersDiacritics = GetGroup("RecitationLettersDiacritics")
-        _RecitationSpecialSymbols = GetGroup("RecitationSpecialSymbols")
-        _ArabicLeadingGutterals = GetGroup("ArabicLeadingGutterals")
-        _RecitationLetters = GetGroup("RecitationLetters")
-        _ArabicTrailingGutterals = GetGroup("ArabicTrailingGutterals")
-        _RecitationSpecialSymbolsNotStop = GetGroup("RecitationSpecialSymbolsNotStop")
-        _ArabicCamelCaseDict = New Dictionary(Of String, Integer)
-        For Count = 0 To ArbData.ArabicLetters.Length - 1
-            Dim camelCase As String = ArbData.ToCamelCase(ArbData.ArabicLetters(Count).UnicodeName)
-            If Not ArbData.ArabicLetters(Count).UnicodeName.StartsWith("<") And Not _ArabicCamelCaseDict.ContainsKey(camelCase) Then _ArabicCamelCaseDict.Add(camelCase, Count)
-        Next
-        _ArabicComboCamelCaseDict = New Dictionary(Of String, Integer)
-        For Count = 0 To ArbData.ArabicCombos.Length - 1
-            For SubCount = 0 To ArbData.ArabicCombos(Count).UnicodeName.Length - 1
-                If Not ArbData.ArabicCombos(Count).UnicodeName(SubCount) Is Nothing AndAlso ArbData.ArabicCombos(Count).UnicodeName(SubCount).Length <> 0 Then _ArabicComboCamelCaseDict.Add(ArbData.ToCamelCase(ArbData.ArabicCombos(Count).UnicodeName(SubCount)), Count)
+        End If
+        If _ArabicUniqueLetters Is Nothing Then _ArabicUniqueLetters = GetNum("ArabicUniqueLetters")
+        If _ArabicAlphabet Is Nothing Then _ArabicAlphabet = GetNum("ArabicAlphabet")
+        If _ArabicNumbers Is Nothing Then _ArabicNumbers = GetNum("ArabicNumbers")
+        If _ArabicWaslKasraExceptions Is Nothing Then _ArabicWaslKasraExceptions = GetNum("ArabicWaslKasraExceptions")
+        If _ArabicBaseNumbers Is Nothing Then _ArabicBaseNumbers = GetNum("base")
+        If _ArabicBaseExtraNumbers Is Nothing Then _ArabicBaseExtraNumbers = GetNum("baseextras")
+        If _ArabicBaseTenNumbers Is Nothing Then _ArabicBaseTenNumbers = GetNum("baseten")
+        If _ArabicBaseHundredNumbers Is Nothing Then _ArabicBaseHundredNumbers = GetNum("basehundred")
+        If _ArabicBaseThousandNumbers Is Nothing Then _ArabicBaseThousandNumbers = GetNum("thousands")
+        If _ArabicBaseMillionNumbers Is Nothing Then _ArabicBaseMillionNumbers = GetNum("millions")
+        If _ArabicBaseMilliardNumbers Is Nothing Then _ArabicBaseMilliardNumbers = GetNum("milliard")
+        If _ArabicBaseBillionNumbers Is Nothing Then _ArabicBaseBillionNumbers = GetNum("billions")
+        If _ArabicBaseTrillionNumbers Is Nothing Then _ArabicBaseTrillionNumbers = GetNum("trillions")
+        If _ArabicFractionNumbers Is Nothing Then _ArabicFractionNumbers = GetNum("fractions")
+        If _ArabicOrdinalNumbers Is Nothing Then _ArabicOrdinalNumbers = GetNum("ordinals")
+        If _ArabicOrdinalExtraNumbers Is Nothing Then _ArabicOrdinalExtraNumbers = GetNum("ordinalextras")
+        If _ArabicCombiners Is Nothing Then _ArabicCombiners = GetNum("combiners")
+        If _QuranHeaders Is Nothing Then _QuranHeaders = GetNum("quranheaders")
+        If _ArabicLongVowels Is Nothing Then _ArabicLongVowels = GetGroup("ArabicLongVowels")
+        If _ArabicTanweens Is Nothing Then _ArabicTanweens = GetGroup("ArabicTanweens")
+        If _ArabicFathaDammaKasra Is Nothing Then _ArabicFathaDammaKasra = GetGroup("ArabicFathaDammaKasra")
+        If _ArabicStopLetters Is Nothing Then _ArabicStopLetters = GetGroup("ArabicStopLetters")
+        If _ArabicSpecialGutteral Is Nothing Then _ArabicSpecialGutteral = GetGroup("ArabicSpecialGutteral")
+        If _ArabicSpecialLeadingGutteral Is Nothing Then _ArabicSpecialLeadingGutteral = GetGroup("ArabicSpecialLeadingGutteral")
+        If _ArabicPunctuationSymbols Is Nothing Then _ArabicPunctuationSymbols = GetGroup("ArabicPunctuationSymbols")
+        If _ArabicSunLetters Is Nothing Then _ArabicSunLetters = GetGroup("ArabicSunLetters")
+        If _ArabicLetters Is Nothing Then _ArabicLetters = GetGroup("ArabicLetters")
+        If _ArabicSunLettersNoLam Is Nothing Then _ArabicSunLettersNoLam = GetGroup("ArabicSunLettersNoLam")
+        If _ArabicMoonLettersNoVowels Is Nothing Then _ArabicMoonLettersNoVowels = GetGroup("ArabicMoonLettersNoVowels")
+        If _ArabicMoonLetters Is Nothing Then _ArabicMoonLetters = GetGroup("ArabicMoonLetters")
+        If _RecitationCombiningSymbols Is Nothing Then _RecitationCombiningSymbols = GetGroup("RecitationCombiningSymbols")
+        If _RecitationConnectingFollowerSymbols Is Nothing Then _RecitationConnectingFollowerSymbols = GetGroup("RecitationConnectingFollowerSymbols")
+        If _RecitationSymbols Is Nothing Then _RecitationSymbols = GetGroup("RecitationSymbols")
+        If _ArabicLettersInOrder Is Nothing Then _ArabicLettersInOrder = GetGroup("ArabicLettersInOrder")
+        If _ArabicHamzas Is Nothing Then _ArabicHamzas = GetGroup("ArabicHamzas")
+        If _ArabicVowels Is Nothing Then _ArabicVowels = GetGroup("ArabicVowels")
+        If _ArabicMultis Is Nothing Then _ArabicMultis = GetGroup("ArabicMultis")
+        If _ArabicTajweed Is Nothing Then _ArabicTajweed = GetGroup("ArabicTajweed")
+        If _ArabicSilent Is Nothing Then _ArabicSilent = GetGroup("ArabicSilent")
+        If _ArabicPunctuation Is Nothing Then _ArabicPunctuation = GetGroup("ArabicPunctuation")
+        If _ArabicNums Is Nothing Then _ArabicNums = GetGroup("ArabicNums")
+        If _NonArabicLetters Is Nothing Then _NonArabicLetters = GetGroup("NonArabicLetters")
+        If _WhitespaceSymbols Is Nothing Then _WhitespaceSymbols = GetGroup("WhitespaceSymbols")
+        If _PunctuationSymbols Is Nothing Then _PunctuationSymbols = GetGroup("PunctuationSymbols")
+        If _RecitationDiacritics Is Nothing Then _RecitationDiacritics = GetGroup("RecitationDiacritics")
+        If _RecitationLettersDiacritics Is Nothing Then _RecitationLettersDiacritics = GetGroup("RecitationLettersDiacritics")
+        If _RecitationSpecialSymbols Is Nothing Then _RecitationSpecialSymbols = GetGroup("RecitationSpecialSymbols")
+        If _ArabicLeadingGutterals Is Nothing Then _ArabicLeadingGutterals = GetGroup("ArabicLeadingGutterals")
+        If _RecitationLetters Is Nothing Then _RecitationLetters = GetGroup("RecitationLetters")
+        If _ArabicTrailingGutterals Is Nothing Then _ArabicTrailingGutterals = GetGroup("ArabicTrailingGutterals")
+        If _RecitationSpecialSymbolsNotStop Is Nothing Then _RecitationSpecialSymbolsNotStop = GetGroup("RecitationSpecialSymbolsNotStop")
+        If Not bRec And (_CertainStopPattern Is Nothing Or _RuleMetas.Count = 0 Or _RuleTranslations.Count = 0) Then Await Arb.Init(_PortableMethods, ArbData, Me)
+        If _CertainStopPattern Is Nothing Then _CertainStopPattern = GetPattern("CertainStopPattern")
+        If _OptionalPattern Is Nothing Then _OptionalPattern = GetPattern("OptionalPattern")
+        If _OptionalPatternNotEndOfAyah Is Nothing Then _OptionalPatternNotEndOfAyah = GetPattern("OptionalPatternNotEndOfAyah")
+        If _CertainNotStopPattern Is Nothing Then _CertainNotStopPattern = GetPattern("CertainNotStopPattern")
+        If _TehMarbutaStopRule Is Nothing Then _TehMarbutaStopRule = GetPattern("TehMarbutaStopRule")
+        If _TehMarbutaContinueRule Is Nothing Then _TehMarbutaContinueRule = GetPattern("TehMarbutaContinueRule")
+        If _ArabicSpecialLetters Is Nothing Then _ArabicSpecialLetters = GetGroup("ArabicSpecialLetters")
+        If _RuleMetas.Count = 0 Then
+            For Count = 0 To IslamData.MetaRules.Length - 1
+                Dim BuildRules As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation)
+                BuildRules.AddRange(IslamData.MetaRules(Count).Rules)
+                For SubCount As Integer = 0 To BuildRules.Count - 1
+                    BuildRules(SubCount) = New IslamData.RuleMetaSet.RuleMetadataTranslation With {.Match = TranslateRegEx(BuildRules(SubCount).Match, True), .Name = BuildRules(SubCount).Name, ._Evaluator = BuildRules(SubCount)._Evaluator, ._OptionalNotStopIndexes = BuildRules(SubCount)._OptionalNotStopIndexes, ._OptionalStopIndexes = BuildRules(SubCount)._OptionalStopIndexes, ._SplitEvaluator = BuildRules(SubCount)._SplitEvaluator}
+                Next
+                If IslamData.MetaRules(Count).From <> String.Empty Then BuildRules.AddRange(_RuleMetas(IslamData.MetaRules(Count).From).Rules)
+                _RuleMetas.Add(IslamData.MetaRules(Count).Name, New IslamData.RuleMetaSet With {.Rules = BuildRules.ToArray(), .From = IslamData.MetaRules(Count).From, .Name = IslamData.MetaRules(Count).Name})
             Next
-        Next
-        For Count = 0 To IslamData.RuleSets.Length - 1
-            _RuleTranslations.Add(IslamData.RuleSets(Count).Name, GetRuleSet(IslamData.RuleSets(Count).Name))
-        Next
-
+            For Count = 0 To IslamData.ColorRuleSets.Length - 1
+                For SubCount As Integer = 0 To IslamData.ColorRuleSets(Count).ColorRules.Length - 1
+                    If Not IslamData.ColorRuleSets(Count).ColorRules(SubCount).Evaluator Is Nothing Then IslamData.ColorRuleSets(Count).ColorRules(SubCount).Evaluator = TranslateRegEx(IslamData.ColorRuleSets(Count).ColorRules(SubCount).Evaluator, False)
+                Next
+            Next
+        End If
+        If _RuleTranslations.Count = 0 Then
+            For Count = 0 To IslamData.RuleSets.Length - 1
+                _RuleTranslations.Add(IslamData.RuleSets(Count).Name, GetRuleSet(IslamData.RuleSets(Count).Name))
+            Next
+        End If
     End Function
     Private _ObjIslamData As IslamData
     Private _RuleTranslations As New Dictionary(Of String, IslamData.RuleTranslationCategory.RuleTranslation())
