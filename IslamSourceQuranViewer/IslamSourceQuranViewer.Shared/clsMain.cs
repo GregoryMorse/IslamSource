@@ -991,16 +991,15 @@ using Android.Graphics;
         public AppSettings() { }
         public async static System.Threading.Tasks.Task InitDefaultSettings()
         {
-            _PortableMethods = new XMLRender.PortableMethods();
-            await _PortableMethods.Init(new WindowsRTFileIO(), new WindowsRTSettings());
-            ArbData = new XMLRender.ArabicData();
-            await ArbData.Init(_PortableMethods);
-            Arb = new IslamMetadata.Arabic();
-            ChData = new IslamMetadata.CachedData();
-            await ChData.Init(_PortableMethods, ArbData, Arb);
-            await Arb.Init(_PortableMethods, ArbData, ChData);
-            TR = new IslamMetadata.TanzilReader();
-            TR.Init(_PortableMethods, Arb, ArbData, ChData);
+            _PortableMethods = new XMLRender.PortableMethods(new WindowsRTFileIO(), new WindowsRTSettings());
+            await _PortableMethods.Init();
+            ArbData = new XMLRender.ArabicData(_PortableMethods);
+            await ArbData.Init();
+            Arb = new IslamMetadata.Arabic(_PortableMethods, ArbData, ChData);
+            ChData = new IslamMetadata.CachedData(_PortableMethods, ArbData, Arb);
+            await ChData.Init();
+            await Arb.Init();
+            TR = new IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData);
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))
             {
                 strSelectedFont = "Times New Roman";

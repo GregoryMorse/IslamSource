@@ -114,13 +114,15 @@ Public Class Arabic
     Private _PortableMethods As PortableMethods
     Private ArbData As ArabicData
     Private ChData As CachedData
-    Public Async Function Init(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewChData As CachedData) As Threading.Tasks.Task
+    Public Sub New(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewChData As CachedData)
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
         ChData = NewChData
+    End Sub
+    Public Async Function Init() As Threading.Tasks.Task
         If _SchemeTable Is Nothing Then
             _SchemeTable = New Dictionary(Of String, IslamData.TranslitScheme)
-            Await NewChData.Init(_PortableMethods, ArbData, Me, False)
+            Await ChData.Init(False)
             Dim Count As Integer
             For Count = 0 To ChData.IslamData.TranslitSchemes.Length - 1
                 _SchemeTable.Add(ChData.IslamData.TranslitSchemes(Count).Name, ChData.IslamData.TranslitSchemes(Count))
@@ -157,7 +159,7 @@ Public Class Arabic
                 Next
             Next
         End If
-        If ErrorRegExDict.Count = 0 Or RegExDict.Count = 0 Then Await NewChData.Init(_PortableMethods, ArbData, Me, True)
+        If ErrorRegExDict.Count = 0 Or RegExDict.Count = 0 Then Await ChData.Init(True)
         If ErrorRegExDict.Count = 0 Then
             For Count = 0 To ChData.RuleTranslations("ErrorCheck").Length - 1
                 ErrorRegExDict.Add(ChData.RuleTranslations("ErrorCheck")(Count).Name + CStr(Count), New System.Text.RegularExpressions.Regex(ChData.RuleTranslations("ErrorCheck")(Count).Match))
@@ -2222,10 +2224,12 @@ Public Class CachedData
     Private _PortableMethods As PortableMethods
     Private ArbData As ArabicData
     Private Arb As Arabic
-    Public Async Function Init(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewArb As Arabic, Optional bRec As Boolean = False, Optional bHadith As Boolean = False) As Threading.Tasks.Task
+    Public Sub New(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewArb As Arabic)
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
         Arb = NewArb
+    End Sub
+    Public Async Function Init(Optional bRec As Boolean = False, Optional bHadith As Boolean = False) As Threading.Tasks.Task
         If _ObjIslamData Is Nothing Then
             Dim fs As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", "islaminfo.xml")))
             Dim xs As Xml.Serialization.XmlSerializer = New Xml.Serialization.XmlSerializer(GetType(IslamData))
@@ -2318,7 +2322,7 @@ Public Class CachedData
         If _RecitationLetters Is Nothing Then _RecitationLetters = GetGroup("RecitationLetters")
         If _ArabicTrailingGutterals Is Nothing Then _ArabicTrailingGutterals = GetGroup("ArabicTrailingGutterals")
         If _RecitationSpecialSymbolsNotStop Is Nothing Then _RecitationSpecialSymbolsNotStop = GetGroup("RecitationSpecialSymbolsNotStop")
-        If Not bRec And (_CertainStopPattern Is Nothing Or _RuleMetas.Count = 0 Or _RuleTranslations.Count = 0) Then Await Arb.Init(_PortableMethods, ArbData, Me)
+        If Not bRec And (_CertainStopPattern Is Nothing Or _RuleMetas.Count = 0 Or _RuleTranslations.Count = 0) Then Await Arb.Init()
         If _CertainStopPattern Is Nothing Then _CertainStopPattern = GetPattern("CertainStopPattern")
         If _OptionalPattern Is Nothing Then _OptionalPattern = GetPattern("OptionalPattern")
         If _OptionalPatternNotEndOfAyah Is Nothing Then _OptionalPatternNotEndOfAyah = GetPattern("OptionalPatternNotEndOfAyah")
@@ -3298,7 +3302,7 @@ Public Class CachedData
             Next
         Next
     End Sub
-    Public Async Sub DoErrorCheck(TR As TanzilReader, DB As DocBuilder)
+    Public Async Function DoErrorCheck(TR As TanzilReader, DB As DocBuilder) As Threading.Tasks.Task
         'missing from loader
         'loanwords word value/id, jurisprudence name/id, category name/id, months name/id
         'daysofweek name/id, fasting fastingtype name/id, islamicbooks book title/author
@@ -3372,7 +3376,7 @@ Public Class CachedData
         For Count = 0 To IslamData.PartsOfSpeech.Length - 1
             _PortableMethods.LoadResourceString("IslamInfo_" + IslamData.PartsOfSpeech(Count).Id)
         Next
-    End Sub
+    End Function
     Public ReadOnly Property IslamData() As IslamData
         Get
             Return _ObjIslamData
@@ -3667,7 +3671,7 @@ Public Class DocBuilder
     Private Arb As Arabic
     Private ArbData As ArabicData
     Private ChData As CachedData
-    Public Sub Init(NewPortableMethods As PortableMethods, NewArb As Arabic, NewArbData As ArabicData, NewChData As CachedData)
+    Public Sub New(NewPortableMethods As PortableMethods, NewArb As Arabic, NewArbData As ArabicData, NewChData As CachedData)
         _PortableMethods = NewPortableMethods
         Arb = NewArb
         ArbData = NewArbData
@@ -3952,7 +3956,7 @@ Public Class TanzilReader
     Private Arb As Arabic
     Private ArbData As ArabicData
     Private ChData As CachedData
-    Public Sub Init(NewPortableMethods As PortableMethods, NewArb As Arabic, NewArbData As ArabicData, NewChData As CachedData)
+    Public Sub New(NewPortableMethods As PortableMethods, NewArb As Arabic, NewArbData As ArabicData, NewChData As CachedData)
         _PortableMethods = NewPortableMethods
         Arb = NewArb
         ArbData = NewArbData
@@ -4820,19 +4824,19 @@ Public Class TanzilReader
             CombineCount += 1
         Loop While CombineCount < TotalVerses
     End Sub
-    Public Sub CheckNotablePatterns()
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlef)
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSuperscriptAlef)
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlefAlefMaksura)
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsYehAlefMaksura)
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsYeh)
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallYeh)
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsWaw)
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallWaw)
-        ComparePatterns(QuranTexts.Hafs, QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleTrailingAlef)
+    Public Async Function CheckNotablePatterns() As Threading.Tasks.Task
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlef)
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSuperscriptAlef)
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsAlefAlefMaksura)
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsYehAlefMaksura)
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsYeh)
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallYeh)
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsWaw)
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.UthmaniMin, Arabic.UthmaniShortVowelsBeforeLongVowelsSmallWaw)
+        Await ComparePatterns(QuranTexts.Hafs, QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleTrailingAlef)
         'this rule should be analyzed after all other rules in Simple Enhanced are processed as it will great simplify its expression while the earlier it is processed the longer it will be
-        'ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleSuperscriptAlef)
-    End Sub
+        'Await ComparePatterns(QuranScripts.Uthmani, QuranScripts.SimpleEnhanced, Arabic.SimpleSuperscriptAlef)
+    End Function
     Public Shared Sub RemoveSubsetPatterns(ByRef Dict As Dictionary(Of String, String), Prefix As Boolean)
         Dim Keys(Dict.Keys.Count - 1) As String
         Dict.Keys.CopyTo(Keys, 0)
@@ -4855,7 +4859,7 @@ Public Class TanzilReader
         Next
         Return Msg
     End Function
-    Public Async Sub ComparePatterns(BaseText As QuranTexts, ScriptType As QuranScripts, CompScriptType As QuranScripts, LetterPattern As String)
+    Public Async Function ComparePatterns(BaseText As QuranTexts, ScriptType As QuranScripts, CompScriptType As QuranScripts, LetterPattern As String) As Threading.Tasks.Task
         Dim WordPattern As String = "(?<=^\s*|\s+)\S*" + ArabicData.MakeUniRegEx(LetterPattern) + "\S*(?=\s+|\s*$)"
         Dim FirstList As List(Of String) = Await PatternMatch(BaseText, ScriptType, ArabicPresentation.None, WordPattern)
         FirstList.Sort(StringComparer.Ordinal)
@@ -4969,7 +4973,7 @@ Public Class TanzilReader
         RemoveSubsetPatterns(CompDict, False)
         Msg += vbCrLf + "First: " + DumpDictionary(FirstDict) + vbCrLf + "Not First: " + DumpDictionary(FirstNotInDict) + vbCrLf + "Second: " + DumpDictionary(CompDict) + vbCrLf + "Not Second: " + DumpDictionary(CompNotInDict)
         'Debug.Print(Msg)
-    End Sub
+    End Function
     Public Async Function PatternMatch(BaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation, Pattern As String) As Threading.Tasks.Task(Of List(Of String))
         Dim PatMatch As New List(Of String)
         Dim Doc As Xml.Linq.XDocument
@@ -4998,7 +5002,7 @@ Public Class TanzilReader
         Next
         Return PatMatch
     End Function
-    Public Async Sub CompareQuranFormats(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
+    Public Async Function CompareQuranFormats(BaseText As QuranTexts, TargetBaseText As QuranTexts, ScriptType As QuranScripts, Presentation As ArabicPresentation) As Threading.Tasks.Task
         Dim Doc As Xml.Linq.XDocument
         Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", QuranTextNames(BaseText) + ".xml")))
         Doc = Xml.Linq.XDocument.Load(Stream)
@@ -5054,8 +5058,8 @@ Public Class TanzilReader
                 End If
             Loop While Total <= TargetTotal And SubCount <= Verses(Count).Length - 1 Or TargetTotal <= Total And TargetSubCount <= TargetVerses(Count).Length - 1
         Next
-    End Sub
-    Public Async Sub ChangeQuranFormat(BaseText As QuranTexts, TargetBaseText As QuranTexts, SrcScriptType As QuranScripts, ScriptType As QuranScripts, Presentation As ArabicPresentation)
+    End Function
+    Public Async Function ChangeQuranFormat(BaseText As QuranTexts, TargetBaseText As QuranTexts, SrcScriptType As QuranScripts, ScriptType As QuranScripts, Presentation As ArabicPresentation) As Threading.Tasks.Task
         Dim Doc As Xml.Linq.XDocument
         Dim Stream As IO.Stream
         If SrcScriptType = QuranScripts.Uthmani Then
@@ -5162,7 +5166,7 @@ Public Class TanzilReader
         Dim MemStream As New IO.MemoryStream
         Doc.Save(MemStream)
         Await _PortableMethods.FileIO.SaveStream(Path, MemStream)
-    End Sub
+    End Function
     Public Function IsQuranTextReference(Str As String) As Boolean
         If Not System.Text.RegularExpressions.Regex.Match(Str, "^(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)+$").Success Then Return False
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(?:,?(\d+)(?:\:(\d+))?(?:\:(\d+))?(?:-(\d+)(?:\:(\d+))?(?:\:(\d+))?)?)")
@@ -5274,7 +5278,7 @@ Public Class TanzilReader
             End If
         Next
     End Function
-    Public Async Sub CheckSequentialRules()
+    Public Async Function CheckSequentialRules() As Threading.Tasks.Task
         Dim Rules As IslamData.RuleTranslationCategory.RuleTranslation() = ChData.GetRuleSet("SimpleScriptHamzaWriting") '"HamzaWriting")
         Dim IndexToVerse As Integer()() = Nothing
         Dim XMLDocAlt As Xml.Linq.XDocument
@@ -5313,7 +5317,7 @@ Public Class TanzilReader
                 'Debug.Print(CStr(Keys(Count)) + ":" + CheckMatches(Keys(Count)) + ":" + Arabic.TransliterateToScheme(Text(Keys(Count)), ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + ":" + Arabic.TransliterateToScheme(Text.Substring(Math.Max(0, Keys(Count) - 15), 30), ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
             End If
         Next
-    End Sub
+    End Function
     Public Sub CheckMutualExclusiveRules(bAssumeContinue As Boolean, VerIndex As Integer)
         'Dim Verify As String() = {CStr(ArabicData.ArabicLetterHamza), ArabicData.ArabicTatweel + "?" + ArabicData.ArabicHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaAbove, ArabicData.ArabicLetterAlefWithHamzaBelow, ArabicData.ArabicLetterWawWithHamzaAbove, ArabicData.ArabicLetterYehWithHamzaAbove}
         Dim IndexToVerse As Integer()() = Nothing
@@ -6159,7 +6163,7 @@ Public Class HadithReader
     Private _PortableMethods As PortableMethods
     Private Arb As Arabic
     Private ChData As CachedData
-    Public Sub Init(NewPortableMethods As PortableMethods, NewArb As Arabic, NewChData As CachedData)
+    Public Sub New(NewPortableMethods As PortableMethods, NewArb As Arabic, NewChData As CachedData)
         _PortableMethods = NewPortableMethods
         Arb = NewArb
         ChData = NewChData

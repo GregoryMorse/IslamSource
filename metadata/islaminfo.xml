@@ -6724,7 +6724,7 @@ Ramadan fast-breaking | One 2172-gram quantity | Dates or barley or ordinary sta
 	    <metarule name="AlefSmallHighRoundedZero" match="({ArabicDamma})({ArabicLetterWaw}{ArabicSmallHighRoundedZero})(?={ArabicLetterLam}|{ArabicLetterReh})" evaluator=";empty"></metarule>
 	    <metarule name="AlefSmallHighRoundedZero" match="({ArabicFatha}{ArabicLetterYeh}{ArabicSukun})({ArabicLetterYeh}{ArabicSmallHighRoundedZero})|({ArabicLetterAlefWithHamzaBelow}{ArabicKasra})((?:{ArabicLetterYeh}|{ArabicLetterAlefMaksura}){ArabicSmallHighRoundedZero})" evaluator=";empty;;empty"></metarule> -->
 	    <metarule name="StandingOblongZeroSmallHighUprightRectangularZero" match="({ArabicSmallHighUprightRectangularZero})(?={StoppingOnWord}|({JoinToNextWord}))" evaluator="empty;optionalstop"></metarule>
-	    <metarule name="StandingOblongZeroSmallHighUprightRectangularZero" match="({ArabicLetterAlef}{ArabicSmallHighUprightRectangularZero})(?={ContinueOnWord}|({JoinToNextWord}))" evaluator="empty;optionalnotstop"></metarule>
+	    <metarule name="StandingOblongZeroSmallHighUprightRectangularZero" match="({ArabicLetterAlef})({ArabicSmallHighUprightRectangularZero})(?={ContinueOnWord}|({JoinToNextWord}))" evaluator=";empty;optionalnotstop"></metarule>
 	    <metarule name="EmptyCentreLowStop" match="({ArabicEmptyCentreLowStop})({ArabicLetterAlefMaksura})({ArabicLetterSuperscriptAlef})" evaluator="empty;helperfatha;helperalef"></metarule>
 	    <metarule name="RoundedHighStopWithFilledCentre" match="({ArabicLetterAlef})()({ArabicRoundedHighStopWithFilledCentre})" evaluator=";helperhamza;helperfatha"></metarule>
 

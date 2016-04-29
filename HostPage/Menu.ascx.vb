@@ -5,6 +5,8 @@ Partial Class Menu
     Inherits System.Web.UI.UserControl
     Dim PageSet As PageLoader
     Dim CurIndex As Integer
+    Private _PortableMethods As PortableMethods
+    Private UA As UserAccounts
 #Region " Web Form Designer Generated Code "
 
     'This call is required by the Web Form Designer.
@@ -23,7 +25,9 @@ Partial Class Menu
     End Sub
 
 #End Region
-    Public Sub New(ByVal NewPageSet As PageLoader, ByVal NewCurIndex As Integer)
+    Public Sub New(NewPortableMethods As PortableMethods, NewUA As UserAccounts, ByVal NewPageSet As PageLoader, ByVal NewCurIndex As Integer)
+        _PortableMethods = NewPortableMethods
+        UA = NewUA
         PageSet = NewPageSet
         CurIndex = NewCurIndex
     End Sub
@@ -65,7 +69,7 @@ Partial Class Menu
             'yi is yiddish should be ji
             'iw is hebrew should be he
             'tl is tagalog has no equivalent perhaps could be changed to es-ph or a spanish prefixed dialect
-            If AllCultures(Count).Name = CType(Reflection.Assembly.GetAssembly(GetType(XMLRender.Utility)).GetCustomAttributes(GetType(Resources.NeutralResourcesLanguageAttribute), False)(0), Resources.NeutralResourcesLanguageAttribute).CultureName Or IO.File.Exists(PortableMethods.Settings.GetFilePath(VirtualPathUtility.ToAbsolute("~/bin/" + AllCultures(Count).Name + "/XMLRender.resources.dll"))) Then
+            If AllCultures(Count).Name = CType(Reflection.Assembly.GetAssembly(GetType(XMLRender.Utility)).GetCustomAttributes(GetType(Resources.NeutralResourcesLanguageAttribute), False)(0), Resources.NeutralResourcesLanguageAttribute).CultureName Or IO.File.Exists(_PortableMethods.Settings.GetFilePath(VirtualPathUtility.ToAbsolute("~/bin/" + AllCultures(Count).Name + "/XMLRender.resources.dll"))) Then
                 writer.WriteBeginTag("option")
                 writer.WriteAttribute("value", AllCultures(Count).Name)
                 If AllCultures(Count).Name = Globalization.CultureInfo.CurrentCulture.Name Or
@@ -85,15 +89,15 @@ Partial Class Menu
         writer.Write(HtmlTextWriter.TagRightChar)
         writer.WriteBeginTag("img")
         writer.WriteAttribute("id", "mainimage")
-        writer.WriteAttribute("alt", Utility.LoadResourceString(PageSet.Title))
+        writer.WriteAttribute("alt", _PortableMethods.LoadResourceString(PageSet.Title))
         writer.WriteAttribute("src", UtilityWeb.HtmlTextEncode(host.GetPageString("Image.gif&Image=Scale&p=menu.main")))
-        SizeF = UtilityWeb.GetImageDimensions(PortableMethods.Settings.GetFilePath("images/" + PageSet.MainImage))
+        SizeF = UtilityWeb.GetImageDimensions(_PortableMethods.Settings.GetFilePath("images/" + PageSet.MainImage))
         Scale = UtilityWeb.ComputeImageScale(SizeF.Width, SizeF.Height, 226 - 10 - 10, 200)
         writer.WriteAttribute("width", Convert.ToInt32(SizeF.Width / Scale).ToString())
         writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
         writer.Write(HtmlTextWriter.TagRightChar)
         writer.WriteEndTag("a")
-        UserAccounts.AccountPanel(writer)
+        UA.AccountPanel(writer)
         For Index = 0 To PageSet.Pages.Count - 1
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
             If CurIndex = Index Then
@@ -108,7 +112,7 @@ Partial Class Menu
             writer.WriteAttribute("href", UtilityWeb.HtmlTextEncode(host.GetPageString(PageSet.Pages.Item(Index).PageName)))
             writer.Write(HtmlTextWriter.TagRightChar)
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab + vbTab)
-            writer.Write(UtilityWeb.HtmlTextEncode(CStr(If(CurIndex = Index, "-> ", String.Empty)) + Utility.LoadResourceString(PageSet.Pages.Item(Index).Text)) + UtilityWeb.HtmlTextEncode(CStr(IIf(CurIndex = Index, " <-", String.Empty))))
+            writer.Write(UtilityWeb.HtmlTextEncode(CStr(If(CurIndex = Index, "-> ", String.Empty)) + _PortableMethods.LoadResourceString(PageSet.Pages.Item(Index).Text)) + UtilityWeb.HtmlTextEncode(CStr(IIf(CurIndex = Index, " <-", String.Empty))))
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteEndTag("a")
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
@@ -123,7 +127,7 @@ Partial Class Menu
                         writer.WriteAttribute("href", UtilityWeb.HtmlTextEncode(host.GetPageString(PageSet.Pages.Item(Index).PageName) + CStr(If(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name <> String.Empty, "#" + DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Name, String.Empty))))
                         writer.Write(HtmlTextWriter.TagRightChar)
                         writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab + vbTab)
-                        writer.Write(UtilityWeb.HtmlTextEncode(Utility.LoadResourceString(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Title)))
+                        writer.Write(UtilityWeb.HtmlTextEncode(_PortableMethods.LoadResourceString(DirectCast(PageSet.Pages.Item(Index).Page.Item(SubIndex), PageLoader.ListItem).Title)))
                         writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
                         writer.WriteEndTag("a")
                         writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)

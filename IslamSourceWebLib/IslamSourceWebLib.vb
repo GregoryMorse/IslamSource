@@ -6,8 +6,54 @@ Imports HostPageUtility
 Imports System.Drawing
 Imports System.Web
 Imports System.Web.UI
+Public Class IslamWebInit
+    Private _PortableMethods As PortableMethods
+    Private ChData As CachedData
+    Private Arb As Arabic
+    Private ArbWeb As ArabicWeb
+    Private ArbData As ArabicData
+    Private TR As TanzilReader
+    Private DocBuild As DocBuilder
+    Private ArbFont As ArabicFont
+    Private ChDataWeb As CachedDataWeb
+    Private DBWeb As DocBuilderWeb
+    Private PhrWeb As PhrasesWeb
+    Private Qz As Quiz
+    Private TRWeb As TanzilReaderWeb
+    Private HR As HadithReader
+    Private HRWeb As HadithReaderWeb
+    Private UWeb As UtilityWeb
+    Private SD As SiteDatabase
+    Private ISDatabase As IslamSiteDatabase
+    Private ISDatabaseLookup As IslamSiteDatabaseLookup
+    Public Sub Init(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb)
+        _PortableMethods = NewPortableMethods
+        UWeb = NewUWeb
+    End Sub
+    Public Async Function Init() As Task
+        ArbData = New XMLRender.ArabicData(_PortableMethods)
+        Await ArbData.Init()
+        Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData, ChData)
+        ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
+        Await ChData.Init()
+        Await Arb.Init()
+        TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
+        DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
+        ArbWeb = New ArabicWeb(_PortableMethods, ChData, Arb, ArbData)
+        ArbFont = New ArabicFont(_PortableMethods, ChData)
+        ChDataWeb = New CachedDataWeb(ChData)
+        TRWeb = New TanzilReaderWeb(_PortableMethods, ChData, Arb, ArbWeb, TR)
+        DBWeb = New DocBuilderWeb(_PortableMethods, ArbWeb, ChData, Arb, ArbData, TR, DocBuild, PhrWeb, TRWeb)
+        PhrWeb = New PhrasesWeb(ArbWeb, ChData, TR, DBWeb)
+        Qz = New Quiz(Arb, ArbWeb, ChData)
+        SD = New SiteDatabase(UWeb)
+        ISDatabase = New IslamSiteDatabase(SD)
+        ISDatabaseLookup = New IslamSiteDatabaseLookup(UWeb, ISDatabase)
+        HR = New HadithReader(_PortableMethods, Arb, ChData)
+        HRWeb = New HadithReaderWeb(_PortableMethods, ChData, ArbWeb, HR, UWeb, ISDatabaseLookup)
+    End Function
+End Class
 Public Class PrayerTimeWeb
-    Private Shared _PortableMethods As PortableMethods
     Public Shared Function GetMonthName(ByVal Item As PageLoader.TextItem) As String
         Return PrayerTime.GetMonthName(Item.Name)
     End Function
@@ -24,11 +70,11 @@ Public Class PrayerTimeWeb
     End Function
 End Class
 Public Class ArabicWeb
-    Private Shared _PortableMethods As PortableMethods
+    Private _PortableMethods As PortableMethods
     Private ChData As CachedData
     Private Arb As Arabic
     Private ArbData As ArabicData
-    Public Sub Init(NewPortableMethods As PortableMethods, NewChData As CachedData, NewArb As Arabic, NewArbData As ArabicData)
+    Public Sub New(NewPortableMethods As PortableMethods, NewChData As CachedData, NewArb As Arabic, NewArbData As ArabicData)
         _PortableMethods = NewPortableMethods
         ChData = NewChData
         Arb = NewArb
@@ -252,8 +298,8 @@ Public Class ArabicWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
-    Public Function DisplayDict(ByVal Item As PageLoader.TextItem) As Array()
-        Return Arb.DisplayDict()
+    Public Async Function DisplayDict(ByVal Item As PageLoader.TextItem) As Task(Of Array())
+        Return Await Arb.DisplayDict()
     End Function
     Public Function DisplayCombo(ByVal Item As PageLoader.TextItem) As Array()
         Return Arb.DisplayCombo(DecodeTranslitSchemeType(), DecodeTranslitScheme())
@@ -740,11 +786,15 @@ Public Class ArabicWeb
     End Function
 End Class
 Public Class ArabicFont
-    Public Shared _PortableMethods As PortableMethods
-    Public Shared ChData As CachedData
+    Public _PortableMethods As PortableMethods
+    Public ChData As CachedData
+    Public Sub New(NewPortableMethods As PortableMethods, NewChData As CachedData)
+        _PortableMethods = NewPortableMethods
+        ChData = NewChData
+    End Sub
     'Web.Config requires: configuration -> system.webServer -> staticContent -> <mimeMap fileExtension=".otf" mimeType="application/octet-stream" />
     'Web.Config requires for cross site scripting: configuration -> system.WebServer -> httpProtocol -> customHeaders -> <add name="Access-Control-Allow-Origin" value="*" />
-    Public Shared Function GetFontList() As Array()
+    Public Function GetFontList() As Array()
         Dim Count As Integer
         Dim Strings(ChData.IslamData.ArabicFonts.Length - 1) As Array
         For Count = 0 To ChData.IslamData.ArabicFonts.Length - 1
@@ -752,7 +802,7 @@ Public Class ArabicFont
         Next
         Return Strings
     End Function
-    Public Shared Function GetArabicFontListJS() As String
+    Public Function GetArabicFontListJS() As String
         Return "var fontList = " +
         UtilityWeb.MakeJSIndexedObject(New List(Of String)(Linq.Enumerable.Select(ChData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) Convert.ID)).ToArray(), New Array() {New List(Of String)(Linq.Enumerable.Select(ChData.IslamData.ArabicFonts, Function(Convert As IslamData.ArabicFontList) UtilityWeb.MakeJSIndexedObject(New String() {"family", "embed", "file", "scale"}, New Array() {New String() {Convert.Family, Convert.EmbedName, Convert.FileName, CStr(Convert.Scale)}}, False))).ToArray()}, True) +
         ";var fontPrefs = " + UtilityWeb.MakeJSIndexedObject(New List(Of String)(Linq.Enumerable.Select(ChData.IslamData.ScriptFonts, Function(Convert As IslamData.ScriptFont) Convert.Name)).ToArray(),
@@ -770,7 +820,7 @@ Public Class ArabicFont
     Public Shared Function GetFontFaceJS() As String
         Return "function getFontFace(fontID) { return fontList[fontID].family + (fontList[fontID].embed ? ',' + fontList[fontID].embed : ''); }"
     End Function
-    Public Shared Function GetFontWidthJS() As String
+    Public Function GetFontWidthJS() As String
         Return "function fontWidth(fontName, text) { text = text || '" + UtilityWeb.EncodeJS(TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(ChData.XMLDocMain, 3), 9).Attribute("text").Value) + "' ; if (text == 2) text = '" + UtilityWeb.EncodeJS(_PortableMethods.LoadResourceString("IslamInfo_InTheNameOfAllah")) + "," + UtilityWeb.EncodeJS(TanzilReader.GetTextVerse(TanzilReader.GetTextChapter(ChData.XMLDocMain, 1), 1).Attribute("text").Value) + "'; var tester = $('#font-tester'); tester.css('fontFamily', fontName); if (tester.firstChild) tester.remove(tester.firstChild); tester.append(document.createTextNode(text)); tester.css('display', 'block'); var width = tester.offsetWidth; tester.css('display', 'none'); return width; }"
     End Function
     Public Shared Function GetFontExistsJS() As String
@@ -797,7 +847,7 @@ Public Class ArabicFont
     Public Shared Function GetChangeCustomFontJS() As String()
         Return New String() {"javascript: changeCustomFont();", String.Empty, "function changeCustomFont() { fontList['custom'].family = $('#fontcustom').val(); fontList['custom'].scale = fontWidth(baseFont) / fontWidth(fontList['custom'].family); changeFont(); }"}
     End Function
-    Public Shared Function GetChangeFontJS() As String()
+    Public Function GetChangeFontJS() As String()
         Return New String() {"javascript: changeFont();", "checkInstalledFonts();", UtilityWeb.GetLookupStyleSheetJS(), GetArabicFontListJS(), UtilityWeb.GetBrowserTestJS(), UtilityWeb.GetAddStyleSheetJS(), UtilityWeb.GetAddStyleSheetRuleJS(), UtilityWeb.GetLookupStyleSheetJS(), UtilityWeb.IsInArrayJS(), GetUpdateCustomFontJS(), GetFontInitJS(), GetFontPrefInstalledJS(), GetCheckInstalledFontsJS(), GetFontIDJS(), GetFontFaceJS(), GetFontWidthJS(), GetFontExistsJS(), GetFontEmbedJS(), GetApplyFontJS(), GetTryFontJS(), GetApplyEmbedFontJS(),
         "function changeFont() { var fontID = getFontID(); updateCustomFont(); if (fontList[fontID].embed) applyEmbedFont(fontID); else applyFont(fontID); }"}
     End Function
@@ -815,26 +865,42 @@ Public Class ArabicFont
     End Function
 End Class
 Public Class CachedDataWeb
-    Private Shared ChData As CachedData
-    Public Shared Function ArabicLetterCharacteristics(ByVal Item As PageLoader.TextItem) As String
+    Private ChData As CachedData
+    Public Sub New(NewChData As CachedData)
+        ChData = NewChData
+    End Sub
+    Public Function ArabicLetterCharacteristics(ByVal Item As PageLoader.TextItem) As String
         Return ChData.ArabicLetterCharacteristics()
     End Function
 End Class
 Public Class DocBuilderWeb
-    Private Shared _PortableMethods As PortableMethods
-    Private Shared ArbWeb As ArabicWeb
-    Private Shared ChData As CachedData
-    Private Shared Arb As Arabic
-    Private Shared ArbData As ArabicData
-    Private Shared TR As TanzilReader
-    Private Shared DocBuild As DocBuilder
-    Public Shared Function GetListRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return DoGetListRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), CInt(HttpContext.Current.Request.QueryString.Get("selection")), Item.Name, HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+    Private _PortableMethods As PortableMethods
+    Private ArbWeb As ArabicWeb
+    Private ChData As CachedData
+    Private Arb As Arabic
+    Private ArbData As ArabicData
+    Private TR As TanzilReader
+    Private DocBuild As DocBuilder
+    Private PhrWeb As PhrasesWeb
+    Private TRWeb As TanzilReaderWeb
+    Public Sub New(NewPortableMethods As PortableMethods, NewArbWeb As ArabicWeb, NewChData As CachedData, NewArb As Arabic, NewArbData As ArabicData, NewTR As TanzilReader, NewDocBuild As DocBuilder, NewPhrWeb As PhrasesWeb, NewTRWeb As TanzilReaderWeb)
+        _PortableMethods = NewPortableMethods
+        ArbWeb = NewArbWeb
+        ChData = NewChData
+        Arb = NewArb
+        ArbData = NewArbData
+        TR = NewTR
+        DocBuild = NewDocBuild
+        PhrWeb = NewPhrWeb
+        TRWeb = NewTRWeb
+    End Sub
+    Public Async Function GetListRenderedText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
+        Return Await DoGetListRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), CInt(HttpContext.Current.Request.QueryString.Get("selection")), Item.Name, HttpContext.Current.Request.QueryString.Get("qurantranslation"))
     End Function
-    Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return DoGetRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.Params("docedit"), HttpContext.Current.Request.Params("qurantranslation"))
+    Public Async Function GetRenderedText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
+        Return Await DoGetRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.Params("docedit"), HttpContext.Current.Request.Params("qurantranslation"))
     End Function
-    Public Shared Function GetMetadataRules(ID As String) As Array()
+    Public Function GetMetadataRules(ID As String) As Array()
         Dim Output(ChData.IslamData.MetaRules.Length + 2) As Array
         Output(0) = New String() {}
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
@@ -844,7 +910,7 @@ Public Class DocBuilderWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
-    Public Shared Function GetRuleSetRules(ID As String, Data As IslamData.RuleTranslationCategory.RuleTranslation()) As Array()
+    Public Function GetRuleSetRules(ID As String, Data As IslamData.RuleTranslationCategory.RuleTranslation()) As Array()
         Dim Output(Data.Length + 2) As Array
         Output(0) = New String() {}
         Output(1) = New String() {String.Empty, String.Empty, String.Empty}
@@ -854,13 +920,13 @@ Public Class DocBuilderWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
-    Public Shared Function GetRenderedHelpText(ByVal Item As PageLoader.TextItem) As RenderArray
+    Public Function GetRenderedHelpText(ByVal Item As PageLoader.TextItem) As RenderArray
         Return DoGetRenderedHelpText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name)
     End Function
-    Public Shared Function DoGetRenderedHelpText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String) As RenderArray
+    Public Function DoGetRenderedHelpText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String) As RenderArray
         Dim Renderer As New RenderArray(Name)
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, ArbWeb.GetTranslitSchemeMetadata("0"))}))
-        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, TanzilReaderWeb.GetTranslationMetadata("1"))}))
+        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, TRWeb.GetTranslationMetadata("1"))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetMetadataRules("2"))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("3", ChData.RuleTranslations("RomanizationRules")))}))
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("4", ChData.RuleTranslations("ColoringSpelledOutRules")))}))
@@ -873,7 +939,7 @@ Public Class DocBuilderWeb
         Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eList, GetRuleSetRules("11", ChData.RuleTranslations("SimpleMinimalScript")))}))
         Return Renderer
     End Function
-    Public Shared Function TextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
+    Public Async Function TextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As Task(Of RenderArray)
         Dim _Options As String() = Strings.Split(";"c)
         Dim Count As Integer = 0
         While _Options(Count).EndsWith("&leftbrace") Or _Options(Count).EndsWith("&rightbrace") Or _Options(Count).EndsWith("&comma") Or _Options(Count).EndsWith("&semicolon")
@@ -904,10 +970,10 @@ Public Class DocBuilderWeb
         'text before and after reference matches needs rendering
         'hadith reference matching {name,book/hadith}
         If TR.IsQuranTextReference(Strings) Then
-            Renderer.Items.AddRange(TR.QuranTextFromReference(Strings, SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses")).Items)
+            Renderer.Items.AddRange((Await TR.QuranTextFromReference(Strings, SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses"))).Items)
         ElseIf Strings.StartsWith("search:") Then
             Dim SelArr As String() = Strings.Replace("search:", String.Empty).Split(","c)
-            Renderer.Items.AddRange(TR.QuranTextFromSearch(SelArr(0).Replace("&leftbrace;", "{").Replace("&rightbrace;", "}").Replace("&comma;", ",").Replace("&semicolon;", ";"), SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses")).Items)
+            Renderer.Items.AddRange((Await TR.QuranTextFromSearch(SelArr(0).Replace("&leftbrace;", "{").Replace("&rightbrace;", "}").Replace("&comma;", ",").Replace("&semicolon;", ";"), SchemeType, Scheme, TranslationIndex, Options.ContainsKey("W4W") Or Options.ContainsKey("W4WNum"), Options.ContainsKey("W4WNum"), Options.ContainsKey("NoArabic"), Options.ContainsKey("Header"), Options.ContainsKey("NoRef"), Options.ContainsKey("Colorize"), Options.ContainsKey("Verses"))).Items)
         ElseIf Strings.StartsWith("symbol:") Then
             Dim Symbols As New List(Of ArabicData.ArabicSymbol)
             Dim SelArr As String() = Strings.Replace("symbol:", String.Empty).Split(","c)
@@ -983,14 +1049,14 @@ Public Class DocBuilderWeb
             Dim SelArr As String() = Strings.Replace("phrase:", String.Empty).Split(","c)
             Dim PhraseCats As IslamData.Phrase() = Phrases.GetPhraseCats(SelArr, ChData.IslamData.Phrases)
             For Count = 0 To PhraseCats.Length - 1
-                Renderer.Items.AddRange(PhrasesWeb.DoGetRenderedPhraseText(SchemeType, Scheme, PhraseCats(Count), TranslationIndex))
+                Renderer.Items.AddRange(Await PhrWeb.DoGetRenderedPhraseText(SchemeType, Scheme, PhraseCats(Count), TranslationIndex))
             Next
         ElseIf Strings.StartsWith("list:") Then
             Dim SelArr As String() = Strings.Replace("list:", String.Empty).Split(","c)
             Dim ListCats As IslamData.ListCategory.Word() = DocBuild.GetListCats(SelArr)
             For Count = 0 To ListCats.Length - 1
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + ListCats(Count).TranslationID))}))
-                Renderer.Items.AddRange(BuckwalterTextFromReferences(ID, SchemeType, Scheme, ListCats(Count).Text, String.Empty, TranslationIndex).Items)
+                Renderer.Items.AddRange((Await BuckwalterTextFromReferences(ID, SchemeType, Scheme, ListCats(Count).Text, String.Empty, TranslationIndex)).Items)
             Next
         ElseIf DocBuild.Abbrevs.ContainsKey(Strings) Then
             Dim AbbrevWord As IslamData.AbbrevWord = DocBuild.Abbrevs(Strings)
@@ -1018,7 +1084,7 @@ Public Class DocBuilderWeb
                 Next
             End If
             If PhraseCat.HasValue Then
-                Renderer.Items.AddRange(PhrasesWeb.DoGetRenderedPhraseText(SchemeType, Scheme, PhraseCat.Value, TranslationIndex))
+                Renderer.Items.AddRange(Await PhrWeb.DoGetRenderedPhraseText(SchemeType, Scheme, PhraseCat.Value, TranslationIndex))
                 Renderer.Items.AddRange(Items)
             End If
             If GrammarWord.HasValue Then
@@ -1038,11 +1104,11 @@ Public Class DocBuilderWeb
         End If
         Return Renderer
     End Function
-    Public Shared Function BuckwalterTextFromReferences(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Strings As String, TranslationID As String, TranslationIndex As Integer) As RenderArray
+    Public Async Function BuckwalterTextFromReferences(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Strings As String, TranslationID As String, TranslationIndex As Integer) As Task(Of RenderArray)
         Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\\\{)(.*?)(\\\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
-        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, DocBuild.GetW4WItem(TranslationID).Split("|"c))
+        Dim EnglishByWord As String() = If(TranslationID = Nothing, {}, (Await DocBuild.GetW4WItem(TranslationID)).Split("|"c))
         For MatchCount As Integer = 0 To Matches.Count - 1
             If Matches(MatchCount).Length <> 0 Then
                 If Matches(MatchCount).Groups(1).Length <> 0 Then
@@ -1060,13 +1126,13 @@ Public Class DocBuilderWeb
                     End If
                 End If
                 If Matches(MatchCount).Groups(3).Length <> 0 Then
-                    Renderer.Items.AddRange(TextFromReferences(ID, Matches(MatchCount).Groups(3).Value, SchemeType, Scheme, TranslationIndex).Items)
+                    Renderer.Items.AddRange((Await TextFromReferences(ID, Matches(MatchCount).Groups(3).Value, SchemeType, Scheme, TranslationIndex)).Items)
                 End If
             End If
         Next
         Return Renderer
     End Function
-    Public Shared Function NormalTextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As RenderArray
+    Public Async Function NormalTextFromReferences(ID As String, Strings As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationIndex As Integer) As Task(Of RenderArray)
         Dim Renderer As New RenderArray(ID)
         If Strings = Nothing Then Return Renderer
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Strings, "(.*?)(?:(\{)(.*?)(\})|$)", System.Text.RegularExpressions.RegexOptions.Singleline)
@@ -1076,50 +1142,62 @@ Public Class DocBuilderWeb
                     Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.ePassThru, Matches(Count).Groups(1).Value)}))
                 End If
                 If Matches(Count).Groups(3).Length <> 0 Then
-                    Renderer.Items.AddRange(TextFromReferences(ID + CStr(Renderer.Items.Count), Matches(Count).Groups(3).Value, SchemeType, Scheme, TranslationIndex).Items)
+                    Renderer.Items.AddRange((Await TextFromReferences(ID + CStr(Renderer.Items.Count), Matches(Count).Groups(3).Value, SchemeType, Scheme, TranslationIndex)).Items)
                 End If
             End If
         Next
         Return Renderer
     End Function
-    Public Shared Function DoGetListRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Count As Integer, Name As String, QuranTranslation As String) As RenderArray
+    Public Async Function DoGetListRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Count As Integer, Name As String, QuranTranslation As String) As Task(Of RenderArray)
         If Count = -1 Then Count = 0
         Dim Renderer As New RenderArray(Name)
         If Not ChData.IslamData.Lists(Count).Words Is Nothing Then
             For SubCount = 0 To ChData.IslamData.Lists(Count).Words.Length - 1
-                Renderer.Items.AddRange(BuckwalterTextFromReferences(Name, SchemeType, Scheme, ChData.IslamData.Lists(Count).Words(SubCount).Text, String.Empty, TR.GetTranslationIndex(QuranTranslation)).Items)
+                Renderer.Items.AddRange((Await BuckwalterTextFromReferences(Name, SchemeType, Scheme, ChData.IslamData.Lists(Count).Words(SubCount).Text, String.Empty, TR.GetTranslationIndex(QuranTranslation))).Items)
             Next
         End If
         Return Renderer
     End Function
-    Public Shared Function DoGetRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String, DocEdit As String, QuranTranslation As String) As RenderArray
-        Return NormalTextFromReferences(Name, DocEdit, SchemeType, Scheme, TR.GetTranslationIndex(QuranTranslation))
+    Public Async Function DoGetRenderedText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String, DocEdit As String, QuranTranslation As String) As Task(Of RenderArray)
+        Return Await NormalTextFromReferences(Name, DocEdit, SchemeType, Scheme, TR.GetTranslationIndex(QuranTranslation))
     End Function
 End Class
 Public Class PhrasesWeb
-    Private Shared ArbWeb As ArabicWeb
-    Private Shared ChData As CachedData
-    Private Shared TR As TanzilReader
-    Public Shared Function GetRenderedPhraseText(ByVal Item As PageLoader.TextItem) As RenderArray
+    Private ArbWeb As ArabicWeb
+    Private ChData As CachedData
+    Private TR As TanzilReader
+    Private DBWeb As DocBuilderWeb
+    Public Sub New(NewArbWeb As ArabicWeb, NewChData As CachedData, NewTR As TanzilReader, NewDBWeb As DocBuilderWeb)
+        ArbWeb = NewArbWeb
+        ChData = NewChData
+        TR = NewTR
+        DBWeb = NewDBWeb
+    End Sub
+    Public Async Function GetRenderedPhraseText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
         Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
         Dim Scheme As String = ArbWeb.DecodeTranslitScheme()
-        Return DoGetRenderedCatText(Item.Name, SchemeType, Scheme, ChData.IslamData.Phrases, TR.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
+        Return Await DoGetRenderedCatText(Item.Name, SchemeType, Scheme, ChData.IslamData.Phrases, TR.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
     End Function
-    Public Shared Function DoGetRenderedPhraseText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Verse As IslamData.Phrase, TranslationIndex As Integer) As List(Of RenderArray.RenderItem)
-        Return DocBuilderWeb.BuckwalterTextFromReferences(String.Empty, SchemeType, Scheme, Verse.Text, Verse.TranslationID, TranslationIndex).Items
+    Public Async Function DoGetRenderedPhraseText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Verse As IslamData.Phrase, TranslationIndex As Integer) As Task(Of List(Of RenderArray.RenderItem))
+        Return (Await DBWeb.BuckwalterTextFromReferences(String.Empty, SchemeType, Scheme, Verse.Text, Verse.TranslationID, TranslationIndex)).Items
     End Function
-    Public Shared Function DoGetRenderedCatText(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Category As IslamData.Phrase(), TranslationIndex As Integer) As RenderArray
+    Public Async Function DoGetRenderedCatText(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Category As IslamData.Phrase(), TranslationIndex As Integer) As Task(Of RenderArray)
         Dim Renderer As New RenderArray(ID)
         For SubCount As Integer = 0 To Category.Length - 1
-            Renderer.Items.AddRange(DoGetRenderedPhraseText(SchemeType, Scheme, Category(SubCount), TranslationIndex))
+            Renderer.Items.AddRange(Await DoGetRenderedPhraseText(SchemeType, Scheme, Category(SubCount), TranslationIndex))
         Next
         Return Renderer
     End Function
 End Class
 Public Class Quiz
-    Private Shared Arb As Arabic
-    Private Shared ArbWeb As ArabicWeb
-    Private Shared ChData As CachedData
+    Private Arb As Arabic
+    Private ArbWeb As ArabicWeb
+    Private ChData As CachedData
+    Public Sub New(NewArb As Arabic, NewArbWeb As ArabicWeb, NewChData As CachedData)
+        Arb = NewArb
+        ArbWeb = NewArbWeb
+        ChData = NewChData
+    End Sub
     Public Shared Function GetQuizList() As Array()
         Dim Strings(2) As Array
         Strings(0) = New String() {"ArabicLetters", "arabicletters"}
@@ -1137,7 +1215,7 @@ Public Class Quiz
     Public Shared Function DisplayCount(ByVal Item As PageLoader.TextItem) As String
         Return "Wrong: 0 Right: 0"
     End Function
-    Public Shared Function GetQuizSet() As String()
+    Public Function GetQuizSet() As String()
         Dim Quiz As Integer = CInt(HttpContext.Current.Request.QueryString.Get("quizselection"))
         If Quiz = 0 Then
             Return ChData.ArabicLetters
@@ -1159,7 +1237,7 @@ Public Class Quiz
             Return Nothing
         End If
     End Function
-    Public Shared Function DisplayQuestion(ByVal Item As PageLoader.TextItem) As String
+    Public Function DisplayQuestion(ByVal Item As PageLoader.TextItem) As String
         HttpContext.Current.Items.Add("rnd", Guid.NewGuid().GetHashCode())
         Dim Rd As New Random(CInt(HttpContext.Current.Items("rnd")))
         Dim Count As Integer = CInt(Math.Floor(Rd.Next() * 4))
@@ -1171,7 +1249,7 @@ Public Class Quiz
         End While
         Return QuizSet(CInt(Math.Floor(Rd.Next() * QuizSet.Count)))
     End Function
-    Public Shared Function DisplayAnswer(ByVal Item As PageLoader.ButtonItem) As String
+    Public Function DisplayAnswer(ByVal Item As PageLoader.ButtonItem) As String
         Dim Count As Integer
         Dim Rd As New Random(CInt(HttpContext.Current.Items("rnd")))
         Rd.Next()
@@ -1189,7 +1267,7 @@ Public Class Quiz
         End If
         Return Arb.TransliterateToScheme(QuizSet(CInt(Math.Floor(Rd.Next() * QuizSet.Count))), SchemeType, Scheme, Arabic.FilterMetadataStops(QuizSet(CInt(Math.Floor(Rd.Next() * QuizSet.Count))), Arb.GetMetarules(QuizSet(CInt(Math.Floor(Rd.Next() * QuizSet.Count))), ChData.RuleMetas("Normal")), Nothing))
     End Function
-    Public Shared Function VerifyAnswer() As String()
+    Public Function VerifyAnswer() As String()
         Dim JSList As New List(Of String) From {"javascript: verifyAnswer(this);", String.Empty,
             ArbWeb.GetArabicSymbolJSArray(), ArbWeb.GetTranslitSchemeJSArray(), ArabicWeb.FindLetterBySymbolJS,
             "var arabicLets = " + UtilityWeb.MakeJSArray(ChData.ArabicLetters, False) + ";",
@@ -1208,15 +1286,22 @@ Public Class Quiz
     End Function
 End Class
 Public Class TanzilReaderWeb
-    Private Shared _PortableMethods As PortableMethods
-    Private Shared ChData As CachedData
-    Private Shared Arb As Arabic
-    Private Shared ArbWeb As ArabicWeb
-    Private Shared TR As TanzilReader
+    Private _PortableMethods As PortableMethods
+    Private ChData As CachedData
+    Private Arb As Arabic
+    Private ArbWeb As ArabicWeb
+    Private TR As TanzilReader
+    Public Sub New(NewPortableMethods As PortableMethods, NewChData As CachedData, NewArb As Arabic, NewArbWeb As ArabicWeb, NewTR As TanzilReader)
+        _PortableMethods = NewPortableMethods
+        ChData = NewChData
+        Arb = NewArb
+        ArbWeb = NewArbWeb
+        TR = NewTR
+    End Sub
     Public Shared Function GetScriptFormatChangeJS() As String()
         Return New String() {"javascript: doScriptFormatOptChange(this);", String.Empty, "function doScriptFormatOptChange(obj) { var ct, oth = $(obj.id === 'toscript' ? '#fromscript' : '#toscript')[0]; for (ct = 0; ct < oth.options.length - 1 - 1; ct++) { if (obj.options[ct].value !== oth.options[(ct >= oth.selectedIndex) ? ct + 1 : ct].value) break; } oth.options.add(new Option(obj.options[ct].text, obj.options[ct].value), (ct >= oth.selectedIndex) ? ct + 1 : ct); for (ct = 0; ct < oth.options.length - 1; ct++) { if (oth.options[ct].value === obj.options[obj.selectedIndex].value) { oth.options.remove(ct); } } }"}
     End Function
-    Public Shared Function GetTranslationMetadata(ID As String) As Array()
+    Public Function GetTranslationMetadata(ID As String) As Array()
         Dim Output(ChData.IslamData.Translations.TranslationList.Length + 2) As Array
         Output(0) = New String() {}
         Output(1) = New String() {String.Empty, String.Empty}
@@ -1226,10 +1311,10 @@ Public Class TanzilReaderWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
-    Public Shared Function GetDivisionChangeJS() As String()
-        Dim JSArrays As String = UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetChapterNamesByRevelationOrder(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TanzilReaderWeb.GetPartNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+    Public Function GetDivisionChangeJS() As String()
+        Dim JSArrays As String = UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetChapterNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetChapterNamesByRevelationOrder(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetPartNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
             UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TR.GetGroupNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
             UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TR.GetStationNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
             UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TR.GetSectionNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
@@ -1249,62 +1334,72 @@ Public Class TanzilReaderWeb
         Return New String() {"javascript: changeColorCueMode(this.selectedIndex);", String.Empty,
                              "function changeColorCueMode(index) {}"}
     End Function
-    Public Shared Function GetQuranWordTotal(ByVal Item As PageLoader.TextItem) As String
+    Public Function GetQuranWordTotal(ByVal Item As PageLoader.TextItem) As String
         Return TR.GetQuranWordTotal(HttpContext.Current.Request.QueryString.Get("quranselection"))
     End Function
-    Public Shared Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Array()
-        Return TR.GetQuranWordFrequency(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), HttpContext.Current.Request.QueryString.Get("quranselection"))
+    Public Async Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Task(Of Array())
+        Return Await TR.GetQuranWordFrequency(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), HttpContext.Current.Request.QueryString.Get("quranselection"))
     End Function
-    Public Shared Function GetSelectionNames() As Array()
+    Public Function GetSelectionNames() As Array()
         Return TR.GetSelectionNames(HttpContext.Current.Request.QueryString.Get("qurandivision"), ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
     End Function
-    Public Shared Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return TR.GetRenderedQuranText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.QueryString.Get("qurandivision"), HttpContext.Current.Request.QueryString.Get("quranselection"), HttpContext.Current.Request.QueryString.Get("qurantranslation"), HttpContext.Current.Request.QueryString.Get("wordversemode"), HttpContext.Current.Request.QueryString.Get("colorcuemode"))
+    Public Async Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
+        Return Await TR.GetRenderedQuranText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.QueryString.Get("qurandivision"), HttpContext.Current.Request.QueryString.Get("quranselection"), HttpContext.Current.Request.QueryString.Get("qurantranslation"), HttpContext.Current.Request.QueryString.Get("wordversemode"), HttpContext.Current.Request.QueryString.Get("colorcuemode"))
     End Function
-    Public Shared Function GetChapterNames() As Array()
+    Public Function GetChapterNames() As Array()
         Return TR.GetChapterNames(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
     End Function
-    Public Shared Function GetChapterNamesByRevelationOrder() As Array()
+    Public Function GetChapterNamesByRevelationOrder() As Array()
         Return TR.GetChapterNamesByRevelationOrder(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
     End Function
-    Public Shared Function GetPartNames() As Array()
+    Public Function GetPartNames() As Array()
         Return TR.GetPartNames(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
     End Function
 End Class
 Public Class HadithReaderWeb
-    Private Shared _PortableMethods As PortableMethods
-    Private Shared ChData As CachedData
-    Private Shared ArbWeb As ArabicWeb
-    Private Shared HR As HadithReader
-    Public Shared Function GetCollectionChangeOnlyJS() As String
+    Private _PortableMethods As PortableMethods
+    Private ChData As CachedData
+    Private ArbWeb As ArabicWeb
+    Private HR As HadithReader
+    Private UWeb As UtilityWeb
+    Private ISDatabaseLookup As IslamSiteDatabaseLookup
+    Public Sub New(NewPortableMethods As PortableMethods, NewChData As CachedData, NewArbWeb As ArabicWeb, NewHR As HadithReader, NewUWeb As UtilityWeb, NewISDatabaseLookup As IslamSiteDatabaseLookup)
+        _PortableMethods = NewPortableMethods
+        ChData = NewChData
+        ArbWeb = NewArbWeb
+        HR = NewHR
+        UWeb = NewUWeb
+        ISDatabaseLookup = NewISDatabaseLookup
+    End Sub
+    Public Function GetCollectionChangeOnlyJS() As String
         Dim JSArrays As String = UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(ChData.IslamData.Collections, Function(Convert As IslamData.CollectionInfo) UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of IslamData.CollectionInfo.CollTranslationInfo, String)(Convert.Translations, Function(TranslateBlock As IslamData.CollectionInfo.CollTranslationInfo) UtilityWeb.MakeJSArray(New String() {_PortableMethods.LoadResourceString("lang_local" + Languages.GetLanguageInfoByCode(TranslateBlock.FileName.Substring(0, 2), ChData.IslamData.LanguageList).Code) + ": " + _PortableMethods.LoadResourceString("IslamInfo_" + TranslateBlock.Name), TranslateBlock.FileName}))).ToArray(), True))).ToArray(), True)
         Return "function changeHadithCollection(index) { var iCount; var hadithdata = " + JSArrays + "; var eSelect = $('#hadithtranslation').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithdata[index].length; iCount++) { eSelect.options.add(new Option(hadithdata[index][iCount][0], hadithdata[index][iCount][1])); } }"
     End Function
-    Public Shared Function GetCollectionChangeWithBooksJS() As String()
+    Public Function GetCollectionChangeWithBooksJS() As String()
         Dim JSArrays As String = UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of IslamData.CollectionInfo, String)(ChData.IslamData.Collections, Function(Convert As IslamData.CollectionInfo) UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Of Array, String)(HR.GetBookNamesByCollection(HR.GetCollectionIndex(Convert.Name)), Function(BookNames As Array) UtilityWeb.MakeJSArray(New String() {CStr(BookNames.GetValue(0)), CStr(BookNames.GetValue(1))}))).ToArray(), True))).ToArray(), True)
         Return New String() {"javascript: changeHadithCollectionBooks(this.selectedIndex);", String.Empty, UtilityWeb.GetClearOptionListJS(),
                              GetCollectionChangeOnlyJS(),
         "function changeHadithCollectionBooks(index) { changeHadithCollection(index); var iCount; var hadithtdata = " + JSArrays + "; var eSelect = $('#hadithbook').get(0); clearOptionList(eSelect); for (iCount = 0; iCount < hadithtdata[index].length; iCount++) { eSelect.options.add(new Option(hadithtdata[index][iCount][0], hadithtdata[index][iCount][1])); } }"}
     End Function
-    Public Shared Function GetCollectionChangeJS() As String()
+    Public Function GetCollectionChangeJS() As String()
         Return New String() {"javascript: changeHadithCollection(this.selectedIndex);", String.Empty, UtilityWeb.GetClearOptionListJS(),
                              GetCollectionChangeOnlyJS()}
     End Function
-    Public Shared Function GetCollectionXMLMetaDataDownload() As String()
-        Return New String() {UtilityWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
+    Public Function GetCollectionXMLMetaDataDownload() As String()
+        Return New String() {UWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
     End Function
-    Public Shared Function GetCollectionXMLDownload() As String()
-        Return New String() {UtilityWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
+    Public Function GetCollectionXMLDownload() As String()
+        Return New String() {UWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
     End Function
-    Public Shared Function GetTranslationXMLMetaDataDownload() As String()
+    Public Function GetTranslationXMLMetaDataDownload() As String()
         Dim TranslationIndex As Integer = HR.GetTranslationIndex(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
         If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {UtilityWeb.GetPageString("Source&File=" + HR.GetTranslationXMLFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), ChData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
+        Return New String() {UWeb.GetPageString("Source&File=" + HR.GetTranslationXMLFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), ChData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
     End Function
-    Public Shared Function GetTranslationTextDownload() As String()
+    Public Function GetTranslationTextDownload() As String()
         Dim TranslationIndex As Integer = HR.GetTranslationIndex(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
         If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {UtilityWeb.GetPageString("Source&File=" + HR.GetTranslationFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), ChData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
+        Return New String() {UWeb.GetPageString("Source&File=" + HR.GetTranslationFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), ChData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
     End Function
     Public Shared Function GetCurrentCollection() As Integer
         Dim Strings As String = HttpContext.Current.Request.QueryString.Get("hadithcollection")
@@ -1314,53 +1409,63 @@ Public Class HadithReaderWeb
         Dim Strings As String = HttpContext.Current.Request.QueryString.Get("hadithbook")
         If Not Strings Is Nothing Then Return CInt(Strings) Else Return 1
     End Function
-    Public Shared Function GetBookNames() As Array()
+    Public Function GetBookNames() As Array()
         Return HR.GetBookNamesByCollection(GetCurrentCollection())
     End Function
-    Public Shared Function GetTranslationList() As Array()
+    Public Function GetTranslationList() As Array()
         Return HR.GetTranslationList(GetCurrentCollection())
     End Function
-    Public Shared Function GetHadithMappingText(ByVal Item As PageLoader.TextItem) As Array()
-        Return HR.GetHadithMappingText(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+    Public Async Function GetHadithMappingText(ByVal Item As PageLoader.TextItem) As Task(Of Array())
+        Return Await HR.GetHadithMappingText(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
     End Function
-    Public Shared Function GetRenderedText(ByVal Item As PageLoader.TextItem) As RenderArray
+    Public Async Function GetRenderedText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
         Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
         Dim Scheme As String = ArbWeb.DecodeTranslitScheme()
         Dim Translation As String = HttpContext.Current.Request.QueryString.Get("hadithtranslation")
-        Return HR.DoGetRenderedText(Item.Name, SchemeType, Scheme, Translation, GetCurrentCollection(), GetCurrentBook(), New IslamSiteDatabaseLookup())
+        Return Await HR.DoGetRenderedText(Item.Name, SchemeType, Scheme, Translation, GetCurrentCollection(), GetCurrentBook(), ISDatabaseLookup)
     End Function
 End Class
-Class IslamSiteDatabaseLookup
+Public Class IslamSiteDatabaseLookup
     Implements IslamSiteRankingData
+    Private ISDatabase As IslamSiteDatabase
+    Private UWeb As UtilityWeb
+    Public Sub New(NewUWeb As UtilityWeb, NewISDatabase As IslamSiteDatabase)
+        UWeb = NewUWeb
+        ISDatabase = NewISDatabase
+    End Sub
     Public Function GetHadithRankingData(Collection As String, Book As Integer, Hadith As Integer) As Integer() Implements IslamSiteRankingData.GetHadithRankingData
-        Return IslamSiteDatabase.GetHadithRankingData(Collection, Book, Hadith)
+        Return ISDatabase.GetHadithRankingData(Collection, Book, Hadith)
     End Function
     Public Function GetUserHadithRankingData(Collection As String, Book As Integer, Hadith As Integer) As Integer Implements IslamSiteRankingData.GetUserHadithRankingData
-        If Not UtilityWeb.IsLoggedIn() Then Return -1
-        Dim UserID As Integer = UtilityWeb.GetUserID()
-        Return IslamSiteDatabase.GetUserHadithRankingData(UserID, Collection, Book, Hadith)
+        If Not UWeb.IsLoggedIn() Then Return -1
+        Dim UserID As Integer = UWeb.GetUserID()
+        Return ISDatabase.GetUserHadithRankingData(UserID, Collection, Book, Hadith)
     End Function
 End Class
 
-Class IslamSiteDatabase
-    Public Shared Sub CreateDatabase()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+Public Class IslamSiteDatabase
+    Private SD As SiteDatabase
+    Public Sub New(NewSD As SiteDatabase)
+        SD = NewSD
+    End Sub
+    Public Sub CreateDatabase()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return
-        SiteDatabase.ExecuteNonQuery(Connection, "CREATE TABLE HadithRankings (UserID int NOT NULL, " + _
-        "Collection VARCHAR(254) NOT NULL, " + _
-        "BookIndex int, " + _
-        "HadithIndex int NOT NULL, " + _
+        SiteDatabase.ExecuteNonQuery(Connection, "CREATE TABLE HadithRankings (UserID int NOT NULL, " +
+        "Collection VARCHAR(254) NOT NULL, " +
+        "BookIndex int, " +
+        "HadithIndex int NOT NULL, " +
         "Ranking int NOT NULL)")
         Connection.Close()
     End Sub
-    Public Shared Sub RemoveDatabase()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Sub RemoveDatabase()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
         SiteDatabase.ExecuteNonQuery(Connection, "DROP TABLE HadithRankings")
         Connection.Close()
     End Sub
-    Public Shared Sub UpdateRankingData(ByVal UserID As Integer)
+    Public Sub UpdateRankingData(ByVal UserID As Integer)
         If GetUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith"))) = -1 Then
             If CInt(HttpContext.Current.Request.Form.Get("Rating")) <> 0 Then
                 SetUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")), CInt(HttpContext.Current.Request.Form.Get("Rating")))
@@ -1373,12 +1478,12 @@ Class IslamSiteDatabase
             End If
         End If
     End Sub
-    Public Shared Sub WriteRankingData()
+    Public Sub WriteRankingData()
         Dim Data As Integer() = GetHadithRankingData(HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")))
         If Data(1) <> 0 Then HttpContext.Current.Response.Write("Average of " + CStr(Data(0) / Data(1) / 2) + " out of " + CStr(Data(1)) + " rankings")
     End Sub
-    Public Shared Function GetHadithCollectionRankingData(ByVal Collection As String) As Double
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Function GetHadithCollectionRankingData(ByVal Collection As String) As Double
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
         Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings Collection=@Collection"
@@ -1392,8 +1497,8 @@ Class IslamSiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetHadithBookRankingData(ByVal Collection As String, ByVal Book As Integer) As Double
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Function GetHadithBookRankingData(ByVal Collection As String, ByVal Book As Integer) As Double
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
         Command.CommandText = "SELECT AVG(Ranking) AS AvgRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book)
@@ -1407,8 +1512,8 @@ Class IslamSiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetHadithRankingData(ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer()
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Function GetHadithRankingData(ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer()
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return {0, 0}
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
         Command.CommandText = "SELECT SUM(Ranking) AS SumRank, COUNT(Ranking) AS CountRank FROM HadithRankings WHERE Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
@@ -1422,8 +1527,8 @@ Class IslamSiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetUserHadithRankingData(UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Function GetUserHadithRankingData(UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
         Command.CommandText = "SELECT Ranking FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith)
@@ -1437,20 +1542,20 @@ Class IslamSiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Sub SetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Sub SetUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return
         SiteDatabase.ExecuteNonQuery(Connection, "INSERT INTO HadithRankings (UserID, Collection, BookIndex, HadithIndex, Ranking) VALUES (" + CStr(UserID) + ", @Collection, " + CStr(Book) + ", " + CStr(Hadith) + ", " + CStr(Rank) + ")", New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
         Connection.Close()
     End Sub
-    Public Shared Sub UpdateUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Sub UpdateUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, ByVal Rank As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return
         SiteDatabase.ExecuteNonQuery(Connection, "UPDATE HadithRankings SET Ranking=" + CStr(Rank) + " WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
         Connection.Close()
     End Sub
-    Public Shared Sub RemoveUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer)
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SiteDatabase.GetConnection()
+    Public Sub RemoveUserHadithRankingData(ByVal UserID As Integer, ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer)
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()
         If Connection Is Nothing Then Return
         SiteDatabase.ExecuteNonQuery(Connection, "DELETE FROM HadithRankings WHERE UserID=" + CStr(UserID) + " AND Collection=@Collection AND BookIndex=" + CStr(Book) + " AND HadithIndex=" + CStr(Hadith), New Generic.Dictionary(Of String, Object) From {{"@Collection", Collection}})
         Connection.Close()

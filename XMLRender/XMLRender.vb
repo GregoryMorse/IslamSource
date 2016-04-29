@@ -27,10 +27,12 @@ Public Class PortableMethods
     Public FileIO As PortableFileIO
     Public Settings As PortableSettings
     Public DiskCache As DiskCacheUtility
-    Public Async Function Init(NewFileIO As PortableFileIO, NewSettings As PortableSettings) As Task
+    Public Sub New(NewFileIO As PortableFileIO, NewSettings As PortableSettings)
         FileIO = NewFileIO
         Settings = NewSettings
         DiskCache = New DiskCacheUtility
+    End Sub
+    Public Async Function Init() As Task
         Await DiskCache.Init(Me)
     End Function
     Public Class DiskCacheUtility
@@ -966,8 +968,10 @@ Public Class ArabicData
     Public Shared ExplicitCategories As String() = New String() {"LRE", "LRO", "RLE", "RLO", "PDF", "LRI", "RLI", "FSI", "PDI"}
     Public Shared CausesJoining As Char() = New Char() {ArabicTatweel, ZeroWidthJoiner}
     Private _PortableMethods As PortableMethods
-    Public Async Function Init(NewPortableMethods As PortableMethods) As Task
+    Public Sub New(NewPortableMethods As PortableMethods)
         _PortableMethods = NewPortableMethods
+    End Sub
+    Public Async Function Init() As Task
         'Await GetJoiningData()
         Await GetDecompositionCombiningCatData()
         Await LoadArabic()

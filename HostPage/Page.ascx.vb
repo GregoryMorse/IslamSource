@@ -7,7 +7,8 @@ Partial Class Page
     Dim UsePrint As Boolean
     Public JSFunctions As New Collections.Generic.List(Of String)
     Public JSInitFuncs As New Collections.Generic.List(Of String)
-
+    Private _PortableMethods As PortableMethods
+    Private UWeb As UtilityWeb
 #Region " Web Form Designer Generated Code "
 
     'This call is required by the Web Form Designer.
@@ -26,20 +27,22 @@ Partial Class Page
     End Sub
 
 #End Region
-    Public Sub New(ByVal NewPage As PageLoader.PageItem, Optional ByVal NewUsePanes As Boolean = True, Optional ByVal NewIsPrint As Boolean = False)
+    Public Sub New(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb, ByVal NewPage As PageLoader.PageItem, Optional ByVal NewUsePanes As Boolean = True, Optional ByVal NewIsPrint As Boolean = False)
+        _PortableMethods = NewPortableMethods
+        UWeb = NewUWeb
         MyPage = NewPage
         UsePanes = NewUsePanes
         UsePrint = NewIsPrint
     End Sub
     Function GetTitle() As String
-        Return Utility.LoadResourceString(MyPage.Text)
+        Return _PortableMethods.LoadResourceString(MyPage.Text)
     End Function
     Function GetDescription() As String
         If MyPage.Page.Count <> 0 Then
             If PageLoader.IsListItem(MyPage.Page(0)) Then
-                Return Utility.LoadResourceString(CType(MyPage.Page(0), PageLoader.ListItem).Title)
+                Return _PortableMethods.LoadResourceString(CType(MyPage.Page(0), PageLoader.ListItem).Title)
             ElseIf PageLoader.IsTextItem(MyPage.Page(0)) Then
-                Return Utility.LoadResourceString(CType(MyPage.Page(0), PageLoader.TextItem).Text)
+                Return _PortableMethods.LoadResourceString(CType(MyPage.Page(0), PageLoader.TextItem).Text)
             End If
         End If
         Return GetTitle()
@@ -67,7 +70,7 @@ Partial Class Page
             If Count <> Strings.Length - 1 Then writer.WriteFullBeginTag("br")
         Next
     End Sub
-    Sub WriteTextItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As PageLoader.TextItem, ByVal TabCount As Integer, ByVal IndexString As String)
+    Async Function WriteTextItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As PageLoader.TextItem, ByVal TabCount As Integer, ByVal IndexString As String) As Threading.Tasks.Task
         Dim BaseTabs As String = UtilityWeb.MakeTabString(TabCount)
         Dim Output As Object
         Dim Text As String
@@ -86,7 +89,7 @@ Partial Class Page
             If (Item.ImageURL <> String.Empty) Then
                 Dim SizeF As Drawing.SizeF
                 Text = "Image.gif&Image=Thumb&p=" + IndexString + "." + Item.Name
-                SizeF = UtilityWeb.GetThumbSizeFromURL(Item.ImageURL, HttpContext.Current.Request.Url.Host + "_" + Text, 121)
+                SizeF = Await UWeb.GetThumbSizeFromURL(Item.ImageURL, HttpContext.Current.Request.Url.Host + "_" + Text, 121)
                 If SizeF.IsEmpty Then
                     SizeF.Width = 121
                     SizeF.Height = 121 * 3 / 4 + 1
@@ -96,7 +99,7 @@ Partial Class Page
                 End If
                 writer.WriteBeginTag("img")
                 writer.WriteAttribute("src", UtilityWeb.HtmlTextEncode(Text))
-                writer.WriteAttribute("alt", UtilityWeb.HtmlTextEncode(Utility.LoadResourceString(Item.Text)))
+                writer.WriteAttribute("alt", UtilityWeb.HtmlTextEncode(_PortableMethods.LoadResourceString(Item.Text)))
                 writer.WriteAttribute("width", "121")
                 writer.WriteAttribute("height", CStr(121 * SizeF.Height / SizeF.Width))
                 writer.Write(HtmlTextWriter.TagRightChar)
@@ -105,7 +108,7 @@ Partial Class Page
         End If
         If Item.Text <> String.Empty Then
             writer.Write(vbCrLf + BaseTabs + vbTab)
-            OutputStrings(writer, UtilityWeb.HtmlTextEncode(Utility.LoadResourceString(Item.Text)).Split(New String() {vbCrLf, vbLf}, StringSplitOptions.None))
+            OutputStrings(writer, UtilityWeb.HtmlTextEncode(_PortableMethods.LoadResourceString(Item.Text)).Split(New String() {vbCrLf, vbLf}, StringSplitOptions.None))
             writer.Write("&nbsp;&nbsp;")
         End If
         If Not Item.OnRenderFunction Is Nothing Then
@@ -114,7 +117,9 @@ Partial Class Page
             If TypeOf Output Is String Then
                 OutputStrings(writer, UtilityWeb.HtmlTextEncode(CStr(Output)).Split(New String() {vbCrLf, vbLf}, StringSplitOptions.None))
             ElseIf TypeOf Output Is RenderArray Then
-                Dim Renderer As New RenderArrayWeb(DirectCast(Output, RenderArray))
+                Dim ArbData As New ArabicData(_PortableMethods)
+                Await ArbData.Init()
+                Dim Renderer As New RenderArrayWeb(DirectCast(Output, RenderArray), _PortableMethods, ArbData, UWeb)
                 Renderer.Render(writer, TabCount + 1)
                 AddToJSFunctions(Renderer.GetRenderJS())
             Else
@@ -134,8 +139,8 @@ Partial Class Page
         writer.WriteEndTag("div")
         'writer.Write(vbCrLf + BaseTabs)
         'writer.WriteFullBeginTag("br")
-    End Sub
-    Sub RenderSingleItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As Object, ByVal IndexString As String, ByVal TabCount As Integer)
+    End Function
+    Async Function RenderSingleItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As Object, ByVal IndexString As String, ByVal TabCount As Integer) As Threading.Tasks.Task
         Dim SubIndex As Integer
         Dim Scale As Double
         Dim SizeF As System.Drawing.SizeF
@@ -157,7 +162,7 @@ Partial Class Page
             writer.Write(vbCrLf + BaseTabs + vbTab + vbTab)
             writer.WriteFullBeginTag("b")
             writer.WriteFullBeginTag("big")
-            writer.Write(UtilityWeb.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.ListItem).Title)))
+            writer.Write(UtilityWeb.HtmlTextEncode(_PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.ListItem).Title)))
             writer.WriteEndTag("big")
             writer.WriteEndTag("b")
             writer.Write(vbCrLf + BaseTabs + vbTab)
@@ -190,7 +195,7 @@ Partial Class Page
                 TabCount += 2
             End If
             For SubIndex = 0 To DirectCast(Item, PageLoader.ListItem).List.Count - 1
-                RenderSingleItem(writer, DirectCast(Item, PageLoader.ListItem).List.Item(SubIndex), IndexString + "." + DirectCast(Item, PageLoader.ListItem).Name, TabCount + 1)
+                Await RenderSingleItem(writer, DirectCast(Item, PageLoader.ListItem).List.Item(SubIndex), IndexString + "." + DirectCast(Item, PageLoader.ListItem).Name, TabCount + 1)
             Next
             If DirectCast(Item, PageLoader.ListItem).HasForm Then
                 TabCount -= 2
@@ -208,20 +213,20 @@ Partial Class Page
             If Not DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction Is Nothing Then
                 PathName = CType(DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction.Invoke(Nothing, Nothing), String())
             Else
-                PathName = New String() {CStr(If(DirectCast(Item, PageLoader.DownloadItem).RelativePath, If(DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".h") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vb") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vba") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".bat"), host.GetPageString("Source&File=" + HttpUtility.UrlEncode(DirectCast(Item, PageLoader.DownloadItem).Path)), "files/" + DirectCast(Item, PageLoader.DownloadItem).Path), DirectCast(Item, PageLoader.DownloadItem).Path)), _
-                                 CStr(If(DirectCast(Item, PageLoader.DownloadItem).UseLink, Utility.LoadResourceString(DirectCast(Item, PageLoader.DownloadItem).Text), DirectCast(Item, PageLoader.DownloadItem).Path))}
+                PathName = New String() {CStr(If(DirectCast(Item, PageLoader.DownloadItem).RelativePath, If(DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".h") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vb") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vba") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".bat"), host.GetPageString("Source&File=" + HttpUtility.UrlEncode(DirectCast(Item, PageLoader.DownloadItem).Path)), "files/" + DirectCast(Item, PageLoader.DownloadItem).Path), DirectCast(Item, PageLoader.DownloadItem).Path)),
+                                 CStr(If(DirectCast(Item, PageLoader.DownloadItem).UseLink, _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.DownloadItem).Text), DirectCast(Item, PageLoader.DownloadItem).Path))}
             End If
             If PathName.Length = 2 Then
                 If DirectCast(Item, PageLoader.DownloadItem).ShowInline Then
                     writer.WriteFullBeginTag("pre")
-                    writer.Write(HttpUtility.HtmlEncode(UtilityWeb.SourceTextEncode(IO.File.ReadAllText(PortableMethods.Settings.GetFilePath("files\" + DirectCast(Item, PageLoader.DownloadItem).Path)))))
+                    writer.Write(HttpUtility.HtmlEncode(UtilityWeb.SourceTextEncode(IO.File.ReadAllText(_PortableMethods.Settings.GetFilePath("files\" + DirectCast(Item, PageLoader.DownloadItem).Path)))))
                     writer.WriteEndTag("pre")
                 End If
                 writer.Write(vbCrLf + BaseTabs)
                 writer.WriteBeginTag("a")
                 writer.WriteAttribute("href", HttpUtility.HtmlEncode(PathName(0)))
                 writer.Write(HtmlTextWriter.TagRightChar)
-                writer.Write(vbCrLf + BaseTabs + vbTab + String.Format(Utility.LoadResourceString("Acct_Download"), PathName(1)))
+                writer.Write(vbCrLf + BaseTabs + vbTab + String.Format(_PortableMethods.LoadResourceString("Acct_Download"), PathName(1)))
                 writer.Write(vbCrLf + BaseTabs)
                 writer.WriteEndTag("a")
                 writer.Write(vbCrLf + BaseTabs)
@@ -232,7 +237,7 @@ Partial Class Page
             If DirectCast(Item, PageLoader.EmailItem).UseImage Then
                 writer.WriteBeginTag("img")
                 writer.WriteAttribute("src", HttpUtility.HtmlEncode("host.aspx?Page=Image.gif&Image=EMailAddress"))
-                writer.WriteAttribute("alt", UtilityWeb.HtmlTextEncode(Utility.LoadResourceString("Acct_EmailAddress") + ": " + UtilityWeb.ConnectionData.EMailAddress))
+                writer.WriteAttribute("alt", UtilityWeb.HtmlTextEncode(_PortableMethods.LoadResourceString("Acct_EmailAddress") + ": " + UtilityWeb.ConnectionData.EMailAddress))
                 writer.Write(HtmlTextWriter.TagRightChar)
                 writer.Write(vbCrLf + BaseTabs)
                 writer.WriteFullBeginTag("br")
@@ -240,12 +245,12 @@ Partial Class Page
                 writer.WriteBeginTag("a")
                 writer.WriteAttribute("href", HttpUtility.HtmlEncode("mailto: " + UtilityWeb.ConnectionData.EMailAddress))
                 writer.Write(HtmlTextWriter.TagRightChar)
-                writer.Write(vbCrLf + BaseTabs + vbTab + Utility.LoadResourceString("Acct_EmailAddress"))
+                writer.Write(vbCrLf + BaseTabs + vbTab + _PortableMethods.LoadResourceString("Acct_EmailAddress"))
                 writer.Write(vbCrLf + BaseTabs)
                 writer.WriteEndTag("a")
             End If
         ElseIf (PageLoader.IsImageItem(Item)) Then
-            SizeF = UtilityWeb.GetImageDimensions(PortableMethods.Settings.GetFilePath("images\" + DirectCast(Item, PageLoader.ImageItem).Path))
+            SizeF = UtilityWeb.GetImageDimensions(_PortableMethods.Settings.GetFilePath("images\" + DirectCast(Item, PageLoader.ImageItem).Path))
             Scale = UtilityWeb.ComputeImageScale(SizeF.Width, SizeF.Height, DirectCast(Item, PageLoader.ImageItem).MaxX, DirectCast(Item, PageLoader.ImageItem).MaxY)
             If DirectCast(Item, PageLoader.ImageItem).Link And Scale <> 1 Then
                 writer.Write(vbCrLf + BaseTabs)
@@ -258,7 +263,7 @@ Partial Class Page
             End If
             writer.WriteBeginTag("img")
             writer.WriteAttribute("src", CStr(If(Scale = 1, "images/" + DirectCast(Item, PageLoader.ImageItem).Path, host.GetPageString("Image.gif&Image=Scale&p=" + IndexString + "." + DirectCast(Item, PageLoader.ImageItem).Name))))
-            writer.WriteAttribute("alt", UtilityWeb.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.ImageItem).Text)))
+            writer.WriteAttribute("alt", UtilityWeb.HtmlTextEncode(_PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.ImageItem).Text)))
             writer.WriteAttribute("width", Convert.ToInt32(SizeF.Width / Scale).ToString())
             writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
             If DirectCast(Item, PageLoader.ImageItem).Name = "fontloading" Then
@@ -292,7 +297,7 @@ Partial Class Page
                 If Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
                     writer.Write(Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name))
                 ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
-                    writer.Write(Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
+                    writer.Write(_PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
                 End If
                 writer.WriteEndTag("textarea")
             Else
@@ -304,7 +309,7 @@ Partial Class Page
                 If Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name) <> String.Empty Then
                     writer.WriteAttribute("value", Web.HttpContext.Current.Request.Params.Get(DirectCast(Item, PageLoader.EditItem).Name))
                 ElseIf DirectCast(Item, PageLoader.EditItem).DefaultValue <> String.Empty Then
-                    writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
+                    writer.WriteAttribute("value", _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.EditItem).DefaultValue))
                 End If
 
                 If DirectCast(Item, PageLoader.EditItem).Rows <> 0 Then writer.WriteAttribute("size", "20")
@@ -333,7 +338,7 @@ Partial Class Page
             writer.WriteAttribute("id", DirectCast(Item, PageLoader.RadioItem).Name + "_")
             If DirectCast(Item, PageLoader.RadioItem).Name = "fromscript" Or DirectCast(Item, PageLoader.RadioItem).Name = "toscript" Or DirectCast(Item, PageLoader.RadioItem).Name = "operation" Then writer.WriteAttribute("style", "display: none;")
             writer.Write(HtmlTextWriter.TagRightChar)
-            writer.Write(UtilityWeb.HtmlTextEncode(Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).Description)))
+            writer.Write(UtilityWeb.HtmlTextEncode(_PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).Description)))
             Dim LoadArray As Object() = Nothing
             Dim Length As Integer
             Dim Text As String
@@ -375,7 +380,7 @@ Partial Class Page
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
                     If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
-                        Text = Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
+                        Text = _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
                     Else
                         If TypeOf LoadArray Is Array() Then
                             Text = CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(0))
@@ -422,7 +427,7 @@ Partial Class Page
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
                     If DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
-                        Text = Utility.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
+                        Text = _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.RadioItem).OptionArray(SubIndex).Name)
                     Else
                         If TypeOf LoadArray Is Array() Then
                             Text = CStr(DirectCast(LoadArray(SubIndex), Object()).GetValue(0))
@@ -442,7 +447,7 @@ Partial Class Page
             If Not DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction Is Nothing Then
                 writer.WriteAttribute("value", CStr(DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(Nothing, New Object() {Item})))
             Else
-                writer.WriteAttribute("value", Utility.LoadResourceString(DirectCast(Item, PageLoader.ButtonItem).Description))
+                writer.WriteAttribute("value", _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.ButtonItem).Description))
             End If
             If DirectCast(Item, PageLoader.ButtonItem).Name = "fontcustomapply" And Web.HttpContext.Current.Request.Params.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
             If Not DirectCast(Item, PageLoader.ButtonItem).OnClickFunction Is Nothing Then
@@ -455,9 +460,9 @@ Partial Class Page
             End If
             writer.Write(HtmlTextWriter.TagRightChar)
         ElseIf (PageLoader.IsTextItem(Item)) Then
-            WriteTextItem(writer, DirectCast(Item, PageLoader.TextItem), TabCount, IndexString)
+            Await WriteTextItem(writer, DirectCast(Item, PageLoader.TextItem), TabCount, IndexString)
         End If
-    End Sub
+    End Function
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         Dim Index As Integer
         If UsePanes Then
@@ -479,7 +484,7 @@ Partial Class Page
             Else
                 writer.Write(HtmlTextWriter.TagRightChar)
             End If
-            RenderSingleItem(writer, MyPage.Page.Item(Index), MyPage.PageName, 5)
+            RenderSingleItem(writer, MyPage.Page.Item(Index), MyPage.PageName, 5).Wait()
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
             writer.WriteEndTag("div")
         Next

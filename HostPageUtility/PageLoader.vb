@@ -6,6 +6,10 @@ Imports System.Web
 Imports System.Web.UI
 Public Class WindowsWebSettings
     Implements PortableSettings
+    Private UWeb As UtilityWeb
+    Public Sub New(NewUWeb As UtilityWeb)
+        UWeb = NewUWeb
+    End Sub
     Public ReadOnly Property CacheDirectory As String Implements PortableSettings.CacheDirectory
         Get
             Return HttpRuntime.CodegenDir
@@ -22,7 +26,7 @@ Public Class WindowsWebSettings
         End Get
     End Property
     Public Function GetTemplatePath() As String Implements PortableSettings.GetTemplatePath
-        Return UtilityWeb.GetTemplatePath()
+        Return UWeb.GetTemplatePath()
     End Function
     Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
         Return CStr(If(IO.File.Exists(HttpContext.Current.Request.PhysicalApplicationPath + Path), HttpContext.Current.Request.PhysicalApplicationPath + Path, HttpContext.Current.Request.PhysicalApplicationPath + UtilityWeb.ConnectionData.AlternatePath + Path))
@@ -177,32 +181,42 @@ Public Class NativeMethods
     Friend Shared Function GetUName(ByVal wCharCode As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpbuf As System.Text.StringBuilder) As Integer
     End Function
 End Class
+<CLSCompliant(True)>
 Public Class UtilityWeb
-    Delegate Function _GetUserID() As Integer
-    Public Shared GetUserID As _GetUserID
-    Delegate Function _IsLoggedIn() As Boolean
-    Public Shared IsLoggedIn As _IsLoggedIn
-    Delegate Function _GetPageString(Page As String) As String
-    Public Shared GetPageString As _GetPageString
-    Public Shared _PortableMethods As PortableMethods
+    Delegate Function DelGetUserID() As Integer
+    Public GetUserID As DelGetUserID
+    Delegate Function DelIsLoggedIn() As Boolean
+    Public IsLoggedIn As DelIsLoggedIn
+    Delegate Function DelGetPageString(Page As String) As String
+    Public GetPageString As DelGetPageString
+    Private _PortableMethods As PortableMethods
+    Private MD As MailDispatcher
+    Private Doc As Document
+    Public ConnData As ConnectionData
     'HttpContext.Current.Trace.Write(Text)
-    Public Shared Sub Initialize(NewGetPageString As _GetPageString, NewGetUserID As _GetUserID, NewIsLoggedIn As _IsLoggedIn)
+    Public Sub New(NewPortableMethods As PortableMethods, NewGetPageString As DelGetPageString, NewGetUserID As DelGetUserID, NewIsLoggedIn As DelIsLoggedIn)
         GetPageString = NewGetPageString
         GetUserID = NewGetUserID
         IsLoggedIn = NewIsLoggedIn
-        _PortableMethods = New PortableMethods
-        _PortableMethods.Init(New WindowsWebFileIO, New WindowsWebSettings)
+        _PortableMethods = NewPortableMethods
+        MD = New MailDispatcher(_PortableMethods, Me)
+        Doc = New Document(_PortableMethods)
+        ConnData = New ConnectionData(Me)
     End Sub
     Public Const LocalConfig As String = "~/web.config"
     Public Class ConnectionData
+        Private UWeb As UtilityWeb
+        Public Sub New(NewUWeb As UtilityWeb)
+            UWeb = NewUWeb
+        End Sub
         Public Shared ReadOnly Property IslamSourceAdminEMail As String
             Get
                 Return GetConfigSetting("islamsourceadminemail")
             End Get
         End Property
-        Public Shared ReadOnly Property IslamSourceAdminEMailPass As String
+        Public ReadOnly Property IslamSourceAdminEMailPass As String
             Get
-                Return DoDecrypt(GetConfigSetting("islamsourceadminemailpass"))
+                Return UWeb.DoDecrypt(GetConfigSetting("islamsourceadminemailpass"))
             End Get
         End Property
         Public Shared ReadOnly Property IslamSourceAdminName As String
@@ -297,9 +311,9 @@ Public Class UtilityWeb
                 Return GetConfigSetting("mysqldbuid")
             End Get
         End Property
-        Public Shared ReadOnly Property DbConnPwd As String
+        Public ReadOnly Property DbConnPwd As String
             Get
-                Return DoDecrypt(GetConfigSetting("mysqldbpwd"))
+                Return UWeb.DoDecrypt(GetConfigSetting("mysqldbpwd"))
             End Get
         End Property
         Public Shared ReadOnly Property DbConnDatabase As String
@@ -308,7 +322,7 @@ Public Class UtilityWeb
             End Get
         End Property
     End Class
-    Public Shared Function GetTemplatePath() As String
+    Public Function GetTemplatePath() As String
         Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) HttpContext.Current.Request.Url.Host.EndsWith(Domain))
         If Index = -1 Then
             Return _PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.DefaultXML + ".xml")
@@ -316,7 +330,7 @@ Public Class UtilityWeb
             Return _PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.SiteXMLs()(Index) + ".xml")
         End If
     End Function
-    Public Shared Async Function TransmitCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Threading.Tasks.Task(Of Boolean)
+    Public Async Function TransmitCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Threading.Tasks.Task(Of Boolean)
         Dim Path As String = Await _PortableMethods.DiskCache.GetCacheItemPath(Name, ModifiedUtc)
         If Path = String.Empty Then Return False
         HttpContext.Current.Response.TransmitFile(Path)
@@ -342,7 +356,7 @@ Public Class UtilityWeb
         spin.Free()
         Return CInt((num + (num2 * &H5D588B65)) And &H800000007FFFFFFFL)
     End Function
-    Public Shared Async Sub SortResX(File As String)
+    Public Async Function SortResX(File As String) As Threading.Tasks.Task
         Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(File)
         Dim Doc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
@@ -361,7 +375,7 @@ Public Class UtilityWeb
             End If
         Next
         Doc.Save(File)
-    End Sub
+    End Function
     Public Shared Function GetConfigSetting(Key As String, Optional DefaultValue As String = "") As String
         Dim rootWebConfig As System.Configuration.Configuration = Web.Configuration.WebConfigurationManager.OpenWebConfiguration(LocalConfig)
         If rootWebConfig.AppSettings.Settings.Count > 0 Then
@@ -373,7 +387,7 @@ Public Class UtilityWeb
     End Function
     'Cannot use named container for machine store without critical section
     'Caching needed for efficiency...
-    Public Shared Function DoEncrypt(EncodeStr As String) As String
+    Public Function DoEncrypt(EncodeStr As String) As String
         Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0")
         cspParams.KeyNumber = System.Security.Cryptography.KeyNumber.Exchange
         cspParams.Flags = System.Security.Cryptography.CspProviderFlags.NoFlags
@@ -384,7 +398,7 @@ Public Class UtilityWeb
         IO.File.WriteAllBytes(_PortableMethods.Settings.GetFilePath("bin\" + UtilityWeb.ConnectionData.KeyFileName), Transform.ExportCspBlob(True))
         Return String.Join(String.Empty, Linq.Enumerable.Select(EncodeBytes, Function(Convert As Byte) Convert.ToString("X2")))
     End Function
-    Public Shared Function DoDecrypt(DecryptStr As String) As String
+    Public Function DoDecrypt(DecryptStr As String) As String
         Dim cspParams As New System.Security.Cryptography.CspParameters(1, "Microsoft Base Cryptographic Provider v1.0")
         cspParams.KeyNumber = System.Security.Cryptography.KeyNumber.Exchange
         cspParams.Flags = System.Security.Cryptography.CspProviderFlags.NoFlags 'user may change to must use machine store
@@ -413,9 +427,9 @@ Public Class UtilityWeb
             If invalid Then Return False
             'Return true if strIn is in valid e-mail format.
             'not javascript compatible due to lookbehind
-            Return System.Text.RegularExpressions.Regex.IsMatch(strIn, _
-              "^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" + _
-              "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$", _
+            Return System.Text.RegularExpressions.Regex.IsMatch(strIn,
+              "^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+              "(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
               System.Text.RegularExpressions.RegexOptions.IgnoreCase)
         End Function
         Private Function DomainMapper(ByVal match As System.Text.RegularExpressions.Match) As String
@@ -484,7 +498,7 @@ Public Class UtilityWeb
     End Function
     Public Shared FontList As String() = {"AGAIslamicPhrases", "AGAArabesque", "Shia", "IslamicLogo", "KFGQPCArabicSymbols01", "Quranic", "Tulth", "Farsi", "Asmaul-Husna", "Asmaul-Husna_2"}
     Public Shared FontFile As String() = {"AGA_Islamic_Phrases.TTF", "aga-arabesque.ttf", "SHIA.TTF", "islamic.ttf", "Symbols1_Ver02.otf", "Quranic.ttf", "Tulth.ttf", "Farsi.ttf", "Asmaul-Husna_1.ttf", "Asmaul-Husna_2.ttf"}
-    Public Shared Function GetUnicodeChar(Size As Integer, Font As String, Ch As String) As Drawing.Bitmap
+    Public Function GetUnicodeChar(Size As Integer, Font As String, Ch As String) As Drawing.Bitmap
         Dim PrivateFontColl As New Drawing.Text.PrivateFontCollection
         Dim oFont As Font
         If Array.IndexOf(UtilityWeb.FontList, Font) <> -1 Then
@@ -607,11 +621,11 @@ Public Class UtilityWeb
         Dim yCount As Integer
         For xCount = 0 To CInt(inputImage.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Width) - 1
             For yCount = 0 To CInt(inputImage.GetBounds(Drawing.GraphicsUnit.Pixel).Size.Height) - 1
-                If (inputImage.GetPixel(xCount, yCount).R >= initialColor.R) And _
-                   (inputImage.GetPixel(xCount, yCount).G >= initialColor.G) And _
-                   (inputImage.GetPixel(xCount, yCount).B >= initialColor.B) And _
-                   (inputImage.GetPixel(xCount, yCount).R <= finalColor.R) And _
-                   (inputImage.GetPixel(xCount, yCount).G <= finalColor.G) And _
+                If (inputImage.GetPixel(xCount, yCount).R >= initialColor.R) And
+                   (inputImage.GetPixel(xCount, yCount).G >= initialColor.G) And
+                   (inputImage.GetPixel(xCount, yCount).B >= initialColor.B) And
+                   (inputImage.GetPixel(xCount, yCount).R <= finalColor.R) And
+                   (inputImage.GetPixel(xCount, yCount).G <= finalColor.G) And
                    (inputImage.GetPixel(xCount, yCount).B <= finalColor.B) Then
                     inputImage.SetPixel(xCount, yCount, Color.Transparent)
                 End If
@@ -655,7 +669,7 @@ Public Class UtilityWeb
         End Try
         Return bmp
     End Function
-    Public Shared Async Function GetThumbSizeFromURL(ByVal URL As String, ByVal CacheURL As String, ByVal MaxWidth As Double) As Threading.Tasks.Task(Of SizeF)
+    Public Async Function GetThumbSizeFromURL(ByVal URL As String, ByVal CacheURL As String, ByVal MaxWidth As Double) As Threading.Tasks.Task(Of SizeF)
         Dim ResultBmp As Bitmap = Nothing
         Dim Bytes() As Byte
         Dim DateModified As Date
@@ -715,7 +729,7 @@ Public Class UtilityWeb
         oFont.Dispose()
         g.Dispose()
     End Sub
-    Public Shared Function LookupClassMember(ByVal Text As String) As Reflection.MethodInfo
+    Public Function LookupClassMember(ByVal Text As String) As Reflection.MethodInfo
         Dim ClassMember As String() = Text.Split(":"c)
         LookupClassMember = Nothing
         If (ClassMember.Length = 3 AndAlso ClassMember(1) = String.Empty) Then
@@ -839,11 +853,14 @@ Public Class JSCoding
     End Function
 End Class
 Public Class Document
-    Public Shared _PortableMethods As PortableMethods
+    Public _PortableMethods As PortableMethods
+    Public Sub New(NewPortableMethods As PortableMethods)
+        _PortableMethods = NewPortableMethods
+    End Sub
     Public Shared Function GetDocument(ByVal Item As PageLoader.TextItem) As String
         Return String.Empty
     End Function
-    Public Shared Async Function GetXML(ByVal Item As PageLoader.TextItem) As Threading.Tasks.Task(Of Array)
+    Public Async Function GetXML(ByVal Item As PageLoader.TextItem) As Threading.Tasks.Task(Of Array)
         Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetFilePath("metadata\" + UtilityWeb.ConnectionData.DocXML))
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
@@ -961,12 +978,12 @@ Public Class PageLoader
         Dim URL As String
         Dim ImageURL As String
         Dim OnRenderFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewText As String, Optional ByVal NewURL As String = "", Optional ByVal NewImageURL As String = "", Optional ByVal NewOnRender As String = "")
+        Public Sub New(ByVal NewName As String, ByVal NewText As String, Optional ByVal NewURL As String = "", Optional ByVal NewImageURL As String = "", Optional ByVal NewOnRender As Reflection.MethodInfo = Nothing)
             Name = NewName
             Text = NewText
             URL = NewURL
             ImageURL = NewImageURL
-            If NewOnRender <> String.Empty Then OnRenderFunction = UtilityWeb.LookupClassMember(NewOnRender)
+            OnRenderFunction = NewOnRender
         End Sub
     End Structure
     Structure EditItem
@@ -975,12 +992,12 @@ Public Class PageLoader
         Dim Rows As Integer
         Dim Password As Boolean
         Dim OnChangeFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewDefaultValue As String, ByVal NewRows As Integer, Optional ByVal NewPassword As Boolean = False, Optional ByVal NewOnChange As String = "")
+        Public Sub New(ByVal NewName As String, ByVal NewDefaultValue As String, ByVal NewRows As Integer, Optional ByVal NewPassword As Boolean = False, Optional ByVal NewOnChange As Reflection.MethodInfo = Nothing)
             Name = NewName
             DefaultValue = NewDefaultValue
             Rows = NewRows
             Password = NewPassword
-            If NewOnChange <> String.Empty Then OnChangeFunction = UtilityWeb.LookupClassMember(NewOnChange)
+            OnChangeFunction = NewOnChange
         End Sub
     End Structure
     Structure DateItem
@@ -996,11 +1013,11 @@ Public Class PageLoader
         Dim Description As String
         Dim OnClickFunction As Reflection.MethodInfo
         Dim OnRenderFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, Optional ByVal NewOnClick As String = "", Optional ByVal NewOnRender As String = "")
+        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, Optional ByVal NewOnClick As Reflection.MethodInfo = Nothing, Optional ByVal NewOnRender As Reflection.MethodInfo = Nothing)
             Name = NewName
             Description = NewDescription
-            If NewOnClick <> String.Empty Then OnClickFunction = UtilityWeb.LookupClassMember(NewOnClick)
-            If NewOnRender <> String.Empty Then OnRenderFunction = UtilityWeb.LookupClassMember(NewOnRender)
+            OnClickFunction = NewOnClick
+            OnRenderFunction = NewOnRender
         End Sub
     End Structure
     Structure RadioItem
@@ -1012,15 +1029,15 @@ Public Class PageLoader
         Dim OptionArray() As OptionItem
         Dim OnPopulateFunction As Reflection.MethodInfo
         Dim OnChangeFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, ByVal NewDefaultValue As String, ByVal NewOptionArray() As OptionItem, Optional ByVal NewUseList As Boolean = False, Optional ByVal NewUseCheck As Boolean = False, Optional ByVal NewOnPopulate As String = "", Optional ByVal NewOnChange As String = "")
+        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, ByVal NewDefaultValue As String, ByVal NewOptionArray() As OptionItem, Optional ByVal NewUseList As Boolean = False, Optional ByVal NewUseCheck As Boolean = False, Optional ByVal NewOnPopulate As Reflection.MethodInfo = Nothing, Optional ByVal NewOnChange As Reflection.MethodInfo = Nothing)
             Name = NewName
             Description = NewDescription
             DefaultValue = NewDefaultValue
             OptionArray = NewOptionArray
             UseList = NewUseList
             UseCheck = NewUseCheck
-            If NewOnPopulate <> String.Empty Then OnPopulateFunction = UtilityWeb.LookupClassMember(NewOnPopulate)
-            If NewOnChange <> String.Empty Then OnChangeFunction = UtilityWeb.LookupClassMember(NewOnChange)
+            OnPopulateFunction = NewOnPopulate
+            OnChangeFunction = NewOnChange
         End Sub
     End Structure
     Structure OptionItem
@@ -1052,15 +1069,18 @@ Public Class PageLoader
         Dim RelativePath As Boolean
         Dim UseLink As Boolean
         Dim ShowInline As Boolean
-        Public Sub New(ByVal NewText As String, ByVal NewPath As String, ByVal NewOnRender As String, Optional ByVal NewRelativePath As Boolean = True, Optional ByVal NewUseLink As Boolean = False, Optional ByVal NewShowInline As Boolean = False)
+        Public Sub New(ByVal NewText As String, ByVal NewPath As String, ByVal NewOnRender As Reflection.MethodInfo, Optional ByVal NewRelativePath As Boolean = True, Optional ByVal NewUseLink As Boolean = False, Optional ByVal NewShowInline As Boolean = False)
             Text = NewText
             Path = NewPath
             RelativePath = NewRelativePath
             UseLink = NewUseLink
             ShowInline = NewShowInline
-            If NewOnRender <> String.Empty Then OnRenderFunction = UtilityWeb.LookupClassMember(NewOnRender)
+            OnRenderFunction = NewOnRender
         End Sub
     End Structure
+    Public Function DoLookup(Str As String) As Reflection.MethodInfo
+        Return If(Str <> String.Empty, UWeb.LookupClassMember(Str), Nothing)
+    End Function
     Public Shared Function IsDownloadItem(ByVal Item As Object) As Boolean
         IsDownloadItem = TypeOf Item Is DownloadItem
     End Function
@@ -1149,13 +1169,13 @@ Public Class PageLoader
         ElseIf XMLChildNode.Name = "button" Then
             List.Add(New ButtonItem(XMLChildNode.Attribute("name").Value,
                                     XMLChildNode.Attribute("description").Value,
-                                    Utility.ParseValue(XMLChildNode.Attribute("onclick"), String.Empty),
-                                    Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)))
+                                    DoLookup(Utility.ParseValue(XMLChildNode.Attribute("onclick"), String.Empty)),
+                                    DoLookup(Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty))))
         ElseIf XMLChildNode.Name = "edit" Then
             List.Add(New EditItem(XMLChildNode.Attribute("name").Value,
                                   Utility.ParseValue(XMLChildNode.Attribute("defaultvalue"), String.Empty),
                                   CInt(Utility.ParseValue(XMLChildNode.Attribute("rows"), "1")), False,
-                                   Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty)))
+                                   DoLookup(Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty))))
         ElseIf XMLChildNode.Name = "date" Then
             List.Add(New DateItem(XMLChildNode.Attribute("name").Value,
                                   XMLChildNode.Attribute("description").Value))
@@ -1177,8 +1197,8 @@ Public Class PageLoader
                                    OptionArray.ToArray(),
                                    Utility.ParseValue(XMLChildNode.Attribute("uselist"), "false") = "true",
                                    Utility.ParseValue(XMLChildNode.Attribute("usecheck"), "false") = "true",
-                                   Utility.ParseValue(XMLChildNode.Attribute("onpopulate"), String.Empty),
-                                   Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty)))
+                                   DoLookup(Utility.ParseValue(XMLChildNode.Attribute("onpopulate"), String.Empty)),
+                                   DoLookup(Utility.ParseValue(XMLChildNode.Attribute("onchange"), String.Empty))))
         ElseIf XMLChildNode.Name = "ipaddr" Then
         ElseIf XMLChildNode.Name = "static" Then
             List.Add(New TextItem(
@@ -1186,7 +1206,7 @@ Public Class PageLoader
                             XMLChildNode.Attribute("description").Value,
                             Utility.ParseValue(XMLChildNode.Attribute("url"), String.Empty),
                             Utility.ParseValue(XMLChildNode.Attribute("imageurl"), String.Empty),
-                            Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)))
+                            DoLookup(Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty))))
         ElseIf XMLChildNode.Name = "image" Then
             List.Add(New ImageItem(
                 Utility.ParseValue(XMLChildNode.Attribute("name"), String.Empty),
@@ -1202,15 +1222,19 @@ Public Class PageLoader
             List.Add(New DownloadItem(
                 XMLChildNode.Attribute("text").Value,
                 XMLChildNode.Attribute("path").Value,
-                Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty),
+                DoLookup(Utility.ParseValue(XMLChildNode.Attribute("onrender"), String.Empty)),
                 Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") = "true",
                 Utility.ParseValue(XMLChildNode.Attribute("userelativepath"), "true") <> "true",
                 Utility.ParseValue(XMLChildNode.Attribute("showinline"), "false") = "true"))
         End If
     End Sub
     Private _PortableMethods As PortableMethods
-    Public Async Function Init(NewPortableMethods As PortableMethods) As Threading.Tasks.Task
+    Private UWeb As UtilityWeb
+    Public Sub New(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb)
         _PortableMethods = NewPortableMethods
+        UWeb = NewUWeb
+    End Sub
+    Public Async Function Init() As Threading.Tasks.Task
         Dim XMLNode As Xml.Linq.XElement
         Dim XMLChildNode As Xml.Linq.XElement
         Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetTemplatePath())
@@ -1255,10 +1279,12 @@ Public Class RenderArrayWeb
     Private _PortableMethods As PortableMethods
     Private ArbData As ArabicData
     Private _RenderArray As RenderArray
-    Public Sub New(NewRenderArray As RenderArray, NewPortableMethods As PortableMethods, NewArbData As ArabicData)
+    Private UWeb As UtilityWeb
+    Public Sub New(NewRenderArray As RenderArray, NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewUWeb As UtilityWeb)
         _RenderArray = NewRenderArray
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
+        UWeb = NewUWeb
     End Sub
     Structure LayoutInfo
         Public Sub New(NewRect As RectangleF, NewBaseline As Single, NewNChar As Integer, NewBounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))))
@@ -1714,7 +1740,7 @@ Public Class RenderArrayWeb
                                 'ct.AddText(New iTextSharp.text.Chunk(Text, SpecFont))
                                 'preservation of quality on zoom factor must be specified
                                 ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - If(NextCount = 0, 2, 0), Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - If(NextCount = 0, 2, 0), CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
-                                bmp = UtilityWeb.GetUnicodeChar(100 * 8, CurRenderText.Font, Text(0))
+                                bmp = UWeb.GetUnicodeChar(100 * 8, CurRenderText.Font, Text(0))
                                 ct.AddElement(iTextSharp.text.Image.GetInstance(bmp, iTextSharp.text.BaseColor.WHITE))
                             Else
                                 ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - If(NextCount = 0, 2, 0), Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(ListCount - 2)(Index)(NextCount).Baseline - If(NextCount = 0, 2, 0), CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
@@ -1844,7 +1870,7 @@ Public Class RenderArrayWeb
                             'ct.AddText(New iTextSharp.text.Chunk(Text, SpecFont))
                             'preservation of quality on zoom factor must be specified
                             ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - If(NextCount = 0, 2, 0), Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - If(NextCount = 0, 2, 0), CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
-                            bmp = UtilityWeb.GetUnicodeChar(100 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))
+                            bmp = UWeb.GetUnicodeChar(100 * 8, CurRenderArray(Count).TextItems(SubCount).Font, Text(0))
                             ct.AddElement(iTextSharp.text.Image.GetInstance(bmp, iTextSharp.text.BaseColor.WHITE))
                         Else
                             ct.SetSimpleColumn(Rect.Left + Doc.LeftMargin + 2, Doc.PageSize.Height - Doc.TopMargin - Rect.Bottom - _Bounds(Count)(SubCount)(NextCount).Baseline - If(NextCount = 0, 2, 0), Rect.Right - 2 + Doc.LeftMargin, Doc.PageSize.Height - Doc.TopMargin - Rect.Top + 1 - _Bounds(Count)(SubCount)(NextCount).Baseline - If(NextCount = 0, 2, 0), CSng(FontFace.Metrics.LineGap * FixedFont.Size / FontFace.Metrics.DesignUnitsPerEm), If(ct.RunDirection = iTextSharp.text.pdf.PdfWriter.RUN_DIRECTION_LTR, iTextSharp.text.Element.ALIGN_RIGHT, iTextSharp.text.Element.ALIGN_RIGHT) Or iTextSharp.text.Element.ALIGN_BASELINE)
@@ -2492,8 +2518,8 @@ Public Class RenderArrayWeb
     Public Shared Function GetQuoteModeJS() As String()
         Return New String() {"javascript: quoteMode();", String.Empty, UtilityWeb.GetLookupStyleSheetJS(), "function quoteMode() { var rule = findStyleSheetRule('span.copy'); rule.style.display = $('#quotemode').prop('checked') === true ? 'block' : 'none'; }"}
     End Function
-    Public Shared Function GetStarRatingJS() As String
-        Return "function changeStarRating(e, item, val, data) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') { Element.style.color = (index < val) ? '#00a4e4' : '#cccccc'; Element.innerText = (index < val) ? '\u2605' : '\u2606'; } }); data['Rating'] = val.toString(); $.ajax({url: '" + UtilityWeb.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().children('span').text(data); }, dataType: 'text'}); } " +
+    Public Function GetStarRatingJS() As String
+        Return "function changeStarRating(e, item, val, data) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') { Element.style.color = (index < val) ? '#00a4e4' : '#cccccc'; Element.innerText = (index < val) ? '\u2605' : '\u2606'; } }); data['Rating'] = val.toString(); $.ajax({url: '" + UWeb.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().children('span').text(data); }, dataType: 'text'}); } " +
             "function restoreStarRating(e, item) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'; }); } " +
             "function updateStarRating(e, item, val) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (index < val) ? '#aa1010' : ((Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'); }); }"
         'Return "function changeStarRating(e, item, data) { $(item).find('div').get(0).style.width = (Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10) * 10).toString() + '%'; data['Rating'] = Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10).toString(); $.ajax({url: '" + host.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().find('span').text(data); }, dataType: 'text'}); } " + _
@@ -2585,7 +2611,7 @@ Public Class RenderArrayWeb
         Next
         Return Objects
     End Function
-    Public Shared Function DoGetRenderJS(ID As String, Items As Collections.Generic.List(Of RenderArray.RenderItem)) As String()
+    Public Function DoGetRenderJS(ID As String, Items As Collections.Generic.List(Of RenderArray.RenderItem)) As String()
         Return New String() {String.Empty, String.Empty, GetInitJS(ID, Items), GetCopyClipboardJS(), GetSetClipboardJS(), GetStarRatingJS(), GetContinueStopJS()}
     End Function
     Public Shared Function GetTableJSFunctions(ByVal Output As Object()) As String()()
@@ -2878,14 +2904,16 @@ Public Class RenderArrayWeb
     End Sub
 End Class
 Public Class MailDispatcher
-    Private Shared _PortableMethods As PortableMethods
-    Public Shared Sub Init(NewPortableMethods As PortableMethods)
+    Private _PortableMethods As PortableMethods
+    Private UWeb As UtilityWeb
+    Public Sub New(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb)
         _PortableMethods = NewPortableMethods
+        UWeb = NewUWeb
     End Sub
-    Public Shared Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
+    Public Sub SendEMail(ByVal EMail As String, ByVal Subject As String, ByVal Body As String)
         Dim SmtpClient As New Net.Mail.SmtpClient
         'encrypt and unencrypt password credential
-        SmtpClient.Credentials = New Net.NetworkCredential(UtilityWeb.ConnectionData.IslamSourceAdminEMail, UtilityWeb.ConnectionData.IslamSourceAdminEMailPass)
+        SmtpClient.Credentials = New Net.NetworkCredential(UtilityWeb.ConnectionData.IslamSourceAdminEMail, UWeb.ConnData.IslamSourceAdminEMailPass)
         SmtpClient.Port = 587
         SmtpClient.Host = UtilityWeb.ConnectionData.IslamSourceMailServer
         Dim SmtpMail As New Net.Mail.MailMessage
@@ -2898,30 +2926,35 @@ Public Class MailDispatcher
         Catch eException As Net.Mail.SmtpException
         End Try
     End Sub
-    Public Shared Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
+    Public Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
         SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host),
-            String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ActivateAccount"), CStr(ActivationCode)))
+            String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ActivateAccount"), CStr(ActivationCode)))
     End Sub
-    Public Shared Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
+    Public Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
         SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host),
             String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
     End Sub
-    Public Shared Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
+    Public Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
         SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host),
-            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UtilityWeb.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
+            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
     End Sub
-    Public Shared Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
+    Public Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
         SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host),
             String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
     End Sub
-    Public Shared Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
+    Public Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
         SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host),
             String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
     End Sub
 End Class
+<CLSCompliant(True)>
 Public Class SiteDatabase
-    Public Shared Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
-        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + UtilityWeb.ConnectionData.DbConnServer + ";Uid=" + UtilityWeb.ConnectionData.DbConnUid + ";Pwd=" + UtilityWeb.ConnectionData.DbConnPwd + ";Database=" + UtilityWeb.ConnectionData.DbConnDatabase + ";")
+    Private UWeb As UtilityWeb
+    Public Sub New(NewUWeb As UtilityWeb)
+        UWeb = NewUWeb
+    End Sub
+    Public Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
+        Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + UtilityWeb.ConnectionData.DbConnServer + ";Uid=" + UtilityWeb.ConnectionData.DbConnUid + ";Pwd=" + UWeb.ConnData.DbConnPwd + ";Database=" + UtilityWeb.ConnectionData.DbConnDatabase + ";")
         Try
             Connection.Open()
         Catch e As MySql.Data.MySqlClient.MySqlException
@@ -2946,50 +2979,50 @@ Public Class SiteDatabase
         End If
         Command.ExecuteNonQuery()
     End Sub
-    Public Shared Sub CreateDatabase()
+    Public Sub CreateDatabase()
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         'SHA1 produces 20 bytes not available in MySQL 5.1
         'should salt the password
-        ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " + _
-        "PRIMARY KEY(UserID), " + _
-        "UserName VARCHAR(15) UNIQUE, " + _
-        "Password BINARY(20), " + _
-        "EMail VARCHAR(254) UNIQUE, " + _
-        "Access int NOT NULL DEFAULT 0, " + _
-        "ActivationCode int, " + _
-        "LoginSecret int DEFAULT NULL, " + _
+        ExecuteNonQuery(Connection, "CREATE TABLE Users (UserID int NOT NULL AUTO_INCREMENT, " +
+        "PRIMARY KEY(UserID), " +
+        "UserName VARCHAR(15) UNIQUE, " +
+        "Password BINARY(20), " +
+        "EMail VARCHAR(254) UNIQUE, " +
+        "Access int NOT NULL DEFAULT 0, " +
+        "ActivationCode int, " +
+        "LoginSecret int DEFAULT NULL, " +
         "LoginTime TIMESTAMP NULL)")
         Connection.Close()
     End Sub
-    Public Shared Sub RemoveDatabase()
+    Public Sub RemoveDatabase()
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
         ExecuteNonQuery(Connection, "DROP TABLE Users")
         Connection.Close()
     End Sub
-    Public Shared Sub CleanupStaleActivations()
+    Public Sub CleanupStaleActivations()
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "DELETE FROM Users WHERE ActivationCode IS NOT NULL AND (LoginTime IS NULL OR UTC_TIMESTAMP > TIMESTAMPADD(DAY, 10, LoginTime))")
         Connection.Close()
     End Sub
-    Public Shared Sub CleanupStaleLoginSessions()
+    Public Sub CleanupStaleLoginSessions()
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE ActivationCode IS NOT NULL AND (LoginTime IS NOT NULL AND UTC_TIMESTAMP > TIMESTAMPADD(HOUR, 1, LoginTime))")
         Connection.Close()
     End Sub
-    Public Shared Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
+    Public Sub AddUser(ByVal UserName As String, ByVal Password As String, ByVal EMail As String)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         Dim Generator As New System.Random()
-        ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)", _
+        ExecuteNonQuery(Connection, "INSERT INTO Users (UserName, Password, EMail, ActivationCode, LoginTime) VALUES (@UserName, UNHEX(SHA1(@Password)), @EMail, @Code, UTC_TIMESTAMP)",
                         New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}, {"@Password", Password}, {"@EMail", EMail}, {"@Code", CStr(Generator.Next(0, 99999999))}})
         Connection.Close()
     End Sub
-    Public Shared Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
+    Public Function GetUserID(ByVal UserName As String, ByVal Password As String) As Integer
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3005,7 +3038,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetUserID(ByVal UserName As String) As Integer
+    Public Function GetUserID(ByVal UserName As String) As Integer
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3020,7 +3053,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetUserIDByEMail(ByVal EMail As String) As Integer
+    Public Function GetUserIDByEMail(ByVal EMail As String) As Integer
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3035,7 +3068,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetUserResetCode(ByVal UserID As Integer) As UInteger
+    Public Function GetUserResetCode(ByVal UserID As Integer) As UInteger
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return &HFFFFFFFFL
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3049,7 +3082,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
+    Public Function CheckLogin(ByVal UserID As Integer, ByVal Secret As Integer) As Boolean
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return False
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3063,7 +3096,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function CheckAccess(ByVal UserID As Integer) As Integer
+    Public Function CheckAccess(ByVal UserID As Integer) As Integer
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return 0
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3077,7 +3110,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
+    Public Function SetLogin(ByVal UserID As Integer, ByVal Persist As Boolean) As Integer
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Generator As New System.Random()
@@ -3086,13 +3119,13 @@ Public Class SiteDatabase
         ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=" + CStr(SetLogin) + ", LoginTime=" + CStr(If(Persist, "NULL", "UTC_TIMESTAMP")) + " WHERE UserID=" + CStr(UserID))
         Connection.Close()
     End Function
-    Public Shared Sub ClearLogin(ByVal UserID As Integer)
+    Public Sub ClearLogin(ByVal UserID As Integer)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "UPDATE Users SET LoginSecret=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
         Connection.Close()
     End Sub
-    Public Shared Function GetUserActivated(ByVal UserID As Integer) As Integer
+    Public Function GetUserActivated(ByVal UserID As Integer) As Integer
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return -1
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3107,7 +3140,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetUserName(ByVal UserID As Integer) As String
+    Public Function GetUserName(ByVal UserID As Integer) As String
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return String.Empty
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3121,7 +3154,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Function GetUserEMail(ByVal UserID As Integer) As String
+    Public Function GetUserEMail(ByVal UserID As Integer) As String
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return String.Empty
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
@@ -3135,33 +3168,33 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
-    Public Shared Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
+    Public Sub ChangeUserName(ByVal UserID As Integer, ByVal UserName As String)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "UPDATE Users SET UserName=@UserName WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@UserName", UserName}})
         Connection.Close()
     End Sub
-    Public Shared Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
+    Public Sub ChangeUserPassword(ByVal UserID As Integer, ByVal Password As String)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "UPDATE Users SET Password=UNHEX(SHA1(@Password)) WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@Password", Password}})
         Connection.Close()
     End Sub
-    Public Shared Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
+    Public Sub ChangeUserEMail(ByVal UserID As Integer, ByVal EMail As String)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         Dim Generator As New System.Random()
         ExecuteNonQuery(Connection, "UPDATE Users SET EMail=@EMail, ActivationCode='" + CStr(Generator.Next(0, 99999999)) + "' WHERE UserID=" + CStr(UserID), New Generic.Dictionary(Of String, Object) From {{"@EMail", EMail}})
         Connection.Close()
     End Sub
-    Public Shared Sub SetUserActivated(ByVal UserID As Integer)
+    Public Sub SetUserActivated(ByVal UserID As Integer)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         Dim Generator As New System.Random()
         ExecuteNonQuery(Connection, "UPDATE Users SET ActivationCode=NULL, LoginTime=NULL WHERE UserID=" + CStr(UserID))
         Connection.Close()
     End Sub
-    Public Shared Sub RemoveUser(ByVal UserID As Integer)
+    Public Sub RemoveUser(ByVal UserID As Integer)
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return
         ExecuteNonQuery(Connection, "DELETE FROM Users WHERE UserID=" + CStr(UserID))
