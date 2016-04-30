@@ -56,6 +56,9 @@ Partial Class host
     Private UWeb As UtilityWeb
     Private SD As SiteDatabase
     Private UA As UserAccounts
+    Public Function IsLoggedIn() As Boolean
+        Return UA.IsLoggedIn()
+    End Function
     Public Async Function DoAsyncLoad() As Threading.Tasks.Task
         Dim Index As Integer
         Dim IsPrint As Boolean = False
@@ -66,7 +69,7 @@ Partial Class host
             Await _PortableMethods.Init()
         End If
         If UWeb Is Nothing Then
-            UWeb = New UtilityWeb(_PortableMethods, AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf UA.IsLoggedIn)
+            UWeb = New UtilityWeb(_PortableMethods, AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf IsLoggedIn)
         End If
         If SD Is Nothing Then SD = New SiteDatabase(UWeb)
         PageSet = New PageLoader(_PortableMethods, UWeb)
