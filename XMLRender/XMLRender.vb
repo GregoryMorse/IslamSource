@@ -452,6 +452,7 @@ Public Class Utility
         End Function
     End Class
 End Class
+<CLSCompliant(True)>
 Public Class ArabicData
     <Runtime.Serialization.DataContract> _
     Public Structure ArabicCombo
@@ -702,9 +703,9 @@ Public Class ArabicData
         Next
         Return Forms.ToArray()
     End Function
-    Public _PresentationForms() As Char
-    Public _PresentationFormsA() As Char
-    Public _PresentationFormsB() As Char
+    Private _PresentationForms() As Char
+    Private _PresentationFormsA() As Char
+    Private _PresentationFormsB() As Char
     Public ReadOnly Property GetPresentationForms() As Char()
         Get
             Return _PresentationForms
@@ -770,19 +771,19 @@ Public Class ArabicData
         End If
         Return -1
     End Function
-    Public _LigatureCombos() As ArabicCombo
+    Private _LigatureCombos() As ArabicCombo
     Public ReadOnly Property LigatureCombos As ArabicCombo()
         Get
             Return _LigatureCombos
         End Get
     End Property
-    Public _LigatureShapes As Dictionary(Of Char, Integer)
+    Private _LigatureShapes As Dictionary(Of Char, Integer)
     Public ReadOnly Property LigatureShapes As Dictionary(Of Char, Integer)
         Get
             Return _LigatureShapes
         End Get
     End Property
-    Public _LigatureLookups As Dictionary(Of String, Integer)
+    Private _LigatureLookups As Dictionary(Of String, Integer)
     Public ReadOnly Property LigatureLookups As Dictionary(Of String, Integer)
         Get
             Return _LigatureLookups
@@ -831,7 +832,7 @@ Public Class ArabicData
         Next
         Return Str
     End Function
-    Public _ArabicLetterMap As Dictionary(Of Char, Integer)
+    Private _ArabicLetterMap As Dictionary(Of Char, Integer)
     Public ReadOnly Property ArabicLetterMap() As Dictionary(Of Char, Integer)
         Get
             Return _ArabicLetterMap

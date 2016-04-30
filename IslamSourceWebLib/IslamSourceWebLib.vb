@@ -6,12 +6,14 @@ Imports HostPageUtility
 Imports System.Drawing
 Imports System.Web
 Imports System.Web.UI
-Public Class IslamWebInit
+Public Class InitClass
+    Implements UtilityWeb.IInitClass
     Private _PortableMethods As PortableMethods
     Private ChData As CachedData
     Private Arb As Arabic
     Private ArbWeb As ArabicWeb
     Private ArbData As ArabicData
+    Private ArbDataWeb As ArabicDataWeb
     Private TR As TanzilReader
     Private DocBuild As DocBuilder
     Private ArbFont As ArabicFont
@@ -26,31 +28,57 @@ Public Class IslamWebInit
     Private SD As SiteDatabase
     Private ISDatabase As IslamSiteDatabase
     Private ISDatabaseLookup As IslamSiteDatabaseLookup
-    Public Sub Init(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb)
+    Public Sub New(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewUWeb As UtilityWeb, NewSD As SiteDatabase)
         _PortableMethods = NewPortableMethods
+        ArbData = NewArbData
         UWeb = NewUWeb
+        SD = NewSD
     End Sub
-    Public Async Function Init() As Task
-        ArbData = New XMLRender.ArabicData(_PortableMethods)
-        Await ArbData.Init()
+    Public Async Function Init() As Task Implements UtilityWeb.IInitClass.Init
+        ArbDataWeb = New ArabicDataWeb(ArbData)
         Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData, ChData)
         ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
         Await ChData.Init()
         Await Arb.Init()
         TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
         DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
-        ArbWeb = New ArabicWeb(_PortableMethods, ChData, Arb, ArbData)
+        ArbWeb = New ArabicWeb(_PortableMethods, ChData, Arb, ArbData, ArbDataWeb)
         ArbFont = New ArabicFont(_PortableMethods, ChData)
         ChDataWeb = New CachedDataWeb(ChData)
         TRWeb = New TanzilReaderWeb(_PortableMethods, ChData, Arb, ArbWeb, TR)
-        DBWeb = New DocBuilderWeb(_PortableMethods, ArbWeb, ChData, Arb, ArbData, TR, DocBuild, PhrWeb, TRWeb)
         PhrWeb = New PhrasesWeb(ArbWeb, ChData, TR, DBWeb)
-        Qz = New Quiz(Arb, ArbWeb, ChData)
-        SD = New SiteDatabase(UWeb)
+        DBWeb = New DocBuilderWeb(_PortableMethods, ArbWeb, ChData, Arb, ArbData, TR, DocBuild, PhrWeb, TRWeb)
+        PhrWeb = New PhrasesWeb(ArbWeb, ChData, TR, DBWeb) 'double initialize due to mutual dependency...
+        Qz = New Quiz(Arb, ArbWeb, ChData, ArbDataWeb)
         ISDatabase = New IslamSiteDatabase(SD)
         ISDatabaseLookup = New IslamSiteDatabaseLookup(UWeb, ISDatabase)
         HR = New HadithReader(_PortableMethods, Arb, ChData)
         HRWeb = New HadithReaderWeb(_PortableMethods, ChData, ArbWeb, HR, UWeb, ISDatabaseLookup)
+    End Function
+    Public Function LookupObject(ClassName As String) As Object Implements UtilityWeb.IInitClass.LookupObject
+        If ClassName = "ArabicWeb" Then
+            Return ArbWeb
+        ElseIf ClassName = "ArabicFont" Then
+            Return ArbFont
+        ElseIf ClassName = "CachedDataWeb" Then
+            Return ChDataWeb
+        ElseIf ClassName = "TanzilReaderWeb" Then
+            Return TRWeb
+        ElseIf ClassName = "DocBuilderWeb" Then
+            Return DBWeb
+        ElseIf ClassName = "PhrasesWeb" Then
+            Return PhrWeb
+        ElseIf ClassName = "Quiz" Then
+            Return Qz
+        ElseIf ClassName = "IslamSiteDatabase" Then
+            Return ISDatabase
+        ElseIf ClassName = "IslamSiteDatabaseLookup" Then
+            Return ISDatabaseLookup
+        ElseIf ClassName = "HadithReaderWeb" Then
+            Return HRWeb
+        Else
+            Return Nothing
+        End If
     End Function
 End Class
 Public Class PrayerTimeWeb
@@ -74,11 +102,13 @@ Public Class ArabicWeb
     Private ChData As CachedData
     Private Arb As Arabic
     Private ArbData As ArabicData
-    Public Sub New(NewPortableMethods As PortableMethods, NewChData As CachedData, NewArb As Arabic, NewArbData As ArabicData)
+    Private ArbDataWeb As ArabicDataWeb
+    Public Sub New(NewPortableMethods As PortableMethods, NewChData As CachedData, NewArb As Arabic, NewArbData As ArabicData, NewArbDataWeb As ArabicDataWeb)
         _PortableMethods = NewPortableMethods
         ChData = NewChData
         Arb = NewArb
         ArbData = NewArbData
+        ArbDataWeb = NewArbDataWeb
     End Sub
     Public Function DecodeTranslitScheme() As String
         'QueryString instead of Params?
@@ -659,7 +689,7 @@ Public Class ArabicWeb
         "function processTransliteration(list) { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in list) { text = ''; if (list.hasOwnProperty(k) && list[k]['linkchild']) { for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { processTransliteration(list[k]['children'][child]['children']); for (iSubCount = 0; iSubCount < list[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1'  && parseInt($('#translitscheme').val(), 10) % 2 !== 1 && list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + list[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + list[k]['children'][child]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10))); } } } } if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) { text = transliterateWithRules(text, Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2, null, false).split(' '); for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { for (iSubCount = 0; iSubCount < list[k]['children'][child]['translit'].length; iSubCount++) { if (list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } } } else { processTransliteration(list[k]['children']); } for (iSubCount = 0; iSubCount < list[k]['arabic'].length; iSubCount++) { if (list[k]['translit'][iSubCount] !== '') $('#' + list[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['arabic'][iSubCount] === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules($('#' + list[k]['arabic'][iSubCount]).text(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate($('#' + list[k]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10)))); } } }",
         "function changeTransliteration() { changeChapterTranslit(); var i; for (i = 0; i < renderList.length; i++) { processTransliteration(renderList[i]); } }",
         "function changeChapterTranslit() { var i; for (i = 0; i < $('#quranselection').get(0).options.length; i++) { $('#quranselection').get(0).options[i].text = $('#quranselection').get(0).options[i].text.replace(/(\(.*? )(.*?)(\u202C\))( )?(.*)/g, function (m, open, a, close) { return open + a + close + ' ' + (($('#translitscheme').val() === '0' || a === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules(a, parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate(a, true, parseInt($('#translitscheme').val(), 10)))); }); } }"}
-        GetJS.AddRange(ArabicDataWeb.GetUniCats())
+        GetJS.AddRange(ArbDataWeb.GetUniCats())
         GetJS.AddRange(PlainTransliterateGenJS)
         GetJS.AddRange(TransliterateGenJS)
         GetJS.AddRange(NumberGenJS)
@@ -762,7 +792,7 @@ Public Class ArabicWeb
                 "function arabicWordFromNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = arabicWordForLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' ' + arabicCombiners[0])) + nextstr); nextstr = ''; } while (curbase >= 0); if (number !== 0 || str === '') { nextstr = arabicWordForLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' ' + arabicCombiners[0])) + nextstr); }"}
     Public Function GetTransliterateNumberJS() As String()
         Dim GetJS As New List(Of String) From {"javascript: doTransliterateNum();", String.Empty, GetArabicSymbolJSArray(), GetTranslitSchemeJSArray()}
-        GetJS.AddRange(ArabicDataWeb.GetUniCats())
+        GetJS.AddRange(ArbDataWeb.GetUniCats())
         GetJS.AddRange(PlainTransliterateGenJS)
         GetJS.AddRange(TransliterateGenJS)
         GetJS.AddRange(NumberGenJS)
@@ -772,7 +802,7 @@ Public Class ArabicWeb
         Dim GetJS As New List(Of String) From {"javascript: doTransliterateDisplay();", String.Empty, GetArabicSymbolJSArray(), GetTranslitSchemeJSArray(),
         "function doDirectionDom(elem, sVal, direction) { elem.css('direction', direction ? 'ltr' : 'rtl'); var stack = [], lastStrong = -1, lastCount = 0, iCount; for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charCodeAt(iCount) === 0x200E || sVal.charCodeAt(iCount) === 0x200F || sVal.charCodeAt(iCount) === 0x61C) { if (lastStrong !== iCount - 1) {  } } else if (IsExplicit(sVal.charCodeAt(iCount))) { if (sVal.charCodeAt(iCount) === 0x202C || sVal.charCodeAt(iCount) === 0x2069) { stack.pop()[1].add(document.createTextNode(sVal.substring(lastCount, iCount - 1))); lastCount = iCount + 1; lastStrong = -1; } else { (stack.length === 0 ? elem : stack[stack.length - 1][1]).add(document.createTextNode(sVal.substring(lastCount, iCount - 1))); lastCount = iCount + 1; lastStrong = -1; stack.push([sVal[iCount], (stack.length === 0 ? elem : stack[stack.length - 1][1]).add('span')]); stack[stack.length - 1][1].css('direction', (sVal[iCount] === 0x202D || sVal[iCount] === 0x202A || sVal[iCount] === 0x2066) ? 'ltr' : 'rtl'); } } else if (!IsNeutral(sVal.charCodeAt(iCount))) { lastStrong = iCount; } } (stack.length === 0 ? elem : stack[stack.length - 1][1]).add(document.createTextNode(sVal.substring(lastCount, iCount - 1))); }",
         "function doTransliterateDisplay() { $('#translitvalue').css('direction', !$('#scheme1').prop('checked') && $($('#scheme0').prop('checked') ? '#direction0' : '#operation1').prop('checked') ? 'ltr' : 'rtl'); $('#translitvalue').empty(); $('#translitvalue').text($('#scheme0').prop('checked') ? doTransliterate($('#translitedit').val(), $('#direction0').prop('checked'), parseInt($('#translitscheme').val(), 10)) : ($('#scheme1').prop('checked') ? doScriptFormatChange($('#translitedit').val(), parseInt($('#toscheme').val(), 10), parseInt($('#fromscheme').val(), 10)) : $('#translitedit').val())); $('#translitvalue').html($('#translitvalue').html().replace(/\n/g, '<br>')); }"}
-        GetJS.AddRange(ArabicDataWeb.GetUniCats())
+        GetJS.AddRange(ArbDataWeb.GetUniCats())
         GetJS.AddRange(PlainTransliterateGenJS)
         GetJS.AddRange(TransliterateGenJS)
         GetJS.AddRange(DiacriticJS)
@@ -1193,10 +1223,12 @@ Public Class Quiz
     Private Arb As Arabic
     Private ArbWeb As ArabicWeb
     Private ChData As CachedData
-    Public Sub New(NewArb As Arabic, NewArbWeb As ArabicWeb, NewChData As CachedData)
+    Private ArbDataWeb As ArabicDataWeb
+    Public Sub New(NewArb As Arabic, NewArbWeb As ArabicWeb, NewChData As CachedData, NewArbDataWeb As ArabicDataWeb)
         Arb = NewArb
         ArbWeb = NewArbWeb
         ChData = NewChData
+        ArbDataWeb = NewArbDataWeb
     End Sub
     Public Shared Function GetQuizList() As Array()
         Dim Strings(2) As Array
@@ -1279,7 +1311,7 @@ Public Class Quiz
             "function getQA(quizSet, quest, nidx) { if (quest) return quizSet[nidx]; return (parseInt($('#translitscheme').val(), 10) % 2) === 0 ? transliterateWithRules(quizSet[nidx], parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : 5, null, false) : doTransliterate(quizSet[nidx], true, parseInt($('#translitscheme').val(), 10)); }",
             "function nextQuestion() { $('#count').text('Wrong: ' + qwrong + ' Right: ' + qright); var i = Math.floor(Math.random() * 4), quizSet = getQuizSet(), pos = quizSet.length, nidx = getUniqueRnd([], pos), aidx = []; aidx[0] = getUniqueRnd([nidx], pos); aidx[1] = getUniqueRnd([nidx, aidx[0]], pos); aidx[2] = getUniqueRnd([nidx, aidx[0], aidx[1]], pos); $('#quizquestion').text(getQA(quizSet, true, nidx)); $('#answer1').prop('value', getQA(quizSet, false, i === 0 ? nidx : aidx[0])); $('#answer2').prop('value', getQA(quizSet, false, i === 1 ? nidx : aidx[i > 1 ? 1 : 0])); $('#answer3').prop('value', getQA(quizSet, false, i === 2 ? nidx : aidx[i > 2 ? 2 : 1])); $('#answer4').prop('value', getQA(quizSet, false, i === 3 ? nidx : aidx[2])); }",
             "function verifyAnswer(ctl) { $(ctl).prop('value') === ((parseInt($('#translitscheme').val(), 10) % 2) === 0 ? transliterateWithRules($('#quizquestion').text().trim(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : 5, null, false) : doTransliterate($('#quizquestion').text().trim(), true, parseInt($('#translitscheme').val(), 10))) ? qright++ : qwrong++; nextQuestion(); }"}
-        JSList.AddRange(ArabicDataWeb.GetUniCats())
+        JSList.AddRange(ArbDataWeb.GetUniCats())
         JSList.AddRange(ArbWeb.PlainTransliterateGenJS)
         JSList.AddRange(ArbWeb.TransliterateGenJS)
         Return JSList.ToArray()

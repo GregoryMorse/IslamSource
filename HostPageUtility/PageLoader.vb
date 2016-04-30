@@ -4,6 +4,9 @@ Imports XMLRender
 Imports System.Drawing
 Imports System.Web
 Imports System.Web.UI
+Imports HostPageUtility
+Imports System.Threading.Tasks
+
 Public Class WindowsWebSettings
     Implements PortableSettings
     Private UWeb As UtilityWeb
@@ -106,7 +109,7 @@ Public Class NativeMethods
         Public gmCellIncX As Short
         Public gmCellIncY As Short
     End Structure
-    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetGlyphOutline")> _
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetGlyphOutline")>
     Friend Shared Function GetGlyphOutline(hdc As IntPtr, uChar As UInteger, uFormat As UInteger, ByRef lpgm As GLYPHMETRICS, cbBuffer As UInteger, lpvBuffer As IntPtr, ByRef lpmat2 As MAT2) As Integer
     End Function
     Public Structure ABCFLOAT
@@ -114,21 +117,21 @@ Public Class NativeMethods
         Public abcfB As Single
         Public abcfC As Single
     End Structure
-    <Runtime.InteropServices.DllImport("gdi32", EntryPoint:="GetCharABCWidthsFloat")> _
+    <Runtime.InteropServices.DllImport("gdi32", EntryPoint:="GetCharABCWidthsFloat")>
     Friend Shared Function GetCharABCWidthsFloat(hDC As IntPtr, iFirstChar As Integer, iLastChar As Integer, ByRef lpABCF As ABCFLOAT) As Integer
     End Function
-    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")> _
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="SelectObject")>
     Friend Shared Function SelectObject(ByVal hdc As IntPtr, ByVal hObject As IntPtr) As IntPtr
     End Function
-    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetFontUnicodeRanges")> _
+    <Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint:="GetFontUnicodeRanges")>
     Friend Shared Function GetFontUnicodeRanges(ByVal hds As IntPtr, ByVal lpgs As IntPtr) As UInteger
     End Function
-    <CLSCompliant(False)> _
+    <CLSCompliant(False)>
     Public Structure FontRange
         Public Low As UShort
         Public High As UShort
     End Structure
-    <CLSCompliant(False)> _
+    <CLSCompliant(False)>
     Shared Function Unsign(ByVal Input As Int16) As UShort
         If Input > -1 Then
             Return CUShort(Input)
@@ -136,7 +139,7 @@ Public Class NativeMethods
             Return CUShort(UShort.MaxValue - (Not Input))
         End If
     End Function
-    <CLSCompliant(False)> _
+    <CLSCompliant(False)>
     Shared Function GetUnicodeRangesForFont(ByVal font As Font) As Generic.List(Of FontRange)
         Dim g As Graphics
         Dim hdc, hFont, old, glyphSet As IntPtr
@@ -164,7 +167,7 @@ Public Class NativeMethods
         g.Dispose()
         Return fontRanges
     End Function
-    <CLSCompliant(False)> _
+    <CLSCompliant(False)>
     Shared Function CheckIfCharInFont(ByVal character As Char, ByVal font As Font) As Boolean
         Dim intval As UInt16 = Convert.ToUInt16(character)
         Dim ranges As Generic.List(Of FontRange) = GetUnicodeRangesForFont(font)
@@ -177,8 +180,40 @@ Public Class NativeMethods
         Next range
         Return isCharacterPresent
     End Function
-    <Runtime.InteropServices.DllImport("getuname.dll", EntryPoint:="GetUName")> _
+    <Runtime.InteropServices.DllImport("getuname.dll", EntryPoint:="GetUName")>
     Friend Shared Function GetUName(ByVal wCharCode As UShort, <Runtime.InteropServices.MarshalAs(Runtime.InteropServices.UnmanagedType.LPWStr)> ByVal lpbuf As System.Text.StringBuilder) As Integer
+    End Function
+End Class
+Public Class InitClass
+    Implements UtilityWeb.IInitClass
+    Private _PortableMethods As PortableMethods
+    Private UWeb As UtilityWeb
+    Private SD As SiteDatabase
+    Private RAWeb As RenderArrayWeb
+    Private Doc As Document
+    Private ArbDataWeb As ArabicDataWeb
+    Private ArbData As ArabicData
+    Public Sub New(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewUWeb As UtilityWeb, NewSD As SiteDatabase)
+        _PortableMethods = NewPortableMethods
+        ArbData = NewArbData
+        UWeb = NewUWeb
+        SD = NewSD
+    End Sub
+    Public Function Init() As Task Implements UtilityWeb.IInitClass.Init
+        RAWeb = New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
+        Doc = New Document(_PortableMethods)
+        ArbDataWeb = New ArabicDataWeb(ArbData)
+    End Function
+    Public Function LookupObject(ClassName As String) As Object Implements UtilityWeb.IInitClass.LookupObject
+        If ClassName = "RenderArrayWeb" Then
+            Return RAWeb
+        ElseIf ClassName = "ArabicDataWeb" Then
+            Return ArbDataWeb
+        ElseIf ClassName = "Document" Then
+            Return Doc
+        Else
+            Return Nothing
+        End If
     End Function
 End Class
 <CLSCompliant(True)>
@@ -193,8 +228,10 @@ Public Class UtilityWeb
     Private MD As MailDispatcher
     Private Doc As Document
     Public ConnData As ConnectionData
+    Private SD As SiteDatabase
+    Private ArbData As ArabicData
     'HttpContext.Current.Trace.Write(Text)
-    Public Sub New(NewPortableMethods As PortableMethods, NewGetPageString As DelGetPageString, NewGetUserID As DelGetUserID, NewIsLoggedIn As DelIsLoggedIn)
+    Public Sub New(NewPortableMethods As PortableMethods, ArbData As ArabicData, NewGetPageString As DelGetPageString, NewGetUserID As DelGetUserID, NewIsLoggedIn As DelIsLoggedIn)
         GetPageString = NewGetPageString
         GetUserID = NewGetUserID
         IsLoggedIn = NewIsLoggedIn
@@ -203,6 +240,20 @@ Public Class UtilityWeb
         Doc = New Document(_PortableMethods)
         ConnData = New ConnectionData(Me)
     End Sub
+    Public Async Function Init(NewSD As SiteDatabase) As Threading.Tasks.Task
+        SD = NewSD
+        Dim ctor As Reflection.ConstructorInfo = Reflection.Assembly.GetExecutingAssembly().GetType("HostPageUtility.InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(UtilityWeb), GetType(SiteDatabase)})
+        InitDict.Add("HostPageUtility.InitClass", CType(ctor.Invoke(New Object() {_PortableMethods, Me, SD}), IInitClass))
+        Await InitDict("HostPageUtility.InitClass").Init()
+        For Each Key As String In _PortableMethods.Settings.FuncLibs
+            Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
+            If Not Asm Is Nothing Then
+                ctor = Asm.GetType(Key + ".InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(UtilityWeb), GetType(SiteDatabase)})
+                InitDict.Add(Key, CType(ctor.Invoke(New Object() {_PortableMethods, Me, SD}), IInitClass))
+                Await InitDict(Key).Init()
+            End If
+        Next
+    End Function
     Public Const LocalConfig As String = "~/web.config"
     Public Class ConnectionData
         Private UWeb As UtilityWeb
@@ -729,29 +780,39 @@ Public Class UtilityWeb
         oFont.Dispose()
         g.Dispose()
     End Sub
-    Public Function LookupClassMember(ByVal Text As String) As Reflection.MethodInfo
+    Public Interface IInitClass
+        Function Init() As Threading.Tasks.Task
+        Function LookupObject(ClassName As String) As Object
+    End Interface
+    Private InitDict As Dictionary(Of String, IInitClass)
+    Public Delegate Function WebInvoker(Parameters As Object()) As Threading.Tasks.Task(Of Object)
+    Public Function LookupClassMember(ByVal Text As String) As WebInvoker
         Dim ClassMember As String() = Text.Split(":"c)
         LookupClassMember = Nothing
         If (ClassMember.Length = 3 AndAlso ClassMember(1) = String.Empty) Then
             Dim CheckType As Type = Reflection.Assembly.GetExecutingAssembly().GetType("HostPageUtility." + ClassMember(0))
+            Dim Member As Reflection.MethodInfo = Nothing
             If Not CheckType Is Nothing Then
-                LookupClassMember = CheckType.GetMethod(ClassMember(2))
+                Member = CheckType.GetMethod(ClassMember(2))
             End If
-            If LookupClassMember Is Nothing Then
+            If Member Is Nothing Then
                 For Each Key As String In _PortableMethods.Settings.FuncLibs
                     Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
                     If Not Asm Is Nothing Then
                         CheckType = Asm.GetType(Key + "." + ClassMember(0))
                         If Not CheckType Is Nothing Then
-                            LookupClassMember = CheckType.GetMethod(ClassMember(2))
-                            If Not LookupClassMember Is Nothing Then Exit For
+                            Member = CheckType.GetMethod(ClassMember(2))
+                            If Not Member Is Nothing Then
+                                LookupClassMember = Function(Params As Object()) CType(Member.Invoke(Nothing, Params), Threading.Tasks.Task(Of Object))
+                                Exit For
+                            End If
+                            LookupClassMember = Function(Params As Object()) CType(CheckType.InvokeMember(ClassMember(2), Reflection.BindingFlags.Public, Nothing, InitDict(Key).LookupObject(ClassMember(0)), Params), Threading.Tasks.Task(Of Object))
                         End If
                     End If
                 Next
+            Else
+                LookupClassMember = Function(Params As Object()) CType(Member.Invoke(Nothing, Params), Threading.Tasks.Task(Of Object))
             End If
-        End If
-        If Not LookupClassMember.IsStatic Then
-            LookupClassMember.Module.
         End If
         If LookupClassMember Is Nothing Then Debug.Print("Could not find class member: " + Text)
     End Function
@@ -785,47 +846,47 @@ Public Class UtilityWeb
 End Class
 Public Class UnitConversions
     Public Shared Function GetPIJS() As String
-        Return "function getPI() { return 3.14159265358979323846; }" + _
-        "function degToDegMinSec(deg) { return Math.floor(deg).toString() + '\u00B0 ' + Math.floor((deg % 1) * 60).toString() + '\' ' + ((((deg % 1) * 60) % 1) * 60).toString() + '""'; }" + _
-        "function degMinSecToDeg(deg, min, sec) { return Number(deg) + min / 60 + sec / 3600; }" + _
-        "function degToRad(deg) { return deg * getPI() /  180; }" + _
-        "function radToDeg(rad) { return rad * 180 / getPI(); }" + _
-        "function toBearing(rad) { return (radToDeg(rad) + 360) % 360; }" + _
-        "function getSphericalDistance(lat1, lon1, lat2, lon2) { var R = 6378.137, dLon = degToRad(lon2 - lon1), dLat = degToRad(lat2 - lat1); a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(degToRad(lat1)) * Math.cos(degToRad(lat2)); return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); }" + _
+        Return "function getPI() { return 3.14159265358979323846; }" +
+        "function degToDegMinSec(deg) { return Math.floor(deg).toString() + '\u00B0 ' + Math.floor((deg % 1) * 60).toString() + '\' ' + ((((deg % 1) * 60) % 1) * 60).toString() + '""'; }" +
+        "function degMinSecToDeg(deg, min, sec) { return Number(deg) + min / 60 + sec / 3600; }" +
+        "function degToRad(deg) { return deg * getPI() /  180; }" +
+        "function radToDeg(rad) { return rad * 180 / getPI(); }" +
+        "function toBearing(rad) { return (radToDeg(rad) + 360) % 360; }" +
+        "function getSphericalDistance(lat1, lon1, lat2, lon2) { var R = 6378.137, dLon = degToRad(lon2 - lon1), dLat = degToRad(lat2 - lat1); a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(degToRad(lat1)) * Math.cos(degToRad(lat2)); return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); }" +
         "function getDegreeBearing(lat1, lon1, lat2, lon2) { var dLon = degToRad(lon1 - lon2); return toBearing(-Math.atan2(Math.sin(dLon), Math.cos(degToRad(lat1)) * Math.tan(degToRad(lat2)) - Math.sin(degToRad(lat1)) * Math.cos(dLon))); }"
     End Function
     Public Shared Function GetTimeDistToSpeedJS() As String()
-        Return New String() {"javascript: doTimeDistToSpeed();", String.Empty, _
+        Return New String() {"javascript: doTimeDistToSpeed();", String.Empty,
         "function doTimeDistToSpeed() { $('#speedresult').text($('#mode0').prop('checked') ? ($('#distance').val() / (($('#minutes').val() * 60 + parseFloat($('#seconds').val())) / 3600 + parseFloat($('#hours').val()))) : ((parseFloat($('#minutes').val()) + (parseFloat($('#seconds').val()) + $('#hours').val() * 3600) / 60) / $('#distance').val())); }"}
     End Function
     Public Shared Function GetUnitConversionJS() As String()
-        Return New String() {"javascript: doUnitConversion();", String.Empty, _
+        Return New String() {"javascript: doUnitConversion();", String.Empty,
         "function doUnitConversion() { $('#distanceresult').text($('#convunits0').prop('checked') ? ($('#convdistance').val() / 1.609344) : ($('#convdistance').val() * 1.609344)); }"}
     End Function
     Public Shared Function GetDegreeConversionUnitChangeJS() As String()
-        Return New String() {"javascript: doDegreeConversionUnitChange();", String.Empty, _
+        Return New String() {"javascript: doDegreeConversionUnitChange();", String.Empty,
         "function doDegreeConversionUnitChange() { $('#minutes').css('display', $('#convunits0').prop('checked') ? 'block' : 'none'); $('#seconds').css('display', $('#convunits0').prop('checked') ? 'block' : 'none'); }"}
     End Function
     Public Shared Function GetDegreeConversionJS() As String()
-        Return New String() {"javascript: doDegreeConversion();", String.Empty, GetPIJS(), _
+        Return New String() {"javascript: doDegreeConversion();", String.Empty, GetPIJS(),
         "function doDegreeConversion() { $('#result').text($('#convunits0').prop('checked') ? degMinSecToDeg($('#degrees').val(), $('#minutes').val(), $('#seconds').val()).toString() + '\u00B0\r\n' + degToRad(degMinSecToDeg($('#degrees').val(), $('#minutes').val(), $('#seconds').val())).toString() + 'rad' : ($('#convunits1').prop('checked') ? degToDegMinSec($('#degrees').val()).toString() + '\r\n' + degToRad($('#degrees').val()) + 'rad' : radToDeg($('#degrees').val()) + '\u00B0\r\n' + degToDegMinSec(radToDeg($('#degrees').val())))); }"}
     End Function
     Public Shared Function GetDegreeOffsetJS() As String()
-        Return New String() {"javascript: doDegreeOffset();", String.Empty, _
+        Return New String() {"javascript: doDegreeOffset();", String.Empty,
         "function doDegreeOffset() { $('#resultdist').text(getSphericalDistance(degMinSecToDeg($('#latdegrees').val(), $('#latminutes').val(), $('#latseconds').val()), degMinSecToDeg($('#londegrees').val(), $('#lonminutes').val(), $('#lonseconds').val()), degMinSecToDeg($('#destlatdegrees').val(), $('#destlatminutes').val(), $('#destlatseconds').val()), degMinSecToDeg($('#destlondegrees').val(), $('#destlonminutes').val(), $('#destlonseconds').val())) + 'km\r\n' + getDegreeBearing(degMinSecToDeg($('#latdegrees').val(), $('#latminutes').val(), $('#latseconds').val()), degMinSecToDeg($('#londegrees').val(), $('#lonminutes').val(), $('#lonseconds').val()), degMinSecToDeg($('#destlatdegrees').val(), $('#destlatminutes').val(), $('#destlatseconds').val()), degMinSecToDeg($('#destlondegrees').val(), $('#destlonminutes').val(), $('#destlonseconds').val())) + '\u00B0'); }"}
     End Function
     Public Shared Function GetDateOffsetJS() As String()
-        Return New String() {"javascript: doDateOffset();", String.Empty, _
+        Return New String() {"javascript: doDateOffset();", String.Empty,
         "function doDateOffset() { var d = new Date($('#date').val()); d.setDate($('#convdates0').prop('checked') ? (d.getDate() - (-$('#offset').val())) : (d.getDate() - $('#offset').val())); $('#resultdate').text(d.toDateString()); }"}
     End Function
     Public Shared Function GetDataConversionJS() As String()
-        Return New String() {"javascript: doDateConversion();", String.Empty, _
+        Return New String() {"javascript: doDateConversion();", String.Empty,
         "function doDateConversion() { $('#resultcal').text($.calendars.instance($('#convcalendars0').prop('checked') ? 'gregorian' : ($('#convcalendars1').prop('checked') ? 'islamic' : 'ummalqura')).fromJD($.calendars.instance('gregorian').fromJSDate(new Date($('#dateconv').val())).toJD()).formatDate($.calendars.instance().FULL)); }"}
     End Function
 End Class
 Public Class XMLCoding
     Public Shared Function PerformCoding() As String()
-        Return New String() {"javascript: doCoding();", String.Empty, _
+        Return New String() {"javascript: doCoding();", String.Empty,
         "function doCoding() { $('#xmlresult').text($('#convdir0').prop('checked') ? ($('#convattr0').prop('checked') ? $('#convxml').val().replace(/&/g, '&amp;').replace(/\r/g, '&#13;').replace(/\n/g, '&#10;') : $('#convxml').val().replace(/&/g, '&amp;')).replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\'/g, '&apos;').replace(/\""/g, '&quot;') : ($('#convattr0').prop('checked') ? $('#convxml').val().replace(/&#13;/g, '\r').replace(/&#10;/g, '\n') : $('#convxml').val()).replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&apos;/g, '\'').replace(/&quot;/g, '\""').replace(/&amp;/g, '&')); }"}
     End Function
 End Class
@@ -837,13 +898,13 @@ Public Class HTTPCoding
         Return Str.Replace("&lt;", "<").Replace("&gt;", ">").Replace("&apos;", "'").Replace("&quot;", """").Replace("&amp;", "&")
     End Function
     Public Shared Function PerformCoding() As String()
-        Return New String() {"javascript: doHttpCoding();", String.Empty, _
+        Return New String() {"javascript: doHttpCoding();", String.Empty,
         "function doHttpCoding() { $('#httpresult').text($('#convhttpdir0').prop('checked') ? ($('#convhttpattr0').prop('checked') ? encodeURI($('#convhttp').val()) : encodeURIComponent($('#convhttp').val())) : ($('#convhttpattr0').prop('checked') ? unescape($('#convhttp').val()) : decodeURIComponent($('#convhttp').val()))); }"}
     End Function
 End Class
 Public Class HTMLCoding
     Public Shared Function PerformCoding() As String()
-        Return New String() {"javascript: doHtmlCoding();", String.Empty, _
+        Return New String() {"javascript: doHtmlCoding();", String.Empty,
         "function doHtmlCoding() { $('#htmlresult').text($('#convhtmldir0').prop('checked') ? escape($('#convhtml').val()) : unescape($('#convhtml').val())); }"}
     End Function
 End Class
@@ -851,7 +912,7 @@ Public Class JSCoding
     Public Shared Function PerformCoding() As String()
         'parsing javascript for beautification must ignore quotes and count the number of open braces
         'simple naive technique used for now
-        Return New String() {"javascript: doJSCoding();", String.Empty, _
+        Return New String() {"javascript: doJSCoding();", String.Empty,
         "function doJSCoding() { $('#jsresult').text($('#convjsdir0').prop('checked') ? $('#convjs').val().replace(/\r?\n|\r|\t/gm, ' ') : $('#convjs').val().replace(/(?:{|;|})\s+/g, '$1\r\n')); }"}
     End Function
 End Class
@@ -936,7 +997,7 @@ Public Class Geolocation
         Return GetElevationData(Strings(8), Strings(9))
     End Function
 End Class
-<CLSCompliant(True)> _
+<CLSCompliant(True)>
 Public Class PageLoader
     Structure PageItem
         Dim Page As List(Of Object)
@@ -980,8 +1041,8 @@ Public Class PageLoader
         Dim Text As String
         Dim URL As String
         Dim ImageURL As String
-        Dim OnRenderFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewText As String, Optional ByVal NewURL As String = "", Optional ByVal NewImageURL As String = "", Optional ByVal NewOnRender As Reflection.MethodInfo = Nothing)
+        Dim OnRenderFunction As UtilityWeb.WebInvoker
+        Public Sub New(ByVal NewName As String, ByVal NewText As String, Optional ByVal NewURL As String = "", Optional ByVal NewImageURL As String = "", Optional ByVal NewOnRender As UtilityWeb.WebInvoker = Nothing)
             Name = NewName
             Text = NewText
             URL = NewURL
@@ -994,8 +1055,8 @@ Public Class PageLoader
         Dim DefaultValue As String
         Dim Rows As Integer
         Dim Password As Boolean
-        Dim OnChangeFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewDefaultValue As String, ByVal NewRows As Integer, Optional ByVal NewPassword As Boolean = False, Optional ByVal NewOnChange As Reflection.MethodInfo = Nothing)
+        Dim OnChangeFunction As UtilityWeb.WebInvoker
+        Public Sub New(ByVal NewName As String, ByVal NewDefaultValue As String, ByVal NewRows As Integer, Optional ByVal NewPassword As Boolean = False, Optional ByVal NewOnChange As UtilityWeb.WebInvoker = Nothing)
             Name = NewName
             DefaultValue = NewDefaultValue
             Rows = NewRows
@@ -1014,9 +1075,9 @@ Public Class PageLoader
     Structure ButtonItem
         Dim Name As String
         Dim Description As String
-        Dim OnClickFunction As Reflection.MethodInfo
-        Dim OnRenderFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, Optional ByVal NewOnClick As Reflection.MethodInfo = Nothing, Optional ByVal NewOnRender As Reflection.MethodInfo = Nothing)
+        Dim OnClickFunction As UtilityWeb.WebInvoker
+        Dim OnRenderFunction As UtilityWeb.WebInvoker
+        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, Optional ByVal NewOnClick As UtilityWeb.WebInvoker = Nothing, Optional ByVal NewOnRender As UtilityWeb.WebInvoker = Nothing)
             Name = NewName
             Description = NewDescription
             OnClickFunction = NewOnClick
@@ -1030,9 +1091,9 @@ Public Class PageLoader
         Dim UseCheck As Boolean
         Dim DefaultValue As String
         Dim OptionArray() As OptionItem
-        Dim OnPopulateFunction As Reflection.MethodInfo
-        Dim OnChangeFunction As Reflection.MethodInfo
-        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, ByVal NewDefaultValue As String, ByVal NewOptionArray() As OptionItem, Optional ByVal NewUseList As Boolean = False, Optional ByVal NewUseCheck As Boolean = False, Optional ByVal NewOnPopulate As Reflection.MethodInfo = Nothing, Optional ByVal NewOnChange As Reflection.MethodInfo = Nothing)
+        Dim OnPopulateFunction As UtilityWeb.WebInvoker
+        Dim OnChangeFunction As UtilityWeb.WebInvoker
+        Public Sub New(ByVal NewName As String, ByVal NewDescription As String, ByVal NewDefaultValue As String, ByVal NewOptionArray() As OptionItem, Optional ByVal NewUseList As Boolean = False, Optional ByVal NewUseCheck As Boolean = False, Optional ByVal NewOnPopulate As UtilityWeb.WebInvoker = Nothing, Optional ByVal NewOnChange As UtilityWeb.WebInvoker = Nothing)
             Name = NewName
             Description = NewDescription
             DefaultValue = NewDefaultValue
@@ -1068,11 +1129,11 @@ Public Class PageLoader
     Structure DownloadItem
         Dim Text As String
         Dim Path As String
-        Dim OnRenderFunction As Reflection.MethodInfo
+        Dim OnRenderFunction As UtilityWeb.WebInvoker
         Dim RelativePath As Boolean
         Dim UseLink As Boolean
         Dim ShowInline As Boolean
-        Public Sub New(ByVal NewText As String, ByVal NewPath As String, ByVal NewOnRender As Reflection.MethodInfo, Optional ByVal NewRelativePath As Boolean = True, Optional ByVal NewUseLink As Boolean = False, Optional ByVal NewShowInline As Boolean = False)
+        Public Sub New(ByVal NewText As String, ByVal NewPath As String, ByVal NewOnRender As UtilityWeb.WebInvoker, Optional ByVal NewRelativePath As Boolean = True, Optional ByVal NewUseLink As Boolean = False, Optional ByVal NewShowInline As Boolean = False)
             Text = NewText
             Path = NewPath
             RelativePath = NewRelativePath
@@ -1081,7 +1142,7 @@ Public Class PageLoader
             OnRenderFunction = NewOnRender
         End Sub
     End Structure
-    Public Function DoLookup(Str As String) As Reflection.MethodInfo
+    Public Function DoLookup(Str As String) As UtilityWeb.WebInvoker
         Return If(Str <> String.Empty, UWeb.LookupClassMember(Str), Nothing)
     End Function
     Public Shared Function IsDownloadItem(ByVal Item As Object) As Boolean
@@ -1125,7 +1186,7 @@ Public Class PageLoader
     Public Function GetPageIndex(ByVal Name As String) As Integer
         Dim Index As Integer
         For Index = 0 To Pages.Count - 1
-            If (Name Is Nothing Or Name = String.Empty) And Index = 0 Or _
+            If (Name Is Nothing Or Name = String.Empty) And Index = 0 Or
                 Name <> String.Empty And Name = (Pages.Item(Index).PageName) Then
                 Return Index
             End If
@@ -1264,8 +1325,11 @@ Public Class PageLoader
     End Function
 End Class
 Public Class ArabicDataWeb
-    Public Shared ArbData As ArabicData
-    Public Shared Function GetUniCats() As String()
+    Public ArbData As ArabicData
+    Public Sub New(NewArbData As ArabicData)
+        ArbData = NewArbData
+    End Sub
+    Public Function GetUniCats() As String()
         Return {"function IsLTR(c) { " + MakeUniCategoryJS(ArabicData.LTRCategories) + " }",
         "function IsRTL(c) { " + MakeUniCategoryJS(ArabicData.RTLCategories) + " }",
         "function IsAL(c) { " + MakeUniCategoryJS(ArabicData.ALCategories) + " }",
@@ -1273,7 +1337,7 @@ Public Class ArabicDataWeb
         "function IsWeak(c) { " + MakeUniCategoryJS(ArabicData.WeakCategories) + " }",
         "function IsExplicit(c) { " + MakeUniCategoryJS(ArabicData.ExplicitCategories) + " }"}
     End Function
-    Public Shared Function MakeUniCategoryJS(Cats As String()) As String
+    Public Function MakeUniCategoryJS(Cats As String()) As String
         Dim Ranges As List(Of List(Of Integer)) = ArbData.MakeUniCategory(Cats)
         Return "return " + String.Join("||", Linq.Enumerable.Select(Ranges.ToArray(), Function(Arr As List(Of Integer)) If(Arr.Count = 1, "c===0x" + Convert.ToString(Arr(0), 16), "(c>=0x" + Convert.ToString(Arr(0), 16) + "&&c<=0x" + Convert.ToString(Arr(Arr.Count - 1), 16) + ")"))) + ";"
     End Function
@@ -2956,6 +3020,7 @@ Public Class SiteDatabase
     Public Sub New(NewUWeb As UtilityWeb)
         UWeb = NewUWeb
     End Sub
+    <CLSCompliant(False)>
     Public Function GetConnection() As MySql.Data.MySqlClient.MySqlConnection
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = New MySql.Data.MySqlClient.MySqlConnection("Server=" + UtilityWeb.ConnectionData.DbConnServer + ";Uid=" + UtilityWeb.ConnectionData.DbConnUid + ";Pwd=" + UWeb.ConnData.DbConnPwd + ";Database=" + UtilityWeb.ConnectionData.DbConnDatabase + ";")
         Try
@@ -2972,6 +3037,7 @@ Public Class SiteDatabase
         End Try
         Return Connection
     End Function
+    <CLSCompliant(False)>
     Public Shared Sub ExecuteNonQuery(ByVal Connection As MySql.Data.MySqlClient.MySqlConnection, ByVal Query As String, Optional Parameters As Generic.Dictionary(Of String, Object) = Nothing)
         Dim Command As MySql.Data.MySqlClient.MySqlCommand = Connection.CreateCommand()
         Command.CommandText = Query
@@ -3071,6 +3137,7 @@ Public Class SiteDatabase
         Reader.Close()
         Connection.Close()
     End Function
+    <CLSCompliant(False)>
     Public Function GetUserResetCode(ByVal UserID As Integer) As UInteger
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = GetConnection()
         If Connection Is Nothing Then Return &HFFFFFFFFL

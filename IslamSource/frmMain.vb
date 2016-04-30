@@ -286,7 +286,7 @@ Public Class frmMain
         Await Arb.Init()
         TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
         DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
-        UWeb = New UtilityWeb(_PortableMethods, Nothing, Nothing, Nothing)
+        UWeb = New UtilityWeb(_PortableMethods, ArbData, Nothing, Nothing, Nothing)
         PageSet = New PageLoader(_PortableMethods, UWeb)
         Await UtilityTestCode()
         For Index = 0 To PageSet.Pages.Count - 1

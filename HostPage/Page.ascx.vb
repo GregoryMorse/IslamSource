@@ -113,7 +113,7 @@ Partial Class Page
         End If
         If Not Item.OnRenderFunction Is Nothing Then
             If Item.Text <> String.Empty Then writer.Write("&nbsp;&nbsp;")
-            Output = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
+            Output = Await Item.OnRenderFunction.Invoke(New Object() {Item})
             If TypeOf Output Is String Then
                 OutputStrings(writer, UtilityWeb.HtmlTextEncode(CStr(Output)).Split(New String() {vbCrLf, vbLf}, StringSplitOptions.None))
             ElseIf TypeOf Output Is RenderArray Then
@@ -211,7 +211,7 @@ Partial Class Page
         ElseIf (PageLoader.IsDownloadItem(Item)) Then
             Dim PathName() As String
             If Not DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction Is Nothing Then
-                PathName = CType(DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction.Invoke(Nothing, Nothing), String())
+                PathName = CType(Await DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction.Invoke(Nothing), String())
             Else
                 PathName = New String() {CStr(If(DirectCast(Item, PageLoader.DownloadItem).RelativePath, If(DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".h") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vb") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vba") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".bat"), host.GetPageString("Source&File=" + HttpUtility.UrlEncode(DirectCast(Item, PageLoader.DownloadItem).Path)), "files/" + DirectCast(Item, PageLoader.DownloadItem).Path), DirectCast(Item, PageLoader.DownloadItem).Path)),
                                  CStr(If(DirectCast(Item, PageLoader.DownloadItem).UseLink, _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.DownloadItem).Text), DirectCast(Item, PageLoader.DownloadItem).Path))}
@@ -281,7 +281,7 @@ Partial Class Page
             writer.Write(vbCrLf + BaseTabs)
             Dim OnChangeJS() As String = Nothing
             If Not DirectCast(Item, PageLoader.EditItem).OnChangeFunction Is Nothing Then
-                OnChangeJS = CType(DirectCast(Item, PageLoader.EditItem).OnChangeFunction.Invoke(Nothing, Nothing), String())
+                OnChangeJS = CType(Await DirectCast(Item, PageLoader.EditItem).OnChangeFunction.Invoke(Nothing), String())
                 AddToJSFunctions(OnChangeJS)
             End If
             If (DirectCast(Item, PageLoader.EditItem).Rows > 1) Then
@@ -345,11 +345,11 @@ Partial Class Page
             Dim DefaultValue As String
             Dim OnChangeJS() As String = Nothing
             If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
-                OnChangeJS = CType(DirectCast(Item, PageLoader.RadioItem).OnChangeFunction.Invoke(Nothing, Nothing), String())
+                OnChangeJS = CType(Await DirectCast(Item, PageLoader.RadioItem).OnChangeFunction.Invoke(Nothing), String())
                 AddToJSFunctions(OnChangeJS)
             End If
             If Not DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
-                LoadArray = CType(DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction.Invoke(Nothing, Nothing), Object())
+                LoadArray = CType(Await DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction.Invoke(Nothing), Object())
                 Length = LoadArray.Length
             Else
                 Length = DirectCast(Item, PageLoader.RadioItem).OptionArray.Length
@@ -445,13 +445,13 @@ Partial Class Page
             writer.WriteAttribute("name", DirectCast(Item, PageLoader.ButtonItem).Name)
             writer.WriteAttribute("id", DirectCast(Item, PageLoader.ButtonItem).Name)
             If Not DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction Is Nothing Then
-                writer.WriteAttribute("value", CStr(DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(Nothing, New Object() {Item})))
+                writer.WriteAttribute("value", CStr(Await DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(New Object() {Item})))
             Else
                 writer.WriteAttribute("value", _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.ButtonItem).Description))
             End If
             If DirectCast(Item, PageLoader.ButtonItem).Name = "fontcustomapply" And Web.HttpContext.Current.Request.Params.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
             If Not DirectCast(Item, PageLoader.ButtonItem).OnClickFunction Is Nothing Then
-                Dim OnClickJS As String() = CType(DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing, Nothing), String())
+                Dim OnClickJS As String() = CType(Await DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing), String())
                 AddToJSFunctions(OnClickJS)
                 writer.WriteAttribute("onclick", OnClickJS(0))
                 writer.WriteAttribute("type", "button")

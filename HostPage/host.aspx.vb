@@ -35,7 +35,8 @@ Partial Class host
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim _dlgt As AsyncTaskDelegate = Nothing
         RegisterAsyncTask(New PageAsyncTask(Function(_sender As Object, _e As EventArgs, cb As AsyncCallback, extraData As Object) As IAsyncResult
-                                                _dlgt = New AsyncTaskDelegate(AddressOf DoLoad)
+                                                'adapter for .NET 4
+                                                _dlgt = New AsyncTaskDelegate(Sub() DoAsyncLoad(HttpContext.Current).Wait())
                                                 Return _dlgt.BeginInvoke(cb, extraData)
                                             End Function,
                                             Sub(ar As IAsyncResult)
@@ -47,19 +48,15 @@ Partial Class host
         ExecuteRegisteredAsyncTasks()
     End Sub
     Protected Delegate Sub AsyncTaskDelegate()
-    Public Sub DoLoad()
-        'adapter for .NET 4
-        Dim t As System.Threading.Tasks.Task = DoAsyncLoad()
-        t.Wait()
-    End Sub
     Private _PortableMethods As PortableMethods
     Private UWeb As UtilityWeb
     Private SD As SiteDatabase
     Private UA As UserAccounts
+    Private ArbData As ArabicData
     Public Function IsLoggedIn() As Boolean
         Return UA.IsLoggedIn()
     End Function
-    Public Async Function DoAsyncLoad() As Threading.Tasks.Task
+    Public Async Function DoAsyncLoad(Context As HttpContext) As Threading.Tasks.Task
         Dim Index As Integer
         Dim IsPrint As Boolean = False
         Dim bmp As Bitmap = Nothing
@@ -68,10 +65,17 @@ Partial Class host
             _PortableMethods = New XMLRender.PortableMethods(New HostPageUtility.WindowsWebFileIO(), New HostPageUtility.WindowsWebSettings(UWeb))
             Await _PortableMethods.Init()
         End If
-        If UWeb Is Nothing Then
-            UWeb = New UtilityWeb(_PortableMethods, AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf IsLoggedIn)
+        If ArbData Is Nothing Then
+            ArbData = New ArabicData(_PortableMethods)
+            Await ArbData.Init()
         End If
-        If SD Is Nothing Then SD = New SiteDatabase(UWeb)
+        If UWeb Is Nothing Then
+            UWeb = New UtilityWeb(_PortableMethods, ArbData, AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf IsLoggedIn)
+        End If
+        If SD Is Nothing Then
+            SD = New SiteDatabase(UWeb)
+            Await UWeb.Init(SD)
+        End If
         PageSet = New PageLoader(_PortableMethods, UWeb)
         UA = New UserAccounts(_PortableMethods, UWeb, PageSet, SD)
         Controls.Clear() 'clear viewstate and default HTML rendering control container
@@ -130,10 +134,10 @@ Partial Class host
             Next
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CreateDatabase AndAlso UA.IsAdmin() Then
             SD.CreateDatabase()
-            UWeb.LookupClassMember("IslamSiteDatabase::CreateDatabase").Invoke(Nothing, Nothing)
+            Await UWeb.LookupClassMember("IslamSiteDatabase::CreateDatabase").Invoke(Nothing)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_RemoveDatabase AndAlso UA.IsAdmin() Then
             SD.RemoveDatabase()
-            UWeb.LookupClassMember("IslamSiteDatabase::RemoveDatabase").Invoke(Nothing, Nothing)
+            Await UWeb.LookupClassMember("IslamSiteDatabase::RemoveDatabase").Invoke(Nothing)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CleanupState AndAlso UA.IsAdmin() Then
             SD.CleanupStaleLoginSessions()
             SD.CleanupStaleActivations()
@@ -205,12 +209,12 @@ Partial Class host
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
             Response.ContentType = "text/plain;charset=" + encoding.WebName
             Response.Write("Execution User: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name() + vbCrLf)
-            Response.Write("Http Context User: " + HttpContext.Current.User.Identity.Name() + vbCrLf)
+            Response.Write("Http Context User: " + Context.User.Identity.Name() + vbCrLf)
         ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_HadithRanking Then
             If UA.IsLoggedIn() Then
-                UWeb.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(Nothing, New Object() {UserAccounts.GetUserID()})
+                Await UWeb.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(New Object() {UserAccounts.GetUserID()})
             End If
-            UWeb.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing, Nothing)
+            Await UWeb.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing)
         ElseIf (Request.QueryString.Get(PageQuery) = "Image.gif") Then
             Dim DateModified As Date = Now
             If Request.QueryString.Get("Image") = "EMailAddress" Or
@@ -374,7 +378,7 @@ Partial Class host
                             If PageLoader.IsTextItem(DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex)) Then
                                 Dim Item As PageLoader.TextItem = CType(CType(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex), PageLoader.TextItem)
                                 If Not Item.OnRenderFunction Is Nothing Then
-                                    Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
+                                    Dim Output As Object = Await Item.OnRenderFunction.Invoke(New Object() {Item})
                                     If TypeOf Output Is RenderArray Then
                                         RenderItems.AddRange(CType(Output, RenderArray).Items)
                                     ElseIf TypeOf Output Is Array() Then
@@ -386,7 +390,7 @@ Partial Class host
                     ElseIf PageLoader.IsTextItem(PageSet.Pages(Index).Page(Count)) Then
                         Dim Item As PageLoader.TextItem = CType(PageSet.Pages(Index).Page(Count), PageLoader.TextItem)
                         If Not Item.OnRenderFunction Is Nothing Then
-                            Dim Output As Object = Item.OnRenderFunction.Invoke(Nothing, New Object() {Item})
+                            Dim Output As Object = Await Item.OnRenderFunction.Invoke(New Object() {Item})
                             If TypeOf Output Is RenderArray Then
                                 RenderItems.AddRange(CType(Output, RenderArray).Items)
                             End If
@@ -394,8 +398,6 @@ Partial Class host
                     End If
                 Next
                 If RenderItems.Count <> 0 Then
-                    Dim ArbData As New ArabicData(_PortableMethods)
-                    Await ArbData.Init()
                     Dim RAWeb As New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
                     If Request.Params(PageQuery) = "PrintFlashcardPdf" Then
                         RAWeb.OutputFlashcardPdf(MemStream, RenderItems)
