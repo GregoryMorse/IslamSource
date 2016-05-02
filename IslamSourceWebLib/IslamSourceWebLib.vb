@@ -7,7 +7,7 @@ Imports System.Drawing
 Imports System.Web
 Imports System.Web.UI
 Public Class InitClass
-    Implements UtilityWeb.IInitClass
+    Implements Utility.IInitClass
     Private _PortableMethods As PortableMethods
     Private ChData As CachedData
     Private Arb As Arabic
@@ -28,34 +28,35 @@ Public Class InitClass
     Private SD As SiteDatabase
     Private ISDatabase As IslamSiteDatabase
     Private ISDatabaseLookup As IslamSiteDatabaseLookup
+    Private IMInit As IslamMetadata.InitClass
     Public Sub New(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewUWeb As UtilityWeb, NewSD As SiteDatabase)
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
         UWeb = NewUWeb
         SD = NewSD
     End Sub
-    Public Async Function Init() As Task Implements UtilityWeb.IInitClass.Init
+    Public Async Function Init() As Task Implements Utility.IInitClass.Init
         ArbDataWeb = New ArabicDataWeb(ArbData)
-        Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData, ChData)
-        ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
-        Await ChData.Init()
-        Await Arb.Init()
-        TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
+        IMInit = New IslamMetadata.InitClass(_PortableMethods, ArbData)
+        Await IMInit.Init()
+        Arb = IMInit.Arb
+        ChData = IMInit.ChData
+        TR = IMInit.TR
         DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
         ArbWeb = New ArabicWeb(_PortableMethods, ChData, Arb, ArbData, ArbDataWeb)
         ArbFont = New ArabicFont(_PortableMethods, ChData)
         ChDataWeb = New CachedDataWeb(ChData)
         TRWeb = New TanzilReaderWeb(_PortableMethods, ChData, Arb, ArbWeb, TR)
-        PhrWeb = New PhrasesWeb(ArbWeb, ChData, TR, DBWeb)
+        PhrWeb = New PhrasesWeb(ArbWeb, ChData, TR)
         DBWeb = New DocBuilderWeb(_PortableMethods, ArbWeb, ChData, Arb, ArbData, TR, DocBuild, PhrWeb, TRWeb)
-        PhrWeb = New PhrasesWeb(ArbWeb, ChData, TR, DBWeb) 'double initialize due to mutual dependency...
+        PhrWeb.Init(DBWeb)
         Qz = New Quiz(Arb, ArbWeb, ChData, ArbDataWeb)
         ISDatabase = New IslamSiteDatabase(SD)
         ISDatabaseLookup = New IslamSiteDatabaseLookup(UWeb, ISDatabase)
         HR = New HadithReader(_PortableMethods, Arb, ChData)
-        HRWeb = New HadithReaderWeb(_PortableMethods, ChData, ArbWeb, HR, UWeb, ISDatabaseLookup)
+        HRWeb = New HadithReaderWeb(_PortableMethods, Arb, ChData, ArbWeb, HR, UWeb, ISDatabaseLookup)
     End Function
-    Public Function LookupObject(ClassName As String) As Object Implements UtilityWeb.IInitClass.LookupObject
+    Public Function LookupObject(ClassName As String) As Object Implements Utility.IInitClass.LookupObject
         If ClassName = "ArabicWeb" Then
             Return ArbWeb
         ElseIf ClassName = "ArabicFont" Then
@@ -80,6 +81,9 @@ Public Class InitClass
             Return Nothing
         End If
     End Function
+    Public Function GetDependency() As Nullable(Of KeyValuePair(Of String, Utility.IInitClass)) Implements Utility.IInitClass.GetDependency
+        Return New KeyValuePair(Of String, Utility.IInitClass)("IslamMetadata", IMInit)
+    End Function
 End Class
 Public Class PrayerTimeWeb
     Public Shared Function GetMonthName(ByVal Item As PageLoader.TextItem) As String
@@ -88,13 +92,13 @@ Public Class PrayerTimeWeb
     Public Shared Function GetCalendar(ByVal Item As PageLoader.TextItem) As Array()
         Return PrayerTime.GetCalendar(Item.Name)
     End Function
-    Public Shared Function GetPrayerTimes(ByVal Item As PageLoader.TextItem) As Array()
-        Dim Strings As String() = Geolocation.GetGeoData()
+    Public Shared Function GetPrayerTimes(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim Strings As String() = Geolocation.GetGeoData(Context)
         If Strings.Length <> 11 OrElse Strings(0) = "ERROR" Then Return New Array() {}
         Return PrayerTime.GetPrayerTimes(Strings, Geolocation.GetElevationData(Strings(8), Strings(9)))
     End Function
-    Public Shared Function GetQiblaDirection(ByVal Item As PageLoader.TextItem) As String
-        Return PrayerTime.GetQiblaDirection(Geolocation.GetGeoData())
+    Public Shared Function GetQiblaDirection(ByVal Item As PageLoader.TextItem, Context As HttpContext) As String
+        Return PrayerTime.GetQiblaDirection(Geolocation.GetGeoData(Context))
     End Function
 End Class
 Public Class ArabicWeb
@@ -109,14 +113,88 @@ Public Class ArabicWeb
         Arb = NewArb
         ArbData = NewArbData
         ArbDataWeb = NewArbDataWeb
+        TransliterateGenJS = {
+            FindLetterBySymbolJS,
+            "function isLetterDiacritic(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationLettersDiacritics, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
+            "function isSpecialSymbol(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationSpecialSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
+            "function isCombiningSymbol(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationCombiningSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
+            "var arabicMultis = " + UtilityWeb.MakeJSArray(ChData.ArabicMultis) + ";",
+            "var arabicSpecials = " + UtilityWeb.MakeJSArray(ChData.ArabicSpecialLetters) + ";",
+            "function getSchemeSpecialFromMatch(str, bExp) { if (bExp) { for (var count = 0; count < arabicSpecials.length; count++) { re = new RegExp(arabicSpecials[count], ''); if (re.exec(str) !== null) return count; } } else { return arabicSpecials.indexOf(str); } return -1; }",
+            "function generateDefaultStops(str) { var re = new RegExp('(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + ChData.OptionalPattern + ")(?=\s*$|\s+)', 'g'); var arr, defstops = [], dottoggle = false; while ((arr = re.exec(str)) !== null) { if (arr[2] === String.fromCharCode(0x6D6) && (arr[2] !== String.fromCharCode(0x6DB) || dottoggle)) defstops.push(arr.index + arr[1].length); if (arr[2] === String.fromCharCode(0x6DB)) dottoggle = !dottoggle; } }",
+            "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; if (conversion === 0) return sVal; if (direction && (conversion % 2) === 0) return transliterateWithRules(sVal, Math.floor((conversion - 2) / 2) + 2, generateDefaultStops(sVal), false); for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\' || direction && (sVal.charAt(iCount) === String.fromCharCode(0x60C) || sVal.charAt(iCount) === String.fromCharCode(0x61B) || sVal.charAt(iCount) === String.fromCharCode(0x61F))) { if (!direction) iCount++; if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x60C) : ',')) { sOutVal += (direction ? '\\,' : String.fromCharCode(0x60C)); } else if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x61B) : ';')) { sOutVal += (direction ? '\\;' : String.fromCharCode(0x61B)); } else if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x61F) : '?')) { sOutVal += (direction ? '\\?' : String.fromCharCode(0x61F)); } else { sOutVal += String.fromCharCode(0x202A) + sVal.charAt(iCount) + String.fromCharCode(0x202C); } } else { if (getSchemeSpecialFromMatch(sVal.slice(iCount), false) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].special[getSchemeSpecialFromMatch(sVal.slice(iCount), false)]; re = new RegExp(arabicSpecials[getSchemeSpecialFromMatch(sVal.slice(iCount), false)], ''); iCount += re.exec(sVal.slice(iCount))[0].length - 1; } else if (sVal.length - iCount > 1 && arabicMultis.indexOf(sVal.slice(iCount, 2)) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].multi[arabicMultis.indexOf(sVal.slice(iCount, 2))]; iCount++; } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape(translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)])) { sOutVal += (direction ? (translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] ? translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] : '') : (((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202B) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202C) : ''))); break; } } if (iSubCount === arabicLetters.length && sVal.charCodeAt(iCount) !== 0x200E && sVal.charCodeAt(iCount) !== 0x200F && !IsExplicit(sVal.charCodeAt(iCount))) sOutVal += ((direction && conversion === 1 && sVal.charAt(iCount) !== '\n') ? '\\' : '') + sVal.charAt(iCount); } } } return unescape(sOutVal); }"
+        }
+        IsDiacriticJS = "function isDiacritic(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationDiacritics, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }"
+        PlainTransliterateGenJS = {FindLetterBySymbolJS, IsDiacriticJS,
+            "function isWhitespace(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.WhitespaceSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
+            "function isPunctuation(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.PunctuationSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
+            "function isStop(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
+            "function applyColorRules(sVal) {}",
+            "function changeScript(sVal, scriptType) {}",
+            "var arabicAlphabet = " + UtilityWeb.MakeJSArray(ChData.ArabicAlphabet) + ";",
+            "var arabicLettersInOrder = " + UtilityWeb.MakeJSArray(ChData.ArabicLettersInOrder) + ";",
+            "var arabicLeadingGutterals = " + UtilityWeb.MakeJSArray(ChData.ArabicLeadingGutterals) + ";",
+            "function getSchemeGutteralFromString(str, scheme, leading) { if (arabicLeadingGutterals.indexOf(str) !== -1) { return translitSchemes[scheme].gutteral[arabicLeadingGutterals.indexOf(str) + (leading ? arabicLeadingGutterals.length : 0)]; } return ''; }",
+            "function arabicLetterSpelling(sVal, bQuranic) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '' && !bQuranic) output += ' '; var idx = arabicLettersInOrder.indexOf(String.fromCharCode(parseInt(arabicLetters[index].Symbol, 10))); output += arabicAlphabet[idx].slice(0, -1) + ((arabicAlphabet[idx][arabicAlphabet[idx].length - 1] == 'n') ? '' : 'o'); } else if (index !== -1 && arabicLetters[index].Symbol === 0x653) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }",
+            "function schemeHasValue(str, scheme) { for (var k in translitSchemes[scheme]) { if (translitSchemes[scheme].hasOwnProperty(k) && str === translitSchemes[scheme][k]) return true; } return false; }",
+            "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };",
+            "RegExp.matchResult = function(subexp, offset, str, matches) { return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + matches[0].length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= matches.length) return matches[0]; return (matches[parseInt(p, 10)] === undefined) ? '' : matches[parseInt(p, 10)]; }); };",
+            "var ruleFunctions = [function(str, scheme, learningMode) { return [str.toUpperCase()]; }, function(str, scheme, learningMode) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [transliterateWithRules(arabicLetterSpelling(str, true), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].multi[arabicMultis.indexOf(str)]]; }, function(str, scheme, learningMode) { return [" + UtilityWeb.MakeJSArray(ChData.ArabicFathaDammaKasra) + "[" + UtilityWeb.MakeJSArray(ChData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme, learningMode) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme, learningMode) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }, function(str, scheme, learningMode) { return [schemeHasValue(translitSchemes[scheme.toString()].standard[str[0]] + translitSchemes[scheme.toString()].standard[str[1]]) ? str[0] + '-' + str[1] : str]; }, function(str, scheme, learningMode) { return learningMode ? [str, ''] : ['', str]; }];",
+            "function isLetter(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationLetters, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
+            "function isSymbol(index) { return (" + String.Join("||", Linq.Enumerable.Select(Arb.GetRecitationSymbols(), Function(A As Array) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(ArbData.ArabicLetters(CInt(A.GetValue(1))).Symbol), 16))) + "); }",
+            "var uthmaniMinimalScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("UthmaniMinimalScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var simpleEnhancedScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleEnhancedScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var simpleScriptBase = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleScriptBase"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var simpleScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var simpleMinimalScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleMinimalScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var simpleCleanScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleCleanScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var errorCheckRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("ErrorCheck"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var coloringSpelledOutRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.ColorRuleCategory.ColorRule, Object())(ChData.IslamData.ColorRuleSets(1).ColorRules, Function(Convert As IslamData.ColorRuleCategory.ColorRule) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert._Match)), UtilityWeb.MakeJSString(Convert.Evaluator), Convert._MetaRuleFunc})).ToArray(), True)}, True) + ";",
+            "var romanizationRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"},
+                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("RomanizationRules"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
+            "var coloringRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "color"},
+                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.ColorRuleCategory.ColorRule, String())(ChData.IslamData.ColorRuleSets(0).ColorRules, Function(Convert As IslamData.ColorRuleCategory.ColorRule) New String() {Convert.Name, UtilityWeb.EscapeJS(Convert._Match), System.Drawing.ColorTranslator.ToHtml(Color.FromArgb(Convert.Color))})).ToArray(), False)}, True) + ";",
+            "var rulesOfRecitationRegEx = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator"},
+                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.RuleMetaSet.RuleMetadataTranslation, Object())(ChData.RuleMetas("UthmaniQuran").Rules, Function(Convert As IslamData.RuleMetaSet.RuleMetadataTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), If(Convert.Evaluator Is Nothing, Nothing, UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Convert.Evaluator, Function(Str As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs()) (String.Join("|"c, Linq.Enumerable.Select(Str, Function(S) S.RuleName + If(S.Args Is Nothing OrElse S.Args.Length = 0, "", "(" + String.Join(",", Linq.Enumerable.Select(S.Args, Function(Arg) String.Join(" ", Arg))) + ")")))))).ToArray()))})).ToArray(), True)}, True) + ";",
+            "var allowZeroLength = " + UtilityWeb.MakeJSArray(Arabic.AllowZeroLength) + ";",
+            "function ruleMetadataComparer(a, b) { return (a.index === b.index) ? (b.length === a.length ? b.origOrder - a.origOrder : b.length - a.length) : b.index - a.index; }",
+            "function replaceMetadata(sVal, metadataRule, scheme, learningMode) { var count, elimParen = function(s) { return s.replace(/\(.*\)/, ''); }; for (count = 0; count < coloringSpelledOutRules.length; count++) { var index, match = null; for (index = 0; index < coloringSpelledOutRules[count].match.split('|').length; index++) { if (metadataRule.type.split('|').map(elimParen).indexOf(coloringSpelledOutRules[count].match.split('|')[index]) !== -1) { match = coloringSpelledOutRules[count].match.split('|')[index]; break; } } if (match !== null) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataRule.index, metadataRule.length)); if (coloringSpelledOutRules[count].ruleFunc !== 0) { var args = ruleFunctions[coloringSpelledOutRules[count].ruleFunc - 1](str, scheme, learningMode); if (args.length === 1) { str = args[0]; } else { var metaArgs = metadataRule.type.match(/\((.*)\)/)[1].split(','); str = ''; for (index = 0; index < args.length; index++) { if (args[index] && (learningMode || coloringSpelledOutRules[count].ruleFunc !== " + CStr(Arabic.MetaRuleFuncs.eLearningMode) + " || index !== 0)) str += replaceMetadata(args[index], {index: 0, length: args[index].length, type: metaArgs[index].replace(' ', '|'), origOrder: index}, scheme, learningMode); } } } sVal = sVal.substr(0, metadataRule.index) + str + sVal.substr(metadataRule.index + metadataRule.length); } } return sVal; }",
+            "function joinContig(sVal, preString, postString) { var index = preString.lastIndexOf(' '); if (index !== -1 && preString.length - 2 === index) index = preString.lastIndexOf(' ', index - 1); if (index !== -1) preString = preString.substring(index + 1); if (preString !== '') preString += ' ' + String.fromCharCode(0x6DD) + ' '; index = postString.indexOf(' '); if (index === 1) index = preString.indexOf(' ', index + 1); if (index !== -1) postString = postString.substring(0, index); if (postString !== '') postString = ' ' + String.fromCharCode(0x6DD) + ' ' + postString; return preString + sVal + postString; }",
+            "function unjoinContig(sVal, preString, postString) { var index = sVal.indexOf(String.fromCharCode(0x6DD)); if (preString !== '' && index !== -1) sVal = sVal.substring(index + 1 +  1); index = sVal.lastIndexOf(String.fromCharCode(0x6DD)); if (postString !== '' && index !== -1) sVal = sVal.substring(0, index - 1); return sVal; }",
+            "function transliterateContigWithRules(sVal, preString, postString, scheme, optionalStops) { return unjoinContig(transliterateWithRules(JoinContig(sVal, preString, postString), scheme, optionalStops, false), preString, postString); }",
+            "function transliterateWithRules(sVal, scheme, optionalStops, learningMode) { var count, index, arr, re, metadataList = [], replaceFunc = function(f, e) { return function() { return f(RegExp.matchResult(e, arguments[arguments.length - 2], arguments[arguments.length - 1], Array.prototype.slice.call(arguments).slice(0, -2)), scheme)[0]; }; }; for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { if (!errorCheckRules[count].negativematch || RegExp.matchResult(errorCheckRules[count].negativematch, arr.index, sVal, arr) === '') { console.log(errorCheckRules[count].rule + ': ' + doTransliterate(sVal.substr(0, arr.index), true, 1) + '<!-- -->' + doTransliterate(sVal.substr(arr.index), true, 1)); } } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count].evaluator !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = arr.index; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount].split('|').indexOf('optionalstop') !== -1 && (optionalStops === null && arr[subcount + 1] === String.fromCharCode(0x6D6) || (arr[subcount + 1] !== undefined && lindex !== 0 && lindex !== sVal.length) || (optionalStops !== null && arr[subcount + 1] && optionalStops.indexOf(lindex) === -1)) || rulesOfRecitationRegEx[count].evaluator[subcount].split('|').indexOf('optionalnotstop') !== -1 && (optionalStops === null && arr[subcount + 1] !== String.fromCharCode(0x6D6) && ((arr[subcount + 1] !== undefined && arr[subcount + 1].length === 0) && (lindex === 0 || lindex === sVal.length)) || optionalStops !== null && arr[subcount + 1] && optionalStops.indexOf(lindex) !== -1)) break; } if (subcount !== rulesOfRecitationRegEx[count].evaluator.length) continue; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null && rulesOfRecitationRegEx[count].evaluator[subcount] !== '' && (arr[subcount + 1] && arr[subcount + 1].length !== 0 || allowZeroLength.indexOf(rulesOfRecitationRegEx[count].evaluator[subcount]) !== -1)) { metadataList.push({index: lindex, length: arr[subcount + 1] ? arr[subcount + 1].length : 0, type: rulesOfRecitationRegEx[count].evaluator[subcount], origOrder: subcount}); } lindex += (arr[subcount + 1] ? arr[subcount + 1].length : 0); } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { sVal = replaceMetadata(sVal, metadataList[index], scheme, learningMode); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), (romanizationRules[count].ruleFunc === 0) ? romanizationRules[count].evaluator : replaceFunc(ruleFunctions[romanizationRules[count].ruleFunc - 1], romanizationRules[count].evaluator)); } return sVal; }"}
+        NumberGenJS = {"var arabicOrdinalNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicOrdinalNumbers) + ";",
+                "var arabicOrdinalExtraNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicOrdinalExtraNumbers) + ";",
+                "var arabicFractionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicFractionNumbers) + ";",
+                "var arabicBaseNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseNumbers) + ";",
+                "var arabicBaseExtraNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseExtraNumbers) + ";",
+                "var arabicBaseTenNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseTenNumbers) + ";",
+                "var arabicBaseHundredNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseHundredNumbers) + ";",
+                "var arabicBaseThousandNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseThousandNumbers) + ";",
+                "var arabicBaseMillionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseMillionNumbers) + ";",
+                "var arabicBaseBillionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseBillionNumbers) + ";",
+                "var arabicBaseMilliardNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseMilliardNumbers) + ";",
+                "var arabicBaseTrillionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseTrillionNumbers) + ";",
+                "var arabicCombiners = " + UtilityWeb.MakeJSArray(ChData.ArabicCombiners) + ";",
+                "function doTransliterateNum() { $('#translitvalue').text(doTransliterate(arabicWordFromNumber($('#translitedit').val(), $('#useclassic0').prop('checked'), $('#usehundredform0').prop('checked'), $('#usemilliard0').prop('checked')), false, 1)); }",
+                "function arabicWordForLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; if ((number % 100) === 0) { return hundstr; } number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[number % 10 - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' ' + arabicBaseTenNumbers[1].slice(0, -2); } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str = ((str === '') ? '' : str + ' ' + arabicCombiners[0]) + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? (((str === '') ? '' : str + ((hundstr === '') ? '' : ' ' + arabicCombiners[0])) + hundstr) : (((hundstr === '') ? '' : hundstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str); }",
+                "function arabicWordFromNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = arabicWordForLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' ' + arabicCombiners[0])) + nextstr); nextstr = ''; } while (curbase >= 0); if (number !== 0 || str === '') { nextstr = arabicWordForLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' ' + arabicCombiners[0])) + nextstr); }"}
     End Sub
-    Public Function DecodeTranslitScheme() As String
+    Public Function DecodeTranslitScheme(Context As HttpContext) As String
         'QueryString instead of Params?
-        Return Arb.DecodeTranslitScheme(HttpContext.Current.Request.Params("translitscheme"))
+        Return Arb.DecodeTranslitScheme(Context.Request.Params("translitscheme"))
     End Function
-    Public Shared Function DecodeTranslitSchemeType() As ArabicData.TranslitScheme
+    Public Shared Function DecodeTranslitSchemeType(Context As HttpContext) As ArabicData.TranslitScheme
         'QueryString instead of Params?
-        Return Arabic.DecodeTranslitSchemeType(HttpContext.Current.Request.Params("translitscheme"))
+        Return Arabic.DecodeTranslitSchemeType(Context.Request.Params("translitscheme"))
     End Function
     Public Function GetTranslitSchemeMetadata(ID As String) As Array()
         Dim Output(ChData.IslamData.TranslitSchemes.Length + 2) As Array
@@ -331,83 +409,83 @@ Public Class ArabicWeb
     Public Async Function DisplayDict(ByVal Item As PageLoader.TextItem) As Task(Of Array())
         Return Await Arb.DisplayDict()
     End Function
-    Public Function DisplayCombo(ByVal Item As PageLoader.TextItem) As Array()
-        Return Arb.DisplayCombo(DecodeTranslitSchemeType(), DecodeTranslitScheme())
+    Public Function DisplayCombo(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Return Arb.DisplayCombo(DecodeTranslitSchemeType(Context), DecodeTranslitScheme(Context))
     End Function
-    Public Function DisplayAll(ByVal Item As PageLoader.TextItem) As Array()
-        Return Arb.DisplayAll(DecodeTranslitSchemeType(), DecodeTranslitScheme())
+    Public Function DisplayAll(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Return Arb.DisplayAll(DecodeTranslitSchemeType(Context), DecodeTranslitScheme(Context))
     End Function
     Public Function DisplayTranslitSchemes(ByVal Item As PageLoader.TextItem) As Array()
         Return Arb.DisplayTranslitSchemes()
     End Function
-    Public Function DisplayProximals(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayProximals(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayPronoun(Arb.GetCatNoun("proxdemo"), Item.Name, False, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayDistals(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayDistals(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayPronoun(Arb.GetCatNoun("distdemo"), Item.Name, False, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayRelatives(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayRelatives(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayPronoun(Arb.GetCatNoun("relpro"), Item.Name, False, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayPersonals(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayPersonals(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayPronoun(Arb.GetCatNoun("perspro"), Item.Name, True, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayDeterminerPersonals(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayDeterminerPersonals(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayTransform(String.Empty, Arb.GetTransform("posspron"), Item.Name, True, True, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayPastVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayPastVerbsFamilyI(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayTransform(String.Empty, Arb.GetTransform("pastverbi"), Item.Name, True, False, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayPresentVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayPresentVerbsFamilyI(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayTransform(String.Empty, Arb.GetTransform("presverbi"), Item.Name, True, False, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayCommandVerbsFamilyI(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayCommandVerbsFamilyI(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayTransform(String.Empty, Arb.GetTransform("commverbi"), Item.Name, False, False, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayResponseParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayResponseParticles(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayParticle(Arb.GetParticles("resp"), Item.Name, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayInterogativeParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayInterogativeParticles(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayParticle(Arb.GetParticles("intg"), Item.Name, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayLocationParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayLocationParticles(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayParticle(Arb.GetParticles("loc"), Item.Name, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayTimeParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayTimeParticles(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayParticle(Arb.GetParticles("time"), Item.Name, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayPrepositions(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayPrepositions(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayParticle(Arb.GetParticles("prep"), Item.Name, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayParticles(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayParticles(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return DisplayParticle(Arb.GetParticles("particle"), Item.Name, SchemeType, Scheme, Nothing)
     End Function
     Public Function NounDisplay(Category As IslamData.GrammarSet.GrammarNoun(), ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, ColSels As String()) As Array()
@@ -477,9 +555,9 @@ Public Class ArabicWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
-    Public Function DisplayNouns(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayNouns(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return NounDisplay(ChData.IslamData.Grammar.Nouns, Item.Name, SchemeType, Scheme, Nothing)
     End Function
     Public Function DeclineNoun(Category As IslamData.GrammarSet.GrammarNoun, ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, ColSels As String()) As Array()
@@ -679,9 +757,9 @@ Public Class ArabicWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(CType(Output, Array()), ID)
     End Function
-    Public Function DisplayVerbs(ByVal Item As PageLoader.TextItem) As Array()
-        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType()
-        Dim Scheme As String = DecodeTranslitScheme()
+    Public Function DisplayVerbs(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
         Return VerbDisplay(ChData.IslamData.Grammar.Verbs, Item.Name, SchemeType, Scheme, Nothing)
     End Function
     Public Function GetChangeTransliterationJS() As String()
@@ -695,8 +773,8 @@ Public Class ArabicWeb
         GetJS.AddRange(NumberGenJS)
         Return GetJS.ToArray()
     End Function
-    Public Function GetTransliterationSchemeTable(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return New RenderArray("translitscheme") With {.Items = Arb.GetTransliterationTable(DecodeTranslitScheme())}
+    Public Function GetTransliterationSchemeTable(ByVal Item As PageLoader.TextItem, Context As HttpContext) As RenderArray
+        Return New RenderArray("translitscheme") With {.Items = Arb.GetTransliterationTable(DecodeTranslitScheme(Context))}
     End Function
     Function GetTranslitSchemeJSArray() As String
         'Dim Letters(ArabicData.ArabicLetters.Length - 1) As IslamData.ArabicSymbol
@@ -713,83 +791,13 @@ Public Class ArabicWeb
                                 New List(Of String())(Linq.Enumerable.Select(Array.FindAll(ArbData.ArabicLetters, Function(Letter As ArabicData.ArabicSymbol) Arb.GetSchemeValueFromSymbol(Letter, "ExtendedBuckwalter") <> String.Empty), Function(Convert As ArabicData.ArabicSymbol) New String() {CStr(AscW(Convert.Symbol)), If(Convert.Shaping = Nothing, String.Empty, UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Convert.Shaping, Function(Ch As Char) CStr(AscW(Ch)))).ToArray()))})).ToArray(), False)}, True) + ";"
     End Function
     Public Shared FindLetterBySymbolJS As String = "function findLetterBySymbol(chVal) { var iSubCount; for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Symbol, 10)) return iSubCount; for (var iShapeCount = 0; iShapeCount < arabicLetters[iSubCount].Shaping.length; iShapeCount++) { if (chVal === parseInt(arabicLetters[iSubCount].Shaping[iShapeCount], 10)) return iSubCount; } } return -1; }"
-    Public TransliterateGenJS As String() = {
-        FindLetterBySymbolJS,
-        "function isLetterDiacritic(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationLettersDiacritics, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
-        "function isSpecialSymbol(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationSpecialSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
-        "function isCombiningSymbol(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationCombiningSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
-        "var arabicMultis = " + UtilityWeb.MakeJSArray(ChData.ArabicMultis) + ";",
-        "var arabicSpecials = " + UtilityWeb.MakeJSArray(ChData.ArabicSpecialLetters) + ";",
-        "function getSchemeSpecialFromMatch(str, bExp) { if (bExp) { for (var count = 0; count < arabicSpecials.length; count++) { re = new RegExp(arabicSpecials[count], ''); if (re.exec(str) !== null) return count; } } else { return arabicSpecials.indexOf(str); } return -1; }",
-        "function generateDefaultStops(str) { var re = new RegExp('(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + ChData.OptionalPattern + ")(?=\s*$|\s+)', 'g'); var arr, defstops = [], dottoggle = false; while ((arr = re.exec(str)) !== null) { if (arr[2] === String.fromCharCode(0x6D6) && (arr[2] !== String.fromCharCode(0x6DB) || dottoggle)) defstops.push(arr.index + arr[1].length); if (arr[2] === String.fromCharCode(0x6DB)) dottoggle = !dottoggle; } }",
-        "function doTransliterate(sVal, direction, conversion) { var iCount, iSubCount, sOutVal = ''; if (conversion === 0) return sVal; if (direction && (conversion % 2) === 0) return transliterateWithRules(sVal, Math.floor((conversion - 2) / 2) + 2, generateDefaultStops(sVal), false); for (iCount = 0; iCount < sVal.length; iCount++) { if (sVal.charAt(iCount) === '\\' || direction && (sVal.charAt(iCount) === String.fromCharCode(0x60C) || sVal.charAt(iCount) === String.fromCharCode(0x61B) || sVal.charAt(iCount) === String.fromCharCode(0x61F))) { if (!direction) iCount++; if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x60C) : ',')) { sOutVal += (direction ? '\\,' : String.fromCharCode(0x60C)); } else if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x61B) : ';')) { sOutVal += (direction ? '\\;' : String.fromCharCode(0x61B)); } else if (sVal.charAt(iCount) === (direction ? String.fromCharCode(0x61F) : '?')) { sOutVal += (direction ? '\\?' : String.fromCharCode(0x61F)); } else { sOutVal += String.fromCharCode(0x202A) + sVal.charAt(iCount) + String.fromCharCode(0x202C); } } else { if (getSchemeSpecialFromMatch(sVal.slice(iCount), false) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].special[getSchemeSpecialFromMatch(sVal.slice(iCount), false)]; re = new RegExp(arabicSpecials[getSchemeSpecialFromMatch(sVal.slice(iCount), false)], ''); iCount += re.exec(sVal.slice(iCount))[0].length - 1; } else if (sVal.length - iCount > 1 && arabicMultis.indexOf(sVal.slice(iCount, 2)) !== -1) { sOutVal += translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].multi[arabicMultis.indexOf(sVal.slice(iCount, 2))]; iCount++; } else { for (iSubCount = 0; iSubCount < arabicLetters.length; iSubCount++) { if (direction ? sVal.charCodeAt(iCount) === parseInt(arabicLetters[iSubCount].Symbol, 10) : sVal.charAt(iCount) === unescape(translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)])) { sOutVal += (direction ? (translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] ? translitSchemes[(Math.floor((conversion - 2) / 2) + 2).toString()].standard[String.fromCharCode(arabicLetters[iSubCount].Symbol)] : '') : (((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202B) : '') + String.fromCharCode(arabicLetters[iSubCount].Symbol) + ((isCombiningSymbol(iSubCount) && (iSubCount === 0 || findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1)) === -1 || !isLetterDiacritic(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))) && !isSpecialSymbol(findLetterBySymbol(sOutVal.charCodeAt(sOutVal.length - 1))))) ? String.fromCharCode(0x202C) : ''))); break; } } if (iSubCount === arabicLetters.length && sVal.charCodeAt(iCount) !== 0x200E && sVal.charCodeAt(iCount) !== 0x200F && !IsExplicit(sVal.charCodeAt(iCount))) sOutVal += ((direction && conversion === 1 && sVal.charAt(iCount) !== '\n') ? '\\' : '') + sVal.charAt(iCount); } } } return unescape(sOutVal); }"
-    }
-    Public IsDiacriticJS As String = "function isDiacritic(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationDiacritics, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }"
+    Public TransliterateGenJS As String()
+    Public IsDiacriticJS As String
     Public Shared DiacriticJS As String() =
         {"function doScriptFormatChange(sVal, to, from) { return (to === 0 && from === 2) ? processTransform(sVal, simpleScriptBase.concat(simpleCleanScript), false) : sVal; }",
          "function processTransform(sVal, rules, bPriority) { var count, rep = []; for (count = 0; count < rules.length; count++) { if (bPriority) { sVal = sVal.replace(rules[count].match, function() { return (rules[count].negativematch !== '' && RegExp.matchResult(rules[count].evaluator, arguments[arguments.length - 2], arguments[arguments.length - 1], Array.prototype.slice.call(arguments).slice(0, -2)) ? arguments[0] : RegExp.matchResult(arguments[0], arguments[arguments.length - 2], arguments[arguments.length - 1], Array.prototype.slice.call(arguments).slice(0, -2))); }); } else { var arr, re = new RegExp(rules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { if (rules[count].negativematch === '' || RegExp.matchResult(rules[count].negativematch, arr.index, sVal, arr) === '') { var dupCount; for (dupCount = 0; dupCount < RegExp.matchResult(rules[count].evaluator, arr.index, sVal, arr).length; dupCount++) { if (arr.index + dupCount >= sVal.length || sVal[arr.index + dupCount] !== RegExp.matchResult(rules[count].evaluator, arr.index, sVal, arr)[dupCount]) break; } rep.push({index: arr.index + dupCount, length: arr[0].length - dupCount, type: RegExp.matchResult(rules[count].evaluator, arr.index, sVal, arr).substr(dupCount), origOrder: count}); } } } } rep.sort(ruleMetadataComparer); for (count = 0; count < rep.length; count++) { sVal = sVal.substr(0, rep[count].index) + rep[count].type + sVal.substr(rep[count].index + rep[count].length); } return sVal; }"}
-    Public PlainTransliterateGenJS As String() = {FindLetterBySymbolJS, IsDiacriticJS,
-            "function isWhitespace(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.WhitespaceSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
-            "function isPunctuation(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.PunctuationSymbols, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
-            "function isStop(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
-            "function applyColorRules(sVal) {}",
-            "function changeScript(sVal, scriptType) {}",
-            "var arabicAlphabet = " + UtilityWeb.MakeJSArray(ChData.ArabicAlphabet) + ";",
-            "var arabicLettersInOrder = " + UtilityWeb.MakeJSArray(ChData.ArabicLettersInOrder) + ";",
-            "var arabicLeadingGutterals = " + UtilityWeb.MakeJSArray(ChData.ArabicLeadingGutterals) + ";",
-            "function getSchemeGutteralFromString(str, scheme, leading) { if (arabicLeadingGutterals.indexOf(str) !== -1) { return translitSchemes[scheme].gutteral[arabicLeadingGutterals.indexOf(str) + (leading ? arabicLeadingGutterals.length : 0)]; } return ''; }",
-            "function arabicLetterSpelling(sVal, bQuranic) { var count, index, output = ''; for (count = 0; count < sVal.length; count++) { index = findLetterBySymbol(sVal.charCodeAt(count)); if (index !== -1 && isLetter(index)) { if (output !== '' && !bQuranic) output += ' '; var idx = arabicLettersInOrder.indexOf(String.fromCharCode(parseInt(arabicLetters[index].Symbol, 10))); output += arabicAlphabet[idx].slice(0, -1) + ((arabicAlphabet[idx][arabicAlphabet[idx].length - 1] == 'n') ? '' : 'o'); } else if (index !== -1 && arabicLetters[index].Symbol === 0x653) { output += sVal.charCodeAt(count); } } return doTransliterate(output, false, 1); }",
-            "function schemeHasValue(str, scheme) { for (var k in translitSchemes[scheme]) { if (translitSchemes[scheme].hasOwnProperty(k) && str === translitSchemes[scheme][k]) return true; } return false; }",
-            "String.prototype.format = function() { var formatted = this; for (var i = 0; i < arguments.length; i++) { formatted = formatted.replace(new RegExp('\\{'+i+'\\}', 'gi'), arguments[i]); } return formatted; };",
-            "RegExp.matchResult = function(subexp, offset, str, matches) { return subexp.replace(/\$(\$|&|`|\'|[0-9]+)/g, function(m, p) { if (p === '$') return '$'; if (p === '`') return str.slice(0, offset); if (p === '\'') return str.slice(offset + matches[0].length); if (p === '&' || parseInt(p, 10) <= 0 || parseInt(p, 10) >= matches.length) return matches[0]; return (matches[parseInt(p, 10)] === undefined) ? '' : matches[parseInt(p, 10)]; }); };",
-            "var ruleFunctions = [function(str, scheme, learningMode) { return [str.toUpperCase()]; }, function(str, scheme, learningMode) { return [transliterateWithRules(doTransliterate(arabicWordFromNumber(parseInt(doTransliterate(str, true, 1), 10), true, false, false), false, 1), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [transliterateWithRules(arabicLetterSpelling(str, true), scheme, null, learningMode)]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].standard[str]]; }, function(str, scheme, learningMode) { return [translitSchemes[scheme.toString()].multi[arabicMultis.indexOf(str)]]; }, function(str, scheme, learningMode) { return [" + UtilityWeb.MakeJSArray(ChData.ArabicFathaDammaKasra) + "[" + UtilityWeb.MakeJSArray(ChData.ArabicTanweens) + ".indexOf(str)], '" + ArabicData.ArabicLetterNoon + "']; }, function (str, scheme, learningMode) { return [getSchemeGutteralFromString(str.slice(0, -1), scheme, true) + str[str.length - 1]]; }, function(str, scheme, learningMode) { return [str[0] + getSchemeGutteralFromString(str.slice(1), scheme, false)]; }, function(str, scheme, learningMode) { return [schemeHasValue(translitSchemes[scheme.toString()].standard[str[0]] + translitSchemes[scheme.toString()].standard[str[1]]) ? str[0] + '-' + str[1] : str]; }, function(str, scheme, learningMode) { return learningMode ? [str, ''] : ['', str]; }];",
-            "function isLetter(index) { return (" + String.Join("||", Linq.Enumerable.Select(ChData.RecitationLetters, Function(C As String) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(C.Chars(0)), 16))) + "); }",
-            "function isSymbol(index) { return (" + String.Join("||", Linq.Enumerable.Select(Arb.GetRecitationSymbols(), Function(A As Array) "parseInt(arabicLetters[index].Symbol, 10) === 0x" + Convert.ToString(AscW(ArbData.ArabicLetters(CInt(A.GetValue(1))).Symbol), 16))) + "); }",
-            "var uthmaniMinimalScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("UthmaniMinimalScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var simpleEnhancedScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleEnhancedScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var simpleScriptBase = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleScriptBase"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var simpleScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var simpleMinimalScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleMinimalScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var simpleCleanScript = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("SimpleCleanScript"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var errorCheckRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "negativematch", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("ErrorCheck"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), UtilityWeb.MakeJSString(Convert.NegativeMatch), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var coloringSpelledOutRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.ColorRuleCategory.ColorRule, Object())(ChData.IslamData.ColorRuleSets(1).ColorRules, Function(Convert As IslamData.ColorRuleCategory.ColorRule) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert._Match)), UtilityWeb.MakeJSString(Convert.Evaluator), Convert._MetaRuleFunc})).ToArray(), True)}, True) + ";",
-            "var romanizationRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator", "ruleFunc"},
-                                    New List(Of Object())(Linq.Enumerable.Select(ChData.RuleTranslations("RomanizationRules"), Function(Convert As IslamData.RuleTranslationCategory.RuleTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), UtilityWeb.MakeJSString(Convert.Evaluator), Convert.RuleFunc})).ToArray(), True)}, True) + ";",
-            "var coloringRules = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "color"},
-                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.ColorRuleCategory.ColorRule, String())(ChData.IslamData.ColorRuleSets(0).ColorRules, Function(Convert As IslamData.ColorRuleCategory.ColorRule) New String() {Convert.Name, UtilityWeb.EscapeJS(Convert._Match), System.Drawing.ColorTranslator.ToHtml(Color.FromArgb(Convert.Color))})).ToArray(), False)}, True) + ";",
-            "var rulesOfRecitationRegEx = " + UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSIndexedObject(New String() {"rule", "match", "evaluator"},
-                                    New List(Of Object())(Linq.Enumerable.Select(Of IslamData.RuleMetaSet.RuleMetadataTranslation, Object())(ChData.RuleMetas("UthmaniQuran").Rules, Function(Convert As IslamData.RuleMetaSet.RuleMetadataTranslation) New Object() {UtilityWeb.MakeJSString(Convert.Name), UtilityWeb.MakeJSString(UtilityWeb.EscapeJS(Convert.Match)), If(Convert.Evaluator Is Nothing, Nothing, UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(Convert.Evaluator, Function(Str As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs()) (String.Join("|"c, Linq.Enumerable.Select(Str, Function(S) S.RuleName + If(S.Args Is Nothing OrElse S.Args.Length = 0, "", "(" + String.Join(",", Linq.Enumerable.Select(S.Args, Function(Arg) String.Join(" ", Arg))) + ")")))))).ToArray()))})).ToArray(), True)}, True) + ";",
-            "var allowZeroLength = " + UtilityWeb.MakeJSArray(Arabic.AllowZeroLength) + ";",
-            "function ruleMetadataComparer(a, b) { return (a.index === b.index) ? (b.length === a.length ? b.origOrder - a.origOrder : b.length - a.length) : b.index - a.index; }",
-            "function replaceMetadata(sVal, metadataRule, scheme, learningMode) { var count, elimParen = function(s) { return s.replace(/\(.*\)/, ''); }; for (count = 0; count < coloringSpelledOutRules.length; count++) { var index, match = null; for (index = 0; index < coloringSpelledOutRules[count].match.split('|').length; index++) { if (metadataRule.type.split('|').map(elimParen).indexOf(coloringSpelledOutRules[count].match.split('|')[index]) !== -1) { match = coloringSpelledOutRules[count].match.split('|')[index]; break; } } if (match !== null) { var str = coloringSpelledOutRules[count].evaluator.format(sVal.substr(metadataRule.index, metadataRule.length)); if (coloringSpelledOutRules[count].ruleFunc !== 0) { var args = ruleFunctions[coloringSpelledOutRules[count].ruleFunc - 1](str, scheme, learningMode); if (args.length === 1) { str = args[0]; } else { var metaArgs = metadataRule.type.match(/\((.*)\)/)[1].split(','); str = ''; for (index = 0; index < args.length; index++) { if (args[index] && (learningMode || coloringSpelledOutRules[count].ruleFunc !== " + CStr(Arabic.MetaRuleFuncs.eLearningMode) + " || index !== 0)) str += replaceMetadata(args[index], {index: 0, length: args[index].length, type: metaArgs[index].replace(' ', '|'), origOrder: index}, scheme, learningMode); } } } sVal = sVal.substr(0, metadataRule.index) + str + sVal.substr(metadataRule.index + metadataRule.length); } } return sVal; }",
-            "function joinContig(sVal, preString, postString) { var index = preString.lastIndexOf(' '); if (index !== -1 && preString.length - 2 === index) index = preString.lastIndexOf(' ', index - 1); if (index !== -1) preString = preString.substring(index + 1); if (preString !== '') preString += ' ' + String.fromCharCode(0x6DD) + ' '; index = postString.indexOf(' '); if (index === 1) index = preString.indexOf(' ', index + 1); if (index !== -1) postString = postString.substring(0, index); if (postString !== '') postString = ' ' + String.fromCharCode(0x6DD) + ' ' + postString; return preString + sVal + postString; }",
-            "function unjoinContig(sVal, preString, postString) { var index = sVal.indexOf(String.fromCharCode(0x6DD)); if (preString !== '' && index !== -1) sVal = sVal.substring(index + 1 +  1); index = sVal.lastIndexOf(String.fromCharCode(0x6DD)); if (postString !== '' && index !== -1) sVal = sVal.substring(0, index - 1); return sVal; }",
-            "function transliterateContigWithRules(sVal, preString, postString, scheme, optionalStops) { return unjoinContig(transliterateWithRules(JoinContig(sVal, preString, postString), scheme, optionalStops, false), preString, postString); }",
-            "function transliterateWithRules(sVal, scheme, optionalStops, learningMode) { var count, index, arr, re, metadataList = [], replaceFunc = function(f, e) { return function() { return f(RegExp.matchResult(e, arguments[arguments.length - 2], arguments[arguments.length - 1], Array.prototype.slice.call(arguments).slice(0, -2)), scheme)[0]; }; }; for (count = 0; count < errorCheckRules.length; count++) { re = new RegExp(errorCheckRules[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { if (!errorCheckRules[count].negativematch || RegExp.matchResult(errorCheckRules[count].negativematch, arr.index, sVal, arr) === '') { console.log(errorCheckRules[count].rule + ': ' + doTransliterate(sVal.substr(0, arr.index), true, 1) + '<!-- -->' + doTransliterate(sVal.substr(arr.index), true, 1)); } } } for (count = 0; count < rulesOfRecitationRegEx.length; count++) { if (rulesOfRecitationRegEx[count].evaluator !== null) { var subcount, lindex; re = new RegExp(rulesOfRecitationRegEx[count].match, 'g'); while ((arr = re.exec(sVal)) !== null) { lindex = arr.index; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount].split('|').indexOf('optionalstop') !== -1 && (optionalStops === null && arr[subcount + 1] === String.fromCharCode(0x6D6) || (arr[subcount + 1] !== undefined && lindex !== 0 && lindex !== sVal.length) || (optionalStops !== null && arr[subcount + 1] && optionalStops.indexOf(lindex) === -1)) || rulesOfRecitationRegEx[count].evaluator[subcount].split('|').indexOf('optionalnotstop') !== -1 && (optionalStops === null && arr[subcount + 1] !== String.fromCharCode(0x6D6) && ((arr[subcount + 1] !== undefined && arr[subcount + 1].length === 0) && (lindex === 0 || lindex === sVal.length)) || optionalStops !== null && arr[subcount + 1] && optionalStops.indexOf(lindex) !== -1)) break; } if (subcount !== rulesOfRecitationRegEx[count].evaluator.length) continue; for (subcount = 0; subcount < rulesOfRecitationRegEx[count].evaluator.length; subcount++) { if (rulesOfRecitationRegEx[count].evaluator[subcount] !== null && rulesOfRecitationRegEx[count].evaluator[subcount] !== '' && (arr[subcount + 1] && arr[subcount + 1].length !== 0 || allowZeroLength.indexOf(rulesOfRecitationRegEx[count].evaluator[subcount]) !== -1)) { metadataList.push({index: lindex, length: arr[subcount + 1] ? arr[subcount + 1].length : 0, type: rulesOfRecitationRegEx[count].evaluator[subcount], origOrder: subcount}); } lindex += (arr[subcount + 1] ? arr[subcount + 1].length : 0); } } } } metadataList.sort(ruleMetadataComparer); for (index = 0; index < metadataList.length; index++) { sVal = replaceMetadata(sVal, metadataList[index], scheme, learningMode); } for (count = 0; count < romanizationRules.length; count++) { sVal = sVal.replace(new RegExp(romanizationRules[count].match, 'g'), (romanizationRules[count].ruleFunc === 0) ? romanizationRules[count].evaluator : replaceFunc(ruleFunctions[romanizationRules[count].ruleFunc - 1], romanizationRules[count].evaluator)); } return sVal; }"}
-    Public NumberGenJS As String() = {"var arabicOrdinalNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicOrdinalNumbers) + ";",
-                "var arabicOrdinalExtraNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicOrdinalExtraNumbers) + ";",
-                "var arabicFractionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicFractionNumbers) + ";",
-                "var arabicBaseNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseNumbers) + ";",
-                "var arabicBaseExtraNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseExtraNumbers) + ";",
-                "var arabicBaseTenNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseTenNumbers) + ";",
-                "var arabicBaseHundredNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseHundredNumbers) + ";",
-                "var arabicBaseThousandNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseThousandNumbers) + ";",
-                "var arabicBaseMillionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseMillionNumbers) + ";",
-                "var arabicBaseBillionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseBillionNumbers) + ";",
-                "var arabicBaseMilliardNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseMilliardNumbers) + ";",
-                "var arabicBaseTrillionNumbers = " + UtilityWeb.MakeJSArray(ChData.ArabicBaseTrillionNumbers) + ";",
-                "var arabicCombiners = " + UtilityWeb.MakeJSArray(ChData.ArabicCombiners) + ";",
-                "function doTransliterateNum() { $('#translitvalue').text(doTransliterate(arabicWordFromNumber($('#translitedit').val(), $('#useclassic0').prop('checked'), $('#usehundredform0').prop('checked'), $('#usemilliard0').prop('checked')), false, 1)); }",
-                "function arabicWordForLessThanThousand(number, useclassic, usealefhundred) { var str = '', hundstr = ''; if (number >= 100) { hundstr = usealefhundred ? arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(0, 2) + 'A' + arabicBaseHundredNumbers[Math.floor(number / 100) - 1].substr(2) : arabicBaseHundredNumbers[Math.floor(number / 100) - 1]; if ((number % 100) === 0) { return hundstr; } number = number % 100; } if ((number % 10) !== 0 && number !== 11 && number !== 12) { str = arabicBaseNumbers[number % 10 - 1]; } if (number >= 11 && number < 20) { if (number == 11 || number == 12) { str += arabicBaseExtraNumbers[number - 11]; } else { str = str.slice(0, -1) + 'a'; } str += ' ' + arabicBaseTenNumbers[1].slice(0, -2); } else if ((number === 0 && str === '') || number === 10 || number >= 20) { str = ((str === '') ? '' : str + ' ' + arabicCombiners[0]) + arabicBaseTenNumbers[Math.floor(number / 10)]; } return useclassic ? (((str === '') ? '' : str + ((hundstr === '') ? '' : ' ' + arabicCombiners[0])) + hundstr) : (((hundstr === '') ? '' : hundstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str); }",
-                "function arabicWordFromNumber(number, useclassic, usealefhundred, usemilliard) { var str = '', nextstr = '', curbase = 3, basenums = [1000, 1000000, 1000000000, 1000000000000], bases = [arabicBaseThousandNumbers, arabicBaseMillionNumbers, usemilliard ? arabicBaseMilliardNumbers : arabicBaseBillionNumbers, arabicBaseTrillionNumbers]; do { if (number >= basenums[curbase] && number < 2 * basenums[curbase]) { nextstr = bases[curbase][0]; } else if (number >= 2 * basenums[curbase] && number < 3 * basenums[curbase]) { nextstr = bases[curbase][1]; } else if (number >= 3 * basenums[curbase] && number < 10 * basenums[curbase]) { nextstr = arabicBaseNumbers[Math.floor(Number / basenums[curbase]) - 1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= 10 * basenums[curbase] && number < 11 * basenums[curbase]) { nextstr = arabicBaseTenNumbers[1].slice(0, -1) + 'u ' + bases[curbase][2]; } else if (number >= basenums[curbase]) { nextstr = arabicWordForLessThanThousand(Math.floor(number / basenums[curbase]) % 100, useclassic, usealefhundred); if (number >= 100 * basenums[curbase] && number < (useclassic ? 200 : 101) * basenums[curbase]) { nextstr = nextstr.slice(0, -1) + 'u ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 200 * basenums[curbase] && number < (useclassic ? 300 : 201) * basenums[curbase]) { nextstr = nextstr.slice(0, -2) + ' ' + bases[curbase][0].slice(0, -1) + 'K'; } else if (number >= 300 * basenums[curbase] && (useclassic || Math.floor(number / basenums[curbase]) % 100 === 0)) { nextstr = nextstr.slice(0, -1) + 'i ' + bases[curbase][0].slice(0, -1) + 'K'; } else { nextstr += ' ' + bases[curbase][0].slice(0, -1) + 'FA'; } } number = number % basenums[curbase]; curbase--; str = useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' ' + arabicCombiners[0])) + nextstr); nextstr = ''; } while (curbase >= 0); if (number !== 0 || str === '') { nextstr = arabicWordForLessThanThousand(number, useclassic, usealefhundred); } return useclassic ? (((nextstr === '') ? '' : nextstr + ((str === '') ? '' : ' ' + arabicCombiners[0])) + str) : (((str === '') ? '' : str + ((nextstr === '') ? '' : ' ' + arabicCombiners[0])) + nextstr); }"}
+    Public PlainTransliterateGenJS As String()
+    Public NumberGenJS As String()
     Public Function GetTransliterateNumberJS() As String()
         Dim GetJS As New List(Of String) From {"javascript: doTransliterateNum();", String.Empty, GetArabicSymbolJSArray(), GetTranslitSchemeJSArray()}
         GetJS.AddRange(ArbDataWeb.GetUniCats())
@@ -924,11 +932,11 @@ Public Class DocBuilderWeb
         PhrWeb = NewPhrWeb
         TRWeb = NewTRWeb
     End Sub
-    Public Async Function GetListRenderedText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
-        Return Await DoGetListRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), CInt(HttpContext.Current.Request.QueryString.Get("selection")), Item.Name, HttpContext.Current.Request.QueryString.Get("qurantranslation"))
+    Public Async Function GetListRenderedText(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of RenderArray)
+        Return Await DoGetListRenderedText(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context), CInt(Context.Request.QueryString.Get("selection")), Item.Name, Context.Request.QueryString.Get("qurantranslation"))
     End Function
-    Public Async Function GetRenderedText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
-        Return Await DoGetRenderedText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.Params("docedit"), HttpContext.Current.Request.Params("qurantranslation"))
+    Public Async Function GetRenderedText(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of RenderArray)
+        Return Await DoGetRenderedText(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context), Item.Name, Context.Request.Params("docedit"), Context.Request.Params("qurantranslation"))
     End Function
     Public Function GetMetadataRules(ID As String) As Array()
         Dim Output(ChData.IslamData.MetaRules.Length + 2) As Array
@@ -950,8 +958,8 @@ Public Class DocBuilderWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
-    Public Function GetRenderedHelpText(ByVal Item As PageLoader.TextItem) As RenderArray
-        Return DoGetRenderedHelpText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name)
+    Public Function GetRenderedHelpText(ByVal Item As PageLoader.TextItem, Context As HttpContext) As RenderArray
+        Return DoGetRenderedHelpText(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context), Item.Name)
     End Function
     Public Function DoGetRenderedHelpText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Name As String) As RenderArray
         Dim Renderer As New RenderArray(Name)
@@ -1197,16 +1205,18 @@ Public Class PhrasesWeb
     Private ChData As CachedData
     Private TR As TanzilReader
     Private DBWeb As DocBuilderWeb
-    Public Sub New(NewArbWeb As ArabicWeb, NewChData As CachedData, NewTR As TanzilReader, NewDBWeb As DocBuilderWeb)
+    Public Sub New(NewArbWeb As ArabicWeb, NewChData As CachedData, NewTR As TanzilReader)
         ArbWeb = NewArbWeb
         ChData = NewChData
         TR = NewTR
+    End Sub
+    Public Sub Init(NewDBWeb As DocBuilderWeb)
         DBWeb = NewDBWeb
     End Sub
-    Public Async Function GetRenderedPhraseText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
-        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
-        Dim Scheme As String = ArbWeb.DecodeTranslitScheme()
-        Return Await DoGetRenderedCatText(Item.Name, SchemeType, Scheme, ChData.IslamData.Phrases, TR.GetTranslationIndex(HttpContext.Current.Request.QueryString.Get("qurantranslation")))
+    Public Async Function GetRenderedPhraseText(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of RenderArray)
+        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = ArbWeb.DecodeTranslitScheme(Context)
+        Return Await DoGetRenderedCatText(Item.Name, SchemeType, Scheme, ChData.IslamData.Phrases, TR.GetTranslationIndex(Context.Request.QueryString.Get("qurantranslation")))
     End Function
     Public Async Function DoGetRenderedPhraseText(SchemeType As ArabicData.TranslitScheme, Scheme As String, Verse As IslamData.Phrase, TranslationIndex As Integer) As Task(Of List(Of RenderArray.RenderItem))
         Return (Await DBWeb.BuckwalterTextFromReferences(String.Empty, SchemeType, Scheme, Verse.Text, Verse.TranslationID, TranslationIndex)).Items
@@ -1247,8 +1257,8 @@ Public Class Quiz
     Public Shared Function DisplayCount(ByVal Item As PageLoader.TextItem) As String
         Return "Wrong: 0 Right: 0"
     End Function
-    Public Function GetQuizSet() As String()
-        Dim Quiz As Integer = CInt(HttpContext.Current.Request.QueryString.Get("quizselection"))
+    Public Function GetQuizSet(Context As HttpContext) As String()
+        Dim Quiz As Integer = CInt(Context.Request.QueryString.Get("quizselection"))
         If Quiz = 0 Then
             Return ChData.ArabicLetters
         ElseIf Quiz = 1 Then
@@ -1269,30 +1279,30 @@ Public Class Quiz
             Return Nothing
         End If
     End Function
-    Public Function DisplayQuestion(ByVal Item As PageLoader.TextItem) As String
-        HttpContext.Current.Items.Add("rnd", Guid.NewGuid().GetHashCode())
-        Dim Rd As New Random(CInt(HttpContext.Current.Items("rnd")))
+    Public Function DisplayQuestion(ByVal Item As PageLoader.TextItem, Context As HttpContext) As String
+        Context.Items.Add("rnd", Guid.NewGuid().GetHashCode())
+        Dim Rd As New Random(CInt(Context.Items("rnd")))
         Dim Count As Integer = CInt(Math.Floor(Rd.Next() * 4))
         Dim QuizSet As New List(Of String)
-        QuizSet.AddRange(GetQuizSet())
+        QuizSet.AddRange(GetQuizSet(Context))
         While Count <> 0
             QuizSet.RemoveAt(CInt(Math.Floor(Rd.Next() * QuizSet.Count)))
             Count -= 1
         End While
         Return QuizSet(CInt(Math.Floor(Rd.Next() * QuizSet.Count)))
     End Function
-    Public Function DisplayAnswer(ByVal Item As PageLoader.ButtonItem) As String
+    Public Function DisplayAnswer(ByVal Item As PageLoader.ButtonItem, Context As HttpContext) As String
         Dim Count As Integer
-        Dim Rd As New Random(CInt(HttpContext.Current.Items("rnd")))
+        Dim Rd As New Random(CInt(Context.Items("rnd")))
         Rd.Next()
-        Dim Quiz As Integer = CInt(HttpContext.Current.Request.QueryString.Get("quizselection"))
+        Dim Quiz As Integer = CInt(Context.Request.QueryString.Get("quizselection"))
         Dim QuizSet As New List(Of String)
-        QuizSet.AddRange(GetQuizSet())
+        QuizSet.AddRange(GetQuizSet(Context))
         For Count = 2 To Integer.Parse(Item.Name.Replace("answer", String.Empty))
             QuizSet.RemoveAt(CInt(Math.Floor(Rd.Next() * QuizSet.Count)))
         Next
-        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
-        Dim Scheme As String = ArbWeb.DecodeTranslitScheme()
+        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = ArbWeb.DecodeTranslitScheme(Context)
         If SchemeType = ArabicData.TranslitScheme.None Then
             SchemeType = ArabicData.TranslitScheme.LearningMode
             Scheme = ChData.IslamData.TranslitSchemes(3).Name
@@ -1343,10 +1353,10 @@ Public Class TanzilReaderWeb
         Next
         Return RenderArrayWeb.MakeTableJSFunctions(Output, ID)
     End Function
-    Public Function GetDivisionChangeJS() As String()
-        Dim JSArrays As String = UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetChapterNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetChapterNamesByRevelationOrder(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
-            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetPartNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+    Public Function GetDivisionChangeJS(Context As HttpContext) As String()
+        Dim JSArrays As String = UtilityWeb.MakeJSArray(New String() {UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetChapterNames(Context), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetChapterNamesByRevelationOrder(Context), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
+            UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(GetPartNames(Context), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
             UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TR.GetGroupNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
             UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TR.GetStationNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
             UtilityWeb.MakeJSArray(New List(Of String)(Linq.Enumerable.Select(TR.GetSectionNames(), Function(Convert As Array) UtilityWeb.MakeJSArray(New String() {CStr(CType(Convert, Object())(0)), CStr(CType(Convert, Object())(1))}))).ToArray(), True),
@@ -1366,37 +1376,39 @@ Public Class TanzilReaderWeb
         Return New String() {"javascript: changeColorCueMode(this.selectedIndex);", String.Empty,
                              "function changeColorCueMode(index) {}"}
     End Function
-    Public Function GetQuranWordTotal(ByVal Item As PageLoader.TextItem) As String
-        Return TR.GetQuranWordTotal(HttpContext.Current.Request.QueryString.Get("quranselection"))
+    Public Function GetQuranWordTotal(ByVal Item As PageLoader.TextItem, Context As HttpContext) As String
+        Return TR.GetQuranWordTotal(Context.Request.QueryString.Get("quranselection"))
     End Function
-    Public Async Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem) As Task(Of Array())
-        Return Await TR.GetQuranWordFrequency(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), HttpContext.Current.Request.QueryString.Get("quranselection"))
+    Public Async Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of Array())
+        Return Await TR.GetQuranWordFrequency(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context), Context.Request.QueryString.Get("quranselection"))
     End Function
-    Public Function GetSelectionNames() As Array()
-        Return TR.GetSelectionNames(HttpContext.Current.Request.QueryString.Get("qurandivision"), ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
+    Public Function GetSelectionNames(Context As HttpContext) As Array()
+        Return TR.GetSelectionNames(Context.Request.QueryString.Get("qurandivision"), ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context))
     End Function
-    Public Async Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
-        Return Await TR.GetRenderedQuranText(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme(), Item.Name, HttpContext.Current.Request.QueryString.Get("qurandivision"), HttpContext.Current.Request.QueryString.Get("quranselection"), HttpContext.Current.Request.QueryString.Get("qurantranslation"), HttpContext.Current.Request.QueryString.Get("wordversemode"), HttpContext.Current.Request.QueryString.Get("colorcuemode"))
+    Public Async Function GetRenderedQuranText(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of RenderArray)
+        Return Await TR.GetRenderedQuranText(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context), Item.Name, Context.Request.QueryString.Get("qurandivision"), Context.Request.QueryString.Get("quranselection"), Context.Request.QueryString.Get("qurantranslation"), Context.Request.QueryString.Get("wordversemode"), Context.Request.QueryString.Get("colorcuemode"))
     End Function
-    Public Function GetChapterNames() As Array()
-        Return TR.GetChapterNames(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
+    Public Function GetChapterNames(Context As HttpContext) As Array()
+        Return TR.GetChapterNames(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context))
     End Function
-    Public Function GetChapterNamesByRevelationOrder() As Array()
-        Return TR.GetChapterNamesByRevelationOrder(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
+    Public Function GetChapterNamesByRevelationOrder(Context As HttpContext) As Array()
+        Return TR.GetChapterNamesByRevelationOrder(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context))
     End Function
-    Public Function GetPartNames() As Array()
-        Return TR.GetPartNames(ArabicWeb.DecodeTranslitSchemeType(), ArbWeb.DecodeTranslitScheme())
+    Public Function GetPartNames(Context As HttpContext) As Array()
+        Return TR.GetPartNames(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context))
     End Function
 End Class
 Public Class HadithReaderWeb
     Private _PortableMethods As PortableMethods
     Private ChData As CachedData
+    Private Arb As Arabic
     Private ArbWeb As ArabicWeb
     Private HR As HadithReader
     Private UWeb As UtilityWeb
     Private ISDatabaseLookup As IslamSiteDatabaseLookup
-    Public Sub New(NewPortableMethods As PortableMethods, NewChData As CachedData, NewArbWeb As ArabicWeb, NewHR As HadithReader, NewUWeb As UtilityWeb, NewISDatabaseLookup As IslamSiteDatabaseLookup)
+    Public Sub New(NewPortableMethods As PortableMethods, NewArb As Arabic, NewChData As CachedData, NewArbWeb As ArabicWeb, NewHR As HadithReader, NewUWeb As UtilityWeb, NewISDatabaseLookup As IslamSiteDatabaseLookup)
         _PortableMethods = NewPortableMethods
+        Arb = NewArb
         ChData = NewChData
         ArbWeb = NewArbWeb
         HR = NewHR
@@ -1417,46 +1429,129 @@ Public Class HadithReaderWeb
         Return New String() {"javascript: changeHadithCollection(this.selectedIndex);", String.Empty, UtilityWeb.GetClearOptionListJS(),
                              GetCollectionChangeOnlyJS()}
     End Function
-    Public Function GetCollectionXMLMetaDataDownload() As String()
-        Return New String() {UWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection()).FileName + "-data.xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection()).Name) + " XML metadata"}
+    Public Function GetCollectionXMLMetaDataDownload(Context As HttpContext) As String()
+        Return New String() {UWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection(Context)).FileName + "-data.xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection(Context)).Name) + " XML metadata"}
     End Function
-    Public Function GetCollectionXMLDownload() As String()
-        Return New String() {UWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection()).FileName + ".xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection()).Name) + " XML source text"}
+    Public Function GetCollectionXMLDownload(Context As HttpContext) As String()
+        Return New String() {UWeb.GetPageString("Source&File=" + ChData.IslamData.Collections(GetCurrentCollection(Context)).FileName + ".xml"), _PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(GetCurrentCollection(Context)).Name) + " XML source text"}
     End Function
-    Public Function GetTranslationXMLMetaDataDownload() As String()
-        Dim TranslationIndex As Integer = HR.GetTranslationIndex(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+    Public Function GetTranslationXMLMetaDataDownload(Context As HttpContext) As String()
+        Dim TranslationIndex As Integer = HR.GetTranslationIndex(GetCurrentCollection(Context), Context.Request.QueryString.Get("hadithtranslation"))
         If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {UWeb.GetPageString("Source&File=" + HR.GetTranslationXMLFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".xml"), ChData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " XML metadata"}
+        Return New String() {UWeb.GetPageString("Source&File=" + HR.GetTranslationXMLFileName(GetCurrentCollection(Context), Context.Request.QueryString.Get("hadithtranslation")) + ".xml"), ChData.IslamData.Collections(GetCurrentCollection(Context)).Translations(TranslationIndex).Name + " XML metadata"}
     End Function
-    Public Function GetTranslationTextDownload() As String()
-        Dim TranslationIndex As Integer = HR.GetTranslationIndex(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+    Public Function GetTranslationTextDownload(Context As HttpContext) As String()
+        Dim TranslationIndex As Integer = HR.GetTranslationIndex(GetCurrentCollection(Context), Context.Request.QueryString.Get("hadithtranslation"))
         If TranslationIndex = -1 Then Return New String() {}
-        Return New String() {UWeb.GetPageString("Source&File=" + HR.GetTranslationFileName(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation")) + ".txt"), ChData.IslamData.Collections(GetCurrentCollection()).Translations(TranslationIndex).Name + " raw source text"}
+        Return New String() {UWeb.GetPageString("Source&File=" + HR.GetTranslationFileName(GetCurrentCollection(Context), Context.Request.QueryString.Get("hadithtranslation")) + ".txt"), ChData.IslamData.Collections(GetCurrentCollection(Context)).Translations(TranslationIndex).Name + " raw source text"}
     End Function
-    Public Shared Function GetCurrentCollection() As Integer
-        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("hadithcollection")
+    Public Shared Function GetCurrentCollection(Context As HttpContext) As Integer
+        Dim Strings As String = Context.Request.QueryString.Get("hadithcollection")
         If Not Strings Is Nothing Then Return CInt(Strings) Else Return 0
     End Function
-    Public Shared Function GetCurrentBook() As Integer
-        Dim Strings As String = HttpContext.Current.Request.QueryString.Get("hadithbook")
+    Public Shared Function GetCurrentBook(Context As HttpContext) As Integer
+        Dim Strings As String = Context.Request.QueryString.Get("hadithbook")
         If Not Strings Is Nothing Then Return CInt(Strings) Else Return 1
     End Function
-    Public Function GetBookNames() As Array()
-        Return HR.GetBookNamesByCollection(GetCurrentCollection())
+    Public Function GetBookNames(Context As HttpContext) As Array()
+        Return HR.GetBookNamesByCollection(GetCurrentCollection(Context))
     End Function
-    Public Function GetTranslationList() As Array()
-        Return HR.GetTranslationList(GetCurrentCollection())
+    Public Function GetTranslationList(Context As HttpContext) As Array()
+        Return HR.GetTranslationList(GetCurrentCollection(Context))
     End Function
-    Public Async Function GetHadithMappingText(ByVal Item As PageLoader.TextItem) As Task(Of Array())
-        Return Await HR.GetHadithMappingText(GetCurrentCollection(), HttpContext.Current.Request.QueryString.Get("hadithtranslation"))
+    Public Async Function GetHadithMappingText(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of Array())
+        Return Await HR.GetHadithMappingText(GetCurrentCollection(Context), Context.Request.QueryString.Get("hadithtranslation"))
     End Function
-    Public Async Function GetRenderedText(ByVal Item As PageLoader.TextItem) As Task(Of RenderArray)
-        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType()
-        Dim Scheme As String = ArbWeb.DecodeTranslitScheme()
-        Dim Translation As String = HttpContext.Current.Request.QueryString.Get("hadithtranslation")
-        Return Await HR.DoGetRenderedText(Item.Name, SchemeType, Scheme, Translation, GetCurrentCollection(), GetCurrentBook(), ISDatabaseLookup)
+    Public Async Function GetRenderedText(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of RenderArray)
+        Dim SchemeType As ArabicData.TranslitScheme = ArabicWeb.DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = ArbWeb.DecodeTranslitScheme(Context)
+        Dim Translation As String = Context.Request.QueryString.Get("hadithtranslation")
+        Return Await DoGetRenderedText(Item.Name, SchemeType, Scheme, Translation, GetCurrentCollection(Context), GetCurrentBook(Context), ISDatabaseLookup, Context)
+    End Function
+    Public Async Function DoGetRenderedText(ID As String, SchemeType As ArabicData.TranslitScheme, Scheme As String, Translation As String, Index As Integer, BookIndex As Integer, RankInterface As IslamSiteRankingData, Context As HttpContext) As Threading.Tasks.Task(Of RenderArray)
+        Dim Renderer As New RenderArray(ID)
+        Dim Hadith As Integer
+        Dim HadithText As Collections.Generic.List(Of Collections.Generic.List(Of Object)) = Await HR.GetHadithText(BookIndex, Index)
+        Dim ChapterIndex As Integer = -1
+        Dim SubChapterIndex As Integer = -1
+        Dim BookNode As Xml.Linq.XElement = HR.GetBookByIndex(Index, BookIndex)
+        Dim ChapterNode As Xml.Linq.XElement = Nothing
+        Dim SubChapterNode As Xml.Linq.XElement
+        If Not BookNode Is Nothing Then
+            Dim Str As String = Arb.TransliterateFromBuckwalter("Had~ivu " + BookNode.Attribute("hadiths").Value + " ")
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arb.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.FilterMetadataStops(Str, Arb.GetMetarules(Str, ChData.RuleMetas("Normal")), Nothing)).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + BookNode.Attribute("hadiths").Value + " ")}))
+            Str = Arb.TransliterateFromBuckwalter("{lokita`bu " + CStr(BookIndex)) + " " + BookNode.Attribute("name").Value + " "
+            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arb.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.FilterMetadataStops(Str, Arb.GetMetarules(Str, ChData.RuleMetas("Normal")), Nothing)).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Book " + CStr(BookIndex) + ": " + HR.GetBookEName(BookNode, Index) + " ")}))
+            'Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderRight, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("mjld " + New List(Of Xml.Linq.XElement)(Utility.GetChildNode("books", New List(Of Xml.Linq.XElement)(XMLDocInfo(Index).Root.Elements).ToArray()).Elements).ToArray()(BookIndex).Attribute("volume").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arabic.TransliterateToScheme(Arabic.TransliterateFromBuckwalter("mjld " + New List(Of Xml.Linq.XElement)(Utility.GetChildNode("books", New List(Of Xml.Linq.XElement)(XMLDocInfo(Index).Root.Elements).ToArray()).Elements).ToArray()(BookIndex).Attribute("volume").Value + " "), SchemeType, Scheme).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Volume " + Utility.GetChildNode("books", XMLDocInfo(Index).Root.Nodes).Nodes.Item(BookIndex).Attribute("volume").Value + " ")}))
+            Dim XMLDocTranslate As Xml.Linq.XDocument = Nothing
+            Dim Strings() As String = Nothing
+            If ChData.IslamData.Collections(Index).Translations.Length <> 0 Then
+                Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", HR.GetTranslationXMLFileName(Index, Translation) + ".xml")))
+                XMLDocTranslate = Xml.Linq.XDocument.Load(Stream)
+                Stream.Dispose()
+                Strings = Await _PortableMethods.ReadAllLines(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", HR.GetTranslationFileName(Index, Translation) + ".txt")))
+            End If
+            For Hadith = 0 To HadithText.Count - 1
+                'Handle missing or excess chapter indexes
+                If ChapterIndex <> CInt(HadithText(Hadith)(1)) Then
+                    ChapterIndex = CInt(HadithText(Hadith)(1))
+                    ChapterNode = HadithReader.GetChapterByIndex(BookNode, ChapterIndex)
+                    If Not ChapterNode Is Nothing Then
+                        Str = Arb.TransliterateFromBuckwalter("Had~ivu " + ChapterNode.Attribute("hadiths").Value + " ")
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Str), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arb.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.FilterMetadataStops(Str, Arabic.FilterMetadataStops(Str, Arb.GetMetarules(Str, ChData.RuleMetas("Normal")), Nothing), Nothing)).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + ChapterNode.Attribute("hadiths").Value + " ")}))
+                        Dim Heads As New List(Of RenderArray.RenderText)
+                        Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split(Arb.TransliterateFromBuckwalter("baAbu " + CStr(ChapterIndex)) + " " + ChapterNode.Attribute("name").Value + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, S))))
+                        Str = Arb.TransliterateFromBuckwalter("baAbu " + CStr(ChapterIndex)) + " " + System.Text.RegularExpressions.Regex.Replace(ChapterNode.Attribute("name").Value, "(\d+).(\d+(?:-\d+)?)", String.Empty) + " "
+                        Heads.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arb.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.FilterMetadataStops(Str, Arabic.FilterMetadataStops(Str, Arb.GetMetarules(Str, ChData.RuleMetas("Normal")), Nothing), Nothing)).Trim()))
+                        Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split("Chapter " + CStr(ChapterIndex) + ": " + Utility.DefaultValue(_PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attribute("index").Value + "Chapter" + ChapterNode.Attribute("index").Value), String.Empty) + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, S))))
+                        Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, Heads.ToArray()))
+                    End If
+                    SubChapterIndex = -1
+                End If
+                'Handle missing or excess subchapter indexes
+                If SubChapterIndex <> CInt(HadithText(Hadith)(2)) Then
+                    SubChapterIndex = CInt(HadithText(Hadith)(2))
+                    If Not ChapterNode Is Nothing Then
+                        SubChapterNode = HadithReader.GetSubChapterByIndex(ChapterNode, SubChapterIndex)
+                        If Not SubChapterNode Is Nothing Then
+                            Str = Arb.TransliterateFromBuckwalter("Had~ivu " + SubChapterNode.Attribute("hadiths").Value + " ")
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderLeft, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arb.TransliterateFromBuckwalter("Had~ivu " + SubChapterNode.Attribute("hadiths").Value + " ")), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arb.TransliterateToScheme(Str, SchemeType, Scheme, Arb.GetMetarules(Str, ChData.RuleMetas("Normal"))).Trim()), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, "Hadiths: " + SubChapterNode.Attribute("hadiths").Value + " ")}))
+                            Dim Heads As New List(Of RenderArray.RenderText)
+                            Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split(Arb.TransliterateFromBuckwalter("baAbu " + CStr(SubChapterIndex)) + " " + SubChapterNode.Attribute("name").Value + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, S))))
+                            Str = Arb.TransliterateFromBuckwalter("baAbu " + CStr(SubChapterIndex)) + " " + System.Text.RegularExpressions.Regex.Replace(SubChapterNode.Attribute("name").Value, "(\d+).(\d+(?:-\d+)?)", String.Empty) + " "
+                            Heads.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arb.TransliterateToScheme(Str, SchemeType, Scheme, Arb.GetMetarules(Str, ChData.RuleMetas("Normal"))).Trim()))
+                            Heads.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split("Sub-Chapter " + CStr(SubChapterIndex) + ": " + Utility.DefaultValue(_PortableMethods.LoadResourceString("IslamInfo_" + ChData.IslamData.Collections(Index).FileName + "Book" + BookNode.Attribute("index").Value + "Chapter" + ChapterNode.Attribute("index").Value + "Subchapter" + SubChapterNode.Attribute("index").Value), String.Empty) + " ", "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, S))))
+                            Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, Heads.ToArray()))
+                        End If
+                    End If
+                End If
+                Dim HadithTranslation As String = String.Empty
+                If CInt(HadithText(Hadith)(0)) <> 0 Then
+                    Dim TranslationLines() As String = HR.GetTranslationHadith(XMLDocTranslate, Strings, Index, BookIndex - 1, CInt(HadithText(Hadith)(0)))
+                    Dim Count As Integer
+                    For Count = 0 To TranslationLines.Length - 1
+                        HadithTranslation += vbCrLf + TranslationLines(Count)
+                    Next
+                End If
+                'Arabic.TransliterateFromBuckwalter("(" + HadithText(Hadith)(0) + ") ")
+                Dim Texts As New List(Of RenderArray.RenderText)
+                Texts.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split(CStr(HadithText(Hadith)(3)) + " " + Arb.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0)) + " "), "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, S))))
+                Str = System.Text.RegularExpressions.Regex.Replace(CStr(HadithText(Hadith)(3)), "(\d+).(\d+(?:-\d+)?)", String.Empty) + " " + Arb.TransliterateFromBuckwalter("=" + CStr(HadithText(Hadith)(0))) + " "
+                Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, Arb.TransliterateToScheme(Str, SchemeType, Scheme, Arabic.FilterMetadataStops(Str, Arb.GetMetarules(Str, ChData.RuleMetas("Normal")), Nothing)).Trim()))
+                Texts.AddRange(Linq.Enumerable.Select(Of String, RenderArray.RenderText)(System.Text.RegularExpressions.Regex.Split("(" + CStr(HadithText(Hadith)(0)) + ") " + HadithTranslation, "(\d+\.\d+(?:-\d+)?)"), Function(S As String) If(System.Text.RegularExpressions.Regex.Match(S, "(\d+)\.(\d+(?:-\d+)?)").Success, New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLink, {"/host.aspx?Page=docbuild&docedit=%7B" + S.Replace(".", "%3A") + "%7D&selectiondisplay=Display&translitscheme=0&fontselection=def&fontcustom=Lotus", S}), New RenderArray.RenderText(If(HR.IsTranslationTextLTR(Index, Translation), RenderArray.RenderDisplayClass.eLTR, RenderArray.RenderDisplayClass.eRTL), S))))
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
+                Dim Ranking As Integer() = RankInterface.GetHadithRankingData(ChData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)))
+                Dim UserRanking As Integer = RankInterface.GetUserHadithRankingData(ChData.IslamData.Collections(Index).FileName, BookIndex, CInt(HadithText(Hadith)(0)), Context)
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eInteractive, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eRanking, ChData.IslamData.Collections(Index).FileName + "|" + CStr(BookIndex) + "|" + CStr(HadithText(Hadith)(0)) + "|" + CStr(Ranking(0)) + "|" + CStr(Ranking(1)) + "|" + CStr(UserRanking))}))
+            Next
+        End If
+        Return Renderer
     End Function
 End Class
+Public Interface IslamSiteRankingData
+    Function GetHadithRankingData(ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer) As Integer()
+    Function GetUserHadithRankingData(ByVal Collection As String, ByVal Book As Integer, ByVal Hadith As Integer, Context As HttpContext) As Integer
+End Interface
 Public Class IslamSiteDatabaseLookup
     Implements IslamSiteRankingData
     Private ISDatabase As IslamSiteDatabase
@@ -1468,9 +1563,9 @@ Public Class IslamSiteDatabaseLookup
     Public Function GetHadithRankingData(Collection As String, Book As Integer, Hadith As Integer) As Integer() Implements IslamSiteRankingData.GetHadithRankingData
         Return ISDatabase.GetHadithRankingData(Collection, Book, Hadith)
     End Function
-    Public Function GetUserHadithRankingData(Collection As String, Book As Integer, Hadith As Integer) As Integer Implements IslamSiteRankingData.GetUserHadithRankingData
-        If Not UWeb.IsLoggedIn() Then Return -1
-        Dim UserID As Integer = UWeb.GetUserID()
+    Public Function GetUserHadithRankingData(Collection As String, Book As Integer, Hadith As Integer, Context As HttpContext) As Integer Implements IslamSiteRankingData.GetUserHadithRankingData
+        If Not UWeb.IsLoggedIn(Context) Then Return -1
+        Dim UserID As Integer = UWeb.GetUserID(Context)
         Return ISDatabase.GetUserHadithRankingData(UserID, Collection, Book, Hadith)
     End Function
 End Class
@@ -1497,22 +1592,22 @@ Public Class IslamSiteDatabase
         SiteDatabase.ExecuteNonQuery(Connection, "DROP TABLE HadithRankings")
         Connection.Close()
     End Sub
-    Public Sub UpdateRankingData(ByVal UserID As Integer)
-        If GetUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith"))) = -1 Then
-            If CInt(HttpContext.Current.Request.Form.Get("Rating")) <> 0 Then
-                SetUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")), CInt(HttpContext.Current.Request.Form.Get("Rating")))
+    Public Sub UpdateRankingData(ByVal UserID As Integer, Context As HttpContext)
+        If GetUserHadithRankingData(UserID, Context.Request.Form.Get("Collection"), CInt(Context.Request.Form.Get("Book")), CInt(Context.Request.Form.Get("Hadith"))) = -1 Then
+            If CInt(Context.Request.Form.Get("Rating")) <> 0 Then
+                SetUserHadithRankingData(UserID, Context.Request.Form.Get("Collection"), CInt(Context.Request.Form.Get("Book")), CInt(Context.Request.Form.Get("Hadith")), CInt(Context.Request.Form.Get("Rating")))
             End If
         Else
-            If CInt(HttpContext.Current.Request.Form.Get("Rating")) <> 0 Then
-                UpdateUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")), CInt(HttpContext.Current.Request.Form.Get("Rating")))
+            If CInt(Context.Request.Form.Get("Rating")) <> 0 Then
+                UpdateUserHadithRankingData(UserID, Context.Request.Form.Get("Collection"), CInt(Context.Request.Form.Get("Book")), CInt(Context.Request.Form.Get("Hadith")), CInt(Context.Request.Form.Get("Rating")))
             Else
-                RemoveUserHadithRankingData(UserID, HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")))
+                RemoveUserHadithRankingData(UserID, Context.Request.Form.Get("Collection"), CInt(Context.Request.Form.Get("Book")), CInt(Context.Request.Form.Get("Hadith")))
             End If
         End If
     End Sub
-    Public Sub WriteRankingData()
-        Dim Data As Integer() = GetHadithRankingData(HttpContext.Current.Request.Form.Get("Collection"), CInt(HttpContext.Current.Request.Form.Get("Book")), CInt(HttpContext.Current.Request.Form.Get("Hadith")))
-        If Data(1) <> 0 Then HttpContext.Current.Response.Write("Average of " + CStr(Data(0) / Data(1) / 2) + " out of " + CStr(Data(1)) + " rankings")
+    Public Sub WriteRankingData(Context As HttpContext)
+        Dim Data As Integer() = GetHadithRankingData(Context.Request.Form.Get("Collection"), CInt(Context.Request.Form.Get("Book")), CInt(Context.Request.Form.Get("Hadith")))
+        If Data(1) <> 0 Then Context.Response.Write("Average of " + CStr(Data(0) / Data(1) / 2) + " out of " + CStr(Data(1)) + " rankings")
     End Sub
     Public Function GetHadithCollectionRankingData(ByVal Collection As String) As Double
         Dim Connection As MySql.Data.MySqlClient.MySqlConnection = SD.GetConnection()

@@ -1,3 +1,4 @@
+Imports System.Collections.Generic
 Imports HostPageUtility
 Imports XMLRender
 Partial Class Page
@@ -9,6 +10,7 @@ Partial Class Page
     Public JSInitFuncs As New Collections.Generic.List(Of String)
     Private _PortableMethods As PortableMethods
     Private UWeb As UtilityWeb
+    Private ArbData As ArabicData
 #Region " Web Form Designer Generated Code "
 
     'This call is required by the Web Form Designer.
@@ -27,9 +29,10 @@ Partial Class Page
     End Sub
 
 #End Region
-    Public Sub New(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb, ByVal NewPage As PageLoader.PageItem, Optional ByVal NewUsePanes As Boolean = True, Optional ByVal NewIsPrint As Boolean = False)
+    Public Sub New(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb, NewArbData As ArabicData, ByVal NewPage As PageLoader.PageItem, Optional ByVal NewUsePanes As Boolean = True, Optional ByVal NewIsPrint As Boolean = False)
         _PortableMethods = NewPortableMethods
         UWeb = NewUWeb
+        ArbData = NewArbData
         MyPage = NewPage
         UsePanes = NewUsePanes
         UsePrint = NewIsPrint
@@ -70,7 +73,93 @@ Partial Class Page
             If Count <> Strings.Length - 1 Then writer.WriteFullBeginTag("br")
         Next
     End Sub
-    Async Function WriteTextItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As PageLoader.TextItem, ByVal TabCount As Integer, ByVal IndexString As String) As Threading.Tasks.Task
+    Private AsyncDict As New Dictionary(Of String, Object)
+    Public Async Function DoGetAsyncData() As Threading.Tasks.Task
+        For Index As Integer = 0 To MyPage.Page.Count - 1
+            Await GetAsyncData(MyPage.Page.Item(Index), MyPage.PageName, Index)
+        Next
+    End Function
+    Async Function GetAsyncData(ByVal Item As Object, IndexString As String, Idx As Integer) As Threading.Tasks.Task
+        If (PageLoader.IsListItem(Item)) Then
+            For SubIndex As Integer = 0 To DirectCast(Item, PageLoader.ListItem).List.Count - 1
+                Await GetAsyncData(DirectCast(Item, PageLoader.ListItem).List.Item(SubIndex), IndexString + "." + DirectCast(Item, PageLoader.ListItem).Name, SubIndex)
+            Next
+        ElseIf (PageLoader.IsDownloadItem(Item)) Then
+            If Not DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction Is Nothing Then
+                Dim Obj As Object = DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction.Invoke(Nothing)
+                If UtilityWeb.IsTask(Obj) Then
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", Await CType(Obj, Threading.Tasks.Task(Of String())))
+                Else
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", CType(Obj, String()))
+                End If
+            End If
+        ElseIf Not UsePrint And (PageLoader.IsEditItem(Item)) Then
+            If Not DirectCast(Item, PageLoader.EditItem).OnChangeFunction Is Nothing Then
+                Dim Obj As Object = DirectCast(Item, PageLoader.EditItem).OnChangeFunction.Invoke(Nothing)
+                If UtilityWeb.IsTask(Obj) Then
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnChangeFunction", Await CType(Obj, Threading.Tasks.Task(Of String())))
+                Else
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnChangeFunction", CType(Obj, String()))
+                End If
+            End If
+        ElseIf Not UsePrint And (PageLoader.IsRadioItem(Item)) Then
+            If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
+                Dim Obj As Object = DirectCast(Item, PageLoader.RadioItem).OnChangeFunction.Invoke(New Object() {Context})
+                If UtilityWeb.IsTask(Obj) Then
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnChangeFunction", Await CType(Obj, Threading.Tasks.Task(Of String())))
+                Else
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnChangeFunction", CType(Obj, String()))
+                End If
+            End If
+            If Not DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
+                Dim Obj As Object = DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction.Invoke(New Object() {Context})
+                If UtilityWeb.IsTask(Obj) Then
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnPopulateFunction", Await CType(Obj, Threading.Tasks.Task(Of Object())))
+                Else
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnPopulateFunction", CType(Obj, Object()))
+                End If
+            End If
+        ElseIf Not UsePrint And (PageLoader.IsButtonItem(Item)) Then
+            If Not DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction Is Nothing Then
+                Dim Obj As Object = DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(New Object() {Item})
+                If UtilityWeb.IsTask(Obj) Then
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", Await CType(Obj, Threading.Tasks.Task(Of String)))
+                Else
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", CStr(Obj))
+                End If
+            End If
+            If Not DirectCast(Item, PageLoader.ButtonItem).OnClickFunction Is Nothing Then
+                Dim Obj As Object = DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing)
+                If UtilityWeb.IsTask(Obj) Then
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnClickFunction", Await CType(Obj, Threading.Tasks.Task(Of String())))
+                Else
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnClickFunction", CType(Obj, String()))
+                End If
+            End If
+        ElseIf (PageLoader.IsTextItem(Item)) Then
+            If (DirectCast(Item, PageLoader.TextItem).URL <> String.Empty) Then
+                If (DirectCast(Item, PageLoader.TextItem).ImageURL <> String.Empty) Then
+                    Dim Text As String = "Image.gif&Image=Thumb&p=" + IndexString + "." + DirectCast(Item, PageLoader.TextItem).Name
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::GetThumbSizeFromURL", Await CType(UWeb.GetThumbSizeFromURL(DirectCast(Item, PageLoader.TextItem).ImageURL, HttpContext.Current.Request.Url.Host + "_" + Text, 121), Threading.Tasks.Task(Of SizeF)))
+                End If
+            End If
+            If Not DirectCast(Item, PageLoader.TextItem).OnRenderFunction Is Nothing Then
+                Dim Output As Object = DirectCast(Item, PageLoader.TextItem).OnRenderFunction.Invoke(New Object() {Item, Context})
+                If UtilityWeb.IsTask(Output) Then
+                    If Output.GetType() = GetType(Threading.Tasks.Task(Of String)) Then
+                        AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", Await CType(Output, Threading.Tasks.Task(Of String)))
+                    ElseIf Output.GetType() = GetType(Threading.Tasks.Task(Of RenderArray)) Then
+                        AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", Await CType(Output, Threading.Tasks.Task(Of RenderArray)))
+                    Else
+                        AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", Await CType(Output, Threading.Tasks.Task(Of Object())))
+                    End If
+                Else
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", Output)
+                End If
+            End If
+        End If
+    End Function
+    Sub WriteTextItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As PageLoader.TextItem, ByVal TabCount As Integer, ByVal IndexString As String, Idx As Integer)
         Dim BaseTabs As String = UtilityWeb.MakeTabString(TabCount)
         Dim Output As Object
         Dim Text As String
@@ -89,7 +178,7 @@ Partial Class Page
             If (Item.ImageURL <> String.Empty) Then
                 Dim SizeF As Drawing.SizeF
                 Text = "Image.gif&Image=Thumb&p=" + IndexString + "." + Item.Name
-                SizeF = Await UWeb.GetThumbSizeFromURL(Item.ImageURL, HttpContext.Current.Request.Url.Host + "_" + Text, 121)
+                SizeF = CType(AsyncDict(IndexString + "." + CStr(Idx) + "::GetThumbSizeFromURL"), SizeF)
                 If SizeF.IsEmpty Then
                     SizeF.Width = 121
                     SizeF.Height = 121 * 3 / 4 + 1
@@ -113,17 +202,15 @@ Partial Class Page
         End If
         If Not Item.OnRenderFunction Is Nothing Then
             If Item.Text <> String.Empty Then writer.Write("&nbsp;&nbsp;")
-            Output = Await Item.OnRenderFunction.Invoke(New Object() {Item})
+            Output = AsyncDict(IndexString + "." + CStr(Idx) + "::OnRenderFunction")
             If TypeOf Output Is String Then
                 OutputStrings(writer, UtilityWeb.HtmlTextEncode(CStr(Output)).Split(New String() {vbCrLf, vbLf}, StringSplitOptions.None))
             ElseIf TypeOf Output Is RenderArray Then
-                Dim ArbData As New ArabicData(_PortableMethods)
-                Await ArbData.Init()
                 Dim Renderer As New RenderArrayWeb(DirectCast(Output, RenderArray), _PortableMethods, ArbData, UWeb)
-                Renderer.Render(writer, TabCount + 1)
+                Renderer.Render(writer, TabCount + 1, Context)
                 AddToJSFunctions(Renderer.GetRenderJS())
             Else
-                RenderArrayWeb.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, Item.Name)
+                RenderArrayWeb.WriteTable(writer, DirectCast(Output, Object()), TabCount + 1, Item.Name, Context)
                 For Each Strs As String() In RenderArrayWeb.GetTableJSFunctions(DirectCast(Output, Object()))
                     AddToJSFunctions(Strs)
                 Next
@@ -139,8 +226,8 @@ Partial Class Page
         writer.WriteEndTag("div")
         'writer.Write(vbCrLf + BaseTabs)
         'writer.WriteFullBeginTag("br")
-    End Function
-    Async Function RenderSingleItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As Object, ByVal IndexString As String, ByVal TabCount As Integer) As Threading.Tasks.Task
+    End Sub
+    Sub RenderSingleItem(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Item As Object, ByVal IndexString As String, ByVal TabCount As Integer, Idx As Integer)
         Dim SubIndex As Integer
         Dim Scale As Double
         Dim SizeF As System.Drawing.SizeF
@@ -195,7 +282,7 @@ Partial Class Page
                 TabCount += 2
             End If
             For SubIndex = 0 To DirectCast(Item, PageLoader.ListItem).List.Count - 1
-                Await RenderSingleItem(writer, DirectCast(Item, PageLoader.ListItem).List.Item(SubIndex), IndexString + "." + DirectCast(Item, PageLoader.ListItem).Name, TabCount + 1)
+                RenderSingleItem(writer, DirectCast(Item, PageLoader.ListItem).List.Item(SubIndex), IndexString + "." + DirectCast(Item, PageLoader.ListItem).Name, TabCount + 1, SubIndex)
             Next
             If DirectCast(Item, PageLoader.ListItem).HasForm Then
                 TabCount -= 2
@@ -211,7 +298,7 @@ Partial Class Page
         ElseIf (PageLoader.IsDownloadItem(Item)) Then
             Dim PathName() As String
             If Not DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction Is Nothing Then
-                PathName = CType(Await DirectCast(Item, PageLoader.DownloadItem).OnRenderFunction.Invoke(Nothing), String())
+                PathName = CType(AsyncDict(IndexString + "." + CStr(Idx) + "::OnRenderFunction"), String())
             Else
                 PathName = New String() {CStr(If(DirectCast(Item, PageLoader.DownloadItem).RelativePath, If(DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".h") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vb") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".vba") Or DirectCast(Item, PageLoader.DownloadItem).Path.EndsWith(".bat"), host.GetPageString("Source&File=" + HttpUtility.UrlEncode(DirectCast(Item, PageLoader.DownloadItem).Path)), "files/" + DirectCast(Item, PageLoader.DownloadItem).Path), DirectCast(Item, PageLoader.DownloadItem).Path)),
                                  CStr(If(DirectCast(Item, PageLoader.DownloadItem).UseLink, _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.DownloadItem).Text), DirectCast(Item, PageLoader.DownloadItem).Path))}
@@ -281,7 +368,7 @@ Partial Class Page
             writer.Write(vbCrLf + BaseTabs)
             Dim OnChangeJS() As String = Nothing
             If Not DirectCast(Item, PageLoader.EditItem).OnChangeFunction Is Nothing Then
-                OnChangeJS = CType(Await DirectCast(Item, PageLoader.EditItem).OnChangeFunction.Invoke(Nothing), String())
+                OnChangeJS = CType(AsyncDict(IndexString + "." + CStr(Idx) + "::OnChangeFunction"), String())
                 AddToJSFunctions(OnChangeJS)
             End If
             If (DirectCast(Item, PageLoader.EditItem).Rows > 1) Then
@@ -345,11 +432,11 @@ Partial Class Page
             Dim DefaultValue As String
             Dim OnChangeJS() As String = Nothing
             If Not DirectCast(Item, PageLoader.RadioItem).OnChangeFunction Is Nothing Then
-                OnChangeJS = CType(Await DirectCast(Item, PageLoader.RadioItem).OnChangeFunction.Invoke(Nothing), String())
+                OnChangeJS = CType(AsyncDict(IndexString + "." + CStr(Idx) + "::OnChangeFunction"), String())
                 AddToJSFunctions(OnChangeJS)
             End If
             If Not DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction Is Nothing Then
-                LoadArray = CType(Await DirectCast(Item, PageLoader.RadioItem).OnPopulateFunction.Invoke(Nothing), Object())
+                LoadArray = CType(AsyncDict(IndexString + "." + CStr(Idx) + "::OnPopulateFunction"), Object())
                 Length = LoadArray.Length
             Else
                 Length = DirectCast(Item, PageLoader.RadioItem).OptionArray.Length
@@ -445,13 +532,14 @@ Partial Class Page
             writer.WriteAttribute("name", DirectCast(Item, PageLoader.ButtonItem).Name)
             writer.WriteAttribute("id", DirectCast(Item, PageLoader.ButtonItem).Name)
             If Not DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction Is Nothing Then
-                writer.WriteAttribute("value", CStr(Await DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(New Object() {Item})))
+                writer.WriteAttribute("value", CStr(AsyncDict(IndexString + "." + CStr(Idx) + "::OnRenderFunction")))
             Else
                 writer.WriteAttribute("value", _PortableMethods.LoadResourceString(DirectCast(Item, PageLoader.ButtonItem).Description))
             End If
             If DirectCast(Item, PageLoader.ButtonItem).Name = "fontcustomapply" And Web.HttpContext.Current.Request.Params.Get("fontselection") <> "custom" Then writer.WriteAttribute("style", "display: none;")
             If Not DirectCast(Item, PageLoader.ButtonItem).OnClickFunction Is Nothing Then
-                Dim OnClickJS As String() = CType(Await DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing), String())
+                Dim Obj As Object = DirectCast(Item, PageLoader.ButtonItem).OnClickFunction.Invoke(Nothing)
+                Dim OnClickJS As String() = CType(AsyncDict(IndexString + "." + CStr(Idx) + "::OnClickFunction"), String())
                 AddToJSFunctions(OnClickJS)
                 writer.WriteAttribute("onclick", OnClickJS(0))
                 writer.WriteAttribute("type", "button")
@@ -460,9 +548,9 @@ Partial Class Page
             End If
             writer.Write(HtmlTextWriter.TagRightChar)
         ElseIf (PageLoader.IsTextItem(Item)) Then
-            Await WriteTextItem(writer, DirectCast(Item, PageLoader.TextItem), TabCount, IndexString)
+            WriteTextItem(writer, DirectCast(Item, PageLoader.TextItem), TabCount, IndexString, Idx)
         End If
-    End Function
+    End Sub
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)
         Dim Index As Integer
         If UsePanes Then
@@ -484,7 +572,7 @@ Partial Class Page
             Else
                 writer.Write(HtmlTextWriter.TagRightChar)
             End If
-            RenderSingleItem(writer, MyPage.Page.Item(Index), MyPage.PageName, 5).Wait()
+            RenderSingleItem(writer, MyPage.Page.Item(Index), MyPage.PageName, 5, Index)
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
             writer.WriteEndTag("div")
         Next

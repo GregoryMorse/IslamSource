@@ -5,7 +5,7 @@ Public Interface PortableSettings
     ReadOnly Property CacheDirectory As String
     ReadOnly Property Resources As KeyValuePair(Of String, String())()
     ReadOnly Property FuncLibs As String()
-    Function GetTemplatePath() As String
+    Function GetTemplatePath(Selector As String) As String
     Function GetFilePath(ByVal Path As String) As String
     Function GetUName(Character As Char) As String
     Function GetResourceString(baseName As String, resourceKey As String) As String
@@ -158,6 +158,11 @@ Public Class PortableMethods
     End Function
 End Class
 Public Class Utility
+    Public Interface IInitClass
+        Function Init() As Threading.Tasks.Task
+        Function LookupObject(ClassName As String) As Object
+        Function GetDependency() As Nullable(Of KeyValuePair(Of String, Utility.IInitClass))
+    End Interface
     Public Shared Function ColorR(Clr As Integer) As Byte
         Return CByte(((Clr >> &H10) And &HFF))
     End Function

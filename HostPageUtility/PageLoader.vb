@@ -10,7 +10,11 @@ Imports System.Threading.Tasks
 Public Class WindowsWebSettings
     Implements PortableSettings
     Private UWeb As UtilityWeb
-    Public Sub New(NewUWeb As UtilityWeb)
+    Private PhyPath As String
+    Public Sub New(NewPhyPath As String)
+        PhyPath = NewPhyPath
+    End Sub
+    Public Sub Init(NewUWeb As UtilityWeb)
         UWeb = NewUWeb
     End Sub
     Public ReadOnly Property CacheDirectory As String Implements PortableSettings.CacheDirectory
@@ -28,11 +32,11 @@ Public Class WindowsWebSettings
             Return UtilityWeb.ConnectionData.FuncLibs
         End Get
     End Property
-    Public Function GetTemplatePath() As String Implements PortableSettings.GetTemplatePath
-        Return UWeb.GetTemplatePath()
+    Public Function GetTemplatePath(Data As String) As String Implements PortableSettings.GetTemplatePath
+        Return UWeb.GetTemplatePath(Data)
     End Function
     Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
-        Return CStr(If(IO.File.Exists(HttpContext.Current.Request.PhysicalApplicationPath + Path), HttpContext.Current.Request.PhysicalApplicationPath + Path, HttpContext.Current.Request.PhysicalApplicationPath + UtilityWeb.ConnectionData.AlternatePath + Path))
+        Return CStr(If(IO.File.Exists(PhyPath + Path), PhyPath + Path, PhyPath + UtilityWeb.ConnectionData.AlternatePath + Path))
     End Function
     Public Function GetUName(Character As Char) As String Implements PortableSettings.GetUName
         Dim Str As New System.Text.StringBuilder(512)
@@ -185,7 +189,7 @@ Public Class NativeMethods
     End Function
 End Class
 Public Class InitClass
-    Implements UtilityWeb.IInitClass
+    Implements Utility.IInitClass
     Private _PortableMethods As PortableMethods
     Private UWeb As UtilityWeb
     Private SD As SiteDatabase
@@ -199,12 +203,14 @@ Public Class InitClass
         UWeb = NewUWeb
         SD = NewSD
     End Sub
-    Public Function Init() As Task Implements UtilityWeb.IInitClass.Init
-        RAWeb = New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
-        Doc = New Document(_PortableMethods)
-        ArbDataWeb = New ArabicDataWeb(ArbData)
+    Public Function Init() As Task Implements Utility.IInitClass.Init
+        Return Task.Factory.StartNew(Sub()
+                                         RAWeb = New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
+                                         Doc = New Document(_PortableMethods)
+                                         ArbDataWeb = New ArabicDataWeb(ArbData)
+                                     End Sub)
     End Function
-    Public Function LookupObject(ClassName As String) As Object Implements UtilityWeb.IInitClass.LookupObject
+    Public Function LookupObject(ClassName As String) As Object Implements Utility.IInitClass.LookupObject
         If ClassName = "RenderArrayWeb" Then
             Return RAWeb
         ElseIf ClassName = "ArabicDataWeb" Then
@@ -215,12 +221,15 @@ Public Class InitClass
             Return Nothing
         End If
     End Function
+    Public Function GetDependency() As Nullable(Of KeyValuePair(Of String, Utility.IInitClass)) Implements Utility.IInitClass.GetDependency
+        Return Nothing
+    End Function
 End Class
 <CLSCompliant(True)>
 Public Class UtilityWeb
-    Delegate Function DelGetUserID() As Integer
+    Delegate Function DelGetUserID(Context As HttpContext) As Integer
     Public GetUserID As DelGetUserID
-    Delegate Function DelIsLoggedIn() As Boolean
+    Delegate Function DelIsLoggedIn(Context As HttpContext) As Boolean
     Public IsLoggedIn As DelIsLoggedIn
     Delegate Function DelGetPageString(Page As String) As String
     Public GetPageString As DelGetPageString
@@ -230,27 +239,38 @@ Public Class UtilityWeb
     Public ConnData As ConnectionData
     Private SD As SiteDatabase
     Private ArbData As ArabicData
-    'HttpContext.Current.Trace.Write(Text)
-    Public Sub New(NewPortableMethods As PortableMethods, ArbData As ArabicData, NewGetPageString As DelGetPageString, NewGetUserID As DelGetUserID, NewIsLoggedIn As DelIsLoggedIn)
+    'Context.Trace.Write(Text)
+    Public Sub New(NewPortableMethods As PortableMethods, NewArbData As ArabicData, NewGetPageString As DelGetPageString, NewGetUserID As DelGetUserID, NewIsLoggedIn As DelIsLoggedIn)
         GetPageString = NewGetPageString
         GetUserID = NewGetUserID
         IsLoggedIn = NewIsLoggedIn
         _PortableMethods = NewPortableMethods
+        ArbData = NewArbData
         MD = New MailDispatcher(_PortableMethods, Me)
         Doc = New Document(_PortableMethods)
         ConnData = New ConnectionData(Me)
     End Sub
     Public Async Function Init(NewSD As SiteDatabase) As Threading.Tasks.Task
         SD = NewSD
-        Dim ctor As Reflection.ConstructorInfo = Reflection.Assembly.GetExecutingAssembly().GetType("HostPageUtility.InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(UtilityWeb), GetType(SiteDatabase)})
-        InitDict.Add("HostPageUtility.InitClass", CType(ctor.Invoke(New Object() {_PortableMethods, Me, SD}), IInitClass))
+        InitDict = New Dictionary(Of String, Utility.IInitClass)
+        Dim ctor As Reflection.ConstructorInfo = Reflection.Assembly.GetExecutingAssembly().GetType("HostPageUtility.InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(ArabicData), GetType(UtilityWeb), GetType(SiteDatabase)})
+        InitDict.Add("HostPageUtility.InitClass", CType(ctor.Invoke(New Object() {_PortableMethods, ArbData, Me, SD}), Utility.IInitClass))
         Await InitDict("HostPageUtility.InitClass").Init()
+        Dim KV As Nullable(Of KeyValuePair(Of String, Utility.IInitClass)) = InitDict("HostPageUtility.InitClass").GetDependency()
+        If Not KV Is Nothing Then InitDict.Add(KV.Value.Key, KV.Value.Value)
         For Each Key As String In _PortableMethods.Settings.FuncLibs
             Dim Asm As Reflection.Assembly = Reflection.Assembly.Load(Key)
-            If Not Asm Is Nothing Then
-                ctor = Asm.GetType(Key + ".InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(UtilityWeb), GetType(SiteDatabase)})
-                InitDict.Add(Key, CType(ctor.Invoke(New Object() {_PortableMethods, Me, SD}), IInitClass))
+            If Not Asm Is Nothing AndAlso Not Asm.GetType(Key + ".InitClass") Is Nothing And Not InitDict.ContainsKey(Key) Then
+                ctor = Asm.GetType(Key + ".InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(ArabicData), GetType(UtilityWeb), GetType(SiteDatabase)})
+                If Not ctor Is Nothing Then
+                    InitDict.Add(Key, CType(ctor.Invoke(New Object() {_PortableMethods, ArbData, Me, SD}), Utility.IInitClass))
+                Else
+                    ctor = Asm.GetType(Key + ".InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(ArabicData)})
+                    InitDict.Add(Key, CType(ctor.Invoke(New Object() {_PortableMethods, ArbData}), Utility.IInitClass))
+                End If
                 Await InitDict(Key).Init()
+                KV = InitDict(Key).GetDependency()
+                If Not KV Is Nothing Then InitDict.Add(KV.Value.Key, KV.Value.Value)
             End If
         Next
     End Function
@@ -373,18 +393,18 @@ Public Class UtilityWeb
             End Get
         End Property
     End Class
-    Public Function GetTemplatePath() As String
-        Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) HttpContext.Current.Request.Url.Host.EndsWith(Domain))
+    Public Function GetTemplatePath(Host As String) As String
+        Dim Index As Integer = Array.FindIndex(ConnectionData.SiteDomains(), Function(Domain As String) Host.EndsWith(Domain))
         If Index = -1 Then
             Return _PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.DefaultXML + ".xml")
         Else
             Return _PortableMethods.Settings.GetFilePath("metadata\" + ConnectionData.SiteXMLs()(Index) + ".xml")
         End If
     End Function
-    Public Async Function TransmitCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Threading.Tasks.Task(Of Boolean)
+    Public Async Function TransmitCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date, Context As HttpContext) As Threading.Tasks.Task(Of Boolean)
         Dim Path As String = Await _PortableMethods.DiskCache.GetCacheItemPath(Name, ModifiedUtc)
         If Path = String.Empty Then Return False
-        HttpContext.Current.Response.TransmitFile(Path)
+        Context.Response.TransmitFile(Path)
         Return True
     End Function
     Friend Shared Function GetStringHashCode(ByVal s As String) As Integer
@@ -780,12 +800,18 @@ Public Class UtilityWeb
         oFont.Dispose()
         g.Dispose()
     End Sub
-    Public Interface IInitClass
-        Function Init() As Threading.Tasks.Task
-        Function LookupObject(ClassName As String) As Object
-    End Interface
-    Private InitDict As Dictionary(Of String, IInitClass)
-    Public Delegate Function WebInvoker(Parameters As Object()) As Threading.Tasks.Task(Of Object)
+    Private InitDict As Dictionary(Of String, Utility.IInitClass)
+    Public Delegate Function WebInvoker(Parameters As Object()) As Object
+    Public Shared Function IsTask(Obj As Object) As Boolean
+        If Obj.GetType() = GetType(Threading.Tasks.Task) Or Obj.GetType().IsGenericType AndAlso Obj.GetType().GetGenericTypeDefinition() = GetType(Threading.Tasks.Task(Of )) Then Return True
+        Return False
+    End Function
+    Public Function ShrinkArray(Arr As Object(), NewLen As Integer) As Object()
+        If Arr Is Nothing OrElse Arr.Length <= NewLen Then Return Arr
+        Dim ArrList = New List(Of Object)(Arr)
+        ArrList.RemoveRange(NewLen, Arr.Length - NewLen)
+        Return ArrList.ToArray()
+    End Function
     Public Function LookupClassMember(ByVal Text As String) As WebInvoker
         Dim ClassMember As String() = Text.Split(":"c)
         LookupClassMember = Nothing
@@ -802,16 +828,21 @@ Public Class UtilityWeb
                         CheckType = Asm.GetType(Key + "." + ClassMember(0))
                         If Not CheckType Is Nothing Then
                             Member = CheckType.GetMethod(ClassMember(2))
-                            If Not Member Is Nothing Then
-                                LookupClassMember = Function(Params As Object()) CType(Member.Invoke(Nothing, Params), Threading.Tasks.Task(Of Object))
-                                Exit For
+                            If Not Member Is Nothing AndAlso Member.IsStatic = True Then
+                                LookupClassMember = Function(Params As Object()) Member.Invoke(Nothing, ShrinkArray(Params, Member.GetParameters.Length))
+                            Else
+                                LookupClassMember = Function(Params As Object()) CheckType.InvokeMember(ClassMember(2), Reflection.BindingFlags.Public Or Reflection.BindingFlags.Instance Or Reflection.BindingFlags.InvokeMethod, Nothing, InitDict(Key).LookupObject(ClassMember(0)), ShrinkArray(Params, Member.GetParameters.Length))
                             End If
-                            LookupClassMember = Function(Params As Object()) CType(CheckType.InvokeMember(ClassMember(2), Reflection.BindingFlags.Public, Nothing, InitDict(Key).LookupObject(ClassMember(0)), Params), Threading.Tasks.Task(Of Object))
+                            Exit For
                         End If
                     End If
                 Next
             Else
-                LookupClassMember = Function(Params As Object()) CType(Member.Invoke(Nothing, Params), Threading.Tasks.Task(Of Object))
+                If Not Member Is Nothing AndAlso Member.IsStatic = True Then
+                    LookupClassMember = Function(Params As Object()) Member.Invoke(Nothing, ShrinkArray(Params, Member.GetParameters.Length))
+                Else
+                    LookupClassMember = Function(Params As Object()) CheckType.InvokeMember(ClassMember(2), Reflection.BindingFlags.Public Or Reflection.BindingFlags.Instance Or Reflection.BindingFlags.InvokeMethod, Nothing, InitDict("HostPageUtility." + ClassMember(0)).LookupObject(ClassMember(0)), ShrinkArray(Params, Member.GetParameters.Length))
+                End If
             End If
         End If
         If LookupClassMember Is Nothing Then Debug.Print("Could not find class member: " + Text)
@@ -939,11 +970,11 @@ Public Class Document
     End Function
 End Class
 Public Class Geolocation
-    Public Shared Function GetIP(ByVal Item As PageLoader.TextItem) As String
-        Return HttpContext.Current.Request.UserHostAddress
+    Public Shared Function GetIP(ByVal Item As PageLoader.TextItem, Context As HttpContext) As String
+        Return Context.Request.UserHostAddress
     End Function
-    Public Shared Function GetGeoData() As String()
-        Dim URL As String = "http://api.ipinfodb.com/v3/ip-city/?key=" + UtilityWeb.ConnectionData.IPInfoDBAPIKey + "&ip=" + HttpContext.Current.Request.UserHostAddress
+    Public Shared Function GetGeoData(Context As HttpContext) As String()
+        Dim URL As String = "http://api.ipinfodb.com/v3/ip-city/?key=" + UtilityWeb.ConnectionData.IPInfoDBAPIKey + "&ip=" + Context.Request.UserHostAddress
         Dim MyWebRequest As Net.HttpWebRequest = DirectCast(Net.WebRequest.Create(URL), Net.HttpWebRequest)
         Dim Data As String = String.Empty
         Try
@@ -958,8 +989,8 @@ Public Class Geolocation
         End Try
         Return Data.Split(";"c)
     End Function
-    Public Shared Function GetGeoInfo(ByVal Item As PageLoader.TextItem) As Array()
-        Dim Strings As String() = GetGeoData()
+    Public Shared Function GetGeoInfo(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim Strings As String() = GetGeoData(Context)
         If Strings.Length <> 11 Then Return New Array() {}
         Return New Array() {New String() {"Status Code", "Status Message", "IP Address", "Country Code", "Country Name", "Region Name", "City Name", "Zip Code", "Latitude", "Longitude", "Time Zone"}, New String() {Strings(0), Strings(1), Strings(2), Strings(3), Strings(4), Strings(5), Strings(6), Strings(7), Strings(8), Strings(9), Strings(10)}}
     End Function
@@ -991,8 +1022,8 @@ Public Class Geolocation
         Next
         Return String.Empty
     End Function
-    Public Shared Function GetElevation(ByVal Item As PageLoader.TextItem) As String
-        Dim Strings As String() = GetGeoData()
+    Public Shared Function GetElevation(ByVal Item As PageLoader.TextItem, Context As HttpContext) As String
+        Dim Strings As String() = GetGeoData(Context)
         If Strings.Length <> 11 Then Return String.Empty
         Return GetElevationData(Strings(8), Strings(9))
     End Function
@@ -1298,10 +1329,10 @@ Public Class PageLoader
         _PortableMethods = NewPortableMethods
         UWeb = NewUWeb
     End Sub
-    Public Async Function Init() As Threading.Tasks.Task
+    Public Async Function Init(Host As String) As Threading.Tasks.Task
         Dim XMLNode As Xml.Linq.XElement
         Dim XMLChildNode As Xml.Linq.XElement
-        Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetTemplatePath())
+        Dim Stream As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetTemplatePath(Host))
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
         Title = Utility.ParseValue(XMLDoc.Root.Attribute("title"), String.Empty)
@@ -2579,8 +2610,8 @@ Public Class RenderArrayWeb
         DocStream.Write(Bytes, 0, Bytes.Length)
         Doc.Close()
     End Sub
-    Public Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer)
-        DoRender(writer, TabCount, _RenderArray._ID, _RenderArray.Items, String.Empty)
+    Public Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer, Context As HttpContext)
+        DoRender(writer, TabCount, _RenderArray._ID, _RenderArray.Items, String.Empty, Context)
     End Sub
     Public Shared Function GetQuoteModeJS() As String()
         Return New String() {"javascript: quoteMode();", String.Empty, UtilityWeb.GetLookupStyleSheetJS(), "function quoteMode() { var rule = findStyleSheetRule('span.copy'); rule.style.display = $('#quotemode').prop('checked') === true ? 'block' : 'none'; }"}
@@ -2742,7 +2773,7 @@ Public Class RenderArrayWeb
         Next
         Return Objects
     End Function
-    Public Shared Sub WriteTable(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Output As Object(), ByVal TabCount As Integer, Prefix As String)
+    Public Shared Sub WriteTable(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal Output As Object(), ByVal TabCount As Integer, Prefix As String, Context As HttpContext)
         '2 dimensional array for table
         Dim BaseTabs As String = UtilityWeb.MakeTabString(TabCount)
         Dim Count As Integer
@@ -2778,7 +2809,7 @@ Public Class RenderArrayWeb
                     If (CStr(DirectCast(OutArray(1), Object())(Index)) <> String.Empty) Then
                         writer.WriteAttribute("class", CStr(DirectCast(OutArray(1), Object())(Index)))
                         If CStr(DirectCast(OutArray(1), Object())(Index)) = "transliteration" Then
-                            writer.WriteAttribute("style", "display: " + CStr(If(CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";")
+                            writer.WriteAttribute("style", "display: " + CStr(If(CType(If(CInt(Context.Request.Params("translitscheme")) >= 2, 2 - CInt(Context.Request.Params("translitscheme")) Mod 2, CInt(Context.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";")
                         ElseIf CStr(DirectCast(OutArray(1), Object())(Index)) = "check" Then
                             writer.Write(HtmlTextWriter.TagRightChar)
                             writer.WriteBeginTag("input")
@@ -2791,9 +2822,9 @@ Public Class RenderArrayWeb
                     End If
                     writer.Write(HtmlTextWriter.TagRightChar)
                     If TypeOf InnerArray(Index) Is Object() Then
-                        WriteTable(writer, DirectCast(InnerArray(Index), Object()), TabCount + 4, Prefix + CStr(Count - 3) + "_" + CStr(Index))
+                        WriteTable(writer, DirectCast(InnerArray(Index), Object()), TabCount + 4, Prefix + CStr(Count - 3) + "_" + CStr(Index), Context)
                     ElseIf TypeOf InnerArray(Index) Is RenderArray.RenderItem() Then
-                        DoRender(writer, TabCount + 4, Prefix + CStr(Count - 3) + "_" + CStr(Index), New List(Of RenderArray.RenderItem)(DirectCast(InnerArray(Index), RenderArray.RenderItem())), String.Empty)
+                        DoRender(writer, TabCount + 4, Prefix + CStr(Count - 3) + "_" + CStr(Index), New List(Of RenderArray.RenderItem)(DirectCast(InnerArray(Index), RenderArray.RenderItem())), String.Empty, Context)
                     Else
                         writer.Write(UtilityWeb.HtmlTextEncode(CStr(InnerArray(Index))).Replace(vbCrLf, "<br>"))
                     End If
@@ -2808,7 +2839,7 @@ Public Class RenderArrayWeb
         writer.Write(vbCrLf + BaseTabs)
         writer.WriteEndTag("table")
     End Sub
-    Public Shared Sub DoRender(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer, ID As String, Items As Collections.Generic.List(Of RenderArray.RenderItem), NestPrefix As String)
+    Public Shared Sub DoRender(ByVal writer As System.Web.UI.HtmlTextWriter, ByVal TabCount As Integer, ID As String, Items As Collections.Generic.List(Of RenderArray.RenderItem), NestPrefix As String, Context As HttpContext)
         Dim BaseTabs As String = UtilityWeb.MakeTabString(TabCount)
         Dim Count As Integer
         Dim Index As Integer
@@ -2833,19 +2864,19 @@ Public Class RenderArrayWeb
                 If Items(Count).TextItems(Index).DisplayClass = RenderArray.RenderDisplayClass.eNested Then
                     If Style <> String.Empty Then writer.WriteAttribute("style", Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    DoRender(writer, TabCount, ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderArray.RenderItem)), CStr(Count))
+                    DoRender(writer, TabCount, ID, CType(Items(Count).TextItems(Index).Text, Collections.Generic.List(Of RenderArray.RenderItem)), CStr(Count), Context)
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderArray.RenderDisplayClass.eList Then
                     writer.WriteAttribute("style", "direction: ltr;" + Style)
                     writer.Write(HtmlTextWriter.TagRightChar)
-                    WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, ID + CStr(Count))
+                    WriteTable(writer, CType(Items(Count).TextItems(Index).Text, Object()), TabCount, ID + CStr(Count), Context)
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderArray.RenderDisplayClass.ePassThru Then
                     writer.Write(CStr(Items(Count).TextItems(Index).Text))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderArray.RenderDisplayClass.eContinueStop Then
                     writer.WriteAttribute("id", "contstop" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     'U+2BC3 is horizontal stop sign make red color, U+2B45/6 is left/rightwards quadruple arrow make green color
-                    writer.WriteAttribute("style", "cursor: pointer;cursor: hand;color: " & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "#00ff00", "#ff0000") & ";" & Style)
+                    writer.WriteAttribute("style", "cursor: pointer;cursor: hand;color: " & If(CType(DirectCast(Items(Count).TextItems(Index).Text, Object())(0), Boolean), "#00ff00", "#ff0000") & ";" & Style)
                     writer.WriteAttribute("onclick", "javascript: changeContinueStop(event, this, ['" + "arabic" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(0) + "', '" + "translit" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count - 1) + "_" + CStr(1) + "']);")
-                    writer.Write(HtmlTextWriter.TagRightChar & If(DirectCast(Items(Count).TextItems(Index).Text, Boolean), "&#x2B45;", "&#x2B59;"))
+                    writer.Write(HtmlTextWriter.TagRightChar & If(CType(DirectCast(Items(Count).TextItems(Index).Text, Object())(0), Boolean), "&#x2B45;", "&#x2B59;"))
                 ElseIf Items(Count).TextItems(Index).DisplayClass = RenderArray.RenderDisplayClass.eRanking Then
                     Dim Data As String() = CStr(Items(Count).TextItems(Index).Text).Split("|"c)
                     If Style <> String.Empty Then writer.WriteAttribute("style", Style)
@@ -2914,7 +2945,7 @@ Public Class RenderArrayWeb
                     ElseIf Items(Count).TextItems(Index).DisplayClass = RenderArray.RenderDisplayClass.eTransliteration Then
                         writer.WriteAttribute("class", "transliteration")
                         writer.WriteAttribute("dir", "ltr")
-                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Color.FromArgb(Items(Count).TextItems(Index).Clr)) + "; display: " + CStr(If(CType(If(CInt(HttpContext.Current.Request.Params("translitscheme")) >= 2, 2 - CInt(HttpContext.Current.Request.Params("translitscheme")) Mod 2, CInt(HttpContext.Current.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
+                        writer.WriteAttribute("style", "color: " + System.Drawing.ColorTranslator.ToHtml(Color.FromArgb(Items(Count).TextItems(Index).Clr)) + "; display: " + CStr(If(CType(If(CInt(Context.Request.Params("translitscheme")) >= 2, 2 - CInt(Context.Request.Params("translitscheme")) Mod 2, CInt(Context.Request.Params("translitscheme"))), ArabicData.TranslitScheme) <> ArabicData.TranslitScheme.None, "block", "none")) + ";" + If(Items(Count).TextItems(Index).Font <> String.Empty, "font-family:" + Items(Count).TextItems(Index).Font + ";", String.Empty) + Style)
                         writer.WriteAttribute("id", "translit" + ID + CStr(If(NestPrefix = String.Empty, String.Empty, NestPrefix + "_")) + CStr(Count) + "_" + CStr(ArrIndex))
                     Else
                         writer.WriteAttribute("class", "translation")
@@ -2930,6 +2961,7 @@ Public Class RenderArrayWeb
                             writer.WriteAttribute("dir", "ltr")
                             writer.Write(HtmlTextWriter.TagRightChar + CType(Items(Count).TextItems(TestIndex).Text, String())(1))
                             writer.WriteEndTag("a")
+                        ElseIf Items(Count).TextItems(TestIndex).DisplayClass = RenderArray.RenderDisplayClass.eReference Then
                         Else
                             If Array.IndexOf(UtilityWeb.FontList, Items(Count).TextItems(Index).Font) = -1 Then
                                 If Items(Count).TextItems(TestIndex).Clr <> Items(Count).TextItems(Index).Clr Then
@@ -2942,7 +2974,7 @@ Public Class RenderArrayWeb
                             End If
                         End If
                         TestIndex += 1
-                    Loop While Items(Count).TextItems.Length <> TestIndex AndAlso (Items(Count).TextItems(TestIndex).DisplayClass = RenderArray.RenderDisplayClass.eLink Or Items(Count).TextItems(Index).DisplayClass = Items(Count).TextItems(TestIndex).DisplayClass)
+                    Loop While Items(Count).TextItems.Length <> TestIndex AndAlso (Items(Count).TextItems(TestIndex).DisplayClass = RenderArray.RenderDisplayClass.eLink Or Items(Count).TextItems(TestIndex).DisplayClass = RenderArray.RenderDisplayClass.eReference Or Items(Count).TextItems(Index).DisplayClass = Items(Count).TextItems(TestIndex).DisplayClass)
                     Index = TestIndex - 1
                 End If
                 ArrIndex += 1
@@ -2993,25 +3025,25 @@ Public Class MailDispatcher
         Catch eException As Net.Mail.SmtpException
         End Try
     End Sub
-    Public Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer)
-        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountSubject"), HttpContext.Current.Request.Url.Host),
-            String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ActivateAccount"), CStr(ActivationCode)))
+    Public Sub SendActivationEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal ActivationCode As Integer, Context As HttpContext)
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountSubject"), Context.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_ActivationAccountBody"), Context.Request.Url.Host, UserName, "http://" + Context.Request.Url.Host + "/" + UWeb.GetPageString("ActivateAccount&UserID=" + CStr(UserID) + "&ActivationCode=" + CStr(ActivationCode)), "http://" + Context.Request.Url.Host + "/" + UWeb.GetPageString("ActivateAccount"), CStr(ActivationCode)))
     End Sub
-    Public Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderSubject"), HttpContext.Current.Request.Url.Host),
-            String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderBody"), HttpContext.Current.Request.Url.Host, UserName))
+    Public Sub SendUserNameReminderEMail(ByVal UserName As String, ByVal EMail As String, Context As HttpContext)
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderSubject"), Context.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_UsernameReminderBody"), Context.Request.Url.Host, UserName))
     End Sub
-    Public Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger)
-        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetSubject"), HttpContext.Current.Request.Url.Host),
-            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetBody"), HttpContext.Current.Request.Url.Host, UserName, "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + HttpContext.Current.Request.Url.Host + "/" + UWeb.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
+    Public Sub SendPasswordResetEMail(ByVal UserName As String, ByVal EMail As String, ByVal UserID As Integer, ByVal PasswordResetCode As UInteger, Context As HttpContext)
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetSubject"), Context.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordResetBody"), Context.Request.Url.Host, UserName, "http://" + Context.Request.Url.Host + "/" + UWeb.GetPageString("ResetPassword&UserID=" + CStr(UserID) + "&PasswordResetCode=" + CStr(PasswordResetCode)), "http://" + Context.Request.Url.Host + "/" + UWeb.GetPageString("ResetPassword"), CStr(PasswordResetCode)))
     End Sub
-    Public Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedSubject"), HttpContext.Current.Request.Url.Host),
-            String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+    Public Sub SendUserNameChangedEMail(ByVal UserName As String, ByVal EMail As String, Context As HttpContext)
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedSubject"), Context.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_UsernameChangedBody"), Context.Request.Url.Host, UserName))
     End Sub
-    Public Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String)
-        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedSubject"), HttpContext.Current.Request.Url.Host),
-            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedBody"), HttpContext.Current.Request.Url.Host, UserName))
+    Public Sub SendPasswordChangedEMail(ByVal UserName As String, ByVal EMail As String, Context As HttpContext)
+        SendEMail(EMail, String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedSubject"), Context.Request.Url.Host),
+            String.Format(_PortableMethods.LoadResourceString("Acct_PasswordChangedBody"), Context.Request.Url.Host, UserName))
     End Sub
 End Class
 <CLSCompliant(True)>

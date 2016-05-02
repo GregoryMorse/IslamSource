@@ -995,10 +995,10 @@ using Android.Graphics;
             await _PortableMethods.Init();
             ArbData = new XMLRender.ArabicData(_PortableMethods);
             await ArbData.Init();
-            Arb = new IslamMetadata.Arabic(_PortableMethods, ArbData, ChData);
+            Arb = new IslamMetadata.Arabic(_PortableMethods, ArbData);
             ChData = new IslamMetadata.CachedData(_PortableMethods, ArbData, Arb);
             await ChData.Init();
-            await Arb.Init();
+            await Arb.Init(ChData);
             TR = new IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData);
             if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))
             {

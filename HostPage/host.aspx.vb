@@ -3,7 +3,6 @@ Imports XMLRender
 Partial Class host
     Inherits System.Web.UI.Page
     Dim _IsHtml As Boolean = False
-    Dim PageSet As PageLoader
 #Region " Web Form Designer Generated Code "
 
     'This call is required by the Web Form Designer.
@@ -36,7 +35,8 @@ Partial Class host
         Dim _dlgt As AsyncTaskDelegate = Nothing
         RegisterAsyncTask(New PageAsyncTask(Function(_sender As Object, _e As EventArgs, cb As AsyncCallback, extraData As Object) As IAsyncResult
                                                 'adapter for .NET 4
-                                                _dlgt = New AsyncTaskDelegate(Sub() DoAsyncLoad(HttpContext.Current).Wait())
+                                                'Dim Context As HttpContext = HttpContext.Current
+                                                _dlgt = New AsyncTaskDelegate(Sub() DoAsyncLoad().Wait())
                                                 Return _dlgt.BeginInvoke(cb, extraData)
                                             End Function,
                                             Sub(ar As IAsyncResult)
@@ -53,41 +53,52 @@ Partial Class host
     Private SD As SiteDatabase
     Private UA As UserAccounts
     Private ArbData As ArabicData
-    Public Function IsLoggedIn() As Boolean
-        Return UA.IsLoggedIn()
+    Dim PageSet As PageLoader
+    Public Function IsLoggedIn(Context As HttpContext) As Boolean
+        Return UA.IsLoggedIn(Context)
     End Function
-    Public Async Function DoAsyncLoad(Context As HttpContext) As Threading.Tasks.Task
+    Public Async Function DoAsyncLoad() As Threading.Tasks.Task
         Dim Index As Integer
         Dim IsPrint As Boolean = False
         Dim bmp As Bitmap = Nothing
         Dim ResultBmp As Bitmap = Nothing
-        If _PortableMethods Is Nothing Then
-            _PortableMethods = New XMLRender.PortableMethods(New HostPageUtility.WindowsWebFileIO(), New HostPageUtility.WindowsWebSettings(UWeb))
-            Await _PortableMethods.Init()
+        If Application("PortableMethods") Is Nothing Then
+            Application.Add("PortableMethods", New XMLRender.PortableMethods(New HostPageUtility.WindowsWebFileIO(), New HostPageUtility.WindowsWebSettings(Context.Request.PhysicalApplicationPath)))
+            Await CType(Application("PortableMethods"), PortableMethods).Init()
         End If
-        If ArbData Is Nothing Then
-            ArbData = New ArabicData(_PortableMethods)
-            Await ArbData.Init()
+        _PortableMethods = CType(Application("PortableMethods"), PortableMethods)
+        If Application("ArbData") Is Nothing Then
+            Application.Add("ArbData", New ArabicData(_PortableMethods))
+            Await CType(Application("ArbData"), ArabicData).Init()
         End If
-        If UWeb Is Nothing Then
-            UWeb = New UtilityWeb(_PortableMethods, ArbData, AddressOf GetPageString, AddressOf UserAccounts.GetUserID, AddressOf IsLoggedIn)
+        ArbData = CType(Application("ArbData"), ArabicData)
+        If Application("UWeb") Is Nothing Then
+            Application.Add("UWeb", New UtilityWeb(_PortableMethods, ArbData, AddressOf host.GetPageString, AddressOf UserAccounts.GetUserID, AddressOf IsLoggedIn))
+            CType(_PortableMethods.Settings, HostPageUtility.WindowsWebSettings).Init(CType(Application("UWeb"), UtilityWeb))
         End If
-        If SD Is Nothing Then
-            SD = New SiteDatabase(UWeb)
-            Await UWeb.Init(SD)
+        UWeb = CType(Application("UWeb"), UtilityWeb)
+        If Application("SD") Is Nothing Then
+            Application.Add("SD", New SiteDatabase(UWeb))
+            Await UWeb.Init(CType(Application("SD"), SiteDatabase))
         End If
-        PageSet = New PageLoader(_PortableMethods, UWeb)
-        UA = New UserAccounts(_PortableMethods, UWeb, PageSet, SD)
+        SD = CType(Application("SD"), SiteDatabase)
+        If Application("PageSet") Is Nothing Then
+            Application.Add("PageSet", New PageLoader(_PortableMethods, UWeb))
+            Await CType(Application("PageSet"), PageLoader).Init(Context.Request.Url.Host)
+        End If
+        PageSet = CType(Application("PageSet"), PageLoader)
+        If Application("UA") Is Nothing Then Application.Add("UA", New UserAccounts(_PortableMethods, UWeb, ArbData, PageSet, SD))
+        UA = CType(Application("UA"), UserAccounts)
         Controls.Clear() 'clear viewstate and default HTML rendering control container
-        If Request.QueryString.Get(LangSet) <> String.Empty Then
-            UserAccounts.SetLanguage(Request.QueryString.Get(LangSet))
+        If Context.Request.QueryString.Get(LangSet) <> String.Empty Then
+            UserAccounts.SetLanguage(Context.Request.QueryString.Get(LangSet), Context)
         End If
-        Dim LangID As String = UserAccounts.GetLanguage()
+        Dim LangID As String = UserAccounts.GetLanguage(Context)
         If LangID <> String.Empty Then
             Threading.Thread.CurrentThread.CurrentUICulture = Globalization.CultureInfo.CreateSpecificCulture(LangID)
             Threading.Thread.CurrentThread.CurrentCulture = Globalization.CultureInfo.CreateSpecificCulture(LangID)
         End If
-        If Request.QueryString.Get(PageQuery) = UserAccounts.ID_ClearCache AndAlso UA.IsAdmin() Then
+        If Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ClearCache AndAlso UA.IsAdmin(Context) Then
             Dim enumerator As IDictionaryEnumerator = Cache.GetEnumerator()
             Dim keys As New Collections.Generic.List(Of String)
             While enumerator.MoveNext
@@ -97,23 +108,23 @@ Partial Class host
                 Cache.Remove(keys(Index))
             Next
             GC.Collect()
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewHeaders AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewHeaders AndAlso UA.IsAdmin(Context) Then
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
             Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write("Headers for: " + Request.Url.Host + vbCrLf)
-            For Index = 0 To Request.Headers.AllKeys().Length - 1
-                Response.Write(Request.Headers.AllKeys()(Index) + ": ")
+            Response.Write("Headers for: " + Context.Request.Url.Host + vbCrLf)
+            For Index = 0 To Context.Request.Headers.AllKeys().Length - 1
+                Response.Write(Context.Request.Headers.AllKeys()(Index) + ": ")
                 Dim Count As Integer
-                For Count = 0 To Request.Headers.GetValues(Request.Headers.AllKeys()(Index)).Length - 1
-                    Response.Write(Request.Headers.GetValues(Request.Headers.AllKeys()(Index))(Count) + CStr(If(Count <> Request.Headers.GetValues(Request.Headers.AllKeys()(Index)).Length - 1, ", ", String.Empty)))
+                For Count = 0 To Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index)).Length - 1
+                    Response.Write(Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index))(Count) + CStr(If(Count <> Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index)).Length - 1, ", ", String.Empty)))
                 Next
                 Response.Write(vbCrLf)
             Next
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DotNetVersion AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_DotNetVersion AndAlso UA.IsAdmin(Context) Then
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
             Response.ContentType = "text/plain;charset=" + encoding.WebName
             Response.Write(Environment.Version)
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewCache AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewCache AndAlso UA.IsAdmin(Context) Then
             Dim enumerator As IDictionaryEnumerator = Cache.GetEnumerator()
             Dim keys As New Generic.List(Of Object)
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
@@ -121,10 +132,10 @@ Partial Class host
             While enumerator.MoveNext
                 Response.Write(CStr(enumerator.Key) + vbCrLf)
             End While
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ClearDiskCache AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ClearDiskCache AndAlso UA.IsAdmin(Context) Then
             Await _PortableMethods.DiskCache.DeleteUnusedCacheItems(New String() {})
             GC.Collect()
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewDiskCache AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewDiskCache AndAlso UA.IsAdmin(Context) Then
             Dim CacheItems() As String = Await _PortableMethods.DiskCache.GetCacheItems()
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
             Response.ContentType = "text/plain;charset=" + encoding.WebName
@@ -132,16 +143,16 @@ Partial Class host
                 Dim FileInfo As New IO.FileInfo(CacheItems(Index))
                 Response.Write("Name: " + CacheItems(Index) + " Size: " + CStr(FileInfo.Length) + " Last Modified: " + FileInfo.LastWriteTimeUtc.ToString((New Globalization.DateTimeFormatInfo).FullDateTimePattern) + vbCrLf)
             Next
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CreateDatabase AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CreateDatabase AndAlso UA.IsAdmin(Context) Then
             SD.CreateDatabase()
-            Await UWeb.LookupClassMember("IslamSiteDatabase::CreateDatabase").Invoke(Nothing)
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_RemoveDatabase AndAlso UA.IsAdmin() Then
+            UWeb.LookupClassMember("IslamSiteDatabase::CreateDatabase").Invoke(Nothing)
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_RemoveDatabase AndAlso UA.IsAdmin(Context) Then
             SD.RemoveDatabase()
-            Await UWeb.LookupClassMember("IslamSiteDatabase::RemoveDatabase").Invoke(Nothing)
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CleanupState AndAlso UA.IsAdmin() Then
+            UWeb.LookupClassMember("IslamSiteDatabase::RemoveDatabase").Invoke(Nothing)
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CleanupState AndAlso UA.IsAdmin(Context) Then
             SD.CleanupStaleLoginSessions()
             SD.CleanupStaleActivations()
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewCertRequests AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewCertRequests AndAlso UA.IsAdmin(Context) Then
             Dim Store As New System.Security.Cryptography.X509Certificates.X509Store("REQUEST", System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine)
             Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.MaxAllowed)
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
@@ -186,7 +197,7 @@ Partial Class host
                 Response.Write(Cert.Subject + vbCrLf)
             Next
             Store.Close()
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewSites AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewSites AndAlso UA.IsAdmin(Context) Then
             Dim ServerManager As New Microsoft.Web.Administration.ServerManager
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
             Response.ContentType = "text/plain;charset=" + encoding.WebName
@@ -199,41 +210,41 @@ Partial Class host
                 Next
                 Response.Write(vbCrLf)
             Next
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_EnableSSL AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_EnableSSL AndAlso UA.IsAdmin(Context) Then
             Dim ServerManager As New Microsoft.Web.Administration.ServerManager
             For Each Domain As String In UtilityWeb.ConnectionData.SiteDomains
                 ServerManager.Sites(Domain).Bindings.Add("*:443:", "https")
             Next
             ServerManager.CommitChanges()
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CurrentUser AndAlso UA.IsAdmin() Then
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CurrentUser AndAlso UA.IsAdmin(Context) Then
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
             Response.ContentType = "text/plain;charset=" + encoding.WebName
             Response.Write("Execution User: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name() + vbCrLf)
             Response.Write("Http Context User: " + Context.User.Identity.Name() + vbCrLf)
-        ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_HadithRanking Then
-            If UA.IsLoggedIn() Then
-                Await UWeb.LookupClassMember("IslamSiteDatabase::ModifyRankingData").Invoke(New Object() {UserAccounts.GetUserID()})
+        ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_HadithRanking Then
+            If UA.IsLoggedIn(Context) Then
+                UWeb.LookupClassMember("IslamSiteDatabase::UpdateRankingData").Invoke(New Object() {UserAccounts.GetUserID(Context), Context})
             End If
-            Await UWeb.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(Nothing)
-        ElseIf (Request.QueryString.Get(PageQuery) = "Image.gif") Then
+            UWeb.LookupClassMember("IslamSiteDatabase::WriteRankingData").Invoke(New Object() {Context})
+        ElseIf (Context.Request.QueryString.Get(PageQuery) = "Image.gif") Then
             Dim DateModified As Date = Now
-            If Request.QueryString.Get("Image") = "EMailAddress" Or
-                Request.QueryString.Get("Image") = "GradientBackground" Or
-                Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
+            If Context.Request.QueryString.Get("Image") = "EMailAddress" Or
+                Context.Request.QueryString.Get("Image") = "GradientBackground" Or
+                Context.Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
                 DateModified = IO.File.GetLastWriteTimeUtc(_PortableMethods.Settings.GetFilePath("bin\HostPage.dll"))
-            ElseIf Request.QueryString.Get("Image") = "Scale" Then
+            ElseIf Context.Request.QueryString.Get("Image") = "Scale" Then
                 Dim FetchImageItem As PageLoader.ImageItem
-                If Request.QueryString.Get("p") = "menu.main" Then
+                If Context.Request.QueryString.Get("p") = "menu.main" Then
                     FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
-                ElseIf Request.QueryString.Get("p") = "menu.hover" Then
+                ElseIf Context.Request.QueryString.Get("p") = "menu.hover" Then
                     FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
                 Else
-                    FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
+                    FetchImageItem = DirectCast(PageSet.GetPageItem(Context.Request.QueryString.Get("p")), PageLoader.ImageItem)
                 End If
                 'check XML timestamp also
                 DateModified = IO.File.GetLastWriteTimeUtc(_PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path))
-            ElseIf Request.QueryString.Get("Image") = "Thumb" Then
-                Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
+            ElseIf Context.Request.QueryString.Get("Image") = "Thumb" Then
+                Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Context.Request.QueryString.Get("p")), PageLoader.TextItem)
                 'check XML timestamp also
                 If CInt((Await _PortableMethods.DiskCache.GetCacheItems()).Length * New Random().NextDouble()) = 0 Then
                     DateModified = UtilityWeb.GetURLLastModified(FetchImageItem.ImageURL)
@@ -241,12 +252,12 @@ Partial Class host
                     DateModified = Date.MinValue
                 End If
             End If
-            Dim Bytes() As Byte = Await _PortableMethods.DiskCache.GetCacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified)
+            Dim Bytes() As Byte = Await _PortableMethods.DiskCache.GetCacheItem(Context.Request.Url.Host + "_" + Context.Request.QueryString().ToString(), DateModified)
             If Not Bytes Is Nothing Then
                 ResultBmp = DirectCast(Bitmap.FromStream(New IO.MemoryStream(Bytes)), Bitmap)
             End If
             If ResultBmp Is Nothing Then
-                If Request.QueryString.Get("Image") = "EMailAddress" Then
+                If Context.Request.QueryString.Get("Image") = "EMailAddress" Then
                     Dim oFont As New Font("Arial", 13)
                     Dim TextExtent As SizeF = UtilityWeb.GetTextExtent(UtilityWeb.ConnectionData.EMailAddress, oFont)
                     bmp = New Bitmap(CInt(Math.Ceiling(Math.Ceiling(TextExtent.Width + 1) * 96.0F / 72.0F)), CInt(Math.Ceiling(Math.Ceiling(TextExtent.Height + 1) * 96.0F / 72.0F)))
@@ -258,9 +269,9 @@ Partial Class host
                     g.DrawString(UtilityWeb.ConnectionData.EMailAddress, oFont, Brushes.Black, New RectangleF(0, 0, CSng(Math.Ceiling(TextExtent.Width + 1)), CSng(Math.Ceiling(TextExtent.Height + 1))), Drawing.StringFormat.GenericTypographic)
                     bmp.MakeTransparent(Color.White)
                     oFont.Dispose()
-                ElseIf Request.QueryString.Get("Image") = "MandelbrotFractal" Or Request.QueryString.Get("Image") = "JuliaFractal" Then
+                ElseIf Context.Request.QueryString.Get("Image") = "MandelbrotFractal" Or Context.Request.QueryString.Get("Image") = "JuliaFractal" Then
                     Dim FractalBmp As New Bitmap(50, 50)
-                    If Request.QueryString.Get("Image") = "MandelbrotFractal" Then
+                    If Context.Request.QueryString.Get("Image") = "MandelbrotFractal" Then
                         ImageQuantization.Fractal.StandardMandelbrotSet(FractalBmp)
                     Else
                         ImageQuantization.Fractal.StandardJuliaSet(FractalBmp)
@@ -296,44 +307,44 @@ Partial Class host
                     g.RotateTransform(90.0F)
                     g.ScaleTransform(-1.0F, 1.0F)
                     g.DrawImage(FractalBmp, -32 - 32 - 32, -32 - 32, 32, 32) 'bottom
-                ElseIf Request.QueryString.Get("Image") = "GradientBackground" Then
+                ElseIf Context.Request.QueryString.Get("Image") = "GradientBackground" Then
                     bmp = New Bitmap(1, 320)
                     Dim g As Graphics = Graphics.FromImage(bmp)
                     Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightBlue, Color.LightGray, 90)
                     g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
-                ElseIf Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
+                ElseIf Context.Request.QueryString.Get("Image") = "GradientBackgroundBottom" Then
                     bmp = New Bitmap(1, 320)
                     Dim g As Graphics = Graphics.FromImage(bmp)
                     Dim oBrush As New Drawing2D.LinearGradientBrush(New Rectangle(0, 0, 1, 320), Color.LightGray, Color.LightBlue, 90)
                     g.FillRectangle(oBrush, New Rectangle(0, 0, 1, 320))
-                ElseIf Request.QueryString.Get("Image") = "Scale" Then
+                ElseIf Context.Request.QueryString.Get("Image") = "Scale" Then
                     Dim SizeF As System.Drawing.SizeF
                     Dim Scale As Double
                     Dim FetchImageItem As PageLoader.ImageItem
                     Dim OriginalBmp As Bitmap
-                    If Request.QueryString.Get("p") = "menu.main" Then
+                    If Context.Request.QueryString.Get("p") = "menu.main" Then
                         FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.MainImage, Nothing, 206, 200)
                         OriginalBmp = DirectCast(Bitmap.FromFile(_PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
                         UtilityWeb.AddTextLogo(OriginalBmp, _PortableMethods.LoadResourceString(PageSet.Title))
-                    ElseIf Request.QueryString.Get("p") = "menu.hover" Then
+                    ElseIf Context.Request.QueryString.Get("p") = "menu.hover" Then
                         FetchImageItem = New PageLoader.ImageItem(String.Empty, String.Empty, PageSet.HoverImage, Nothing, 206, 200)
                         OriginalBmp = DirectCast(Bitmap.FromFile(_PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
                         UtilityWeb.AddTextLogo(OriginalBmp, _PortableMethods.LoadResourceString(PageSet.Title))
                     Else
                         'check boundaries
-                        FetchImageItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.ImageItem)
+                        FetchImageItem = DirectCast(PageSet.GetPageItem(Context.Request.QueryString.Get("p")), PageLoader.ImageItem)
                         OriginalBmp = DirectCast(Bitmap.FromFile(_PortableMethods.Settings.GetFilePath("images\" + FetchImageItem.Path)), Bitmap)
                     End If
                     SizeF = OriginalBmp.GetBounds(Drawing.GraphicsUnit.Pixel).Size
                     Scale = UtilityWeb.ComputeImageScale(SizeF.Width, SizeF.Height, FetchImageItem.MaxX, FetchImageItem.MaxY)
                     bmp = UtilityWeb.MakeThumbnail(OriginalBmp, Convert.ToInt32(SizeF.Width / Scale), Convert.ToInt32(SizeF.Height / Scale))
-                    If Request.QueryString.Get("p") = "menu.main" Then
+                    If Context.Request.QueryString.Get("p") = "menu.main" Then
                         UtilityWeb.ApplyTransparencyFilter(bmp, Color.FromArgb(&HFFF0F0F0), Color.White)
                     End If
-                ElseIf Request.QueryString.Get("Image") = "UnicodeChar" Then
-                    bmp = UWeb.GetUnicodeChar(If(Request.QueryString.Get("Size") = Nothing, 13, CInt(Request.QueryString.Get("Size"))), Request.QueryString.Get("Font"), Char.ConvertFromUtf32(Integer.Parse(Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
-                ElseIf Request.QueryString.Get("Image") = "Thumb" Then
-                    Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Request.QueryString.Get("p")), PageLoader.TextItem)
+                ElseIf Context.Request.QueryString.Get("Image") = "UnicodeChar" Then
+                    bmp = UWeb.GetUnicodeChar(If(Context.Request.QueryString.Get("Size") = Nothing, 13, CInt(Context.Request.QueryString.Get("Size"))), Context.Request.QueryString.Get("Font"), Char.ConvertFromUtf32(Integer.Parse(Context.Request.QueryString.Get("Char"), Globalization.NumberStyles.HexNumber)))
+                ElseIf Context.Request.QueryString.Get("Image") = "Thumb" Then
+                    Dim FetchImageItem As PageLoader.TextItem = DirectCast(PageSet.GetPageItem(Context.Request.QueryString.Get("p")), PageLoader.TextItem)
                     bmp = UtilityWeb.MakeThumbFromURL(FetchImageItem.ImageURL, 121)
                 End If
                 If Not bmp Is Nothing Then
@@ -348,14 +359,14 @@ Partial Class host
                 'ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
                 Dim MemStream As New IO.MemoryStream()
                 ResultBmp.Save(MemStream, CType(If(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
-                If Bytes Is Nothing Then Await _PortableMethods.DiskCache.CacheItem(Request.Url.Host + "_" + Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
+                If Bytes Is Nothing Then Await _PortableMethods.DiskCache.CacheItem(Context.Request.Url.Host + "_" + Context.Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
                 Response.Cache.SetCacheability(HttpCacheability.Public)
                 Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
             End If
             ResultBmp.Dispose()
             GC.Collect()
-        ElseIf Request.QueryString.Get(PageQuery) = "Source" Then
-            Dim f As IO.FileStream = New IO.FileStream(CStr(If(IO.File.Exists(_PortableMethods.Settings.GetFilePath("files\" + Request.QueryString.Get("File"))), _PortableMethods.Settings.GetFilePath("files\" + Request.QueryString.Get("File")), _PortableMethods.Settings.GetFilePath("metadata\" + Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
+        ElseIf Context.Request.QueryString.Get(PageQuery) = "Source" Then
+            Dim f As IO.FileStream = New IO.FileStream(CStr(If(IO.File.Exists(_PortableMethods.Settings.GetFilePath("files\" + Context.Request.QueryString.Get("File"))), _PortableMethods.Settings.GetFilePath("files\" + Context.Request.QueryString.Get("File")), _PortableMethods.Settings.GetFilePath("metadata\" + Context.Request.QueryString.Get("File")))), IO.FileMode.Open, IO.FileAccess.Read, IO.FileShare.Read)
             Dim buffer As Byte() = New Byte(CInt(f.Length) - 1) {}
             Dim count As Integer = f.Read(buffer, 0, CInt(f.Length))
             Dim encoding As System.Text.Encoding = UtilityWeb.DetectEncoding(buffer)
@@ -366,19 +377,20 @@ Partial Class host
             Response.ContentType = "text/plain;charset=" + encoding.WebName
             Response.Write(UtilityWeb.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
         Else
-            If Request.Params(PageQuery) = "Print" Then
+            If Context.Request.Params(PageQuery) = "Print" Then
                 IsPrint = True
-            ElseIf Request.Params(PageQuery) = "PrintFlashcardPdf" Or Request.Params(PageQuery) = "PrintPdf" Or Request.Params(PageQuery) = "PrintDocX" Then
+            ElseIf Context.Request.Params(PageQuery) = "PrintFlashcardPdf" Or Context.Request.Params(PageQuery) = "PrintPdf" Or Context.Request.Params(PageQuery) = "PrintDocX" Then
                 Dim MemStream As New IO.MemoryStream()
                 Dim RenderItems As New Generic.List(Of RenderArray.RenderItem)
-                Index = PageSet.GetPageIndex(Request.Params(PagePrintQuery))
+                Index = PageSet.GetPageIndex(Context.Request.Params(PagePrintQuery))
                 For Count As Integer = 0 To PageSet.Pages(Index).Page.Count - 1
                     If PageLoader.IsListItem(PageSet.Pages(Index).Page(Count)) Then
                         For SubIndex As Integer = 0 To DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Count - 1
                             If PageLoader.IsTextItem(DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex)) Then
                                 Dim Item As PageLoader.TextItem = CType(CType(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex), PageLoader.TextItem)
                                 If Not Item.OnRenderFunction Is Nothing Then
-                                    Dim Output As Object = Await Item.OnRenderFunction.Invoke(New Object() {Item})
+                                    Dim Output As Object = Item.OnRenderFunction.Invoke(New Object() {Item})
+                                    If UtilityWeb.IsTask(Output) Then Output = Await CType(Output, Threading.Tasks.Task(Of Object))
                                     If TypeOf Output Is RenderArray Then
                                         RenderItems.AddRange(CType(Output, RenderArray).Items)
                                     ElseIf TypeOf Output Is Array() Then
@@ -390,7 +402,8 @@ Partial Class host
                     ElseIf PageLoader.IsTextItem(PageSet.Pages(Index).Page(Count)) Then
                         Dim Item As PageLoader.TextItem = CType(PageSet.Pages(Index).Page(Count), PageLoader.TextItem)
                         If Not Item.OnRenderFunction Is Nothing Then
-                            Dim Output As Object = Await Item.OnRenderFunction.Invoke(New Object() {Item})
+                            Dim Output As Object = Item.OnRenderFunction.Invoke(New Object() {Item})
+                            If UtilityWeb.IsTask(Output) Then Output = Await CType(Output, Threading.Tasks.Task(Of Object))
                             If TypeOf Output Is RenderArray Then
                                 RenderItems.AddRange(CType(Output, RenderArray).Items)
                             End If
@@ -399,10 +412,10 @@ Partial Class host
                 Next
                 If RenderItems.Count <> 0 Then
                     Dim RAWeb As New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
-                    If Request.Params(PageQuery) = "PrintFlashcardPdf" Then
+                    If Context.Request.Params(PageQuery) = "PrintFlashcardPdf" Then
                         RAWeb.OutputFlashcardPdf(MemStream, RenderItems)
                         Response.ContentType = "application/pdf"
-                    ElseIf Request.Params(PageQuery) = "PrintPdf" Then
+                    ElseIf Context.Request.Params(PageQuery) = "PrintPdf" Then
                         RAWeb.OutputPdf(MemStream, RenderItems)
                         Response.ContentType = "application/pdf"
                     Else
@@ -420,55 +433,56 @@ Partial Class host
                     'End While
                     Return
                 End If
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
-                UA.Register(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_Register))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
-                UA.Login(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_Remember), Request.Form.Get(UserAccounts.ID_Login))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
-                UA.Logoff(PageSet)
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
-                UA.ForgotUserName(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_RetrieveUsername))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
-                UA.ForgotPassword(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_RetrievePassword))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
-                If Request.HttpMethod = "POST" Then
-                    UA.ResetPassword(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_PasswordResetCode), Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ResetPassword))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_Register Then
+                UA.Register(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_Username), Context.Request.Form.Get(UserAccounts.ID_Password), Context.Request.Form.Get(UserAccounts.ID_ConfirmPassword), Context.Request.Form.Get(UserAccounts.ID_EmailAddress), Context.Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Context.Request.Form.Get(UserAccounts.ID_Register))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_Login Then
+                UA.Login(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_Username), Context.Request.Form.Get(UserAccounts.ID_Password), Context.Request.Form.Get(UserAccounts.ID_Remember), Context.Request.Form.Get(UserAccounts.ID_Login))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_Logoff Then
+                UA.Logoff(PageSet, Context)
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotUsername Then
+                UA.ForgotUserName(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_EmailAddress), Context.Request.Form.Get(UserAccounts.ID_RetrieveUsername))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ForgotPassword Then
+                UA.ForgotPassword(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_Username), Context.Request.Form.Get(UserAccounts.ID_RetrievePassword))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ResetPassword Then
+                If Context.Request.HttpMethod = "POST" Then
+                    UA.ResetPassword(PageSet, Context, String.Empty, Context.Request.Form.Get(UserAccounts.ID_Username), Context.Request.Form.Get(UserAccounts.ID_PasswordResetCode), Context.Request.Form.Get(UserAccounts.ID_Password), Context.Request.Form.Get(UserAccounts.ID_ConfirmPassword), Context.Request.Form.Get(UserAccounts.ID_ResetPassword))
                 Else
-                    UA.ResetPassword(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
+                    UA.ResetPassword(PageSet, Context, Context.Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Context.Request.QueryString.Get(UserAccounts.ID_PasswordResetCode), String.Empty, String.Empty, UserAccounts.ID_ResetPassword)
                 End If
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
-                If Request.HttpMethod = "POST" Then
-                    UA.ActivateAccount(PageSet, String.Empty, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ActivationCode), Request.Form.Get(UserAccounts.ID_ActivateAccount))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ActivateAccount Then
+                If Context.Request.HttpMethod = "POST" Then
+                    UA.ActivateAccount(PageSet, Context, String.Empty, Context.Request.Form.Get(UserAccounts.ID_Username), Context.Request.Form.Get(UserAccounts.ID_ActivationCode), Context.Request.Form.Get(UserAccounts.ID_ActivateAccount))
                 Else
-                    UA.ActivateAccount(PageSet, Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
+                    UA.ActivateAccount(PageSet, Context, Context.Request.QueryString.Get(UserAccounts.ID_UserID), String.Empty, Context.Request.QueryString.Get(UserAccounts.ID_ActivationCode), UserAccounts.ID_ActivateAccount)
                 End If
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
-                UA.SendActivation(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_SendActivationCode))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
-                UA.ControlPanel(PageSet)
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
-                UA.DeleteAccount(PageSet, Request.Form.Get(UserAccounts.ID_Certain), Request.Form.Get(UserAccounts.ID_DeleteAccount))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
-                UA.ChangeEMailAddress(PageSet, Request.Form.Get(UserAccounts.ID_EmailAddress), Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
-                UA.ChangePassword(PageSet, Request.Form.Get(UserAccounts.ID_Password), Request.Form.Get(UserAccounts.ID_ConfirmPassword), Request.Form.Get(UserAccounts.ID_ChangePassword))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
-                UA.ChangeUserName(PageSet, Request.Form.Get(UserAccounts.ID_Username), Request.Form.Get(UserAccounts.ID_ChangeUsername))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstall AndAlso UA.IsAdmin() Then
-                UA.UploadCertificate(PageSet, Request.Form.Get(UserAccounts.ID_CertInstall), Request.Form.Get(UserAccounts.ID_Certificate), Request.Form.Get(UserAccounts.ID_CertRequest))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstallIntermed AndAlso UA.IsAdmin() Then
-                UA.InstallIntermediateCert(PageSet, Request.Form.Get(UserAccounts.ID_CertInstallIntermed), Request.Form.Get(UserAccounts.ID_Certificate))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertRequest AndAlso UA.IsAdmin() Then
-                UA.CreateCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_CertRequest), Request.Form.Get(UserAccounts.ID_PrivateKey))
-            ElseIf Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteCertRequest AndAlso UA.IsAdmin() Then
-                UA.DeleteCertificateRequest(PageSet, Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Request.Form.Get(UserAccounts.ID_Certificate))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_SendActivationCode Then
+                UA.SendActivation(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_Username), Context.Request.Form.Get(UserAccounts.ID_SendActivationCode))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ControlPanel Then
+                UA.ControlPanel(PageSet, Context)
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteAccount Then
+                UA.DeleteAccount(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_Certain), Context.Request.Form.Get(UserAccounts.ID_DeleteAccount))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeEMailAddress Then
+                UA.ChangeEMailAddress(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_EmailAddress), Context.Request.Form.Get(UserAccounts.ID_ConfirmEmailAddress), Context.Request.Form.Get(UserAccounts.ID_ChangeEMailAddress))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangePassword Then
+                UA.ChangePassword(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_Password), Context.Request.Form.Get(UserAccounts.ID_ConfirmPassword), Context.Request.Form.Get(UserAccounts.ID_ChangePassword))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ChangeUsername Then
+                UA.ChangeUserName(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_Username), Context.Request.Form.Get(UserAccounts.ID_ChangeUsername))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstall AndAlso UA.IsAdmin(Context) Then
+                UA.UploadCertificate(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_CertInstall), Context.Request.Form.Get(UserAccounts.ID_Certificate), Context.Request.Form.Get(UserAccounts.ID_CertRequest))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertInstallIntermed AndAlso UA.IsAdmin(Context) Then
+                UA.InstallIntermediateCert(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_CertInstallIntermed), Context.Request.Form.Get(UserAccounts.ID_Certificate))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CertRequest AndAlso UA.IsAdmin(Context) Then
+                UA.CreateCertificateRequest(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_CertRequest), Context.Request.Form.Get(UserAccounts.ID_PrivateKey))
+            ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_DeleteCertRequest AndAlso UA.IsAdmin(Context) Then
+                UA.DeleteCertificateRequest(PageSet, Context, Context.Request.Form.Get(UserAccounts.ID_DeleteCertRequest), Context.Request.Form.Get(UserAccounts.ID_Certificate))
             End If
             _IsHtml = True
-            Index = PageSet.GetPageIndex(Request.Params(If(IsPrint, PagePrintQuery, PageQuery)))
+            Index = PageSet.GetPageIndex(Context.Request.Params(If(IsPrint, PagePrintQuery, PageQuery)))
             If Not IsPrint Then
                 Controls.Add(New Menu(_PortableMethods, UA, PageSet, Index))
             End If
-            Controls.Add(New Page(_PortableMethods, UWeb, PageSet.Pages.Item(Index), True, IsPrint))
+            Controls.Add(New Page(_PortableMethods, UWeb, ArbData, PageSet.Pages.Item(Index), True, IsPrint))
+            Await CType(Controls(Controls.Count - 1), Page).DoGetAsyncData()
             Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
         End If
     End Function
@@ -488,7 +502,7 @@ Partial Class host
             writer.Write("<meta http-equiv='Content-type' content='text/html;charset=" + System.Text.Encoding.UTF8.WebName + "'>")
             writer.Write("<meta property=""og:title"" content=""" + CType(Controls(Controls.Count - 1), Page).GetTitle() + """>")
             writer.Write("<meta property=""og:site_name"" content=""" + _PortableMethods.LoadResourceString(PageSet.Title) + """>")
-            writer.Write("<meta property=""og:url"" content=""" + UtilityWeb.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri) + """>")
+            writer.Write("<meta property=""og:url"" content=""" + UtilityWeb.HtmlTextEncode(HttpContext.Current.Request.Url.AbsoluteUri) + """>")
             writer.Write("<meta property=""og:description"" content=""" + CType(Controls(Controls.Count - 1), Page).GetDescription() + """>")
             writer.Write("<meta property=""og:image"" content=""" + Web.HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority) + UtilityWeb.HtmlTextEncode(GetPageString("Image.gif&Image=Scale&p=menu.main")) + """>")
             writer.Write("<meta property=""fb:app_id"" content=""" + UtilityWeb.ConnectionData.FBAppID + """>")
@@ -586,12 +600,12 @@ Partial Class host
                 writer.WriteBeginTag("script")
                 writer.WriteAttribute("type", "text/javascript")
                 writer.Write(HtmlTextWriter.TagRightChar)
-                writer.Write("(function(d, s, id) {" + _
-    "  var js, fjs = d.getElementsByTagName(s)[0];" + _
-    "  if (d.getElementById(id)) return;" + _
-    "  js = d.createElement(s); js.id = id;" + _
-    "  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + UtilityWeb.ConnectionData.FBAppID + """;" + _
-    "  fjs.parentNode.insertBefore(js, fjs);" + _
+                writer.Write("(function(d, s, id) {" +
+    "  var js, fjs = d.getElementsByTagName(s)[0];" +
+    "  if (d.getElementById(id)) return;" +
+    "  js = d.createElement(s); js.id = id;" +
+    "  js.src = ""//connect.facebook.net/en_US/all.js#xfbml=1&appId=" + UtilityWeb.ConnectionData.FBAppID + """;" +
+    "  fjs.parentNode.insertBefore(js, fjs);" +
     "}(document, 'script', 'facebook-jssdk'));")
                 writer.Write(vbCrLf + vbTab + vbTab)
                 writer.WriteEndTag("script")
@@ -631,7 +645,7 @@ Partial Class host
                 writer.Write(vbCrLf + vbTab + vbTab)
                 writer.WriteBeginTag("div")
                 writer.WriteAttribute("class", "fb-like")
-                writer.WriteAttribute("data-href", UtilityWeb.HtmlTextEncode(Web.HttpContext.Current.Request.Url.AbsoluteUri))
+                writer.WriteAttribute("data-href", UtilityWeb.HtmlTextEncode(HttpContext.Current.Request.Url.AbsoluteUri))
                 writer.WriteAttribute("data-layout", "standard")
                 writer.WriteAttribute("data-action", "like")
                 writer.WriteAttribute("data-show-faces", "true")
@@ -731,12 +745,14 @@ Public Class UserAccounts
     Public Const ID_LangID As String = "LangID"
     Private _PortableMethods As PortableMethods
     Private UWeb As UtilityWeb
+    Private ArbData As ArabicData
     Private SD As SiteDatabase
     Private PL As PageLoader
     Private MD As MailDispatcher
-    Public Sub New(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb, NewPL As PageLoader, NewSD As SiteDatabase)
+    Public Sub New(NewPortableMethods As PortableMethods, NewUWeb As UtilityWeb, NewArbData As ArabicData, NewPL As PageLoader, NewSD As SiteDatabase)
         _PortableMethods = NewPortableMethods
         UWeb = NewUWeb
+        ArbData = NewArbData
         SD = NewSD
         PL = NewPL
         MD = New MailDispatcher(_PortableMethods, UWeb)
@@ -761,58 +777,58 @@ Public Class UserAccounts
         End If
         Return String.Empty
     End Function
-    Public Function IsAdmin() As Boolean
-        Return IsLoggedIn() And SD.CheckAccess(GetUserID()) = 1
+    Public Function IsAdmin(Context As HttpContext) As Boolean
+        Return IsLoggedIn(Context) And SD.CheckAccess(GetUserID(Context)) = 1
     End Function
-    Public Shared Function GetLanguage() As String
-        If Array.IndexOf(HttpContext.Current.Response.Cookies.AllKeys, ID_Lang) <> -1 Then
-            Return HttpContext.Current.Response.Cookies.Get(ID_Lang).Item(ID_LangID)
-        ElseIf Array.IndexOf(HttpContext.Current.Request.Cookies.AllKeys, ID_Lang) <> -1 Then
-            Return HttpContext.Current.Request.Cookies.Get(ID_Lang).Item(ID_LangID)
+    Public Shared Function GetLanguage(Context As HttpContext) As String
+        If Array.IndexOf(Context.Response.Cookies.AllKeys, ID_Lang) <> -1 Then
+            Return Context.Response.Cookies.Get(ID_Lang).Item(ID_LangID)
+        ElseIf Array.IndexOf(Context.Request.Cookies.AllKeys, ID_Lang) <> -1 Then
+            Return Context.Request.Cookies.Get(ID_Lang).Item(ID_LangID)
         Else
             Return String.Empty
         End If
     End Function
-    Public Shared Sub SetLanguage(LangID As String)
+    Public Shared Sub SetLanguage(LangID As String, Context As HttpContext)
         Dim Cookie As New HttpCookie(ID_Lang)
         Cookie.Item(ID_LangID) = LangID
-        HttpContext.Current.Response.Cookies.Set(Cookie)
+        Context.Response.Cookies.Set(Cookie)
     End Sub
-    Public Function IsLoggedIn() As Boolean
-        If Array.IndexOf(HttpContext.Current.Response.Cookies.AllKeys, ID_Login) <> -1 AndAlso
-                HttpContext.Current.Response.Cookies.Get(ID_Login).Item(ID_UserID) <> String.Empty Then Return True
-        Dim UserID As Integer = GetUserID()
+    Public Function IsLoggedIn(Context As HttpContext) As Boolean
+        If Array.IndexOf(Context.Response.Cookies.AllKeys, ID_Login) <> -1 AndAlso
+                Context.Response.Cookies.Get(ID_Login).Item(ID_UserID) <> String.Empty Then Return True
+        Dim UserID As Integer = GetUserID(Context)
         If UserID = -1 Then Return False
         Return SD.CheckLogin(UserID,
-            CInt(HttpContext.Current.Request.Cookies.Get(ID_Login).Item(ID_Secret)))
+            CInt(Context.Request.Cookies.Get(ID_Login).Item(ID_Secret)))
     End Function
-    Public Function GetUserName() As String
-        Return SD.GetUserName(GetUserID())
+    Public Function GetUserName(Context As HttpContext) As String
+        Return SD.GetUserName(GetUserID(Context))
     End Function
-    Public Shared Function GetUserID() As Integer
-        If HttpContext.Current.Request.Cookies.Get(ID_Login) Is Nothing Then Return -1
-        Return CInt(HttpContext.Current.Request.Cookies.Get(ID_Login).Item(ID_UserID))
+    Public Shared Function GetUserID(Context As HttpContext) As Integer
+        If Context.Request.Cookies.Get(ID_Login) Is Nothing Then Return -1
+        Return CInt(Context.Request.Cookies.Get(ID_Login).Item(ID_UserID))
     End Function
-    Public Sub SetLoginCookie(ByVal UserID As Integer, ByVal Persist As Boolean)
+    Public Sub SetLoginCookie(ByVal UserID As Integer, ByVal Persist As Boolean, Context As HttpContext)
         Dim Secret As Integer = SD.SetLogin(UserID, Persist)
         Dim Cookie As New HttpCookie(ID_Login)
         If Not Persist Then Cookie.Expires = Now.AddHours(1)
         Cookie.Item(ID_UserID) = CStr(UserID)
         Cookie.Item(ID_Secret) = CStr(Secret)
-        HttpContext.Current.Response.Cookies.Set(Cookie)
+        Context.Response.Cookies.Set(Cookie)
     End Sub
-    Public Sub ClearLoginCookie()
-        SD.ClearLogin(GetUserID())
+    Public Sub ClearLoginCookie(Context As HttpContext)
+        SD.ClearLogin(GetUserID(Context))
         Dim Cookie As New HttpCookie(ID_Login)
         Cookie.Expires = DateTime.Now.AddDays(-1D)
         Cookie.Item(ID_UserID) = String.Empty
         Cookie.Item(ID_Secret) = String.Empty
-        HttpContext.Current.Response.Cookies.Set(Cookie)
+        Context.Response.Cookies.Set(Cookie)
     End Sub
-    Public Sub Register(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal Password As String, ByVal PasswordConfirm As String, ByVal EMail As String, ByVal EMailConfirm As String, ByVal Register As String)
+    Public Sub Register(PageSet As PageLoader, Context As HttpContext, ByVal UserName As String, ByVal Password As String, ByVal PasswordConfirm As String, ByVal EMail As String, ByVal EMailConfirm As String, ByVal Register As String)
         Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
-        If IsLoggedIn() Then Return
+        If IsLoggedIn(Context) Then Return
         If Register = _PortableMethods.LoadResourceString("Acct_" + ID_Register) Then
             Dim ErrorString As String = ValidateUserName(UserName)
             If ErrorString <> String.Empty Then
@@ -840,7 +856,7 @@ Public Class UserAccounts
                 Else
                     SD.AddUser(UserName, Password, EMail)
                     UserID = SD.GetUserID(UserName)
-                    MD.SendActivationEMail(UserName, EMail, UserID, SD.GetUserActivated(UserID))
+                    MD.SendActivationEMail(UserName, EMail, UserID, SD.GetUserActivated(UserID), Context)
                 End If
             End If
         End If
@@ -867,12 +883,12 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_Register, "Acct_" + ID_Register))
     End Sub
-    Public Sub Login(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal Password As String, ByVal Persist As String, ByVal Login As String)
+    Public Sub Login(PageSet As PageLoader, Context As HttpContext, ByVal UserName As String, ByVal Password As String, ByVal Persist As String, ByVal Login As String)
         Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
         Dim Forgot As Boolean = False
         Dim NoActivate As Boolean = False
-        If IsLoggedIn() Then Return
+        If IsLoggedIn(Context) Then Return
         If Login = _PortableMethods.LoadResourceString("Acct_" + ID_Login) Then
             Dim ErrorString As String = ValidateUserName(UserName)
             If ErrorString <> String.Empty Then
@@ -892,7 +908,7 @@ Public Class UserAccounts
                         Errors.Add("Acct_" + ID_AccountNotActivated)
                         NoActivate = True
                     Else
-                        SetLoginCookie(UserID, Persist = "0")
+                        SetLoginCookie(UserID, Persist = "0", Context)
                     End If
                 End If
             End If
@@ -923,17 +939,17 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_Login, "Acct_" + ID_Login))
     End Sub
-    Public Sub Logoff(ByRef PageSet As PageLoader)
-        If Not IsLoggedIn() Then Return
-        ClearLoginCookie()
+    Public Sub Logoff(PageSet As PageLoader, Context As HttpContext)
+        If Not IsLoggedIn(Context) Then Return
+        ClearLoginCookie(Context)
         Dim Controls As New Generic.List(Of Object)
         Controls.Add(New PageLoader.TextItem(String.Empty, "Acct_" + ID_LogoffSuccess))
         Controls.Add(New PageLoader.TextItem(ID_Home, "Acct_" + ID_Home, host.RootPath))
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_Logoff, "Acct_" + ID_Logoff))
     End Sub
-    Public Sub ForgotUserName(ByRef PageSet As PageLoader, ByVal EMail As String, ByVal RetrieveUserName As String)
+    Public Sub ForgotUserName(PageSet As PageLoader, Context As HttpContext, ByVal EMail As String, ByVal RetrieveUserName As String)
         Dim Errors As New Generic.List(Of String)
-        If IsLoggedIn() Then Return
+        If IsLoggedIn(Context) Then Return
         If RetrieveUserName = _PortableMethods.LoadResourceString("Acct_" + ID_RetrieveUsername) Then
             Dim UserID As Integer
             Dim ErrorString As String = ValidateEMail(EMail)
@@ -943,7 +959,7 @@ Public Class UserAccounts
                 If UserID = -1 Then
                     Errors.Add("Acct_" + ID_NoUserExists)
                 Else
-                    MD.SendUserNameReminderEMail(SD.GetUserName(UserID), EMail)
+                    MD.SendUserNameReminderEMail(SD.GetUserName(UserID), EMail, Context)
                 End If
             End If
         End If
@@ -963,10 +979,10 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ForgotUsername, "Acct_" + ID_ForgotUsername))
     End Sub
-    Public Sub ForgotPassword(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal RetrievePassword As String)
+    Public Sub ForgotPassword(PageSet As PageLoader, Context As HttpContext, ByVal UserName As String, ByVal RetrievePassword As String)
         Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
-        If IsLoggedIn() Then Return
+        If IsLoggedIn(Context) Then Return
         If RetrievePassword = _PortableMethods.LoadResourceString("Acct_" + ID_RetrievePassword) Then
             Dim ErrorString As String = ValidateUserName(UserName)
             If ErrorString <> String.Empty Then Errors.Add(ErrorString)
@@ -975,7 +991,7 @@ Public Class UserAccounts
                 If UserID = -1 Then
                     Errors.Add("Acct_" + ID_UserNotFound)
                 Else
-                    MD.SendPasswordResetEMail(UserName, SD.GetUserEMail(UserID), UserID, SD.GetUserResetCode(UserID)) 'secret code is crc32 of password hash
+                    MD.SendPasswordResetEMail(UserName, SD.GetUserEMail(UserID), UserID, SD.GetUserResetCode(UserID), Context) 'secret code is crc32 of password hash
                 End If
             End If
         End If
@@ -995,11 +1011,11 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ForgotPassword, "Acct_" + ID_ForgotPassword))
     End Sub
-    Public Sub ResetPassword(ByRef PageSet As PageLoader, ByVal UserID As String, ByVal UserName As String, ByVal ResetCode As String, ByVal Password As String, ByVal PasswordConfirm As String, ByVal ResetPassword As String)
+    Public Sub ResetPassword(PageSet As PageLoader, Context As HttpContext, ByVal UserID As String, ByVal UserName As String, ByVal ResetCode As String, ByVal Password As String, ByVal PasswordConfirm As String, ByVal ResetPassword As String)
         Dim Errors As New Generic.List(Of String)
         Dim UID As Integer
         Dim ResCode As UInteger
-        If IsLoggedIn() Then Return
+        If IsLoggedIn(Context) Then Return
         If UserID <> String.Empty Or ResetPassword = _PortableMethods.LoadResourceString("Acct_" + ID_ResetPassword) Then
             If UserID <> String.Empty And UserName = String.Empty Then
                 UID = CInt(UserID)
@@ -1057,11 +1073,11 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ResetPassword, "Acct_" + ID_ResetPassword))
     End Sub
-    Public Sub ActivateAccount(ByRef PageSet As PageLoader, ByVal UserID As String, ByVal UserName As String, ByVal ActivationCode As String, ByVal ActivateAccount As String)
+    Public Sub ActivateAccount(PageSet As PageLoader, Context As HttpContext, ByVal UserID As String, ByVal UserName As String, ByVal ActivationCode As String, ByVal ActivateAccount As String)
         Dim Errors As New Generic.List(Of String)
         Dim UID As Integer
         Dim ActivateCode As Integer
-        If IsLoggedIn() Then Return
+        If IsLoggedIn(Context) Then Return
         If UserID <> String.Empty Or ActivateAccount = _PortableMethods.LoadResourceString("Acct_" + ID_ActivateAccount) Then
             If UserID <> String.Empty And UserName = String.Empty Then
                 UID = CInt(UserID)
@@ -1104,10 +1120,10 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ActivateAccount, "Acct_" + ID_ActivateAccount))
     End Sub
-    Public Sub SendActivation(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal SendActivation As String)
+    Public Sub SendActivation(PageSet As PageLoader, Context As HttpContext, ByVal UserName As String, ByVal SendActivation As String)
         Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
-        If IsLoggedIn() Then Return
+        If IsLoggedIn(Context) Then Return
         If SendActivation = _PortableMethods.LoadResourceString("Acct_" + ID_SendActivationCode) Then
             Dim ErrorString As String = ValidateUserName(UserName)
             If ErrorString <> String.Empty Then Errors.Add(ErrorString)
@@ -1116,7 +1132,7 @@ Public Class UserAccounts
                 If UserID = -1 Then
                     Errors.Add("Acct_" + ID_UserNotFound)
                 Else
-                    MD.SendActivationEMail(UserName, SD.GetUserEMail(UserID), UserID, SD.GetUserActivated(UserID))
+                    MD.SendActivationEMail(UserName, SD.GetUserEMail(UserID), UserID, SD.GetUserActivated(UserID), Context)
                 End If
             End If
         End If
@@ -1136,13 +1152,13 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_SendActivationCode, "Acct_" + ID_SendActivationCode))
     End Sub
-    Public Sub ControlPanel(ByRef PageSet As PageLoader)
+    Public Sub ControlPanel(PageSet As PageLoader, Context As HttpContext)
         Dim Controls As New Generic.List(Of Object)
         Controls.Add(New PageLoader.TextItem(ID_ChangeUsername, "Acct_" + ID_ChangeUsername, host.GetPageString(ID_ChangeUsername), String.Empty))
         Controls.Add(New PageLoader.TextItem(ID_ChangePassword, "Acct_" + ID_ChangePassword, host.GetPageString(ID_ChangePassword), String.Empty))
         Controls.Add(New PageLoader.TextItem(ID_ChangeEMailAddress, "Acct_" + ID_ChangeEMailAddress, host.GetPageString(ID_ChangeEMailAddress), String.Empty))
         Controls.Add(New PageLoader.TextItem(ID_DeleteAccount, "Acct_" + ID_DeleteAccount, host.GetPageString(ID_DeleteAccount), String.Empty))
-        If (IsAdmin()) Then
+        If (IsAdmin(Context)) Then
             Controls.Add(New PageLoader.TextItem(ID_ClearCache, "Acct_" + ID_ClearCache, host.GetPageString(ID_ClearCache), String.Empty))
             Controls.Add(New PageLoader.TextItem(ID_ViewHeaders, "Acct_" + ID_ViewHeaders, host.GetPageString(ID_ViewHeaders), String.Empty))
             Controls.Add(New PageLoader.TextItem(ID_DotNetVersion, "Acct_" + ID_DotNetVersion, host.GetPageString(ID_DotNetVersion), String.Empty))
@@ -1164,16 +1180,16 @@ Public Class UserAccounts
         Controls.Add(New PageLoader.TextItem(ID_Home, "Acct_" + ID_Home, host.RootPath))
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ControlPanel, "Acct_" + ID_ControlPanel))
     End Sub
-    Public Sub DeleteAccount(ByRef PageSet As PageLoader, ByVal Certain As String, ByVal DeleteAccount As String)
+    Public Sub DeleteAccount(PageSet As PageLoader, Context As HttpContext, ByVal Certain As String, ByVal DeleteAccount As String)
         Dim Errors As New Generic.List(Of String)
-        If Not IsLoggedIn() Then Return
+        If Not IsLoggedIn(Context) Then Return
         If DeleteAccount = _PortableMethods.LoadResourceString("Acct_" + ID_DeleteAccount) Then
             If Certain <> "0" Then
                 Errors.Add("Acct_" + ID_NotConfirmDelete)
             End If
             If Errors.Count = 0 Then
-                SD.RemoveUser(GetUserID())
-                ClearLoginCookie()
+                SD.RemoveUser(GetUserID(Context))
+                ClearLoginCookie(Context)
             End If
         End If
         Dim Controls As New Generic.List(Of Object)
@@ -1191,10 +1207,10 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_DeleteAccount, "Acct_" + ID_DeleteAccount))
     End Sub
-    Public Sub ChangeEMailAddress(ByRef PageSet As PageLoader, ByVal EMail As String, ByVal EMailConfirm As String, ByVal ChangeEMailAddress As String)
+    Public Sub ChangeEMailAddress(PageSet As PageLoader, Context As HttpContext, ByVal EMail As String, ByVal EMailConfirm As String, ByVal ChangeEMailAddress As String)
         Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
-        If Not IsLoggedIn() Then Return
+        If Not IsLoggedIn(Context) Then Return
         If ChangeEMailAddress = _PortableMethods.LoadResourceString("Acct_" + ID_ChangeEMailAddress) Then
             Dim ErrorString As String = ValidateEMail(EMail)
             If ErrorString <> String.Empty Then Errors.Add(ErrorString)
@@ -1202,10 +1218,10 @@ Public Class UserAccounts
                 Errors.Add("Acct_" + ID_EmailsNotMatch)
             End If
             If Errors.Count = 0 Then
-                UserID = GetUserID()
+                UserID = GetUserID(Context)
                 SD.ChangeUserEMail(UserID, EMail)
-                MD.SendActivationEMail(SD.GetUserName(UserID), EMail, UserID, SD.GetUserActivated(UserID))
-                ClearLoginCookie()
+                MD.SendActivationEMail(SD.GetUserName(UserID), EMail, UserID, SD.GetUserActivated(UserID), Context)
+                ClearLoginCookie(Context)
             End If
         End If
         Dim Controls As New Generic.List(Of Object)
@@ -1226,10 +1242,10 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ChangeEMailAddress, "Acct_" + ID_ChangeEMailAddress))
     End Sub
-    Public Sub ChangePassword(ByRef PageSet As PageLoader, ByVal Password As String, ByVal PasswordConfirm As String, ByVal ChangePassword As String)
+    Public Sub ChangePassword(PageSet As PageLoader, Context As HttpContext, ByVal Password As String, ByVal PasswordConfirm As String, ByVal ChangePassword As String)
         Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
-        If Not IsLoggedIn() Then Return
+        If Not IsLoggedIn(Context) Then Return
         If ChangePassword = _PortableMethods.LoadResourceString("Acct_" + ID_ChangePassword) Then
             Dim ErrorString As String = ValidatePassword(Password)
             If ErrorString <> String.Empty Then Errors.Add(ErrorString)
@@ -1237,9 +1253,9 @@ Public Class UserAccounts
                 Errors.Add("Acct_" + ID_PasswordsNotMatch)
             End If
             If Errors.Count = 0 Then
-                UserID = GetUserID()
+                UserID = GetUserID(Context)
                 SD.ChangeUserPassword(UserID, Password)
-                MD.SendPasswordChangedEMail(SD.GetUserName(UserID), SD.GetUserEMail(UserID))
+                MD.SendPasswordChangedEMail(SD.GetUserName(UserID), SD.GetUserEMail(UserID), Context)
             End If
         End If
         Dim Controls As New Generic.List(Of Object)
@@ -1260,17 +1276,17 @@ Public Class UserAccounts
         End If
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_ChangePassword, "Acct_" + ID_ChangePassword))
     End Sub
-    Public Sub ChangeUserName(ByRef PageSet As PageLoader, ByVal UserName As String, ByVal ChangeUserName As String)
+    Public Sub ChangeUserName(PageSet As PageLoader, Context As HttpContext, ByVal UserName As String, ByVal ChangeUserName As String)
         Dim Errors As New Generic.List(Of String)
         Dim UserID As Integer
-        If Not IsLoggedIn() Then Return
+        If Not IsLoggedIn(Context) Then Return
         If ChangeUserName = _PortableMethods.LoadResourceString("Acct_" + ID_ChangeUsername) Then
             Dim ErrorString As String = ValidateUserName(UserName)
             If ErrorString <> String.Empty Then Errors.Add(ErrorString)
             If Errors.Count = 0 Then
-                UserID = GetUserID()
+                UserID = GetUserID(Context)
                 SD.ChangeUserName(UserID, UserName)
-                MD.SendUserNameChangedEMail(SD.GetUserName(UserID), SD.GetUserEMail(UserID))
+                MD.SendUserNameChangedEMail(SD.GetUserName(UserID), SD.GetUserEMail(UserID), Context)
             End If
         End If
         Dim Controls As New Generic.List(Of Object)
@@ -1293,8 +1309,8 @@ Public Class UserAccounts
     'add 127.0.0.1  <domainname> to %windir%\system32\drivers\etc\hosts for testing
     'netsh http add sslcert hostnameport=<domainname>:<port> certhash=<certhash> certstorename=MY appid=<appid>
     'appid=Assembly.GetExecutingAssembly().GetType().GUID.ToString()
-    Public Sub UploadCertificate(ByRef PageSet As PageLoader, CertInstall As String, Certificate As String, CertRequest As String)
-        If Not IsLoggedIn() And IsAdmin() Then Return
+    Public Sub UploadCertificate(PageSet As PageLoader, Context As HttpContext, CertInstall As String, Certificate As String, CertRequest As String)
+        If Not IsLoggedIn(Context) And IsAdmin(Context) Then Return
         Dim Output As String = String.Empty
         If CertInstall = _PortableMethods.LoadResourceString("Acct_" + ID_CertInstall) Then
             Dim objEnroll As New CERTENROLLLib.CX509Enrollment()
@@ -1325,8 +1341,8 @@ Public Class UserAccounts
         Form.Add(New PageLoader.ButtonItem(ID_CertInstall, "Acct_" + ID_CertInstall))
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_CertInstall, "Acct_" + ID_CertInstall))
     End Sub
-    Public Sub DeleteCertificateRequest(ByRef PageSet As PageLoader, DeleteCertRequest As String, Certificate As String)
-        If Not IsLoggedIn() And IsAdmin() Then Return
+    Public Sub DeleteCertificateRequest(PageSet As PageLoader, Context As HttpContext, DeleteCertRequest As String, Certificate As String)
+        If Not IsLoggedIn(Context) And IsAdmin(Context) Then Return
         Dim Output As String = String.Empty
         If DeleteCertRequest = _PortableMethods.LoadResourceString("Acct_" + ID_DeleteCertRequest) Then
             Dim Store As New System.Security.Cryptography.X509Certificates.X509Store("REQUEST", System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine)
@@ -1347,8 +1363,8 @@ Public Class UserAccounts
         Form.Add(New PageLoader.ButtonItem(ID_DeleteCertRequest, "Acct_" + ID_DeleteCertRequest))
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_DeleteCertRequest, "Acct_" + ID_DeleteCertRequest))
     End Sub
-    Public Sub InstallIntermediateCert(ByRef PageSet As PageLoader, CertInstallIntermed As String, Certificate As String)
-        If Not IsLoggedIn() And IsAdmin() Then Return
+    Public Sub InstallIntermediateCert(PageSet As PageLoader, Context As HttpContext, CertInstallIntermed As String, Certificate As String)
+        If Not IsLoggedIn(Context) And IsAdmin(Context) Then Return
         Dim Output As String = String.Empty
         If CertInstallIntermed = _PortableMethods.LoadResourceString("Acct_" + ID_CertInstallIntermed) Then
             Dim Store As New System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreName.CertificateAuthority, System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser)
@@ -1367,8 +1383,8 @@ Public Class UserAccounts
         Form.Add(New PageLoader.ButtonItem(ID_CertInstallIntermed, "Acct_" + ID_CertInstallIntermed))
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_CertInstallIntermed, "Acct_" + ID_CertInstallIntermed))
     End Sub
-    Public Sub CreateCertificateRequest(ByRef PageSet As PageLoader, CertRequest As String, PrivateKey As String)
-        If Not IsLoggedIn() And IsAdmin() Then Return
+    Public Sub CreateCertificateRequest(PageSet As PageLoader, Context As HttpContext, CertRequest As String, PrivateKey As String)
+        If Not IsLoggedIn(Context) And IsAdmin(Context) Then Return
         Dim Output As String = String.Empty
         If CertRequest = _PortableMethods.LoadResourceString("Acct_" + ID_CertRequest) Then
             'Create all the objects that will be required
@@ -1474,12 +1490,12 @@ Public Class UserAccounts
         Form.Add(New PageLoader.ButtonItem(ID_CertRequest, "Acct_" + ID_CertRequest))
         PageSet.Pages.Add(New PageLoader.PageItem(Controls, ID_CertRequest, "Acct_" + ID_CertRequest))
     End Sub
-    Public Sub AccountPanel(ByVal writer As HtmlTextWriter)
-        If IsLoggedIn() Then
+    Public Async Function AccountPanel(ByVal writer As HtmlTextWriter, Context As HttpContext) As Threading.Tasks.Task
+        If IsLoggedIn(Context) Then
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
             writer.WriteFullBeginTag("div")
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
-            writer.Write(UtilityWeb.HtmlTextEncode(GetUserName()))
+            writer.Write(UtilityWeb.HtmlTextEncode(GetUserName(Context)))
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab + vbTab)
             writer.WriteBeginTag("a")
             writer.WriteAttribute("href", UtilityWeb.HtmlTextEncode(host.GetPageString(ID_Logoff)))
@@ -1509,8 +1525,9 @@ Public Class UserAccounts
             Form.Add(New PageLoader.ButtonItem(ID_Login, "Acct_" + ID_Login))
             Form.Add(New PageLoader.TextItem(ID_Register, "Acct_" + ID_Register, host.GetPageString(ID_Register)))
             Controls.Add(New PageLoader.ListItem("Acct_" + ID_Login, ID_Login, Form, False, True, host.GetPageString(ID_Login)))
-            Dim RenderPage As New Page(_PortableMethods, UWeb, New PageLoader.PageItem(Controls, ID_Login, "Acct_" + ID_Login), False)
+            Dim RenderPage As New Page(_PortableMethods, UWeb, ArbData, New PageLoader.PageItem(Controls, ID_Login, "Acct_" + ID_Login), False)
+            Await RenderPage.DoGetAsyncData()
             RenderPage.RenderControl(writer)
         End If
-    End Sub
+    End Function
 End Class

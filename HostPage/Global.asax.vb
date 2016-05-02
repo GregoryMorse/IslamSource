@@ -1,5 +1,7 @@
 Imports System.Web
 Imports System.Web.SessionState
+Imports HostPageUtility
+Imports XMLRender
 
 Public Class [Global]
     Inherits System.Web.HttpApplication
@@ -27,9 +29,8 @@ Public Class [Global]
     End Sub
 
 #End Region
-
     Sub Application_Start(ByVal sender As Object, ByVal e As EventArgs)
-        ' Fires when the application is started
+
     End Sub
 
     Sub Session_Start(ByVal sender As Object, ByVal e As EventArgs)
