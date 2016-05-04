@@ -144,7 +144,7 @@ public class WindowsRTSettings : XMLRender.PortableSettings
             return new string[] { "IslamMetadata" };
         }
     }
-    public string GetTemplatePath()
+    public string GetTemplatePath(string Selector)
     {
         return GetFilePath("metadata\\IslamSource.xml");
     }
@@ -293,7 +293,7 @@ public class WindowsRTXamSettings : XMLRender.PortableSettings
             return new string[] { "IslamMetadata" };
         }
     }
-    public string GetTemplatePath()
+    public string GetTemplatePath(string Selector)
     {
         return GetFilePath("metadata\\IslamSource.xml");
     }
@@ -395,7 +395,7 @@ public class AndroidiOSSettings : XMLRender.PortableSettings
             return new string[] { "IslamMetadata" };
         }
     }
-    public string GetTemplatePath()
+    public string GetTemplatePath(string Selector)
     {
         return GetFilePath("metadata/IslamSource.xml");
     }

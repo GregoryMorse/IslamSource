@@ -33,6 +33,8 @@ Partial Class host
     'TODO: Upload script which also handles ImageItem and DownloadItem files
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim _dlgt As AsyncTaskDelegate = Nothing
+        'Context.Response.BufferOutput = True
+        AsyncTimeout = New TimeSpan(0, 0, 240)
         RegisterAsyncTask(New PageAsyncTask(Function(_sender As Object, _e As EventArgs, cb As AsyncCallback, extraData As Object) As IAsyncResult
                                                 'adapter for .NET 4
                                                 'Dim Context As HttpContext = HttpContext.Current
@@ -45,7 +47,7 @@ Partial Class host
                                             Sub(ar As IAsyncResult)
 
                                             End Sub, "Async"))
-        ExecuteRegisteredAsyncTasks()
+        'ExecuteRegisteredAsyncTasks()
     End Sub
     Protected Delegate Sub AsyncTaskDelegate()
     Private _PortableMethods As PortableMethods
@@ -110,27 +112,27 @@ Partial Class host
             GC.Collect()
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewHeaders AndAlso UA.IsAdmin(Context) Then
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write("Headers for: " + Context.Request.Url.Host + vbCrLf)
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.Write("Headers for: " + Context.Request.Url.Host + vbCrLf)
             For Index = 0 To Context.Request.Headers.AllKeys().Length - 1
-                Response.Write(Context.Request.Headers.AllKeys()(Index) + ": ")
+                Context.Response.Write(Context.Request.Headers.AllKeys()(Index) + ": ")
                 Dim Count As Integer
                 For Count = 0 To Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index)).Length - 1
-                    Response.Write(Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index))(Count) + CStr(If(Count <> Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index)).Length - 1, ", ", String.Empty)))
+                    Context.Response.Write(Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index))(Count) + CStr(If(Count <> Context.Request.Headers.GetValues(Context.Request.Headers.AllKeys()(Index)).Length - 1, ", ", String.Empty)))
                 Next
-                Response.Write(vbCrLf)
+                Context.Response.Write(vbCrLf)
             Next
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_DotNetVersion AndAlso UA.IsAdmin(Context) Then
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write(Environment.Version)
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.Write(Environment.Version)
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewCache AndAlso UA.IsAdmin(Context) Then
             Dim enumerator As IDictionaryEnumerator = Cache.GetEnumerator()
             Dim keys As New Generic.List(Of Object)
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
             While enumerator.MoveNext
-                Response.Write(CStr(enumerator.Key) + vbCrLf)
+                Context.Response.Write(CStr(enumerator.Key) + vbCrLf)
             End While
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ClearDiskCache AndAlso UA.IsAdmin(Context) Then
             Await _PortableMethods.DiskCache.DeleteUnusedCacheItems(New String() {})
@@ -138,10 +140,10 @@ Partial Class host
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewDiskCache AndAlso UA.IsAdmin(Context) Then
             Dim CacheItems() As String = Await _PortableMethods.DiskCache.GetCacheItems()
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
             For Index = 0 To CacheItems.Length - 1
                 Dim FileInfo As New IO.FileInfo(CacheItems(Index))
-                Response.Write("Name: " + CacheItems(Index) + " Size: " + CStr(FileInfo.Length) + " Last Modified: " + FileInfo.LastWriteTimeUtc.ToString((New Globalization.DateTimeFormatInfo).FullDateTimePattern) + vbCrLf)
+                Context.Response.Write("Name: " + CacheItems(Index) + " Size: " + CStr(FileInfo.Length) + " Last Modified: " + FileInfo.LastWriteTimeUtc.ToString((New Globalization.DateTimeFormatInfo).FullDateTimePattern) + vbCrLf)
             Next
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CreateDatabase AndAlso UA.IsAdmin(Context) Then
             SD.CreateDatabase()
@@ -156,59 +158,59 @@ Partial Class host
             Dim Store As New System.Security.Cryptography.X509Certificates.X509Store("REQUEST", System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine)
             Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.MaxAllowed)
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write("Machine Certificate Enrollment Requests:" + vbCrLf)
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.Write("Machine Certificate Enrollment Requests:" + vbCrLf)
             For Each Cert As System.Security.Cryptography.X509Certificates.X509Certificate2 In Store.Certificates
-                Response.Write(Cert.Subject + vbCrLf)
+                Context.Response.Write(Cert.Subject + vbCrLf)
             Next
             Store.Close()
             Store = New System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreName.CertificateAuthority, System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine)
             Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.MaxAllowed)
-            Response.Write("Machine Intermediate Certificate Authorities:" + vbCrLf)
+            Context.Response.Write("Machine Intermediate Certificate Authorities:" + vbCrLf)
             For Each Cert As System.Security.Cryptography.X509Certificates.X509Certificate2 In Store.Certificates
-                Response.Write(Cert.Subject + vbCrLf)
+                Context.Response.Write(Cert.Subject + vbCrLf)
             Next
             Store.Close()
             Store = New System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreName.My, System.Security.Cryptography.X509Certificates.StoreLocation.LocalMachine)
             Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.MaxAllowed)
-            Response.Write("Machine Personal:" + vbCrLf)
+            Context.Response.Write("Machine Personal:" + vbCrLf)
             For Each Cert As System.Security.Cryptography.X509Certificates.X509Certificate2 In Store.Certificates
-                Response.Write(Cert.Subject + vbCrLf)
+                Context.Response.Write(Cert.Subject + vbCrLf)
             Next
             Store.Close()
             Store = New System.Security.Cryptography.X509Certificates.X509Store("REQUEST", System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser)
             Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.MaxAllowed)
-            Response.Write("Certificate Enrollment Requests:" + vbCrLf)
+            Context.Response.Write("Certificate Enrollment Requests:" + vbCrLf)
             For Each Cert As System.Security.Cryptography.X509Certificates.X509Certificate2 In Store.Certificates
-                Response.Write(Cert.Subject + vbCrLf)
+                Context.Response.Write(Cert.Subject + vbCrLf)
             Next
             Store.Close()
             Store = New System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreName.CertificateAuthority, System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser)
             Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.MaxAllowed)
-            Response.Write("Intermediate Certificate Authorities:" + vbCrLf)
+            Context.Response.Write("Intermediate Certificate Authorities:" + vbCrLf)
             For Each Cert As System.Security.Cryptography.X509Certificates.X509Certificate2 In Store.Certificates
-                Response.Write(Cert.Subject + vbCrLf)
+                Context.Response.Write(Cert.Subject + vbCrLf)
             Next
             Store.Close()
             Store = New System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreName.My, System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser)
             Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.MaxAllowed)
-            Response.Write("Personal:" + vbCrLf)
+            Context.Response.Write("Personal:" + vbCrLf)
             For Each Cert As System.Security.Cryptography.X509Certificates.X509Certificate2 In Store.Certificates
-                Response.Write(Cert.Subject + vbCrLf)
+                Context.Response.Write(Cert.Subject + vbCrLf)
             Next
             Store.Close()
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_ViewSites AndAlso UA.IsAdmin(Context) Then
             Dim ServerManager As New Microsoft.Web.Administration.ServerManager
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
             For Each Site As Microsoft.Web.Administration.Site In ServerManager.Sites
-                Response.Write("Site Name: " + Site.Name + vbCrLf)
+                Context.Response.Write("Site Name: " + Site.Name + vbCrLf)
                 For Each Binding As Microsoft.Web.Administration.Binding In Site.Bindings
-                    Response.Write("Binding: " + Binding.BindingInformation + vbCrLf)
-                    If Not Binding.CertificateStoreName Is Nothing Then Response.Write("Store Name: " + Binding.CertificateStoreName + vbCrLf)
-                    If Not Binding.CertificateHash Is Nothing Then Response.Write("Certificate Hash: " + String.Concat(Linq.Enumerable.Select(Of Byte, String)(Binding.CertificateHash, Function(bt As Byte) bt.ToString("X2"))) + vbCrLf)
+                    Context.Response.Write("Binding: " + Binding.BindingInformation + vbCrLf)
+                    If Not Binding.CertificateStoreName Is Nothing Then Context.Response.Write("Store Name: " + Binding.CertificateStoreName + vbCrLf)
+                    If Not Binding.CertificateHash Is Nothing Then Context.Response.Write("Certificate Hash: " + String.Concat(Linq.Enumerable.Select(Of Byte, String)(Binding.CertificateHash, Function(bt As Byte) bt.ToString("X2"))) + vbCrLf)
                 Next
-                Response.Write(vbCrLf)
+                Context.Response.Write(vbCrLf)
             Next
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_EnableSSL AndAlso UA.IsAdmin(Context) Then
             Dim ServerManager As New Microsoft.Web.Administration.ServerManager
@@ -218,9 +220,9 @@ Partial Class host
             ServerManager.CommitChanges()
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_CurrentUser AndAlso UA.IsAdmin(Context) Then
             Dim encoding As System.Text.Encoding = System.Text.Encoding.ASCII
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write("Execution User: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name() + vbCrLf)
-            Response.Write("Http Context User: " + Context.User.Identity.Name() + vbCrLf)
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.Write("Execution User: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name() + vbCrLf)
+            Context.Response.Write("Http Context User: " + Context.User.Identity.Name() + vbCrLf)
         ElseIf Context.Request.QueryString.Get(PageQuery) = UserAccounts.ID_HadithRanking Then
             If UA.IsLoggedIn(Context) Then
                 UWeb.LookupClassMember("IslamSiteDatabase::UpdateRankingData").Invoke(New Object() {UserAccounts.GetUserID(Context), Context})
@@ -354,14 +356,15 @@ Partial Class host
                 End If
             End If
             If Not ResultBmp Is Nothing Then
-                Response.ContentType = "image/gif"
+                Context.Response.ContentType = "image/gif"
                 'Save crashes because it calls get_Position on the stream
                 'ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
                 Dim MemStream As New IO.MemoryStream()
                 ResultBmp.Save(MemStream, CType(If(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
                 If Bytes Is Nothing Then Await _PortableMethods.DiskCache.CacheItem(Context.Request.Url.Host + "_" + Context.Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
-                Response.Cache.SetCacheability(HttpCacheability.Public)
-                Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                Context.Response.Cache.SetCacheability(HttpCacheability.Public)
+                Context.Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                Context.Response.Flush()
             End If
             ResultBmp.Dispose()
             GC.Collect()
@@ -374,8 +377,9 @@ Partial Class host
                 encoding = System.Text.Encoding.ASCII
             End If
             'Convert tabs to spaces
-            Response.ContentType = "text/plain;charset=" + encoding.WebName
-            Response.Write(UtilityWeb.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
+            Context.Response.ContentType = "text/plain;charset=" + encoding.WebName
+            Context.Response.Write(UtilityWeb.SourceTextEncode(encoding.GetChars(buffer, encoding.GetPreamble().Length, count - encoding.GetPreamble().Length)))
+            Context.Response.Flush()
         Else
             If Context.Request.Params(PageQuery) = "Print" Then
                 IsPrint = True
@@ -389,8 +393,14 @@ Partial Class host
                             If PageLoader.IsTextItem(DirectCast(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex)) Then
                                 Dim Item As PageLoader.TextItem = CType(CType(PageSet.Pages(Index).Page(Count), PageLoader.ListItem).List.Item(SubIndex), PageLoader.TextItem)
                                 If Not Item.OnRenderFunction Is Nothing Then
-                                    Dim Output As Object = Item.OnRenderFunction.Invoke(New Object() {Item})
-                                    If UtilityWeb.IsTask(Output) Then Output = Await CType(Output, Threading.Tasks.Task(Of Object))
+                                    Dim Output As Object = Item.OnRenderFunction.Invoke(New Object() {Item, Context})
+                                    If UtilityWeb.IsTask(Output) Then
+                                        If TypeOf Output Is Threading.Tasks.Task(Of RenderArray) Then
+                                            Output = Await CType(Output, Threading.Tasks.Task(Of RenderArray))
+                                        Else
+                                            Output = Await CType(Output, Threading.Tasks.Task(Of Array()))
+                                        End If
+                                    End If
                                     If TypeOf Output Is RenderArray Then
                                         RenderItems.AddRange(CType(Output, RenderArray).Items)
                                     ElseIf TypeOf Output Is Array() Then
@@ -402,8 +412,8 @@ Partial Class host
                     ElseIf PageLoader.IsTextItem(PageSet.Pages(Index).Page(Count)) Then
                         Dim Item As PageLoader.TextItem = CType(PageSet.Pages(Index).Page(Count), PageLoader.TextItem)
                         If Not Item.OnRenderFunction Is Nothing Then
-                            Dim Output As Object = Item.OnRenderFunction.Invoke(New Object() {Item})
-                            If UtilityWeb.IsTask(Output) Then Output = Await CType(Output, Threading.Tasks.Task(Of Object))
+                            Dim Output As Object = Item.OnRenderFunction.Invoke(New Object() {Item, Context})
+                            If UtilityWeb.IsTask(Output) Then Output = Await CType(Output, Threading.Tasks.Task(Of RenderArray))
                             If TypeOf Output Is RenderArray Then
                                 RenderItems.AddRange(CType(Output, RenderArray).Items)
                             End If
@@ -414,21 +424,22 @@ Partial Class host
                     Dim RAWeb As New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
                     If Context.Request.Params(PageQuery) = "PrintFlashcardPdf" Then
                         RAWeb.OutputFlashcardPdf(MemStream, RenderItems)
-                        Response.ContentType = "application/pdf"
+                        Context.Response.ContentType = "application/pdf"
                     ElseIf Context.Request.Params(PageQuery) = "PrintPdf" Then
                         RAWeb.OutputPdf(MemStream, RenderItems)
-                        Response.ContentType = "application/pdf"
+                        Context.Response.ContentType = "application/pdf"
                     Else
                         RAWeb.OutputDocX(MemStream, RenderItems)
-                        Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        Context.Response.ContentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                     End If
-                    Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                    Context.Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                    Context.Response.Flush()
                     'Dim Bytes(4096) As Byte
                     'Dim Read As Integer
                     'MemStream.Seek(0, IO.SeekOrigin.Begin)
                     'Read = MemStream.Read(Bytes, 0, Bytes.Length)
                     'While Read <> 0
-                    '    Response.OutputStream.Write(Bytes, 0, Read)
+                    '    Context.Response.OutputStream.Write(Bytes, 0, Read)
                     '    Read = MemStream.Read(Bytes, 0, Bytes.Length)
                     'End While
                     Return
@@ -483,7 +494,7 @@ Partial Class host
             End If
             Controls.Add(New Page(_PortableMethods, UWeb, ArbData, PageSet.Pages.Item(Index), True, IsPrint))
             Await CType(Controls(Controls.Count - 1), Page).DoGetAsyncData()
-            Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
+            Context.Response.ContentType = "text/html;charset=" + System.Text.Encoding.UTF8.WebName
         End If
     End Function
     Protected Overrides Sub Render(ByVal writer As System.Web.UI.HtmlTextWriter)

@@ -27,7 +27,7 @@ Public Class frmMain
                 Return {"IslamMetadata"}
             End Get
         End Property
-        Public Function GetTemplatePath() As String Implements PortableSettings.GetTemplatePath
+        Public Function GetTemplatePath(Selector As String) As String Implements PortableSettings.GetTemplatePath
             Return GetFilePath("metadata\IslamSource.xml")
         End Function
         Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
@@ -274,8 +274,7 @@ Public Class frmMain
             RAWeb.OutputPdf("test" + CStr(Count) + ".pdf", RA.Items)
         Next
     End Function
-    Private PageSet As PageLoader
-    Private Async Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Async Function Init() As Threading.Tasks.Task
         _PortableMethods = New PortableMethods(New WindowsWebFileIO, New WindowsSettings)
         Await _PortableMethods.Init()
         ArbData = New XMLRender.ArabicData(_PortableMethods)
@@ -289,6 +288,12 @@ Public Class frmMain
         UWeb = New UtilityWeb(_PortableMethods, ArbData, Nothing, Nothing, Nothing)
         PageSet = New PageLoader(_PortableMethods, UWeb)
         Await UtilityTestCode()
+        RenderItems = (Await TR.GetQuranTextBySelection(String.Empty, 0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TR.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True)).Items
+    End Function
+    Private PageSet As PageLoader
+    Private RenderItems As List(Of RenderArray.RenderItem)
+    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Init().Wait()
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, _PortableMethods.LoadResourceString(PageSet.Pages.Item(Index).Text))
             For SubIndex = 0 To PageSet.Pages.Item(Index).Page.Count - 1
@@ -300,7 +305,7 @@ Public Class frmMain
         Dim Renderer As New MultiLangRender
         Renderer.Anchor = AnchorStyles.Left Or AnchorStyles.Top Or AnchorStyles.Right Or AnchorStyles.Bottom
         Renderer.Size = New Size(gbMain.Width, gbMain.Height)
-        Renderer.RenderArray = (Await TR.GetQuranTextBySelection(String.Empty, 0, 1, String.Empty, ArabicData.TranslitScheme.RuleBased, String.Empty, TR.GetTranslationIndex(String.Empty), True, False, False, True, False, False, True)).Items
+        Renderer.RenderArray = RenderItems
         gbMain.Controls.Add(Renderer)
     End Sub
 

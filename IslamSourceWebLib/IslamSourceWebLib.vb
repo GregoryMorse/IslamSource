@@ -42,7 +42,7 @@ Public Class InitClass
         Arb = IMInit.Arb
         ChData = IMInit.ChData
         TR = IMInit.TR
-        DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
+        DocBuild = IMInit.DocBuild
         ArbWeb = New ArabicWeb(_PortableMethods, ChData, Arb, ArbData, ArbDataWeb)
         ArbFont = New ArabicFont(_PortableMethods, ChData)
         ChDataWeb = New CachedDataWeb(ChData)

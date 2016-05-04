@@ -10,6 +10,7 @@ Public Class InitClass
     Public Arb As Arabic
     Public ChData As CachedData
     Public TR As TanzilReader
+    Public DocBuild As DocBuilder
     Public Sub New(NewPortableMethods As PortableMethods, NewArbData As ArabicData)
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
@@ -17,15 +18,18 @@ Public Class InitClass
     Public Async Function Init() As Task Implements Utility.IInitClass.Init
         Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData)
         ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
-        Await ChData.Init()
+        Await ChData.Init(False, True)
         Await Arb.Init(ChData)
         TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
+        DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
     End Function
     Public Function LookupObject(ClassName As String) As Object Implements Utility.IInitClass.LookupObject
         If ClassName = "Arabic" Then
             Return Arb
         ElseIf ClassName = "TanzilReader" Then
             Return TR
+        ElseIf ClassName = "DocBuilder" Then
+            Return DocBuild
         Else
             Return Nothing
         End If
@@ -2450,6 +2454,7 @@ Public Class CachedData
         SyncLock GrpLock
             If _SavedGroups.ContainsKey(Name) Then
                 If _SavedGroups(Name) Is Nothing Then
+                    Dim Count As Integer
                     For Count = 0 To IslamData.ArabicGroups.Length - 1
                         If Name = IslamData.ArabicGroups(Count).Name Then
                             _SavedGroups(Name) = New List(Of String)(Linq.Enumerable.Select(IslamData.ArabicGroups(Count).Text, Function(Str As String) TranslateRegEx(Str, Array.IndexOf(PatternAllowed, IslamData.ArabicGroups(Count).Name) <> -1 Or Array.IndexOf(Characteristics, IslamData.ArabicGroups(Count).Name) <> -1))).ToArray()
@@ -5541,6 +5546,7 @@ Public Class TanzilReader
         Dim Keys() As String = Nothing
         If Division = 8 Then SeperateSectionCount = ChData.IslamData.QuranSelections(Index).SelectionInfo.Length
         If Division = 9 Then
+            If ChData.LetterDictionary Is Nothing Then ChData.BuildQuranLetterIndex(Me)
             ReDim Keys(ChData.LetterDictionary(ArbData.ArabicLetters(Index).Symbol).Count - 1)
             ChData.LetterDictionary(ArbData.ArabicLetters(Index).Symbol).Keys.CopyTo(Keys, 0)
             SeperateSectionCount = ChData.LetterDictionary(ArbData.ArabicLetters(Index).Symbol).Count
