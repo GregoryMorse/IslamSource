@@ -44,7 +44,7 @@ Public Class PortableMethods
         Async Function GetCacheDirectory() As Task(Of String)
             Dim Path As String
             Path = _PortableMethods.FileIO.CombinePath(_PortableMethods.Settings.CacheDirectory, "DiskCache")
-            If Not Await _PortableMethods.FileIO.PathExists(Path) Then Await _PortableMethods.FileIO.CreateDirectory(Path)
+            If Not (Await _PortableMethods.FileIO.PathExists(Path)) Then Await _PortableMethods.FileIO.CreateDirectory(Path)
             Return Path
         End Function
         Public Async Function GetCacheItem(ByVal Name As String, ByVal ModifiedUtc As Date) As Task(Of Byte())

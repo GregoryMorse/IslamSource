@@ -292,8 +292,8 @@ Public Class frmMain
     End Function
     Private PageSet As PageLoader
     Private RenderItems As List(Of RenderArray.RenderItem)
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Init().Wait()
+    Private Async Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Await Init()
         For Index = 0 To PageSet.Pages.Count - 1
             Dim newNode As TreeNode = tvwMain.Nodes.Add(PageSet.Pages.Item(Index).PageName, _PortableMethods.LoadResourceString(PageSet.Pages.Item(Index).Text))
             For SubIndex = 0 To PageSet.Pages.Item(Index).Page.Count - 1
