@@ -2983,6 +2983,23 @@ Public Class CachedData
         End Function
     End Class
     Public MorphLines As String()
+    Public Function GetWritingHamza(StrBefore As String, StrAfter As String, bUthmani As Boolean) As String
+        Dim Rules As IslamData.RuleTranslationCategory.RuleTranslation() = GetRuleSet(If(bUthmani, "HamzaWriting", "SimpleScriptHamzaWriting"))
+        Dim IndexToVerse As Integer()() = Nothing
+        Dim Text As String = StrBefore + ArabicData.ArabicLetterHamza + StrAfter
+        Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, GetPattern("Hamzas"))
+        For MainCount = 0 To Rules.Length - 1
+            Matches = System.Text.RegularExpressions.Regex.Matches(Text, Rules(MainCount).Match)
+            Dim NegativeCount As Integer = 0
+            For Count = 0 To Matches.Count - 1
+                If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
+                ElseIf Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index = StrBefore.Length Then
+                    Return Matches(Count).Result(Rules(MainCount).Evaluator).Remove(0, StrBefore.Length)
+                End If
+            Next
+        Next
+        Return String.Empty
+    End Function
     Public Sub GetMorphologicalDataByVerbScale()
         Dim Lines As String() = MorphLines
         Dim RootDictionary As New Dictionary(Of String, String())
@@ -3417,7 +3434,7 @@ Public Class CachedData
                             (BaseChapter <> Chapter OrElse
                             FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(1) <= Verse)) OrElse
                             (FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) > BaseChapter AndAlso
-                            FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) < Chapter) OrElse
+                            FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) <Chapter) OrElse
                             (FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) = Chapter AndAlso
                             FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(1) <= Verse) Then
                             UniCount += 1
