@@ -273,65 +273,67 @@ var rs, next, str = '', sura = 1; func = function() { if (next.document.readySta
 			<transform from="{MatchThirdPerson}" text="$1{ArabicLetterHeh}{ArabicDamma}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="TheirFeminine" grammar="posspron,3fp,noun|verb"></transform>
 			<transform from="({MatchFathaKasraYeh}|{MatchKasra})" text="$1{ArabicLetterHeh}{ArabicKasra}{ArabicLetterNoon}{ArabicShadda}{ArabicFatha}" id="TheirFeminineYehKasra" grammar="posspron,3fp,noun|verb"></transform>
 
-			<transform text="faEala" id="VerbTypeIPastHePattern" grammar="pastverbi,3ms"></transform>
-			<transform text="faEalaA" id="VerbTypeIPastTheyBothMasculinePattern" grammar="pastverbi,3md"></transform>
-			<transform text="faEaluwA@" id="VerbTypeIPastTheyMasculinePattern" grammar="pastverbi,3mp"></transform>
-			<transform text="faEalat" id="VerbTypeIPastShePattern" grammar="pastverbi,3fs"></transform>
-			<transform text="faEalataA" id="VerbTypeIPastTheyBothFemininePattern" grammar="pastverbi,3fd"></transform>
-			<transform text="faEalona" id="VerbTypeIPastTheyFemininePattern" grammar="pastverbi,3fp"></transform>
-			<transform text="faEalota" id="VerbTypeIPastYouMasculinePattern" grammar="pastverbi,2ms"></transform>
-			<transform text="faEalotumaA" id="VerbTypeIPastYouBothPattern" grammar="pastverbi,2md|2fd"></transform>
-			<transform text="faEalotum" id="VerbTypeIPastYouAllMasculinePattern" grammar="pastverbi,2mp"></transform>
-			<transform text="faEaloti" id="VerbTypeIPastYouFemininePattern" grammar="pastverbi,2fs"></transform>
-			<transform text="faEalotun~a" id="VerbTypeIPastYouAllFemininePattern" grammar="pastverbi,2fp"></transform>
-			<transform text="faEalotu" id="VerbTypeIPastIPattern" grammar="pastverbi,1ms|1fs"></transform>
-			<transform text="faEalonaA" id="VerbTypeIPastWePattern" grammar="pastverbi,1md|1fd|1mp|1fp"></transform>
+			<transform from="" text="$1a" id="VerbTypeIPastHePattern" grammar="pastverb,3ms"></transform>
+			<transform from="" text="$1aA" id="VerbTypeIPastTheyBothMasculinePattern" grammar="pastverb,3md"></transform>
+			<transform from="" text="$1uwA@" id="VerbTypeIPastTheyMasculinePattern" grammar="pastverb,3mp"></transform>
+			<transform from="" text="$1at" id="VerbTypeIPastShePattern" grammar="pastverb,3fs"></transform>
+			<transform from="" text="$1ataA" id="VerbTypeIPastTheyBothFemininePattern" grammar="pastverb,3fd"></transform>
+			<transform from="" text="$1ona" id="VerbTypeIPastTheyFemininePattern" grammar="pastverb,3fp"></transform>
+			<transform from="" text="$1ota" id="VerbTypeIPastYouMasculinePattern" grammar="pastverb,2ms"></transform>
+			<transform from="" text="$1otumaA" id="VerbTypeIPastYouBothPattern" grammar="pastverb,2md|2fd"></transform>
+			<transform from="" text="$1otum" id="VerbTypeIPastYouAllMasculinePattern" grammar="pastverb,2mp"></transform>
+			<transform from="" text="$1oti" id="VerbTypeIPastYouFemininePattern" grammar="pastverb,2fs"></transform>
+			<transform from="" text="$1otun~a" id="VerbTypeIPastYouAllFemininePattern" grammar="pastverb,2fp"></transform>
+			<transform from="" text="$1otu" id="VerbTypeIPastIPattern" grammar="pastverb,1ms|1fs"></transform>
+			<transform from="" text="$1onaA" id="VerbTypeIPastWePattern" grammar="pastverb,1md|1fd|1mp|1fp"></transform>
 
-			<transform text="yafoEalu" id="VerbTypeIPresentHeIndicativePattern" grammar="presverbi,3ms,nom"></transform>
-			<transform text="yafoEala" id="VerbTypeIPresentHeSubjunctivePattern" grammar="presverbi,3ms,acc"></transform>
-			<transform text="yafoEalo" id="VerbTypeIPresentHeJussivePattern" grammar="presverbi,3ms,prespos"></transform>
-			<transform text="yafoEalaAni" id="VerbTypeIPresentTheyBothMasculineIndicativePattern" grammar="presverbi,3md,nom"></transform>
-			<transform text="yafoEalaA" id="VerbTypeIPresentTheyBothMasculinePattern" grammar="presverbi,3md,acc|prespos"></transform>
-			<transform text="yafoEaluwna" id="VerbTypeIPresentTheyMasculineIndicativePattern" grammar="presverbi,3mp,nom"></transform>
-			<transform text="yafoEaluwA" id="VerbTypeIPresentTheyMasculinePattern" grammar="presverbi,3mp,acc|prespos"></transform>
-			<transform text="tafoEalu" id="VerbTypeIPresentSheIndicativePattern" grammar="presverbi,3fs|2ms,nom"></transform>
-			<transform text="tafoEala" id="VerbTypeIPresentSheSubjunctivePattern" grammar="presverbi,3fs|2ms,acc"></transform>
-			<transform text="tafoEalo" id="VerbTypeIPresentSheJussivePattern" grammar="presverbi,3fs|2ms,prespos"></transform>
-			<transform text="tafoEalaAni" id="VerbTypeIPresentTheyBothFeminineIndicativePattern" grammar="presverbi,3fd|2md|2fd,nom"></transform>
-			<transform text="tafoEalaA" id="VerbTypeIPresentTheyBothFemininePattern" grammar="presverbi,3fd|2md|2fd,acc|prespos"></transform>
-			<transform text="yafoEalona" id="VerbTypeIPresentTheyFemininePattern" grammar="presverbi,3fp"></transform>
-			<transform text="tafoEaluwna" id="VerbTypeIPresentYouAllMasculineIndicativePattern" grammar="presverbi,2mp,nom"></transform>
-			<transform text="tafoEaluwA" id="VerbTypeIPresentYouAllMasculinePattern" grammar="presverbi,2mp,acc|prespos"></transform>
-			<transform text="tafoEaliyna" id="VerbTypeIPresentYouFeminineIndicativePattern" grammar="presverbi,2fs,nom"></transform>
-			<transform text="tafoEaliY" id="VerbTypeIPresentYouFemininePattern" grammar="presverbi,2fs,acc|prespos"></transform>
-			<transform text="tafoEalona" id="VerbTypeIPresentYouAllFemininePattern" grammar="presverbi,2fp"></transform>
-			<transform text="&gt;afoEalu" id="VerbTypeIPresentIIndicativePattern" grammar="presverbi,1ms|1fs,nom"></transform>
-			<transform text="&gt;afoEala" id="VerbTypeIPresentISubjunctivePattern" grammar="presverbi,1ms|1fs,acc"></transform>
-			<transform text="&gt;afoEalo" id="VerbTypeIPresentIJussivePattern" grammar="presverbi,1ms|1fs,prespos"></transform>
-			<transform text="nafoEalu" id="VerbTypeIPresentWeIndicativePattern" grammar="presverbi,1md|1fd|1mp|1fp,nom"></transform>
-			<transform text="nafoEala" id="VerbTypeIPresentWeSubjunctivePattern" grammar="presverbi,1md|1fd|1mp|1fp,acc"></transform>
-			<transform text="nafoEalo" id="VerbTypeIPresentWeJussivePattern" grammar="presverbi,1md|1fd|1mp|1fp,prespos"></transform>
+			<transform from="" text="ya$1u" id="VerbTypeIPresentHeIndicativePattern" grammar="presverb,3ms,nom"></transform>
+			<transform from="" text="ya$1a" id="VerbTypeIPresentHeSubjunctivePattern" grammar="presverb,3ms,acc"></transform>
+			<transform from="" text="ya$1o" id="VerbTypeIPresentHeJussivePattern" grammar="presverb,3ms,prespos"></transform>
+			<transform from="" text="ya$1aAni" id="VerbTypeIPresentTheyBothMasculineIndicativePattern" grammar="presverb,3md,nom"></transform>
+			<transform from="" text="ya$1aA" id="VerbTypeIPresentTheyBothMasculinePattern" grammar="presverb,3md,acc|prespos"></transform>
+			<transform from="" text="ya$1uwna" id="VerbTypeIPresentTheyMasculineIndicativePattern" grammar="presverb,3mp,nom"></transform>
+			<transform from="" text="ya$1uwA" id="VerbTypeIPresentTheyMasculinePattern" grammar="presverb,3mp,acc|prespos"></transform>
+			<transform from="" text="ta$1u" id="VerbTypeIPresentSheIndicativePattern" grammar="presverb,3fs|2ms,nom"></transform>
+			<transform from="" text="ta$1a" id="VerbTypeIPresentSheSubjunctivePattern" grammar="presverb,3fs|2ms,acc"></transform>
+			<transform from="" text="ta$1o" id="VerbTypeIPresentSheJussivePattern" grammar="presverb,3fs|2ms,prespos"></transform>
+			<transform from="" text="ta$1aAni" id="VerbTypeIPresentTheyBothFeminineIndicativePattern" grammar="presverb,3fd|2md|2fd,nom"></transform>
+			<transform from="" text="ta$1aA" id="VerbTypeIPresentTheyBothFemininePattern" grammar="presverb,3fd|2md|2fd,acc|prespos"></transform>
+			<transform from="" text="ya$1ona" id="VerbTypeIPresentTheyFemininePattern" grammar="presverb,3fp"></transform>
+			<transform from="" text="ta$1uwna" id="VerbTypeIPresentYouAllMasculineIndicativePattern" grammar="presverb,2mp,nom"></transform>
+			<transform from="" text="ta$1uwA" id="VerbTypeIPresentYouAllMasculinePattern" grammar="presverb,2mp,acc|prespos"></transform>
+			<transform from="" text="ta$1iyna" id="VerbTypeIPresentYouFeminineIndicativePattern" grammar="presverb,2fs,nom"></transform>
+			<transform from="" text="ta$1iY" id="VerbTypeIPresentYouFemininePattern" grammar="presverb,2fs,acc|prespos"></transform>
+			<transform from="" text="ta$1ona" id="VerbTypeIPresentYouAllFemininePattern" grammar="presverb,2fp"></transform>
+			<transform from="" text="&gt;a$1u" id="VerbTypeIPresentIIndicativePattern" grammar="presverb,1ms|1fs,nom"></transform>
+			<transform from="" text="&gt;a$1a" id="VerbTypeIPresentISubjunctivePattern" grammar="presverb,1ms|1fs,acc"></transform>
+			<transform from="" text="&gt;a$1o" id="VerbTypeIPresentIJussivePattern" grammar="presverb,1ms|1fs,prespos"></transform>
+			<transform from="" text="na$1u" id="VerbTypeIPresentWeIndicativePattern" grammar="presverb,1md|1fd|1mp|1fp,nom"></transform>
+			<transform from="" text="na$1a" id="VerbTypeIPresentWeSubjunctivePattern" grammar="presverb,1md|1fd|1mp|1fp,acc"></transform>
+			<transform from="" text="na$1o" id="VerbTypeIPresentWeJussivePattern" grammar="presverb,1md|1fd|1mp|1fp,prespos"></transform>
 			
-			<transform text="waEala" id="VerbTypeIModelWawPastHePattern" grammar="pastverbi,3ms"></transform>
-			<transform text="yaEilu" id="VerbTypeIModelWawPresentHeIndicativePattern" grammar="presverbi,3ms"></transform>
-			<transform text="faAla" id="VerbTypeIHollowYaaPastHePattern" grammar="pastverbi,3ms"></transform>
-			<transform text="yaEiylu" id="VerbTypeIHollowYaaPresentHeIndicativePattern" grammar="presverbi,3ms"></transform>
-			<transform text="faEaY" id="VerbTypeIIncompleteYaaPastHePattern" grammar="pastverbi,3ms"></transform>
-			<transform text="yafoEiY" id="VerbTypeIIncompleteYaaPresentHeIndicativePattern" grammar="presverbi,3ms"></transform>
-			<transform text="faAla" id="VerbTypeIHollowWawPastHePattern" grammar="pastverbi,3ms"></transform>
-			<transform text="yaEuwlu" id="VerbTypeIHollowWawPresentHeIndicativePattern" grammar="presverbi,3ms"></transform>
-			<transform text="faEaA" id="VerbTypeIIncompleteWawPastHePattern" grammar="pastverbi,3ms"></transform>
-			<transform text="yafoEuw" id="VerbTypeIIncompleteWawPresentHeIndicativePattern" grammar="presverbi,3ms"></transform>
-			<transform text="faEa['hHgEx]a|fa['hHgEx]ala" id="VerbTypeIThroatPastHePattern" grammar="pastverbi,3ms"></transform>
-			<transform text="yafoEala" id="VerbTypeIThroatPresentHeIndicativePattern" grammar="presverbi,3ms"></transform>
+			<transform from="" text="" id="VerbTypeIModelWawPastHePattern" grammar="pastverb,i,3ms"></transform>
+			<transform from="wo(?=E(?:a|i)l)" text="" id="VerbTypeIModelWawPresentHeIndicativePattern" grammar="presverb,commverb,i.1,i.2,i.4,3ms"></transform>
+			<transform from="f(?:aw|ay)a(?=l)" text="$1$2A" id="VerbTypeIHollowYaaPastHePattern" grammar="pastverb,i,3ms"></transform>
+			<transform from="f(?:ow|oy)al" text="$1$2A" id="VerbTypeIHollowYaaPresentHeIndicativePattern" grammar="presverb,commverb,i,3ms"></transform>
+			<transform from="f(?:ow|oy)il" text="$1$2y" id="VerbTypeIHollowYaaPresentHeIndicativePattern" grammar="presverb,commverb,i,3ms"></transform>
+			<transform from="f(?:ow|oy)ul" text="$1$2w" id="VerbTypeIHollowYaaPresentHeIndicativePattern" grammar="presverb,commverb,i,3ms"></transform>
+			<transform from="faE(?:a|i)y" text="$1Y" id="VerbTypeIIncompleteYaaPastHePattern" grammar="pastverb,i,3ms"></transform>
+			<transform from="foE(?:a|i)y" text="$1Y" id="VerbTypeIIncompleteYaaPresentHeIndicativePattern" grammar="presverb,i,3ms"></transform>
+			<transform from="" text="faAla" id="VerbTypeIHollowWawPastHePattern" grammar="pastverb,i,3ms"></transform>
+			<transform from="" text="yaEuwlu" id="VerbTypeIHollowWawPresentHeIndicativePattern" grammar="presverb,i,3ms"></transform>
+			<transform from="" text="faEaA" id="VerbTypeIIncompleteWawPastHePattern" grammar="pastverb,i,3ms"></transform>
+			<transform from="" text="yafoEuw" id="VerbTypeIIncompleteWawPresentHeIndicativePattern" grammar="presverb,i,3ms"></transform>
+			<transform from="" text="faEa['hHgEx]a|fa['hHgEx]ala" id="VerbTypeIThroatPastHePattern" grammar="pastverb,i,3ms"></transform>
+			<transform from="" text="yafoEala" id="VerbTypeIThroatPresentHeIndicativePattern" grammar="presverb,i,3ms"></transform>
 
-			<transform text="{foE\1lo" id="VerbTypeICommandYouMasculinePattern" grammar="commverbi,ms"></transform>
-			<transform text="{foE\1laA" id="VerbTypeICommandYouBothPattern" grammar="commverbi,md|fd"></transform>
-			<transform text="{foE\1luwA" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,mp"></transform>
-			<transform text="{foE\1liY" id="VerbTypeICommandYouFemininePattern" grammar="commverbi,fs"></transform>
-			<transform text="{foE\1lona" id="VerbTypeICommandYouAllFemininePattern" grammar="commverbi,fp"></transform>
+			<transform from="" text="{$1o" id="VerbTypeICommandYouMasculinePattern" grammar="commverbi,ms"></transform>
+			<transform from="" text="{$1aA" id="VerbTypeICommandYouBothPattern" grammar="commverbi,md|fd"></transform>
+			<transform from="" text="{$1uwA" id="VerbTypeICommandYouAllMasculinePattern" grammar="commverbi,mp"></transform>
+			<transform from="" text="{$1iY" id="VerbTypeICommandYouFemininePattern" grammar="commverbi,fs"></transform>
+			<transform from="" text="{$1ona" id="VerbTypeICommandYouAllFemininePattern" grammar="commverbi,fp"></transform>
 
-			<transform text="laA tafoE\1lo" id="VerbTypeIForbiddingYouMasculinePattern" grammar="forbidverbi,ms"></transform>
+			<transform from="" text="laA ta$1o" id="VerbTypeIForbiddingYouMasculinePattern" grammar="forbidverbi,ms"></transform>
 			<transform text="fuEila" id="VerbTypeIPassivePastHePattern" grammar="pasvpastverbi,ms"></transform>
 			<transform text="yufoEalu" id="VerbTypeIPassivePresentHeMasculinePattern" grammar="pasvpresverbi,ms"></transform>
 			<transform text="faAEilN" id="VerbTypeIVerbalDoerPattern" grammar="doernounverbi,ms"></transform>
