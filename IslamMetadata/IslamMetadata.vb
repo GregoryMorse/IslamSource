@@ -288,11 +288,11 @@ Public Class Arabic
             Next
         End If
     End Function
-    Public Function GetRecitationSymbol(Index As Integer) As String
-        Return ArbData.ArabicLetters(Index).UnicodeName + ArabicData.LeftToRightOverride + " (" + ArabicData.PopDirectionalFormatting + ArbData.FixStartingCombiningSymbol(ArbData.ArabicLetters(Index).Symbol) + ArabicData.LeftToRightOverride + ")" + ArabicData.PopDirectionalFormatting
+    Public Function GetRecitationSymbol(Index As Integer, SchemeType As ArabicData.TranslitScheme, Scheme As String) As String
+        Return ArbData.ArabicLetters(Index).UnicodeName + " (" + ArbData.FixStartingCombiningSymbol(ArbData.ArabicLetters(Index).Symbol) + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + TransliterateToScheme(ArbData.ArabicLetters(Index).Symbol, SchemeType, Scheme, Arabic.FilterMetadataStops(ArbData.ArabicLetters(Index).Symbol, GetMetarules(ArbData.ArabicLetters(Index).Symbol, ChData.RuleMetas("Normal")), Nothing)))
     End Function
-    Public Function GetRecitationSymbols() As Array()
-        Return New List(Of Object())(Linq.Enumerable.Select(ChData.RecitationSymbols, Function(Ch As String) New Object() {ArbData.ArabicLetters(ArbData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName + ArabicData.LeftToRightOverride + " (" + ArabicData.PopDirectionalFormatting + ArbData.FixStartingCombiningSymbol(Ch) + ArabicData.LeftToRightOverride + ")" + ArabicData.PopDirectionalFormatting, ArbData.FindLetterBySymbol(Ch.Chars(0))})).ToArray()
+    Public Function GetRecitationSymbols(SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
+        Return New List(Of Object())(Linq.Enumerable.Select(ChData.RecitationSymbols, Function(Ch As String) New Object() {ArbData.ArabicLetters(ArbData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName, " (" + ArbData.FixStartingCombiningSymbol(Ch) + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + TransliterateToScheme(Ch, SchemeType, Scheme, Arabic.FilterMetadataStops(Ch, GetMetarules(Ch, ChData.RuleMetas("Normal")), Nothing))), ArbData.FindLetterBySymbol(Ch.Chars(0))})).ToArray()
     End Function
     Private _BuckwalterMap As Dictionary(Of Char, Integer)
     Public Function BuckwalterMap() As Dictionary(Of Char, Integer)
@@ -450,7 +450,7 @@ Public Class Arabic
         Return LiteralString.ToString()
     End Function
     Structure RuleMetadata
-        Sub New(NewIndex As Integer, NewLength As Integer, NewType As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs(), NewOrigOrder As Integer)
+        Sub New(NewIndex As Integer, NewLength As Integer, ByVal NewType As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs(), NewOrigOrder As Integer)
             Index = NewIndex
             Length = NewLength
             Type = NewType
@@ -886,25 +886,23 @@ Public Class Arabic
         Dim Rules As New List(Of RuleMetadata)
         For Count As Integer = 0 To CacheIn.Length - 1
             Dim KeyVal As String() = CacheIn(Count).Split("="c)
-            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(KeyVal(0).Substring(0, Math.Max(0, Math.Min(KeyVal(0).IndexOf("["c), KeyVal(0).IndexOf("{"c)))).Split("|"c), Function(Item) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Item})).ToArray()
-            Dim Vals As Integer()() = New List(Of Integer())(Linq.Enumerable.Select(KeyVal(1).Split(","c), Function(Item) New List(Of Integer)(Linq.Enumerable.Select(Item.Split(":"c), Function(Frag) Integer.Parse(Frag))).ToArray())).ToArray()
+            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(KeyVal(0).Substring(0, Math.Min(If(KeyVal(0).IndexOf("["c) = -1, KeyVal(0).Length, KeyVal(0).IndexOf("["c)), If(KeyVal(0).IndexOf("{"c) = -1, KeyVal(0).Length, KeyVal(0).IndexOf("{"c)))).Split("|"c), Function(Item) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Item})).ToArray()
+            Dim Vals As Integer()() = New List(Of Integer())(Linq.Enumerable.Select(KeyVal(1).Split(","c), Function(Item) New List(Of Integer)(If(Item Is Nothing Or Item = String.Empty, {}, Linq.Enumerable.Select(Item.Split(":"c), Function(Frag) Integer.Parse(Frag)))).ToArray())).ToArray()
             Dim Length As Integer = 1
-            For VerseCount As Integer = 0 To Vals.Length - 1
-                If VerseCount <> Vals.Length - 1 AndAlso Vals(VerseCount)(0) = Vals(VerseCount + 1)(0) AndAlso Vals(VerseCount)(1) = Vals(VerseCount + 1)(1) AndAlso Vals(VerseCount)(2) = Vals(VerseCount + 1)(2) Then
-                    Length += 1
-                Else
-                    Dim Ch As RuleMetadata() = If(KeyVal(0).IndexOf("["c) = -1, Nothing, New List(Of RuleMetadata)(Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("["c) + 1, KeyVal(0).IndexOf("]"c) - KeyVal(0).IndexOf("["c) - 1).Split(","c), Function(Item)
-                                                                                                                                                                                                                                                                   Dim Pieces As String() = Item.Split(";"c)
-                                                                                                                                                                                                                                                                   Return New RuleMetadata(CInt(Pieces(1)), CInt(Pieces(2)), New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(Pieces(0).Split(" "c), Function(It) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = It})).ToArray(), 0)
-                                                                                                                                                                                                                                                               End Function))).ToArray()
-                    Dim Dep As RuleMetadata() = If(KeyVal(0).IndexOf("{"c) = -1, Nothing, New List(Of RuleMetadata)(Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("{"c) + 1, KeyVal(0).IndexOf("}"c) - KeyVal(0).IndexOf("{"c) - 1).Split(","c), Function(Item)
-                                                                                                                                                                                                                                                                    Dim Pieces As String() = Item.Split(";"c)
-                                                                                                                                                                                                                                                                    Return New RuleMetadata(CInt(Pieces(1)), CInt(Pieces(2)), New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(Pieces(0).Split(" "c), Function(It) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = It})).ToArray(), 0)
-                                                                                                                                                                                                                                                                End Function))).ToArray()
-                    Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {Vals(VerseCount)(0), Vals(VerseCount)(1), Vals(VerseCount)(2)}, New TanzilReader.QuranWordChapterVerseWordComparer)
-                    Rules.Add(New RuleMetadata(IndexToVerse(Idx)(4), Length, Key, -1) With {.Children = Ch, .Dependencies = Dep})
-                    Length = 1
-                End If
+            Dim VerseCount As Integer
+            For VerseCount = 0 To Vals.Length - 1
+                Dim Ch As RuleMetadata() = If(KeyVal(0).IndexOf("["c) = -1, Nothing, New List(Of RuleMetadata)(Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("["c) + 1, KeyVal(0).IndexOf("]"c) - KeyVal(0).IndexOf("["c) - 1).Split(","c), Function(Item)
+                                                                                                                                                                                                                                                               Dim Pieces As String() = Item.Split(";"c)
+                                                                                                                                                                                                                                                               Return New RuleMetadata(CInt(Pieces(1)), CInt(Pieces(2)), New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(Pieces(0).Split(" "c), Function(It) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = It})).ToArray(), 0)
+                                                                                                                                                                                                                                                           End Function)).ToArray())
+                Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {Vals(VerseCount)(0), Vals(VerseCount)(1), Vals(VerseCount)(2)}, New TanzilReader.QuranWordChapterVerseWordComparer)
+                If Idx < 0 Then Idx = (Idx Xor -1) - 1 'gaps based off previous word
+                Dim Dep As RuleMetadata() = If(KeyVal(0).IndexOf("{"c) = -1, Nothing, New List(Of RuleMetadata)(Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("{"c) + 1, KeyVal(0).IndexOf("}"c) - KeyVal(0).IndexOf("{"c) - 1).Split(","c), Function(Item)
+                                                                                                                                                                                                                                                                Dim Pieces As String() = Item.Split(";"c)
+                                                                                                                                                                                                                                                                Return New RuleMetadata(CInt(Pieces(1)) + IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CInt(Pieces(2)), New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(Pieces(0).Split(" "c), Function(It) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = It})).ToArray(), 0)
+                                                                                                                                                                                                                                                            End Function)).ToArray())
+                Rules.Add(New RuleMetadata(IndexToVerse(Idx)(3) + Vals(VerseCount)(3), Vals(VerseCount)(4), Key, -1) With {.Children = Ch, .Dependencies = Dep})
+                Length = 1
             Next
         Next
         Return Rules
@@ -913,7 +911,7 @@ Public Class Arabic
         Dim RuleDictionary As New Dictionary(Of String, List(Of RuleMetadata))
         For Count As Integer = 0 To RuleMetadata.Count - 1
             Dim Idx As Integer = Count
-            Dim Key As String = String.Join("|"c, Linq.Enumerable.Select(RuleMetadata(Count).Type, Function(It) It.RuleName)) + If(RuleMetadata(Count).Children.Length <> 0, "[" + String.Join(","c, Linq.Enumerable.Select(RuleMetadata(Count).Children, Function(Item) String.Join(" "c, Linq.Enumerable.Select(Item.Type, Function(It) It.RuleName)) + ";" + CStr(Item.Index - RuleMetadata(Idx).Index) + ";" + CStr(Item.Length))) + "]", String.Empty) + If(RuleMetadata(Count).Dependencies.Length <> 0, "{" + String.Join(","c, Linq.Enumerable.Select(RuleMetadata(Count).Dependencies, Function(Item) String.Join(" "c, Linq.Enumerable.Select(Item.Type, Function(It) It.RuleName)) + ";" + CStr(Item.Index - RuleMetadata(Idx).Index) + ";" + CStr(Item.Length))) + "}", String.Empty)
+            Dim Key As String = String.Join("|"c, Linq.Enumerable.Select(RuleMetadata(Count).Type, Function(It) It.RuleName)) + If(Not RuleMetadata(Count).Children Is Nothing AndAlso RuleMetadata(Count).Children.Length <> 0, "[" + String.Join(","c, Linq.Enumerable.Select(RuleMetadata(Count).Children, Function(Item) String.Join(" "c, Linq.Enumerable.Select(Item.Type, Function(It) It.RuleName)) + ";" + CStr(Item.Index) + ";" + CStr(Item.Length))) + "]", String.Empty) + If(Not RuleMetadata(Count).Dependencies Is Nothing AndAlso RuleMetadata(Count).Dependencies.Length <> 0, "{" + String.Join(","c, Linq.Enumerable.Select(RuleMetadata(Count).Dependencies, Function(Item) String.Join(" "c, Linq.Enumerable.Select(Item.Type, Function(It) It.RuleName)) + ";" + CStr(Item.Index - RuleMetadata(Idx).Index) + ";" + CStr(Item.Length))) + "}", String.Empty)
             If Not RuleDictionary.ContainsKey(Key) Then RuleDictionary.Add(Key, New List(Of RuleMetadata))
             RuleDictionary(Key).Add(RuleMetadata(Count))
         Next
@@ -923,18 +921,18 @@ Public Class Arabic
             Str.Append(KeyVal.Key)
             Str.Append("="c)
             For DictCount As Integer = 0 To KeyVal.Value.Count - 1
-                For SubCount As Integer = 0 To KeyVal.Value(DictCount).Length - 1
-                    Dim Index As Integer = Array.BinarySearch(IndexToVerse, KeyVal.Value(DictCount).Index + SubCount, New TanzilReader.QuranWordIndexComparer)
-                    If Index < 0 Then Index = (Index Xor -1) - 1 'gaps based off previous word
-                    If SubCount <> 0 Then Str.Append(","c)
-                    Str.Append(CStr(IndexToVerse(Index)(0)))
-                    Str.Append(":"c)
-                    Str.Append(CStr(IndexToVerse(Index)(1)))
-                    Str.Append(":"c)
-                    Str.Append(CStr(IndexToVerse(Index)(2)))
-                    Str.Append(":"c)
-                    Str.Append(CStr(KeyVal.Value(DictCount).Index + SubCount - IndexToVerse(Index)(3)))
-                Next
+                Dim Index As Integer = Array.BinarySearch(IndexToVerse, KeyVal.Value(DictCount).Index, New TanzilReader.QuranWordIndexComparer)
+                If Index < 0 Then Index = (Index Xor -1) - 1 'gaps based off previous word
+                If DictCount <> 0 Then Str.Append(","c)
+                Str.Append(CStr(IndexToVerse(Index)(0)))
+                Str.Append(":"c)
+                Str.Append(CStr(IndexToVerse(Index)(1)))
+                Str.Append(":"c)
+                Str.Append(CStr(IndexToVerse(Index)(2)))
+                Str.Append(":"c)
+                Str.Append(CStr(KeyVal.Value(DictCount).Index - IndexToVerse(Index)(3)))
+                Str.Append(":"c)
+                Str.Append(CStr(KeyVal.Value(DictCount).Length))
             Next
             CacheOut.Add(Str.ToString())
         Next
@@ -4883,7 +4881,7 @@ Public Class TanzilReader
         ElseIf Division = 8 Then
             Return GetImportantName(Part)
         ElseIf Division = 9 Then
-            Return Arb.GetRecitationSymbol(Part)
+            Return Arb.GetRecitationSymbol(Part, SchemeType, Scheme)
         ElseIf Division = 10 Then
             Return GetRecitationRule(Part)
         End If
@@ -4911,7 +4909,7 @@ Public Class TanzilReader
         ElseIf Division = 8 Then
             Return GetImportantNames()
         ElseIf Division = 9 Then
-            Return Arb.GetRecitationSymbols()
+            Return Arb.GetRecitationSymbols(SchemeType, Scheme)
         ElseIf Division = 10 Then
             Return GetRecitationRules()
         End If
@@ -5617,8 +5615,8 @@ Public Class TanzilReader
         Next
     End Sub
     Public Function QuranTextCombiner(XMLDoc As Xml.Linq.XDocument, ByRef IndexToVerse As Integer()(), Optional UseBismillah As Boolean = True, Optional NoRef As Boolean = False, Optional StartChapter As Integer = -1, Optional BaseVerse As Integer = -1, Optional WordNumber As Integer = -1, Optional EndChapter As Integer = -1, Optional ExtraVerseNumber As Integer = -1, Optional EndWordNumber As Integer = -1) As String
-        Dim Verses As List(Of String()) = GetQuranText(XMLDoc, StartChapter, EndChapter, BaseVerse, If(ExtraVerseNumber <> 0, ExtraVerseNumber, BaseVerse))
-        If EndChapter = 0 Or EndChapter = StartChapter Then
+        Dim Verses As New List(Of String())
+        If EndChapter = 0 Or EndChapter <> -1 And EndChapter = StartChapter Then
             Verses.Add(GetQuranText(ChData.XMLDocMain, StartChapter, BaseVerse, If(ExtraVerseNumber <> 0, ExtraVerseNumber, BaseVerse)))
         Else
             Verses.AddRange(GetQuranText(ChData.XMLDocMain, StartChapter, BaseVerse, EndChapter, ExtraVerseNumber))
@@ -5651,20 +5649,22 @@ Public Class TanzilReader
             For SubCount As Integer = 0 To Verses(Count).Length - 1
                 Dim Words As String()
                 Dim Index As Integer
+                Dim ChunkCount As Integer
+                Dim MarkerCount As Integer
                 If SubCount = 0 And UseBismillah Then
                     Dim Node As Xml.Linq.XAttribute
                     Node = GetTextVerse(GetTextChapter(XMLDoc, If(StartChapter = -1, 1, StartChapter) + Count), 1).Attribute("bismillah")
                     If Not Node Is Nothing Then
                         Words = Node.Value.Split(" "c)
                         Index = Str.Length
-                        Dim ChunkCount As Integer = 1
-                        Dim MarkerCount As Integer = 0
+                        ChunkCount = 1
+                        MarkerCount = 0
                         For WordCount = 0 To Words.Length - 1
                             If Words(WordCount).Length = 1 Then
                                 If WordCount <> 0 OrElse Words(WordCount).Length <> 1 Then ChunkCount += 1
                                 MarkerCount += 1
                             Else
-                                IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, WordCount - MarkerCount + 1, Index, Words(WordCount).Length, ChunkCount})
+                                IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, 0, WordCount - MarkerCount + 1, Index, Words(WordCount).Length, ChunkCount})
                             End If
                             Index += Words(WordCount).Length + 1
                         Next
@@ -5673,8 +5673,15 @@ Public Class TanzilReader
                 End If
                 Words = Verses(Count)(SubCount).Split(" "c)
                 Index = Str.Length
+                ChunkCount = 1
+                MarkerCount = 0
                 For WordCount = 0 To Words.Length - 1
-                    IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, WordCount + 1, Index, Words(WordCount).Length})
+                    If Words(WordCount).Length = 1 Then
+                        If WordCount <> 0 OrElse Words(WordCount).Length <> 1 Then ChunkCount += 1
+                        MarkerCount += 1
+                    Else
+                        IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, WordCount - MarkerCount + 1, Index, Words(WordCount).Length, ChunkCount})
+                    End If
                     Index += Words(WordCount).Length + 1
                 Next
                 Str.Append(Verses(Count)(SubCount) + Arb.TransliterateFromBuckwalter(" =" + CStr(If(BaseVerse = -1, 1, BaseVerse) + SubCount)) + " ")
@@ -6039,7 +6046,6 @@ Public Class TanzilReader
         Return New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, Items)
     End Function
     Public Function DoGetRenderedQuranText(QuranText As String, IndexToVerse As Integer()(), Lines As String()(), W4WLines As String()(), BaseChapter As Integer, BaseVerse As Integer, SchemeType As ArabicData.TranslitScheme, Scheme As String, TranslationLang As String(), IsLTRW4WTranslation As Boolean(), W4W As Boolean, W4WNum As Boolean, NoArabic As Boolean, Header As Boolean, Colorize As Boolean, Verses As Boolean) As RenderArray
-        Dim Text As String = String.Empty
         Dim Node As Xml.Linq.XAttribute
         Dim Renderer As New RenderArray(String.Empty)
         Dim Index As Integer = 0
@@ -6047,8 +6053,8 @@ Public Class TanzilReader
             Dim UnfilteredMetaRules As Generic.List(Of Arabic.RuleMetadata) = Nothing
             Dim DefStops As Integer() = Nothing
             If Not NoArabic Then
-                DefStops = GenerateDefaultStops(Text)
-                UnfilteredMetaRules = Arb.GetMetarules(Text, ChData.RuleMetas("UthmaniQuran"))
+                DefStops = GenerateDefaultStops(QuranText)
+                UnfilteredMetaRules = Arb.GetMetarules(QuranText, ChData.RuleMetas("UthmaniQuran"))
             End If
             While Index <> IndexToVerse.Length
                 Dim ChapterNode As Xml.Linq.XElement = GetChapterByIndex(IndexToVerse(Index)(0))
@@ -6128,6 +6134,7 @@ Public Class TanzilReader
                         'Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arabic.TransliterateFromBuckwalter("R"))}))
                     End If
                     Dim MetaRules As Generic.List(Of Arabic.RuleMetadata) = Nothing
+                    Dim Text As String = String.Empty
                     If Not NoArabic Then
                         Dim Ints As Integer() = Linq.Enumerable.FirstOrDefault(Linq.Enumerable.Skip(IndexToVerse, Index), Function(Elem As Integer()) Elem(0) <> IndexToVerse(Index)(0) Or Elem(1) <> IndexToVerse(Index)(1))
                         If Ints Is Nothing OrElse Ints.Length = 0 Then
@@ -6135,7 +6142,7 @@ Public Class TanzilReader
                         Else
                             Text = QuranText.Substring(IndexToVerse(Index)(3), Ints(3) - IndexToVerse(Index)(3)).Trim(" "c, ChrW(0))
                         End If
-                        MetaRules = Arabic.FilterMetadataStopsContig(Text.Length, UnfilteredMetaRules, DefStops, IndexToVerse(Index)(4))
+                        MetaRules = Arabic.FilterMetadataStopsContig(Text.Length, UnfilteredMetaRules, DefStops, If(Index = 0, 0, IndexToVerse(Index - 1)(4)))
                         'MetaRules = Arabic.FilterMetadataStops(Text, UnfilteredMetaRules, DefStops)
                     End If
                     If W4W And W4WLines.Length <> 0 Then

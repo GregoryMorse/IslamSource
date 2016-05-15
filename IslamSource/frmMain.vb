@@ -134,7 +134,12 @@ Public Class frmMain
     End Function
 
     Private Async Function UtilityTestCode() As Threading.Tasks.Task
-        ChData.GetMorphologicalDataByVerbScale()
+        'ChData.GetMorphologicalDataByVerbScale()
+        Await TR.MakeQuranCacheMetarules()
+        Dim Rules As List(Of Arabic.RuleMetadata) = Await TR.GetQuranCacheMetarules()
+        Dim IndexToVerse As Integer()() = Nothing
+        TR.QuranTextCombiner(ChData.XMLDocMain, IndexToVerse)
+        Await _PortableMethods.WriteAllLines(_PortableMethods.FileIO.CombinePath(Await _PortableMethods.DiskCache.GetCacheDirectory(), "_QuranTajweedData.txt"), Arabic.MakeCacheMetarules(Rules, IndexToVerse))
         'Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
         'clsWarshQuran.HindiW4W()
         'Dim Strs As New List(Of String)
@@ -251,9 +256,7 @@ Public Class frmMain
         'TR.CheckMutualExclusiveRules(False, 4)
         'TR.CheckMutualExclusiveRules(True, 4)
 
-        Dim IndexToVerse As Integer()() = Nothing
         'Dim Text As String = TanzilReader.QuranTextCombiner(CachedData.XMLDocMain, IndexToVerse)
-        'IslamMetadata.Arabic.MakeQuranCacheMetarules()
         'Dim IndVerses As String() = TanzilReader.QuranTextRangeLookup(2, 5, 0, 2, 0, 0)(0)
         Arb.TransliterateWithRulesColor(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), "PlainRoman", True, False, Arabic.FilterMetadataStops(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), Arb.GetMetarules(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), ChData.RuleMetas("UthmaniQuran")), Nothing))
         Text = TanzilReader.GetQuranText(ChData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
