@@ -287,6 +287,7 @@ Public Class frmMain
         Await ChData.Init()
         Await Arb.Init(ChData)
         TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
+        Await TR.Init()
         DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
         UWeb = New UtilityWeb(_PortableMethods, ArbData, Nothing, Nothing, Nothing)
         PageSet = New PageLoader(_PortableMethods, UWeb)
