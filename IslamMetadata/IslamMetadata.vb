@@ -895,7 +895,7 @@ Public Class Arabic
                                                                                                                                                                                                                                                                Dim Pieces As String() = Item.Split(";"c)
                                                                                                                                                                                                                                                                Return New RuleMetadata(CInt(Pieces(1)), CInt(Pieces(2)), New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(Pieces(0).Split(" "c), Function(It) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = It})).ToArray(), 0)
                                                                                                                                                                                                                                                            End Function)).ToArray())
-                Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {Vals(VerseCount)(0), Vals(VerseCount)(1), Vals(VerseCount)(2)}, New TanzilReader.QuranWordChapterVerseWordComparer)
+                Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {Vals(VerseCount)(0), Vals(VerseCount)(1), Vals(VerseCount)(2)}, New TanzilReader.QuranWordChapterVerseWordComparer(False))
                 If Idx < 0 Then Idx = (Idx Xor -1) - 1 'gaps based off previous word
                 Dim Dep As RuleMetadata() = If(KeyVal(0).IndexOf("{"c) = -1, Nothing, New List(Of RuleMetadata)(Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("{"c) + 1, KeyVal(0).IndexOf("}"c) - KeyVal(0).IndexOf("{"c) - 1).Split(","c), Function(Item)
                                                                                                                                                                                                                                                                 Dim Pieces As String() = Item.Split(";"c)
@@ -5454,16 +5454,49 @@ Public Class TanzilReader
         Next
         Return Renderer
     End Function
-    Public Function SortMergeReferences(Refs As List(Of Integer()), IndexToVerse As Integer()(), HasLetterRefs As Boolean, ByChunk As Boolean) As List(Of Integer())
+    Public Function SortMergeReferences(Refs As List(Of Integer()), IndexToVerse As Integer()(), HasLetterRefs As Boolean, ByChunk As Boolean, Optional bMergeContiguous As Boolean = True) As List(Of Integer())
         If HasLetterRefs Then
-            Array.BinarySearch()
+            For Count As Integer = 0 To Refs.Count - 1
+                Refs(Count)(2) = IndexToVerse(Array.BinarySearch(IndexToVerse, Refs(Count)(2), New TanzilReader.QuranWordIndexComparer))(3)
+            Next
         End If
         If ByChunk Then
-
+            For Count As Integer = 0 To Refs.Count - 1
+                Refs(Count)(2) = IndexToVerse(Array.BinarySearch(IndexToVerse, Refs(Count), New TanzilReader.QuranWordChapterVerseWordComparer(False)))(5)
+            Next
         End If
-        Array.Sort(Refs)
+        Dim Arr As Integer()() = Refs.ToArray()
+        Array.Sort(Arr, New TanzilReader.QuranWordChapterVerseWordComparer(False))
+        Refs = New List(Of Integer())(Arr)
+        Dim Idx As Integer = 0
+        While Idx < Refs.Count - 1
+            'identical, overlap, contiguous
+            If Refs(Idx)(0) = Refs(Idx + 1)(0) And Refs(Idx)(1) = Refs(Idx + 1)(1) And Refs(Idx)(2) = Refs(Idx + 1)(2) Or
+               Refs(Idx)(3) > Refs(Idx + 1)(0) Or
+               Refs(Idx)(3) = Refs(Idx + 1)(0) And Refs(Idx)(4) > Refs(Idx + 1)(1) Or
+               Refs(Idx)(3) = Refs(Idx + 1)(0) And Refs(Idx)(4) = Refs(Idx + 1)(1) And Refs(Idx)(5) >= Refs(Idx + 1)(2) Or
+               bMergeContiguous And If(Refs(Idx)(5) = If(ByChunk, GetChunkCount(Refs(Idx)(3), Refs(Idx)(4)), GetWordCount(Refs(Idx)(3), Refs(Idx)(4))),
+               If(Refs(Idx)(4) = GetVerseCount(Refs(Idx)(3)),
+               Refs(Idx)(3) + 1 = Refs(Idx + 1)(0) And 1 = Refs(Idx + 1)(1) And 1 = Refs(Idx + 1)(2),
+                Refs(Idx)(3) = Refs(Idx + 1)(0) And Refs(Idx)(4) + 1 = Refs(Idx + 1)(1) And 1 = Refs(Idx + 1)(2)),
+                Refs(Idx)(3) = Refs(Idx + 1)(0) And Refs(Idx)(4) = Refs(Idx + 1)(1) And Refs(Idx)(5) + 1 = Refs(Idx + 1)(2)) Then
+                If Refs(Idx)(3) < Refs(Idx + 1)(3) Or
+                    Refs(Idx)(3) = Refs(Idx + 1)(3) And Refs(Idx)(4) < Refs(Idx + 1)(4) Or
+                    Refs(Idx)(3) = Refs(Idx + 1)(3) And Refs(Idx)(4) = Refs(Idx + 1)(4) And Refs(Idx)(5) < Refs(Idx + 1)(5) Then
+                    Refs(Idx)(3) = Refs(Idx + 1)(3)
+                    Refs(Idx)(4) = Refs(Idx + 1)(4)
+                    Refs(Idx)(5) = Refs(Idx + 1)(5)
+                End If
+                Refs.RemoveAt(Idx + 1)
+            End If
+            Idx += 1
+        End While
         If ByChunk Then
-
+            For Count As Integer = 0 To Refs.Count - 1
+                Idx = Array.BinarySearch(IndexToVerse, Refs(Count), New TanzilReader.QuranWordChapterVerseWordComparer(True))
+                Refs(Count)(2) = IndexToVerse(Idx)(2)
+                Refs(Count)(5) = Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(Linq.Enumerable.Skip(IndexToVerse, Idx), Function(It) It(5) = IndexToVerse(Idx)(5)))(2)
+            Next
         End If
         Return Refs
     End Function
@@ -5643,7 +5676,7 @@ Public Class TanzilReader
     End Sub
     'maintaining begining based indexing and no previous word
     Public Function QuranTextFilter(QuranText As String, ByRef IndexToVerse As Integer()(), Optional StartChapter As Integer = -1, Optional BaseVerse As Integer = -1, Optional WordNumber As Integer = -1, Optional EndChapter As Integer = -1, Optional ExtraVerseNumber As Integer = -1, Optional EndWordNumber As Integer = -1) As String
-        Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {If(StartChapter < 1, 1, StartChapter), If(BaseVerse = -1, 1, BaseVerse), If(WordNumber < 1, 1, WordNumber)}, New QuranWordChapterVerseWordComparer)
+        Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {If(StartChapter < 1, 1, StartChapter), If(BaseVerse = -1, 1, BaseVerse), If(WordNumber < 1, 1, WordNumber)}, New QuranWordChapterVerseWordComparer(False))
         Dim EndIdx As Integer = Idx + 1
         Do While EndIdx < IndexToVerse.Length AndAlso (If(EndChapter = -1, True, IndexToVerse(EndIdx)(0) <= EndChapter) And If(ExtraVerseNumber = -1, True, IndexToVerse(EndIdx)(1) <= ExtraVerseNumber) And If(EndWordNumber = -1, True, IndexToVerse(EndIdx)(2) <= EndWordNumber))
             EndIdx += 1
@@ -5663,66 +5696,54 @@ Public Class TanzilReader
         Else
             Verses.AddRange(GetQuranText(ChData.XMLDocMain, If(bChapterRollback, StartChapter - 1, StartChapter), If(bChapterRollback, GetVerseCount(StartChapter - 1), If(WordNumber <= 1 And Not bBismillahPrecedes, BaseVerse - 1, BaseVerse)), EndChapter, ExtraVerseNumber))
         End If
-        'System.Text.RegularExpressions.Regex.Replace(System.Text.RegularExpressions.Regex.Replace(Verses(0)(0).Substring(0, VerseIndex), "(^\s*|\s+)[^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)", "$1"), String.Join("|", Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + "|" + ArabicData.ArabicStartOfRubElHizb + "|" + ArabicData.ArabicPlaceOfSajdah, ChrW(0)) + Verses(0)(0).Substring(VerseIndex)
         Dim IndexToVerseList As New List(Of Integer())
         If StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Then IndexToVerseList.Add(New Integer() {0, 0, 0, 0, 0, 0, 0})
         Dim Str As New System.Text.StringBuilder
         For Count As Integer = 0 To Verses.Count - 1
             For SubCount As Integer = 0 To Verses(Count).Length - 1
-                Dim Words As String()
-                Dim Index As Integer
                 Dim ChunkCount As Integer
                 Dim MarkerCount As Integer
                 Dim FilterIndex As Integer
                 Dim bNotFilter As Boolean
+                Dim Matches As Text.RegularExpressions.MatchCollection
                 If SubCount = 0 And UseBismillah Then
                     Dim Node As Xml.Linq.XAttribute
                     Node = GetTextVerse(GetTextChapter(XMLDoc, If(StartChapter = -1, 1, StartChapter) + Count), 1).Attribute("bismillah")
                     If Not Node Is Nothing Then
-                        Words = Node.Value.Split(" "c)
-                        Index = Str.Length
+                        Matches = System.Text.RegularExpressions.Regex.Matches(Node.Value, "(?:^\s*|\s+)(?:([^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+)|([\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "])(?=\s*$|\s+)")
                         ChunkCount = 1
                         MarkerCount = 0
-                        For WordCount = 0 To Words.Length - 1
-                            bNotFilter = StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Or Count <> 0 Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber <= 1, Linq.Enumerable.Count(Words, Function(It) It.Length <> 1), WordNumber - 1)
-                            If Words(WordCount).Length = 1 Then
-                                If WordCount <> 0 OrElse Words(WordCount).Length <> 1 Then ChunkCount += 1
+                        For WordCount = 0 To Matches.Count - 1
+                            bNotFilter = StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Or Count <> 0 Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber <= 1, Linq.Enumerable.Count(CType(Matches.GetEnumerator(), IEnumerable(Of Text.RegularExpressions.Match)), Function(It) Not It.Groups(2).Success), WordNumber - 1)
+                            If Matches(WordCount).Groups(2).Success Then
+                                If WordCount <> 0 OrElse Not Matches(WordCount - 1).Groups(2).Success Then ChunkCount += 1
                                 MarkerCount += 1
-                                If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, 0, WordCount - MarkerCount + 1, Index, Words(WordCount).Length, ChunkCount})
+                                If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, 0, WordCount - MarkerCount + 1, Str.Length + Matches(WordCount).Groups(2).Index, Matches(WordCount).Groups(2).Length, ChunkCount, MarkerCount})
                             Else
-                                If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, 0, WordCount - MarkerCount + 1, Index, Words(WordCount).Length, ChunkCount})
+                                If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, 0, WordCount - MarkerCount + 1, Str.Length + Matches(WordCount).Groups(1).Index, Matches(WordCount).Groups(1).Length, ChunkCount, 0})
                             End If
-                            If bNotFilter Then
-                                Index += Words(WordCount).Length + 1
-                            Else
-                                FilterIndex += Words(WordCount).Length + 1
-                            End If
+                            If Not bNotFilter Then FilterIndex = Matches(WordCount).Index + Matches(WordCount).Length + 1
                         Next
                         Str.Append(Node.Value.Substring(FilterIndex))
                         Str.Append(" "c)
                     End If
                 End If
-                Words = Verses(Count)(SubCount).Split(" "c)
-                Index = Str.Length
+                Matches = System.Text.RegularExpressions.Regex.Matches(Verses(Count)(SubCount), "(?:^\s*|\s+)(?:([^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+)|([\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "])(?=\s*$|\s+)")
                 ChunkCount = 1
                 MarkerCount = 0
-                For WordCount = 0 To Words.Length - 1
-                    bNotFilter = StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Or Count <> 0 Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber <= 1, Linq.Enumerable.Count(Words, Function(It) It.Length <> 1), WordNumber - 1)
-                    If Words(WordCount).Length = 1 Then
-                        If WordCount <> 0 OrElse Words(WordCount).Length <> 1 Then ChunkCount += 1
+                For WordCount = 0 To Matches.Count - 1
+                    bNotFilter = StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Or Count <> 0 Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber <= 1, Linq.Enumerable.Count(CType(Matches.GetEnumerator(), IEnumerable(Of Text.RegularExpressions.Match)), Function(It) Not It.Groups(2).Success), WordNumber - 1)
+                    If Matches(WordCount).Groups(2).Success Then
+                        If WordCount <> 0 OrElse Not Matches(WordCount - 1).Groups(2).Success Then ChunkCount += 1
                         MarkerCount += 1
-                        If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, WordCount - MarkerCount + 1, Index, Words(WordCount).Length, ChunkCount, MarkerCount})
+                        If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, WordCount - MarkerCount + 1, Str.Length + Matches(WordCount).Groups(2).Index, Matches(WordCount).Groups(2).Length, ChunkCount, MarkerCount})
                     Else
-                        If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, WordCount - MarkerCount + 1, Index, Words(WordCount).Length, ChunkCount, 0})
+                        If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, WordCount - MarkerCount + 1, Str.Length + Matches(WordCount).Groups(1).Index, Matches(WordCount).Groups(1).Length, ChunkCount, 0})
                     End If
-                    If bNotFilter Then
-                        Index += Words(WordCount).Length + 1
-                    Else
-                        FilterIndex += Words(WordCount).Length + 1
-                    End If
+                    If Not bNotFilter Then FilterIndex = Matches(WordCount).Index + Matches(WordCount).Length + 1
                 Next
                 Str.Append(Verses(Count)(SubCount).Substring(FilterIndex))
-                IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, Words.Length - MarkerCount, Str.Length + 1, CStr(If(BaseVerse = -1, 1, BaseVerse) + SubCount).Length + 1, ChunkCount, MarkerCount + 1})
+                IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter) + Count, If(BaseVerse = -1, 1, BaseVerse) + SubCount, Matches.Count - MarkerCount, Str.Length + 1, CStr(If(BaseVerse = -1, 1, BaseVerse) + SubCount).Length + 1, ChunkCount, MarkerCount + 1})
                 Str.Append(Arb.TransliterateFromBuckwalter(" =" + CStr(If(BaseVerse = -1, 1, BaseVerse) + SubCount)))
                 Str.Append(" "c)
             Next
@@ -5882,15 +5903,36 @@ Public Class TanzilReader
     End Function
     Public Class QuranWordChapterVerseWordComparer
         Implements IComparer(Of Integer())
+        Dim bUseChunk As Boolean
+        Public Sub New(UseChunk As Boolean)
+            bUseChunk = UseChunk
+        End Sub
         Public Function Compare(x As Integer(), y As Integer()) As Integer Implements IComparer(Of Integer()).Compare
             If x(0) > y(0) Then Return 1
             If x(0) < y(0) Then Return -1
             If x(1) > y(1) Then Return 1
             If x(1) < y(1) Then Return -1
-            If x(2) > y(2) Then Return 1
-            If x(2) < y(2) Then Return -1
-            If x(6) > y(6) Then Return 1
-            If x(6) < y(6) Then Return -1
+            If bUseChunk And x.Length = 6 Then
+                If x(2) > y(5) Then Return 1
+                If x(2) < y(5) Then Return -1
+                If y(2) > 1 Then Return 1
+            ElseIf bUseChunk And y.Length = 6 Then
+                If x(5) > y(2) Then Return 1
+                If x(5) < y(2) Then Return -1
+                If x(2) > 1 Then Return 1
+            Else
+                If x(2) > y(2) Then Return 1
+                If x(2) < y(2) Then Return -1
+                If x.Length = 6 Then
+                    If y(6) > 0 Then Return 1
+                ElseIf y.Length = 6 Then
+                    If x(6) > 0 Then Return 1
+                ElseIf x(6) > y(6) Then
+                    Return 1
+                ElseIf x(6) < y(6) Then
+                    Return -1
+                End If
+            End If
             Return 0
         End Function
     End Class
@@ -6219,7 +6261,10 @@ Public Class TanzilReader
         Return CInt(GetChapterByIndex(Chapter).Attribute("ayas").Value)
     End Function
     Public Function GetWordCount(ByVal Chapter As Integer, ByVal Verse As Integer) As Integer
-        Return GetTextVerse(GetTextChapter(ChData.XMLDocMain, Chapter), Verse).Attribute("text").Value.Split(" "c).Length
+        Return System.Text.RegularExpressions.Regex.Matches(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Chapter), Verse).Attribute("text").Value, "(?:^\s*|\s+)[^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)").Count
+    End Function
+    Public Function GetChunkCount(ByVal Chapter As Integer, ByVal Verse As Integer) As Integer
+        Return System.Text.RegularExpressions.Regex.Matches(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Chapter), Verse).Attribute("text").Value, "\s+[\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+\s+").Count
     End Function
     Public Sub GetPreviousChapterVerse(ByRef Chapter As Integer, ByRef Verse As Integer)
         If Verse = 1 Then
