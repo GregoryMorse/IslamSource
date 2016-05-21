@@ -292,7 +292,7 @@ Public Class Arabic
         Return ArbData.ArabicLetters(Index).UnicodeName + " (" + ArbData.FixStartingCombiningSymbol(ArbData.ArabicLetters(Index).Symbol) + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + TransliterateToScheme(ArbData.ArabicLetters(Index).Symbol, SchemeType, Scheme, Arabic.FilterMetadataStops(ArbData.ArabicLetters(Index).Symbol, GetMetarules(ArbData.ArabicLetters(Index).Symbol, ChData.RuleMetas("Normal")), Nothing)))
     End Function
     Public Function GetRecitationSymbols(SchemeType As ArabicData.TranslitScheme, Scheme As String) As Array()
-        Return New List(Of Object())(Linq.Enumerable.Select(ChData.RecitationSymbols, Function(Ch As String) New Object() {ArbData.ArabicLetters(ArbData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName, " (" + ArbData.FixStartingCombiningSymbol(Ch) + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + TransliterateToScheme(Ch, SchemeType, Scheme, Arabic.FilterMetadataStops(Ch, GetMetarules(Ch, ChData.RuleMetas("Normal")), Nothing))), ArbData.FindLetterBySymbol(Ch.Chars(0))})).ToArray()
+        Return New List(Of Object())(Linq.Enumerable.Select(ChData.RecitationSymbols, Function(Ch As String) New Object() {ArbData.ArabicLetters(ArbData.FindLetterBySymbol(Ch.Chars(0))).UnicodeName + " (" + ArbData.FixStartingCombiningSymbol(Ch) + ")" + If(SchemeType = ArabicData.TranslitScheme.None, String.Empty, " " + TransliterateToScheme(Ch, SchemeType, Scheme, Arabic.FilterMetadataStops(Ch, GetMetarules(Ch, ChData.RuleMetas("Normal")), Nothing))), ArbData.FindLetterBySymbol(Ch.Chars(0))})).ToArray()
     End Function
     Private _BuckwalterMap As Dictionary(Of Char, Integer)
     Public Function BuckwalterMap() As Dictionary(Of Char, Integer)
@@ -5728,11 +5728,11 @@ Public Class TanzilReader
                         Str.Append(" "c)
                     End If
                 End If
-                Matches = System.Text.RegularExpressions.Regex.Matches(Verses(Count)(SubCount), "(?:^\s*|\s+)(?:([^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+)|([\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "])(?=\s*$|\s+)")
+                Matches = System.Text.RegularExpressions.Regex.Matches(Verses(Count)(SubCount), "(?:^\s*|\s+)(?:([^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+)|([\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]))(?=\s*$|\s+)")
                 ChunkCount = 1
                 MarkerCount = 0
                 For WordCount = 0 To Matches.Count - 1
-                    bNotFilter = StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Or Count <> 0 Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber <= 1, Linq.Enumerable.Count(CType(Matches.GetEnumerator(), IEnumerable(Of Text.RegularExpressions.Match)), Function(It) Not It.Groups(2).Success), WordNumber - 1)
+                    bNotFilter = StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Or Count <> 0 Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber <= 1, Linq.Enumerable.Count(Linq.Enumerable.Cast(Of Text.RegularExpressions.Match)(Matches), Function(It) Not It.Groups(2).Success), WordNumber - 1)
                     If Matches(WordCount).Groups(2).Success Then
                         If WordCount <> 0 OrElse Not Matches(WordCount - 1).Groups(2).Success Then ChunkCount += 1
                         MarkerCount += 1
@@ -6183,8 +6183,8 @@ Public Class TanzilReader
                     If Not NoArabic Then
                         Dim Ints As Integer() = Linq.Enumerable.FirstOrDefault(Linq.Enumerable.Skip(IndexToVerse, Index), Function(Elem As Integer()) Elem(0) <> IndexToVerse(Index)(0) Or Elem(1) <> IndexToVerse(Index)(1))
                         If Ints Is Nothing OrElse Ints.Length = 0 Then
-                            Text = QuranText.Substring(IndexToVerse(Index)(3) - IndexToVerse(If(_CacheMetarules Is Nothing, 1, 0))(3), 0).Trim(" "c)
-                        Else
+                        Text = QuranText.Substring(IndexToVerse(Index)(3) - IndexToVerse(If(_CacheMetarules Is Nothing, 1, 0))(3)).Trim(" "c)
+                    Else
                             Text = QuranText.Substring(IndexToVerse(Index)(3) - IndexToVerse(If(_CacheMetarules Is Nothing, 1, 0))(3), Ints(3) - IndexToVerse(Index)(3)).Trim(" "c)
                         End If
                         MetaRules = Arabic.FilterMetadataStopsContig(Text.Length, UnfilteredMetaRules, DefStops, IndexToVerse(Index)(3))

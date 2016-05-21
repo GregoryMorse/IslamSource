@@ -19,7 +19,7 @@ Module compileRegEx
                 Return {"IslamMetadata"}
             End Get
         End Property
-        Public Function GetTemplatePath() As String Implements PortableSettings.GetTemplatePath
+        Public Function GetTemplatePath(Selector As String) As String Implements PortableSettings.GetTemplatePath
             Return GetFilePath("metadata\IslamSource.xml")
         End Function
         Public Function GetFilePath(ByVal Path As String) As String Implements PortableSettings.GetFilePath
@@ -41,20 +41,31 @@ Module compileRegEx
         End Function
     End Class
     Sub Main()
-        PortableMethods.FileIO = New WindowsWebFileIO
-        PortableMethods.Settings = New WindowsSettings
+    End Sub
+    Async Function DoRegEx() As Task
+        Dim _PortableMethods As PortableMethods
+        Dim Arb As IslamMetadata.Arabic
+        Dim ArbData As ArabicData
+        Dim ChData As IslamMetadata.CachedData
+        _PortableMethods = New PortableMethods(New WindowsWebFileIO, New WindowsSettings)
+        Await _PortableMethods.Init()
+        ArbData = New XMLRender.ArabicData(_PortableMethods)
+        Await ArbData.Init()
+        Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData)
+        ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
+        Await ChData.Init()
+        Await Arb.Init(ChData)
         Dim RegExs As New List(Of System.Text.RegularExpressions.RegexCompilationInfo)
-        For Count As Integer = 0 To IslamMetadata.CachedData.IslamData.RuleSets.Count - 1
-            For SubCount As Integer = 0 To IslamMetadata.CachedData.IslamData.RuleSets(Count).Rules.Count - 1
-                RegExs.Add(New System.Text.RegularExpressions.RegexCompilationInfo(IslamMetadata.CachedData.TranslateRegEx(IslamMetadata.CachedData.IslamData.RuleSets(Count).Rules(SubCount).Match, True), Text.RegularExpressions.RegexOptions.None, IslamMetadata.CachedData.IslamData.RuleSets(Count).Name + "_" + CStr(SubCount), String.Empty, True))
+        For Count As Integer = 0 To ChData.IslamData.RuleSets.Count - 1
+            For SubCount As Integer = 0 To ChData.IslamData.RuleSets(Count).Rules.Count - 1
+                RegExs.Add(New System.Text.RegularExpressions.RegexCompilationInfo(ChData.TranslateRegEx(ChData.IslamData.RuleSets(Count).Rules(SubCount).Match, True), Text.RegularExpressions.RegexOptions.None, ChData.IslamData.RuleSets(Count).Name + "_" + CStr(SubCount), String.Empty, True))
             Next
         Next
-        For Count As Integer = 0 To IslamMetadata.CachedData.IslamData.MetaRules.Count - 1
-            For SubCount As Integer = 0 To IslamMetadata.CachedData.IslamData.MetaRules(Count).Rules.Count - 1
-                RegExs.Add(New System.Text.RegularExpressions.RegexCompilationInfo(IslamMetadata.CachedData.TranslateRegEx(IslamMetadata.CachedData.IslamData.MetaRules(Count).Rules(SubCount).Match, True), Text.RegularExpressions.RegexOptions.None, IslamMetadata.CachedData.IslamData.MetaRules(Count).Name + "_" + CStr(SubCount), String.Empty, True))
+        For Count As Integer = 0 To ChData.IslamData.MetaRules.Count - 1
+            For SubCount As Integer = 0 To ChData.IslamData.MetaRules(Count).Rules.Count - 1
+                RegExs.Add(New System.Text.RegularExpressions.RegexCompilationInfo(ChData.TranslateRegEx(ChData.IslamData.MetaRules(Count).Rules(SubCount).Match, True), Text.RegularExpressions.RegexOptions.None, ChData.IslamData.MetaRules(Count).Name + "_" + CStr(SubCount), String.Empty, True))
             Next
         Next
         System.Text.RegularExpressions.Regex.CompileToAssembly(RegExs.ToArray(), New Reflection.AssemblyName("IslamMetadataRegEx, Version=1.0.0.1001, Culture=neutral, PublicKeyToken=null"))
-    End Sub
-
+    End Function
 End Module

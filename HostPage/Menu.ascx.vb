@@ -97,7 +97,7 @@ Partial Class Menu
         writer.WriteAttribute("height", Convert.ToInt32(SizeF.Height / Scale).ToString())
         writer.Write(HtmlTextWriter.TagRightChar)
         writer.WriteEndTag("a")
-        UA.AccountPanel(writer, HttpContext.Current)
+        UA.AccountPanel(writer, HttpContext.Current).Wait()
         For Index = 0 To PageSet.Pages.Count - 1
             writer.Write(vbCrLf + vbTab + vbTab + vbTab + vbTab)
             If CurIndex = Index Then
