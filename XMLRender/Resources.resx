@@ -519,6 +519,9 @@
   <data name="lang_localhi" xml:space="preserve">
     <value>Hindi</value>
   </data>
+  <data name="lang_localhu" xml:space="preserve">
+    <value>Hungarian</value>
+  </data>
   <data name="lang_localid" xml:space="preserve">
     <value>Indonesian</value>
   </data>

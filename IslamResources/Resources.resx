@@ -28116,4 +28116,25 @@
   <data name="IslamInfo_None" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="IslamSource_Turkish" xml:space="preserve">
+    <value>Turkish</value>
+  </data>
+  <data name="IslamSource_Wolof" xml:space="preserve">
+    <value>Wolof</value>
+  </data>
+  <data name="IslamSource_Italian" xml:space="preserve">
+    <value>Italian</value>
+  </data>
+  <data name="IslamSource_Korean" xml:space="preserve">
+    <value>Korean</value>
+  </data>
+  <data name="IslamSource_Malayalam" xml:space="preserve">
+    <value>Malayalam</value>
+  </data>
+  <data name="IslamSource_Portuguese" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="IslamSource_Hindi" xml:space="preserve">
+    <value>Hindi</value>
+  </data>
 </root>
