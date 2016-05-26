@@ -1190,6 +1190,10 @@
           <source>Right-To-Left Override</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ghi đè phải-qua-trái</target>
         </trans-unit>
+        <trans-unit id="lang_localhu" translate="yes" xml:space="preserve">
+          <source>Hungarian</source>
+          <target state="new">Hungarian</target>
+        </trans-unit>
       </group>
     </body>
   </file>

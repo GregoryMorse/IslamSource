@@ -37338,6 +37338,34 @@
           <source>None</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">なし</target>
         </trans-unit>
+        <trans-unit id="IslamSource_Turkish" translate="yes" xml:space="preserve">
+          <source>Turkish</source>
+          <target state="new">Turkish</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Wolof" translate="yes" xml:space="preserve">
+          <source>Wolof</source>
+          <target state="new">Wolof</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Italian" translate="yes" xml:space="preserve">
+          <source>Italian</source>
+          <target state="new">Italian</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Korean" translate="yes" xml:space="preserve">
+          <source>Korean</source>
+          <target state="new">Korean</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Malayalam" translate="yes" xml:space="preserve">
+          <source>Malayalam</source>
+          <target state="new">Malayalam</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Portuguese" translate="yes" xml:space="preserve">
+          <source>Portuguese</source>
+          <target state="new">Portuguese</target>
+        </trans-unit>
+        <trans-unit id="IslamSource_Hindi" translate="yes" xml:space="preserve">
+          <source>Hindi</source>
+          <target state="new">Hindi</target>
+        </trans-unit>
       </group>
     </body>
   </file>
