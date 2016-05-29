@@ -2998,11 +2998,14 @@ Public Class CachedData
         Next
         Return String.Empty
     End Function
+    Public Function CombineFixHamzas(Str As String) As String
+        Return System.Text.RegularExpressions.Regex.Replace(Str, GetPattern("Hamzas"), Function(Match As System.Text.RegularExpressions.Match) GetWritingHamza(Str.Substring(0, Match.Index), Str.Substring(Match.Index + Match.Length), True))
+    End Function
     Structure ScaleRef
         Dim Scale As String
         Dim Refs As List(Of Integer())
     End Structure
-    Public Sub GetMorphologicalDataByVerbScale()
+    Public Function GetMorphologicalDataByVerbScale() As Array()
         Dim Lines As String() = MorphLines
         Dim RootDictionary As New Dictionary(Of String, ScaleRef())
         For Count = 0 To Lines.Length - 1
@@ -3084,35 +3087,35 @@ Public Class CachedData
                             ElseIf Root(2) = "y" And Root(1) <> "y" Then
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "a" + If(Root(1) = "A", "(?:>|'|_#|&)", Root(1)) + "(.)(?:y|Y|t|A|$$)").Replace("$", "\$").Replace("*", "\*").Replace("\$\$", "$"))
                                 If Match.Success And Match.Captures.Count = 1 And RootDictionary(Root)(0).Scale = String.Empty Then
-                                        RootDictionary(Root)(0).Scale = If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value)
-                                        'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "a" + If(Root(1) = "A", "'", Root(1)) + "aY"
-                                    ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or RootDictionary(Root)(0).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value) Then
-                                        Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(0).Scale)
-                                    End If
+                                    RootDictionary(Root)(0).Scale = If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value)
+                                    'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "a" + If(Root(1) = "A", "'", Root(1)) + "aY"
+                                ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or RootDictionary(Root)(0).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value) Then
+                                    Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(0).Scale)
+                                End If
                                 If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(0).Refs.Add(Location)
                             ElseIf Root(1) = Root(2) And System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "a" + If(Root(1) = "A", "(?:>|'|_#|&)", If(Root(1) = "y", "(?:y|Y)", Root(1))) + "(?:~|o$$)").Replace("$", "\$").Replace("*", "\*").Replace("\$\$", "$")).Success Then
                                 'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "a" + If(Root(1) = "A", "'", Root(1)) + "~a"
                                 RootDictionary(Root)(0).Refs.Add(Location)
                             ElseIf Root(1) = "w" Or Root(1) = "y" And System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + If(Root(1) = "w", "u", "i") + If(Root(2) = "A", "(?:>|'|_#|&|\})", Root(2))).Replace("$", "\$").Replace("*", "\*")).Success Then
                                 If RootDictionary(Root)(0).Scale = String.Empty Then
-                                        RootDictionary(Root)(0).Scale = "a"
-                                        'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "aA" + If(Root(2) = "A", "'", Root(2)) + "a"
-                                    ElseIf RootDictionary(Root)(0).Scale <> "a" Then
-                                        Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(0).Scale)
-                                    End If
+                                    RootDictionary(Root)(0).Scale = "a"
+                                    'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "aA" + If(Root(2) = "A", "'", Root(2)) + "a"
+                                ElseIf RootDictionary(Root)(0).Scale <> "a" Then
+                                    Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(0).Scale)
+                                End If
                                 RootDictionary(Root)(0).Refs.Add(Location)
                             ElseIf Root(1) = "w" Or Root(1) = "y" Then
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "(a)(?:A|(?:" + Root(1) + "o)?)" + If(Root(2) = "A", "\^(?:>|'|_#|&|\})", Root(2))).Replace("$", "\$").Replace("*", "\*"))
-                                    If Match.Success And Match.Captures.Count = 1 And RootDictionary(Root)(0).Scale = String.Empty Then
-                                        RootDictionary(Root)(0).Scale = Match.Groups(1).Value
-                                        'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "aA" + If(Root(2) = "A", "'", Root(2)) + "a"
-                                    ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or RootDictionary(Root)(0).Scale <> Match.Groups(1).Value Then
-                                        Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(0).Scale)
-                                    End If
-                                ElseIf System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "i" + If(Root(1) = "A", "(?:>|_#|\})", Root(1)) + "o" + If(Root(2) = "A", "(?:>|\^?'|_#|&)", Root(2) + If(Root(2) = "n", "?", String.Empty))).Replace("$", "\$").Replace("*", "\*")).Success Then
-                                    Debug.WriteLine("Special past only: " + Root + " - " + Pieces(1))
-                                Else
-                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "a`?" + If(Root(1) = "A", "(?:>|_#|\})", Root(1)) + "(.)" + If(Root(2) = "A", "(?:>|\^?'|_#|&)", Root(2) + If(Root(2) = "n" Or Root(2) = "t", "?", String.Empty))).Replace("$", "\$").Replace("*", "\*"))
+                                If Match.Success And Match.Captures.Count = 1 And RootDictionary(Root)(0).Scale = String.Empty Then
+                                    RootDictionary(Root)(0).Scale = Match.Groups(1).Value
+                                    'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "aA" + If(Root(2) = "A", "'", Root(2)) + "a"
+                                ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or RootDictionary(Root)(0).Scale <> Match.Groups(1).Value Then
+                                    Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(0).Scale)
+                                End If
+                            ElseIf System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "i" + If(Root(1) = "A", "(?:>|_#|\})", Root(1)) + "o" + If(Root(2) = "A", "(?:>|\^?'|_#|&)", Root(2) + If(Root(2) = "n", "?", String.Empty))).Replace("$", "\$").Replace("*", "\*")).Success Then
+                                Debug.WriteLine("Special past only: " + Root + " - " + Pieces(1))
+                            Else
+                                Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "a`?" + If(Root(1) = "A", "(?:>|_#|\})", Root(1)) + "(.)" + If(Root(2) = "A", "(?:>|\^?'|_#|&)", Root(2) + If(Root(2) = "n" Or Root(2) = "t", "?", String.Empty))).Replace("$", "\$").Replace("*", "\*"))
                                 If Match.Success And Match.Captures.Count = 1 And RootDictionary(Root)(0).Scale = String.Empty Then
                                     RootDictionary(Root)(0).Scale = Match.Groups(1).Value
                                     'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "a" + Root(1) + Match.Groups(1).Value + If(Root(2) = "A", If(Match.Groups(1).Value = "u", "&", If(Match.Groups(1).Value = "a", ">", "{")), Root(2)) + "a"
@@ -3292,38 +3295,49 @@ Public Class CachedData
                 End If
             End If
         Next
+        Dim Arr(RootDictionary.Count - 1) As String
+        RootDictionary.Keys.CopyTo(Arr, 0)
+        Array.Sort(Arr)
+        Dim Output As New List(Of String())
         For Each KeyValue In RootDictionary
             Dim PastV As String = String.Empty
             Dim PresV As String = String.Empty
             Dim PresVOth As String = String.Empty
             If KeyValue.Key(2) = "y" Then
-                If KeyValue.Value(0).Scale <> String.Empty Then PastV = KeyValue.Key(0) + "a" + KeyValue.Key(1) + KeyValue.Value(0).Scale + "Y"
-                If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + KeyValue.Key(0) + "o" + KeyValue.Key(1) + KeyValue.Value(1).Scale + "Y"
+                If KeyValue.Value(0).Scale <> String.Empty Then PastV = If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "a" + If(KeyValue.Key(1) = "A", "'", KeyValue.Key(1)) + KeyValue.Value(0).Scale + "Y"
+                If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "o" + If(KeyValue.Key(1) = "A", "'", KeyValue.Key(1)) + KeyValue.Value(1).Scale + "Y"
             ElseIf KeyValue.Key(1) = "w" Or KeyValue.Key(1) = "y" Then
-                If KeyValue.Value(0).Scale <> String.Empty Then PastV = KeyValue.Key(0) + "aA" + KeyValue.Key(2) + "a"
+                If KeyValue.Value(0).Scale <> String.Empty Then PastV = If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "aA" + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "a"
                 If KeyValue.Value(1).Scale = "a" Then
-                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + KeyValue.Key(0) + KeyValue.Value(1).Scale + "A" + KeyValue.Key(2) + "u"
+                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + KeyValue.Value(1).Scale + "A" + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "u"
                 ElseIf KeyValue.Value(1).Scale = "i" Then
-                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + KeyValue.Key(0) + KeyValue.Value(1).Scale + "y" + KeyValue.Key(2) + "u"
+                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + KeyValue.Value(1).Scale + "y" + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "u"
                 Else
-                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + KeyValue.Key(0) + KeyValue.Value(1).Scale + "w" + KeyValue.Key(2) + "u"
+                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + KeyValue.Value(1).Scale + "w" + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "u"
                 End If
+            ElseIf KeyValue.Key(1) = KeyValue.Key(2) Then
+                If KeyValue.Value(0).Scale <> String.Empty Then PastV = If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "a" + KeyValue.Key(1) + "~a"
+                If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + KeyValue.Value(1).Scale + KeyValue.Key(1) + "~u"
             Else
                 If KeyValue.Key(2) = "w" Then
-                    If KeyValue.Value(0).Scale <> String.Empty Then PastV = KeyValue.Key(0) + "a" + KeyValue.Key(1) + KeyValue.Value(0).Scale + "A"
+                    If KeyValue.Value(0).Scale <> String.Empty Then PastV = If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "a" + If(KeyValue.Key(1) = "A", "'", KeyValue.Key(1)) + KeyValue.Value(0).Scale + "A"
                 Else
-                    If KeyValue.Value(0).Scale <> String.Empty Then PastV = KeyValue.Key(0) + "a" + KeyValue.Key(1) + KeyValue.Value(0).Scale + KeyValue.Key(2) + "a"
+                    If KeyValue.Value(0).Scale <> String.Empty Then PastV = If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "a" + If(KeyValue.Key(1) = "A", "'", KeyValue.Key(1)) + KeyValue.Value(0).Scale + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "a"
                 End If
                 If KeyValue.Key(0) = "w" And (KeyValue.Value(0).Scale = "a" Or KeyValue.Value(0).Scale = "i" And KeyValue.Value(1).Scale = "i") Then
-                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + KeyValue.Key(1) + KeyValue.Value(1).Scale + KeyValue.Key(2) + "u"
+                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + If(KeyValue.Key(1) = "A", "'", KeyValue.Key(1)) + KeyValue.Value(1).Scale + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "u"
                 Else
-                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + KeyValue.Key(0) + "o" + KeyValue.Key(1) + KeyValue.Value(1).Scale + KeyValue.Key(2) + "u"
-                    If KeyValue.Value(2).Scale <> String.Empty Then PresVOth = "ya" + KeyValue.Key(0) + "o" + KeyValue.Key(1) + KeyValue.Value(2).Scale + KeyValue.Key(2) + "u"
+                    If KeyValue.Value(1).Scale <> String.Empty Then PresV = "ya" + If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "o" + If(KeyValue.Key(1) = "A", "'", KeyValue.Key(1)) + KeyValue.Value(1).Scale + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "u"
+                    If KeyValue.Value(2).Scale <> String.Empty Then PresVOth = "ya" + If(KeyValue.Key(0) = "A", "'", KeyValue.Key(0)) + "o" + If(KeyValue.Key(1) = "A", "'", KeyValue.Key(1)) + KeyValue.Value(2).Scale + If(KeyValue.Key(2) = "A", "'", KeyValue.Key(2)) + "u"
                 End If
             End If
+            If PresV <> String.Empty Then PresV = CombineFixHamzas(PresV)
+            If PresV <> String.Empty Then PresV = CombineFixHamzas(PresV)
             Debug.WriteLine(PastV + " - " + PresV + " - " + PresVOth + " - " + KeyValue.Key + ": " + KeyValue.Value(0).Scale + "-" + KeyValue.Value(1).Scale + KeyValue.Value(2).Scale)
+            Output.Add(New String() {KeyValue.Key, KeyValue.Value(0).Scale, KeyValue.Value(1).Scale, KeyValue.Value(2).Scale, PastV, PresV, PresVOth})
         Next
-    End Sub
+        Return Output.ToArray()
+    End Function
     Public Function GetMorphologicalDataForWord(Chapter As Integer, Verse As Integer, Word As Integer) As RenderArray
         Dim Lines As String() = MorphLines
         If _MorphDataToLineNumber Is Nothing Then

@@ -301,6 +301,8 @@
 			<static name="nouns" description="IslamSource_Text" onrender="ArabicWeb::DisplayNouns"></static>
 			<static name="verbs" description="IslamSource_Text" onrender="ArabicWeb::DisplayVerbs"></static>
 			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
+			<static name="firstformverbs" description="IslamSource_Text" onrender="ArabicWeb::DisplayFirstFormVerbs"></static>
+			<static name="lettersbychapter" description="IslamSource_Text" onrender="ArabicWeb::LettersByChapter"></static>
 		</frame>
 	</page>
 	<page name="quranwords" description="IslamSource_QuranWords">

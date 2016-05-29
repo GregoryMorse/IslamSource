@@ -762,6 +762,39 @@ Public Class ArabicWeb
         Dim Scheme As String = DecodeTranslitScheme(Context)
         Return VerbDisplay(ChData.IslamData.Grammar.Verbs, Item.Name, SchemeType, Scheme, Nothing)
     End Function
+    Public Function DisplayFirstFormVerbs(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
+        Dim Output As New List(Of Array)
+        Output.Add(New String() {})
+        Output.Add(New String() {"arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic"})
+        Output.AddRange(ChData.GetMorphologicalDataByVerbScale())
+        Return Output.ToArray()
+    End Function
+    Public Function LettersByChapter(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+        Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
+        Dim Scheme As String = DecodeTranslitScheme(Context)
+        Dim Output As New List(Of String())
+        Output.Add({})
+        Dim TR As New TanzilReader(_PortableMethods, Arb, ArbData, ChData)
+        ChData.BuildQuranLetterIndex(TR)
+        'AlefWasla, Alef - silent, pronounced, AlefMaksura, SuperscriptAlef - always, can be written with alef, Waw, Yah, SmallWaw, SmallYah
+        Output.Add(New String() {"transliteration", "translation", "translation", "translation", "translation", "translation", "translation", "translation", "translation"})
+        Output.Add(New String() {_PortableMethods.LoadResourceString("IslamInfo_Chapter"), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefWasla), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlef), ArbData.GetUnicodeName(ArabicData.ArabicLetterSuperscriptAlef), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefMaksura), ArbData.GetUnicodeName(ArabicData.ArabicLetterWaw), ArbData.GetUnicodeName(ArabicData.ArabicSmallWaw), ArbData.GetUnicodeName(ArabicData.ArabicLetterYeh), ArbData.GetUnicodeName(ArabicData.ArabicSmallYeh)})
+        Dim Count As Integer
+        For Count = 1 To TR.GetChapterCount()
+            Output.Add(New String() {TR.GetChapterName(TR.GetChapterByIndex(Count), SchemeType, Scheme),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefWasla), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlef), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterSuperscriptAlef), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefMaksura), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterWaw), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicSmallWaw), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterYeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicSmallYeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count).Count()))})
+        Next
+        Return Output.ToArray()
+    End Function
     Public Function GetChangeTransliterationJS() As String()
         Dim GetJS As New List(Of String) From {"javascript: changeTransliteration();", String.Empty, UtilityWeb.GetLookupStyleSheetJS(), GetArabicSymbolJSArray(), GetTranslitSchemeJSArray(),
         "function processTransliteration(list) { var k, child, iSubCount, text; $('span.transliteration').each(function() { $(this).css('display', $('#translitscheme').val() === '0' ? 'none' : 'block'); }); for (k in list) { text = ''; if (list.hasOwnProperty(k) && list[k]['linkchild']) { for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { processTransliteration(list[k]['children'][child]['children']); for (iSubCount = 0; iSubCount < list[k]['children'][child]['arabic'].length; iSubCount++) { if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1'  && parseInt($('#translitscheme').val(), 10) % 2 !== 1 && list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') { if (text !== '') text += ' '; text += $('#' + list[k]['children'][child]['arabic'][iSubCount]).text(); } else { if (list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['children'][child]['arabic'][iSubCount] === '') ? '' : doTransliterate($('#' + list[k]['children'][child]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10))); } } } } if ($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) { text = transliterateWithRules(text, Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2, null, false).split(' '); for (child in list[k]['children']) { if (list[k]['children'].hasOwnProperty(child)) { for (iSubCount = 0; iSubCount < list[k]['children'][child]['translit'].length; iSubCount++) { if (list[k]['children'][child]['arabic'][iSubCount] !== '' && list[k]['children'][child]['translit'][iSubCount] !== '') $('#' + list[k]['children'][child]['translit'][iSubCount]).text(text.shift()); } } } } } else { processTransliteration(list[k]['children']); } for (iSubCount = 0; iSubCount < list[k]['arabic'].length; iSubCount++) { if (list[k]['translit'][iSubCount] !== '') $('#' + list[k]['translit'][iSubCount]).text(($('#translitscheme').val() === '0' || list[k]['arabic'][iSubCount] === '') ? '' : (($('#translitscheme').val() !== '0' && $('#translitscheme').val() !== '1' && parseInt($('#translitscheme').val(), 10) % 2 !== 1) ? transliterateWithRules($('#' + list[k]['arabic'][iSubCount]).text(), parseInt($('#translitscheme').val(), 10) >= 2 ? Math.floor((parseInt($('#translitscheme').val(), 10) - 2) / 2) + 2 : parseInt($('#translitscheme').val(), 10), null, false) : doTransliterate($('#' + list[k]['arabic'][iSubCount]).text(), true, parseInt($('#translitscheme').val(), 10)))); } } }",
