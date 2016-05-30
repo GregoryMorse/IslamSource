@@ -762,13 +762,15 @@ Public Class ArabicWeb
         Dim Scheme As String = DecodeTranslitScheme(Context)
         Return VerbDisplay(ChData.IslamData.Grammar.Verbs, Item.Name, SchemeType, Scheme, Nothing)
     End Function
-    Public Function DisplayFirstFormVerbs(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
+    Public Async Function DisplayFirstFormVerbs(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of Object())
         Dim SchemeType As ArabicData.TranslitScheme = DecodeTranslitSchemeType(Context)
         Dim Scheme As String = DecodeTranslitScheme(Context)
-        Dim Output As New List(Of Array)
+        Dim Output As New List(Of Object)
         Output.Add(New String() {})
-        Output.Add(New String() {"arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic"})
-        Output.AddRange(ChData.GetMorphologicalDataByVerbScale())
+        Output.Add(New String() {"arabic", "arabic", "arabic", "arabic", "arabic", "arabic", "arabic", String.Empty, String.Empty, String.Empty})
+        Output.Add(New String() {"Root", "Past Middle Vowel", "Present Middle Vowel", "Other Present Middle Vowel", "Past", "Present", "Other Present", "Past Verses", "Present Verses", "Other Present Verses"})
+        Dim TR As New TanzilReader(_PortableMethods, Arb, ArbData, ChData)
+        Output.AddRange(ChData.GetMorphologicalDataByVerbScale(TR))
         Return Output.ToArray()
     End Function
     Public Function LettersByChapter(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Array()
@@ -1412,7 +1414,7 @@ Public Class TanzilReaderWeb
     Public Function GetQuranWordTotal(ByVal Item As PageLoader.TextItem, Context As HttpContext) As String
         Return TR.GetQuranWordTotal(Context.Request.QueryString.Get("quranselection"))
     End Function
-    Public Async Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of Array())
+    Public Async Function GetQuranWordFrequency(ByVal Item As PageLoader.TextItem, Context As HttpContext) As Task(Of Object())
         Return Await TR.GetQuranWordFrequency(ArabicWeb.DecodeTranslitSchemeType(Context), ArbWeb.DecodeTranslitScheme(Context), Context.Request.QueryString.Get("quranselection"))
     End Function
     Public Function GetSelectionNames(Context As HttpContext) As Array()

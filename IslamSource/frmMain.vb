@@ -134,7 +134,6 @@ Public Class frmMain
     End Function
 
     Private Async Function UtilityTestCode() As Threading.Tasks.Task
-        ChData.GetMorphologicalDataByVerbScale()
         Await TR.MakeQuranCacheMetarules()
         Dim Rules As List(Of Arabic.RuleMetadata) = Await TR.GetQuranCacheMetarules()
         Dim IndexToVerse As Integer()() = Nothing

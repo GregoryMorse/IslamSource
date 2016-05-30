@@ -301,8 +301,6 @@
 			<static name="nouns" description="IslamSource_Text" onrender="ArabicWeb::DisplayNouns"></static>
 			<static name="verbs" description="IslamSource_Text" onrender="ArabicWeb::DisplayVerbs"></static>
 			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
-			<static name="firstformverbs" description="IslamSource_Text" onrender="ArabicWeb::DisplayFirstFormVerbs"></static>
-			<static name="lettersbychapter" description="IslamSource_Text" onrender="ArabicWeb::LettersByChapter"></static>
 		</frame>
 	</page>
 	<page name="quranwords" description="IslamSource_QuranWords">
@@ -321,6 +319,8 @@
 			<radio name="quotemode" description="IslamSource_QuoteMode" usecheck="true" onchange="RenderArrayWeb::GetQuoteModeJS"><option name="IslamSource_Quote"></option><option name="IslamSource_Disable" defaultvalue="true"></option></radio>
 			<static name="quranwordtotal" description="IslamSource_WordTotal" onrender="TanzilReaderWeb::GetQuranWordTotal"></static>
 			<static name="quranwords" description="IslamSource_Text" onrender="TanzilReaderWeb::GetQuranWordFrequency"></static>
+			<static name="firstformverbs" description="IslamSource_Text" onrender="ArabicWeb::DisplayFirstFormVerbs"></static>
+			<static name="lettersbychapter" description="IslamSource_Text" onrender="ArabicWeb::LettersByChapter"></static>
 			<static name="translitschemetext" description="IslamSource_Text" onrender="ArabicWeb::GetTransliterationSchemeTable"></static>
 			<static name="font-tester" description=""></static>
 		</frame>
