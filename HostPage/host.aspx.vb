@@ -34,7 +34,7 @@ Partial Class host
     Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim _dlgt As AsyncTaskDelegate = Nothing
         'Context.Response.BufferOutput = True
-        AsyncTimeout = New TimeSpan(0, 0, 240)
+        AsyncTimeout = New TimeSpan(0, 0, 360)
         RegisterAsyncTask(New PageAsyncTask(Function(_sender As Object, _e As EventArgs, cb As AsyncCallback, extraData As Object) As IAsyncResult
                                                 'adapter for .NET 4
                                                 'Dim Context As HttpContext = HttpContext.Current
