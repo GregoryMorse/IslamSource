@@ -3828,12 +3828,12 @@ var rs, next, str = '', sura = 1; func = function() { if (next.document.readySta
  		<word text="laA masaAga lili{jotihaAdi fiY maworidi {ln~aS~i" id="MaximOther17"></word>
  		<word text="{li{jotihaAdu laA yanquDu bimivolihi" id="MaximOther18"></word>
  		<word text="{loqaAEidapu {lomuqorarapu &gt;an {l$~araA}iEu &lt;in~amaA jiy}a bihaA {lomaSaAliHu {loEibaAdi\, fa{lo&gt;amoru wa{ln~ahaY wa{lt~axoyiyru bayonahumaA raAjaEapN &lt;ilaY HiZ~i {lomukal~ifi wamuSaAliHihi" id="MaqasidMaxim1"></word>
- 		<word text="&it;in~a {l$~ariyEa waDiEa {l$~ariyEapu EalaY {EotibaAri {lomasaAliHi bi{li{t~ifaAqi" id="MaqasidMaxim2"></word>
+ 		<word text="&lt;in~a {l$~ariyEa waDiEa {l$~ariyEapu EalaY {EotibaAri {lomasaAliHi bi{li{t~ifaAqi" id="MaqasidMaxim2"></word>
  		<word text="takaAliyfu {l$~ariyEapi tarojaEu &lt;ilaY HifoZi maqaASidihaA fiY {loxaloqi\, waha*ihi {lomaqaASidu valaAvapu &gt;aqosaAmK\: &gt;aHaduhaA &gt;an takuwnu Duruwriy~apN\, wa{lvaAniy~u &gt;an takuwnu HaAjiy~apN\, wa{lvaAlivu &gt;an takuwnu taHosiyniy~apN" id="MaqasidMaxim3"></word>
  		<word text="&lt;in~a {l$~ariyEapu vabuta &gt;an~ahaA ta$otamilu EalaY maSaliHapi juzo}iyapK fiY kul~i maso&gt;alapK\, waEalaY maSaliHapi kul~iyapK fiY {lojumolapi" id="MaqasidMaxim4"></word>
  		<word text="&lt;in~a &gt;uSuwlu {lokuliy~api {l~atiY jaA'ati {l$~ariyEapu biHifoZihaA xamosapF wahiYa\: {ld~iynu\, wa{ln~ufusu\, wa{loEaqolu\, wa{ln~asolu\, wa{lomaAlu" id="MaqasidMaxim5"></word>
  		<word text="{lD~uruwriyaAtu muraAEaAtN fiY kul~i mil~apK\, wa&lt;in~a {xotilafato &gt;awojuhu {loHifoZi fiY kul~i mil~apK\, wahaka*aA yaqotaDiY {lo&gt;amoru fiY {loHaAjiyaAti wa{lt~aHosiyniyaAti" id="MaqasidMaxim6"></word>
- 		<word text="{loqawaAEidu {lokul~iyapu mina {lD~uruwriyaAti wa{loHaAjiyaAti wa{lt~aHosiyniyaAti lamo yaqiEu fiyhaA nasoxu wa&lt;in~amaA waqaEa {ln~asoxu\, wa&lt;in~amaA waqiEu {ln~asoxu fiY &gt;umuwri {lojuzo}iy~api" id="MaqasidMaxim7"></word>
+ 		<word text="{loqawaAEidu {lokul~iyapu mina {lD~uruwriyaAti wa{loHaAjiyaAti wa{lt~aHosiyniyaAti lamo yaqiEu fiyhaA nasoxu\, wa&lt;in~amaA waqaEa {ln~asoxu fiY &gt;umuwri {lojuzo}iy~api" id="MaqasidMaxim7"></word>
  		<word text="{lomaraAtibu {lv~alaAvapi \- {lD~uruwriyaAtu wa{loHaAjiyaAtu wa{lt~aHosiyniyaAtu \- yaxodimu baEoDuhaA baEoDFA" id="MaqasidMaxim8"></word>
  		<word text="yajibu &gt;an yuEotabara fiY kul~i rutobapK juzo}iy~aAtuhaA" id="MaqasidMaxim9"></word>
  		<word text="&lt;in~a {lo&gt;amora {lokuliY~i &lt;i*aA vabuta fataxal~ifu baEoDu {lojuzo}iyaAti Ean muqotaDaAhi laA yaxorujuhu Ean kawonihi kul~iyFA" id="MaqasidMaxim10"></word>
