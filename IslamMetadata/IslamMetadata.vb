@@ -3003,6 +3003,7 @@ Public Class CachedData
     End Function
     Structure ScaleRef
         Dim Scale As String
+        Dim LongShortBoth As Char
         Dim Refs As List(Of Integer())
     End Structure
     Public Function GetMorphologicalDataByVerbScale(TR As TanzilReader) As Object()
@@ -3321,54 +3322,80 @@ Public Class CachedData
         Dim Output As New List(Of Object())
         Dim IndexToChunk As Integer()() = Nothing
         TR.QuranTextCombiner(XMLDocMain, IndexToChunk, True)
+        Dim VerbMinimumTable As String()() = {
+                New String() {"  w    ", "au"}, New String() {"Aw     ", "au"}, New String() {"y      ", "ia"}, New String() {"w -    ", "aa"}, New String() {" y-    ", "ia"}, New String() {" Ay    ", "aa"},
+                New String() {"w  ia?L", "ia"}, New String() {"w  uu? ", "uuL"}, New String() {" A aa?S", "aa"}, New String() {" A aa?B", "aa"}, New String() {" wyai? ", "ai"}, New String() {" wyia? ", "ia"}, New String() {"  Auu? ", "uu"}, New String() {" A uu? ", "uu"}, New String() {"A  ia? ", "ia"},
+                New String() {"  yi   ", "ia"}, New String() {"w yi   ", "ii"}, New String() {"w ya   ", "ai"}, New String() {"  Aa   ", "aa"}, New String() {"  Ai   ", "ia"}, New String() {" A i   ", "ia"},
+                New String() {" yA i  ", "ai"}, New String() {" yA a  ", "aa"}, New String() {" wA a  ", "aa"}, New String() {" wA u  ", "au"}, New String() {"  - u  ", "au"}, New String() {"  - a  ", "ia"}, New String() {"  - i  ", "ai"}, New String() {"  y i  ", "ai"}, New String() {" w  u  ", "au"}, New String() {" w  a  ", "aa"}, New String() {" y  a  ", "aa"}, New String() {" y  i  ", "ai"}, New String() {"A   i  ", "ai"}, New String() {"A   u  S", "au"}, New String() {"A   u  L", "au"}, New String() {"A y i  ", "ai"}, New String() {"A y a  ", "aa"},
+                New String() {"w  aa  ", "aa"}, New String() {"w  ia  ", "ia"}, New String() {"w  ai  ", "ai"}, New String() {"w  ii  ", "ii"}, New String() {"  yaa  ", "aa"}, New String() {"   au  ", "au"}, New String() {"   ai  ", "ai"}, New String() {"   aa  ", "aa"}, New String() {"   ia  ", "ia"}, New String() {"   uu  ", "uu"}, New String() {"   ii  ", "ii"}, New String() {"   aui ", "aui"}, New String() {"   aua ", "aua"}
+               }
         For KeyCount As Integer = 0 To Arr.Length - 1
-            Dim PastV As String = String.Empty
-            Dim PresV As String = String.Empty
-            Dim PresVOth As String = String.Empty
-            If Arr(KeyCount)(2) = "y" Then
-                If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "Y"
-                If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + "Y"
-            ElseIf Arr(KeyCount)(1) = "w" Or Arr(KeyCount)(1) = "y" Then
-                If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "aA" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "a"
-                If RootDictionary(Arr(KeyCount))(1).Scale = "a" Then
-                    If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "A" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
-                ElseIf RootDictionary(Arr(KeyCount))(1).Scale = "i" Then
-                    If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "y" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
-                Else
-                    If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "w" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+            Dim Count As Integer
+            For Count = 0 To VerbMinimumTable.Length - 1
+                If (VerbMinimumTable(Count)(0)(0) = " " Or Arr(KeyCount)(0) = VerbMinimumTable(Count)(0)(0)) And
+                    (VerbMinimumTable(Count)(0)(1) = " " Or Arr(KeyCount)(1) = VerbMinimumTable(Count)(0)(1)) And
+                    (VerbMinimumTable(Count)(0)(2) = " " Or Arr(KeyCount)(2) = If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(1), VerbMinimumTable(Count)(0)(2))) And
+                    If(VerbMinimumTable(Count)(0)(5) = "?", (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) Or
+                    (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale),
+                    (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) And
+                    (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale) And
+                    (VerbMinimumTable(Count)(0)(5) = " " Or VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(2).Scale) Or
+                    (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(2).Scale) And
+                    (VerbMinimumTable(Count)(0)(5) = " " Or VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(1).Scale)) Then
+                    Exit For
                 End If
-            ElseIf Arr(KeyCount)(1) = Arr(KeyCount)(2) Then
-                If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + Arr(KeyCount)(1) + "~a"
-                If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + Arr(KeyCount)(1) + "~u"
-            Else
-                If Arr(KeyCount)(2) = "w" Then
-                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "A"
-                Else
-                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "a"
-                End If
-                If Arr(KeyCount)(0) = "w" And (RootDictionary(Arr(KeyCount))(0).Scale = "a" Or RootDictionary(Arr(KeyCount))(0).Scale = "i" And RootDictionary(Arr(KeyCount))(1).Scale = "i") Then
-                    If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
-                Else
-                    If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
-                    If RootDictionary(Arr(KeyCount))(2).Scale <> String.Empty Then PresVOth = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(2).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
-                End If
-            End If
-            If PastV <> String.Empty Then PastV = CombineFixHamzas(Arb.TransliterateFromBuckwalter(PastV))
-            If PresV <> String.Empty Then PresV = CombineFixHamzas(Arb.TransliterateFromBuckwalter(PresV))
-            If PresVOth <> String.Empty Then PresVOth = CombineFixHamzas(Arb.TransliterateFromBuckwalter(PresVOth))
-            'Debug.WriteLine(PastV + " - " + PresV + " - " + PresVOth + " - " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + "-" + RootDictionary(Arr(KeyCount))(1).Scale + RootDictionary(Arr(KeyCount))(2).Scale)
-            Dim Renderer() As RenderArray = {New RenderArray(String.Empty), New RenderArray(String.Empty), New RenderArray(String.Empty)}
-            For RendCount As Integer = 0 To Renderer.Length - 1
-                For Count = 0 To RootDictionary(Arr(KeyCount))(RendCount).Refs.Count - 1
-                    Dim IndexToVerse As Integer()() = Nothing
-                    Dim Chunk As Integer = Array.BinarySearch(IndexToChunk, New Integer() {RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(2), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(2)}, New TanzilReader.QuranWordChapterVerseWordComparer(False))
-                    Dim Idx As Integer = Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(Linq.Enumerable.Reverse(New List(Of Integer())(Linq.Enumerable.Take(IndexToChunk, Chunk + 1))), Function(It) It(0) = IndexToChunk(Chunk)(0) And It(1) = IndexToChunk(Chunk)(1) And It(5) = IndexToChunk(Chunk)(5)))(2)
-                    Dim LastIdx As Integer = Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(New List(Of Integer())(Linq.Enumerable.Skip(IndexToChunk, Chunk)), Function(It) It(0) = IndexToChunk(Chunk)(0) And It(1) = IndexToChunk(Chunk)(1) And It(5) = IndexToChunk(Chunk)(5)))(2)
-                    Dim QuranText As String = TR.QuranTextCombiner(XMLDocMain, IndexToVerse, False, RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), Idx, RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), LastIdx)
-                    Renderer(RendCount).Items.AddRange(TR.DoGetRenderedQuranText(QuranText, IndexToVerse, {}, {}, ArabicData.TranslitScheme.None, String.Empty, {}, {}, False, False, False, False, False, True, True).Items)
-                Next
             Next
-            Output.Add(New Object() {Arb.TransliterateFromBuckwalter(Arr(KeyCount)), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(0).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(1).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(2).Scale), PastV, PresV, PresVOth, Renderer(0).Items.ToArray(), Renderer(1).Items.ToArray(), Renderer(2).Items.ToArray()})
+            If Count = VerbMinimumTable.Length Then Debug.WriteLine("Bug: " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + "-" + RootDictionary(Arr(KeyCount))(1).Scale + RootDictionary(Arr(KeyCount))(2).Scale)
+            'filter besides past, those who root only or present tense only make full determination
+            If (RootDictionary(Arr(KeyCount))(0).Refs.Count <> 0 Or Count <> VerbMinimumTable.Length) And RootDictionary(Arr(KeyCount))(1).Refs.Count <> 0 Then
+                Dim PastV As String = String.Empty
+                Dim PresV As String = String.Empty
+                Dim PresVOth As String = String.Empty
+                If Arr(KeyCount)(2) = "y" Then
+                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "Y"
+                    If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + "Y"
+                ElseIf Arr(KeyCount)(1) = "w" Or Arr(KeyCount)(1) = "y" Then
+                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "aA" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "a"
+                    If RootDictionary(Arr(KeyCount))(1).Scale = "a" Then
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "A" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                    ElseIf RootDictionary(Arr(KeyCount))(1).Scale = "i" Then
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "y" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                    Else
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "w" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                    End If
+                ElseIf Arr(KeyCount)(1) = Arr(KeyCount)(2) Then
+                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + Arr(KeyCount)(1) + "~a"
+                    If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + Arr(KeyCount)(1) + "~u"
+                Else
+                    If Arr(KeyCount)(2) = "w" Then
+                        If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "A"
+                    Else
+                        If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "a"
+                    End If
+                    If Arr(KeyCount)(0) = "w" And (RootDictionary(Arr(KeyCount))(0).Scale = "a" Or RootDictionary(Arr(KeyCount))(0).Scale = "i" And RootDictionary(Arr(KeyCount))(1).Scale = "i") Then
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                    Else
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                        If RootDictionary(Arr(KeyCount))(2).Scale <> String.Empty Then PresVOth = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(2).Scale + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                    End If
+                End If
+                If PastV <> String.Empty Then PastV = CombineFixHamzas(Arb.TransliterateFromBuckwalter(PastV))
+                If PresV <> String.Empty Then PresV = CombineFixHamzas(Arb.TransliterateFromBuckwalter(PresV))
+                If PresVOth <> String.Empty Then PresVOth = CombineFixHamzas(Arb.TransliterateFromBuckwalter(PresVOth))
+                'Debug.WriteLine(PastV + " - " + PresV + " - " + PresVOth + " - " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + "-" + RootDictionary(Arr(KeyCount))(1).Scale + RootDictionary(Arr(KeyCount))(2).Scale)
+                Dim Renderer() As RenderArray = {New RenderArray(String.Empty), New RenderArray(String.Empty), New RenderArray(String.Empty)}
+                For RendCount As Integer = 0 To Renderer.Length - 1
+                    For Count = 0 To RootDictionary(Arr(KeyCount))(RendCount).Refs.Count - 1
+                        Dim IndexToVerse As Integer()() = Nothing
+                        Dim Chunk As Integer = Array.BinarySearch(IndexToChunk, New Integer() {RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(2), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(2)}, New TanzilReader.QuranWordChapterVerseWordComparer(False))
+                        Dim Idx As Integer = Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(Linq.Enumerable.Reverse(New List(Of Integer())(Linq.Enumerable.Take(IndexToChunk, Chunk + 1))), Function(It) It(0) = IndexToChunk(Chunk)(0) And It(1) = IndexToChunk(Chunk)(1) And It(5) = IndexToChunk(Chunk)(5)))(2)
+                        Dim LastIdx As Integer = Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(New List(Of Integer())(Linq.Enumerable.Skip(IndexToChunk, Chunk)), Function(It) It(0) = IndexToChunk(Chunk)(0) And It(1) = IndexToChunk(Chunk)(1) And It(5) = IndexToChunk(Chunk)(5)))(2)
+                        Dim QuranText As String = TR.QuranTextCombiner(XMLDocMain, IndexToVerse, False, RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), Idx, RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(0), RootDictionary(Arr(KeyCount))(RendCount).Refs(Count)(1), LastIdx)
+                        Renderer(RendCount).Items.AddRange(TR.DoGetRenderedQuranText(QuranText, IndexToVerse, {}, {}, ArabicData.TranslitScheme.None, String.Empty, {}, {}, False, False, False, False, False, True, True).Items)
+                    Next
+                Next
+                Output.Add(New Object() {Arb.TransliterateFromBuckwalter(Arr(KeyCount)), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(0).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(1).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(2).Scale), PastV, PresV, PresVOth, Renderer(0).Items.ToArray(), Renderer(1).Items.ToArray(), Renderer(2).Items.ToArray()})
+            End If
         Next
         Return Output.ToArray()
     End Function
