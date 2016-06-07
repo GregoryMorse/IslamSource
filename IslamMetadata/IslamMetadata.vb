@@ -3097,7 +3097,7 @@ Public Class CachedData
                             ElseIf Root(1) = Root(2) And System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "a" + If(Root(1) = "A", "(?:>|'|_#|&)", If(Root(1) = "y", "(?:y|Y)", Root(1))) + "(?:~|o$$)").Replace("$", "\$").Replace("*", "\*").Replace("\$\$", "$")).Success Then
                                 'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "a" + If(Root(1) = "A", "'", Root(1)) + "~a"
                                 If Tense <> 2 Then RootDictionary(Root)(0).Refs.Add(Location)
-                            ElseIf Root(1) = "w" Or Root(1) = "y" And System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + If(Root(1) = "w", "u", "i") + If(Root(2) = "A", "(?:>|'|_#|&|\})", Root(2))).Replace("$", "\$").Replace("*", "\*")).Success Then
+                            ElseIf Root(1) = "w" Or (Root(1) = "y" And Root(2) <> "y") And System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + If(Root(1) = "w", "u", "i") + If(Root(2) = "A", "(?:>|'|_#|&|\})", Root(2))).Replace("$", "\$").Replace("*", "\*")).Success Then
                                 If RootDictionary(Root)(0).Scale = String.Empty Then
                                     RootDictionary(Root)(0).Scale = "a"
                                     'RootDictionary(Root)(0) = If(Root(0) = "A", ">", Root(0)) + "aA" + If(Root(2) = "A", "'", Root(2)) + "a"
@@ -3327,12 +3327,12 @@ Public Class CachedData
         RootDictionary.Keys.CopyTo(Arr, 0)
         Dim VerbExceptionsTable As String()() = {
             New String() {"hyA", "uu"}, New String() {"nhw", "uu"}, New String() {"lbb", "ua"}, New String() {"lbb", "ia"},
-            New String() {"wrv", "ii"}, New String() {"wvq", "ii"}, New String() {"wmq", "ii"}, New String() {"wfq", "ii"}, New String() {"wrm", "ii"}, New String() {"wry", "ii"}, New String() {"wjd", "ii"}, New String() {"wEq", "ii"}, New String() {"wly", "ii"}, New String() {"wbq", "ii"}, New String() {"wrE", "ii"}, New String() {"wrk", "ii"}, New String() {"wkm", "ii"}, New String() {"wqh", "ii"},
+            New String() {"wrv", "ii"}, New String() {"wvq", "ii"}, New String() {"wmq", "ii"}, New String() {"wfq", "ii"}, New String() {"wrm", "ii"}, New String() {"wjd", "ii"}, New String() {"wEq", "ii"}, New String() {"wbq", "ii"}, New String() {"wrE", "ii"}, New String() {"wrk", "ii"}, New String() {"wkm", "ii"}, New String() {"wqh", "ii"}, New String() {"wry", "ii"}, New String() {"wly", "ii"},
             New String() {"Hsb", "iai"}, New String() {"nEm", "iai"}, New String() {"yAs", "iai"}, New String() {"bAs", "iai"}, New String() {"ybs", "iai"}, New String() {"wHr", "iai"}, New String() {"wgr", "iai"}, New String() {"whl", "iai"}, New String() {"wlh", "iai"},
             New String() {"mrr", "au"}, New String() {"Emm", "au"}, New String() {"hmm", "au"}, New String() {"$kk", "au"},
             New String() {"Sdd", "aui"}, New String() {"vrr", "aui"}, New String() {"$bb", "aui"}, New String() {"drr", "aui"}, New String() {"jdd", "aui"}, New String() {"xrr", "aui"}, New String() {"Enn", "aui"},
-            New String() {"dxl", "au"}, New String() {"TlE", "au"}, New String() {"frg", "au"}, New String() {"qEd", "au"}, New String() {"nfx", "au"}, New String() {"zEm", "au"}, New String() {"blg", "au"}, New String() {"mHw", "au"}, New String() {"Ax*", "au"},
-            New String() {"rjE", "ai"}, New String() {"wEZ", "ai"}, New String() {"whn", "ai"}, New String() {"wEd", "ai"}, New String() {"zyg", "ai"}, New String() {"nzE", "ai"}, New String() {"nkH", "ai"},
+            New String() {"dxl", "au"}, New String() {"qEd", "au"}, New String() {"zEm", "au"}, New String() {"TlE", "au"}, New String() {"frg", "au"}, New String() {"nfx", "au"}, New String() {"blg", "au"}, New String() {"dEw", "au"}, New String() {"mHw", "au"}, New String() {"Ax*", "au"},
+            New String() {"wEd", "ai"}, New String() {"whn", "ai"}, New String() {"wEZ", "ai"}, New String() {"bgy", "ai"},
             New String() {"frq", "aua"}, New String() {"blw", "aua"},
             New String() {"lbs", "aia"}, New String() {"hwy", "aai"},
             New String() {"nyl", "aa"}, New String() {"zyl", "aa"}, New String() {"kwd", "aa"}, New String() {"xwf", "aa"}, New String() {"qnT", "aa"}
@@ -3344,9 +3344,9 @@ Public Class CachedData
         Dim VerbMinimumTable As String()() = {
                 New String() {"  w    ", "au"}, New String() {"Aw     ", "au"}, New String() {"y      ", "ia"}, New String() {"w -    ", "aa"}, New String() {" y-    ", "ia"}, New String() {" Ay    ", "aa"},
                 New String() {"w  ia?L", "ia"}, New String() {"w  uu? ", "uuL"}, New String() {" A aa?S", "aa"}, New String() {" A aa?B", "aa"}, New String() {" wyai? ", "ai"}, New String() {" wyia? ", "ia"}, New String() {"  Auu? ", "uu"}, New String() {" A uu? ", "uu"}, New String() {"A  ia? ", "ia"},
-                New String() {"  yi   ", "ia"}, New String() {"w yi   ", "ii"}, New String() {"w ya   ", "ai"}, New String() {"  Aa   ", "aa"}, New String() {"  Ai   ", "ia"}, New String() {" A i   ", "ia"},
+                New String() {"   u   ", "uu"}, New String() {"  yi   ", "ia"}, New String() {"w yi   ", "ii"}, New String() {"w ya   ", "ai"}, New String() {"  Aa   ", "aa"}, New String() {"  Ai   ", "ia"}, New String() {" A i   ", "ia"},
                 New String() {" yA i  ", "ai"}, New String() {" yA a  ", "aa"}, New String() {" wA a  ", "aa"}, New String() {" wA u  ", "au"}, New String() {"  - u  ", "au"}, New String() {"  - a  ", "ia"}, New String() {"  - i  ", "ai"}, New String() {"  y i  ", "ai"}, New String() {" w  u  ", "au"}, New String() {" w  a  ", "aa"}, New String() {" y  a  ", "aa"}, New String() {" y  i  ", "ai"}, New String() {"A   i  ", "ai"}, New String() {"A   u  S", "au"}, New String() {"A   u  L", "au"}, New String() {"A y i  ", "ai"}, New String() {"A y a  ", "aa"},
-                New String() {"w  aa  ", "aa"}, New String() {"w  ia  ", "ia"}, New String() {"w  ai  ", "ai"}, New String() {"w  ii  ", "ii"}, New String() {"  yaa  ", "aa"}, New String() {"   au  ", "au"}, New String() {"   ai  ", "ai"}, New String() {"   aa  ", "aa"}, New String() {"   ia  ", "ia"}, New String() {"   uu  ", "uu"}, New String() {"   ii  ", "ii"}, New String() {"   aui ", "aui"}, New String() {"   aua ", "aua"},
+                New String() {"w  aa  ", "aa"}, New String() {"w  ia  ", "ia"}, New String() {"w  ai  ", "ai"}, New String() {"w  ii  ", "ii"}, New String() {"  yaa  ", "aa"}, New String() {"   au  ", "au"}, New String() {"   ai  ", "ai"}, New String() {"   aa  ", "aa"}, New String() {"   ia  ", "ia"}, New String() {"   ii  ", "ii"}, New String() {"   aui ", "aui"}, New String() {"   aua ", "aua"},
                 New String() {"   iua ", "iua"}, New String() {"   iu  ", "iua"}
                }
         For KeyCount As Integer = 0 To Arr.Length - 1
@@ -3643,7 +3643,7 @@ Public Class CachedData
                             (BaseChapter <> Chapter OrElse
                             FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(1) <= Verse)) OrElse
                             (FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) > BaseChapter AndAlso
-                            FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) <Chapter) OrElse
+                            FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) < Chapter) OrElse
                             (FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(0) = Chapter AndAlso
                             FormDictionary(CStr(WordDictionary(FreqArray(SubCount))(RefCount)))(FormCount)(1) <= Verse) Then
                             UniCount += 1
