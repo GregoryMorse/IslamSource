@@ -2969,6 +2969,10 @@ Public Class CachedData
     End Function
     Public Class ByteArrayComparer
         Inherits EqualityComparer(Of Integer())
+        Private NotRef As Boolean
+        Public Sub New(Optional NewNotRef As Boolean = False)
+            NotRef = NewNotRef
+        End Sub
         Public Overrides Function Equals(x() As Integer, y() As Integer) As Boolean
             If x Is Nothing Or y Is Nothing Then Return (x Is Nothing) = (y Is Nothing)
             If ReferenceEquals(x, y) Then Return True
@@ -2976,6 +2980,13 @@ Public Class CachedData
             Return Linq.Enumerable.SequenceEqual(x, y)
         End Function
         Public Overrides Function GetHashCode(obj() As Integer) As Integer
+            If NotRef Then
+                If obj.Length = 0 Then Return -1
+                If obj.Length = 1 Then Return obj(0)
+                If obj.Length = 2 Then Return obj(0) + (obj(1) << 8)
+                If obj.Length = 3 Then Return obj(0) + (obj(1) << 8) + (obj(2) << 16)
+                If obj.Length >= 4 Then Return obj(0) + (obj(1) << 8) + (obj(2) << 16) + (obj(3) << 24)
+            End If
             'Maximum chapter Is 7 bits, verse Is 9 bits, word Is 8 bits and sub-word is 2 bits
             Return obj(0) + (obj(1) << 7) + (obj(2) << 16) + (obj(3) << 24)
         End Function
@@ -2992,7 +3003,7 @@ Public Class CachedData
             For Count = 0 To Matches.Count - 1
                 If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
                 ElseIf Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index = StrBefore.Length Then
-                    Return Matches(Count).Result(Rules(MainCount).Evaluator).Substring(Matches(Count).Groups(0).Length)
+                    Return Matches(Count).Result(Rules(MainCount).Evaluator).Substring(Matches(Count).Groups(1).Length)
                 End If
             Next
         Next
@@ -3062,7 +3073,7 @@ Public Class CachedData
                         End If
                     Next
                     If Type = 1 Then
-                        If Root.Length = 3 And Not RootDictionary.ContainsKey(Root) Then RootDictionary.Add(Root, New ScaleRef() {New ScaleRef With {.Refs = New List(Of Integer())}, New ScaleRef With {.Refs = New List(Of Integer())}, New ScaleRef With {.Refs = New List(Of Integer())}})
+                        If Root.Length = 3 And Not RootDictionary.ContainsKey(Root) Then RootDictionary.Add(Root, New ScaleRef() {New ScaleRef With {.Refs = New List(Of Integer())}, New ScaleRef With {.Refs = New List(Of Integer())}, New ScaleRef With {.Refs = New List(Of Integer())}, New ScaleRef With {.Refs = New List(Of Integer())}, New ScaleRef With {.Refs = New List(Of Integer())}})
                         If Root.Length = 3 And (Tense = 1 And Not bPassive Or Tense = 2 And Root(0) = Lemma(0)) Then
                             Dim Orig As String = Pieces(1)
                             If Tense = 2 Then Pieces(1) = Lemma
@@ -3153,12 +3164,12 @@ Public Class CachedData
                                 ElseIf Root(0) = "w" And Root(2) = "y" Then
                                     Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
                                     If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
-                                        RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = String.Empty, 1, 2)).Scale = Match.Groups(1).Value
+                                        RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = String.Empty, 1, 2)).Scale = If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value)
                                         'RootDictionary(Root)(1) = "ya" + Root(1) + Match.Groups(1).Value + Root(2)
                                     ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
                                         Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                     End If
-                                    If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                    If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value), 1, 2)).Refs.Add(Location)
                                 ElseIf Root(2) = "y" Then
                                     '-iyoona changes to -oona and -aaoona changes to -awna fatha
                                     '"AhHxgE" of ayn makes ayn on a, others on i
@@ -3169,7 +3180,7 @@ Public Class CachedData
                                     ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value) And RootDictionary(Root)(2).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value)) Then
                                         Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                     End If
-                                    If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                    If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value), 1, 2)).Refs.Add(Location)
                                 ElseIf Root(1) = Root(2) And System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "&", Root(0)) + "(.)" + Root(1) + "~").Replace("$", "\$").Replace("*", "\*")).Success Then
                                     Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", "&", Root(0)) + "(.)" + Root(1) + "~").Replace("$", "\$").Replace("*", "\*"))
                                     If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
@@ -3233,7 +3244,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 3, 4)).Refs.Add(Location)
                             ElseIf Root(0) = "w" And Root(2) = "y" Then
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (Root(1) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
                                 If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value) And RootDictionary(Root)(2).Scale = String.Empty) Then
@@ -3242,7 +3253,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value) And RootDictionary(Root)(2).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value)) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value), 3, 4)).Refs.Add(Location)
                             ElseIf Root(2) = "y" Then
                                 '-oona changes to -awna fatha
                                 '"AhHxgE" of ayn makes ayn on a, others on i
@@ -3253,7 +3264,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value) And RootDictionary(Root)(2).Scale <> If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value)) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = If(Match.Groups(1).Value = "u", "i", Match.Groups(1).Value), 3, 4)).Refs.Add(Location)
                             ElseIf Root(1) = Root(2) And System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0)) + "(.)(?:" + If(Root(1) = "A", "(?:>|'|_#|&)", Root(1)) + "~|(.)" + Root(2) + ")").Replace("$", "\$").Replace("*", "\*")).Success Then
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0)) + "(.)" + If(Root(1) = "A", "(?:>|'|_#|&)", Root(1)) + "~").Replace("$", "\$").Replace("*", "\*"))
                                 If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
@@ -3262,8 +3273,8 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
-                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).LongShortBoth = If(If(Match.Groups(2).Success, "S"c, "L"c) = RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).LongShortBoth, "B"c, If(Match.Groups(2).Success, "L"c, "S"c))
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = If(Match.Groups(2).Success, Match.Groups(2).Value, Match.Groups(1).Value), 3, 4)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = If(Match.Groups(2).Success, Match.Groups(2).Value, Match.Groups(1).Value), 1, 2)).LongShortBoth = If(If(Match.Groups(2).Success, "S"c, "L"c) = RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = If(Match.Groups(2).Success, Match.Groups(2).Value, Match.Groups(1).Value), 1, 2)).LongShortBoth, "B"c, If(Match.Groups(2).Success, "L"c, "S"c))
                             ElseIf Root(0) = "w" And System.Text.RegularExpressions.Regex.Match(Pieces(1), ("^" + Root(1) + "(.)" + If(Root(2) = "A", "_#", Root(2))).Replace("$", "\$").Replace("*", "\*")).Success Then
                                 '"AhHxgE" of lam makes ayn on a, others on i
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("^" + Root(1) + "(.)" + If(Root(2) = "A", "_#", Root(2))).Replace("$", "\$").Replace("*", "\*"))
@@ -3274,7 +3285,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 3, 4)).Refs.Add(Location)
                             ElseIf Root(1) = "w" Or (Root(1) = "A" And System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", "_#", Root(0)) + "(.)" + "(?:" + Root(1) + "|A)?" + If(Root(2) = "A", "\^>|&", Root(2))).Replace("$", "\$").Replace("*", "\*")).Success) Then
                                 'kwd, xwf exceptions with ayn on a
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", "_#", Root(0)) + "(.)" + "(" + Root(1) + "|A)?" + If(Root(2) = "A", "\^>|&", Root(2))).Replace("$", "\$").Replace("*", "\*"))
@@ -3284,7 +3295,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 3, 4)).Refs.Add(Location)
                                 If Match.Success And Match.Captures.Count = 1 And Root(1) = "A" Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).LongShortBoth = If(If(Match.Groups(2).Success, "S"c, "L"c) = RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).LongShortBoth, "B"c, If(Match.Groups(2).Success, "L"c, "S"c))
                             ElseIf Root(1) = "y" Then
                                 'hamza of lam can make ayn on a, others on i
@@ -3296,7 +3307,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 3, 4)).Refs.Add(Location)
                             ElseIf Root(0) = "A" Then
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("(&?)" + If(Root(1) = "A", "_#", Root(1)) + "(.)" + If(Root(2) = "A", "(?:>|'|_#|&)", Root(2))).Replace("$", "\$").Replace("*", "\*"))
                                 If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(2).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
@@ -3306,7 +3317,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(2).Value And RootDictionary(Root)(2).Scale <> Match.Groups(2).Value) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(2).Value, 3, 4)).Refs.Add(Location)
                             Else
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("\{?" + If(Root(0) = "A", "(?:A|>)", Root(0)) + "(?:\[|o)?" + If(Root(1) = "A", "_#", Root(1)) + "(.)" + If(Root(2) = "A", "(?:>|'|_#|&)", Root(2))).Replace("$", "\$").Replace("*", "\*"))
                                 If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
@@ -3316,7 +3327,7 @@ Public Class CachedData
                                 ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                 End If
-                                'If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 3, 4)).Refs.Add(Location)
                             End If
                         End If
                     End If
@@ -3327,7 +3338,7 @@ Public Class CachedData
         RootDictionary.Keys.CopyTo(Arr, 0)
         Dim VerbExceptionsTable As String()() = {
             New String() {"hyA", "uu"}, New String() {"nhw", "uu"}, New String() {"lbb", "ua"}, New String() {"lbb", "ia"},
-            New String() {"wrv", "ii"}, New String() {"wvq", "ii"}, New String() {"wmq", "ii"}, New String() {"wfq", "ii"}, New String() {"wrm", "ii"}, New String() {"wjd", "ii"}, New String() {"wEq", "ii"}, New String() {"wbq", "ii"}, New String() {"wrE", "ii"}, New String() {"wrk", "ii"}, New String() {"wkm", "ii"}, New String() {"wqh", "ii"}, New String() {"wry", "ii"}, New String() {"wly", "ii"},
+            New String() {"wrv", "ii"}, New String() {"wvq", "ii"}, New String() {"wmq", "ii"}, New String() {"wfq", "ii"}, New String() {"wrm", "ii"}, New String() {"wjd", "ai"}, New String() {"wEq", "ii"}, New String() {"wbq", "ii"}, New String() {"wrE", "ii"}, New String() {"wrk", "ii"}, New String() {"wkm", "ii"}, New String() {"wqh", "ii"}, New String() {"wry", "ii"}, New String() {"wly", "ii"},
             New String() {"Hsb", "iai"}, New String() {"nEm", "iai"}, New String() {"yAs", "iai"}, New String() {"bAs", "iai"}, New String() {"ybs", "iai"}, New String() {"wHr", "iai"}, New String() {"wgr", "iai"}, New String() {"whl", "iai"}, New String() {"wlh", "iai"},
             New String() {"mrr", "au"}, New String() {"Emm", "au"}, New String() {"hmm", "au"}, New String() {"$kk", "au"},
             New String() {"Sdd", "aui"}, New String() {"vrr", "aui"}, New String() {"$bb", "aui"}, New String() {"drr", "aui"}, New String() {"jdd", "aui"}, New String() {"xrr", "aui"}, New String() {"Enn", "aui"},
@@ -3335,48 +3346,85 @@ Public Class CachedData
             New String() {"wEd", "ai"}, New String() {"whn", "ai"}, New String() {"wEZ", "ai"}, New String() {"bgy", "ai"},
             New String() {"frq", "aua"}, New String() {"blw", "aua"},
             New String() {"lbs", "aia"}, New String() {"hwy", "aai"},
-            New String() {"nyl", "aa"}, New String() {"zyl", "aa"}, New String() {"kwd", "aa"}, New String() {"xwf", "aa"}, New String() {"qnT", "aa"}
-            }
+            New String() {"nyl", "aa"}, New String() {"zyl", "aa"}, New String() {"kwd", "aa"}, New String() {"xwf", "aa"}, New String() {"qnT", "aa"},
+            New String() {"kbr", "uau"}
+            } 'New String() {"Hzn", " au"}, New String() {"Asw", " a"}, New String() {"Alw", " u"}, New String() {"wTA", " a"}
         Array.Sort(Arr, New VerbRootComparer(RootDictionary, VerbExceptionsTable))
         Dim Output As New List(Of Object())
         Dim IndexToChunk As Integer()() = Nothing
         TR.QuranTextCombiner(XMLDocMain, IndexToChunk, True)
         Dim VerbMinimumTable As String()() = {
-                New String() {"  w    ", "au"}, New String() {"Aw     ", "au"}, New String() {"y      ", "ia"}, New String() {"w -    ", "aa"}, New String() {" y-    ", "ia"}, New String() {" Ay    ", "aa"},
+                New String() {"  w    ", "au"}, New String() {"Aw     ", "au"}, New String() {"y      ", "ia"}, New String() {"w -    ", "aa"}, New String() {" y-    ", "ia"}, New String() {" Ay    ", "aa"}, New String() {"Awy    ", "ai"},
                 New String() {"w  ia?L", "ia"}, New String() {"w  uu? ", "uuL"}, New String() {" A aa?S", "aa"}, New String() {" A aa?B", "aa"}, New String() {" wyai? ", "ai"}, New String() {" wyia? ", "ia"}, New String() {"  Auu? ", "uu"}, New String() {" A uu? ", "uu"}, New String() {"A  ia? ", "ia"},
                 New String() {"   u   ", "uu"}, New String() {"  yi   ", "ia"}, New String() {"w yi   ", "ii"}, New String() {"w ya   ", "ai"}, New String() {"  Aa   ", "aa"}, New String() {"  Ai   ", "ia"}, New String() {" A i   ", "ia"},
                 New String() {" yA i  ", "ai"}, New String() {" yA a  ", "aa"}, New String() {" wA a  ", "aa"}, New String() {" wA u  ", "au"}, New String() {"  - u  ", "au"}, New String() {"  - a  ", "ia"}, New String() {"  - i  ", "ai"}, New String() {"  y i  ", "ai"}, New String() {" w  u  ", "au"}, New String() {" w  a  ", "aa"}, New String() {" y  a  ", "aa"}, New String() {" y  i  ", "ai"}, New String() {"A   i  ", "ai"}, New String() {"A   u  S", "au"}, New String() {"A   u  L", "au"}, New String() {"A y i  ", "ai"}, New String() {"A y a  ", "aa"},
                 New String() {"w  aa  ", "aa"}, New String() {"w  ia  ", "ia"}, New String() {"w  ai  ", "ai"}, New String() {"w  ii  ", "ii"}, New String() {"  yaa  ", "aa"}, New String() {"   au  ", "au"}, New String() {"   ai  ", "ai"}, New String() {"   aa  ", "aa"}, New String() {"   ia  ", "ia"}, New String() {"   ii  ", "ii"}, New String() {"   aui ", "aui"}, New String() {"   aua ", "aua"},
-                New String() {"   iua ", "iua"}, New String() {"   iu  ", "iua"}
+                New String() {"   iua ", "iua"}, New String() {"   iu  ", "iua"}, New String() {"   aai ", "aai"}, New String() {" wyaai ", "aai"}, New String() {"  -aui ", "aui"}, New String() {"   iai ", "iai"}, New String() {"yA iai ", "iai"}, New String() {" A iai ", "iai"}, New String() {"y  iai ", "iai"}, New String() {"w  iai ", "iai"}, New String() {"  waua ", "aua"}, New String() {"   uau ", "uau"}
                }
+        Dim PotentialMatchSignatures As New Dictionary(Of Integer(), Object())(New ByteArrayComparer(True))
         For KeyCount As Integer = 0 To Arr.Length - 1
             Dim Count As Integer
             For Count = 0 To VerbExceptionsTable.Length - 1
                 If Arr(KeyCount)(0) = VerbExceptionsTable(Count)(0)(0) And
                     Arr(KeyCount)(1) = VerbExceptionsTable(Count)(0)(1) And
                     Arr(KeyCount)(2) = VerbExceptionsTable(Count)(0)(2) Then
-                    Debug.WriteLine("Exceptional: " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + "-" + RootDictionary(Arr(KeyCount))(1).Scale + RootDictionary(Arr(KeyCount))(2).Scale)
+                    Debug.WriteLine("Exceptional: " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + If(RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty And RootDictionary(Arr(KeyCount))(0).Scale <> VerbExceptionsTable(Count)(1)(0), " Error", String.Empty) + "-" + RootDictionary(Arr(KeyCount))(1).Scale + If(RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty And (RootDictionary(Arr(KeyCount))(1).Scale <> VerbExceptionsTable(Count)(1)(1) And (VerbExceptionsTable(Count)(1).Length <= 2 OrElse RootDictionary(Arr(KeyCount))(1).Scale <> VerbExceptionsTable(Count)(1)(2))), " Error", String.Empty) + RootDictionary(Arr(KeyCount))(2).Scale + If(RootDictionary(Arr(KeyCount))(2).Scale <> String.Empty And (RootDictionary(Arr(KeyCount))(2).Scale <> VerbExceptionsTable(Count)(1)(1) And (VerbExceptionsTable(Count)(1).Length <= 2 OrElse RootDictionary(Arr(KeyCount))(2).Scale <> VerbExceptionsTable(Count)(1)(2))), " Error", String.Empty))
+                    RootDictionary(Arr(KeyCount))(0).Scale = VerbExceptionsTable(Count)(1)(0)
+                    RootDictionary(Arr(KeyCount))(1).Scale = VerbExceptionsTable(Count)(1)(1)
+                    RootDictionary(Arr(KeyCount))(2).Scale = If(VerbExceptionsTable(Count)(1).Length > 2, VerbExceptionsTable(Count)(1)(2), String.Empty)
                     Exit For
                 End If
             Next
             If RootDictionary(Arr(KeyCount))(0).Scale = "a" And If(RootDictionary(Arr(KeyCount))(1).Scale = "a" Or RootDictionary(Arr(KeyCount))(2).Scale = "a", Not "AhHxgE".Contains(Arr(KeyCount)(1)) And Not "AhHxgE".Contains(Arr(KeyCount)(2)), (RootDictionary(Arr(KeyCount))(1).Scale = "u" Or RootDictionary(Arr(KeyCount))(1).Scale = "i") And ("AhHxgE".Contains(Arr(KeyCount)(1)) Or "AhHxgE".Contains(Arr(KeyCount)(2)))) Then Debug.WriteLine("Throat Exception: " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + "-" + RootDictionary(Arr(KeyCount))(1).Scale + RootDictionary(Arr(KeyCount))(2).Scale)
+            Dim PotentialMatchSignature As New List(Of Integer)
             For Count = 0 To VerbMinimumTable.Length - 1
-                If (VerbMinimumTable(Count)(0)(0) = " " Or Arr(KeyCount)(0) = VerbMinimumTable(Count)(0)(0)) And
-                    (VerbMinimumTable(Count)(0)(1) = " " Or Arr(KeyCount)(1) = VerbMinimumTable(Count)(0)(1)) And
-                    (VerbMinimumTable(Count)(0)(2) = " " Or Arr(KeyCount)(2) = If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(1), VerbMinimumTable(Count)(0)(2))) And
-                    If(VerbMinimumTable(Count)(0)(5) = "?", (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) Or
-                    (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale),
+                If (VerbMinimumTable(Count)(0)(0) = " " And Not "Awy".Contains(Arr(KeyCount)(0)) Or Arr(KeyCount)(0) = VerbMinimumTable(Count)(0)(0)) And
+                    (VerbMinimumTable(Count)(0)(1) = " " And Not "Awy".Contains(Arr(KeyCount)(1)) Or Arr(KeyCount)(1) = VerbMinimumTable(Count)(0)(1)) And
+                    (VerbMinimumTable(Count)(0)(2) = " " And Not "Awy".Contains(Arr(KeyCount)(2)) Or Arr(KeyCount)(2) = If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(1), VerbMinimumTable(Count)(0)(2))) And
+                    If(VerbMinimumTable(Count)(0)(5) = "?", String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) Or
+                    String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale),
                     (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) And
-                    (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale) And
-                    (VerbMinimumTable(Count)(0)(5) = " " Or VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(2).Scale) Or
+                    ((VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale) And
+                    (VerbMinimumTable(Count)(0)(5) = " " And String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) Or VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(2).Scale) Or
+                    Not String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And
                     (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(2).Scale) And
-                    (VerbMinimumTable(Count)(0)(5) = " " Or VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(1).Scale)) And
+                    (VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(1).Scale))) And
                     (VerbMinimumTable(Count)(0)(6) = " " Or VerbMinimumTable(Count)(0)(6) = "B" Or RootDictionary(Arr(KeyCount))(1).LongShortBoth = " "c Or VerbMinimumTable(Count)(0)(6) = RootDictionary(Arr(KeyCount))(1).LongShortBoth) Then
                     If Not (VerbMinimumTable(Count)(0)(6) = " " Or VerbMinimumTable(Count)(0)(6) = "B" Or VerbMinimumTable(Count)(0)(6) = RootDictionary(Arr(KeyCount))(1).LongShortBoth) Then Debug.WriteLine("Command Filter Ignore: " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + "-" + RootDictionary(Arr(KeyCount))(1).Scale + RootDictionary(Arr(KeyCount))(2).Scale + RootDictionary(Arr(KeyCount))(1).LongShortBoth)
                     Exit For
                 End If
+                If (VerbMinimumTable(Count)(0)(0) = " " And Not "Awy".Contains(Arr(KeyCount)(0)) Or Arr(KeyCount)(0) = VerbMinimumTable(Count)(0)(0)) And
+                    (VerbMinimumTable(Count)(0)(1) = " " And Not "Awy".Contains(Arr(KeyCount)(1)) Or Arr(KeyCount)(1) = VerbMinimumTable(Count)(0)(1)) And
+                    (VerbMinimumTable(Count)(0)(2) = " " And Not "Awy".Contains(Arr(KeyCount)(2)) Or Arr(KeyCount)(2) = If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(1), VerbMinimumTable(Count)(0)(2))) And
+                    If(VerbMinimumTable(Count)(0)(5) = "?", String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) Or
+                    String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale) Or String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(0).Scale) And String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(1).Scale),
+                    (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale Or String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(0).Scale)) And
+                    ((VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale Or String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(1).Scale)) And
+                    (VerbMinimumTable(Count)(0)(5) = " " And String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) Or VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(2).Scale Or String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale)) Or
+                    Not String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And
+                    (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(2).Scale) And
+                    (VerbMinimumTable(Count)(0)(5) = RootDictionary(Arr(KeyCount))(1).Scale))) And
+                    (VerbMinimumTable(Count)(0)(6) = " " Or VerbMinimumTable(Count)(0)(6) = "B" Or RootDictionary(Arr(KeyCount))(1).LongShortBoth = " "c Or VerbMinimumTable(Count)(0)(6) = RootDictionary(Arr(KeyCount))(1).LongShortBoth) Then
+                    'potential match...
+                    PotentialMatchSignature.Add(Count)
+                End If
             Next
+            If Count <> VerbMinimumTable.Length Then
+                PotentialMatchSignature.Clear()
+                PotentialMatchSignature.Add(Count)
+            End If
             If Count = VerbMinimumTable.Length Then Debug.WriteLine("Lack Info: " + Arr(KeyCount) + ": " + RootDictionary(Arr(KeyCount))(0).Scale + "-" + RootDictionary(Arr(KeyCount))(1).Scale + RootDictionary(Arr(KeyCount))(2).Scale)
+            If Not PotentialMatchSignatures.ContainsKey(PotentialMatchSignature.ToArray()) Then PotentialMatchSignatures.Add(PotentialMatchSignature.ToArray(), New Object() {0, 0, 0, New List(Of String), New List(Of String), New List(Of String), 0, 0, New List(Of String), New List(Of String), New List(Of String)})
+            PotentialMatchSignatures(PotentialMatchSignature.ToArray())(0) = CInt(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(0)) + RootDictionary(Arr(KeyCount))(0).Refs.Count
+            PotentialMatchSignatures(PotentialMatchSignature.ToArray())(1) = CInt(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(1)) + RootDictionary(Arr(KeyCount))(1).Refs.Count
+            PotentialMatchSignatures(PotentialMatchSignature.ToArray())(2) = CInt(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(2)) + RootDictionary(Arr(KeyCount))(2).Refs.Count
+            If RootDictionary(Arr(KeyCount))(0).Refs.Count <> 0 Then CType(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(3), List(Of String)).Add(Arr(KeyCount))
+            If RootDictionary(Arr(KeyCount))(1).Refs.Count <> 0 Then CType(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(4), List(Of String)).Add(Arr(KeyCount))
+            If RootDictionary(Arr(KeyCount))(2).Refs.Count <> 0 Then CType(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(5), List(Of String)).Add(Arr(KeyCount))
+            PotentialMatchSignatures(PotentialMatchSignature.ToArray())(6) = CInt(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(6)) + RootDictionary(Arr(KeyCount))(3).Refs.Count
+            PotentialMatchSignatures(PotentialMatchSignature.ToArray())(7) = CInt(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(7)) + RootDictionary(Arr(KeyCount))(4).Refs.Count
+            If RootDictionary(Arr(KeyCount))(3).Refs.Count <> 0 Then CType(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(8), List(Of String)).Add(Arr(KeyCount))
+            If RootDictionary(Arr(KeyCount))(4).Refs.Count <> 0 Then CType(PotentialMatchSignatures(PotentialMatchSignature.ToArray())(9), List(Of String)).Add(Arr(KeyCount))
             'filter besides past, those who root only or present tense only make full determination
             If Count <> VerbMinimumTable.Length AndAlso (RootDictionary(Arr(KeyCount))(0).Refs.Count <> 0 Or Count <> VerbMinimumTable.Length) AndAlso RootDictionary(Arr(KeyCount))(1).Refs.Count <> 0 Then
                 RootDictionary(Arr(KeyCount))(0).Scale = VerbMinimumTable(Count)(1)(0)
@@ -3431,6 +3479,9 @@ Public Class CachedData
                 Next
                 Output.Add(New Object() {Arb.TransliterateFromBuckwalter(Arr(KeyCount)), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(0).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(1).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(2).Scale), PastV, PresV, PresVOth, Renderer(0).Items.ToArray(), Renderer(1).Items.ToArray(), Renderer(2).Items.ToArray()})
             End If
+        Next
+        For Each Key In PotentialMatchSignatures.Keys
+            Debug.WriteLine(String.Join("|"c, Linq.Enumerable.Select(Key, Function(I As Integer) VerbMinimumTable(I)(0) + "," + VerbMinimumTable(I)(1))) + " " + CStr(PotentialMatchSignatures(Key)(0)) + "-" + CStr(PotentialMatchSignatures(Key)(1)) + "-" + CStr(PotentialMatchSignatures(Key)(2)) + " " + CStr(CType(PotentialMatchSignatures(Key)(3), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(4), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(5), List(Of String)).Count) + " " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(3), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + " - " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(4), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + "-" + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(5), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + " " + CStr(PotentialMatchSignatures(Key)(6)) + "-" + CStr(PotentialMatchSignatures(Key)(7)) + " " + CStr(CType(PotentialMatchSignatures(Key)(8), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(9), List(Of String)).Count) + " " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(8), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + " - " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(9), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))))
         Next
         Return Output.ToArray()
     End Function

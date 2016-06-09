@@ -3189,8 +3189,8 @@ var rs, next, str = '', sura = 1; func = function() { if (next.document.readySta
 		<word text="&lt;ijomaAEu {lo&gt;aholi madiynapi" id="ConsensusOfThePeopleOfMadinah"></word>
 		<word text="{lojihaAdu {lo&gt;akobaru" id="GreaterStruggle"></word>
 		<word text="{lojihaAdu {lo&gt;aSogaru" id="GreaterStruggle"></word>
-		<word text="{lojihaAdu {lodafoEu" id="DefensiveFighting"></word>
-		<word text="{lojihaAdu {loTalabu" id="OffensiveFighting"></word>
+		<word text="jihaAdu {lodafoEi" id="DefensiveFighting"></word>
+		<word text="jihaAdu {loTalabi" id="OffensiveFighting"></word>
 		<word text="maqasidu {l$~ariyEapi" id="GoalsObjectivesOfIslamicLaw"></word>
 		<word text="wasowaAsu {loxan~aAsi" id="WhispererWhoWithdraws"></word>
 		<word text="{ln~af~a`va`tu fiY {loEuqadi" id="BlowerInKnots"></word>
