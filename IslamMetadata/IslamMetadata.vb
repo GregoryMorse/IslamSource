@@ -3086,7 +3086,7 @@ Public Class CachedData
                                     Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(0).Scale)
                                 End If
                                 If Match.Success And Match.Captures.Count = 1 And Tense <> 2 Then RootDictionary(Root)(0).Refs.Add(Location)
-                            ElseIf Root(2) = "y" And Root(1) = "A" And Root(0) = "r" Then
+                            ElseIf Root(2) = "y" And Root(1) = "A" Then
                                 'rAy is a special unique exception
                                 Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), (If(Root(0) = "A", ">", Root(0) + "~?") + "(a)" + If(Root(1) = "A", "(?:>|'|_#|&)", Root(1)) + "(?:" + Root(2) + "|A|t)?").Replace("$", "\$").Replace("*", "\*"))
                                 If Match.Success And Match.Captures.Count = 1 And RootDictionary(Root)(0).Scale = String.Empty Then
@@ -3151,16 +3151,17 @@ Public Class CachedData
                                         Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                     End If
                                     If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
-                                ElseIf Root(2) = "y" And Root(1) = "A" And Root(0) = "r" Then
+                                ElseIf Root(2) = "y" And Root(1) = "A" Then
                                     'rAy is a special unique exception
-                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
+                                    Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "(o_#)?(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
                                     If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
-                                        RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = String.Empty, 1, 2)).Scale = Match.Groups(1).Value
+                                        RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = String.Empty, 1, 2)).LongShortBoth = If(Match.Groups(1).Success, "L"c, "S"c)
+                                        RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = String.Empty, 1, 2)).Scale = Match.Groups(2).Value
                                         'RootDictionary(Root)(1) = "ya" + Root(0) + Match.Groups(1).Value + Root(2)
-                                    ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale <> Match.Groups(1).Value) Then
+                                    ElseIf Not Match.Success Or Not Match.Captures.Count = 1 Or (RootDictionary(Root)(1).Scale <> Match.Groups(2).Value And RootDictionary(Root)(2).Scale <> Match.Groups(2).Value) Then
                                         Debug.WriteLine(Root + " - " + Pieces(1) + " - " + RootDictionary(Root)(1).Scale + RootDictionary(Root)(2).Scale)
                                     End If
-                                    If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(1).Value, 1, 2)).Refs.Add(Location)
+                                    If Match.Success And Match.Captures.Count = 1 Then RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = Match.Groups(2).Value, 1, 2)).Refs.Add(Location)
                                 ElseIf Root(0) = "w" And Root(2) = "y" Then
                                     Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + Root(1) + "(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
                                     If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
@@ -3354,7 +3355,7 @@ Public Class CachedData
         Dim IndexToChunk As Integer()() = Nothing
         TR.QuranTextCombiner(XMLDocMain, IndexToChunk, True)
         Dim VerbMinimumTable As String()() = {
-                New String() {"  w    ", "au"}, New String() {"Aw     ", "au"}, New String() {"y      ", "ia"}, New String() {"w -    ", "aa"}, New String() {" y-    ", "ia"}, New String() {" Ay    ", "aa"}, New String() {"Awy    ", "ai"},
+                New String() {"  w    ", "au"}, New String() {"Aw     ", "au"}, New String() {"y      ", "ia"}, New String() {"w -    ", "aa"}, New String() {" y-    ", "ia"}, New String() {" Ay   S", "aa"}, New String() {" Ay   L", "aa"}, New String() {"Awy    ", "ai"},
                 New String() {"w  ia?L", "ia"}, New String() {"w  uu? ", "uuL"}, New String() {" A aa?S", "aa"}, New String() {" A aa?B", "aa"}, New String() {" wyai? ", "ai"}, New String() {" wyia? ", "ia"}, New String() {"  Auu? ", "uu"}, New String() {" A uu? ", "uu"}, New String() {"A  ia? ", "ia"},
                 New String() {"   u   ", "uu"}, New String() {"  yi   ", "ia"}, New String() {"w yi   ", "ii"}, New String() {"w ya   ", "ai"}, New String() {"  Aa   ", "aa"}, New String() {"  Ai   ", "ia"}, New String() {" A i   ", "ia"},
                 New String() {" yA i  ", "ai"}, New String() {" yA a  ", "aa"}, New String() {" wA a  ", "aa"}, New String() {" wA u  ", "au"}, New String() {"  - u  ", "au"}, New String() {"  - a  ", "ia"}, New String() {"  - i  ", "ai"}, New String() {"  y i  ", "ai"}, New String() {" w  u  ", "au"}, New String() {" w  a  ", "aa"}, New String() {" y  a  ", "aa"}, New String() {" y  i  ", "ai"}, New String() {"A   i  ", "ai"}, New String() {"A   u  S", "au"}, New String() {"A   u  L", "au"}, New String() {"A y i  ", "ai"}, New String() {"A y a  ", "aa"},
@@ -3380,7 +3381,7 @@ Public Class CachedData
             For Count = 0 To VerbMinimumTable.Length - 1
                 If (VerbMinimumTable(Count)(0)(0) = " " And Not "Awy".Contains(Arr(KeyCount)(0)) Or Arr(KeyCount)(0) = VerbMinimumTable(Count)(0)(0)) And
                     (VerbMinimumTable(Count)(0)(1) = " " And Not "Awy".Contains(Arr(KeyCount)(1)) Or Arr(KeyCount)(1) = VerbMinimumTable(Count)(0)(1)) And
-                    (VerbMinimumTable(Count)(0)(2) = " " And Not "Awy".Contains(Arr(KeyCount)(2)) Or Arr(KeyCount)(2) = If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(1), VerbMinimumTable(Count)(0)(2))) And
+                    (VerbMinimumTable(Count)(0)(2) = " " And Not "Awy".Contains(Arr(KeyCount)(2)) Or If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(2) = Arr(KeyCount)(1), Arr(KeyCount)(2) = VerbMinimumTable(Count)(0)(2) And Arr(KeyCount)(1) <> Arr(KeyCount)(2))) And
                     If(VerbMinimumTable(Count)(0)(5) = "?", String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) Or
                     String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale),
                     (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) And
@@ -3395,7 +3396,7 @@ Public Class CachedData
                 End If
                 If (VerbMinimumTable(Count)(0)(0) = " " And Not "Awy".Contains(Arr(KeyCount)(0)) Or Arr(KeyCount)(0) = VerbMinimumTable(Count)(0)(0)) And
                     (VerbMinimumTable(Count)(0)(1) = " " And Not "Awy".Contains(Arr(KeyCount)(1)) Or Arr(KeyCount)(1) = VerbMinimumTable(Count)(0)(1)) And
-                    (VerbMinimumTable(Count)(0)(2) = " " And Not "Awy".Contains(Arr(KeyCount)(2)) Or Arr(KeyCount)(2) = If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(1), VerbMinimumTable(Count)(0)(2))) And
+                    (VerbMinimumTable(Count)(0)(2) = " " And Not "Awy".Contains(Arr(KeyCount)(2)) Or If(VerbMinimumTable(Count)(0)(2) = "-", Arr(KeyCount)(2) = Arr(KeyCount)(1), Arr(KeyCount)(2) = VerbMinimumTable(Count)(0)(2) And Arr(KeyCount)(1) <> Arr(KeyCount)(2))) And
                     If(VerbMinimumTable(Count)(0)(5) = "?", String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale) Or
                     String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(2).Scale) And (VerbMinimumTable(Count)(0)(4) = " " Or VerbMinimumTable(Count)(0)(4) = RootDictionary(Arr(KeyCount))(1).Scale) Or String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(0).Scale) And String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(1).Scale),
                     (VerbMinimumTable(Count)(0)(3) = " " Or VerbMinimumTable(Count)(0)(3) = RootDictionary(Arr(KeyCount))(0).Scale Or String.IsNullOrEmpty(RootDictionary(Arr(KeyCount))(0).Scale)) And
@@ -3435,7 +3436,7 @@ Public Class CachedData
                 Dim PresV As String = String.Empty
                 Dim PresVOth As String = String.Empty
                 If Arr(KeyCount)(2) = "y" Then
-                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "Y"
+                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "Y" + If(Arr(KeyCount)(1) = "i", "a", String.Empty)
                     If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + "Y"
                 ElseIf Arr(KeyCount)(1) = "w" Or Arr(KeyCount)(1) = "y" Then
                     If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "aA" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "a"
@@ -5649,14 +5650,15 @@ Public Class TanzilReader
             Dim EndWordNumber As Integer = If(Matches(Count).Groups(6).Value = String.Empty, 0, CInt(Matches(Count).Groups(6).Value))
             If BaseVerse <> 0 And WordNumber = 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
                 ExtraVerseNumber = EndChapter
-                EndChapter = 0
+                EndChapter = BaseChapter
             ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
                 EndWordNumber = EndChapter
-                EndChapter = 0
+                If Matches(Count).Groups(5).Value = String.Empty Then ExtraVerseNumber = BaseVerse
+                EndChapter = BaseChapter
             ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber <> 0 And EndWordNumber = 0 Then
                 EndWordNumber = ExtraVerseNumber
                 ExtraVerseNumber = EndChapter
-                EndChapter = 0
+                EndChapter = BaseChapter
             End If
             If BaseVerse = 0 Then
                 BaseVerse += 1
@@ -5667,10 +5669,8 @@ Public Class TanzilReader
             If EndChapter <> 0 AndAlso (EndChapter < BaseChapter Or EndChapter < 1 Or EndChapter > GetChapterCount()) Then Return False
             If BaseVerse <> 0 AndAlso (BaseVerse < 1 Or BaseVerse > GetVerseCount(BaseChapter)) Then Return False
             If ExtraVerseNumber <> 0 AndAlso ((BaseChapter = If(EndChapter = 0, BaseChapter, EndChapter) And BaseVerse <> 0 And ExtraVerseNumber < BaseVerse) Or ExtraVerseNumber < 1 Or ExtraVerseNumber > GetVerseCount(If(EndChapter = 0, BaseChapter, EndChapter))) Then Return False
-            Dim IndexToVerse As Integer()() = Nothing
-            Dim Check As String = QuranTextCombiner(ChData.XMLDocMain, IndexToVerse, True, BaseChapter, BaseVerse, 0, EndChapter, ExtraVerseNumber, 0)
-            If WordNumber < 1 Or WordNumber > Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(IndexToVerse, Function(Test As Integer()) Test(0) = BaseChapter And Test(1) = BaseVerse))(3) Then Return False
-            If EndWordNumber <> 0 AndAlso (BaseChapter = If(EndChapter = 0, BaseChapter, EndChapter) And BaseVerse = If(ExtraVerseNumber = 0, BaseVerse, ExtraVerseNumber) And WordNumber <> 0 And EndWordNumber < WordNumber Or EndWordNumber < 1 Or EndWordNumber > IndexToVerse(IndexToVerse.Length - 1)(3)) Then Return False
+            If WordNumber < 1 Or WordNumber > GetWordCount(BaseChapter, BaseVerse) Then Return False
+            If EndWordNumber <> 0 AndAlso (BaseChapter = If(EndChapter = 0, BaseChapter, EndChapter) And BaseVerse = If(ExtraVerseNumber = 0, BaseVerse, ExtraVerseNumber) And WordNumber <> 0 And EndWordNumber < WordNumber Or EndWordNumber < 1 Or EndWordNumber > GetWordCount(EndChapter, ExtraVerseNumber)) Then Return False
         Next
         Return True
     End Function
@@ -5693,14 +5693,15 @@ Public Class TanzilReader
             Dim EndWordNumber As Integer = If(Matches(Count).Groups(6).Value = String.Empty, 0, CInt(Matches(Count).Groups(6).Value))
             If BaseVerse <> 0 And WordNumber = 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
                 ExtraVerseNumber = EndChapter
-                EndChapter = 0
+                EndChapter = BaseChapter
             ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber = 0 And EndWordNumber = 0 Then
                 EndWordNumber = EndChapter
-                EndChapter = 0
+                If Matches(Count).Groups(5).Value = String.Empty Then ExtraVerseNumber = BaseVerse
+                EndChapter = BaseChapter
             ElseIf BaseVerse <> 0 And WordNumber <> 0 And EndChapter <> 0 And ExtraVerseNumber <> 0 And EndWordNumber = 0 Then
                 EndWordNumber = ExtraVerseNumber
                 ExtraVerseNumber = EndChapter
-                EndChapter = 0
+                EndChapter = BaseChapter
             End If
             If BaseVerse = 0 Then
                 BaseVerse += 1
@@ -6351,7 +6352,7 @@ Public Class TanzilReader
                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " " + Text.Substring(IndexToVerse(Count)(3), IndexToVerse(Count)(4))))
                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " "))
                     'Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(Count), String.Empty)))
-                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) <> -1, Arabic.FilterMetadataStopsContig(Pos + IndexToVerse(Count)(4) + If(Count <> IndexToVerse(IndexToVerse.Length - 1)(2) AndAlso IndexToVerse(Count + 1)(4) <> 1, 1 + IndexToVerse(Count + 1)(4), 0), UnfilteredMetaRules, DefStops, Pos - If(Count = 0, 0, IndexToVerse(Count - 1)(4) + 1))}))
+                    Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) <> -1, Arabic.FilterMetadataStopsContig(Pos + IndexToVerse(Count)(4) + If(IndexToVerse(Count)(2) <> IndexToVerse(IndexToVerse.Length - 1)(2) AndAlso IndexToVerse(Count + 1)(4) <> 1, 1 + IndexToVerse(Count + 1)(4), 0), UnfilteredMetaRules, DefStops, Pos - If(Count = 0, 0, IndexToVerse(Count - 1)(4) + 1))}))
                 End If
                 If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(Count + 1)))
                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
@@ -6364,16 +6365,16 @@ Public Class TanzilReader
                     If Colorize Then
                         Texts.AddRange(WordColors(Count))
                         If SchemeType <> ArabicData.TranslitScheme.None Then
-                            Texts.AddRange(TranslitColors(IndexToVerse(Count)(2) - If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 0, 1)))
+                            Texts.AddRange(TranslitColors(IndexToVerse(Count)(2) - IndexToVerse(0)(2) + If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 1, 0)))
                         Else
                             Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, String.Empty))
                         End If
                     Else
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text.Substring(IndexToVerse(Count)(3), IndexToVerse(Count)(4))))
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(IndexToVerse(Count)(2) - If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 0, 1)), String.Empty)))
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(IndexToVerse(Count)(2) - IndexToVerse(0)(2) + If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 1, 0)), String.Empty)))
                     End If
                     If Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah And Count <> 0 Then
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) <> -1, Arabic.FilterMetadataStopsContig(Pos + IndexToVerse(Count)(4) + If(Count <> IndexToVerse(IndexToVerse.Length - 1)(2) AndAlso IndexToVerse(Count + 1)(4) <> 1, 1 + IndexToVerse(Count + 1)(4), 0), UnfilteredMetaRules, DefStops, Pos - IndexToVerse(Count - 1)(4) - 1)}))
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) <> -1, Arabic.FilterMetadataStopsContig(Pos + IndexToVerse(Count)(4) + If(IndexToVerse(Count)(2) <> IndexToVerse(IndexToVerse.Length - 1)(2) AndAlso IndexToVerse(Count + 1)(4) <> 1, 1 + IndexToVerse(Count + 1)(4), 0), UnfilteredMetaRules, DefStops, Pos - IndexToVerse(Count - 1)(4) - 1)}))
                     End If
                 End If
                 'If Translation <> String.Empty Then
@@ -6389,7 +6390,7 @@ Public Class TanzilReader
                 'End If
                 If W4WNum Then Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, CStr(IndexToVerse(Count)(2))))
                 Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Texts.ToArray()))
-                If Not NoArabic AndAlso Count <> IndexToVerse(IndexToVerse.Length - 1)(2) AndAlso IndexToVerse(Count + 1)(4) <> 1 AndAlso Text(IndexToVerse(Count + 1)(3)) <> ArabicData.ArabicEndOfAyah Then
+                If Not NoArabic AndAlso IndexToVerse(Count)(2) <> IndexToVerse(IndexToVerse.Length - 1)(2) AndAlso IndexToVerse(Count + 1)(4) <> 1 AndAlso Text(IndexToVerse(Count + 1)(3)) <> ArabicData.ArabicEndOfAyah Then
                     Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos + IndexToVerse(Count)(4)) <> -1, Arabic.FilterMetadataStopsContig(Pos + IndexToVerse(Count)(4) + 1 + IndexToVerse(Count + 1)(4), UnfilteredMetaRules, DefStops, Pos)})}))
                 End If
                 Texts.Clear()
@@ -6512,8 +6513,8 @@ Public Class TanzilReader
         End While
         If NoRef And First <> -1 And Last <> -1 Then
             If Not NoArabic Then
-                Dim Ref As String = "(" + Arb.GetCatNoun("QuranReadingRecitation")(0).Text + " " + ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(First)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(First)(0)) + "\:" + CStr(IndexToVerse(First)(1)) + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0) And IndexToVerse(First)(1) = IndexToVerse(Last)(1), String.Empty, "\-" + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0), String.Empty, ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(Last)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(Last)(0)) + "\:") + CStr(IndexToVerse(Last)(1))) + ")"
-                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arb.TransliterateFromBuckwalter(Ref))}))
+                Dim Ref As String = Arb.TransliterateFromBuckwalter("(" + Arb.GetCatNoun("QuranReadingRecitation")(0).Text + " " + ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(First)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(First)(0)) + "\:" + CStr(IndexToVerse(First)(1)) + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0) And IndexToVerse(First)(1) = IndexToVerse(Last)(1), String.Empty, "\-" + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0), String.Empty, ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(Last)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(Last)(0)) + "\:") + CStr(IndexToVerse(Last)(1))) + ")")
+                Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Ref)}))
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arb.TransliterateToScheme(Ref, SchemeType, Scheme, Arabic.FilterMetadataStops(Ref, Arb.GetMetarules(Ref, ChData.RuleMetas("Normal")), Nothing)), String.Empty))}))
             End If
             For TranslationIndex As Integer = 0 To Lines.Length - 1
