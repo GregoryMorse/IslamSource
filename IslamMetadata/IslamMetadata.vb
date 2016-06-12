@@ -6342,7 +6342,7 @@ Public Class TanzilReader
             WordColors = Arb.ApplyColorRules(Text, True, MetaRules)
             TranslitColors = Arb.TransliterateWithRulesColor(Text, Scheme, True, False, MetaRules)
         Else
-            TranslitWords = Arb.TransliterateToScheme(Text, SchemeType, Scheme, MetaRules).Split(" "c)
+            TranslitWords = New System.Text.RegularExpressions.Regex(" (?![^\(]*\))").Split(Arb.TransliterateToScheme(Text, SchemeType, Scheme, MetaRules))
         End If
         Dim Pos As Integer = 0
         For Count As Integer = 0 To IndexToVerse.Length - 1
@@ -6513,7 +6513,7 @@ Public Class TanzilReader
         End While
         If NoRef And First <> -1 And Last <> -1 Then
             If Not NoArabic Then
-                Dim Ref As String = Arb.TransliterateFromBuckwalter("(" + Arb.GetCatNoun("QuranReadingRecitation")(0).Text + " " + ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(First)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(First)(0)) + "\:" + CStr(IndexToVerse(First)(1)) + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0) And IndexToVerse(First)(1) = IndexToVerse(Last)(1), String.Empty, "\-" + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0), String.Empty, ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(Last)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(Last)(0)) + "\:") + CStr(IndexToVerse(Last)(1))) + ")")
+                Dim Ref As String = Arb.TransliterateFromBuckwalter("(" + Phrases.GetPhraseCat("TheQuran", ChData.IslamData.Phrases).Value.Text + "\, " + ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(First)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(First)(0)) + "\:" + CStr(IndexToVerse(First)(1)) + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0) And IndexToVerse(First)(1) = IndexToVerse(Last)(1), String.Empty, "\-" + If(IndexToVerse(First)(0) = IndexToVerse(Last)(0), String.Empty, ChData.IslamData.QuranChapters(CInt(GetChapterByIndex(IndexToVerse(Last)(0)).Attribute("index").Value) - 1).Name + " " + CStr(IndexToVerse(Last)(0)) + "\:") + CStr(IndexToVerse(Last)(1))) + ")")
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Ref)}))
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arb.TransliterateToScheme(Ref, SchemeType, Scheme, Arabic.FilterMetadataStops(Ref, Arb.GetMetarules(Ref, ChData.RuleMetas("Normal")), Nothing)), String.Empty))}))
             End If
