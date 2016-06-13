@@ -56,6 +56,8 @@ Partial Class host
     Private UA As UserAccounts
     Private ArbData As ArabicData
     Dim PageSet As PageLoader
+    <CLSCompliant(False)>
+    Public Shared Obj As New Nito.AsyncEx.AsyncLock
     Public Function IsLoggedIn(Context As HttpContext) As Boolean
         Return UA.IsLoggedIn(Context)
     End Function
@@ -64,33 +66,38 @@ Partial Class host
         Dim IsPrint As Boolean = False
         Dim bmp As Bitmap = Nothing
         Dim ResultBmp As Bitmap = Nothing
-        If Application("PortableMethods") Is Nothing Then
-            Application.Add("PortableMethods", New XMLRender.PortableMethods(New HostPageUtility.WindowsWebFileIO(), New HostPageUtility.WindowsWebSettings(Context.Request.PhysicalApplicationPath)))
-            Await CType(Application("PortableMethods"), PortableMethods).Init()
-        End If
-        _PortableMethods = CType(Application("PortableMethods"), PortableMethods)
-        If Application("ArbData") Is Nothing Then
-            Application.Add("ArbData", New ArabicData(_PortableMethods))
-            Await CType(Application("ArbData"), ArabicData).Init()
-        End If
-        ArbData = CType(Application("ArbData"), ArabicData)
-        If Application("UWeb") Is Nothing Then
-            Application.Add("UWeb", New UtilityWeb(_PortableMethods, ArbData, AddressOf host.GetPageString, AddressOf UserAccounts.GetUserID, AddressOf IsLoggedIn))
-            CType(_PortableMethods.Settings, HostPageUtility.WindowsWebSettings).Init(CType(Application("UWeb"), UtilityWeb))
-        End If
-        UWeb = CType(Application("UWeb"), UtilityWeb)
-        If Application("SD") Is Nothing Then
-            Application.Add("SD", New SiteDatabase(UWeb))
-            Await UWeb.Init(CType(Application("SD"), SiteDatabase))
-        End If
-        SD = CType(Application("SD"), SiteDatabase)
-        If Application("PageSet") Is Nothing Then
-            Application.Add("PageSet", New PageLoader(_PortableMethods, UWeb))
-            Await CType(Application("PageSet"), PageLoader).Init(Context.Request.Url.Host)
-        End If
-        PageSet = CType(Application("PageSet"), PageLoader)
-        If Application("UA") Is Nothing Then Application.Add("UA", New UserAccounts(_PortableMethods, UWeb, ArbData, PageSet, SD))
-        UA = CType(Application("UA"), UserAccounts)
+        Dim Disp As IDisposable = Await Obj.LockAsync() 'SyncLock
+        Try
+            If Application("PortableMethods") Is Nothing Then
+                Application.Add("PortableMethods", New XMLRender.PortableMethods(New HostPageUtility.WindowsWebFileIO(), New HostPageUtility.WindowsWebSettings(Context.Request.PhysicalApplicationPath)))
+                Await CType(Application("PortableMethods"), PortableMethods).Init()
+            End If
+            _PortableMethods = CType(Application("PortableMethods"), PortableMethods)
+            If Application("ArbData") Is Nothing Then
+                Application.Add("ArbData", New ArabicData(_PortableMethods))
+                Await CType(Application("ArbData"), ArabicData).Init()
+            End If
+            ArbData = CType(Application("ArbData"), ArabicData)
+            If Application("UWeb") Is Nothing Then
+                Application.Add("UWeb", New UtilityWeb(_PortableMethods, ArbData, AddressOf host.GetPageString, AddressOf UserAccounts.GetUserID, AddressOf IsLoggedIn))
+                CType(_PortableMethods.Settings, HostPageUtility.WindowsWebSettings).Init(CType(Application("UWeb"), UtilityWeb))
+            End If
+            UWeb = CType(Application("UWeb"), UtilityWeb)
+            If Application("SD") Is Nothing Then
+                Application.Add("SD", New SiteDatabase(UWeb))
+                Await UWeb.Init(CType(Application("SD"), SiteDatabase))
+            End If
+            SD = CType(Application("SD"), SiteDatabase)
+            If Application("PageSet") Is Nothing Then
+                Application.Add("PageSet", New PageLoader(_PortableMethods, UWeb))
+                Await CType(Application("PageSet"), PageLoader).Init(Context.Request.Url.Host)
+            End If
+            PageSet = CType(Application("PageSet"), PageLoader)
+            If Application("UA") Is Nothing Then Application.Add("UA", New UserAccounts(_PortableMethods, UWeb, ArbData, PageSet, SD))
+            UA = CType(Application("UA"), UserAccounts)
+        Finally
+            Disp.Dispose() 'End SyncLock
+        End Try
         Controls.Clear() 'clear viewstate and default HTML rendering control container
         If Context.Request.QueryString.Get(LangSet) <> String.Empty Then
             UserAccounts.SetLanguage(Context.Request.QueryString.Get(LangSet), Context)

@@ -780,9 +780,39 @@ Public Class ArabicWeb
         Output.Add(New String() {})
         Dim TR As New TanzilReader(_PortableMethods, Arb, ArbData, ChData)
         ChData.BuildQuranLetterIndex(TR)
+        Dim Verses As Collections.Generic.List(Of String())
+        Verses = TR.GetQuranText(ChData.XMLDocMain, -1, -1, -1, -1)
         'AlefWasla, Alef - silent, pronounced, AlefMaksura, SuperscriptAlef - always, can be written with alef, Waw, Yah, SmallWaw, SmallYah
-        Output.Add(New String() {"transliteration", "translation", "translation", "translation", "translation", "translation", "translation", "translation", "translation"})
-        Output.Add(New String() {_PortableMethods.LoadResourceString("IslamInfo_Chapter"), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefWasla), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlef), ArbData.GetUnicodeName(ArabicData.ArabicLetterSuperscriptAlef), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefMaksura), ArbData.GetUnicodeName(ArabicData.ArabicLetterWaw), ArbData.GetUnicodeName(ArabicData.ArabicSmallWaw), ArbData.GetUnicodeName(ArabicData.ArabicLetterYeh), ArbData.GetUnicodeName(ArabicData.ArabicSmallYeh)})
+        Output.Add(New String() {"transliteration",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation",
+                   "translation", "translation", "translation"})
+        Output.Add(New String() {_PortableMethods.LoadResourceString("IslamInfo_Chapter"),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefWasla), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlef), ArbData.GetUnicodeName(ArabicData.ArabicLetterSuperscriptAlef),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefMaksura), ArbData.GetUnicodeName(ArabicData.ArabicLetterWaw), ArbData.GetUnicodeName(ArabicData.ArabicSmallWaw),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterYeh), ArbData.GetUnicodeName(ArabicData.ArabicSmallYeh), ArbData.GetUnicodeName(ArabicData.ArabicLetterBeh),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterTeh), ArbData.GetUnicodeName(ArabicData.ArabicLetterTheh), ArbData.GetUnicodeName(ArabicData.ArabicLetterJeem),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterHah), ArbData.GetUnicodeName(ArabicData.ArabicLetterKhah), ArbData.GetUnicodeName(ArabicData.ArabicLetterDal),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterThal), ArbData.GetUnicodeName(ArabicData.ArabicLetterReh), ArbData.GetUnicodeName(ArabicData.ArabicLetterZain),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterSeen), ArbData.GetUnicodeName(ArabicData.ArabicLetterSheen), ArbData.GetUnicodeName(ArabicData.ArabicLetterSad),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterDad), ArbData.GetUnicodeName(ArabicData.ArabicLetterTah), ArbData.GetUnicodeName(ArabicData.ArabicLetterZah),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterAin), ArbData.GetUnicodeName(ArabicData.ArabicLetterGhain), ArbData.GetUnicodeName(ArabicData.ArabicLetterFeh),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterQaf), ArbData.GetUnicodeName(ArabicData.ArabicLetterKaf), ArbData.GetUnicodeName(ArabicData.ArabicLetterLam),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterMeem), ArbData.GetUnicodeName(ArabicData.ArabicLetterNoon), ArbData.GetUnicodeName(ArabicData.ArabicLetterHeh), ArbData.GetUnicodeName(ArabicData.ArabicLetterTehMarbuta),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterHamza), ArbData.GetUnicodeName(ArabicData.ArabicHamzaAbove), ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefWithHamzaAbove),
+                   ArbData.GetUnicodeName(ArabicData.ArabicLetterAlefWithHamzaBelow), ArbData.GetUnicodeName(ArabicData.ArabicLetterWawWithHamzaAbove), ArbData.GetUnicodeName(ArabicData.ArabicLetterYehWithHamzaAbove),
+                   "Total Hamzas", "Alef Maksura -> Alef", "AlefMaksura -> Yaa"})
         Dim Count As Integer
         For Count = 1 To TR.GetChapterCount()
             Output.Add(New String() {TR.GetChapterName(TR.GetChapterByIndex(Count), SchemeType, Scheme),
@@ -793,7 +823,42 @@ Public Class ArabicWeb
                        CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterWaw), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
                        CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicSmallWaw), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
                        CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterYeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
-                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicSmallYeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count()))})
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicSmallYeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterBeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterTeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterTheh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterJeem), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterHah), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterKhah), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterDal), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterThal), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterReh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterZain), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterSeen), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterSheen), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterSad), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterDad), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterTah), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterZah), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAin), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterGhain), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterFeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterQaf), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterKaf), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterLam), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterMeem), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterNoon), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterHeh), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterTehMarbuta), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterHamza), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefWithHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefWithHamzaBelow), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterWawWithHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterYehWithHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterHamza), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count()) + Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count()) + Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefWithHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count()) + Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefWithHamzaBelow), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count()) + Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterWawWithHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count()) + Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterYehWithHamzaAbove), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefMaksura), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1 AndAlso Verses(Ints(0))(Ints(1))(Ints(2)) = ArabicData.ArabicFatha).Count())),
+                       CStr(Linq.Enumerable.Sum(ChData.LetterDictionary(ArabicData.ArabicLetterAlefMaksura), Function(KV) Linq.Enumerable.Where(KV.Value, Function(Ints) Ints(0) = Count - 1 AndAlso Verses(Ints(0))(Ints(1))(Ints(2)) = ArabicData.ArabicKasra).Count()))})
         Next
         Return Output.ToArray()
     End Function

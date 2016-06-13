@@ -3007,10 +3007,33 @@ Public Class CachedData
                 End If
             Next
         Next
+        Debug.WriteLine("Hamza Issue: " + Arb.TransliterateToScheme(StrBefore, ArabicData.TranslitScheme.Literal, String.Empty, Nothing) + "-'-" + Arb.TransliterateToScheme(StrAfter, ArabicData.TranslitScheme.Literal, String.Empty, Nothing))
         Return String.Empty
     End Function
     Public Function CombineFixHamzas(Str As String) As String
         Return System.Text.RegularExpressions.Regex.Replace(Str, GetPattern("Hamzas"), Function(Match As System.Text.RegularExpressions.Match) GetWritingHamza(Str.Substring(0, Match.Index), Str.Substring(Match.Index + Match.Length), True))
+    End Function
+    Public Function FixRootHamzas(Root As String, MiddleVowel As String) As String
+        'root hamzas based on default past tense form
+        If Root(2) = ArabicData.ArabicLetterYeh Then
+            If Root(0) = ArabicData.ArabicLetterAlef Then Return GetWritingHamza(String.Empty, ArabicData.ArabicFatha + Root(1) + MiddleVowel + ArabicData.ArabicLetterAlefMaksura + If(MiddleVowel = ArabicData.ArabicKasra, ArabicData.ArabicFatha, String.Empty), True) + Root(1) + Root(2)
+            If Root(1) = ArabicData.ArabicLetterAlef Then Return Root(0) + GetWritingHamza(Root(0) + ArabicData.ArabicFatha, MiddleVowel + ArabicData.ArabicLetterAlefMaksura + If(MiddleVowel = ArabicData.ArabicKasra, ArabicData.ArabicFatha, String.Empty), True) + Root(2)
+        ElseIf Root(1) = ArabicData.ArabicLetterWaw Or Root(1) = ArabicData.ArabicLetterYeh Then
+            If Root(0) = ArabicData.ArabicLetterAlef Then Return GetWritingHamza(String.Empty, ArabicData.ArabicFatha + ArabicData.ArabicLetterAlef + Root(2) + ArabicData.ArabicFatha, True) + Root(1) + Root(2)
+            If Root(2) = ArabicData.ArabicLetterAlef Then Return Root(0) + Root(1) + GetWritingHamza(Root(0) + ArabicData.ArabicFatha + ArabicData.ArabicLetterAlef + ArabicData.ArabicMaddahAbove, ArabicData.ArabicFatha, True)
+        ElseIf Root(1) = Root(2) Then
+            If Root(0) = ArabicData.ArabicLetterAlef Then Return GetWritingHamza(String.Empty, ArabicData.ArabicFatha + Root(1) + ArabicData.ArabicShadda + ArabicData.ArabicFatha, True) + Root(1) + Root(2)
+        Else
+            If Root(2) = ArabicData.ArabicLetterWaw Then
+                If Root(0) = ArabicData.ArabicLetterAlef Then Return GetWritingHamza(String.Empty, ArabicData.ArabicFatha + Root(1) + MiddleVowel + ArabicData.ArabicLetterAlef, True) + Root(1) + Root(2)
+                If Root(1) = ArabicData.ArabicLetterAlef Then Return Root(0) + GetWritingHamza(Root(0) + ArabicData.ArabicFatha, MiddleVowel + ArabicData.ArabicLetterAlef, True) + Root(2)
+            Else
+                If Root(0) = ArabicData.ArabicLetterAlef Then Return GetWritingHamza(String.Empty, ArabicData.ArabicFatha + Root(1) + MiddleVowel + Root(2) + ArabicData.ArabicFatha, True) + Root(1) + Root(2)
+                If Root(1) = ArabicData.ArabicLetterAlef Then Return Root(0) + GetWritingHamza(Root(0) + ArabicData.ArabicFatha, MiddleVowel + Root(2) + ArabicData.ArabicFatha, True) + Root(2)
+                If Root(2) = ArabicData.ArabicLetterAlef Then Return Root(0) + Root(1) + GetWritingHamza(Root(0) + ArabicData.ArabicFatha + Root(1) + MiddleVowel, ArabicData.ArabicFatha, True)
+            End If
+        End If
+        Return Root
     End Function
     Structure ScaleRef
         Dim Scale As String
@@ -3358,10 +3381,10 @@ Public Class CachedData
                 New String() {"  w    ", "au"}, New String() {"Aw     ", "au"}, New String() {"y      ", "ia"}, New String() {"w -    ", "aa"}, New String() {" y-    ", "ia"}, New String() {" Ay   S", "aa"}, New String() {" Ay   L", "aa"}, New String() {"Awy    ", "ai"},
                 New String() {"w  ia?L", "ia"}, New String() {"w  uu? ", "uuL"}, New String() {" A aa?S", "aa"}, New String() {" A aa?B", "aa"}, New String() {" wyai? ", "ai"}, New String() {" wyia? ", "ia"}, New String() {"  Auu? ", "uu"}, New String() {" A uu? ", "uu"}, New String() {"A  ia? ", "ia"},
                 New String() {"   u   ", "uu"}, New String() {"  yi   ", "ia"}, New String() {"w yi   ", "ii"}, New String() {"w ya   ", "ai"}, New String() {"  Aa   ", "aa"}, New String() {"  Ai   ", "ia"}, New String() {" A i   ", "ia"},
-                New String() {" yA i  ", "ai"}, New String() {" yA a  ", "aa"}, New String() {" wA a  ", "aa"}, New String() {" wA u  ", "au"}, New String() {"  - u  ", "au"}, New String() {"  - a  ", "ia"}, New String() {"  - i  ", "ai"}, New String() {"  y i  ", "ai"}, New String() {" w  u  ", "au"}, New String() {" w  a  ", "aa"}, New String() {" y  a  ", "aa"}, New String() {" y  i  ", "ai"}, New String() {"A   i  ", "ai"}, New String() {"A   u  S", "au"}, New String() {"A   u  L", "au"}, New String() {"A y i  ", "ai"}, New String() {"A y a  ", "aa"},
+                New String() {" yA i  ", "ai"}, New String() {" yA a  ", "aa"}, New String() {" wA a  ", "aa"}, New String() {" wA u  ", "au"}, New String() {"A - u  ", "au"}, New String() {"  - u  ", "au"}, New String() {"  - a  ", "ia"}, New String() {"  - i  ", "ai"}, New String() {"  y i  ", "ai"}, New String() {" w  u  ", "au"}, New String() {" w  a  ", "aa"}, New String() {" y  a  ", "aa"}, New String() {" y  i  ", "ai"}, New String() {"A   i  ", "ai"}, New String() {"A   u  S", "au"}, New String() {"A   u  L", "au"}, New String() {"A y i  ", "ai"}, New String() {"A y a  ", "aa"},
                 New String() {"w  aa  ", "aa"}, New String() {"w  ia  ", "ia"}, New String() {"w  ai  ", "ai"}, New String() {"w  ii  ", "ii"}, New String() {"  yaa  ", "aa"}, New String() {"   au  ", "au"}, New String() {"   ai  ", "ai"}, New String() {"   aa  ", "aa"}, New String() {"   ia  ", "ia"}, New String() {"   ii  ", "ii"}, New String() {"   aui ", "aui"}, New String() {"   aua ", "aua"},
                 New String() {"   iua ", "iua"}, New String() {"   iu  ", "iua"}, New String() {"   aai ", "aai"}, New String() {" wyaai ", "aai"}, New String() {"  -aui ", "aui"}, New String() {"   iai ", "iai"}, New String() {"yA iai ", "iai"}, New String() {" A iai ", "iai"}, New String() {"y  iai ", "iai"}, New String() {"w  iai ", "iai"}, New String() {"  waua ", "aua"}, New String() {"   uau ", "uau"}
-               }
+               } ' not working present/command wTA Alw Asw rAy
         Dim PotentialMatchSignatures As New Dictionary(Of Integer(), Object())(New ByteArrayComparer(True))
         For KeyCount As Integer = 0 To Arr.Length - 1
             Dim Count As Integer
@@ -3436,16 +3459,16 @@ Public Class CachedData
                 Dim PresV As String = String.Empty
                 Dim PresVOth As String = String.Empty
                 If Arr(KeyCount)(2) = "y" Then
-                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "Y" + If(Arr(KeyCount)(1) = "i", "a", String.Empty)
+                    If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(0).Scale + "Y" + If(RootDictionary(Arr(KeyCount))(0).Scale = "i", "a", String.Empty)
                     If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "o" + If(Arr(KeyCount)(1) = "A", "'", Arr(KeyCount)(1)) + RootDictionary(Arr(KeyCount))(1).Scale + "Y"
                 ElseIf Arr(KeyCount)(1) = "w" Or Arr(KeyCount)(1) = "y" Then
                     If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "aA" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "a"
                     If RootDictionary(Arr(KeyCount))(1).Scale = "a" Then
-                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "A" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "A" + If(Arr(KeyCount)(2) = "A", "^'", Arr(KeyCount)(2)) + "u"
                     ElseIf RootDictionary(Arr(KeyCount))(1).Scale = "i" Then
-                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "y" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "y" + If(Arr(KeyCount)(2) = "A", "^'", Arr(KeyCount)(2)) + "u"
                     Else
-                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "w" + If(Arr(KeyCount)(2) = "A", "'", Arr(KeyCount)(2)) + "u"
+                        If RootDictionary(Arr(KeyCount))(1).Scale <> String.Empty Then PresV = "ya" + If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + RootDictionary(Arr(KeyCount))(1).Scale + "w" + If(Arr(KeyCount)(2) = "A", "^'", Arr(KeyCount)(2)) + "u"
                     End If
                 ElseIf Arr(KeyCount)(1) = Arr(KeyCount)(2) Then
                     If RootDictionary(Arr(KeyCount))(0).Scale <> String.Empty Then PastV = If(Arr(KeyCount)(0) = "A", "'", Arr(KeyCount)(0)) + "a" + Arr(KeyCount)(1) + "~a"
@@ -3478,11 +3501,11 @@ Public Class CachedData
                         Renderer(RendCount).Items.AddRange(TR.DoGetRenderedQuranText(QuranText, IndexToVerse, {}, {}, ArabicData.TranslitScheme.None, String.Empty, {}, {}, False, False, False, False, False, True, True).Items)
                     Next
                 Next
-                Output.Add(New Object() {Arb.TransliterateFromBuckwalter(Arr(KeyCount)), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(0).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(1).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(2).Scale), PastV, PresV, PresVOth, Renderer(0).Items.ToArray(), Renderer(1).Items.ToArray(), Renderer(2).Items.ToArray()})
+                Output.Add(New Object() {FixRootHamzas(Arb.TransliterateFromBuckwalter(Arr(KeyCount)), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(0).Scale)), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(0).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(1).Scale), Arb.TransliterateFromBuckwalter(RootDictionary(Arr(KeyCount))(2).Scale), PastV, PresV, PresVOth, Renderer(0).Items.ToArray(), Renderer(1).Items.ToArray(), Renderer(2).Items.ToArray()})
             End If
         Next
         For Each Key In PotentialMatchSignatures.Keys
-            Debug.WriteLine(String.Join("|"c, Linq.Enumerable.Select(Key, Function(I As Integer) VerbMinimumTable(I)(0) + "," + VerbMinimumTable(I)(1))) + " " + CStr(PotentialMatchSignatures(Key)(0)) + "-" + CStr(PotentialMatchSignatures(Key)(1)) + "-" + CStr(PotentialMatchSignatures(Key)(2)) + " " + CStr(CType(PotentialMatchSignatures(Key)(3), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(4), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(5), List(Of String)).Count) + " " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(3), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + " - " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(4), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + "-" + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(5), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + " " + CStr(PotentialMatchSignatures(Key)(6)) + "-" + CStr(PotentialMatchSignatures(Key)(7)) + " " + CStr(CType(PotentialMatchSignatures(Key)(8), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(9), List(Of String)).Count) + " " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(8), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))) + " - " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(9), List(Of String)), Function(Str) Arb.TransliterateFromBuckwalter(Str))))
+            Debug.WriteLine(String.Join("|"c, Linq.Enumerable.Select(Key, Function(I As Integer) VerbMinimumTable(I)(0) + "," + VerbMinimumTable(I)(1))) + " " + CStr(PotentialMatchSignatures(Key)(0)) + "-" + CStr(PotentialMatchSignatures(Key)(1)) + "-" + CStr(PotentialMatchSignatures(Key)(2)) + " " + CStr(CType(PotentialMatchSignatures(Key)(3), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(4), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(5), List(Of String)).Count) + " " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(3), List(Of String)), Function(Str) FixRootHamzas(Arb.TransliterateFromBuckwalter(Str), Arb.TransliterateFromBuckwalter(VerbMinimumTable(0)(1)(0))))) + " - " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(4), List(Of String)), Function(Str) FixRootHamzas(Arb.TransliterateFromBuckwalter(Str), Arb.TransliterateFromBuckwalter(VerbMinimumTable(0)(1)(0))))) + "-" + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(5), List(Of String)), Function(Str) FixRootHamzas(Arb.TransliterateFromBuckwalter(Str), Arb.TransliterateFromBuckwalter(VerbMinimumTable(0)(1)(0))))) + " " + CStr(PotentialMatchSignatures(Key)(6)) + "-" + CStr(PotentialMatchSignatures(Key)(7)) + " " + CStr(CType(PotentialMatchSignatures(Key)(8), List(Of String)).Count) + "-" + CStr(CType(PotentialMatchSignatures(Key)(9), List(Of String)).Count) + " " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(8), List(Of String)), Function(Str) FixRootHamzas(Arb.TransliterateFromBuckwalter(Str), Arb.TransliterateFromBuckwalter(VerbMinimumTable(0)(1)(0))))) + " - " + String.Join(" "c, Linq.Enumerable.Select(CType(PotentialMatchSignatures(Key)(9), List(Of String)), Function(Str) FixRootHamzas(Arb.TransliterateFromBuckwalter(Str), Arb.TransliterateFromBuckwalter(VerbMinimumTable(0)(1)(0))))))
         Next
         Return Output.ToArray()
     End Function
