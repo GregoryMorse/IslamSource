@@ -3177,7 +3177,7 @@ Public Class CachedData
                                 ElseIf Root(2) = "y" And Root(1) = "A" Then
                                     'rAy is a special unique exception
                                     Dim Match As Text.RegularExpressions.Match = System.Text.RegularExpressions.Regex.Match(Pieces(1), ("a" + If(Root(0) = "A", ">", Root(0)) + "(o_#)?(.)" + "(?:" + Root(2) + "|Y)?").Replace("$", "\$").Replace("*", "\*"))
-                                    If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(1).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
+                                    If Match.Success And Match.Captures.Count = 1 And (RootDictionary(Root)(1).Scale = String.Empty Or RootDictionary(Root)(1).Scale <> Match.Groups(2).Value And RootDictionary(Root)(2).Scale = String.Empty) Then
                                         RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = String.Empty, 1, 2)).LongShortBoth = If(Match.Groups(1).Success, "L"c, "S"c)
                                         RootDictionary(Root)(If(RootDictionary(Root)(1).Scale = String.Empty, 1, 2)).Scale = Match.Groups(2).Value
                                         'RootDictionary(Root)(1) = "ya" + Root(0) + Match.Groups(1).Value + Root(2)
@@ -3372,7 +3372,7 @@ Public Class CachedData
             New String() {"lbs", "aia"}, New String() {"hwy", "aai"},
             New String() {"nyl", "aa"}, New String() {"zyl", "aa"}, New String() {"kwd", "aa"}, New String() {"xwf", "aa"}, New String() {"qnT", "aa"},
             New String() {"kbr", "uau"}
-            } 'New String() {"Hzn", " au"}, New String() {"Asw", " a"}, New String() {"Alw", " u"}, New String() {"wTA", " a"}
+            } 'New String() {"Hzn", "ia"}, New String() {"Hzn", "au"}, New String() {"Asw", "ia"}, New String() {"Alw", "au"}, New String() {"wTA", "ia"}
         Array.Sort(Arr, New VerbRootComparer(RootDictionary, VerbExceptionsTable))
         Dim Output As New List(Of Object())
         Dim IndexToChunk As Integer()() = Nothing
@@ -3383,7 +3383,7 @@ Public Class CachedData
                 New String() {"   u   ", "uu"}, New String() {"  yi   ", "ia"}, New String() {"w yi   ", "ii"}, New String() {"w ya   ", "ai"}, New String() {"  Aa   ", "aa"}, New String() {"  Ai   ", "ia"}, New String() {" A i   ", "ia"},
                 New String() {" yA i  ", "ai"}, New String() {" yA a  ", "aa"}, New String() {" wA a  ", "aa"}, New String() {" wA u  ", "au"}, New String() {"A - u  ", "au"}, New String() {"  - u  ", "au"}, New String() {"  - a  ", "ia"}, New String() {"  - i  ", "ai"}, New String() {"  y i  ", "ai"}, New String() {" w  u  ", "au"}, New String() {" w  a  ", "aa"}, New String() {" y  a  ", "aa"}, New String() {" y  i  ", "ai"}, New String() {"A   i  ", "ai"}, New String() {"A   u  S", "au"}, New String() {"A   u  L", "au"}, New String() {"A y i  ", "ai"}, New String() {"A y a  ", "aa"},
                 New String() {"w  aa  ", "aa"}, New String() {"w  ia  ", "ia"}, New String() {"w  ai  ", "ai"}, New String() {"w  ii  ", "ii"}, New String() {"  yaa  ", "aa"}, New String() {"   au  ", "au"}, New String() {"   ai  ", "ai"}, New String() {"   aa  ", "aa"}, New String() {"   ia  ", "ia"}, New String() {"   ii  ", "ii"}, New String() {"   aui ", "aui"}, New String() {"   aua ", "aua"},
-                New String() {"   iua ", "iua"}, New String() {"   iu  ", "iua"}, New String() {"   aai ", "aai"}, New String() {" wyaai ", "aai"}, New String() {"  -aui ", "aui"}, New String() {"   iai ", "iai"}, New String() {"yA iai ", "iai"}, New String() {" A iai ", "iai"}, New String() {"y  iai ", "iai"}, New String() {"w  iai ", "iai"}, New String() {"  waua ", "aua"}, New String() {"   uau ", "uau"}
+                New String() {"   iua ", "iua"}, New String() {"   iu  ", "iua"}, New String() {"   aai ", "aai"}, New String() {" wyaai ", "aai"}, New String() {"  -aui ", "aui"}, New String() {"   iai ", "iai"}, New String() {"yA iai ", "iai"}, New String() {" A iai ", "iai"}, New String() {"y  iai ", "iai"}, New String() {"w  iai ", "iai"}, New String() {"  waua ", "aua"}, New String() {"   uau ", "uau"}, New String() {"w A a  ", "ia"}, New String() {"A w u  ", "au"}, New String() {"A w a  ", "ia"}
                } ' not working present/command wTA Alw Asw rAy
         Dim PotentialMatchSignatures As New Dictionary(Of Integer(), Object())(New ByteArrayComparer(True))
         For KeyCount As Integer = 0 To Arr.Length - 1
