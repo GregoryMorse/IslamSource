@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
-using Windows.Foundation;
 
 #if WINDOWS_APP || WINDOWS_PHONE_APP
+using Windows.Foundation;
 public class WindowsRTFileIO : XMLRender.PortableFileIO
 {
     public async System.Threading.Tasks.Task<string[]> GetDirectoryFiles(string Path)
@@ -116,7 +116,7 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
         //System.Threading.Tasks.Task<Windows.Storage.StorageStreamTransaction> tn = file.OpenTransactedWriteAsync().AsTask();
         //tn.Wait();
         //tn.Result.CommitAsync().AsTask().Wait();
-        await(await file.OpenTransactedWriteAsync()).CommitAsync();
+        await (await file.OpenTransactedWriteAsync()).CommitAsync();
     }
 }
 public class WindowsRTSettings : XMLRender.PortableSettings
@@ -164,45 +164,28 @@ public class WindowsRTSettings : XMLRender.PortableSettings
 #elif WINDOWS_PHONE
 public class WindowsRTXamFileIO : XMLRender.PortableFileIO
 {
-    public /*async*/ string[] GetDirectoryFiles(string Path)
+    public async System.Threading.Tasks.Task<string[]> GetDirectoryFiles(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFolder folder = t.Result; //await Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path);
-        System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.StorageFile>> tn = folder.GetFilesAsync().AsTask();
-        t.Wait();
-        IReadOnlyList<Windows.Storage.StorageFile> files = tn.Result; //await folder.GetFilesAsync();
+        Windows.Storage.StorageFolder folder = await Windows.Storage.StorageFolder.GetFolderFromPathAsync(Path);
+        IReadOnlyList<Windows.Storage.StorageFile> files = await folder.GetFilesAsync();
         return new List<string>(files.Select(file => file.Name)).ToArray();
     }
-    public /*async*/ Stream LoadStream(string FilePath)
+    public async System.Threading.Tasks.Task<Stream> LoadStream(string FilePath)
     {
         Stream rc = null;
         rc = IslamSourceQuranViewer.Xam.WinPhone.Resources.AppResources.ResourceManager.GetStream(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"));
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t;
         if (rc != null)
         {
             return rc;
         }
-        else {
-            t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
-        }
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
-        System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForReadAsync();
-        tn.Wait();
-        Stream Stream = tn.Result; //await file.OpenStreamForReadAsync();
+        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
+        Stream Stream = await file.OpenStreamForReadAsync();
         return Stream;
     }
-    public /*async*/ void SaveStream(string FilePath, Stream Stream)
+    public async System.Threading.Tasks.Task SaveStream(string FilePath, Stream Stream)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> td = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath)).AsTask();
-        td.Wait();
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = td.Result.CreateFileAsync(System.IO.Path.GetFileName(FilePath), Windows.Storage.CreationCollisionOption.ReplaceExisting).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath))).Result.CreateFileAsync(System.IO.Path.GetFileName(FilePath));
-        System.Threading.Tasks.Task<Stream> tn = file.OpenStreamForWriteAsync();
-        tn.Wait();
-        Stream File = tn.Result; //await file.OpenStreamForWriteAsync();
+        Windows.Storage.StorageFile file = await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(FilePath))).CreateFileAsync(System.IO.Path.GetFileName(FilePath), Windows.Storage.CreationCollisionOption.ReplaceExisting);
+        Stream File = await file.OpenStreamForWriteAsync();
         File.Seek(0, SeekOrigin.Begin);
         byte[] Bytes = new byte[4096];
         int Read;
@@ -219,55 +202,28 @@ public class WindowsRTXamFileIO : XMLRender.PortableFileIO
     {
         return System.IO.Path.Combine(Paths);
     }
-    public /*async*/ void DeleteFile(string FilePath)
+    public async System.Threading.Tasks.Task DeleteFile(string FilePath)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
-        file.DeleteAsync().AsTask().Wait();
-        //await file.DeleteAsync();
+        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(FilePath);
+        await file.DeleteAsync();
     }
-    public /*async*/ bool PathExists(string Path)
+    public async System.Threading.Tasks.Task<bool> PathExists(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
-        t.Wait();
-#if WINDOWS_PHONE
-        System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.IStorageItem>> files = t.Result.GetItemsAsync().AsTask();
-        files.Wait();
-        return files.Result.FirstOrDefault(p => p.Name == Path) != null;
-#else
-        System.Threading.Tasks.Task<Windows.Storage.IStorageItem> tn = t.Result.GetItemsAsync();
-        tn.Wait();
-        return tn.Result != null;
-#endif
-        //return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).TryGetItemAsync(System.IO.Path.GetFileName(Path))) != null;
+        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync()).FirstOrDefault(p => p.Name == Path) != null;
     }
-    public /*async*/ void CreateDirectory(string Path)
+    public async System.Threading.Tasks.Task CreateDirectory(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFolder> t = Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path)).AsTask();
-        t.Wait();
-        t.Result.CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.OpenIfExists).AsTask().Wait();
-        //await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.FailIfExists);
+        await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).CreateFolderAsync(System.IO.Path.GetFileName(Path), Windows.Storage.CreationCollisionOption.OpenIfExists);
     }
-    public /*async*/ DateTime PathGetLastWriteTimeUtc(string Path)
+    public async System.Threading.Tasks.Task<DateTime> PathGetLastWriteTimeUtc(string Path)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
-        System.Threading.Tasks.Task<Windows.Storage.FileProperties.BasicProperties> tn = file.GetBasicPropertiesAsync().AsTask();
-        tn.Wait();
-        return tn.Result.DateModified.UtcDateTime;
-        //return (await file.GetBasicPropertiesAsync()).DateModified;
+        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
+        return (await file.GetBasicPropertiesAsync()).DateModified.UtcDateTime;
     }
-    public /*async*/ void PathSetLastWriteTimeUtc(string Path, DateTime Time)
+    public async System.Threading.Tasks.Task PathSetLastWriteTimeUtc(string Path, DateTime Time)
     {
-        System.Threading.Tasks.Task<Windows.Storage.StorageFile> t = Windows.Storage.StorageFile.GetFileFromPathAsync(Path).AsTask();
-        t.Wait();
-        Windows.Storage.StorageFile file = t.Result; //await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
-        System.Threading.Tasks.Task<Windows.Storage.StorageStreamTransaction> tn = file.OpenTransactedWriteAsync().AsTask();
-        tn.Wait();
-        tn.Result.CommitAsync().AsTask().Wait();
-        //await(await file.OpenTransactedWriteAsync()).CommitAsync();
+        Windows.Storage.StorageFile file = await Windows.Storage.StorageFile.GetFileFromPathAsync(Path);
+        await(await file.OpenTransactedWriteAsync()).CommitAsync();
     }
 }
 public class WindowsRTXamSettings : XMLRender.PortableSettings
@@ -313,11 +269,11 @@ public class WindowsRTXamSettings : XMLRender.PortableSettings
 #else
 public class AndroidiOSFileIO : XMLRender.PortableFileIO
 {
-    public /*async*/ string[] GetDirectoryFiles(string Path)
+    public async System.Threading.Tasks.Task<string[]> GetDirectoryFiles(string Path)
     {
         return System.IO.Directory.GetFiles(Path);
     }
-    public /*async*/ Stream LoadStream(string FilePath)
+    public async System.Threading.Tasks.Task<Stream> LoadStream(string FilePath)
     {
 #if __ANDROID__
         return ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).Assets.Open(FilePath.Trim('/'));
@@ -327,7 +283,7 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
 #endif
         //return File.Open(FilePath, FileMode.Open, FileAccess.Read);
     }
-    public /*async*/ void SaveStream(string FilePath, Stream Stream)
+    public async System.Threading.Tasks.Task SaveStream(string FilePath, Stream Stream)
     {
         FileStream File = System.IO.File.Open(FilePath, FileMode.Create, FileAccess.Write);
         File.Seek(0, SeekOrigin.Begin);
@@ -346,23 +302,23 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
     {
         return System.IO.Path.Combine(Paths);
     }
-    public /*async*/ void DeleteFile(string FilePath)
+    public async System.Threading.Tasks.Task DeleteFile(string FilePath)
     {
         File.Delete(FilePath);
     }
-    public /*async*/ bool PathExists(string Path)
+    public async System.Threading.Tasks.Task<bool> PathExists(string Path)
     {
         return Directory.Exists(Path);
     }
-    public /*async*/ void CreateDirectory(string Path)
+    public async System.Threading.Tasks.Task CreateDirectory(string Path)
     {
         Directory.CreateDirectory(Path);
     }
-    public /*async*/ DateTime PathGetLastWriteTimeUtc(string Path)
+    public async System.Threading.Tasks.Task<DateTime> PathGetLastWriteTimeUtc(string Path)
     {
         return System.IO.File.GetLastWriteTimeUtc(Path);
     }
-    public /*async*/ void PathSetLastWriteTimeUtc(string Path, DateTime Time)
+    public async System.Threading.Tasks.Task PathSetLastWriteTimeUtc(string Path, DateTime Time)
     {
         System.IO.File.SetLastWriteTimeUtc(Path, Time);
     }
@@ -414,48 +370,74 @@ public class AndroidiOSSettings : XMLRender.PortableSettings
 }
 #endif
 
-
 namespace IslamSourceQuranViewer
 {
 #if __IOS__
 
-using System.Drawing;
-using Foundation;
-using UIKit;
+    using System.Drawing;
+    using Foundation;
+    using UIKit;
     public static class TextShaping
     {
+        public static void Cleanup(int AllNormArb)
+        {
+        }
         public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
         {
             double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, MyUIChanger.FontSize, MyUIChanger.FontFamily);
             return width;
         }
-    }
-
-public static class TextMeterImplementation
-{
-    public static Xamarin.Forms.Size MeasureTextSize(string text, double width,
-        double fontSize, string fontName = null)
-    {
-        var nsText = new NSString(text);
-        var boundSize = new SizeF((float)width, float.MaxValue);
-        var options = NSStringDrawingOptions.UsesFontLeading |
-            NSStringDrawingOptions.UsesLineFragmentOrigin;
-
-        if (fontName == null)
+        public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)
         {
-            fontName = "HelveticaNeue";
+            return new short[] { };
         }
-
-        var attributes = new UIStringAttributes
+        public static List<string> GetFontList()
         {
-            Font = UIFont.FromName(fontName, (float)fontSize)
-        };
-
-        var sizeF = nsText.GetBoundingRect(boundSize, options, attributes, null).Size;
-
-        return new Xamarin.Forms.Size((double)sizeF.Width, (double)sizeF.Height);
+            List<string> fontList = new List<string>();
+            return fontList;
+        }
+        public static string GetAppLanguage()
+        {
+            return string.Empty;
+        }
+        public static void SetAppLanguage(string Lang)
+        {
+        }
+        public static string GetSelectedAppLanguage()
+        {
+            return string.Empty;
+        }
+        public static List<string> GetAppLanguageList()
+        {
+            return new List<string>();
+        }
     }
-}
+
+    public static class TextMeterImplementation
+    {
+        public static Xamarin.Forms.Size MeasureTextSize(string text, double width,
+            double fontSize, string fontName = null)
+        {
+            var nsText = new NSString(text);
+            var boundSize = new SizeF((float)width, float.MaxValue);
+            var options = NSStringDrawingOptions.UsesFontLeading |
+                NSStringDrawingOptions.UsesLineFragmentOrigin;
+
+            if (fontName == null)
+            {
+                fontName = "HelveticaNeue";
+            }
+
+            var attributes = new UIStringAttributes
+            {
+                Font = UIFont.FromName(fontName, (float)fontSize)
+            };
+
+            var sizeF = nsText.GetBoundingRect(boundSize, options, attributes, null).Size;
+
+            return new Xamarin.Forms.Size((double)sizeF.Width, (double)sizeF.Height);
+        }
+    }
 
 #elif __ANDROID__
 
@@ -465,10 +447,37 @@ using Android.Views;
 using Android.Graphics;
     public static class TextShaping
     {
+        public static void Cleanup(int AllNormArb)
+        {
+        }
         public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
         {
             double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, MyUIChanger.FontSize, MyUIChanger.FontFamily);
             return width;
+        }
+        public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)
+        {
+            return new short[] {};
+        }
+        public static List<string> GetFontList()
+        {
+            List<string> fontList = new List<string>();
+            return fontList;
+        }
+        public static string GetAppLanguage()
+        {
+            return string.Empty;
+        }
+        public static void SetAppLanguage(string Lang)
+        {
+        }
+        public static string GetSelectedAppLanguage()
+        {
+            return string.Empty;
+        }
+        public static List<string> GetAppLanguageList()
+        {
+            return new List<string>();
         }
     }
 	public static class TextMeterImplementation
@@ -509,24 +518,36 @@ using Android.Graphics;
 			return textTypeface;
 		}
 	}
-#else
+#elif WINDOWS_APP || WINDOWS_PHONE_APP
     public static class TextShaping
     {
-        public static void CleanupDW()
+        public static void Cleanup(int AllNormArb)
         {
-            _DWFeatureArray = null;
-            if (_DWFontFace != null) _DWFontFace.Dispose();
-            _DWFontFace = null;
-            if (_DWFont != null) _DWFont.Dispose();
-            _DWFont = null;
-            if (_DWAnalyzer != null) _DWAnalyzer.Dispose();
-            _DWAnalyzer = null;
-            if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
-            _DWNormalFormat = null;
-            if (_DWArabicFormat != null) _DWArabicFormat.Dispose();
-            _DWArabicFormat = null;
-            if (_DWFactory != null) _DWFactory.Dispose();
-            _DWFactory = null;
+            if (AllNormArb == 0)
+            {
+                _DWFeatureArray = null;
+                if (_DWFontFace != null) _DWFontFace.Dispose();
+                _DWFontFace = null;
+                if (_DWFont != null) _DWFont.Dispose();
+                _DWFont = null;
+                if (_DWAnalyzer != null) _DWAnalyzer.Dispose();
+                _DWAnalyzer = null;
+            }
+            if (AllNormArb != 2)
+            {
+                if (_DWNormalFormat != null) _DWNormalFormat.Dispose();
+                _DWNormalFormat = null;
+            }
+            if (AllNormArb != 1)
+            {
+                if (_DWArabicFormat != null) _DWArabicFormat.Dispose();
+                _DWArabicFormat = null;
+            }
+            if (AllNormArb == 0)
+            {
+                if (_DWFactory != null) _DWFactory.Dispose();
+                _DWFactory = null;
+            }
         }
         private static SharpDX.DirectWrite.Factory _DWFactory;
         public static SharpDX.DirectWrite.Factory DWFactory { get { if (_DWFactory == null) _DWFactory = new SharpDX.DirectWrite.Factory(); return _DWFactory; } }
@@ -569,6 +590,56 @@ using Android.Graphics;
             double width = layout.Metrics.WidthIncludingTrailingWhitespace + layout.Metrics.Left;
             layout.Dispose();
             return width;
+        }
+        public static List<string> GetFontList()
+        {
+            List<string> fontList = new List<string>();
+            SharpDX.DirectWrite.FontCollection fontCollection = DWFactory.GetSystemFontCollection(false);
+            for (int i = 0; i < fontCollection.FontFamilyCount; i++)
+            {
+                int index = 0;
+                if (!fontCollection.GetFontFamily(i).FamilyNames.FindLocaleName(System.Globalization.CultureInfo.CurrentCulture.Name, out index))
+                {
+                    for (int j = 0; j < Windows.Globalization.ApplicationLanguages.Languages.Count; j++)
+                    {
+                        if (fontCollection.GetFontFamily(i).FamilyNames.FindLocaleName(Windows.Globalization.ApplicationLanguages.Languages[j], out index))
+                        {
+                            fontList.Add(fontCollection.GetFontFamily(i).FamilyNames.GetString(index));
+                            break;
+                        }
+                    }
+
+                }
+                else { fontList.Add(fontCollection.GetFontFamily(i).FamilyNames.GetString(index)); }
+
+            }
+            return fontList;
+        }
+        public static string GetAppLanguage()
+        {
+            return (string)Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride;
+        }
+        public static void SetAppLanguage(string Lang)
+        {
+            Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = (Lang == Windows.Globalization.ApplicationLanguages.Languages.First() ? string.Empty : Lang);
+            App._resourceContext = null;
+            if (Windows.UI.Xaml.Window.Current != null && Windows.UI.Xaml.Window.Current.CoreWindow != null) Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
+            Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
+            Windows.ApplicationModel.Resources.Core.ResourceContext.ResetGlobalQualifierValues();
+            System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo(Lang == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : Lang);
+            System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo(Lang == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : Lang);
+            while (System.Globalization.CultureInfo.CurrentUICulture.Name != (Lang == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : Lang))
+            {
+                System.Threading.Tasks.Task.Delay(100);
+            }
+        }
+        public static string GetSelectedAppLanguage()
+        {
+            return new Windows.Globalization.Language(GetAppLanguage() == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : GetAppLanguage()).DisplayName + " (" + (GetAppLanguage() == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : GetAppLanguage()) + ")";
+        }
+        public static List<string> GetAppLanguageList()
+        {
+            return Windows.Globalization.ApplicationLanguages.ManifestLanguages.Select((Item) => new Windows.Globalization.Language(Item).DisplayName + " (" + Item + ")").ToList();
         }
         [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
         public struct LayoutInfo
@@ -980,6 +1051,42 @@ using Android.Graphics;
             return Size;
         }
     }
+#else
+    public static class TextShaping
+    {
+        public static void Cleanup(int AllNormArb)
+        {
+        }
+        public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
+        {
+            double width = 0; //(text, maxWidth, MyUIChanger.FontSize, MyUIChanger.FontFamily);
+            return width;
+        }
+        public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)
+        {
+            return new short[] {};
+        }
+        public static List<string> GetFontList()
+        {
+            List<string> fontList = new List<string>();
+            return fontList;
+        }
+        public static string GetAppLanguage()
+        {
+            return string.Empty;
+        }
+        public static void SetAppLanguage(string Lang)
+        {
+        }
+        public static string GetSelectedAppLanguage()
+        {
+            return string.Empty;
+        }
+        public static List<string> GetAppLanguageList()
+        {
+            return new List<string>();
+        }
+    }
 #endif
     public class AppSettings : INotifyPropertyChanged
     {
@@ -988,10 +1095,29 @@ using Android.Graphics;
         public static IslamMetadata.Arabic Arb;
         public static IslamMetadata.CachedData ChData;
         public static IslamMetadata.TanzilReader TR;
+#if WINDOWS_APP || WINDOWS_PHONE_APP
+        public static bool ContainsKey(string Key) { return Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey(Key); }
+        public static object GetValue(string Key) { return Windows.Storage.ApplicationData.Current.LocalSettings.Values[Key]; }
+        public static void SetValue(string Key, object Value) { Windows.Storage.ApplicationData.Current.LocalSettings.Values[Key] = Value; }
+#elif WINDOWS_PHONE
+        public static bool ContainsKey(string Key) { return false; }
+        public static object GetValue(string Key) { return null; }
+        public static void SetValue(string Key, object Value) { }
+#else
+        public static bool ContainsKey(string Key) { return false; }
+        public static object GetValue(string Key) { return null; }
+        public static void SetValue(string Key, object Value) { }
+#endif
         public AppSettings() { }
         public async static System.Threading.Tasks.Task InitDefaultSettings()
         {
+#if WINDOWS_APP || WINDOWS_PHONE_APP
             _PortableMethods = new XMLRender.PortableMethods(new WindowsRTFileIO(), new WindowsRTSettings());
+#elif WINDOWS_PHONE
+            _PortableMethods = new XMLRender.PortableMethods(new WindowsRTXamFileIO(), new WindowsRTXamSettings());
+#else
+            _PortableMethods = new XMLRender.PortableMethods(new AndroidiOSFileIO(), new AndroidiOSSettings());
+#endif
             await _PortableMethods.Init();
             ArbData = new XMLRender.ArabicData(_PortableMethods);
             await ArbData.Init();
@@ -1000,72 +1126,72 @@ using Android.Graphics;
             await ChData.Init();
             await Arb.Init(ChData);
             TR = new IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData);
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentFont"))
+            if (!ContainsKey("CurrentFont"))
             {
                 strSelectedFont = "Times New Roman";
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("OtherCurrentFont"))
+            if (!ContainsKey("OtherCurrentFont"))
             {
                 strOtherSelectedFont = "Arial";
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("FontSize"))
+            if (!ContainsKey("FontSize"))
             {
                 dFontSize = 30.0;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("OtherFontSize"))
+            if (!ContainsKey("OtherFontSize"))
             {
                 dOtherFontSize = 20.0;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("UseColoring"))
+            if (!ContainsKey("UseColoring"))
             {
                 bUseColoring = true;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("ShowTranslation"))
+            if (!ContainsKey("ShowTranslation"))
             {
                 bShowTranslation = true;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("ShowTransliteration"))
+            if (!ContainsKey("ShowTransliteration"))
             {
                 bShowTransliteration = true;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("ShowW4W"))
+            if (!ContainsKey("ShowW4W"))
             {
                 bShowW4W = true;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentTranslation"))
+            if (!ContainsKey("CurrentTranslation"))
             {
                 iSelectedTranslation = AppSettings.TR.GetTranslationIndex(String.Empty);
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentReciter"))
+            if (!ContainsKey("CurrentReciter"))
             {
                 iSelectedReciter = IslamMetadata.AudioRecitation.GetReciterIndex(String.Empty, AppSettings.ChData.IslamData.ReciterList);
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("Bookmarks"))
+            if (!ContainsKey("Bookmarks"))
             {
                 Bookmarks = new int[][] { };
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("DefaultStartTab"))
+            if (!ContainsKey("DefaultStartTab"))
             {
                 iDefaultStartTab = 1;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("AutomaticAdvanceVerse"))
+            if (!ContainsKey("AutomaticAdvanceVerse"))
             {
                 bAutomaticAdvanceVerse = true;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("DelayVerseLengthBeforeAdvancing"))
+            if (!ContainsKey("DelayVerseLengthBeforeAdvancing"))
             {
                 bDelayVerseLengthBeforeAdvancing = false;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("AdditionalVerseAdvanceDelay"))
+            if (!ContainsKey("AdditionalVerseAdvanceDelay"))
             {
                 iAdditionalVerseAdvanceDelay = 0;
             }
-            if (!Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey("LoopingMode"))
+            if (!ContainsKey("LoopingMode"))
             {
                 LoopingMode = AppSettings.ChData.IslamData.LoopingModeList.DefaultLoopingMode;
             }
         }
-        public static string LoopingMode { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["LoopingMode"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["LoopingMode"] = value; } }
+        public static string LoopingMode { get { return (string)GetValue("LoopingMode"); } set { SetValue("LoopingMode", value); } }
         public List<ComboPair> LoopingTypes
         {
             get
@@ -1073,50 +1199,30 @@ using Android.Graphics;
                 return new List<ComboPair>(AppSettings.ChData.IslamData.LoopingModeList.LoopingModes.Select((Mode) => { return new ComboPair() { KeyString = Mode.Name, ValueString = AppSettings._PortableMethods.LoadResourceString("IslamInfo_" + Mode.Name) }; }));
             }
         }
-        public static bool bAutomaticAdvanceVerse { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["AutomaticAdvanceVerse"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["AutomaticAdvanceVerse"] = value; } }
+        public static bool bAutomaticAdvanceVerse { get { return (bool)GetValue("AutomaticAdvanceVerse"); } set { SetValue("AutomaticAdvanceVerse", value); } }
         public bool AutomaticAdvanceVerse { get { return bAutomaticAdvanceVerse; } set { bAutomaticAdvanceVerse = value; } }
-        public static bool bDelayVerseLengthBeforeAdvancing { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["DelayVerseLengthBeforeAdvancing"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["DelayVerseLengthBeforeAdvancing"] = value; } }
+        public static bool bDelayVerseLengthBeforeAdvancing { get { return (bool)GetValue("DelayVerseLengthBeforeAdvancing"); } set { SetValue("DelayVerseLengthBeforeAdvancing", value); } }
         public bool DelayVerseLengthBeforeAdvancing { get { return bDelayVerseLengthBeforeAdvancing; } set { bDelayVerseLengthBeforeAdvancing = value; } }
-        public static int iAdditionalVerseAdvanceDelay { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["AdditionalVerseAdvanceDelay"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["AdditionalVerseAdvanceDelay"] = value; } }
+        public static int iAdditionalVerseAdvanceDelay { get { return (int)GetValue("AdditionalVerseAdvanceDelay"); } set { SetValue("AdditionalVerseAdvanceDelay", value); } }
         public string AdditionalVerseAdvanceDelay { get { return iAdditionalVerseAdvanceDelay.ToString(); } set { if (value != null) { iAdditionalVerseAdvanceDelay = int.Parse(value); } } }
-        public static int iDefaultStartTab { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["DefaultStartTab"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["DefaultStartTab"] = value; } }
-        public static int[][] Bookmarks { get { return !((string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"]).Contains(',') ? new int[][] { } : System.Linq.Enumerable.Select(((string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"]).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["Bookmarks"] = string.Join("|", System.Linq.Enumerable.Select(value, (Bookmark) => string.Join(",", System.Linq.Enumerable.Select(Bookmark, (Mark) => Mark.ToString())))); } }
+        public static int iDefaultStartTab { get { return (int)GetValue("DefaultStartTab"); } set { SetValue("DefaultStartTab", value); } }
+        public static int[][] Bookmarks { get { return !((string)GetValue("Bookmarks")).Contains(',') ? new int[][] { } : System.Linq.Enumerable.Select(((string)GetValue("Bookmarks")).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { SetValue("Bookmarks", string.Join("|", System.Linq.Enumerable.Select(value, (Bookmark) => string.Join(",", System.Linq.Enumerable.Select(Bookmark, (Mark) => Mark.ToString()))))); } }
 #if __ANDROID__ || __IOS__
         public static string strSelectedFont { get { return Plugin.Settings.CrossSettings.Current.GetValueOrDefault("CurrentFont", "Times New Roman"); } set { Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("CurrentFont", value); } }
 #else
-        public static string strSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentFont"] = value; } }
+        public static string strSelectedFont { get { return (string)GetValue("CurrentFont"); } set { SetValue("CurrentFont", value); } }
 #endif
-        public static string strOtherSelectedFont { get { return (string)Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherCurrentFont"] = value; } }
+        public static string strOtherSelectedFont { get { return (string)GetValue("OtherCurrentFont"); } set { SetValue("OtherCurrentFont", value); } }
         public string SelectedFont { get { return strSelectedFont; } set { strSelectedFont = value; } }
         public string OtherSelectedFont { get { return strOtherSelectedFont; } set { strOtherSelectedFont = value; } }
 
-        public static double dFontSize { get { return (double)Windows.Storage.ApplicationData.Current.LocalSettings.Values["FontSize"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["FontSize"] = value; } }
-        public static double dOtherFontSize { get { return (double)Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherFontSize"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["OtherFontSize"] = value; } }
+        public static double dFontSize { get { return (double)GetValue("FontSize"); } set { SetValue("FontSize", value); } }
+        public static double dOtherFontSize { get { return (double)GetValue("OtherFontSize"); } set { SetValue("OtherFontSize", value); } }
         public string FontSize { get { return dFontSize.ToString(); } set { double fontSize; if (double.TryParse(value, out fontSize)) { dFontSize = fontSize; } } }
         public string OtherFontSize { get { return dOtherFontSize.ToString(); } set { double fontSize; if (double.TryParse(value, out fontSize)) { dOtherFontSize = fontSize; } } }
         public List<string> GetFontList()
         {
-            List<string> fontList = new List<string>();
-            SharpDX.DirectWrite.FontCollection fontCollection = TextShaping.DWFactory.GetSystemFontCollection(false);
-            for (int i = 0; i < fontCollection.FontFamilyCount; i++)
-            {
-                int index = 0;
-                if (!fontCollection.GetFontFamily(i).FamilyNames.FindLocaleName(System.Globalization.CultureInfo.CurrentCulture.Name, out index))
-                {
-                    for (int j = 0; j < Windows.Globalization.ApplicationLanguages.Languages.Count; j++)
-                    {
-                        if (fontCollection.GetFontFamily(i).FamilyNames.FindLocaleName(Windows.Globalization.ApplicationLanguages.Languages[j], out index))
-                        {
-                            fontList.Add(fontCollection.GetFontFamily(i).FamilyNames.GetString(index));
-                            break;
-                        }
-                    }
-
-                }
-                else { fontList.Add(fontCollection.GetFontFamily(i).FamilyNames.GetString(index)); }
-
-            }
-            return fontList;// new List<string> { "Times New Roman", "Traditional Arabic", "Arabic Typesetting", "Sakkal Majalla", "Microsoft Uighur", "Arial", "Global User Interface" };
+            return TextShaping.GetFontList(); // new List<string> { "Times New Roman", "Traditional Arabic", "Arabic Typesetting", "Sakkal Majalla", "Microsoft Uighur", "Arial", "Global User Interface" };
         }
         public List<string> Fonts
         {
@@ -1132,7 +1238,7 @@ using Android.Graphics;
                 return GetFontList();
             }
         }
-        public static int iSelectedReciter { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentReciter"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentReciter"] = value; } }
+        public static int iSelectedReciter { get { return (int)GetValue("CurrentReciter"); } set { SetValue("CurrentReciter", value); } }
         public class ComboPair
         {
             public string KeyString { get; set; }
@@ -1149,7 +1255,7 @@ using Android.Graphics;
             }
         }
 
-        public static int iSelectedTranslation { get { return (int)Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["CurrentTranslation"] = value; } }
+        public static int iSelectedTranslation { get { return (int)GetValue("CurrentTranslation"); } set { SetValue("CurrentTranslation", value); } }
         public string SelectedTranslation { get { return AppSettings.ChData.IslamData.Translations.TranslationList[iSelectedTranslation].Name; } set { if (value != null) { iSelectedTranslation = Array.FindIndex(AppSettings.ChData.IslamData.Translations.TranslationList, (Translation) => Translation.Name == value); } } }
         public List<string> TranslationList
         {
@@ -1158,46 +1264,36 @@ using Android.Graphics;
                 return new List<string>(AppSettings.ChData.IslamData.Translations.TranslationList.Where((Translation) => { return Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Name || Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Parent.Name; }).Select((Translation) => Translation.Name));
             }
         }
-        public static bool bUseColoring { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["UseColoring"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["UseColoring"] = value; } }
-        public static bool bShowTranslation { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["ShowTranslation"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["ShowTranslation"] = value; } }
-        public static bool bShowTransliteration { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["ShowTransliteration"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["ShowTransliteration"] = value; } }
-        public static bool bShowW4W { get { return (bool)Windows.Storage.ApplicationData.Current.LocalSettings.Values["ShowW4W"]; } set { Windows.Storage.ApplicationData.Current.LocalSettings.Values["ShowW4W"] = value; } }
+        public static bool bUseColoring { get { return (bool)GetValue("UseColoring"); } set { SetValue("UseColoring", value); } }
+        public static bool bShowTranslation { get { return (bool)GetValue("ShowTranslation"); } set { SetValue("ShowTranslation", value); } }
+        public static bool bShowTransliteration { get { return (bool)GetValue("ShowTransliteration"); } set { SetValue("ShowTransliteration", value); } }
+        public static bool bShowW4W { get { return (bool)GetValue("ShowW4W"); } set { SetValue("ShowW4W", value); } }
         public bool UseColoring { get { return bUseColoring; } set { bUseColoring = value; } }
         public bool ShowTranslation { get { return bShowTranslation; } set { bShowTranslation = value; } }
         public bool ShowTransliteration { get { return bShowTransliteration; } set { bShowTransliteration = value; } }
         public bool ShowW4W { get { return bShowW4W; } set { bShowW4W = value; } }
         public static string strAppLanguage
         {
-            get { return (string)Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride; }
+            get { return TextShaping.GetAppLanguage(); }
             set
             {
-                Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = (value == Windows.Globalization.ApplicationLanguages.Languages.First() ? string.Empty : value);
-                App._resourceContext = null;
-                if (Windows.UI.Xaml.Window.Current != null && Windows.UI.Xaml.Window.Current.CoreWindow != null) Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().Reset();
-                Windows.ApplicationModel.Resources.Core.ResourceContext.GetForViewIndependentUse().Reset();
-                Windows.ApplicationModel.Resources.Core.ResourceContext.ResetGlobalQualifierValues();
-                System.Globalization.CultureInfo.DefaultThreadCurrentCulture = new System.Globalization.CultureInfo(value == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : value);
-                System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = new System.Globalization.CultureInfo(value == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : value);
-                while (System.Globalization.CultureInfo.CurrentUICulture.Name != (value == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : value))
-                {
-                    System.Threading.Tasks.Task.Delay(100);
-                }
+                TextShaping.SetAppLanguage(value);
             }
         }
-        public string AppLanguage { get { return new Windows.Globalization.Language(strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage).DisplayName + " (" + (strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage) + ")"; } set { strAppLanguage = value.Substring(value.LastIndexOf("(")).Trim('(', ')'); PropertyChanged(this, new PropertyChangedEventArgs("TranslationList")); iSelectedTranslation = AppSettings.TR.GetTranslationIndex(String.Empty); PropertyChanged(this, new PropertyChangedEventArgs("SelectedTranslation")); } }
+        public string AppLanguage { get { return TextShaping.GetSelectedAppLanguage(); } set { strAppLanguage = value.Substring(value.LastIndexOf("(")).Trim('(', ')'); PropertyChanged(this, new PropertyChangedEventArgs("TranslationList")); iSelectedTranslation = AppSettings.TR.GetTranslationIndex(String.Empty); PropertyChanged(this, new PropertyChangedEventArgs("SelectedTranslation")); } }
 
         public List<string> AppLanguageList
         {
             get
             {
-                return Windows.Globalization.ApplicationLanguages.ManifestLanguages.Select((Item) => new Windows.Globalization.Language(Item).DisplayName + " (" + Item + ")").ToList();
+                return TextShaping.GetAppLanguageList();
             }
         }
-#region Implementation of INotifyPropertyChanged
+        #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-#endregion
+        #endregion
     }
     public class MyTabViewModel : INotifyPropertyChanged
     {
@@ -1332,7 +1428,7 @@ using Android.Graphics;
             set
             {
                 AppSettings.dFontSize = value;
-                TextShaping.DWArabicFormat = null;
+                TextShaping.Cleanup(2);
                 PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
             }
         }
@@ -1352,7 +1448,7 @@ using Android.Graphics;
             set
             {
                 AppSettings.dOtherFontSize = value;
-                TextShaping.DWNormalFormat = null;
+                TextShaping.Cleanup(1);
                 PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
             }
         }

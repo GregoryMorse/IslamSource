@@ -1098,8 +1098,8 @@ Public Class Arabic
             Next
             If Not MetadataList(Index).Children Is Nothing Then
                 Dim SubCount As Integer
+                Dim RecCumOffset As Integer = 0
                 For SubCount = MetadataList(Index).Children.Length - 1 To 0 Step -1
-                    Dim RecCumOffset As Integer = 0
                     For Count = 0 To ChData.IslamData.ColorRuleSets(1).ColorRules.Length - 1
                         Dim Match As Integer = New List(Of String)(Linq.Enumerable.TakeWhile(ChData.IslamData.ColorRuleSets(1).ColorRules(Count).Match, Function(Str As String) Linq.Enumerable.Any(MetadataList(Index).Children(SubCount).Type, Function(RuleWithArg) RuleWithArg.RuleName <> Str))).Count
                         If Match <> ChData.IslamData.ColorRuleSets(1).ColorRules(Count).Match.Length Then
@@ -6034,7 +6034,7 @@ Public Class TanzilReader
                     FilterIndex = 0
                     For WordCount = 0 To Matches.Count - 1
                         bNotFilter = StartChapter <= 1 And BaseVerse <= 1 And WordNumber <= 1 Or Count <> 0 Or Count = 0 And (Not bChapterRollback And bBismillahPrecedes) Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber <= 1, Linq.Enumerable.Count(Linq.Enumerable.Cast(Of Text.RegularExpressions.Match)(Matches), Function(It) Not It.Groups(2).Success), WordNumber - 1)
-                        If Count = Verses.Count - 1 And (Count <> Verses.Count Or bChapterRollforward Or Not bBismillahTrails) And SubCount = Verses(Count).Length - 1 And WordCount - MarkerCount + 1 > If(EndWordNumber < 1 OrElse EndWordNumber = GetWordCount(EndChapter, If(ExtraVerseNumber = -1, GetVerseCount(EndChapter), ExtraVerseNumber)), 1, EndWordNumber + 1) Then Exit For
+                        If Not ((EndChapter = -1 Or EndChapter = GetChapterCount()) And (ExtraVerseNumber = -1 Or ExtraVerseNumber = GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter))) And (EndWordNumber = -1 Or EndWordNumber = GetWordCount(If(EndChapter = -1, GetChapterCount(), EndChapter), GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter))))) And (Count = Verses.Count - 1 And (bChapterRollforward Or Not bBismillahTrails) And SubCount = Verses(Count).Length - 1 And WordCount - MarkerCount + 1 > If(EndWordNumber < 1 OrElse EndWordNumber = GetWordCount(EndChapter, If(ExtraVerseNumber = -1, GetVerseCount(EndChapter), ExtraVerseNumber)), 1, EndWordNumber + 1)) Then Exit For
                         If Matches(WordCount).Groups(2).Success Then
                             MarkerCount += 1
                             If bNotFilter Then IndexToVerseList.Add(New Integer() {If(StartChapter = -1, 1, StartChapter - If(bChapterRollback, 1, 0)) + Count, If(Count <> 0 Or BaseVerse = -1, 1, BaseVerse - If(WordNumber <= 1 And Not bBismillahPrecedes And Not (StartChapter <= 1 And BaseVerse <= 1), 1, 0)) + SubCount, WordCount - MarkerCount + 1, Str.Length + Matches(WordCount).Groups(2).Index - FilterIndex, Matches(WordCount).Groups(2).Length, ChunkCount, MarkerCount})
@@ -6055,7 +6055,7 @@ Public Class TanzilReader
                 Next
             End If
         Next
-        If (EndChapter = -1 Or EndChapter = GetChapterCount()) And (ExtraVerseNumber = -1 Or ExtraVerseNumber = GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter))) And (EndWordNumber = -1 Or EndWordNumber = GetWordCount(If(EndChapter = -1, GetChapterCount(), EndChapter), GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter)))) Then IndexToVerseList.Add(New Integer() {GetChapterCount(), GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter)), GetWordCount(If(EndChapter = -1, GetChapterCount(), EndChapter), GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter))), 0, 0, 0, 0})
+        If (EndChapter = -1 Or EndChapter = GetChapterCount()) And (ExtraVerseNumber = -1 Or ExtraVerseNumber = GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter))) And (EndWordNumber = -1 Or EndWordNumber = GetWordCount(If(EndChapter = -1, GetChapterCount(), EndChapter), GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter)))) Then IndexToVerseList.Add(New Integer() {GetChapterCount(), GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter)), GetWordCount(If(EndChapter = -1, GetChapterCount(), EndChapter), GetVerseCount(If(EndChapter = -1, GetChapterCount(), EndChapter))), Str.Length, 0, 0, 0})
         IndexToVerse = IndexToVerseList.ToArray()
         Return Str.ToString()
     End Function
@@ -6074,7 +6074,7 @@ Public Class TanzilReader
         Dim W4WLines As String() = Await GetW4WLines(ChData.IslamData.LanguageDefaultInfo.GetLanguageByID(Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).QuranW4WFile)
         If Division = 8 Then SeperateSectionCount = ChData.IslamData.QuranSelections(Index).SelectionInfo.Length
         If Division = 9 Then
-            If ChData.LetterDictionary Is Nothing Then ChData.BuildQuranLetterIndex(Me)
+            If ChData.LetterDictionary.Count = 0 Then ChData.BuildQuranLetterIndex(Me)
             ReDim Keys(ChData.LetterDictionary(ArbData.ArabicLetters(Index).Symbol).Count - 1)
             ChData.LetterDictionary(ArbData.ArabicLetters(Index).Symbol).Keys.CopyTo(Keys, 0)
             SeperateSectionCount = ChData.LetterDictionary(ArbData.ArabicLetters(Index).Symbol).Count
@@ -6082,11 +6082,11 @@ Public Class TanzilReader
         For SectionCount As Integer = 0 To SeperateSectionCount - 1
             If Division = 0 Then
                 BaseChapter = CInt(GetChapterByIndex(Index).Attribute("index").Value)
-                BaseVerse = 1
+                BaseVerse = If(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Index), 1).Attribute("bismillah") Is Nothing, 1, 0)
                 QuranText = QuranTextCombiner(ChData.XMLDocMain, IndexToVerse, True, BaseChapter, BaseVerse, -1, BaseChapter)
             ElseIf Division = 1 Then
                 BaseChapter = CInt(GetChapterIndexByRevelationOrder(Index).Attribute("index").Value)
-                BaseVerse = 1
+                BaseVerse = If(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Index), 1).Attribute("bismillah") Is Nothing, 1, 0)
                 QuranText = QuranTextCombiner(ChData.XMLDocMain, IndexToVerse, True, BaseChapter, BaseVerse, -1, BaseChapter)
             ElseIf Division = 2 Then
                 Node = GetPartByIndex(Index)
@@ -6264,11 +6264,13 @@ Public Class TanzilReader
     Public Function GenerateDefaultStops(Str As String) As Integer()
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + ChData.OptionalPattern + ")(?=\s*$|\s+)")
         Dim DefStops As New List(Of Integer)
+        DefStops.Add(-1)
         Dim DotToggle As Boolean = False
         For Count As Integer = 0 To Matches.Count - 1
             If Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighLigatureSadWithLamWithAlefMaksura AndAlso (Matches(Count).Groups(2).Value <> ArabicData.ArabicSmallHighThreeDots Or DotToggle) Then DefStops.Add(Matches(Count).Groups(2).Index)
             If Matches(Count).Groups(2).Value = ArabicData.ArabicSmallHighThreeDots Then DotToggle = Not DotToggle
         Next
+        DefStops.Add(Str.Length)
         Return DefStops.ToArray()
     End Function
     Public Async Function FileToResource(FilePath As String, ResFilePath As String) As Threading.Tasks.Task
@@ -6370,7 +6372,7 @@ Public Class TanzilReader
         Dim Pos As Integer = 0
         For Count As Integer = 0 To IndexToVerse.Length - 1
             If IndexToVerse(Count)(4) = 1 AndAlso
-                    (Arb.IsStop(ArbData.FindLetterBySymbol(Text(IndexToVerse(Count)(0)))) Or Text(IndexToVerse(Count)(0)) = ArabicData.ArabicStartOfRubElHizb Or Text(IndexToVerse(Count)(0)) = ArabicData.ArabicPlaceOfSajdah) Then
+                    (Arb.IsStop(ArbData.FindLetterBySymbol(Text(IndexToVerse(Count)(3)))) Or Text(IndexToVerse(Count)(3)) = ArabicData.ArabicStartOfRubElHizb Or Text(IndexToVerse(Count)(3)) = ArabicData.ArabicPlaceOfSajdah) Then
                 If Not NoArabic Then
                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " " + Text.Substring(IndexToVerse(Count)(3), IndexToVerse(Count)(4))))
                     Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, " "))
@@ -6388,13 +6390,13 @@ Public Class TanzilReader
                     If Colorize Then
                         Texts.AddRange(WordColors(Count))
                         If SchemeType <> ArabicData.TranslitScheme.None Then
-                            Texts.AddRange(TranslitColors(IndexToVerse(Count)(2) - IndexToVerse(0)(2) + If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 1, 0)))
+                            Texts.AddRange(TranslitColors(IndexToVerse(Count)(2) - IndexToVerse(If(IndexToVerse(0)(6) <> 0, 1, 0))(2) + If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 1, 0)))
                         Else
                             Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, String.Empty))
                         End If
                     Else
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Text.Substring(IndexToVerse(Count)(3), IndexToVerse(Count)(4))))
-                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(IndexToVerse(Count)(2) - IndexToVerse(0)(2) + If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 1, 0)), String.Empty)))
+                        Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, TranslitWords(IndexToVerse(Count)(2) - IndexToVerse(If(IndexToVerse(0)(6) <> 0, 1, 0))(2) + If(Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah, 1, 0)), String.Empty)))
                     End If
                     If Text(IndexToVerse(Count)(3)) = ArabicData.ArabicEndOfAyah And Count <> 0 Then
                         Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eContinueStop, New Object() {Array.IndexOf(DefStops, Pos) <> -1, Arabic.FilterMetadataStopsContig(Pos + IndexToVerse(Count)(4) + If(IndexToVerse(Count)(2) <> IndexToVerse(IndexToVerse.Length - 1)(2) AndAlso IndexToVerse(Count + 1)(4) <> 1, 1 + IndexToVerse(Count + 1)(4), 0), UnfilteredMetaRules, DefStops, Pos - IndexToVerse(Count - 1)(4) - 1)}))
@@ -6501,7 +6503,7 @@ Public Class TanzilReader
                         Text = QuranText.Substring(IndexToVerse(Index)(3) - IndexToVerse(0)(3), Ints(3) - IndexToVerse(Index)(3)).Trim(" "c)
                     End If
                     MetaRules = Arabic.FilterMetadataStopsContig(IndexToVerse(Index)(3) + Text.Length, UnfilteredMetaRules, DefStops, IndexToVerse(Index)(3))
-                    AdjDefStops = New List(Of Integer)(Linq.Enumerable.Select(Linq.Enumerable.Where(DefStops, Function(It) It >= IndexToVerse(Index)(3) And It < IndexToVerse(Index)(3) + Text.Length), Function(It) It - IndexToVerse(Index)(3))).ToArray()
+                    AdjDefStops = New List(Of Integer)(Linq.Enumerable.Select(Linq.Enumerable.Where(DefStops, Function(It) IndexToVerse(Index)(6) = 0 AndAlso IndexToVerse(Index - 1)(6) <> 0 AndAlso It = IndexToVerse(Index - 1)(3) Or It >= IndexToVerse(Index)(3) And It < IndexToVerse(Index)(3) + Text.Length), Function(It) If(It - IndexToVerse(Index)(3) < -1, -1, It - IndexToVerse(Index)(3)))).ToArray()
                     MetaRules = Arabic.FilterMetadataStops(Text, MetaRules, AdjDefStops)
                 End If
                 If W4W And W4WLines.Length <> 0 Then

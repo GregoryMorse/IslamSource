@@ -5,16 +5,13 @@ using System.Text;
 
 using Xamarin.Forms;
 
-// harfbuzz build instructions:
-// C:\Users\Gregory\Documents\Android\ndk\android-ndk-r10e\ndkbuild.cmd 
-
 namespace IslamSourceQuranViewer.Xam
 {
 	public class App : Application
 	{
 		public App ()
 		{
-            AppSettings.InitDefaultSettings();
+            AppSettings.InitDefaultSettings().Wait();
             MainPage = new IslamSourceQuranViewer.Xam.MainPage();
 			// The root page of your application
 			//MainPage = new ContentPage {

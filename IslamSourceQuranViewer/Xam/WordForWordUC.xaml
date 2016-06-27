@@ -12,7 +12,6 @@
       <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
       <local:ArabicFlowConverter x:Key="ArabicFlow"/>
       <local:BackgroundSelectedConverter x:Key="BackgroundSelected"/>
-      <CollectionViewSource x:Name="VerseNumbers" Source="{Binding Path=ViewModel.VerseReferences, Mode=OneWay}"></CollectionViewSource>
       <ItemsPanelTemplate x:Key="VirtualPanelTemplate">
         <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>
       </ItemsPanelTemplate>

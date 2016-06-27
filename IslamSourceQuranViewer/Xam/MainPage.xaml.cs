@@ -434,8 +434,7 @@ namespace IslamSourceQuranViewer.Xam
             this.BindingContext = this;
             this.ViewModel = new MyTabViewModel();
             UIChanger = new MyUIChanger();
-            InitializeComponent();
-            ViewModel.Items = System.Linq.Enumerable.Select(IslamMetadata.TanzilReader.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
+            ViewModel.Items = System.Linq.Enumerable.Select(AppSettings.TR.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
         }
         public MyUIChanger UIChanger { get; set; }
         public MyTabViewModel ViewModel { get; set; }
