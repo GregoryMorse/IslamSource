@@ -123,6 +123,7 @@ namespace IslamSourceQuranViewer.Xam
             };
         }
 
+#if !__ANDROID__
         public ItemsView(ListViewCachingStrategy cachingStrategy) : this()
         {
             if ((Device.OS == TargetPlatform.Android) || (Device.OS == TargetPlatform.iOS))
@@ -130,9 +131,8 @@ namespace IslamSourceQuranViewer.Xam
                 this.CachingStrategy = cachingStrategy;
             }
         }
-
         internal ListViewCachingStrategy CachingStrategy { get; private set; }
-
+#endif
         public int ItemsCount
         {
             get { return this.ItemsStackLayout.Children.Count; }
@@ -203,10 +203,12 @@ namespace IslamSourceQuranViewer.Xam
         private static bool ValidateItemTemplate(BindableObject b, object v)
         {
             ItemsView view = b as ItemsView;
+#if !__ANDROID__
             if ((view != null) && (view.CachingStrategy == ListViewCachingStrategy.RetainElement))
             {
                 return !(view.ItemTemplate is DataTemplateSelector);
             }
+#endif
             return true;
         }
 

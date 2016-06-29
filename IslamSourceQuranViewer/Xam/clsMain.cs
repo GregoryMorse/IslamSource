@@ -384,7 +384,9 @@ namespace IslamSourceQuranViewer
         }
         public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
         {
-            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, MyUIChanger.FontSize, MyUIChanger.FontFamily);
+            string FontFamily = "";
+            double FontSize = 12.0;
+            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, FontSize, FontFamily).Width;
             return width;
         }
         public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)
@@ -452,7 +454,9 @@ using Android.Graphics;
         }
         public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
         {
-            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, MyUIChanger.FontSize, MyUIChanger.FontFamily);
+            string FontFamily = "";
+            double FontSize = 12.0;
+            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, FontSize, FontFamily).Width;
             return width;
         }
         public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)

@@ -16,17 +16,19 @@ namespace IslamSourceQuranViewer.Xam
 	{
 		public WordForWordUC (object Parameter)
 		{
-            Division = Parameter.Division;
-            Selection = Parameter.Selection;
-            this.DataContext = this;
+            dynamic c = Parameter;
+            Division = c.Division;
+            Selection = c.Selection;
+            this.BindingContext = this;
             this.ViewModel = new VirtualizingWrapPanelAdapter();
             UIChanger = new MyUIChanger();
-            InitializeComponent ();
 		}
+        public MyUIChanger UIChanger { get; set; }
+        public VirtualizingWrapPanelAdapter ViewModel { get; set; }
+
         private int Division;
         private int Selection;
 	}
-
 
     public class RunFormattedText : IValueConverter
     {
@@ -34,7 +36,7 @@ namespace IslamSourceQuranViewer.Xam
         {
             List<MyChildRenderBlockItem> val = value as List<MyChildRenderBlockItem>;
             FormattedString fs = new FormattedString();
-            val.FirstOrDefault((it) => { fs.Add(new Span() { Text = it.ItemText, ForegroundColor = new Color(it.Clr) }); return false; });
+            val.FirstOrDefault((it) => { fs.Spans.Add(new Span() { Text = it.ItemText, ForegroundColor = new Color(it.Clr) }); return false; });
             return fs;
         }
 
@@ -48,7 +50,7 @@ namespace IslamSourceQuranViewer.Xam
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
 #if __ANDROID__
-            return ((bool)value ? new System.Drawing.Color.Beige : Color.White);
+            return ((bool)value ? System.Drawing.Color.Beige : System.Drawing.Color.White);
 #else
             return ((bool)value ? new Color(245, 245, 220) : Color.White);
 #endif
@@ -59,6 +61,7 @@ namespace IslamSourceQuranViewer.Xam
             throw new NotImplementedException();
         }
     }
+#if !__ANDROID__
     public class MyDataTemplateSelector : DataTemplateSelector
     {
         public DataTemplate MyTemplate { get; set; }
@@ -79,6 +82,6 @@ namespace IslamSourceQuranViewer.Xam
             if (item.GetType() == typeof(MyChildRenderItem)) { return ((MyChildRenderItem)item).IsArabic ? ArabicTemplate : NormalTemplate; }
             return WordTemplate;
         }
-
     }
+#endif
 }
