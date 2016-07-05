@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using IslamResources.My.Resources;
 
 #if WINDOWS_APP || WINDOWS_PHONE_APP
 using Windows.Foundation;
@@ -279,9 +280,8 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
         return ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).Assets.Open(FilePath.Trim('/'));
 #endif
 #if __IOS__
-        return null;
+        return File.Open(FilePath, FileMode.Open, FileAccess.Read);
 #endif
-        //return File.Open(FilePath, FileMode.Open, FileAccess.Read);
     }
     public async System.Threading.Tasks.Task SaveStream(string FilePath, Stream Stream)
     {
@@ -639,7 +639,7 @@ using Android.Graphics;
         }
         public static string GetSelectedAppLanguage()
         {
-            return new Windows.Globalization.Language(strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage).DisplayName + " (" + (strAppLanguage == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : strAppLanguage) + ")";
+            return new Windows.Globalization.Language(GetAppLanguage() == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : GetAppLanguage()).DisplayName + " (" + (GetAppLanguage() == string.Empty ? Windows.Globalization.ApplicationLanguages.Languages.First() : GetAppLanguage()) + ")";
         }
         public static List<string> GetAppLanguageList()
         {
@@ -1293,11 +1293,11 @@ using Android.Graphics;
                 return TextShaping.GetAppLanguageList();
             }
         }
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class MyTabViewModel : INotifyPropertyChanged
     {
@@ -1359,11 +1359,11 @@ using Android.Graphics;
             }
         }
 
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
 
     public class MyTabItem
@@ -1412,11 +1412,11 @@ using Android.Graphics;
         public int Index { get; set; }
         private bool _IsSelected;
         public bool IsSelected { get { return _IsSelected; } set { _IsSelected = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsSelected")); } }
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class MyUIChanger : INotifyPropertyChanged
     {
@@ -1490,11 +1490,11 @@ using Android.Graphics;
             }
         }
 
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class MyRenderModel : INotifyPropertyChanged
     {
@@ -1511,11 +1511,11 @@ using Android.Graphics;
         }
         private List<MyRenderItem> _RenderItems;
         public List<MyRenderItem> RenderItems { get { return _RenderItems; } set { _RenderItems = value.ToList(); if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderItems")); } }
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class MyRenderItem : INotifyPropertyChanged
     {
@@ -1554,11 +1554,11 @@ using Android.Graphics;
         public string VerseText { get { return Chapter.ToString() + ":" + Verse.ToString(); } }
         public string VerseWordText { get { return Chapter.ToString() + ":" + Verse.ToString() + (Word == -1 ? string.Empty : (":" + Word.ToString())); } }
         public string GetText { get { return String.Join(" ", _Items.Select((Item) => Item.GetType() == typeof(MyChildRenderItem) ? ((MyChildRenderItem)Item).GetText : String.Join(string.Empty, ((VirtualizingWrapPanelAdapter)Item).RenderModels.Select((It) => String.Join(string.Empty, It.RenderItems.Select((RecIt) => RecIt.GetText)))))) + " " + VerseWordText; } }
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class VirtualizingWrapPanelAdapter : INotifyPropertyChanged
     {
@@ -1598,11 +1598,11 @@ using Android.Graphics;
         public List<MyRenderItem> VerseReferences { get { return _VerseReferences; } set { _VerseReferences = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("VerseReferences")); } }
         private MyRenderItem _CurrentVerse;
         public MyRenderItem CurrentVerse { get { return _CurrentVerse; } set { if (_CurrentVerse != null) _CurrentVerse.IsSelected = false; _CurrentVerse = value; if (_CurrentVerse != null) _CurrentVerse.IsSelected = true; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("CurrentVerse")); } }
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class MyChildRenderStopContinue : INotifyPropertyChanged
     {
@@ -1618,11 +1618,11 @@ using Android.Graphics;
         public List<IslamMetadata.Arabic.RuleMetadata> MetaRules { get { return _Rules; } }
         private bool _IsStop;
         public bool IsStop { get { return _IsStop; } set { _IsStop = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsStop")); } }
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
     }
     public class MyChildRenderItem : INotifyPropertyChanged
     {
@@ -1635,11 +1635,11 @@ using Android.Graphics;
             return 5 + 5 + 1 + 1 + TextShaping.CalculateWidth(string.Join(String.Empty, ItemRuns.Select((Item) => Item.ItemText)), IsArabic, (float)float.MaxValue, float.MaxValue);
         }
         public string GetText { get { return String.Join(string.Empty, _ItemRuns.Select((Item) => Item.ItemText)); } }
-        #region Implementation of INotifyPropertyChanged
+#region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+#endregion
 
         public MyChildRenderItem(List<MyChildRenderBlockItem> NewItemRuns, bool NewIsArabic, bool NewIsRTL)
         {

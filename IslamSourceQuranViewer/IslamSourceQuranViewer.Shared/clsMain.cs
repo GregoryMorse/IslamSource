@@ -279,9 +279,8 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
         return ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).Assets.Open(FilePath.Trim('/'));
 #endif
 #if __IOS__
-        return null;
+        return File.Open(FilePath, FileMode.Open, FileAccess.Read);
 #endif
-        //return File.Open(FilePath, FileMode.Open, FileAccess.Read);
     }
     public async System.Threading.Tasks.Task SaveStream(string FilePath, Stream Stream)
     {
@@ -384,7 +383,9 @@ namespace IslamSourceQuranViewer
         }
         public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
         {
-            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, MyUIChanger.FontSize, MyUIChanger.FontFamily);
+            string FontFamily = "";
+            double FontSize = 12.0;
+            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, FontSize, FontFamily).Width;
             return width;
         }
         public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)
@@ -452,7 +453,9 @@ using Android.Graphics;
         }
         public static double CalculateWidth(string text, bool IsArabic, float maxWidth, float maxHeight)
         {
-            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, MyUIChanger.FontSize, MyUIChanger.FontFamily);
+            string FontFamily = "";
+            double FontSize = 12.0;
+            double width = TextMeterImplementation.MeasureTextSize(text, maxWidth, FontSize, FontFamily).Width;
             return width;
         }
         public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)

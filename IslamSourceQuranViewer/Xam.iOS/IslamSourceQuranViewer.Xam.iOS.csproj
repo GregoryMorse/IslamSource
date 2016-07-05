@@ -100,6 +100,60 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+  	<BundleResource Include="..\..\metadata\quranic-corpus-morphology-0.4.txt">
+      <Link>Resources\metadata\quranic-corpus-morphology-0.4.txt</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\islaminfo.xml">
+      <Link>Resources\metadata\islaminfo.xml</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\quran-data.xml">
+      <Link>Resources\metadata\quran-data.xml</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\quran-hafs.xml">
+      <Link>Resources\metadata\quran-hafs.xml</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\UnicodeData.txt">
+      <Link>Resources\metadata\UnicodeData.txt</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\en.*">
+      <Link>Resources\metadata\en\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\hu.*">
+      <Link>Resources\metadata\hu\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\id.*">
+      <Link>Resources\metadata\id\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\zh-Hans.*">
+      <Link>Resources\metadata\zh-Hans\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\zh-Hant.*">
+      <Link>Resources\metadata\zh-Hant\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\zh.jian.*">
+      <Link>Resources\metadata\zh-Hans\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\zh.majian.*">
+      <Link>Resources\metadata\zh-Hant\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\fr.*">
+      <Link>Resources\metadata\fr\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\es.*">
+      <Link>Resources\metadata\es\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\ru.*">
+      <Link>Resources\metadata\ru\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\de.*">
+      <Link>Resources\metadata\de\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\ms.*">
+      <Link>Resources\metadata\ms\%(FileName)%(Extension)</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\metadata\ur.*">
+      <Link>Resources\metadata\ur\%(FileName)%(Extension)</Link>
+    </BundleResource>
     <BundleResource Include="Resources\Default-568h%402x.png" />
     <BundleResource Include="Resources\Default-Portrait.png" />
     <BundleResource Include="Resources\Default-Portrait%402x.png" />
