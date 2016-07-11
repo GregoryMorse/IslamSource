@@ -28137,4 +28137,70 @@
   <data name="IslamSource_Hindi" xml:space="preserve">
     <value>Hindi</value>
   </data>
+  <data name="IslamInfo_MaqasidMaxims" xml:space="preserve">
+    <value>Maqasid Maxims</value>
+  </data>
+  <data name="IslamInfo_OHowFortunateWeAre" xml:space="preserve">
+    <value>O How Fortunate We Are</value>
+  </data>
+  <data name="IslamInfo_SarfLesson11" xml:space="preserve">
+    <value>Sarf Lesson 11</value>
+  </data>
+  <data name="IslamInfo_SarfLesson12" xml:space="preserve">
+    <value>Sarf Lesson 12</value>
+  </data>
+  <data name="IslamInfo_SarfLesson13" xml:space="preserve">
+    <value>Sarf Lesson 13</value>
+  </data>
+  <data name="IslamInfo_SarfLesson14" xml:space="preserve">
+    <value>Sarf Lesson 14</value>
+  </data>
+  <data name="IslamInfo_SarfLesson15" xml:space="preserve">
+    <value>Sarf Lesson 15</value>
+  </data>
+  <data name="IslamInfo_SarfLesson16" xml:space="preserve">
+    <value>Sarf Lesson 16</value>
+  </data>
+  <data name="IslamInfo_SarfLesson17" xml:space="preserve">
+    <value>Sarf Lesson 17</value>
+  </data>
+  <data name="IslamInfo_SarfLesson18" xml:space="preserve">
+    <value>Sarf Lesson 18</value>
+  </data>
+  <data name="IslamInfo_SarfLesson19" xml:space="preserve">
+    <value>Sarf Lesson 19</value>
+  </data>
+  <data name="IslamInfo_SarfLesson20" xml:space="preserve">
+    <value>Sarf Lesson 20</value>
+  </data>
+  <data name="IslamInfo_SarfLesson21" xml:space="preserve">
+    <value>Sarf Lesson 21</value>
+  </data>
+  <data name="IslamInfo_SarfLesson22" xml:space="preserve">
+    <value>Sarf Lesson 22</value>
+  </data>
+  <data name="IslamInfo_SarfLesson23" xml:space="preserve">
+    <value>Sarf Lesson 23</value>
+  </data>
+  <data name="IslamInfo_SarfLesson24" xml:space="preserve">
+    <value>Sarf Lesson 24</value>
+  </data>
+  <data name="IslamInfo_SarfLesson25" xml:space="preserve">
+    <value>Sarf Lesson 25</value>
+  </data>
+  <data name="IslamInfo_SarfLesson26" xml:space="preserve">
+    <value>Sarf Lesson 26</value>
+  </data>
+  <data name="IslamInfo_SarfLesson27" xml:space="preserve">
+    <value>Sarf Lesson 27</value>
+  </data>
+  <data name="IslamInfo_SarfLesson28" xml:space="preserve">
+    <value>Sarf Lesson 28</value>
+  </data>
+  <data name="IslamInfo_SarfLesson29" xml:space="preserve">
+    <value>Sarf Lesson 29</value>
+  </data>
+  <data name="IslamInfo_SarfLesson30" xml:space="preserve">
+    <value>Sarf Lesson 30</value>
+  </data>
 </root>

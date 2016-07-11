@@ -37366,6 +37366,94 @@
           <source>Hindi</source>
           <target state="new">Hindi</target>
         </trans-unit>
+        <trans-unit id="IslamInfo_MaqasidMaxims" translate="yes" xml:space="preserve">
+          <source>Maqasid Maxims</source>
+          <target state="new">Maqasid Maxims</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_OHowFortunateWeAre" translate="yes" xml:space="preserve">
+          <source>O How Fortunate We Are</source>
+          <target state="new">O How Fortunate We Are</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson11" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 11</source>
+          <target state="new">Sarf Lesson 11</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson12" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 12</source>
+          <target state="new">Sarf Lesson 12</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson13" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 13</source>
+          <target state="new">Sarf Lesson 13</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson14" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 14</source>
+          <target state="new">Sarf Lesson 14</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson15" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 15</source>
+          <target state="new">Sarf Lesson 15</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson16" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 16</source>
+          <target state="new">Sarf Lesson 16</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson17" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 17</source>
+          <target state="new">Sarf Lesson 17</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson18" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 18</source>
+          <target state="new">Sarf Lesson 18</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson19" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 19</source>
+          <target state="new">Sarf Lesson 19</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson20" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 20</source>
+          <target state="new">Sarf Lesson 20</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson21" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 21</source>
+          <target state="new">Sarf Lesson 21</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson22" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 22</source>
+          <target state="new">Sarf Lesson 22</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson23" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 23</source>
+          <target state="new">Sarf Lesson 23</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson24" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 24</source>
+          <target state="new">Sarf Lesson 24</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson25" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 25</source>
+          <target state="new">Sarf Lesson 25</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson26" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 26</source>
+          <target state="new">Sarf Lesson 26</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson27" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 27</source>
+          <target state="new">Sarf Lesson 27</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson28" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 28</source>
+          <target state="new">Sarf Lesson 28</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson29" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 29</source>
+          <target state="new">Sarf Lesson 29</target>
+        </trans-unit>
+        <trans-unit id="IslamInfo_SarfLesson30" translate="yes" xml:space="preserve">
+          <source>Sarf Lesson 30</source>
+          <target state="new">Sarf Lesson 30</target>
+        </trans-unit>
       </group>
     </body>
   </file>
