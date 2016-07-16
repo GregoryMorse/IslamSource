@@ -79,7 +79,7 @@ Public Class WindowsWebFileIO
         Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.File.Delete(FilePath))
     End Function
     Public Async Function PathExists(Path As String) As Threading.Tasks.Task(Of Boolean) Implements PortableFileIO.PathExists
-        Return (Await Threading.Tasks.Task.Factory.StartNew(Function() IO.Directory.Exists(Path)))
+        Return (Await Threading.Tasks.Task.Factory.StartNew(Function() IO.Directory.Exists(Path) Or IO.File.Exists(Path)))
     End Function
     Public Async Function CreateDirectory(Path As String) As Threading.Tasks.Task Implements PortableFileIO.CreateDirectory
         Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.Directory.CreateDirectory(Path))

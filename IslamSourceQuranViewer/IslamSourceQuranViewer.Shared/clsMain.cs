@@ -1129,6 +1129,7 @@ using Android.Graphics;
             await ChData.Init();
             await Arb.Init(ChData);
             TR = new IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData);
+            await TR.Init();
             if (!ContainsKey("CurrentFont"))
             {
                 strSelectedFont = "Times New Roman";

@@ -371,7 +371,11 @@ Partial Class host
                 If Bytes Is Nothing Then Await _PortableMethods.DiskCache.CacheItem(Context.Request.Url.Host + "_" + Context.Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
                 Context.Response.Cache.SetCacheability(HttpCacheability.Public)
                 Context.Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
-                Context.Response.Flush()
+                Try
+                    Context.Response.Flush()
+                Catch e As HttpException
+                    'e.ErrorCode = &H80070057
+                End Try
             End If
             ResultBmp.Dispose()
             GC.Collect()

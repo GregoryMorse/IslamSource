@@ -210,6 +210,9 @@
     <Content Include="..\..\metadata\quran-hafs.xml">
       <Link>metadata\quran-hafs.xml</Link>
     </Content>
+    <Content Include="..\..\metadata\QuranTajweedData.txt">
+      <Link>metadata\QuranTajweedData.txt</Link>
+    </Content>
     <Content Include="..\..\metadata\UnicodeData.txt">
       <Link>metadata\UnicodeData.txt</Link>
     </Content>
