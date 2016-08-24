@@ -83,8 +83,8 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
 #if WINDOWS_PHONE_APP
         //System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.IStorageItem>> files = t.Result.GetItemsAsync().AsTask();
         //files.Wait();
-        //return files.Result.FirstOrDefault(p => p.Name == Path) != null;
-        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync()).FirstOrDefault(p => p.Name == Path) != null;
+        //return files.Result.FirstOrDefault(p => p.Name == System.IO.Path.GetFileName(Path)) != null;
+        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync()).FirstOrDefault(p => p.Name == System.IO.Path.GetFileName(Path)) != null;
 #else
         //System.Threading.Tasks.Task<Windows.Storage.IStorageItem> tn = t.Result.TryGetItemAsync(System.IO.Path.GetFileName(Path)).AsTask();
         //tn.Wait();
