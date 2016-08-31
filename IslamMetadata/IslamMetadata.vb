@@ -1,5 +1,6 @@
 Option Explicit On
 Option Strict On
+Imports System.Linq
 Imports System.Threading.Tasks
 Imports IslamMetadata
 Imports XMLRender
@@ -133,18 +134,19 @@ Public Class PrayerTime
 End Class
 Public Class Arabic
     Class StringLengthComparer
-        Implements Collections.IComparer
+        Implements Collections.Generic.IComparer(Of ArabicData.ArabicSymbol)
         Public Sub New(Scheme As String, Arb As Arabic)
             _Scheme = Scheme
             _Arb = Arb
         End Sub
         Private _Scheme As String
         Private _Arb As Arabic
-        Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer _
-            Implements Collections.IComparer.Compare
-            Compare = _Arb.GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicSymbol), _Scheme).Length -
-                _Arb.GetSchemeValueFromSymbol(DirectCast(y, ArabicData.ArabicSymbol), _Scheme).Length
-            If Compare = 0 Then Compare = _Arb.GetSchemeValueFromSymbol(DirectCast(x, ArabicData.ArabicSymbol), _Scheme).CompareTo(_Arb.GetSchemeValueFromSymbol(DirectCast(y, ArabicData.ArabicSymbol), _Scheme))
+        Public Function Compare(ByVal x As ArabicData.ArabicSymbol, ByVal y As ArabicData.ArabicSymbol) As Integer _
+            Implements Collections.Generic.IComparer(Of ArabicData.ArabicSymbol).Compare
+            Dim Left As String = _Arb.GetSchemeValueFromSymbol(x, _Scheme)
+            Dim Right As String = _Arb.GetSchemeValueFromSymbol(y, _Scheme)
+            Compare = Left.Length - Right.Length
+            If Compare = 0 Then Compare = Left.CompareTo(Right)
         End Function
     End Class
     Private _PortableMethods As PortableMethods
@@ -899,7 +901,7 @@ Public Class Arabic
         Dim PosDict As New Dictionary(Of RuleMetadata, Integer)
         For Count As Integer = 0 To CacheIn.Length - 1
             Dim KeyVal As String() = CacheIn(Count).Split("="c)
-            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs)(Linq.Enumerable.Select(KeyVal(0).Substring(0, Math.Min(If(KeyVal(0).IndexOf("["c) = -1, KeyVal(0).Length, KeyVal(0).IndexOf("["c)), If(KeyVal(0).IndexOf("{"c) = -1, KeyVal(0).Length, KeyVal(0).IndexOf("{"c)))).Split("|"c), Function(S) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty), .Args = If(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Success, New List(Of String())(Linq.Enumerable.Select(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Groups(1).Value.Split(","c), Function(InnerStr) InnerStr.Split(" "c))).ToArray(), Nothing)})).ToArray()
+            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = Linq.Enumerable.Select(KeyVal(0).Substring(0, Math.Min(If(KeyVal(0).IndexOf("["c) = -1, KeyVal(0).Length, KeyVal(0).IndexOf("["c)), If(KeyVal(0).IndexOf("{"c) = -1, KeyVal(0).Length, KeyVal(0).IndexOf("{"c)))).Split("|"c), Function(S) New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = System.Text.RegularExpressions.Regex.Replace(S, "\(.*\)|^null$", String.Empty), .Args = If(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Success, New List(Of String())(Linq.Enumerable.Select(System.Text.RegularExpressions.Regex.Match(S, "\((.*)\)").Groups(1).Value.Split(","c), Function(InnerStr) InnerStr.Split(" "c))).ToArray(), Nothing)}).ToArray()
             Dim Vals As Integer()() = New List(Of Integer())(Linq.Enumerable.Select(KeyVal(3).Split(","c), Function(Item) New List(Of Integer)(If(Item Is Nothing Or Item = String.Empty, {}, Linq.Enumerable.Select(Item.Split(":"c), Function(Frag) Integer.Parse(Frag)))).ToArray())).ToArray()
             Dim VerseCount As Integer
             For VerseCount = 0 To Vals.Length - 1
@@ -4651,6 +4653,9 @@ Public Class TanzilReader
         ChData = NewChData
     End Sub
     Public Async Function Init() As Threading.Tasks.Task
+        _AllWordRegEx = New System.Text.RegularExpressions.Regex("(?:^\s*|\s+)(?:([^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+)|([\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]))(?=\s*$|\s+)")
+        _WordRegEx = New System.Text.RegularExpressions.Regex("(?:^\s*|\s+)[^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)")
+        _ChunkRegEx = New System.Text.RegularExpressions.Regex("\s+[\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+\s+")
         _QuranText = QuranTextCombiner(ChData.XMLDocMain, _IndexToVerse)
         _CacheMetarules = Await GetQuranCacheMetarules()
     End Function
@@ -6223,7 +6228,7 @@ Public Class TanzilReader
                 Dim Node As String
                 Node = GetTextVerse(GetTextChapter(XMLDoc, StartChapter - If(bChapterRollback, 1, 0) + Count), 1).Bismillah
                 If Not String.IsNullOrEmpty(Node) Then
-                    Matches = System.Text.RegularExpressions.Regex.Matches(Node, "(?:^\s*|\s+)(?:([^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+)|([\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]))(?=\s*$|\s+)")
+                    Matches = _AllWordRegEx.Matches(Node)
                     ChunkCount = 1
                     MarkerCount = 0
                     For WordCount = 0 To Matches.Count - 1
@@ -6248,7 +6253,7 @@ Public Class TanzilReader
             End If
             If Count <> Verses.Count Then
                 For SubCount As Integer = 0 To Verses(Count).Length - 1
-                    Matches = System.Text.RegularExpressions.Regex.Matches(Verses(Count)(SubCount), "(?:^\s*|\s+)(?:([^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+)|([\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]))(?=\s*$|\s+)")
+                    Matches = _AllWordRegEx.Matches(Verses(Count)(SubCount))
                     ChunkCount = 1
                     MarkerCount = 0
                     FilterIndex = 0
@@ -6812,11 +6817,14 @@ Public Class TanzilReader
     Public Function GetVerseCount(ByVal Chapter As Integer) As Integer
         Return GetChapterByIndex(Chapter).Ayas
     End Function
+    Private _AllWordRegEx As System.Text.RegularExpressions.Regex
+    Private _WordRegEx As System.Text.RegularExpressions.Regex
+    Private _ChunkRegEx As System.Text.RegularExpressions.Regex
     Public Function GetWordCount(ByVal Chapter As Integer, ByVal Verse As Integer) As Integer
-        Return System.Text.RegularExpressions.Regex.Matches(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Chapter), Verse).Text, "(?:^\s*|\s+)[^\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+(?=\s*$|\s+)").Count
+        Return _WordRegEx.Matches(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Chapter), Verse).Text).Count
     End Function
     Public Function GetChunkCount(ByVal Chapter As Integer, ByVal Verse As Integer) As Integer
-        Return System.Text.RegularExpressions.Regex.Matches(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Chapter), Verse).Text, "\s+[\s" + String.Join(String.Empty, Linq.Enumerable.Select(ChData.ArabicStopLetters, Function(S As String) ArabicData.MakeUniRegEx(S))) + ArabicData.ArabicStartOfRubElHizb + ArabicData.ArabicPlaceOfSajdah + "]+\s+").Count
+        Return _ChunkRegEx.Matches(GetTextVerse(GetTextChapter(ChData.XMLDocMain, Chapter), Verse).Text).Count
     End Function
     Public Sub GetPreviousChapterVerse(ByRef Chapter As Integer, ByRef Verse As Integer)
         If Verse = 1 Then

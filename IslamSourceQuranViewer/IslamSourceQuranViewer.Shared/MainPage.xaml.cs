@@ -128,6 +128,7 @@ namespace IslamSourceQuranViewer
         {
             if (ViewModel.ListSelectedItem == null) return;
             this.Frame.Navigate(typeof(WordForWordUC), ViewModel.SelectedItem.IsBookmarks ? new { Division = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][0], Selection = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][1], JumpToChapter = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][2], JumpToVerse = AppSettings.Bookmarks[ViewModel.ListSelectedItem.Index][3], StartPlaying = false } : new {Division = ViewModel.SelectedItem.Index - 1, Selection = ViewModel.ListSelectedItem.Index, JumpToChapter = -1, JumpToVerse = -1, StartPlaying = false });
+            ViewModel.ListSelectedItem = null;
         }
         private void OnClick(object sender, RoutedEventArgs e)
         {

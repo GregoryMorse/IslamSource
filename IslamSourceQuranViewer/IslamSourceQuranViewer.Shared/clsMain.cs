@@ -82,8 +82,8 @@ public class WindowsRTFileIO : XMLRender.PortableFileIO
 #if WINDOWS_PHONE_APP
         //System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.IStorageItem>> files = t.Result.GetItemsAsync().AsTask();
         //files.Wait();
-        //return files.Result.FirstOrDefault(p => p.Name == System.IO.Path.GetFileName(Path)) != null;
-        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync()).FirstOrDefault(p => p.Name == System.IO.Path.GetFileName(Path)) != null;
+        //return files.Result.FirstOrDefault(p => p.Name.Equals(System.IO.Path.GetFileName(Path), StringComparison.OrdinalIgnoreCase)) != null;
+        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync()).FirstOrDefault(p => p.Name.Equals(System.IO.Path.GetFileName(Path), StringComparison.OrdinalIgnoreCase)) != null;
 #else
         //System.Threading.Tasks.Task<Windows.Storage.IStorageItem> tn = t.Result.TryGetItemAsync(System.IO.Path.GetFileName(Path)).AsTask();
         //tn.Wait();
@@ -1352,10 +1352,10 @@ using Android.Graphics;
             set
             {
                 _selectedItem = value;
-                AppSettings.iDefaultStartTab = _selectedItem.Index;
+                if (_selectedItem != null) AppSettings.iDefaultStartTab = _selectedItem.Index;
                 PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
-                ListItems = _selectedItem.Items;
-                ListSelectedItem = ListItems.Count() == 0 ? null : ListItems.First();
+                if (_selectedItem != null) ListItems = _selectedItem.Items;
+                if (_selectedItem != null) ListSelectedItem = ListItems.Count() == 0 ? null : ListItems.First();
             }
         }
 
