@@ -123,7 +123,7 @@ Public Class PortableMethods
         Dim Stream As IO.Stream = Await FileIO.LoadStream(ResFilePath)
         Dim XMLDoc As Xml.Linq.XDocument = Xml.Linq.XDocument.Load(Stream)
         Stream.Dispose()
-        Dim AllNodes As Xml.Linq.XElement() = (New List(Of Xml.Linq.XElement)(Linq.Enumerable.Where(XMLDoc.Root.Elements, Function(elem) elem.Name = "data" And Not elem.Attribute("name") Is Nothing))).ToArray()
+        Dim AllNodes As Xml.Linq.XElement() = Linq.Enumerable.Where(XMLDoc.Root.Elements, Function(elem) elem.Name = "data" And Not elem.Attribute("name") Is Nothing).ToArray()
         For Each Item As Xml.Linq.XElement In AllNodes
             If System.Text.RegularExpressions.Regex.Match(Item.Attribute("name").Value, "^.*\.\d+$").Success Then
                 Dim LineKey As String = Item.Attribute("name").Value.Substring(0, Item.Attribute("name").Value.IndexOf("."c))
@@ -1072,7 +1072,7 @@ Public Class ArabicData
                         If Array.IndexOf(ShapePositions, Data.JoiningStyle) <> -1 Then ShapeData.Shapes(Array.IndexOf(ShapePositions, Data.JoiningStyle)) = Ch
                     End If
                 Else
-                    Data.Chars = New List(Of Char)(Linq.Enumerable.Select(CombData, Function(Dat As String) ChrW(If(Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier) >= &H10000, 0, Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier))))).ToArray()
+                    Data.Chars = Linq.Enumerable.Select(CombData, Function(Dat As String) ChrW(If(Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier) >= &H10000, 0, Integer.Parse(Dat, Globalization.NumberStyles.AllowHexSpecifier)))).ToArray()
                     _DecData(Ch) = Data
                 End If
             End If
