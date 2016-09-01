@@ -138,64 +138,10 @@ Public Class frmMain
         Dim OrigRules As List(Of Arabic.RuleMetadata) = Arb.GetMetarules(TR.QuranTextCombiner(ChData.XMLDocMain, IndexToVerse), ChData.RuleMetas("UthmaniQuran"))
         Dim Rules As List(Of Arabic.RuleMetadata) = Await TR.GetQuranCacheMetarules()
         For Count = 0 To Rules.Count - 1
-            If Rules(Count).Index <> OrigRules(Count).Index Or Rules(Count).Length <> OrigRules(Count).Length Or Rules(Count).OrigOrder <> OrigRules(Count).OrigOrder Or Rules(Count).Type.Length <> OrigRules(Count).Type.Length Or (Not Rules(Count).Children Is Nothing Or Not OrigRules(Count).Children Is Nothing) AndAlso Rules(Count).Children.Length <> OrigRules(Count).Children.Length Or (Not Rules(Count).Dependencies Is Nothing Or Not OrigRules(Count).Dependencies Is Nothing) AndAlso Rules(Count).Dependencies.Length <> OrigRules(Count).Dependencies.Length Then
+            If Not (New IslamMetadata.Arabic.RuleMetadataEqualityComparer).Equals(Rules(Count), OrigRules(Count)) Then
                 Debug.Print("Error: " + CStr(Count))
             End If
-            For CompCount = 0 To Rules(Count).Type.Length - 1
-                If Rules(Count).Type(CompCount).RuleName <> OrigRules(Count).Type(CompCount).RuleName Or (Not Rules(Count).Type(CompCount).Args Is Nothing Or Not OrigRules(Count).Type(CompCount).Args Is Nothing) AndAlso Rules(Count).Type(CompCount).Args.Length <> OrigRules(Count).Type(CompCount).Args.Length Then
-                    Debug.Print("Error: " + CStr(Count))
-                End If
-                For ArgCount = 0 To If(Rules(Count).Type(CompCount).Args Is Nothing, -1, Rules(Count).Type(CompCount).Args.Length - 1)
-                    If Rules(Count).Type(CompCount).Args(ArgCount).Length <> OrigRules(Count).Type(CompCount).Args(ArgCount).Length Then
-                        Debug.Print("Error: " + CStr(Count))
-                    End If
-                    For SubArgCount = 0 To Rules(Count).Type(CompCount).Args(ArgCount).Length - 1
-                        If Rules(Count).Type(CompCount).Args(ArgCount)(SubArgCount) <> OrigRules(Count).Type(CompCount).Args(ArgCount)(SubArgCount) Then
-                            Debug.Print("Error: " + CStr(Count))
-                        End If
-                    Next
-                Next
-            Next
-            For OthCount = 0 To If(Rules(Count).Children Is Nothing, -1, Rules(Count).Children.Length - 1)
-                If Rules(Count).Children(OthCount).Index <> OrigRules(Count).Children(OthCount).Index Or Rules(Count).Children(OthCount).Length <> OrigRules(Count).Children(OthCount).Length Or Rules(Count).Children(OthCount).OrigOrder <> OrigRules(Count).Children(OthCount).OrigOrder Or Rules(Count).Children(OthCount).Type.Length <> OrigRules(Count).Children(OthCount).Type.Length Or (Not Rules(Count).Children(OthCount).Children Is Nothing Or Not OrigRules(Count).Children(OthCount).Children Is Nothing) AndAlso Rules(Count).Children(OthCount).Children.Length <> OrigRules(Count).Children(OthCount).Children.Length Or (Not Rules(Count).Children(OthCount).Dependencies Is Nothing Or Not OrigRules(Count).Children(OthCount).Dependencies Is Nothing) AndAlso Rules(Count).Children(OthCount).Dependencies.Length <> OrigRules(Count).Children(OthCount).Dependencies.Length Then
-                    Debug.Print("Error: " + CStr(Count))
-                End If
-                For CompCount = 0 To Rules(Count).Children(OthCount).Type.Length - 1
-                    If Rules(Count).Children(OthCount).Type(CompCount).RuleName <> OrigRules(Count).Children(OthCount).Type(CompCount).RuleName Or (Not Rules(Count).Children(OthCount).Type(CompCount).Args Is Nothing Or Not OrigRules(Count).Children(OthCount).Type(CompCount).Args Is Nothing) AndAlso Rules(Count).Children(OthCount).Type(CompCount).Args.Length <> OrigRules(Count).Children(OthCount).Type(CompCount).Args.Length Then
-                        Debug.Print("Error: " + CStr(Count))
-                    End If
-                    For ArgCount = 0 To If(Rules(Count).Children(OthCount).Type(CompCount).Args Is Nothing, -1, Rules(Count).Children(OthCount).Type(CompCount).Args.Length - 1)
-                        If Rules(Count).Children(OthCount).Type(CompCount).Args(ArgCount).Length <> OrigRules(Count).Children(OthCount).Type(CompCount).Args(ArgCount).Length Then
-                            Debug.Print("Error: " + CStr(Count))
-                        End If
-                        For SubArgCount = 0 To Rules(Count).Children(OthCount).Type(CompCount).Args(ArgCount).Length - 1
-                            If Rules(Count).Children(OthCount).Type(CompCount).Args(ArgCount)(SubArgCount) <> OrigRules(Count).Children(OthCount).Type(CompCount).Args(ArgCount)(SubArgCount) Then
-                                Debug.Print("Error: " + CStr(Count))
-                            End If
-                        Next
-                    Next
-                Next
-            Next
-            For OthCount = 0 To If(Rules(Count).Dependencies Is Nothing, -1, Rules(Count).Dependencies.Length - 1)
-                If Rules(Count).Dependencies(OthCount).Index <> OrigRules(Count).Dependencies(OthCount).Index Or Rules(Count).Dependencies(OthCount).Length <> OrigRules(Count).Dependencies(OthCount).Length Or Rules(Count).Dependencies(OthCount).OrigOrder <> OrigRules(Count).Dependencies(OthCount).OrigOrder Or Rules(Count).Dependencies(OthCount).Type.Length <> OrigRules(Count).Dependencies(OthCount).Type.Length Or (Not Rules(Count).Dependencies(OthCount).Children Is Nothing Or Not OrigRules(Count).Dependencies(OthCount).Children Is Nothing) AndAlso Rules(Count).Dependencies(OthCount).Children.Length <> OrigRules(Count).Dependencies(OthCount).Children.Length Or (Not Rules(Count).Dependencies(OthCount).Dependencies Is Nothing Or Not OrigRules(Count).Dependencies(OthCount).Dependencies Is Nothing) AndAlso Rules(Count).Dependencies(OthCount).Dependencies.Length <> OrigRules(Count).Dependencies(OthCount).Dependencies.Length Then
-                    Debug.Print("Error: " + CStr(Count))
-                End If
-                For CompCount = 0 To Rules(Count).Dependencies(OthCount).Type.Length - 1
-                    If Rules(Count).Dependencies(OthCount).Type(CompCount).RuleName <> OrigRules(Count).Dependencies(OthCount).Type(CompCount).RuleName Or (Not Rules(Count).Dependencies(OthCount).Type(CompCount).Args Is Nothing Or Not OrigRules(Count).Dependencies(OthCount).Type(CompCount).Args Is Nothing) AndAlso Rules(Count).Dependencies(OthCount).Type(CompCount).Args.Length <> OrigRules(Count).Dependencies(OthCount).Type(CompCount).Args.Length Then
-                        Debug.Print("Error: " + CStr(Count))
-                    End If
-                    For ArgCount = 0 To If(Rules(Count).Dependencies(OthCount).Type(CompCount).Args Is Nothing, -1, Rules(Count).Dependencies(OthCount).Type(CompCount).Args.Length - 1)
-                        If Rules(Count).Dependencies(OthCount).Type(CompCount).Args(ArgCount).Length <> OrigRules(Count).Dependencies(OthCount).Type(CompCount).Args(ArgCount).Length Then
-                            Debug.Print("Error: " + CStr(Count))
-                        End If
-                        For SubArgCount = 0 To Rules(Count).Dependencies(OthCount).Type(CompCount).Args(ArgCount).Length - 1
-                            If Rules(Count).Dependencies(OthCount).Type(CompCount).Args(ArgCount)(SubArgCount) <> OrigRules(Count).Dependencies(OthCount).Type(CompCount).Args(ArgCount)(SubArgCount) Then
-                                Debug.Print("Error: " + CStr(Count))
-                            End If
-                        Next
-                    Next
-                Next
-            Next
+
         Next
         Await _PortableMethods.WriteAllLines(_PortableMethods.FileIO.CombinePath(Await _PortableMethods.DiskCache.GetCacheDirectory(), "_QuranTajweedData.txt"), Arabic.MakeCacheMetarules(Rules, IndexToVerse))
         'Debug.Print(Decrypt("EAAAAKTSWJHpN/u15OHqSqZ3RhDB7UNHKMeY9Lk2sxW7Rcsc", "!234Qwer)987Poiu"))
