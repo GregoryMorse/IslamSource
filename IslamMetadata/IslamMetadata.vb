@@ -843,11 +843,26 @@ Public Class Arabic
         Return ArabicString
     End Function
     Private Shared RegExDict As New Dictionary(Of String, System.Text.RegularExpressions.Regex)
+    Class FilterMetadataComparer
+        Implements IComparer(Of RuleMetadata)
+        Public Function Compare(x As RuleMetadata, y As RuleMetadata) As Integer Implements IComparer(Of RuleMetadata).Compare
+            If x.Index = y.Index Then Return 0
+            Return If(x.Index > y.Index, -1, 1)
+        End Function
+    End Class
     Public Shared Function FilterMetadataStopsContig(ByVal ArabicStringLength As Integer, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer, PreStringLength As Integer, Optional PreStop As Boolean = True, Optional PostStop As Boolean = True) As Generic.List(Of RuleMetadata)
-        MetadataList = Linq.Enumerable.Select(Linq.Enumerable.Where(MetadataList, Function(Item) Item.Index >= PreStringLength And Item.Index + Item.Length <= ArabicStringLength).ToList(), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
+        Dim Idx As Integer = MetadataList.BinarySearch(New RuleMetadata With {.Index = PreStringLength}, New FilterMetadataComparer)
+        If Idx < 0 Then Idx = (Idx Xor -1) - 1
+        Dim Ct As Integer = 1
+        While Idx >= 0 AndAlso MetadataList(Idx).Index + MetadataList(Idx).Length <= ArabicStringLength
+            Idx -= 1
+            Ct += 1
+        End While
+        Return Linq.Enumerable.Select(Linq.Enumerable.Take(Linq.Enumerable.Skip(MetadataList, Idx), Ct), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
+        'MetadataList = Linq.Enumerable.Select(Linq.Enumerable.Where(MetadataList, Function(Item) Item.Index >= PreStringLength And Item.Index + Item.Length <= ArabicStringLength).ToList(), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
         'If PreStop Then OptionalStops.Add(0)
         'If PostStop Then OptionalStops.Add(ArabicString.Length - 1)
-        Return MetadataList 'FilterMetadataStops(ArabicString, MetadataList, OptionalStops)
+        'Return MetadataList 'FilterMetadataStops(ArabicString, MetadataList, OptionalStops)
     End Function
     Public Shared Function FilterMetadataStops(ByVal ArabicString As String, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer) As Generic.List(Of RuleMetadata)
         MetadataList = Linq.Enumerable.Where(MetadataList, Function(Item)
@@ -910,7 +925,7 @@ Public Class Arabic
         ArabicString = ReplaceTranslitRule(ArabicString, Scheme, LearningMode, Nothing)
         'process wasl loanwords and names
         'process loanwords and names
-        If System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Success Then Debug.WriteLine(ArabicString.Substring(System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Index) + " --- " + ArabicString)
+        If ArabicData.IsArabicExp.Match(ArabicString).Success Then Debug.WriteLine(ArabicString.Substring(System.Text.RegularExpressions.Regex.Match(ArabicString, "[\p{IsArabic}|\p{IsArabicPresentationForms-A}|\p{IsArabicPresentationForms-B}]").Index) + " --- " + ArabicString)
         Return ArabicString
     End Function
     Public Class RuleIndexComparer

@@ -1108,7 +1108,7 @@ Public Class ArabicData
     Public Function FixStartingCombiningSymbol(Str As String) As String
         Return If((FindLetterBySymbol(Str.Chars(0)) <> -1 AndAlso ArabicLetters(FindLetterBySymbol(Str.Chars(0))).JoiningStyle = "T") Or Str.Length = 1, LeftToRightOverride + Str + PopDirectionalFormatting, Str)
     End Function
-    Shared IsArabicExp As New System.Text.RegularExpressions.Regex("[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]")
+    Public Shared IsArabicExp As New System.Text.RegularExpressions.Regex("[\p{IsArabic}\p{IsArabicPresentationForms-A}\p{IsArabicPresentationForms-B}]")
     Public Shared Function MakeUniRegEx(Input As String) As String
         Return String.Join(String.Empty, Linq.Enumerable.Select(Of Char, String)(Input.ToCharArray(), Function(Ch As Char) If(IsArabicExp.Match(Ch).Success, "\u" + AscW(Ch).ToString("X4"), If(Ch = "."c, "\" + Ch, Ch))))
     End Function
