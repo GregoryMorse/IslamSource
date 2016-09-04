@@ -265,7 +265,7 @@ Public Class frmMain
         Arb.TransliterateWithRulesColor(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), "PlainRoman", True, False, Arabic.FilterMetadataStops(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), Arb.GetMetarules(Arb.TransliterateFromBuckwalter("mina {lojin~api wa{ln~aAsi"), ChData.RuleMetas("UthmaniQuran")), Nothing))
         Text = TanzilReader.GetQuranText(ChData.XMLDocMain, 19, 4, 4)(0) + " " + ArabicData.ArabicEndOfAyah
         'Debug.Print(Arb.TransliterateToScheme(IndVerses(0), ArabicData.TranslitScheme.RuleBased, String.Empty, CachedData.RuleMetas("UthmaniQuran"), TanzilReader.GenerateDefaultStops(IndVerses(0))))
-        Debug.Print(Arb.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, Arabic.FilterMetadataStops(Text, Arb.GetMetarules(Text, ChData.RuleMetas("UthmaniQuran")), TR.GenerateDefaultStops(Text))))
+        Debug.Print(Arb.TransliterateToScheme(Text, ArabicData.TranslitScheme.RuleBased, String.Empty, Arabic.FilterMetadataStops(Text, Arb.GetMetarules(Text, ChData.RuleMetas("UthmaniQuran")), TR.GenerateDefaultStops(Text, IndexToVerse))))
         For Selection = 33 To TR.GetChapterCount()
             Await TR.GetRenderedQuranText(ArabicData.TranslitScheme.RuleBased, String.Empty, String.Empty, "0", Selection.ToString(), String.Empty, "0", "1")
             Debug.Print(CStr(Selection))

@@ -853,8 +853,11 @@ Public Class Arabic
     Public Shared Function FilterMetadataStopsContig(ByVal ArabicStringLength As Integer, MetadataList As Generic.List(Of RuleMetadata), OptionalStops() As Integer, PreStringLength As Integer, Optional PreStop As Boolean = True, Optional PostStop As Boolean = True) As Generic.List(Of RuleMetadata)
         Dim Idx As Integer = MetadataList.BinarySearch(New RuleMetadata With {.Index = PreStringLength}, New FilterMetadataComparer)
         If Idx < 0 Then Idx = (Idx Xor -1) - 1
+        While Idx + 1 < MetadataList.Count AndAlso MetadataList(Idx + 1).Index = PreStringLength
+            Idx += 1
+        End While
         Dim Ct As Integer = 1
-        While Idx >= 0 AndAlso MetadataList(Idx).Index + MetadataList(Idx).Length <= ArabicStringLength
+        While Idx > 0 AndAlso MetadataList(Idx - 1).Index + MetadataList(Idx - 1).Length <= ArabicStringLength
             Idx -= 1
             Ct += 1
         End While
@@ -6409,10 +6412,10 @@ Public Class TanzilReader
                     MarkerCount = 0
                     FilterIndex = 0
                     For WordCount = 0 To Matches.Count - 1
+                        If Matches(WordCount).Groups(2).Success Then MarkerCount += 1
                         bNotFilter = StartChapter = 1 And BaseVerse <= 1 And WordNumber = 1 Or Count <> 0 Or Count = 0 And (Not bChapterRollback And bBismillahPrecedes) Or SubCount <> 0 Or WordCount - MarkerCount + 1 >= If(WordNumber = 1, If(_CacheMetarules Is Nothing, Linq.Enumerable.Count(Linq.Enumerable.Cast(Of Text.RegularExpressions.Match)(Matches), Function(It) Not It.Groups(2).Success), 1), WordNumber - If(_CacheMetarules Is Nothing, 1, 0))
                         If Not (EndChapter = GetChapterCount() And ExtraVerseNumber = ECVerseCount And EndWordNumber = ECWordCount) And (Count = Verses.Count - 1 And (bChapterRollforward Or Not bBismillahTrails) And SubCount = Verses(Count).Length - 1 And Not Matches(WordCount).Groups(2).Success And WordCount - MarkerCount + 1 > If(EndWordNumber = ExtraWordCount, If(_CacheMetarules Is Nothing, 1, ExtraWordCount), EndWordNumber + If(_CacheMetarules Is Nothing, 1, 0))) Then Exit For
                         If Matches(WordCount).Groups(2).Success Then
-                            MarkerCount += 1
                             If bNotFilter Then IndexToVerseList.Add(New Integer() {StartChapter - If(bChapterRollback, 1, 0) + Count, If(Count <> 0, 1, If(BaseVerse = 0, 1, BaseVerse) - If(_CacheMetarules Is Nothing And WordNumber = 1 And Not bBismillahPrecedes And Not (StartChapter = 1 And BaseVerse <= 1), 1, 0)) + SubCount, WordCount - MarkerCount + 1, Str.Length + Matches(WordCount).Groups(2).Index - FilterIndex, Matches(WordCount).Groups(2).Length, ChunkCount, MarkerCount})
                             If WordCount <> 0 AndAlso Not Matches(WordCount - 1).Groups(2).Success Then ChunkCount += 1
                         Else
