@@ -481,7 +481,9 @@ Public Class Arabic
         End While
         Return LiteralString.ToString()
     End Function
-    Structure RuleMetadata
+    Class RuleMetadata
+        Sub New()
+        End Sub
         Sub New(NewIndex As Integer, NewLength As Integer, ByVal NewType As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs(), NewOrigOrder As Integer)
             Index = NewIndex
             Length = NewLength
@@ -494,7 +496,7 @@ Public Class Arabic
         Public OrigOrder As Integer
         Public Children As RuleMetadata()
         Public Dependencies As RuleMetadata()
-    End Structure
+    End Class
     Public Const SimpleTrailingAlef As String = ArabicData.ArabicLetterAlef + ArabicData.ArabicSmallHighRoundedZero
     Public Const SimpleSuperscriptAlef As String = ArabicData.ArabicLetterSuperscriptAlef
     Public Const UthmaniShortVowelsBeforeLongVowelsSuperscriptAlef As String = ArabicData.ArabicFatha + ArabicData.ArabicLetterSuperscriptAlef
@@ -1532,14 +1534,14 @@ Public Class Arabic
     Public Function GetCatWords(SelArr As String()) As IslamData.GrammarSet.GrammarWord()
         Dim Words As New List(Of IslamData.GrammarSet.GrammarWord)
         For Count = 0 To SelArr.Length - 1
-            Dim Word As Nullable(Of IslamData.GrammarSet.GrammarWord)
+            Dim Word As IslamData.GrammarSet.GrammarWord
             Word = GetCatWord(SelArr(Count))
-            If Word.HasValue Then Words.Add(Word.Value)
+            If Not Word Is Nothing Then Words.Add(Word)
         Next
         Return Words.ToArray()
     End Function
-    Public Function GetCatWord(ID As String) As Nullable(Of IslamData.GrammarSet.GrammarWord)
-        GetCatWord = New Nullable(Of IslamData.GrammarSet.GrammarWord)
+    Public Function GetCatWord(ID As String) As IslamData.GrammarSet.GrammarWord
+        GetCatWord = Nothing
         Dim Particles As IslamData.GrammarSet.GrammarParticle() = GetParticles(ID)
         If Not Particles Is Nothing AndAlso Particles.Length <> 0 Then GetCatWord = New IslamData.GrammarSet.GrammarWord(Particles(0))
         Dim Nouns As IslamData.GrammarSet.GrammarNoun() = GetCatNoun(ID)
@@ -1617,8 +1619,8 @@ Public Class AudioRecitation
 End Class
 <Xml.Serialization.XmlRoot("islamdata")>
 Public Class IslamData
-    Public Structure Reciters
-        Public Structure Reciter
+    Public Class Reciters
+        Public Class Reciter
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
             <Xml.Serialization.XmlAttribute("reciter")>
@@ -1628,66 +1630,66 @@ Public Class IslamData
             <Xml.Serialization.XmlAttribute("bitrate")>
             <ComponentModel.DefaultValue(0)>
             Public BitRate As Integer
-        End Structure
+        End Class
         <Xml.Serialization.XmlElement("reciter")>
         Public Reciters() As Reciter
         <Xml.Serialization.XmlAttribute("default")>
         Public DefaultReciter As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlElement("reciters")>
     Public ReciterList As Reciters
-    Public Structure LoopingModes
-        Public Structure LoopingMode
+    Public Class LoopingModes
+        Public Class LoopingMode
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlElement("loopingmode")>
         Public LoopingModes() As LoopingMode
         <Xml.Serialization.XmlAttribute("default")>
         Public DefaultLoopingMode As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlElement("loopingmodes")>
     Public LoopingModeList As LoopingModes
-    Public Structure ListCategory
-        Public Structure Word
+    Public Class ListCategory
+        Public Class Word
             <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
             <Xml.Serialization.XmlAttribute("id")>
             Public TranslationID As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlAttribute("title")>
         Public Title As String
         <Xml.Serialization.XmlElement("word")>
         Public Words() As Word
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("lists")>
     <Xml.Serialization.XmlArrayItem("category")>
     Public Lists() As ListCategory
 
-    Public Structure Phrase
+    Public Class Phrase
         <Xml.Serialization.XmlAttribute("text")>
         Public Text As String
         <Xml.Serialization.XmlAttribute("id")>
         Public TranslationID As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("phrases")>
     <Xml.Serialization.XmlArrayItem("word")>
     Public Phrases() As Phrase
 
-    Public Structure AbbrevWord
+    Public Class AbbrevWord
         <Xml.Serialization.XmlAttribute("text")>
         Public Text As String
         <Xml.Serialization.XmlAttribute("font")>
         Public Font As String
         <Xml.Serialization.XmlAttribute("id")>
         Public TranslationID As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("abbreviations")>
     <Xml.Serialization.XmlArrayItem("word")>
     Public Abbreviations() As AbbrevWord
 
-    Public Structure GrammarSet
-        Public Structure GrammarWord
+    Public Class GrammarSet
+        Public Class GrammarWord
             Public Sub New(Particle As GrammarParticle)
                 Text = Particle.Text
                 TranslationID = Particle.TranslationID
@@ -1711,8 +1713,8 @@ Public Class IslamData
             Public Text As String
             Public TranslationID As String
             Public Grammar As String
-        End Structure
-        Public Structure GrammarTransform
+        End Class
+        Public Class GrammarTransform
             <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
             <Xml.Serialization.XmlAttribute("id")>
@@ -1723,22 +1725,22 @@ Public Class IslamData
             Public Match As String
             <Xml.Serialization.XmlAttribute("from")>
             Public From As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlArray("transforms")>
         <Xml.Serialization.XmlArrayItem("transform")>
         Public Transforms() As GrammarTransform
-        Public Structure GrammarParticle
+        Public Class GrammarParticle
             <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
             <Xml.Serialization.XmlAttribute("id")>
             Public TranslationID As String
             <Xml.Serialization.XmlAttribute("grammar")>
             Public Grammar As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlArray("particles")>
         <Xml.Serialization.XmlArrayItem("particle")>
         Public Particles() As GrammarParticle
-        Public Structure GrammarNoun
+        Public Class GrammarNoun
             <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
             <Xml.Serialization.XmlAttribute("id")>
@@ -1747,11 +1749,11 @@ Public Class IslamData
             Public Plural As String
             <Xml.Serialization.XmlAttribute("grammar")>
             Public Grammar As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlArray("nouns")>
         <Xml.Serialization.XmlArrayItem("noun")>
         Public Nouns() As GrammarNoun
-        Public Structure GrammarVerb
+        Public Class GrammarVerb
             <Xml.Serialization.XmlAttribute("text")>
             Public Text As String
             <Xml.Serialization.XmlAttribute("id")>
@@ -1760,15 +1762,15 @@ Public Class IslamData
             Public Possessives As String
             <Xml.Serialization.XmlAttribute("grammar")>
             Public Grammar As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlArray("verbs")>
         <Xml.Serialization.XmlArrayItem("verb")>
         Public Verbs() As GrammarVerb
-    End Structure
+    End Class
     <Xml.Serialization.XmlElement("grammar")>
     Public Grammar As GrammarSet
 
-    Public Structure TranslitScheme
+    Public Class TranslitScheme
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Alphabet() As String
@@ -1914,11 +1916,11 @@ Public Class IslamData
                 End If
             End Set
         End Property
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("translitschemes")>
     <Xml.Serialization.XmlArrayItem("scheme")>
     Public TranslitSchemes() As TranslitScheme
-    Structure ArabicCapInfo
+    Class ArabicCapInfo
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Text As String()
@@ -1931,11 +1933,11 @@ Public Class IslamData
                 Text = value.Split({"  "}, StringSplitOptions.None)
             End Set
         End Property
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("arabiccaptures")>
     <Xml.Serialization.XmlArrayItem("caps")>
     Public ArabicCaptures() As ArabicCapInfo
-    Structure ArabicNumInfo
+    Class ArabicNumInfo
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Text As String()
@@ -1948,20 +1950,20 @@ Public Class IslamData
                 Text = value.Split(" "c)
             End Set
         End Property
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("arabicnumbers")>
     <Xml.Serialization.XmlArrayItem("nums")>
     Public ArabicNumbers() As ArabicNumInfo
-    Structure ArabicPattern
+    Class ArabicPattern
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         <Xml.Serialization.XmlAttribute("match")>
         Public Match As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("arabicpatterns")>
     <Xml.Serialization.XmlArrayItem("pattern")>
     Public ArabicPatterns() As ArabicPattern
-    Structure ArabicGroup
+    Class ArabicGroup
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public Text As String()
@@ -1974,12 +1976,12 @@ Public Class IslamData
                 Text = value.Split(" "c)
             End Set
         End Property
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("arabicgroups")>
     <Xml.Serialization.XmlArrayItem("group")>
     Public ArabicGroups() As ArabicGroup
-    Structure ColorRuleCategory
-        Structure ColorRule
+    Class ColorRuleCategory
+        Class ColorRule
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
             Public Match As String()
@@ -2051,16 +2053,16 @@ Public Class IslamData
                     End Select
                 End Set
             End Property
-        End Structure
+        End Class
         <Xml.Serialization.XmlElement("colorrule")>
         Public ColorRules() As ColorRule
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("colorrulesets")>
     <Xml.Serialization.XmlArrayItem("colorruleset")>
     Public ColorRuleSets() As ColorRuleCategory
 
-    Structure RuleTranslationCategory
-        Structure RuleTranslation
+    Class RuleTranslationCategory
+        Class RuleTranslation
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
             <Xml.Serialization.XmlAttribute("match")>
@@ -2101,16 +2103,16 @@ Public Class IslamData
                     End Select
                 End Set
             End Property
-        End Structure
+        End Class
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         <Xml.Serialization.XmlElement("rule")>
         Public Rules() As RuleTranslation
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("translitrules")>
     <Xml.Serialization.XmlArrayItem("ruleset")>
     Public RuleSets() As RuleTranslationCategory
-    Structure VerificationData
+    Class VerificationData
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         <Xml.Serialization.XmlAttribute("match")>
@@ -2135,22 +2137,22 @@ Public Class IslamData
                 MetaRules = value.Split("|"c)
             End Set
         End Property
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("verificationset")>
     <Xml.Serialization.XmlArrayItem("verification")>
     Public VerificationSet() As VerificationData
-    Structure RuleMetaSet
-        Structure RuleMetadataTranslation
+    Class RuleMetaSet
+        Class RuleMetadataTranslation
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
             <Xml.Serialization.XmlAttribute("match")>
             Public Match As String
             <Xml.Serialization.XmlAttribute("evaluator")>
             Public _Evaluator As String
-            Structure RuleWithArgs
+            Class RuleWithArgs
                 Public RuleName As String
                 Public Args As String()()
-            End Structure
+            End Class
             Public _SplitEvaluator As RuleWithArgs()()
             ReadOnly Property Evaluator As RuleWithArgs()()
                 Get
@@ -2188,23 +2190,23 @@ Public Class IslamData
                     Return _OptionalNotStopIndexes
                 End Get
             End Property
-        End Structure
+        End Class
         <Xml.Serialization.XmlAttribute("from")>
         Public From As String
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         <Xml.Serialization.XmlElement("metarule")>
         Public Rules() As RuleMetadataTranslation
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("metarules")>
     <Xml.Serialization.XmlArrayItem("metaruleset")>
     Public MetaRules() As RuleMetaSet
-    Structure LanguageInfo
+    Class LanguageInfo
         <Xml.Serialization.XmlAttribute("code")>
         Public Code As String
         <Xml.Serialization.XmlAttribute("rtl")>
         Public IsRTL As Boolean
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("languages")>
     <Xml.Serialization.XmlArrayItem("language")>
     Public LanguageList() As LanguageInfo
@@ -2231,16 +2233,16 @@ Public Class IslamData
     <Xml.Serialization.XmlArrayItem("arabicfont")>
     Public ArabicFonts() As ArabicFontList
 
-    Public Structure ScriptFont
-        Public Structure Font
+    Public Class ScriptFont
+        Public Class Font
             <Xml.Serialization.XmlAttribute("id")>
             Public ID As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         <Xml.Serialization.XmlElement("font")>
         Public FontList() As Font
-    End Structure
+    End Class
 
     <Xml.Serialization.XmlArray("scriptfonts")>
     <Xml.Serialization.XmlArrayItem("scriptfont")>
@@ -2281,18 +2283,18 @@ Public Class IslamData
     <Xml.Serialization.XmlElement("languagedefaults")>
     Public LanguageDefaultInfo As LanguageDefaults
     Public Class TranslationsInfo
-        Public Structure TranslationInfo
+        Public Class TranslationInfo
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
             <Xml.Serialization.XmlAttribute("file")>
             Public FileName As String
             <Xml.Serialization.XmlAttribute("translator")>
             Public Translator As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlElement("translation")>
         Public TranslationList() As TranslationInfo
     End Class
-    Structure VerseNumberScheme
+    Class VerseNumberScheme
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         Public ExtraVerses As Integer()()
@@ -2323,14 +2325,14 @@ Public Class IslamData
                 End If
             End Set
         End Property
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("versenumberschemes")>
     <Xml.Serialization.XmlArrayItem("versenumberscheme")>
     Public VerseNumberSchemes As VerseNumberScheme()
 
     <Xml.Serialization.XmlElement("translations")>
     Public Translations As TranslationsInfo
-    Structure QuranSelection
+    Class QuranSelection
         Class QuranSelectionInfo
             Sub New()
                 WordNumber = 1
@@ -2355,16 +2357,16 @@ Public Class IslamData
         Public Description As String
         <Xml.Serialization.XmlElement("verse")>
         Public SelectionInfo As QuranSelectionInfo()
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("quranselections")>
     <Xml.Serialization.XmlArrayItem("quranselection")>
     Public QuranSelections As QuranSelection()
-    Structure QuranDivision
+    Class QuranDivision
         <Xml.Serialization.XmlAttribute("description")>
         Public Description As String
         <Xml.Serialization.XmlAttribute("arabic")>
         Public Arabic As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("qurandivisions")>
     <Xml.Serialization.XmlArrayItem("division")>
     Public QuranDivisions As QuranDivision()
@@ -2385,25 +2387,25 @@ Public Class IslamData
     <Xml.Serialization.XmlArrayItem("chapter")>
     Public QuranChapters As QuranChapter()
 
-    Structure QuranPart
+    Class QuranPart
         <Xml.Serialization.XmlAttribute("index")>
         Public Index As String
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         <Xml.Serialization.XmlAttribute("id")>
         Public ID As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("quranparts")>
     <Xml.Serialization.XmlArrayItem("part")>
     Public QuranParts As QuranPart()
 
-    Structure CollectionInfo
-        Structure CollTranslationInfo
+    Class CollectionInfo
+        Class CollTranslationInfo
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
             <Xml.Serialization.XmlAttribute("file")>
             Public FileName As String
-        End Structure
+        End Class
         <Xml.Serialization.XmlAttribute("name")>
         Public Name As String
         <Xml.Serialization.XmlAttribute("file")>
@@ -2413,11 +2415,11 @@ Public Class IslamData
         <Xml.Serialization.XmlArray("translations")>
         <Xml.Serialization.XmlArrayItem("translation")>
         Public Translations() As CollTranslationInfo
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("hadithcollections")>
     <Xml.Serialization.XmlArrayItem("collection")>
     Public Collections() As CollectionInfo
-    Structure PartOfSpeechInfo
+    Class PartOfSpeechInfo
         <Xml.Serialization.XmlAttribute("symbol")>
         Public Symbol As String
         <Xml.Serialization.XmlAttribute("id")>
@@ -2434,16 +2436,16 @@ Public Class IslamData
                 End If
             End Get
         End Property
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("partsofspeech")>
     <Xml.Serialization.XmlArrayItem("pos")>
     Public PartsOfSpeech() As PartOfSpeechInfo
-    Structure FeatureOfSpeechInfo
+    Class FeatureOfSpeechInfo
         <Xml.Serialization.XmlAttribute("symbol")>
         Public Symbol As String
         <Xml.Serialization.XmlAttribute("id")>
         Public Id As String
-    End Structure
+    End Class
     <Xml.Serialization.XmlArray("featuresofspeech")>
     <Xml.Serialization.XmlArrayItem("feature")>
     Public FeaturesOfSpeech() As FeatureOfSpeechInfo
@@ -3131,28 +3133,28 @@ Public Class CachedData
     End Property
     <Xml.Serialization.XmlRoot("quran")>
     Public Class QuranDocMain
-        Structure Sura
+        Class Sura
             <Xml.Serialization.XmlAttribute("index")>
             Public Index As Integer
             <Xml.Serialization.XmlAttribute("name")>
             Public Name As String
-            Structure Aya
+            Class Aya
                 <Xml.Serialization.XmlAttribute("index")>
                 Public Index As Integer
                 <Xml.Serialization.XmlAttribute("text")>
                 Public Text As String
                 <Xml.Serialization.XmlAttribute("bismillah")>
                 Public Bismillah As String
-            End Structure
+            End Class
             <Xml.Serialization.XmlElement("aya")>
             Public Ayas() As Aya
-        End Structure
+        End Class
         <Xml.Serialization.XmlElement("sura")>
         Public Suras() As Sura
     End Class
     <Xml.Serialization.XmlRoot("quran")>
     Public Class QuranDocInfo
-        Structure Sura
+        Class Sura
             <Xml.Serialization.XmlAttribute("index")>
             Public Index As Integer
             <Xml.Serialization.XmlAttribute("ayas")>
@@ -3171,18 +3173,18 @@ Public Class CachedData
             Public Order As Integer
             <Xml.Serialization.XmlAttribute("rukus")>
             Public Rukus As Integer
-        End Structure
+        End Class
         <Xml.Serialization.XmlArray("suras")>
         <Xml.Serialization.XmlArrayItem("sura")>
         Public Suras() As Sura
-        Structure Mark
+        Class Mark
             <Xml.Serialization.XmlAttribute("index")>
             Public Index As Integer
             <Xml.Serialization.XmlAttribute("sura")>
             Public Sura As Integer
             <Xml.Serialization.XmlAttribute("aya")>
             Public Aya As Integer
-        End Structure
+        End Class
         <Xml.Serialization.XmlArray("juzs")>
         <Xml.Serialization.XmlArrayItem("juz")>
         Public Juzs() As Mark
@@ -3204,8 +3206,8 @@ Public Class CachedData
     End Class
     <Xml.Serialization.XmlRoot("collection")>
     Public Class HadithDocInfo
-        Structure Books
-            Structure Book
+        Class Books
+            Class Book
                 <Xml.Serialization.XmlAttribute("index")>
                 Public Index As Integer
                 <Xml.Serialization.XmlAttribute("chapters")>
@@ -3228,7 +3230,7 @@ Public Class CachedData
                 Public SourceStart As Integer
                 <Xml.Serialization.XmlAttribute("sourceindex")>
                 Public SourceIndex As String
-                Structure Chapter
+                Class Chapter
                     <Xml.Serialization.XmlAttribute("index")>
                     Public Index As Integer
                     <Xml.Serialization.XmlAttribute("hadiths")>
@@ -3237,10 +3239,10 @@ Public Class CachedData
                     Public StartHadith As Integer
                     <Xml.Serialization.XmlAttribute("name")>
                     Public Name As String
-                End Structure
+                End Class
                 <Xml.Serialization.XmlElement("chapter")>
                 Public AllChapters() As Chapter
-            End Structure
+            End Class
             <Xml.Serialization.XmlAttribute("count")>
             Public Count As Integer
             <Xml.Serialization.XmlAttribute("volumes")>
@@ -3253,11 +3255,11 @@ Public Class CachedData
             Public Sourced As String
             <Xml.Serialization.XmlElement("book")>
             Public Books() As Book
-        End Structure
+        End Class
         <Xml.Serialization.XmlElement("books")>
         Public AllBooks As Books
-        Structure Volumes
-            Structure Volume
+        Class Volumes
+            Class Volume
                 <Xml.Serialization.XmlAttribute("index")>
                 Public Index As Integer
                 <Xml.Serialization.XmlAttribute("books")>
@@ -3266,7 +3268,7 @@ Public Class CachedData
                 Public Hadiths As Integer
                 <Xml.Serialization.XmlAttribute("sharedhadiths")>
                 Public SharedHadiths As Integer
-            End Structure
+            End Class
             <Xml.Serialization.XmlAttribute("count")>
             Public Count As Integer
             <Xml.Serialization.XmlAttribute("hadiths")>
@@ -3275,7 +3277,7 @@ Public Class CachedData
             Public SharedHadiths As Integer
             <Xml.Serialization.XmlArrayItem("volume")>
             Public Volumes() As Volume
-        End Structure
+        End Class
         <Xml.Serialization.XmlElement("volumes")>
         Public AllVolumes As Volumes
     End Class
@@ -3311,7 +3313,7 @@ Public Class CachedData
         Next
         Return Nothing
     End Function
-    Public Function GetFeatureOfSpeech(FOS As String) As Nullable(Of IslamData.FeatureOfSpeechInfo)
+    Public Function GetFeatureOfSpeech(FOS As String) As IslamData.FeatureOfSpeechInfo
         For Count As Integer = 0 To IslamData.FeaturesOfSpeech.Length - 1
             If IslamData.FeaturesOfSpeech(Count).Symbol = FOS Then Return IslamData.FeaturesOfSpeech(Count)
         Next
@@ -3385,11 +3387,11 @@ Public Class CachedData
         End If
         Return Root
     End Function
-    Structure ScaleRef
-        Dim Scale As String
-        Dim LongShortBoth As Char
-        Dim Refs As List(Of Integer())
-    End Structure
+    Class ScaleRef
+        Public Scale As String
+        Public LongShortBoth As Char
+        Public Refs As List(Of Integer())
+    End Class
     Public Function GetMorphologicalDataByVerbScale(TR As TanzilReader) As Object()
         Dim Lines As String() = MorphLines
         Dim RootDictionary As New Dictionary(Of String, ScaleRef())
@@ -3952,20 +3954,20 @@ Public Class CachedData
             For Count As Integer = 0 To Parts.Length - 1
                 Dim Types As String() = Parts(Count).Split(":"c)
                 If Types(0) = "ROOT" Or Types(0) = "LEM" Or Types(0) = "SP" Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New List(Of RenderArray.RenderItem) From {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arb.TransliterateFromBuckwalter(Types(1)))})}))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New List(Of RenderArray.RenderItem) From {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Id) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Arb.TransliterateFromBuckwalter(Types(1)))})}))
                 ElseIf Types(0) = "POS" Then
                 ElseIf Types(0) = "PRON" Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New List(Of RenderArray.RenderItem) From {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Value.Id) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Types(1).ToCharArray(), Function(Ch) _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id))) + " ")})}))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eNested, New List(Of RenderArray.RenderItem) From {New RenderArray.RenderItem(RenderArray.RenderTypes.eText, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Types(0)).Id) + " "), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Types(1).ToCharArray(), Function(Ch) _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Id))) + " ")})}))
                 ElseIf Text.RegularExpressions.Regex.IsMatch(Parts(Count), "^[123]?(?:[MF]|[MF]?[SDP])$") Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Parts(Count).ToCharArray(), Function(Ch) _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Value.Id))) + " "))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, String.Join(" "c, Linq.Enumerable.Select(Parts(Count).ToCharArray(), Function(Ch) _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Ch).Id))) + " "))
                 Else
                     'If Not GetFeatureOfSpeech(Parts(Count)).HasValue Then Debug.WriteLine("Not found: " + Parts(Count))
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Parts(Count)).Value.Id) + " "))
+                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech(Parts(Count)).Id) + " "))
                 End If
                 If Parts(Count).StartsWith("MOOD:") Or Parts(Count) = "INDEF" Then bNotDefaultPresent = True
             Next
-            If Pieces(2) = "V" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("MOOD:IND").Value.Id) + " "))
-            If Pieces(2) = "N" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("DEF").Value.Id) + " "))
+            If Pieces(2) = "V" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("MOOD:IND").Id) + " "))
+            If Pieces(2) = "N" And Not bNotDefaultPresent Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eLTR, _PortableMethods.LoadResourceString("IslamInfo_" + GetFeatureOfSpeech("DEF").Id) + " "))
             Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eText, Renderers.ToArray()))
             LineTest += 1
         Loop While _MorphDataToLineNumber.ContainsKey(New Integer() {Chapter, Verse, Word, LineTest})
@@ -4185,7 +4187,7 @@ Public Class CachedData
             Await DB.DoErrorCheckBuckwalterText(Arb.TransliterateFromBuckwalter(IslamData.Phrases(Count).Text), IslamData.Phrases(Count).TranslationID, TR)
         Next
         For Count = 0 To IslamData.Abbreviations.Length - 1
-            If Not Phrases.GetPhraseCat(IslamData.Abbreviations(Count).TranslationID, IslamData.Phrases).HasValue Then
+            If Phrases.GetPhraseCat(IslamData.Abbreviations(Count).TranslationID, IslamData.Phrases) Is Nothing Then
                 'Debug.Print("Missing Phrase ID: " + IslamData.Abbreviations(Count).TranslationID)
             End If
         Next
@@ -4378,11 +4380,11 @@ Public Class Languages
     End Function
 End Class
 Public Class ColorGenerator
-    Public Structure XYZColor
+    Public Class XYZColor
         Public X As Double
         Public Y As Double
         Public Z As Double
-    End Structure
+    End Class
     Public Shared WhiteReference As New XYZColor With {.X = 95.047, .Y = 100.0, .Z = 108.883}
     Public Const Epsilon As Double = 0.008856 'Intent is 216/24389
     Public Const Kappa As Double = 903.3 'Intent is 24389/27
@@ -4415,11 +4417,11 @@ Public Class ColorGenerator
         b = If(b > 0.0031308, 1.055 * Math.Pow(b, 1 / 2.4) - 0.055, 12.92 * b)
         Return Utility.MakeArgb(&HFF, ToRGB(r), ToRGB(g), ToRGB(b))
     End Function
-    Public Structure LABColor
+    Public Class LABColor
         Public L As Double
         Public A As Double
         Public B As Double
-    End Structure
+    End Class
     Public Shared Function PivotXYZ(N As Double) As Double
         Return If(N > Epsilon, Math.Pow(N, 1.0 / 3.0), (Kappa * N + 16) / 116)
     End Function
@@ -4727,8 +4729,8 @@ Public Class DocBuilder
     Public Function GetListCategories() As String()
         Return Linq.Enumerable.Select(ChData.IslamData.Lists, Function(Convert As IslamData.ListCategory) _PortableMethods.LoadResourceString("IslamInfo_" + Convert.Title)).ToArray()
     End Function
-    Public Function GetListCat(ID As String) As Nullable(Of IslamData.ListCategory.Word)
-        GetListCat = New Nullable(Of IslamData.ListCategory.Word)
+    Public Function GetListCat(ID As String) As IslamData.ListCategory.Word
+        GetListCat = Nothing
         If ListIDs.ContainsKey(ID) Then GetListCat = ListIDs(ID)
     End Function
     Public Shared _ListIDs As Dictionary(Of String, IslamData.ListCategory.Word)
@@ -4759,16 +4761,16 @@ Public Class DocBuilder
         Dim ListCats As New List(Of IslamData.ListCategory.Word)
         For SelCount As Integer = 0 To SelArr.Length - 1
             If ListTitles.ContainsKey(SelArr(SelCount)) Then ListCats.AddRange(ListTitles(SelArr(SelCount)).Words)
-            Dim Word As Nullable(Of IslamData.ListCategory.Word) = GetListCat(SelArr(SelCount))
-            If Word.HasValue Then ListCats.Add(Word.Value)
+            Dim Word As IslamData.ListCategory.Word = GetListCat(SelArr(SelCount))
+            If Not Word Is Nothing Then ListCats.Add(Word)
         Next
         Return ListCats.ToArray()
     End Function
 End Class
 Public Class Phrases
-    Public Shared Function GetPhraseCat(ID As String, Phrases As IslamData.Phrase()) As Nullable(Of IslamData.Phrase)
+    Public Shared Function GetPhraseCat(ID As String, Phrases As IslamData.Phrase()) As IslamData.Phrase
         If PhraseIDs(Phrases).ContainsKey(ID) Then Return PhraseIDs(Phrases)(ID)
-        Return New Nullable(Of IslamData.Phrase)
+        Return Nothing
     End Function
     Public Shared _PhraseIDs As Dictionary(Of String, IslamData.Phrase)
     Public Shared Function PhraseIDs(Phrases As IslamData.Phrase()) As Dictionary(Of String, IslamData.Phrase)
@@ -4783,8 +4785,8 @@ Public Class Phrases
     Public Shared Function GetPhraseCats(SelArr As String(), Phrases As IslamData.Phrase()) As IslamData.Phrase()
         Dim PhraseCats As New List(Of IslamData.Phrase)
         For SelCount As Integer = 0 To SelArr.Length - 1
-            Dim Word As Nullable(Of IslamData.Phrase) = GetPhraseCat(SelArr(SelCount), Phrases)
-            If Word.HasValue Then PhraseCats.Add(Word.Value)
+            Dim Word As IslamData.Phrase = GetPhraseCat(SelArr(SelCount), Phrases)
+            If Not Word Is Nothing Then PhraseCats.Add(Word)
         Next
         Return PhraseCats.ToArray()
     End Function
@@ -6318,7 +6320,7 @@ Public Class TanzilReader
             Next
             Debug.WriteLine(CStr(SieveCount))
             For Count = 0 To CoverageMap.Length - 1
-                If Not CoverageMap(Count) Then Debug.WriteLine("Unused Metadata: " + CStr(Count) + " " + String.Join("|"c, MetaRules(Count)))
+                If Not CoverageMap(Count) Then Debug.WriteLine("Unused Metadata: " + CStr(Count) + " " + String.Join("|"c, Linq.Enumerable.Select(MetaRules(Count), Function(Rule As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs) Rule.RuleName)))
             Next
         Next
         Dim Keys(CheckMatches.Keys.Count - 1) As Integer
@@ -6931,7 +6933,7 @@ Public Class TanzilReader
         End While
         If NoRef And First <> -1 And Last <> -1 Then
             If Not NoArabic Then
-                Dim Ref As String = Arb.TransliterateFromBuckwalter(String.Concat("(", Phrases.GetPhraseCat("TheQuran", ChData.IslamData.Phrases).Value.Text, "\, ", ChData.IslamData.QuranChapters(GetChapterByIndex(IndexToVerse(First)(0)).Index - 1).Name, " ", CStr(IndexToVerse(First)(0)), "\:", CStr(IndexToVerse(First)(1)), If(IndexToVerse(First)(0) = IndexToVerse(Last)(0) And IndexToVerse(First)(1) = IndexToVerse(Last)(1), String.Empty, String.Concat("\-", If(IndexToVerse(First)(0) = IndexToVerse(Last)(0), String.Empty, String.Concat(ChData.IslamData.QuranChapters(GetChapterByIndex(IndexToVerse(Last)(0)).Index - 1).Name, " ", CStr(IndexToVerse(Last)(0)), "\:")), CStr(IndexToVerse(Last)(1)))), ")"))
+                Dim Ref As String = Arb.TransliterateFromBuckwalter(String.Concat("(", Phrases.GetPhraseCat("TheQuran", ChData.IslamData.Phrases).Text, "\, ", ChData.IslamData.QuranChapters(GetChapterByIndex(IndexToVerse(First)(0)).Index - 1).Name, " ", CStr(IndexToVerse(First)(0)), "\:", CStr(IndexToVerse(First)(1)), If(IndexToVerse(First)(0) = IndexToVerse(Last)(0) And IndexToVerse(First)(1) = IndexToVerse(Last)(1), String.Empty, String.Concat("\-", If(IndexToVerse(First)(0) = IndexToVerse(Last)(0), String.Empty, String.Concat(ChData.IslamData.QuranChapters(GetChapterByIndex(IndexToVerse(Last)(0)).Index - 1).Name, " ", CStr(IndexToVerse(Last)(0)), "\:")), CStr(IndexToVerse(Last)(1)))), ")"))
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eArabic, Ref)}))
                 Renderer.Items.Add(New RenderArray.RenderItem(RenderArray.RenderTypes.eHeaderCenter, New RenderArray.RenderText() {New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If(SchemeType <> ArabicData.TranslitScheme.None, Arb.TransliterateToScheme(Ref, SchemeType, Scheme, Arabic.FilterMetadataStops(Ref, Arb.GetMetarules(Ref, ChData.RuleMetas("Normal")), Nothing)), String.Empty))}))
             End If

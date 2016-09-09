@@ -459,8 +459,8 @@ Public Class Utility
 End Class
 <CLSCompliant(True)>
 Public Class ArabicData
-    <Runtime.Serialization.DataContract> _
-    Public Structure ArabicCombo
+    <Runtime.Serialization.DataContract>
+    Public Class ArabicCombo
         <Runtime.Serialization.DataMember> Public UnicodeName As String()
         <Runtime.Serialization.DataMember> Public Symbol As Char()
         <Runtime.Serialization.DataMember> Public Shaping() As Char
@@ -472,10 +472,10 @@ Public Class ArabicData
             If Not Shaping Is Nothing And Shaping.Length = 1 Then Return Data.ArabicLetters(Data.FindLetterBySymbol(Shaping(0))).Terminating
             Return (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing))
         End Function
-    End Structure
+    End Class
     Private _ArabicCombos() As ArabicCombo
-    <Runtime.Serialization.DataContract> _
-    Public Structure ArabicSymbol
+    <Runtime.Serialization.DataContract>
+    Public Class ArabicSymbol
         <Runtime.Serialization.DataMember> Public UnicodeName As String
         <Runtime.Serialization.DataMember> Public Symbol As Char
         <Runtime.Serialization.DataMember> Public Shaping() As Char
@@ -491,7 +491,7 @@ Public Class ArabicData
                 Return JoiningStyle <> "T" AndAlso (JoiningStyle = "isolated" Or JoiningStyle = "final" Or JoiningStyle = "U" Or (Not Shaping Is Nothing AndAlso ((Shaping(0) <> Nothing Or Shaping(1) <> Nothing) And Shaping(2) = Nothing And Shaping(3) = Nothing)))
             End Get
         End Property
-    End Structure
+    End Class
     Private _ArabicLetters() As ArabicSymbol
     Public Async Function LoadArabic() As Task
         Dim LetterBytes As Byte() = Await _PortableMethods.DiskCache.GetCacheItem("ArabicLetters", DateTime.MinValue)
@@ -686,10 +686,10 @@ Public Class ArabicData
         Next
         Return Str
     End Function
-    Public Structure LigatureInfo
+    Public Class LigatureInfo
         Public Ligature As String
         Public Indexes() As Integer
-    End Structure
+    End Class
     Public Function GetFormsRange(BeginIndex As Char, EndIndex As Char) As Char()
         Dim Forms As New List(Of Char)
         For Count As Integer = 0 To ArabicCombos.Length - 1
@@ -991,6 +991,7 @@ Public Class ArabicData
         ArabicCombos.CopyTo(_LigatureCombos, 0)
         For Count = 0 To ArabicLetters.Length - 1
             'do not need to transfer UnicodeName as it is not used here
+            _LigatureCombos(ArabicCombos.Length + Count) = New ArabicCombo
             _LigatureCombos(ArabicCombos.Length + Count).Symbol = {ArabicLetters(Count).Symbol}
             _LigatureCombos(ArabicCombos.Length + Count).Shaping = ArabicLetters(Count).Shaping
         Next
@@ -1031,11 +1032,11 @@ Public Class ArabicData
         Next
         Return Joiners
     End Function
-    Structure DecData
+    Class DecData
         Public JoiningStyle As String
         Public Chars As Char()
         Public Shapes As Char()
-    End Structure
+    End Class
     Public Shared ShapePositions As String() = {"isolated", "final", "initial", "medial"}
     Private Shared _CombPos As Dictionary(Of Char, Integer)
     Private Shared _UniClass As Dictionary(Of Char, String)
@@ -1145,7 +1146,7 @@ Public Class RenderArray
         ePassThru
         eReference
     End Enum
-    Structure RenderText
+    Class RenderText
         Public DisplayClass As RenderDisplayClass
         Public Clr As Integer 'Color
         Public Text As Object
@@ -1156,15 +1157,15 @@ Public Class RenderArray
             Clr = Utility.MakeArgb(&HFF, 0, 0, 0) 'Color.Black 'default
             Font = String.Empty
         End Sub
-    End Structure
-    Structure RenderItem
+    End Class
+    Class RenderItem
         Public Type As RenderTypes
         Public TextItems() As RenderText
         Sub New(ByVal NewType As RenderTypes, ByVal NewTextItems() As RenderText)
             Type = NewType
             TextItems = NewTextItems
         End Sub
-    End Structure
+    End Class
     Public Sub New(ID As String)
         _ID = ID
     End Sub
