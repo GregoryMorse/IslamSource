@@ -2603,6 +2603,8 @@ Public Class CachedData
             For Count = 0 To IslamData.RuleSets.Length - 1
                 _RuleTranslations.Add(IslamData.RuleSets(Count).Name, GetRuleSet(IslamData.RuleSets(Count).Name))
             Next
+        Else
+            _SavedPatterns = Nothing
         End If
     End Function
     Private _ObjIslamData As IslamData

@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using WinRTXamlToolkit.Controls;
 
@@ -489,6 +490,80 @@ namespace IslamSourceQuranViewer
             throw new NotImplementedException();
         }
     }
+    public class SurfaceSourceConverter : DependencyObject, IValueConverter
+    {
+        public double TopLevelFontSize
+        {
+            get { return (double)GetValue(TopLevelFontSizeProperty); }
+            set { SetValue(TopLevelFontSizeProperty, value); }
+        }
+        public string TopLevelFontFamily
+        {
+            get { return (string)GetValue(TopLevelFontFamilyProperty); }
+            set { SetValue(TopLevelFontFamilyProperty, value); }
+        }
+
+        public static readonly DependencyProperty TopLevelFontSizeProperty =
+            DependencyProperty.Register("TopLevelFontSize",
+                                        typeof(double),
+                                        typeof(SurfaceSourceConverter),
+                                        new PropertyMetadata(0.0));
+        public static readonly DependencyProperty TopLevelFontFamilyProperty =
+            DependencyProperty.Register("TopLevelFontFamily",
+                                        typeof(string),
+                                        typeof(SurfaceSourceConverter),
+                                        new PropertyMetadata(string.Empty));
+
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            MyChildRenderItem.RenderDataStruct Item = (MyChildRenderItem.RenderDataStruct)value;
+            int pixelWidth = (int)Item.Width, pixelHeight = (int)Item.Height;
+            SurfaceImageSource newSource = new SurfaceImageSource(pixelWidth, pixelHeight, false);
+            //SharpDX.Direct3D11.Device D3DDev = new SharpDX.Direct3D11.Device(SharpDX.Direct3D.DriverType.Hardware, SharpDX.Direct3D11.DeviceCreationFlags.BgraSupport);
+            //SharpDX.DXGI.Device DXDev = D3DDev.QueryInterface<SharpDX.DXGI.Device>();
+            SharpDX.DXGI.ISurfaceImageSourceNative surfaceImageSourceNative = SharpDX.ComObject.As<SharpDX.DXGI.ISurfaceImageSourceNative>(newSource);
+            surfaceImageSourceNative.Device = TextShaping.DXDev;
+            SharpDX.Rectangle rt = new SharpDX.Rectangle(0, 0, pixelWidth, pixelHeight);
+            SharpDX.DrawingPoint pt;
+            SharpDX.DXGI.Surface surf = surfaceImageSourceNative.BeginDraw(rt, out pt);
+            //SharpDX.Direct2D1.Device dev2d = new SharpDX.Direct2D1.Device(dxdev);
+            SharpDX.Direct2D1.DeviceContext devcxt = new SharpDX.Direct2D1.DeviceContext(surf);
+            devcxt.BeginDraw();
+            devcxt.Clear(new SharpDX.Color4(Windows.UI.Colors.White.R, Windows.UI.Colors.White.G, Windows.UI.Colors.White.B, Windows.UI.Colors.White.A));
+            SharpDX.DirectWrite.GlyphRun gr = new SharpDX.DirectWrite.GlyphRun();
+            gr.FontFace = TextShaping.DWFontFace;
+            gr.FontSize = (float)TopLevelFontSize;
+            gr.BidiLevel = 1;
+            int curlen = 0;
+            for (int ct = 0; ct < Item.ItemRuns.Count(); ct++)
+            {
+                int newlen = curlen + Item.ItemRuns[ct].ItemText.Length;
+                gr.Indices = Item.indices.Skip(Item.clusters[curlen]).TakeWhile((indice, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
+                gr.Offsets = Item.offsets.Skip(Item.clusters[curlen]).TakeWhile((offset, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
+                gr.Advances = Item.advances.Skip(Item.clusters[curlen]).TakeWhile((advance, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
+                devcxt.DrawGlyphRun(new SharpDX.Vector2((float)Item.Width + gr.Offsets[0].AdvanceOffset - (Item.clusters[curlen] == 0 ? 0 : Item.advances.Take(Item.clusters[curlen]).Sum()), Item.BaseLine), gr, new SharpDX.Direct2D1.SolidColorBrush(devcxt, new SharpDX.Color4(XMLRender.Utility.ColorR(Item.ItemRuns[ct].Clr), XMLRender.Utility.ColorG(Item.ItemRuns[ct].Clr), XMLRender.Utility.ColorB(Item.ItemRuns[ct].Clr), 0xFF)), SharpDX.Direct2D1.MeasuringMode.GdiNatural);
+                curlen = newlen;
+            }
+#if WINDOWS_PHONE_APP || !STORETOOLKIT
+            gr.Dispose();
+#endif
+            devcxt.EndDraw();
+            //dev2d.Dispose();
+            devcxt.Dispose();
+            surf.Dispose();
+            surfaceImageSourceNative.EndDraw();
+            surfaceImageSourceNative.Device = null;
+            surfaceImageSourceNative.Dispose();
+            //DXDev.Dispose();
+            //D3DDev.Dispose();
+            return newSource;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public static class FormattedTextBehavior
     {
 #region FormattedText Attached dependency property
@@ -599,15 +674,14 @@ namespace IslamSourceQuranViewer
     {
         public DataTemplate WordTemplate { get; set; }
         public DataTemplate ArabicTemplate { get; set; }
+        public DataTemplate ArabicRenderTemplate { get; set; }
         public DataTemplate NormalTemplate { get; set; }
         public DataTemplate StopContinueTemplate { get; set; }
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
             if (item.GetType() == typeof(MyChildRenderStopContinue)) return StopContinueTemplate;
-            if (item.GetType() == typeof(MyChildRenderItem)) { return ((MyChildRenderItem)item).IsArabic ? ArabicTemplate : NormalTemplate; }
+            if (item.GetType() == typeof(MyChildRenderItem)) { return ((MyChildRenderItem)item).IsArabic ? ((MyChildRenderItem)item).ItemRuns.Count > 1 ? ArabicRenderTemplate : ArabicTemplate : NormalTemplate; }
             return WordTemplate;
-        }
-
-    }
+        }   }
 }

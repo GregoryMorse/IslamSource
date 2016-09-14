@@ -1518,7 +1518,11 @@ Public Class RenderArrayWeb
 #End Region
     End Class
     Public Function GetWordDiacriticPositionsDWrite(Str As String, useFont As Font, Forms As Char(), IsRTL As Boolean, ByRef BaseLine As Single, ByRef Pos As CharPosInfo()) As SizeF
-        If Str = String.Empty Then Return New SizeF(0, 0)
+        If Str = String.Empty Then
+            BaseLine = 0
+            Pos = Nothing
+            Return New SizeF(0, 0)
+        End If
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim Analyze As New SharpDX.DirectWrite.TextAnalyzer(Factory)
         Dim Font As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(useFont)

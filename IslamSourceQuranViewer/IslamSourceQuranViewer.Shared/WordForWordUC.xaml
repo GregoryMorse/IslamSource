@@ -12,13 +12,14 @@
             <Setter Property="Foreground" Value="Black"/>
         </Style>
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
+        <local:SurfaceSourceConverter x:Key="SurfaceSource" TopLevelFontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" TopLevelFontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}"/>
         <local:RenderSourceConverter x:Key="RenderSource"/>
         <local:ArabicFlowConverter x:Key="ArabicFlow"/>
         <local:StopContinueTextConverter x:Key="StopContinueText"/>
         <local:StopContinueTextColorConverter x:Key="StopContinueTextColor"/>
         <local:BackgroundSelectedConverter x:Key="BackgroundSelected"/>
         <CollectionViewSource x:Name="VerseNumbers" Source="{Binding Path=ViewModel.VerseReferences, Mode=OneWay}"></CollectionViewSource>
-        <ItemsPanelTemplate x:Key="VirtualPanelTemplate">
+        <ItemsPanelTemplate x:Key="VirtualPanelTemplate" x:Name="VirtualPanelTemplate">
             <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>
         </ItemsPanelTemplate>
         <DataTemplate x:Key="WordTemplate">
@@ -30,6 +31,16 @@
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
             </ItemsControl>
+        </DataTemplate>
+        <DataTemplate x:Key="ArabicRenderTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
+                <Image Grid.Row="0" HorizontalAlignment="Center" Margin="5" Width="{Binding Width, Mode=OneWay}" Height="{Binding Height, Mode=OneWay}" Source="{Binding RenderData, Mode=OneWay, Converter={StaticResource SurfaceSource}}">
+                </Image>
+            </Grid>
         </DataTemplate>
         <DataTemplate x:Key="ArabicTemplate">
             <Grid>
@@ -67,7 +78,7 @@
                 </TextBlock>
             </Grid>
         </DataTemplate>
-        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}" StopContinueTemplate="{StaticResource StopContinueTemplate}"></local:NormalWordTemplateSelector>
+        <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}" ArabicRenderTemplate="{StaticResource ArabicRenderTemplate}" StopContinueTemplate="{StaticResource StopContinueTemplate}"></local:NormalWordTemplateSelector>
         <DataTemplate x:Key="MyTemplate">
             <ItemsControl ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}" MaxWidth="{Binding MaxWidth, Converter={StaticResource WidthLimiter}, Mode=OneWay}">
                 <ItemsControl.ItemsPanel>

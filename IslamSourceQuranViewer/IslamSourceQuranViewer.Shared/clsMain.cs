@@ -550,8 +550,18 @@ using Android.Graphics;
             {
                 if (_DWFactory != null) _DWFactory.Dispose();
                 _DWFactory = null;
+                if (_DXDev != null) _DXDev.Dispose();
+                _DXDev = null;
+                if (_D3DDev != null) _D3DDev.Dispose();
+                _D3DDev = null;
             }
+            
         }
+        private static SharpDX.Direct3D11.Device _D3DDev;
+        public static SharpDX.Direct3D11.Device D3DDev { get { if (_D3DDev == null) _D3DDev = new SharpDX.Direct3D11.Device(SharpDX.Direct3D.DriverType.Hardware, SharpDX.Direct3D11.DeviceCreationFlags.BgraSupport); return _D3DDev; } }
+        private static SharpDX.DXGI.Device _DXDev;
+        public static SharpDX.DXGI.Device DXDev { get { if (_DXDev == null) _DXDev = D3DDev.QueryInterface<SharpDX.DXGI.Device>(); return _DXDev; } }
+
         private static SharpDX.DirectWrite.Factory _DWFactory;
         public static SharpDX.DirectWrite.Factory DWFactory { get { if (_DWFactory == null) _DWFactory = new SharpDX.DirectWrite.Factory(); return _DWFactory; } }
         private static SharpDX.DirectWrite.TextFormat _DWArabicFormat;
@@ -661,7 +671,7 @@ using Android.Graphics;
             }
         }
 
-        [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
+        /*[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Sequential)]
         public struct CharPosInfo
         {
             public int Index;
@@ -671,7 +681,7 @@ using Android.Graphics;
             public float X;
             public float Y;
             public float Height;
-        }
+        }*/
 
         const int ERROR_INSUFFICIENT_BUFFER = 122;
 
@@ -853,10 +863,16 @@ using Android.Graphics;
             analysisSink.Dispose();
             return clusterMap;
         }
-        public static Size GetWordDiacriticPositionsDWrite(string Str, string useFont, float fontSize, char[] Forms, bool IsRTL, ref float BaseLine, ref CharPosInfo[] Pos)
+        public static Size GetWordDiacriticPositionsDWrite(string Str, string useFont, float fontSize, char[] Forms, bool IsRTL, out float BaseLine, /*out CharPosInfo[] Pos,*/ out short[] clusters, out short[] indices, out SharpDX.DirectWrite.GlyphOffset[] offsets, out float[] advances)
         {
             if (Str == string.Empty)
             {
+                BaseLine = 0;
+                //Pos = null;
+                clusters = null;
+                indices = null;
+                offsets = null;
+                advances = null;
                 return new Size(0f, 0f);
             }
             SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(DWFactory);
@@ -903,7 +919,11 @@ using Android.Graphics;
             SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { featureArray };
             int[] featureRangeLengths = new int[] { Str.Length };
             analyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, fontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
-            List<CharPosInfo> list = new List<CharPosInfo>();
+            indices = glyphIndices;
+            offsets = glyphOffsets;
+            advances = glyphAdvances;
+            clusters = clusterMap;
+            /*List<CharPosInfo> list = new List<CharPosInfo>();
             float PriorWidth = 0f;
             int RunStart = 0;
             int RunRes = clusterMap[0];
@@ -1022,7 +1042,7 @@ using Android.Graphics;
                         }
                     }
                 }
-            }
+            }*/
             float Width = 0f;
             float Top = 0f;
             float Bottom = 0f;
@@ -1040,7 +1060,7 @@ using Android.Graphics;
                 Top = Math.Max(Top, glyphOffsets[i].AscenderOffset + (((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].TopSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
                 Bottom = Math.Min(Bottom, glyphOffsets[i].AscenderOffset + ((((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].AdvanceHeight) + designGlyphMetrics[i].BottomSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
             }
-            Pos = list.ToArray();
+            //Pos = list.ToArray();
             Size Size = new Size(IsRTL ? (Left - Right) : (Right - Left), (Top - Bottom) + ((fontFace.Metrics.LineGap * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
             BaseLine = Top;
             analysisSource.Shadow.Dispose();
@@ -1629,6 +1649,12 @@ using Android.Graphics;
         private double _MaxWidth;
         public double MaxWidth { get { return _MaxWidth; } set { _MaxWidth = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("MaxWidth")); } }
 
+        private double _Width;
+        public double Width { get { return _Width; } set { _Width = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Width")); } }
+
+        private double _Height;
+        public double Height { get { return _Height; } set { _Height = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Height")); } }
+
         public double CalculateWidth()
         {
             //5 margin on both sides
@@ -1641,12 +1667,35 @@ using Android.Graphics;
 
         #endregion
 
+        float BaseLine;
+        short[] clusters;
+        short[] indices;
+        SharpDX.DirectWrite.GlyphOffset[] offsets;
+        float[] advances;
+
+        public struct RenderDataStruct
+        {
+            public double Width;
+            public double Height;
+            public List<MyChildRenderBlockItem> ItemRuns;
+            public float BaseLine;
+            public short[] clusters;
+            public short[] indices;
+            public SharpDX.DirectWrite.GlyphOffset[] offsets;
+            public float[] advances;
+        }
+
+        public RenderDataStruct RenderData { get { return new RenderDataStruct { Width = _Width, Height = _Height, ItemRuns = _ItemRuns, BaseLine = BaseLine, clusters = clusters, indices = indices, offsets = offsets, advances = advances }; } }
+
         public MyChildRenderItem(List<MyChildRenderBlockItem> NewItemRuns, bool NewIsArabic, bool NewIsRTL)
         {
             IsRTL = NewIsRTL;
             IsArabic = NewIsArabic; //must be set before ItemRuns
             ItemRuns = NewItemRuns;
             MaxWidth = CalculateWidth();
+            Size s = TextShaping.GetWordDiacriticPositionsDWrite(string.Concat(ItemRuns.Select((it) => it.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, null, true, out BaseLine, out clusters, out indices, out offsets, out advances);
+            Width = s.Width;
+            Height = s.Height;
         }
         List<MyChildRenderBlockItem> _ItemRuns;
         public List<MyChildRenderBlockItem> ItemRuns
