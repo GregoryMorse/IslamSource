@@ -521,14 +521,25 @@ namespace IslamSourceQuranViewer
             SurfaceImageSource newSource = new SurfaceImageSource(pixelWidth, pixelHeight, false);
             //SharpDX.Direct3D11.Device D3DDev = new SharpDX.Direct3D11.Device(SharpDX.Direct3D.DriverType.Hardware, SharpDX.Direct3D11.DeviceCreationFlags.BgraSupport);
             //SharpDX.DXGI.Device DXDev = D3DDev.QueryInterface<SharpDX.DXGI.Device>();
+#if WINDOWS_PHONE_APP || !STORETOOLKIT
+            SharpDX.DXGI.ISurfaceImageSourceNativeWithD2D surfaceImageSourceNative = SharpDX.ComObject.As<SharpDX.DXGI.ISurfaceImageSourceNativeWithD2D>(newSource);
+#else
             SharpDX.DXGI.ISurfaceImageSourceNative surfaceImageSourceNative = SharpDX.ComObject.As<SharpDX.DXGI.ISurfaceImageSourceNative>(newSource);
-            surfaceImageSourceNative.Device = TextShaping.DXDev;
+#endif
             SharpDX.Rectangle rt = new SharpDX.Rectangle(0, 0, pixelWidth, pixelHeight);
+#if WINDOWS_PHONE_APP || !STORETOOLKIT
+            SharpDX.Point pt;
+            IntPtr obj;
+            surfaceImageSourceNative.Device = TextShaping.Dev2D;
+            surfaceImageSourceNative.BeginDraw(rt, new Guid("e8f7fe7a-191c-466d-ad95-975678bda998"), out obj, out pt); //d2d1_1.h
+            SharpDX.Direct2D1.DeviceContext devcxt = SharpDX.ComObject.As<SharpDX.Direct2D1.DeviceContext>(obj);
+#else
             SharpDX.DrawingPoint pt;
+            surfaceImageSourceNative.Device = TextShaping.DXDev;
             SharpDX.DXGI.Surface surf = surfaceImageSourceNative.BeginDraw(rt, out pt);
-            //SharpDX.Direct2D1.Device dev2d = new SharpDX.Direct2D1.Device(dxdev);
             SharpDX.Direct2D1.DeviceContext devcxt = new SharpDX.Direct2D1.DeviceContext(surf);
             devcxt.BeginDraw();
+#endif
             devcxt.Clear(new SharpDX.Color4(Windows.UI.Colors.White.R, Windows.UI.Colors.White.G, Windows.UI.Colors.White.B, Windows.UI.Colors.White.A));
             SharpDX.DirectWrite.GlyphRun gr = new SharpDX.DirectWrite.GlyphRun();
             gr.FontFace = TextShaping.DWFontFace;
@@ -541,16 +552,26 @@ namespace IslamSourceQuranViewer
                 gr.Indices = Item.indices.Skip(Item.clusters[curlen]).TakeWhile((indice, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
                 gr.Offsets = Item.offsets.Skip(Item.clusters[curlen]).TakeWhile((offset, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
                 gr.Advances = Item.advances.Skip(Item.clusters[curlen]).TakeWhile((advance, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
-                devcxt.DrawGlyphRun(new SharpDX.Vector2((float)Item.Width + gr.Offsets[0].AdvanceOffset - (Item.clusters[curlen] == 0 ? 0 : Item.advances.Take(Item.clusters[curlen]).Sum()), Item.BaseLine), gr, new SharpDX.Direct2D1.SolidColorBrush(devcxt, new SharpDX.Color4(XMLRender.Utility.ColorR(Item.ItemRuns[ct].Clr), XMLRender.Utility.ColorG(Item.ItemRuns[ct].Clr), XMLRender.Utility.ColorB(Item.ItemRuns[ct].Clr), 0xFF)), SharpDX.Direct2D1.MeasuringMode.GdiNatural);
+                SharpDX.Direct2D1.SolidColorBrush brsh = new SharpDX.Direct2D1.SolidColorBrush(devcxt, new SharpDX.Color4(XMLRender.Utility.ColorR(Item.ItemRuns[ct].Clr), XMLRender.Utility.ColorG(Item.ItemRuns[ct].Clr), XMLRender.Utility.ColorB(Item.ItemRuns[ct].Clr), 0xFF));
+                devcxt.DrawGlyphRun(new SharpDX.Vector2((float)Item.Width + gr.Offsets[0].AdvanceOffset - (Item.clusters[curlen] == 0 ? 0 : Item.advances.Take(Item.clusters[curlen]).Sum()), Item.BaseLine), gr, brsh, SharpDX.Direct2D1.MeasuringMode.GdiNatural);
+                brsh.Dispose();
                 curlen = newlen;
             }
 #if WINDOWS_PHONE_APP || !STORETOOLKIT
             gr.Dispose();
+#else
+            gr.FontFace.Dispose();
+            gr.FontFace = null;
 #endif
+#if WINDOWS_PHONE_APP || !STORETOOLKIT
+#else
             devcxt.EndDraw();
-            //dev2d.Dispose();
+#endif
             devcxt.Dispose();
+#if WINDOWS_PHONE_APP || !STORETOOLKIT
+#else
             surf.Dispose();
+#endif
             surfaceImageSourceNative.EndDraw();
             surfaceImageSourceNative.Device = null;
             surfaceImageSourceNative.Dispose();

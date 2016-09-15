@@ -550,6 +550,8 @@ using Android.Graphics;
             {
                 if (_DWFactory != null) _DWFactory.Dispose();
                 _DWFactory = null;
+                if (_Dev2D != null) _Dev2D.Dispose();
+                _Dev2D = null;
                 if (_DXDev != null) _DXDev.Dispose();
                 _DXDev = null;
                 if (_D3DDev != null) _D3DDev.Dispose();
@@ -561,7 +563,8 @@ using Android.Graphics;
         public static SharpDX.Direct3D11.Device D3DDev { get { if (_D3DDev == null) _D3DDev = new SharpDX.Direct3D11.Device(SharpDX.Direct3D.DriverType.Hardware, SharpDX.Direct3D11.DeviceCreationFlags.BgraSupport); return _D3DDev; } }
         private static SharpDX.DXGI.Device _DXDev;
         public static SharpDX.DXGI.Device DXDev { get { if (_DXDev == null) _DXDev = D3DDev.QueryInterface<SharpDX.DXGI.Device>(); return _DXDev; } }
-
+        private static SharpDX.Direct2D1.Device _Dev2D;
+        public static SharpDX.Direct2D1.Device Dev2D { get { if (_Dev2D == null) _Dev2D = new SharpDX.Direct2D1.Device(DXDev); return _Dev2D; } }
         private static SharpDX.DirectWrite.Factory _DWFactory;
         public static SharpDX.DirectWrite.Factory DWFactory { get { if (_DWFactory == null) _DWFactory = new SharpDX.DirectWrite.Factory(); return _DWFactory; } }
         private static SharpDX.DirectWrite.TextFormat _DWArabicFormat;
