@@ -12,7 +12,7 @@
             <Setter Property="Foreground" Value="Black"/>
         </Style>
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
-        <local:SurfaceSourceConverter x:Key="SurfaceSource" TopLevelFontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" TopLevelFontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}"/>
+        <local:SurfaceSourceConverter x:Key="SurfaceSource" TopLevelFontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}"/>
         <local:RenderSourceConverter x:Key="RenderSource"/>
         <local:ArabicFlowConverter x:Key="ArabicFlow"/>
         <local:StopContinueTextConverter x:Key="StopContinueText"/>

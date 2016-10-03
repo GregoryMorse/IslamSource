@@ -581,16 +581,17 @@ using Android.Graphics;
         {
             get
             {
-                //LOGFONT lf = new LOGFONT();
-                //lf.lfFaceName = useFont;
-                //SharpDX.Direct2D1.Factory fact2d = new SharpDX.Direct2D1.Factory();
-                //float pointSize = fontSize * fact2d.DesktopDpi.Height / 72.0f;
-                //fact2d.Dispose();
-                //lf.lfHeight = (int)fontSize;
-                //lf.lfQuality = 5; //clear type
-                //SharpDX.DirectWrite.Font font = MyUIChanger.DWFactory.GdiInterop.FromLogFont(lf);
                 if (_DWFontFace == null)
                 {
+                    //LOGFONT lf = new LOGFONT();
+                    //lf.lfFaceName = DWArabicFormat.FontFamilyName;
+                    //SharpDX.Direct2D1.Factory fact2d = new SharpDX.Direct2D1.Factory();
+                    //float pointSize = AppSettings.dFontSize * fact2d.DesktopDpi.Height / 72.0f;
+                    //fact2d.Dispose();
+                    //lf.lfHeight = (int)AppSettings.dFontSize;
+                    //lf.lfQuality = 5; //clear type
+                    //_DWFont = DWFactory.GdiInterop.FromLogFont(lf);
+
                     int index;
                     DWArabicFormat.FontCollection.FindFamilyName(DWArabicFormat.FontFamilyName, out index);
                     _DWFont = DWArabicFormat.FontCollection.GetFontFamily(index).GetFirstMatchingFont(SharpDX.DirectWrite.FontWeight.Normal, SharpDX.DirectWrite.FontStretch.Normal, SharpDX.DirectWrite.FontStyle.Normal);
@@ -818,7 +819,7 @@ using Android.Graphics;
             [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.ByValTStr, SizeConst = LF_FACESIZE)]
             public string lfFaceName;
         }
-        public static short[] GetWordDiacriticClusters(string Str, string useFont, float fontSize, bool IsRTL)
+        public static short[] GetWordDiacriticClusters(string Str, float fontSize, bool IsRTL)
         {
             if (Str == string.Empty)
             {
@@ -852,13 +853,13 @@ using Android.Graphics;
                     }
                 }
             }
-            Array.Resize(ref glyphIndices, (actualGlyphCount - 1) + 1);
-            Array.Resize(ref glyphProps, (actualGlyphCount - 1) + 1);
-            float[] glyphAdvances = new float[(actualGlyphCount - 1) + 1];
-            SharpDX.DirectWrite.GlyphOffset[] glyphOffsets = new SharpDX.DirectWrite.GlyphOffset[(actualGlyphCount - 1) + 1];
-            SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { DWFeatureArray };
-            int[] featureRangeLengths = new int[] { Str.Length };
-            DWAnalyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, DWFontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
+            //Array.Resize(ref glyphIndices, (actualGlyphCount - 1) + 1);
+            //Array.Resize(ref glyphProps, (actualGlyphCount - 1) + 1);
+            //float[] glyphAdvances = new float[(actualGlyphCount - 1) + 1];
+            //SharpDX.DirectWrite.GlyphOffset[] glyphOffsets = new SharpDX.DirectWrite.GlyphOffset[(actualGlyphCount - 1) + 1];
+            //SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { DWFeatureArray };
+            //int[] featureRangeLengths = new int[] { Str.Length };
+            //DWAnalyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, DWFontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
             analysisSource.Shadow.Dispose();
             analysisSink.Shadow.Dispose();
             analysisSource.Dispose();
@@ -866,7 +867,7 @@ using Android.Graphics;
             analysisSink.Dispose();
             return clusterMap;
         }
-        public static Size GetWordDiacriticPositionsDWrite(string Str, string useFont, float fontSize, char[] Forms, bool IsRTL, out float BaseLine, /*out CharPosInfo[] Pos,*/ out short[] clusters, out short[] indices, out SharpDX.DirectWrite.GlyphOffset[] offsets, out float[] advances)
+        public static Size GetWordDiacriticPositionsDWrite(string Str, float fontSize, char[] Forms, bool IsRTL, out float BaseLine, /*out CharPosInfo[] Pos,*/ out short[] clusters, out short[] indices, out SharpDX.DirectWrite.GlyphOffset[] offsets, out float[] advances)
         {
             if (Str == string.Empty)
             {
@@ -879,13 +880,7 @@ using Android.Graphics;
                 return new Size(0f, 0f);
             }
             SharpDX.DirectWrite.TextAnalyzer analyzer = new SharpDX.DirectWrite.TextAnalyzer(DWFactory);
-            LOGFONT lf = new LOGFONT();
-            lf.lfFaceName = useFont;
-            float pointSize = fontSize * Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawDpiY / 72.0f;
-            lf.lfHeight = (int)fontSize;
-            lf.lfQuality = 5; //clear type
-            SharpDX.DirectWrite.Font font = DWFactory.GdiInterop.FromLogFont(lf);
-            SharpDX.DirectWrite.FontFace fontFace = new SharpDX.DirectWrite.FontFace(font);
+            float pointSize = fontSize;// * Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawDpiY / 72.0f;
             SharpDX.DirectWrite.ScriptAnalysis scriptAnalysis = new SharpDX.DirectWrite.ScriptAnalysis();
             TextSink analysisSink = new TextSink();
             TextSource analysisSource = new TextSource(Str, DWFactory);
@@ -897,12 +892,12 @@ using Android.Graphics;
             short[] glyphIndices = new short[(maxGlyphCount - 1) + 1];
             SharpDX.DirectWrite.ShapingGlyphProperties[] glyphProps = new SharpDX.DirectWrite.ShapingGlyphProperties[(maxGlyphCount - 1) + 1];
             int actualGlyphCount = 0;
-            SharpDX.DirectWrite.FontFeature[] featureArray = new SharpDX.DirectWrite.FontFeature[] { new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.GlyphCompositionDecomposition, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 0), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StandardLigatures, 0), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualAlternates, 0), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StylisticSet1, 0) };
+            SharpDX.DirectWrite.FontFeature[] featureArray = new SharpDX.DirectWrite.FontFeature[] { new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.GlyphCompositionDecomposition, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StandardLigatures, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualAlternates, 1), new SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StylisticSet1, 1) };
             while (true)
             {
                 try
                 {
-                    analyzer.GetGlyphs(Str, Str.Length, fontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { featureArray }, new int[] { Str.Length }, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
+                    analyzer.GetGlyphs(Str, Str.Length, DWFontFace, false, IsRTL, scriptAnalysis, null, null, new SharpDX.DirectWrite.FontFeature[][] { featureArray }, new int[] { Str.Length }, maxGlyphCount, clusterMap, textProps, glyphIndices, glyphProps, out actualGlyphCount);
                     break;
                 }
                 catch (SharpDX.SharpDXException exception)
@@ -921,7 +916,7 @@ using Android.Graphics;
             SharpDX.DirectWrite.GlyphOffset[] glyphOffsets = new SharpDX.DirectWrite.GlyphOffset[(actualGlyphCount - 1) + 1];
             SharpDX.DirectWrite.FontFeature[][] features = new SharpDX.DirectWrite.FontFeature[][] { featureArray };
             int[] featureRangeLengths = new int[] { Str.Length };
-            analyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, fontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
+            analyzer.GetGlyphPlacements(Str, clusterMap, textProps, Str.Length, glyphIndices, glyphProps, actualGlyphCount, DWFontFace, fontSize, false, IsRTL, scriptAnalysis, null, features, featureRangeLengths, glyphAdvances, glyphOffsets);
             indices = glyphIndices;
             offsets = glyphOffsets;
             advances = glyphAdvances;
@@ -1049,30 +1044,28 @@ using Android.Graphics;
             float Width = 0f;
             float Top = 0f;
             float Bottom = 0f;
-            SharpDX.DirectWrite.GlyphMetrics[] designGlyphMetrics = fontFace.GetDesignGlyphMetrics(glyphIndices, false);
-            float Left = IsRTL ? 0f : (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].LeftSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
-            float Right = IsRTL ? (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].RightSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : 0f;
+            SharpDX.DirectWrite.GlyphMetrics[] designGlyphMetrics = DWFontFace.GetDesignGlyphMetrics(glyphIndices, false);
+            float Left = IsRTL ? 0f : (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].LeftSideBearing * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm)));
+            float Right = IsRTL ? (glyphOffsets[0].AdvanceOffset - ((designGlyphMetrics[0].RightSideBearing * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm))) : 0f;
             for (int i = 0; i <= designGlyphMetrics.Length - 1; i++)
             {
-                Left = IsRTL ? Math.Max(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Max(0, designGlyphMetrics[i].LeftSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : Math.Min(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].LeftSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+                Left = IsRTL ? Math.Max(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Max(0, designGlyphMetrics[i].LeftSideBearing) * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm))) : Math.Min(Left, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].LeftSideBearing * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm)));
                 if (!(glyphAdvances[i] == 0f))
                 {
-                    Width += (IsRTL ? ((float)(-1)) : ((float)1)) * ((designGlyphMetrics[i].AdvanceWidth * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm));
+                    Width += (IsRTL ? ((float)(-1)) : ((float)1)) * ((designGlyphMetrics[i].AdvanceWidth * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm));
                 }
-                Right = IsRTL ? Math.Min(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].RightSideBearing * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm))) : Math.Max(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Min(0, designGlyphMetrics[i].RightSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
-                Top = Math.Max(Top, glyphOffsets[i].AscenderOffset + (((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].TopSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
-                Bottom = Math.Min(Bottom, glyphOffsets[i].AscenderOffset + ((((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].AdvanceHeight) + designGlyphMetrics[i].BottomSideBearing) * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+                Right = IsRTL ? Math.Min(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((designGlyphMetrics[i].RightSideBearing * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm))) : Math.Max(Right, (glyphOffsets[i].AdvanceOffset + Width) - ((Math.Min(0, designGlyphMetrics[i].RightSideBearing) * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm)));
+                Top = Math.Max(Top, glyphOffsets[i].AscenderOffset + (((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].TopSideBearing) * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm)));
+                Bottom = Math.Min(Bottom, glyphOffsets[i].AscenderOffset + ((((designGlyphMetrics[i].VerticalOriginY - designGlyphMetrics[i].AdvanceHeight) + designGlyphMetrics[i].BottomSideBearing) * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm)));
             }
             //Pos = list.ToArray();
-            Size Size = new Size(IsRTL ? (Left - Right) : (Right - Left), (Top - Bottom) + ((fontFace.Metrics.LineGap * pointSize) / ((float)fontFace.Metrics.DesignUnitsPerEm)));
+            Size Size = new Size(IsRTL ? (Left - Right) : (Right - Left), (Top - Bottom) + ((DWFontFace.Metrics.LineGap * pointSize) / ((float)DWFontFace.Metrics.DesignUnitsPerEm)));
             BaseLine = Top;
             analysisSource.Shadow.Dispose();
             analysisSink.Shadow.Dispose();
             analysisSource.Dispose();
             analysisSource._Factory = null;
             analysisSink.Dispose();
-            fontFace.Dispose();
-            font.Dispose();
             analyzer.Dispose();
             return Size;
         }
@@ -1545,7 +1538,7 @@ using Android.Graphics;
         public MyRenderItem(XMLRender.RenderArray.RenderItem RendItem)
         {
             if (RendItem.TextItems.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eReference) { Chapter = ((int[])RendItem.TextItems.First().Text)[0]; Verse = ((int[])RendItem.TextItems.First().Text)[1]; Word = ((int[])RendItem.TextItems.First().Text).Count() == 2 ? -1 : ((int[])RendItem.TextItems.First().Text)[2]; } else { Chapter = -1; Verse = -1; Word = -1; }
-            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)).ToList()) } } : ((Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eContinueStop) ? (object)new MyChildRenderStopContinue((bool)((object[])Arr.First().Text)[0], (List<IslamMetadata.Arabic.RuleMetadata>)((object[])Arr.First().Text)[1]) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = ArrItem.Clr }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) : null))).Where(Arr => Arr != null).ToList();
+            Items = System.Linq.Enumerable.Select(RendItem.TextItems.GroupBy((MainItems) => (MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eLTR || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL || MainItems.DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eTransliteration) ? (object)MainItems.DisplayClass : (object)MainItems), (Arr) => (Arr.First().Text.GetType() == typeof(List<XMLRender.RenderArray.RenderItem>)) ? (object)new VirtualizingWrapPanelAdapter() { RenderModels = new List<MyRenderModel>() { new MyRenderModel(System.Linq.Enumerable.Select((List<XMLRender.RenderArray.RenderItem>)Arr.First().Text, (ArrRend) => new MyRenderItem((XMLRender.RenderArray.RenderItem)ArrRend)).ToList()) } } : ((Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eContinueStop) ? (object)new MyChildRenderStopContinue((bool)((object[])Arr.First().Text)[0], (List<IslamMetadata.Arabic.FullRuleMetadata>)((object[])Arr.First().Text)[1]) : (Arr.First().Text.GetType() == typeof(string) ? (object)new MyChildRenderItem(System.Linq.Enumerable.Select(Arr, (ArrItem) => new MyChildRenderBlockItem() { ItemText = (string)ArrItem.Text, Clr = ArrItem.Clr }).ToList(), Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic, Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eArabic || Arr.First().DisplayClass == XMLRender.RenderArray.RenderDisplayClass.eRTL) : null))).Where(Arr => Arr != null).ToList();
             MaxWidth = CalculateWidth();
         }
         public double MaxWidth { get; set; }
@@ -1629,7 +1622,7 @@ using Android.Graphics;
     }
     public class MyChildRenderStopContinue : INotifyPropertyChanged
     {
-        public MyChildRenderStopContinue(bool NewIsStop, List<IslamMetadata.Arabic.RuleMetadata> NewRules) { IsStop = NewIsStop; _Rules = NewRules; MaxWidth = CalculateWidth(); }
+        public MyChildRenderStopContinue(bool NewIsStop, List<IslamMetadata.Arabic.FullRuleMetadata> NewRules) { IsStop = NewIsStop; _Rules = NewRules; MaxWidth = CalculateWidth(); }
         private double _MaxWidth;
         public double MaxWidth { get { return _MaxWidth; } set { _MaxWidth = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("MaxWidth")); } }
         public double CalculateWidth()
@@ -1637,8 +1630,8 @@ using Android.Graphics;
             //5 margin on both sides
             return 5 + 5 + 1 + 1 + TextShaping.CalculateWidth(IsStop ? "\u2B59" : "\u2B45", false, (float)float.MaxValue, float.MaxValue);
         }
-        private List<IslamMetadata.Arabic.RuleMetadata> _Rules;
-        public List<IslamMetadata.Arabic.RuleMetadata> MetaRules { get { return _Rules; } }
+        private List<IslamMetadata.Arabic.FullRuleMetadata> _Rules;
+        public List<IslamMetadata.Arabic.FullRuleMetadata> MetaRules { get { return _Rules; } }
         private bool _IsStop;
         public bool IsStop { get { return _IsStop; } set { _IsStop = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("IsStop")); } }
         #region Implementation of INotifyPropertyChanged
@@ -1652,32 +1645,26 @@ using Android.Graphics;
         private double _MaxWidth;
         public double MaxWidth { get { return _MaxWidth; } set { _MaxWidth = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("MaxWidth")); } }
 
-        private double _Width;
-        public double Width { get { return _Width; } set { _Width = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Width")); } }
+        public double Width { get { return _RenderData.Width; } set { _RenderData.Width = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Width")); } }
 
-        private double _Height;
-        public double Height { get { return _Height; } set { _Height = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Height")); } }
+        public double Height { get { return _RenderData.Height; } set { _RenderData.Height = value; if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Height")); } }
 
         public double CalculateWidth()
         {
             //5 margin on both sides
             return 5 + 5 + 1 + 1 + TextShaping.CalculateWidth(string.Join(String.Empty, ItemRuns.Select((Item) => Item.ItemText)), IsArabic, (float)float.MaxValue, float.MaxValue);
         }
-        public string GetText { get { return String.Join(string.Empty, _ItemRuns.Select((Item) => Item.ItemText)); } }
+        public string GetText { get { return String.Join(string.Empty, _RenderData.ItemRuns.Select((Item) => Item.ItemText)); } }
         #region Implementation of INotifyPropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
-        float BaseLine;
-        short[] clusters;
-        short[] indices;
-        SharpDX.DirectWrite.GlyphOffset[] offsets;
-        float[] advances;
-
+        public delegate void UpdateSize();
         public struct RenderDataStruct
         {
+            public double FontSize;
             public double Width;
             public double Height;
             public List<MyChildRenderBlockItem> ItemRuns;
@@ -1686,31 +1673,39 @@ using Android.Graphics;
             public short[] indices;
             public SharpDX.DirectWrite.GlyphOffset[] offsets;
             public float[] advances;
+            public UpdateSize sizeFunc;
         }
 
-        public RenderDataStruct RenderData { get { return new RenderDataStruct { Width = _Width, Height = _Height, ItemRuns = _ItemRuns, BaseLine = BaseLine, clusters = clusters, indices = indices, offsets = offsets, advances = advances }; } }
+        RenderDataStruct _RenderData;
 
+        public RenderDataStruct RenderData { get { return _RenderData; } }
+        void _UpdateSize()
+        {
+            Size s = TextShaping.GetWordDiacriticPositionsDWrite(string.Concat(ItemRuns.Select((it) => it.ItemText)), (float)AppSettings.dFontSize, null, true, out _RenderData.BaseLine, out _RenderData.clusters, out _RenderData.indices, out _RenderData.offsets, out _RenderData.advances);
+            Width = s.Width;
+            Height = s.Height;
+            _RenderData.FontSize = AppSettings.dFontSize;
+            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderData"));
+        }
         public MyChildRenderItem(List<MyChildRenderBlockItem> NewItemRuns, bool NewIsArabic, bool NewIsRTL)
         {
             IsRTL = NewIsRTL;
             IsArabic = NewIsArabic; //must be set before ItemRuns
             ItemRuns = NewItemRuns;
             MaxWidth = CalculateWidth();
-            Size s = TextShaping.GetWordDiacriticPositionsDWrite(string.Concat(ItemRuns.Select((it) => it.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, null, true, out BaseLine, out clusters, out indices, out offsets, out advances);
-            Width = s.Width;
-            Height = s.Height;
+            _RenderData.sizeFunc = _UpdateSize;
+            _UpdateSize();
         }
-        List<MyChildRenderBlockItem> _ItemRuns;
         public List<MyChildRenderBlockItem> ItemRuns
         {
-            get { return _ItemRuns; }
+            get { return _RenderData.ItemRuns; }
             set
             {
                 if (IsArabic)
                 {
                     char[] Forms = AppSettings.ArbData.GetPresentationForms;
                     //XMLRender.ArabicData.LigatureInfo[] ligs = XMLRender.ArabicData.GetLigatures(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), false, Forms);
-                    short[] chpos = TextShaping.GetWordDiacriticClusters(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), AppSettings.strSelectedFont, (float)AppSettings.dFontSize, IsArabic);
+                    short[] chpos = TextShaping.GetWordDiacriticClusters(String.Join(String.Empty, System.Linq.Enumerable.Select(value, (Run) => Run.ItemText)), (float)AppSettings.dFontSize, IsArabic);
                     int pos = value[0].ItemText.Length;
                     int count = 1;
                     while (count < value.Count)
@@ -1766,7 +1761,7 @@ using Android.Graphics;
                         //else { count++; }
                     }
                 }
-                _ItemRuns = value;
+                _RenderData.ItemRuns = value;
                 if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("ItemRuns"));
             }
         }
