@@ -629,7 +629,7 @@ Public Class ArabicData
     End Function
     Private CamelCaseRegEx As System.Text.RegularExpressions.Regex
     Public Function ToCamelCase(Str As String) As String
-        Return CamelCaseRegEx.Replace(Str, Function(CamCase As System.Text.RegularExpressions.Match) CamCase.Groups(1).Value + CamCase.Groups(2).Value.ToLowerInvariant())
+        Return CamelCaseRegEx.Replace(Str, Function(CamCase As System.Text.RegularExpressions.Match) String.Concat(CamCase.Groups(1).Value, CamCase.Groups(2).Value.ToLowerInvariant()))
     End Function
     Public Function IsTerminating(Str As String, Index As Integer) As Boolean
         Dim bIsEnd = True 'default to non-connecting end
@@ -1022,9 +1022,10 @@ Public Class ArabicData
     Public Async Function GetJoiningData() As Task(Of Dictionary(Of Char, String))
         Dim Strs As String() = Await _PortableMethods.ReadAllLines(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", "ArabicShaping.txt")))
         Dim Joiners As New Dictionary(Of Char, String)
+        Dim Vals As String()
         For Count = 0 To Strs.Length - 1
             If Strs(Count).Length <> 0 AndAlso Strs(Count)(0) <> "#" Then
-                Dim Vals As String() = Strs(Count).Split(";"c)
+                Vals = Strs(Count).Split(";"c)
                 'C Join_Causing on Tatweel and ZeroWidthJoiner could be considered as Dual_Joining
                 'General Category Mn, Me, or Cf are T Transparent and all others are U Non_Joining
                 Joiners.Add(ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier)), Vals(3))
@@ -1043,6 +1044,33 @@ Public Class ArabicData
     Private Shared _DecData As Dictionary(Of Char, DecData)
     Private Shared _Ranges As Dictionary(Of String, List(Of List(Of Integer)))
     Private Shared _Names As Dictionary(Of Char, String())
+    Public Shared Sub Split(str As String, separator As Char, ByRef sepList As List(Of Integer), ByRef strs As String())
+        sepList.Clear()
+        Dim length As Integer = str.Length
+        Dim j As Integer = &H0
+        Do While ((j < str.Length) AndAlso (sepList.Count < length))
+            j = str.IndexOf(separator, j)
+            If j = -1 Then Exit Do
+            sepList.Add(j)
+            j += 1
+        Loop
+        If (sepList.Count = 0) Then strs(0) = str
+        Dim startIndex As Integer = &H0
+        Dim index As Integer = &H0
+        Dim i As Integer = &H0
+        Do While ((i < sepList.Count) AndAlso (startIndex < str.Length))
+            strs(index) = str.Substring(startIndex, (sepList(i) - startIndex))
+            index += 1
+            startIndex = (sepList(i) + &H1)
+            i += 1
+        Loop
+        If ((startIndex < str.Length) AndAlso (sepList.Count >= &H0)) Then
+            strs(index) = str.Substring(startIndex)
+        End If
+        If (index = sepList.Count) Then
+            strs(index) = String.Empty
+        End If
+    End Sub
     Public Async Function GetDecompositionCombiningCatData() As Task
         Dim Strs As String() = Await _PortableMethods.ReadAllLines(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", "UnicodeData.txt")))
         _CombPos = New Dictionary(Of Char, Integer)
@@ -1050,8 +1078,10 @@ Public Class ArabicData
         _Ranges = New Dictionary(Of String, List(Of List(Of Integer)))
         _DecData = New Dictionary(Of Char, DecData)
         _Names = New Dictionary(Of Char, String())
+        Dim sepList As New List(Of Integer)
+        Dim Vals(15) As String
         For Count = 0 To Strs.Length - 1
-            Dim Vals As String() = Strs(Count).Split(";"c)
+            Split(Strs(Count), ";"c, sepList, Vals)
             'All symbol categories not needed
             If (Vals(2)(0) = "S" And Vals(4) <> "ON") Or Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier) >= &H10000 Then Continue For
             Dim Ch As Char = ChrW(Integer.Parse(Vals(0), Globalization.NumberStyles.AllowHexSpecifier))

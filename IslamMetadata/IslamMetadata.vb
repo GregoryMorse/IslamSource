@@ -140,10 +140,12 @@ Public Class Arabic
         End Sub
         Private _Scheme As String
         Private _Arb As Arabic
+        Private Left As String
+        Private Right As String
         Public Function Compare(ByVal x As ArabicData.ArabicSymbol, ByVal y As ArabicData.ArabicSymbol) As Integer _
             Implements Collections.Generic.IComparer(Of ArabicData.ArabicSymbol).Compare
-            Dim Left As String = _Arb.GetSchemeValueFromSymbol(x, _Scheme)
-            Dim Right As String = _Arb.GetSchemeValueFromSymbol(y, _Scheme)
+            Left = _Arb.GetSchemeValueFromSymbol(x, _Scheme)
+            Right = _Arb.GetSchemeValueFromSymbol(y, _Scheme)
             Compare = Left.Length - Right.Length
             If Compare = 0 Then Compare = Left.CompareTo(Right)
         End Function
@@ -1259,7 +1261,7 @@ Public Class Arabic
                         Return New RuleMetadata(IntParseFast(NewIndex) + IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(IntParseFast(NewLength)), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}), CShort(IntParseFast(NewOrigOrder)))
                     End Function))
                 Rules.Add(New RuleMetadata(IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(Vals(VerseCount)(4)), KeyInd, CShort(IntParseFast(OrigOrder))) With {.Children = Ch, .Dependencies = Dep})
-                PosDict.Add(Rules(Rules.Count - 1), Integer.Parse(Offset))
+                PosDict.Add(Rules(Rules.Count - 1), IntParseFast(Offset))
             Next
         Next
         Rules.Sort(New RuleIndexComparer(PosDict))
@@ -1280,12 +1282,14 @@ Public Class Arabic
             RuleDictionary(Key).Add(RuleMetadata(Count))
         Next
         Dim CacheOut As New List(Of String)
+        Dim QWIComp As New TanzilReader.QuranWordIndexComparer
+        Dim Str As New Text.StringBuilder
         For Each KeyVal In RuleDictionary
-            Dim Str As New Text.StringBuilder
+            Str.Clear()
             Str.Append(KeyVal.Key)
             Str.Append("="c)
             For DictCount As Integer = 0 To KeyVal.Value.Count - 1
-                Dim Index As Integer = Array.BinarySearch(IndexToVerse, KeyVal.Value(DictCount).Index, New TanzilReader.QuranWordIndexComparer)
+                Dim Index As Integer = Array.BinarySearch(IndexToVerse, KeyVal.Value(DictCount).Index, QWIComp)
                 If Index < 0 Then Index = (Index Xor -1) - 1 'gaps based off previous word
                 While IndexToVerse(Index)(6) <> 0
                     Index -= 1
@@ -6408,18 +6412,20 @@ Public Class TanzilReader
         Return Renderer
     End Function
     Public Function SortMergeReferences(Refs As List(Of Integer()), IndexToVerse As Integer()(), HasLetterRefs As Boolean, ByChunk As Boolean, Optional bMergeContiguous As Boolean = True) As List(Of Integer())
+        Dim QWIComp As New QuranWordIndexComparer
+        Dim QWCVWComp As New QuranWordChapterVerseWordComparer(False)
         If HasLetterRefs Then
             For Count As Integer = 0 To Refs.Count - 1
-                Refs(Count)(2) = IndexToVerse(Array.BinarySearch(IndexToVerse, Refs(Count)(2), New TanzilReader.QuranWordIndexComparer))(3)
+                Refs(Count)(2) = IndexToVerse(Array.BinarySearch(IndexToVerse, Refs(Count)(2), QWIComp))(3)
             Next
         End If
         If ByChunk Then
             For Count As Integer = 0 To Refs.Count - 1
-                Refs(Count)(2) = IndexToVerse(Array.BinarySearch(IndexToVerse, Refs(Count), New TanzilReader.QuranWordChapterVerseWordComparer(False)))(5)
+                Refs(Count)(2) = IndexToVerse(Array.BinarySearch(IndexToVerse, Refs(Count), QWCVWComp))(5)
             Next
         End If
         Dim Arr As Integer()() = Refs.ToArray()
-        Array.Sort(Arr, New TanzilReader.QuranWordChapterVerseWordComparer(False))
+        Array.Sort(Arr, QWCVWComp)
         Refs = New List(Of Integer())(Arr)
         Dim Idx As Integer = 0
         While Idx < Refs.Count - 1
@@ -6445,8 +6451,9 @@ Public Class TanzilReader
             Idx += 1
         End While
         If ByChunk Then
+            Dim QWCVWCompChunk As New TanzilReader.QuranWordChapterVerseWordComparer(True)
             For Count As Integer = 0 To Refs.Count - 1
-                Idx = Array.BinarySearch(IndexToVerse, Refs(Count), New TanzilReader.QuranWordChapterVerseWordComparer(True))
+                Idx = Array.BinarySearch(IndexToVerse, Refs(Count), QWCVWCompChunk)
                 Refs(Count)(2) = Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(Linq.Enumerable.Reverse(Linq.Enumerable.Take(IndexToVerse, Idx + 1)), Function(It) It(0) = IndexToVerse(Idx)(0) And It(1) = IndexToVerse(Idx)(1) And It(5) = IndexToVerse(Idx)(5)))(2)
                 Refs(Count)(5) = Linq.Enumerable.Last(Linq.Enumerable.TakeWhile(Linq.Enumerable.Skip(IndexToVerse, Idx), Function(It) It(0) = IndexToVerse(Idx)(0) And It(1) = IndexToVerse(Idx)(1) And It(5) = IndexToVerse(Idx)(5)))(2)
             Next
@@ -6864,10 +6871,11 @@ Public Class TanzilReader
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   If Not S.Args Is Nothing AndAlso S.Args.Length <> 0 Then Range = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.GetRange(S.Args.Index, S.Args.Length)
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Return IslamData.RuleMetaSet.RuleMetadataTranslation.GetString(S.RuleName) + If(S.Args Is Nothing OrElse S.Args.Length = 0, "", "(" + String.Join(",", Linq.Enumerable.Select(Range, Function(Arg) String.Join(" ", Linq.Enumerable.Select(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.GetRange(Arg.Index, Arg.Length), Function(A) IslamData.RuleMetaSet.RuleMetadataTranslation.GetString(A))))) + ")")
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               End Function)))).ToArray(), False))})
+                Dim QWIComp As New QuranWordIndexComparer
                 For SubCount = 0 To Matches.Count - 1
-                    Dim StartWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index, New QuranWordIndexComparer)
+                    Dim StartWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index, QWIComp)
                     If StartWordIndex < 0 Then StartWordIndex = (StartWordIndex Xor -1) - 1
-                    Dim EndWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index + Matches(SubCount).Length - 1, New QuranWordIndexComparer)
+                    Dim EndWordIndex As Integer = Array.BinarySearch(IndexToVerse, Matches(SubCount).Index + Matches(SubCount).Length - 1, QWIComp)
                     If EndWordIndex < 0 Then EndWordIndex = (EndWordIndex Xor -1) + 1
                     Dim Renderers As New List(Of RenderArray.RenderText)
                     Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eReference, New Integer() {IndexToVerse(StartWordIndex)(0), IndexToVerse(StartWordIndex)(1)}))
