@@ -1127,8 +1127,8 @@ using Android.Graphics;
             await ArbData.Init();
             Arb = new IslamMetadata.Arabic(_PortableMethods, ArbData);
             ChData = new IslamMetadata.CachedData(_PortableMethods, ArbData, Arb);
-            await ChData.Init();
-            await Arb.Init(ChData);
+            await ChData.Init(false);
+            await Arb.Init(ChData, false);
             TR = new IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData);
             await TR.Init();
             if (!ContainsKey("CurrentFont"))

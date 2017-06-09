@@ -203,7 +203,7 @@ Public Class InitClass
         UWeb = NewUWeb
         SD = NewSD
     End Sub
-    Public Function Init() As Task Implements Utility.IInitClass.Init
+    Public Function Init(bWeb As Boolean) As Task Implements Utility.IInitClass.Init
         Return Task.Factory.StartNew(Sub()
                                          RAWeb = New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
                                          Doc = New Document(_PortableMethods)
@@ -255,7 +255,7 @@ Public Class UtilityWeb
         InitDict = New Dictionary(Of String, Utility.IInitClass)
         Dim ctor As Reflection.ConstructorInfo = Reflection.Assembly.GetExecutingAssembly().GetType("HostPageUtility.InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(ArabicData), GetType(UtilityWeb), GetType(SiteDatabase)})
         InitDict.Add("HostPageUtility.InitClass", CType(ctor.Invoke(New Object() {_PortableMethods, ArbData, Me, SD}), Utility.IInitClass))
-        Await InitDict("HostPageUtility.InitClass").Init()
+        Await InitDict("HostPageUtility.InitClass").Init(True)
         Dim KV As Nullable(Of KeyValuePair(Of String, Utility.IInitClass)) = InitDict("HostPageUtility.InitClass").GetDependency()
         If Not KV Is Nothing Then InitDict.Add(KV.Value.Key, KV.Value.Value)
         For Each Key As String In _PortableMethods.Settings.FuncLibs
@@ -268,7 +268,7 @@ Public Class UtilityWeb
                     ctor = Asm.GetType(Key + ".InitClass").GetConstructor(New Type() {GetType(PortableMethods), GetType(ArabicData)})
                     InitDict.Add(Key, CType(ctor.Invoke(New Object() {_PortableMethods, ArbData}), Utility.IInitClass))
                 End If
-                Await InitDict(Key).Init()
+                Await InitDict(Key).Init(True)
                 KV = InitDict(Key).GetDependency()
                 If Not KV Is Nothing Then InitDict.Add(KV.Value.Key, KV.Value.Value)
             End If

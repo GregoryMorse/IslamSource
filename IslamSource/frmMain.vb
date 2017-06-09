@@ -135,10 +135,10 @@ Public Class frmMain
 
     Private Async Function UtilityTestCode() As Threading.Tasks.Task
         Dim IndexToVerse As Integer()() = Nothing
-        Dim OrigRules As List(Of Arabic.RuleMetadata) = Arb.GetMetarules(TR.QuranTextCombiner(ChData.XMLDocMain, IndexToVerse), ChData.RuleMetas("UthmaniQuran"))
+        Dim OrigRules As List(Of Arabic.FullRuleMetadata) = Arb.GetMetarules(TR.QuranTextCombiner(ChData.XMLDocMain, IndexToVerse), ChData.RuleMetas("UthmaniQuran"))
         Dim Rules As List(Of Arabic.RuleMetadata) = Await TR.GetQuranCacheMetarules()
         For Count = 0 To Rules.Count - 1
-            If Not (New IslamMetadata.Arabic.RuleMetadataEqualityComparer).Equals(Rules(Count), OrigRules(Count)) Then
+            If Not (New Arabic.RuleMetadataEqualityComparer).Equals(Rules(Count), OrigRules(Count)) Then
                 Debug.Print("Error: " + CStr(Count))
             End If
 
@@ -288,8 +288,8 @@ Public Class frmMain
         Await ArbData.Init()
         Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData)
         ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
-        Await ChData.Init()
-        Await Arb.Init(ChData)
+        Await ChData.Init(False)
+        Await Arb.Init(ChData, False)
         TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
         Await TR.Init()
         DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)

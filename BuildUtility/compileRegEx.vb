@@ -53,8 +53,8 @@ Module compileRegEx
         Await ArbData.Init()
         Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData)
         ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
-        Await ChData.Init()
-        Await Arb.Init(ChData)
+        Await ChData.Init(False)
+        Await Arb.Init(ChData, False)
         Dim RegExs As New List(Of System.Text.RegularExpressions.RegexCompilationInfo)
         For Count As Integer = 0 To ChData.IslamData.RuleSets.Count - 1
             For SubCount As Integer = 0 To ChData.IslamData.RuleSets(Count).Rules.Count - 1

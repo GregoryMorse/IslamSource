@@ -159,7 +159,7 @@ Public Class PortableMethods
 End Class
 Public Class Utility
     Public Interface IInitClass
-        Function Init() As Threading.Tasks.Task
+        Function Init(bWeb As Boolean) As Threading.Tasks.Task
         Function LookupObject(ClassName As String) As Object
         Function GetDependency() As Nullable(Of KeyValuePair(Of String, Utility.IInitClass))
     End Interface

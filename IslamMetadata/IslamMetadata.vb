@@ -2,7 +2,6 @@ Option Explicit On
 Option Strict On
 Imports System.Linq
 Imports System.Threading.Tasks
-Imports IslamMetadata
 Imports XMLRender
 Public Class InitClass
     Implements Utility.IInitClass
@@ -16,14 +15,14 @@ Public Class InitClass
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
     End Sub
-    Public Async Function Init() As Task Implements Utility.IInitClass.Init
-        Arb = New IslamMetadata.Arabic(_PortableMethods, ArbData)
-        ChData = New IslamMetadata.CachedData(_PortableMethods, ArbData, Arb)
-        Await ChData.Init(False, True)
-        Await Arb.Init(ChData)
-        TR = New IslamMetadata.TanzilReader(_PortableMethods, Arb, ArbData, ChData)
+    Public Async Function Init(bWeb As Boolean) As Task Implements Utility.IInitClass.Init
+        Arb = New Arabic(_PortableMethods, ArbData)
+        ChData = New CachedData(_PortableMethods, ArbData, Arb)
+        Await ChData.Init(bWeb, False, True)
+        Await Arb.Init(ChData, bWeb)
+        TR = New TanzilReader(_PortableMethods, Arb, ArbData, ChData)
         Await TR.Init()
-        DocBuild = New IslamMetadata.DocBuilder(_PortableMethods, Arb, ArbData, ChData)
+        DocBuild = New DocBuilder(_PortableMethods, Arb, ArbData, ChData)
     End Function
     Public Function LookupObject(ClassName As String) As Object Implements Utility.IInitClass.LookupObject
         If ClassName = "Arabic" Then
@@ -157,11 +156,11 @@ Public Class Arabic
         _PortableMethods = NewPortableMethods
         ArbData = NewArbData
     End Sub
-    Public Async Function Init(NewChData As CachedData) As Threading.Tasks.Task
+    Public Async Function Init(NewChData As CachedData, bWeb As Boolean) As Threading.Tasks.Task
         ChData = NewChData
         If _SchemeTable Is Nothing Then
             _SchemeTable = New Dictionary(Of String, IslamData.TranslitScheme)
-            'Await ChData.Init(False)
+            'Await ChData.Init(bWeb, False)
             Dim Count As Integer
             For Count = 0 To ChData.IslamData.TranslitSchemes.Length - 1
                 _SchemeTable.Add(ChData.IslamData.TranslitSchemes(Count).Name, ChData.IslamData.TranslitSchemes(Count))
@@ -223,7 +222,7 @@ Public Class Arabic
                 Next
             Next
         End If
-        If ErrorRegExDict.Count = 0 Or RegExDict.Count = 0 Then Await ChData.Init(True)
+        If ErrorRegExDict.Count = 0 Or RegExDict.Count = 0 Then Await ChData.Init(bWeb, True)
         If ErrorRegExDict.Count = 0 Then
             For Count = 0 To ChData.RuleTranslations("ErrorCheck").Length - 1
                 ErrorRegExDict.Add(ChData.RuleTranslations("ErrorCheck")(Count).Name + CStr(Count), New System.Text.RegularExpressions.Regex(ChData.RuleTranslations("ErrorCheck")(Count).Match))
@@ -365,7 +364,7 @@ Public Class Arabic
         End If
     End Function
     Shared _SchemeTable As Dictionary(Of String, IslamData.TranslitScheme)
-    Public ReadOnly Property SchemeTable() As Dictionary(Of String, IslamData.TranslitScheme)
+    Public Shared ReadOnly Property SchemeTable() As Dictionary(Of String, IslamData.TranslitScheme)
         Get
             Return _SchemeTable
         End Get
@@ -389,7 +388,7 @@ Public Class Arabic
     End Function
     Public Function GetSchemeLongVowel(Str As String, Scheme As String) As Integer
         If Not SchemeTable.ContainsKey(Scheme) Then Return -1
-        Dim Sch As IslamData.TranslitScheme = SchemeTable(Scheme)
+        'Dim Sch As IslamData.TranslitScheme = SchemeTable(Scheme)
         If Array.IndexOf(ChData.ArabicMultis, Str) <> -1 Then
             Return Array.IndexOf(ChData.ArabicMultis, Str)
         End If
@@ -445,7 +444,7 @@ Public Class Arabic
         Return False
     End Function
     Shared _Letters As Dictionary(Of String, Dictionary(Of Char, Integer))
-    Public Function GetSortedLetters(Scheme As String) As Dictionary(Of Char, Integer)
+    Public Shared Function GetSortedLetters(Scheme As String) As Dictionary(Of Char, Integer)
         Return _Letters(Scheme)
     End Function
     Public Function TransliterateToLiteral(ByVal ArabicString As String, Scheme As String) As String
@@ -611,7 +610,7 @@ Public Class Arabic
     Public Function ApplyColorRules(ByVal ArabicString As String, BreakWords As Boolean, MetadataList As Generic.List(Of FullRuleMetadata)) As RenderArray.RenderText()()
         Dim Count As Integer
         Dim Index As Integer
-        Dim Strings As New Generic.List(Of RenderArray.RenderText)
+        'Dim Strings As New Generic.List(Of RenderArray.RenderText)
         Dim RuleIndexes As New List(Of Integer)
         For Count = 0 To ArabicString.Length - 1
             RuleIndexes.Add(0)
@@ -995,15 +994,19 @@ Public Class Arabic
                 Return False
             End If
             For CompCount = 0 To x.Type.Length - 1
-                If IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).RuleName <> IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Type.Index + CompCount).RuleName Or (Not IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).Args Is Nothing Or Not IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Type.Index + CompCount).Args Is Nothing) AndAlso IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).Args.Length <> IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Type.Index + CompCount).Args.Length Then
+                Dim xArg As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount)
+                Dim yArg As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Type.Index + CompCount)
+                If xArg.RuleName <> yArg.RuleName Or (Not xArg.Args Is Nothing Or Not yArg.Args Is Nothing) AndAlso xArg.Args.Length <> yArg.Args.Length Then
                     Return False
                 End If
-                For ArgCount = 0 To If(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).Args Is Nothing, -1, IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).Args.Length - 1)
-                    If IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).Args.Index + ArgCount).Length <> IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Type.Index + CompCount).Args.Index + ArgCount).Length Then
+                For ArgCount = 0 To If(xArg.Args Is Nothing, -1, xArg.Args.Length - 1)
+                    Dim xBegin As IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex = IslamData.RuleMetaSet.RuleMetadataTranslation.Args(xArg.Args.Index + ArgCount)
+                    Dim yBegin As IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex = IslamData.RuleMetaSet.RuleMetadataTranslation.Args(yArg.Args.Index + ArgCount)
+                    If xBegin.Length <> yBegin.Length Then
                         Return False
                     End If
-                    For SubArgCount = 0 To IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).Args.Index + ArgCount).Length - 1
-                        If IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Type.Index + CompCount).Args.Index + ArgCount).Index + SubArgCount) <> IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Type.Index + CompCount).Args.Index + ArgCount).Index + SubArgCount) Then
+                    For SubArgCount = 0 To xBegin.Length - 1
+                        If IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(xBegin.Index + SubArgCount) <> IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(yBegin.Index + SubArgCount) Then
                             Return False
                         End If
                     Next
@@ -1014,15 +1017,19 @@ Public Class Arabic
                     Return False
                 End If
                 For CompCount = 0 To x.Children(OthCount).Type.Length - 1
-                    If IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).RuleName <> IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Children(OthCount).Type.Index + CompCount).RuleName Or (Not IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).Args Is Nothing Or Not IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Children(OthCount).Type.Index + CompCount).Args Is Nothing) AndAlso IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).Args.Length <> IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Children(OthCount).Type.Index + CompCount).Args.Length Then
+                    Dim xArg As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount)
+                    Dim yArg As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Children(OthCount).Type.Index + CompCount)
+                    If xArg.RuleName <> yArg.RuleName Or (Not xArg.Args Is Nothing Or Not yArg.Args Is Nothing) AndAlso xArg.Args.Length <> yArg.Args.Length Then
                         Return False
                     End If
-                    For ArgCount = 0 To If(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).Args Is Nothing, -1, IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).Args.Length - 1)
-                        If IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Length <> IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Children(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Length Then
+                    For ArgCount = 0 To If(xArg.Args Is Nothing, -1, xArg.Args.Length - 1)
+                        Dim xBegin As IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex = IslamData.RuleMetaSet.RuleMetadataTranslation.Args(xArg.Args.Index + ArgCount)
+                        Dim yBegin As IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex = IslamData.RuleMetaSet.RuleMetadataTranslation.Args(yArg.Args.Index + ArgCount)
+                        If xBegin.Length <> yBegin.Length Then
                             Return False
                         End If
-                        For SubArgCount = 0 To IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Length - 1
-                            If IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Children(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Index + SubArgCount) <> IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Children(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Index + SubArgCount) Then
+                        For SubArgCount = 0 To xBegin.Length - 1
+                            If IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(xBegin.Index + SubArgCount) <> IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(yBegin.Index + SubArgCount) Then
                                 Return False
                             End If
                         Next
@@ -1034,15 +1041,19 @@ Public Class Arabic
                     Return False
                 End If
                 For CompCount = 0 To x.Dependencies(OthCount).Type.Length - 1
-                    If IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).RuleName <> IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Dependencies(OthCount).Type.Index + CompCount).RuleName Or (Not IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).Args Is Nothing Or Not IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Dependencies(OthCount).Type.Index + CompCount).Args Is Nothing) AndAlso IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).Args.Length <> IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Dependencies(OthCount).Type.Index + CompCount).Args.Length Then
+                    Dim xArg As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount)
+                    Dim yArg As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Dependencies(OthCount).Type.Index + CompCount)
+                    If xArg.RuleName <> yArg.RuleName Or (Not xArg.Args Is Nothing Or Not yArg.Args Is Nothing) AndAlso xArg.Args.Length <> yArg.Args.Length Then
                         Return False
                     End If
-                    For ArgCount = 0 To If(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).Args Is Nothing, -1, IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).Args.Length - 1)
-                        If IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Length <> IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Dependencies(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Length Then
+                    For ArgCount = 0 To If(xArg.Args Is Nothing, -1, xArg.Args.Length - 1)
+                        Dim xBegin As IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex = IslamData.RuleMetaSet.RuleMetadataTranslation.Args(xArg.Args.Index + ArgCount)
+                        Dim yBegin As IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex = IslamData.RuleMetaSet.RuleMetadataTranslation.Args(yArg.Args.Index + ArgCount)
+                        If xBegin.Length <> yBegin.Length Then
                             Return False
                         End If
-                        For SubArgCount = 0 To IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Length - 1
-                            If IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(x.Dependencies(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Index + SubArgCount) <> IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(IslamData.RuleMetaSet.RuleMetadataTranslation.Args(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs(y.Dependencies(OthCount).Type.Index + CompCount).Args.Index + ArgCount).Index + SubArgCount) Then
+                        For SubArgCount = 0 To xBegin.Length - 1
+                            If IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(xBegin.Index + SubArgCount) <> IslamData.RuleMetaSet.RuleMetadataTranslation.Strs(yBegin.Index + SubArgCount) Then
                                 Return False
                             End If
                         Next
@@ -1067,33 +1078,96 @@ Public Class Arabic
     End Class
     Public Shared ItRegEx As New System.Text.RegularExpressions.Regex("\(.*\)|^null$")
     Public Shared ArgRegEx As New System.Text.RegularExpressions.Regex("\((.*)\)")
-    Public Function GetCacheMetarules(Lines As String(), IndexToVerse As Integer()()) As Generic.List(Of RuleMetadata)
-        Dim CacheIn As String() = Lines
+    Public Shared Function SelectSplit(Of T)(str As String, separator As Char, selector As Func(Of String, T)) As T()
+        Dim sepList As Integer() = New Integer(str.Length - 1) {}
+        Dim num As Integer = &H0
+        Dim length As Integer = sepList.Length
+        Dim j As Integer = &H0
+        Do While ((j < str.Length) AndAlso (num < length))
+            If (str.Chars(j) = separator) Then
+                sepList(num) = j
+                num += 1
+            End If
+            j += 1
+        Loop
+        If (num = 0) Then Return New T() {selector(str)}
+        Dim startIndex As Integer = &H0
+        Dim index As Integer = &H0
+        Dim arr As T() = New T((num + &H1) - 1) {}
+        Dim i As Integer = &H0
+        Do While ((i < num) AndAlso (startIndex < str.Length))
+            arr(index) = selector(str.Substring(startIndex, (sepList(i) - startIndex)))
+            index += 1
+            startIndex = (sepList(i) + &H1)
+            i += 1
+        Loop
+        If ((startIndex < str.Length) AndAlso (num >= &H0)) Then
+            arr(index) = selector(str.Substring(startIndex))
+            Return arr
+        End If
+        If (index = num) Then
+            arr(index) = selector(String.Empty)
+        End If
+        Return arr
+    End Function
+    Public Shared Function QuadSplit(str As String, separator As Char, ByRef str0 As String, ByRef str1 As String, ByRef str2 As String, ByRef str3 As String) As Boolean
+        Dim idx As Integer = str.IndexOf(separator)
+        If idx = -1 Then
+            str0 = str
+            Return False
+        End If
+        str0 = str.Substring(0, idx)
+        Dim nextIdx As Integer = str.IndexOf(separator, idx + 1)
+        If nextIdx = -1 Then
+            str1 = str.Substring(idx + 1)
+            Return False
+        End If
+        str1 = str.Substring(idx + 1, nextIdx - idx - 1)
+        idx = nextIdx
+        nextIdx = str.IndexOf(separator, idx + 1)
+        If nextIdx = -1 Then
+            str2 = str.Substring(idx + 1)
+            Return False
+        End If
+        str2 = str.Substring(idx + 1, nextIdx - idx - 1)
+        str3 = str.Substring(nextIdx + 1)
+        Return True
+    End Function
+    Public Shared Function GetCacheMetarules(Lines As String(), IndexToVerse As Integer()()) As Generic.List(Of RuleMetadata)
         Dim Rules As New List(Of RuleMetadata)
         Dim PosDict As New Dictionary(Of RuleMetadata, Integer)(New RuleMetadataEqualityComparer)
         Dim QWCVWComp As New TanzilReader.QuranWordChapterVerseWordComparer(False)
-        For Count As Integer = 0 To CacheIn.Length - 1
-            Dim KeyVal As String() = CacheIn(Count).Split("="c)
-            Dim FirstBrace As Integer = KeyVal(0).IndexOf("["c)
-            Dim Childs As String() = If(FirstBrace = -1, Nothing, KeyVal(0).Substring(FirstBrace + 1, KeyVal(0).IndexOf("]"c) - FirstBrace - 1).Split("&"c))
-            Dim FirstCurlyBrace As Integer = KeyVal(0).IndexOf("{"c)
-            Dim Deps As String() = If(FirstCurlyBrace = -1, Nothing, KeyVal(0).Substring(FirstCurlyBrace + 1, KeyVal(0).IndexOf("}"c) - FirstCurlyBrace - 1).Split("&"c))
-            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = Linq.Enumerable.Select(KeyVal(0).Substring(0, Math.Min(If(FirstBrace = -1, KeyVal(0).Length, FirstBrace), If(FirstCurlyBrace = -1, KeyVal(0).Length, FirstCurlyBrace))).Split("|"c), Function(S)
-                                                                                                                                                                                                                                                                               Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                                                                                                                               Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
-                                                                                                                                                                                                                                                                               If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                                                                                                                   Outer = Linq.Enumerable.Select(M.Groups(1).Value.Split(New Char() {","c}), Function(InnerStr)
-                                                                                                                                                                                                                                                                                                                                                                  Dim Inner As IEnumerable(Of Short) = Linq.Enumerable.Select(InnerStr.Split(" "c), Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)).ToArray()
-                                                                                                                                                                                                                                                                                                                                                                  IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Inner)
-                                                                                                                                                                                                                                                                                                                                                                  Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
-                                                                                                                                                                                                                                                                                                                                                              End Function)
-                                                                                                                                                                                                                                                                                   IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
-                                                                                                                                                                                                                                                                               End If
-                                                                                                                                                                                                                                                                               Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
-                                                                                                                                                                                                                                                                           End Function).ToArray()
+        Dim NewType As String = String.Empty
+        Dim NewIndex As String = String.Empty
+        Dim NewLength As String = String.Empty
+        Dim NewOrigOrder As String = String.Empty
+        Dim KeyVal As String = String.Empty
+        Dim Value As String = String.Empty
+        Dim Offset As String = String.Empty
+        Dim OrigOrder As String = String.Empty
+        Dim Childs As String
+        Dim Deps As String
+        For Count As Integer = 0 To Lines.Length - 1
+            QuadSplit(Lines(Count), "="c, KeyVal, Offset, OrigOrder, Value)
+            Dim FirstBrace As Integer = KeyVal.IndexOf("["c)
+            Childs = If(FirstBrace = -1, Nothing, KeyVal.Substring(FirstBrace + 1, KeyVal.IndexOf("]"c) - FirstBrace - 1))
+            Dim FirstCurlyBrace As Integer = KeyVal.IndexOf("{"c)
+            Deps = If(FirstCurlyBrace = -1, Nothing, KeyVal.Substring(FirstCurlyBrace + 1, KeyVal.IndexOf("}"c) - FirstCurlyBrace - 1))
+            Dim Key As IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() = SelectSplit(KeyVal.Substring(0, Math.Min(If(FirstBrace = -1, KeyVal.Length, FirstBrace), If(FirstCurlyBrace = -1, KeyVal.Length, FirstCurlyBrace))), "|"c, Function(S)
+                                                                                                                                                                                                                                                     Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                                                                                                                                                                                                                                                     Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
+                                                                                                                                                                                                                                                     If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                                                                                                                                                                                                                                                         Outer = SelectSplit(M.Groups(1).Value, ","c, Function(InnerStr)
+                                                                                                                                                                                                                                                                                                          IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
+                                                                                                                                                                                                                                                                                                          Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
+                                                                                                                                                                                                                                                                                                      End Function)
+                                                                                                                                                                                                                                                         IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
+                                                                                                                                                                                                                                                     End If
+                                                                                                                                                                                                                                                     Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
+                                                                                                                                                                                                                                                 End Function).ToArray()
             IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(Key)
             Dim KeyInd As New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - Key.Count, .Length = CShort(Key.Count)}
-            Dim Vals As Integer()() = Linq.Enumerable.Select(KeyVal(3).Split(","c), Function(Item) New List(Of Integer)(If(Item Is Nothing Or Item = String.Empty, {}, Linq.Enumerable.Select(Item.Split(":"c), Function(Frag) Integer.Parse(Frag)))).ToArray()).ToArray()
+            Dim Vals As Integer()() = SelectSplit(Value, ","c, Function(Item) New List(Of Integer)(If(Item Is Nothing Or Item = String.Empty, {}, SelectSplit(Item, ":"c, Function(Frag) Integer.Parse(Frag)))).ToArray()).ToArray()
             Dim VerseCount As Integer
             For VerseCount = 0 To Vals.Length - 1
                 Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {Vals(VerseCount)(0), Vals(VerseCount)(1), Vals(VerseCount)(2)}, QWCVWComp)
@@ -1101,73 +1175,66 @@ Public Class Arabic
                 While IndexToVerse(Idx)(6) <> 0
                     Idx -= 1
                 End While
-                Dim Ch As RuleMetadata() = If(FirstBrace = -1, Nothing, Linq.Enumerable.Select(Childs, Function(Item)
-                                                                                                           Dim FirstLT As Integer = Item.IndexOf("<"c)
-                                                                                                           Dim CDep As RuleMetadata() = If(FirstLT = -1, Nothing, Linq.Enumerable.Select(KeyVal(0).Substring(KeyVal(0).IndexOf("<"c) + 1, KeyVal(0).IndexOf(">"c) - KeyVal(0).IndexOf("<"c) - 1).Split("^"c), Function(DItem)
-                                                                                                                                                                                                                                                                                                                  Dim DPieces As String() = DItem.Split(";"c)
-                                                                                                                                                                                                                                                                                                                  Dim DepRuleArgs As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs) = Nothing
-                                                                                                                                                                                                                                                                                                                  If Not String.IsNullOrEmpty(DPieces(0)) Then
-                                                                                                                                                                                                                                                                                                                      DepRuleArgs = Linq.Enumerable.Select(DPieces(0).Split("+"c), Function(S)
-                                                                                                                                                                                                                                                                                                                                                                                       Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                                                                                                                                                                                                                                       Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
-                                                                                                                                                                                                                                                                                                                                                                                       If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                                                                                                                                                                                                                           Outer = Linq.Enumerable.Select(M.Groups(1).Value.Split(New Char() {","c}), Function(InnerStr)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Dim Inner As IEnumerable(Of Short) = Linq.Enumerable.Select(InnerStr.Split(" "c), Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)).ToArray()
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Inner)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                      End Function)
-                                                                                                                                                                                                                                                                                                                                                                                           IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
-                                                                                                                                                                                                                                                                                                                                                                                       End If
-                                                                                                                                                                                                                                                                                                                                                                                       Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
-                                                                                                                                                                                                                                                                                                                                                                                   End Function)
-                                                                                                                                                                                                                                                                                                                      IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(DepRuleArgs)
-                                                                                                                                                                                                                                                                                                                  End If
-                                                                                                                                                                                                                                                                                                                  Return New RuleMetadata(CInt(DPieces(1)) + CInt(DPieces(1)) + Vals(VerseCount)(3), CSByte(DPieces(2)), If(String.IsNullOrEmpty(DPieces(0)), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - DepRuleArgs.Count, .Length = CShort(DepRuleArgs.Count)}), CShort(DPieces(3)))
-                                                                                                                                                                                                                                                                                                              End Function).ToArray())
-
-                                                                                                           Dim Pieces As String() = Item.Substring(0, If(FirstLT = -1, Item.Length, FirstLT)).Split(";"c)
-                                                                                                           Dim RuleArgs As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs) = Nothing
-                                                                                                           If Not String.IsNullOrEmpty(Pieces(0)) Then
-                                                                                                               RuleArgs = Linq.Enumerable.Select(Pieces(0).Split("+"c), Function(S)
-                                                                                                                                                                            Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                            Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
-                                                                                                                                                                            If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                Outer = Linq.Enumerable.Select(M.Groups(1).Value.Split(New Char() {","c}), Function(InnerStr)
-                                                                                                                                                                                                                                                               Dim Inner As IEnumerable(Of Short) = Linq.Enumerable.Select(InnerStr.Split(" "c), Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)).ToArray()
-                                                                                                                                                                                                                                                               IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Inner)
-                                                                                                                                                                                                                                                               Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
-                                                                                                                                                                                                                                                           End Function)
-                                                                                                                                                                                IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
-                                                                                                                                                                            End If
-                                                                                                                                                                            Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
-                                                                                                                                                                        End Function)
-                                                                                                               IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(RuleArgs)
-                                                                                                           End If
-                                                                                                           Return New RuleMetadata(CInt(Pieces(1)), CSByte(Pieces(2)), If(String.IsNullOrEmpty(Pieces(0)), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - RuleArgs.Count, .Length = CShort(RuleArgs.Count)}), CShort(Pieces(3))) With {.Dependencies = CDep}
-                                                                                                       End Function).ToArray())
-                Dim Dep As RuleMetadata() = If(FirstCurlyBrace = -1, Nothing, Linq.Enumerable.Select(Deps, Function(Item)
-                                                                                                               Dim Pieces As String() = Item.Split(";"c)
-                                                                                                               Dim RuleArgs As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs) = Nothing
-                                                                                                               If Not String.IsNullOrEmpty(Pieces(0)) Then
-                                                                                                                   RuleArgs = Linq.Enumerable.Select(Pieces(0).Split("+"c), Function(S)
-                                                                                                                                                                                Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                                Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
-                                                                                                                                                                                If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                    Outer = Linq.Enumerable.Select(M.Groups(1).Value.Split(New Char() {","c}), Function(InnerStr)
-                                                                                                                                                                                                                                                                   Dim Inner As IEnumerable(Of Short) = Linq.Enumerable.Select(InnerStr.Split(" "c), Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)).ToArray()
-                                                                                                                                                                                                                                                                   IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Inner)
-                                                                                                                                                                                                                                                                   Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
-                                                                                                                                                                                                                                                               End Function)
-                                                                                                                                                                                    IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
-                                                                                                                                                                                End If
-                                                                                                                                                                                Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
-                                                                                                                                                                            End Function)
-                                                                                                                   IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(RuleArgs)
-                                                                                                               End If
-                                                                                                               Return New RuleMetadata(CInt(Pieces(1)) + IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(Pieces(2)), If(String.IsNullOrEmpty(Pieces(0)), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - RuleArgs.Count, .Length = CShort(RuleArgs.Count)}), CShort(Pieces(3)))
-                                                                                                           End Function).ToArray())
-                Rules.Add(New RuleMetadata(IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(Vals(VerseCount)(4)), KeyInd, CShort(Integer.Parse(KeyVal(2)))) With {.Children = Ch, .Dependencies = Dep})
-                PosDict.Add(Rules(Rules.Count - 1), Integer.Parse(KeyVal(1)))
+                Dim Ch As RuleMetadata() = If(FirstBrace = -1, Nothing, SelectSplit(Childs, "&"c, Function(Item)
+                                                                                                      Dim FirstLT As Integer = Item.IndexOf("<"c)
+                                                                                                      Dim CDep As RuleMetadata() = If(FirstLT = -1, Nothing, SelectSplit(KeyVal.Substring(KeyVal.IndexOf("<"c) + 1, KeyVal.IndexOf(">"c) - KeyVal.IndexOf("<"c) - 1), "^"c, Function(DItem)
+                                                                                                                                                                                                                                                                                QuadSplit(DItem, ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
+                                                                                                                                                                                                                                                                                If Not String.IsNullOrEmpty(NewType) Then
+                                                                                                                                                                                                                                                                                    IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, Function(S)
+                                                                                                                                                                                                                                                                                                                                                                                  Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                                                                                                                                                                                                                                                                                                                                                                                  Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
+                                                                                                                                                                                                                                                                                                                                                                                  If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                                                                                                                                                                                                                                                                                                                                                                                      Outer = SelectSplit(M.Groups(1).Value, ","c, Function(InnerStr)
+                                                                                                                                                                                                                                                                                                                                                                                                                                       Dim Inner As IEnumerable(Of Short) = SelectSplit(InnerStr, " "c, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)).ToArray()
+                                                                                                                                                                                                                                                                                                                                                                                                                                       IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Inner)
+                                                                                                                                                                                                                                                                                                                                                                                                                                       Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
+                                                                                                                                                                                                                                                                                                                                                                                                                                   End Function)
+                                                                                                                                                                                                                                                                                                                                                                                      IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
+                                                                                                                                                                                                                                                                                                                                                                                  End If
+                                                                                                                                                                                                                                                                                                                                                                                  Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
+                                                                                                                                                                                                                                                                                                                                                                              End Function))
+                                                                                                                                                                                                                                                                                End If
+                                                                                                                                                                                                                                                                                Return New RuleMetadata(CInt(NewIndex) * 2 + Vals(VerseCount)(3), CSByte(NewLength), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - DepRuleArgs.Count, .Length = CShort(DepRuleArgs.Count)}), CShort(NewOrigOrder))
+                                                                                                                                                                                                                                                                            End Function).ToArray())
+                                                                                                      QuadSplit(Item.Substring(0, If(FirstLT = -1, Item.Length, FirstLT)), ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
+                                                                                                      If Not String.IsNullOrEmpty(NewType) Then
+                                                                                                          IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, Function(S)
+                                                                                                                                                                                                        Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                                                                                                                                                                                                        Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
+                                                                                                                                                                                                        If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                                                                                                                                                                                                            Outer = SelectSplit(M.Groups(1).Value, ","c, Function(InnerStr)
+                                                                                                                                                                                                                                                             Dim Inner As IEnumerable(Of Short) = SelectSplit(InnerStr, " "c, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)).ToArray()
+                                                                                                                                                                                                                                                             IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Inner)
+                                                                                                                                                                                                                                                             Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
+                                                                                                                                                                                                                                                         End Function)
+                                                                                                                                                                                                            IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
+                                                                                                                                                                                                        End If
+                                                                                                                                                                                                        Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
+                                                                                                                                                                                                    End Function))
+                                                                                                      End If
+                                                                                                      Return New RuleMetadata(CInt(NewIndex), CSByte(NewLength), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - RuleArgs.Count, .Length = CShort(RuleArgs.Count)}), CShort(NewOrigOrder)) With {.Dependencies = CDep}
+                                                                                                  End Function).ToArray())
+                Dim Dep As RuleMetadata() = If(FirstCurlyBrace = -1, Nothing, SelectSplit(Deps, "&"c, Function(Item)
+                                                                                                          QuadSplit(Item, ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
+                                                                                                          If Not String.IsNullOrEmpty(NewType) Then
+                                                                                                              IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, Function(S)
+                                                                                                                                                                                                            Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                                                                                                                                                                                                            Dim Outer As IEnumerable(Of IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex) = Nothing
+                                                                                                                                                                                                            If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                                                                                                                                                                                                                Outer = SelectSplit(M.Groups(1).Value, ","c, Function(InnerStr)
+                                                                                                                                                                                                                                                                 Dim Inner As IEnumerable(Of Short) = SelectSplit(InnerStr, " "c, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)).ToArray()
+                                                                                                                                                                                                                                                                 IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Inner)
+                                                                                                                                                                                                                                                                 Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Inner.Count, .Length = CShort(Inner.Count)}
+                                                                                                                                                                                                                                                             End Function)
+                                                                                                                                                                                                                IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Outer)
+                                                                                                                                                                                                            End If
+                                                                                                                                                                                                            Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
+                                                                                                                                                                                                        End Function))
+                                                                                                          End If
+                                                                                                          Return New RuleMetadata(CInt(NewIndex) + IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(NewLength), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - RuleArgs.Count, .Length = CShort(RuleArgs.Count)}), CShort(NewOrigOrder))
+                                                                                                      End Function).ToArray())
+                Rules.Add(New RuleMetadata(IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(Vals(VerseCount)(4)), KeyInd, CShort(Integer.Parse(OrigOrder))) With {.Children = Ch, .Dependencies = Dep})
+                PosDict.Add(Rules(Rules.Count - 1), Integer.Parse(Offset))
             Next
         Next
         Rules.Sort(New RuleIndexComparer(PosDict))
@@ -1354,7 +1421,7 @@ Public Class Arabic
         Dim OffsetList As New List(Of Integer)
         Dim RecOffsetList As New List(Of List(Of Integer))
         While Index <= MetadataList.Count - 1
-            Dim OldLength As Integer = ArabicString.Length
+            'Dim OldLength As Integer = ArabicString.Length
             OffsetList.Add(ArabicString.Length)
             ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), LearningMode)
             If Not MetadataList(Index).Children Is Nothing Then
@@ -1656,7 +1723,7 @@ Public Class Arabic
         If Not Transforms Is Nothing AndAlso Transforms.Length <> 0 Then GetCatWord = New IslamData.GrammarSet.GrammarWord(Transforms(0))
     End Function
     Shared _NounIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarNoun))
-    Public ReadOnly Property NounIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarNoun))
+    Public Shared ReadOnly Property NounIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarNoun))
         Get
             Return _NounIDs
         End Get
@@ -1665,7 +1732,7 @@ Public Class Arabic
         Return If(NounIDs.ContainsKey(ID), NounIDs(ID).ToArray(), Nothing)
     End Function
     Shared _TransformIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarTransform))
-    Public ReadOnly Property TransformIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarTransform))
+    Public Shared ReadOnly Property TransformIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarTransform))
         Get
             Return _TransformIDs
         End Get
@@ -1679,7 +1746,7 @@ Public Class Arabic
         Return Linq.Enumerable.Where(Transforms(0), Function(Tr As IslamData.GrammarSet.GrammarTransform) Linq.Enumerable.All(Transforms, Function(Trs As IslamData.GrammarSet.GrammarTransform()) Array.IndexOf(Trs, Tr) <> -1)).ToArray()
     End Function
     Shared _ParticleIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarParticle))
-    Public ReadOnly Property ParticleIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarParticle))
+    Public Shared ReadOnly Property ParticleIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarParticle))
         Get
             Return _ParticleIDs
         End Get
@@ -1688,7 +1755,7 @@ Public Class Arabic
         Return If(ParticleIDs.ContainsKey(ID), ParticleIDs(ID).ToArray(), Nothing)
     End Function
     Shared _VerbIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarVerb))
-    Public ReadOnly Property VerbIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarVerb))
+    Public Shared ReadOnly Property VerbIDs As Dictionary(Of String, List(Of IslamData.GrammarSet.GrammarVerb))
         Get
             Return _VerbIDs
         End Get
@@ -2602,7 +2669,7 @@ Public Class CachedData
         ArbData = NewArbData
         Arb = NewArb
     End Sub
-    Public Async Function Init(Optional bRec As Boolean = False, Optional bHadith As Boolean = False) As Threading.Tasks.Task
+    Public Async Function Init(bWeb As Boolean, Optional bRec As Boolean = False, Optional bHadith As Boolean = False) As Threading.Tasks.Task
         If _ObjIslamData Is Nothing Then
             Dim fs As IO.Stream = Await _PortableMethods.FileIO.LoadStream(_PortableMethods.Settings.GetFilePath(_PortableMethods.FileIO.CombinePath("metadata", "islaminfo.xml")))
             Dim xs As Xml.Serialization.XmlSerializer = New Xml.Serialization.XmlSerializer(GetType(IslamData))
@@ -2709,7 +2776,7 @@ Public Class CachedData
         If _RecitationLetters Is Nothing Then _RecitationLetters = GetGroup("RecitationLetters")
         If _ArabicTrailingGutterals Is Nothing Then _ArabicTrailingGutterals = GetGroup("ArabicTrailingGutterals")
         If _RecitationSpecialSymbolsNotStop Is Nothing Then _RecitationSpecialSymbolsNotStop = GetGroup("RecitationSpecialSymbolsNotStop")
-        If Not bRec And (_CertainStopPattern Is Nothing Or _RuleMetas.Count = 0 Or _RuleTranslations.Count = 0) Then Await Arb.Init(Me)
+        If Not bRec And (_CertainStopPattern Is Nothing Or _RuleMetas.Count = 0 Or _RuleTranslations.Count = 0) Then Await Arb.Init(Me, bWeb)
         For Count = 0 To IslamData.ArabicPatterns.Length - 1
             'Recursive and may already add pattern
             If _SavedPatterns(IslamData.ArabicPatterns(Count).Name) Is Nothing Then _SavedPatterns(IslamData.ArabicPatterns(Count).Name) = TranslateRegEx(IslamData.ArabicPatterns(Count).Match, True)
@@ -2746,7 +2813,8 @@ Public Class CachedData
                 _RuleTranslations.Add(IslamData.RuleSets(Count).Name, GetRuleSet(IslamData.RuleSets(Count).Name))
             Next
         Else
-            _SavedPatterns = Nothing
+            'Desktop app optimization but website is still using the patterns...
+            If Not bWeb Then _SavedPatterns = Nothing
         End If
     End Function
     Private _ObjIslamData As IslamData
@@ -3038,7 +3106,7 @@ Public Class CachedData
         End Get
     End Property
     Public Function GetLetterCharacteristics(Ch As String) As String()
-        Dim ArticulationPoints As String() = {"NasalPassage", "TwoLips", "TwoLipsFromInside", "DeepestPartOfTongue", "UnderTheDeepestPartOfTongue", "EdgeOfTongue", "EdgeOfTongueLowestPart", "UnderTipOfTongue", "CloseToUnderTipOfTongueWithTop", "MiddleOfTongue", "TipOfTongueLetters", "ElevatedGumLetters", "GumLetters", "DeepestPartOfThroat", "MiddleOfThroat", "ClosestPartOfThroat", "ChestInterior"} '"TipLetters"
+        'Dim ArticulationPoints As String() = {"NasalPassage", "TwoLips", "TwoLipsFromInside", "DeepestPartOfTongue", "UnderTheDeepestPartOfTongue", "EdgeOfTongue", "EdgeOfTongueLowestPart", "UnderTipOfTongue", "CloseToUnderTipOfTongueWithTop", "MiddleOfTongue", "TipOfTongueLetters", "ElevatedGumLetters", "GumLetters", "DeepestPartOfThroat", "MiddleOfThroat", "ClosestPartOfThroat", "ChestInterior"} '"TipLetters"
         Dim Characteristics As String() = {"Audibility", "Whispering", "Weakness", "Moderation", "Strength", "Lowness", "Elevation", "Opening", "Closing", "Restraint", "Fluency", "Vibration", "Inclination", "Repetition", "Whistling", "Diffusion", "Elongation", "Nasal", "Ease"}
         Dim Matches As New List(Of String)
         For Count = 0 To Characteristics.Length - 1
@@ -3272,6 +3340,8 @@ Public Class CachedData
     End Property
     Public ReadOnly Property RuleTranslations(Name As String) As IslamData.RuleTranslationCategory.RuleTranslation()
         Get
+            If Name = "ColoringRules" Then Return Nothing 'IslamData.ColorRuleSets(0).ColorRules.Select(Of …)(Function(cr As IslamData.ColorRuleCategory.ColorRule) New IslamData.RuleTranslationCategory.RuleTranslation() With {.)
+            If Name = "ColoringSpelledOutRules" Then Return Nothing 'IslamData.ColorRuleSets(1).ColorRules
             Return _RuleTranslations(Name)
         End Get
     End Property
@@ -3490,12 +3560,12 @@ Public Class CachedData
     Public MorphLines As String()
     Public Function GetWritingHamza(StrBefore As String, StrAfter As String, bUthmani As Boolean) As String
         Dim Rules As IslamData.RuleTranslationCategory.RuleTranslation() = GetRuleSet(If(bUthmani, "HamzaWriting", "SimpleScriptHamzaWriting"))
-        Dim IndexToVerse As Integer()() = Nothing
+        'Dim IndexToVerse As Integer()() = Nothing
         Dim Text As String = StrBefore + ArabicData.ArabicLetterHamza + StrAfter
         Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Text, GetPattern("Hamzas"))
         For MainCount = 0 To Rules.Length - 1
             Matches = System.Text.RegularExpressions.Regex.Matches(Text, Rules(MainCount).Match)
-            Dim NegativeCount As Integer = 0
+            'Dim NegativeCount As Integer = 0
             For Count = 0 To Matches.Count - 1
                 If Rules(MainCount).NegativeMatch <> String.Empty AndAlso Matches(Count).Result(Rules(MainCount).NegativeMatch) <> String.Empty Then
                 ElseIf Matches(Count).Groups(2 + If(Rules(MainCount).NegativeMatch <> String.Empty, 1, 0)).Index = StrBefore.Length Then
@@ -4013,7 +4083,7 @@ Public Class CachedData
             Dict = NewDict
             VerbExceptionsTable = VET
         End Sub
-        Public Function ScaleComp(x As ScaleRef(), y As ScaleRef()) As Integer
+        Public Shared Function ScaleComp(x As ScaleRef(), y As ScaleRef()) As Integer
             If x(0).Scale = y(0).Scale Then Return If(x(1).Scale = Nothing, String.Empty, x(1).Scale).CompareTo(If(y(1).Scale = Nothing, String.Empty, y(1).Scale))
             Return If(x(0).Scale = Nothing, String.Empty, x(0).Scale).CompareTo(If(y(0).Scale = Nothing, String.Empty, y(0).Scale))
         End Function
@@ -4794,7 +4864,7 @@ Public Class DocBuilder
             Dim Words As IslamData.GrammarSet.GrammarNoun()
             Dim SelArr As String()
             If Strings.StartsWith("proximaldemonstratives") Then
-                Words = Arb.GetCatNoun("proxdemo")
+                'Words = Arb.GetCatNoun("proxdemo")
                 SelArr = Strings.Replace("proximaldemonstratives:", String.Empty).Split(","c)
             ElseIf Strings.StartsWith("distaldemonstratives") Then
                 Words = Arb.GetCatNoun("distdemo")
@@ -4807,14 +4877,14 @@ Public Class DocBuilder
                 SelArr = Nothing
             End If
             For Count = 0 To SelArr.Length - 1
-                Dim S As String = SelArr(Count)
+                'Dim S As String = SelArr(Count)
                 'If Words Is Nothing OrElse Linq.Enumerable.TakeWhile(Words, Function(Word As IslamData.GrammarSet.GrammarNoun) S <> Word.TranslationID).Count() = Words.Length Then Debug.Print("Noun Subject ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("plurals:") Or Strings.StartsWith("possessivedeterminerpersonalpronoun:") Then
             Dim Words As IslamData.GrammarSet.GrammarTransform()
             Dim SelArr As String()
             If Strings.StartsWith("plurals") Then
-                Words = Arb.GetTransform("mp|fp|bp")
+                'Words = Arb.GetTransform("mp|fp|bp")
                 SelArr = Strings.Replace("plurals:", String.Empty).Split(","c)
             ElseIf Strings.StartsWith("possessivedeterminerpersonalpronoun") Then
                 Words = Arb.GetTransform("posspron")
@@ -4824,7 +4894,7 @@ Public Class DocBuilder
                 SelArr = Nothing
             End If
             For Count = 0 To SelArr.Length - 1
-                Dim S As String = SelArr(Count)
+                'Dim S As String = SelArr(Count)
                 'If Words Is Nothing OrElse Linq.Enumerable.TakeWhile(Words, Function(Word As IslamData.GrammarSet.GrammarTransform) S <> Word.TranslationID).Count() = Words.Length Then Debug.Print("Transform Subject ID Not Found: " + SelArr(Count))
             Next
         ElseIf Strings.StartsWith("particle:") Then
@@ -5011,7 +5081,7 @@ Public Class TanzilReader
             Path = _PortableMethods.FileIO.CombinePath(Await _PortableMethods.DiskCache.GetCacheDirectory(), "QuranTajweedData.txt")
             If Not Await _PortableMethods.FileIO.PathExists(Path) Then Return Await MakeQuranCacheMetarules()
         End If
-        Return Arb.GetCacheMetarules(Await _PortableMethods.ReadAllLines(Path), _IndexToVerse)
+        Return Arabic.GetCacheMetarules(Await _PortableMethods.ReadAllLines(Path), _IndexToVerse)
     End Function
     Public Function GetDivisionTypes() As String()
         Return Linq.Enumerable.Select(ChData.IslamData.QuranDivisions, Function(Convert As IslamData.QuranDivision) _PortableMethods.LoadResourceString("IslamInfo_" + Convert.Description)).ToArray()
@@ -6523,7 +6593,7 @@ Public Class TanzilReader
         Next
     End Sub
     'maintaining begining based indexing and no previous word
-    Public Function QuranTextFilter(QuranText As String, ByRef IndexToVerse As Integer()(), Optional StartChapter As Integer = -1, Optional BaseVerse As Integer = -1, Optional WordNumber As Integer = -1, Optional EndChapter As Integer = -1, Optional ExtraVerseNumber As Integer = -1, Optional EndWordNumber As Integer = -1) As String
+    Public Shared Function QuranTextFilter(QuranText As String, ByRef IndexToVerse As Integer()(), Optional StartChapter As Integer = -1, Optional BaseVerse As Integer = -1, Optional WordNumber As Integer = -1, Optional EndChapter As Integer = -1, Optional ExtraVerseNumber As Integer = -1, Optional EndWordNumber As Integer = -1) As String
         Dim Idx As Integer = Array.BinarySearch(IndexToVerse, New Integer() {If(StartChapter < 1, 1, StartChapter), If(BaseVerse = -1, 1, BaseVerse), If(WordNumber < 1, 1, WordNumber)}, New QuranWordChapterVerseWordComparer(False))
         Dim EndIdx As Integer = Idx + 1
         Do While EndIdx < IndexToVerse.Length AndAlso (If(EndChapter = -1, True, IndexToVerse(EndIdx)(0) <= EndChapter) And If(ExtraVerseNumber = -1, True, IndexToVerse(EndIdx)(1) <= ExtraVerseNumber) And If(EndWordNumber = -1, True, IndexToVerse(EndIdx)(2) <= EndWordNumber))
@@ -6825,11 +6895,15 @@ Public Class TanzilReader
         Implements IComparer(Of Object)
         Public Function Compare(x As Object, y As Object) As Integer Implements IComparer(Of Object).Compare
             If TypeOf x Is Integer() Then
-                If CInt(y) >= CType(x, Integer())(3) And CInt(y) < (CType(x, Integer())(3) + CType(x, Integer())(4)) Then Return 0
-                Return If(CInt(y) < CType(x, Integer())(3), 1, -1)
+                Dim xa As Integer() = CType(x, Integer())
+                Dim yi As Integer = CInt(y)
+                If yi >= xa(3) And yi < (xa(3) + xa(4)) Then Return 0
+                Return If(yi < xa(3), 1, -1)
             Else
-                If CInt(x) >= CType(y, Integer())(3) And CInt(x) < (CType(y, Integer())(3) + CType(y, Integer())(4)) Then Return 0
-                Return If(CInt(x) < CType(y, Integer())(3), 1, -1)
+                Dim ya As Integer() = CType(y, Integer())
+                Dim xi As Integer = CInt(x)
+                If xi >= ya(3) And xi < (ya(3) + ya(4)) Then Return 0
+                Return If(xi < ya(3), 1, -1)
             End If
         End Function
     End Class
@@ -6841,7 +6915,7 @@ Public Class TanzilReader
         Dim TranslationIndex As Integer = GetTranslationIndex(QuranTranslation)
         Return Await GetQuranTextBySelection(Name, Division, Index, If(TranslationIndex = -1, String.Empty, ChData.IslamData.Translations.TranslationList(TranslationIndex).FileName), SchemeType, Scheme, TranslationIndex, CInt(WordVerseMode) <> 4, CInt(WordVerseMode) Mod 2 = 1, False, True, False, CInt(ColorCueMode) = 0, CInt(WordVerseMode) / 2 <> 1)
     End Function
-    Public Function GenerateDefaultStops(Str As String, IndexToVerse As Integer()()) As Integer()
+    Public Shared Function GenerateDefaultStops(Str As String, IndexToVerse As Integer()()) As Integer()
         'Dim Matches As System.Text.RegularExpressions.MatchCollection = System.Text.RegularExpressions.Regex.Matches(Str, "(^\s*|\s+)(" + ArabicData.MakeUniRegEx(ArabicData.ArabicEndOfAyah) + "[\p{Nd}]{1,3}|" + ChData.OptionalPattern + ")(?=\s*$|\s+)")
         Dim DefStops As New List(Of Integer)
         DefStops.Add(-1)

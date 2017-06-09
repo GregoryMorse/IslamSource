@@ -121,7 +121,7 @@ Partial Class Page
             End If
         ElseIf Not UsePrint And (PageLoader.IsButtonItem(Item)) Then
             If Not DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction Is Nothing Then
-                Dim Obj As Object = DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(New Object() {Item})
+                Dim Obj As Object = DirectCast(Item, PageLoader.ButtonItem).OnRenderFunction.Invoke(New Object() {Item, Context})
                 If UtilityWeb.IsTask(Obj) Then
                     AsyncDict.Add(IndexString + "." + CStr(Idx) + "::OnRenderFunction", Await CType(Obj, Threading.Tasks.Task(Of String)))
                 Else
@@ -140,7 +140,7 @@ Partial Class Page
             If (DirectCast(Item, PageLoader.TextItem).URL <> String.Empty) Then
                 If (DirectCast(Item, PageLoader.TextItem).ImageURL <> String.Empty) Then
                     Dim Text As String = "Image.gif&Image=Thumb&p=" + IndexString + "." + DirectCast(Item, PageLoader.TextItem).Name
-                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::GetThumbSizeFromURL", Await CType(UWeb.GetThumbSizeFromURL(DirectCast(Item, PageLoader.TextItem).ImageURL, HttpContext.Current.Request.Url.Host + "_" + Text, 121), Threading.Tasks.Task(Of SizeF)))
+                    AsyncDict.Add(IndexString + "." + CStr(Idx) + "::GetThumbSizeFromURL", Await CType(UWeb.GetThumbSizeFromURL(DirectCast(Item, PageLoader.TextItem).ImageURL, Context.Request.Url.Host + "_" + Text, 121), Threading.Tasks.Task(Of SizeF)))
                 End If
             End If
             If Not DirectCast(Item, PageLoader.TextItem).OnRenderFunction Is Nothing Then
