@@ -1168,18 +1168,20 @@ Public Class Arabic
             Dim FirstCurlyBrace As Integer = KeyVal.IndexOf("{"c)
             Deps = If(FirstCurlyBrace = -1, Nothing, KeyVal.Substring(FirstCurlyBrace + 1, KeyVal.IndexOf("}"c) - FirstCurlyBrace - 1))
             TempCount = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
-            IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(KeyVal.Substring(0, Math.Min(If(FirstBrace = -1, KeyVal.Length, FirstBrace), If(FirstCurlyBrace = -1, KeyVal.Length, FirstCurlyBrace))), "|"c, sepList, Function(S)
-                                                                                                                                                                                                                                                   Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                                                                                                   TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                                                                                                                                                                                                                                                   If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                                                                                       IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListIn, Function(InnerStr)
-                                                                                                                                                                                                                                                                                                                                                                       TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
-                                                                                                                                                                                                                                                                                                                                                                       IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
-                                                                                                                                                                                                                                                                                                                                                                       Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
-                                                                                                                                                                                                                                                                                                                                                                   End Function))
-                                                                                                                                                                                                                                                   End If
-                                                                                                                                                                                                                                                   Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
-                                                                                                                                                                                                                                               End Function))
+            IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(KeyVal.Substring(0, Math.Min(If(FirstBrace = -1, KeyVal.Length, FirstBrace), If(FirstCurlyBrace = -1, KeyVal.Length, FirstCurlyBrace))), "|"c, sepList,
+                Function(S)
+                    Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                    TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
+                    If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                        IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListIn,
+                            Function(InnerStr)
+                                TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
+                                IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
+                                Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
+                            End Function))
+                    End If
+                    Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
+                End Function))
             Dim KeyInd As New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}
             Dim Vals As Integer()() = SelectSplit(Value, ","c, sepList, Function(Item) If(Item Is Nothing Or Item = String.Empty, {}, SelectSplit(Item, ":"c, sepListIn, Function(Frag) IntParseFast(Frag))))
             Dim VerseCount As Integer
@@ -1189,64 +1191,73 @@ Public Class Arabic
                 While IndexToVerse(Idx)(6) <> 0
                     Idx -= 1
                 End While
-                Dim Ch As RuleMetadata() = If(FirstBrace = -1, Nothing, SelectSplit(Childs, "&"c, sepList, Function(Item)
-                                                                                                               Dim FirstLT As Integer = Item.IndexOf("<"c)
-                                                                                                               Dim CDep As RuleMetadata() = If(FirstLT = -1, Nothing, SelectSplit(KeyVal.Substring(KeyVal.IndexOf("<"c) + 1, KeyVal.IndexOf(">"c) - KeyVal.IndexOf("<"c) - 1), "^"c, sepListIn, Function(DItem)
-                                                                                                                                                                                                                                                                                                    QuadSplit(DItem, ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
-                                                                                                                                                                                                                                                                                                    TempCount = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
-                                                                                                                                                                                                                                                                                                    If Not String.IsNullOrEmpty(NewType) Then
-                                                                                                                                                                                                                                                                                                        IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, sepListInIn, Function(S)
-                                                                                                                                                                                                                                                                                                                                                                                                                   Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                                                                                                                                                                                                                                                                   TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                                                                                                                                                                                                                                                                                                                                                                                                                   If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                                                                                                                                                                                                                                                       IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListInInIn, Function(InnerStr)
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInInInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       End Function))
-                                                                                                                                                                                                                                                                                                                                                                                                                   End If
-                                                                                                                                                                                                                                                                                                                                                                                                                   Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
-                                                                                                                                                                                                                                                                                                                                                                                                               End Function))
-                                                                                                                                                                                                                                                                                                    End If
-                                                                                                                                                                                                                                                                                                    Return New RuleMetadata(IntParseFast(NewIndex) * 2 + Vals(VerseCount)(3), CSByte(IntParseFast(NewLength)), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}), CShort(IntParseFast(NewOrigOrder)))
-                                                                                                                                                                                                                                                                                                End Function))
-                                                                                                               QuadSplit(Item.Substring(0, If(FirstLT = -1, Item.Length, FirstLT)), ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
-                                                                                                               TempCount = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
-                                                                                                               If Not String.IsNullOrEmpty(NewType) Then
-                                                                                                                   IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, sepListIn, Function(S)
-                                                                                                                                                                                                                            Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                                                                            TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                                                                                                                                                                                                                            If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                                                                IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListInIn, Function(InnerStr)
-                                                                                                                                                                                                                                                                                                                                                  TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
-                                                                                                                                                                                                                                                                                                                                                  IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
-                                                                                                                                                                                                                                                                                                                                                  Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
-                                                                                                                                                                                                                                                                                                                                              End Function))
-                                                                                                                                                                                                                            End If
-                                                                                                                                                                                                                            Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
-                                                                                                                                                                                                                        End Function))
-                                                                                                               End If
-                                                                                                               Return New RuleMetadata(IntParseFast(NewIndex), CSByte(IntParseFast(NewLength)), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}), CShort(IntParseFast(NewOrigOrder))) With {.Dependencies = CDep}
-                                                                                                           End Function))
-                Dim Dep As RuleMetadata() = If(FirstCurlyBrace = -1, Nothing, SelectSplit(Deps, "&"c, sepList, Function(Item)
-                                                                                                                   QuadSplit(Item, ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
-                                                                                                                   TempCount = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
-                                                                                                                   If Not String.IsNullOrEmpty(NewType) Then
-                                                                                                                       IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, sepListIn, Function(S)
-                                                                                                                                                                                                                                Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
-                                                                                                                                                                                                                                TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                                                                                                                                                                                                                                If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
-                                                                                                                                                                                                                                    IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListInIn, Function(InnerStr)
-                                                                                                                                                                                                                                                                                                                                                      TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
-                                                                                                                                                                                                                                                                                                                                                      IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
-                                                                                                                                                                                                                                                                                                                                                      Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
-                                                                                                                                                                                                                                                                                                                                                  End Function))
-                                                                                                                                                                                                                                End If
-                                                                                                                                                                                                                                Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
-                                                                                                                                                                                                                            End Function))
-                                                                                                                   End If
-                                                                                                                   Return New RuleMetadata(IntParseFast(NewIndex) + IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(IntParseFast(NewLength)), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}), CShort(IntParseFast(NewOrigOrder)))
-                                                                                                               End Function))
+                Dim Ch As RuleMetadata() = If(FirstBrace = -1, Nothing, SelectSplit(Childs, "&"c, sepList,
+                    Function(Item)
+                        Dim FirstLT As Integer = Item.IndexOf("<"c)
+                        Dim CDep As RuleMetadata() = If(FirstLT = -1, Nothing, SelectSplit(KeyVal.Substring(KeyVal.IndexOf("<"c) + 1, KeyVal.IndexOf(">"c) - KeyVal.IndexOf("<"c) - 1), "^"c, sepListIn,
+                            Function(DItem)
+                                QuadSplit(DItem, ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
+                                TempCount = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
+                                If Not String.IsNullOrEmpty(NewType) Then
+                                    IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, sepListInIn,
+                                        Function(S)
+                                            Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                                            TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
+                                            If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                                                IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListInInIn,
+                                                    Function(InnerStr)
+                                                        TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
+                                                        IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInInInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
+                                                        Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
+                                                    End Function))
+                                            End If
+                                            Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
+                                        End Function))
+                                End If
+                                Return New RuleMetadata(IntParseFast(NewIndex) * 2 + Vals(VerseCount)(3), CSByte(IntParseFast(NewLength)), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}), CShort(IntParseFast(NewOrigOrder)))
+                            End Function))
+                        QuadSplit(Item.Substring(0, If(FirstLT = -1, Item.Length, FirstLT)), ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
+                        TempCount = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
+                        If Not String.IsNullOrEmpty(NewType) Then
+                            IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, sepListIn,
+                                Function(S)
+                                    Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                                    TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
+                                    If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                                        IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListInIn,
+                                            Function(InnerStr)
+                                                TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
+                                                IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
+                                                Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
+                                            End Function))
+                                    End If
+                                    Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
+                                End Function))
+                        End If
+                        Return New RuleMetadata(IntParseFast(NewIndex), CSByte(IntParseFast(NewLength)), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}), CShort(IntParseFast(NewOrigOrder))) With {.Dependencies = CDep}
+                    End Function))
+                Dim Dep As RuleMetadata() = If(FirstCurlyBrace = -1, Nothing, SelectSplit(Deps, "&"c, sepList,
+                    Function(Item)
+                        QuadSplit(Item, ";"c, NewType, NewIndex, NewLength, NewOrigOrder)
+                        TempCount = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
+                        If Not String.IsNullOrEmpty(NewType) Then
+                            IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(SelectSplit(NewType, "+"c, sepListIn,
+                                Function(S)
+                                    Dim M As System.Text.RegularExpressions.Match = ArgRegEx.Match(S)
+                                    TempOuterCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
+                                    If M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value) Then
+                                        IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(SelectSplit(M.Groups(1).Value, ","c, sepListInIn,
+                                            Function(InnerStr)
+                                                TempInnerCount = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count
+                                                IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(SelectSplit(InnerStr, " "c, sepListInInIn, Function(St) IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(St)))
+                                                Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempInnerCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - TempInnerCount)}
+                                            End Function))
+                                    End If
+                                    Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = IslamData.RuleMetaSet.RuleMetadataTranslation.GetStringIndex(ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success AndAlso Not String.IsNullOrEmpty(M.Groups(1).Value), New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempOuterCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - TempOuterCount)}, Nothing)}
+                                End Function))
+                        End If
+                        Return New RuleMetadata(IntParseFast(NewIndex) + IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(IntParseFast(NewLength)), If(String.IsNullOrEmpty(NewType), Nothing, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = TempCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - TempCount)}), CShort(IntParseFast(NewOrigOrder)))
+                    End Function))
                 Rules.Add(New RuleMetadata(IndexToVerse(Idx)(3) + Vals(VerseCount)(3), CSByte(Vals(VerseCount)(4)), KeyInd, CShort(IntParseFast(OrigOrder))) With {.Children = Ch, .Dependencies = Dep})
                 PosDict.Add(Rules(Rules.Count - 1), Integer.Parse(Offset))
             Next
@@ -1360,19 +1371,22 @@ Public Class Arabic
         MetadataList.Sort(New RuleMetadataComparer)
         Dim Index As Integer = 0
         Dim RemoveIndexes As List(Of Integer) = Linq.Enumerable.Range(0, MetadataList.Count).ToList()
+        Dim SecondRule As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
+        Dim FirstUpdate As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
+        Dim ArgList As New List(Of Short())
         While Index <= MetadataList.Count - 1
             Do While Index <> MetadataList.Count - 1 AndAlso MetadataList(Index).Index = MetadataList(Index + 1).Index AndAlso MetadataList(Index).Length = MetadataList(Index + 1).Length AndAlso CompareRuleMetadata(MetadataList(Index).Dependencies, MetadataList(Index + 1).Dependencies) AndAlso CompareRuleMetadata(MetadataList(Index).Children, MetadataList(Index + 1).Children)
                 Dim FirstRule As IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs() = MetadataList(Index).Type
-                Dim SecondRule As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
+                SecondRule.Clear()
                 SecondRule.AddRange(MetadataList(Index + 1).Type)
-                Dim FirstUpdate As New List(Of IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
+                FirstUpdate.Clear()
                 For FirstIndex As Integer = 0 To FirstRule.Length - 1
                     Dim SecondIndex As Integer
                     For SecondIndex = 0 To SecondRule.Count - 1
                         If FirstRule(FirstIndex).RuleName = SecondRule(SecondIndex).RuleName And Not FirstRule(FirstIndex).Args Is Nothing Then
                             Dim Matches As Short()() = FirstRule(FirstIndex).Args
                             If Matches.Length <> 1 Then
-                                Dim ArgList As New List(Of Short())
+                                ArgList.Clear()
                                 For Count = 0 To Matches.Length - 1
                                     ArgList.Add(Linq.Enumerable.Concat(Matches(Count), SecondRule(SecondIndex).Args(Count)).ToArray())
                                 Next
@@ -2352,26 +2366,35 @@ Public Class IslamData
             Public _SplitEvaluator As BeginEndIndex
             ReadOnly Property Evaluator As BeginEndIndex
                 Get
+                    Dim sepList As List(Of Integer) = New List(Of Integer)
+                    Dim sepListIn As List(Of Integer) = New List(Of Integer)
+                    Dim sepListInIn As List(Of Integer) = New List(Of Integer)
+                    Dim sepListInInIn As List(Of Integer) = New List(Of Integer)
                     If _SplitEvaluator Is Nothing And Not _Evaluator Is Nothing Then
-                        Dim TopArr As IEnumerable(Of BeginEndIndex) = Linq.Enumerable.Select(_Evaluator.Split(";"c), Function(Str)
-                                                                                                                         Dim Arr As IEnumerable(Of RuleWithArgs) = Linq.Enumerable.Select(Str.Split("|"c), Function(S)
-                                                                                                                                                                                                               Dim M As System.Text.RegularExpressions.Match = Arabic.ArgRegEx.Match(S)
-                                                                                                                                                                                                               Dim Outer As IEnumerable(Of BeginEndIndex) = Nothing
-                                                                                                                                                                                                               If M.Success Then
-                                                                                                                                                                                                                   Outer = Linq.Enumerable.Select(M.Groups(1).Value.Split(","c), Function(InnerStr)
-                                                                                                                                                                                                                                                                                     Dim A As IEnumerable(Of Short) = Linq.Enumerable.Select(InnerStr.Split(" "c), Function(St) GetStringIndex(St))
-                                                                                                                                                                                                                                                                                     Strs.AddRange(A)
-                                                                                                                                                                                                                                                                                     Return New BeginEndIndex With {.Index = Strs.Count - A.Count, .Length = CShort(A.Count)}
-                                                                                                                                                                                                                                                                                 End Function)
-                                                                                                                                                                                                                   Args.AddRange(Outer)
-                                                                                                                                                                                                               End If
-                                                                                                                                                                                                               Return New RuleWithArgs With {.RuleName = GetStringIndex(Arabic.ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success, New BeginEndIndex() With {.Index = Args.Count - Outer.Count, .Length = CShort(Outer.Count)}, Nothing)}
-                                                                                                                                                                                                           End Function)
-                                                                                                                         AllArgs.AddRange(Arr)
-                                                                                                                         Return New BeginEndIndex With {.Index = AllArgs.Count - Arr.Count, .Length = CShort(Arr.Count)}
-                                                                                                                     End Function)
-                        RulesWithArgs.AddRange(TopArr)
-                        _SplitEvaluator = New BeginEndIndex With {.Index = RulesWithArgs.Count - TopArr.Count, .Length = CShort(TopArr.Count)}
+                        Dim TopCount As Integer = RulesWithArgs.Count
+                        Dim ArrCount As Integer
+                        Dim OuterCount As Integer
+                        Dim InnerCount As Integer
+                        RulesWithArgs.AddRange(Arabic.SelectSplit(_Evaluator, ";"c, sepList,
+                            Function(Str)
+                                ArrCount = AllArgs.Count
+                                AllArgs.AddRange(Arabic.SelectSplit(Str, "|"c, sepListIn,
+                                    Function(S)
+                                        Dim M As System.Text.RegularExpressions.Match = Arabic.ArgRegEx.Match(S)
+                                        OuterCount = Args.Count
+                                        If M.Success Then
+                                            Args.AddRange(Arabic.SelectSplit(M.Groups(1).Value, ","c, sepListInIn,
+                                                Function(InnerStr)
+                                                    InnerCount = Strs.Count
+                                                    Strs.AddRange(Arabic.SelectSplit(InnerStr, " "c, sepListInInIn, Function(St) GetStringIndex(St)))
+                                                    Return New BeginEndIndex With {.Index = InnerCount, .Length = CShort(Strs.Count - InnerCount)}
+                                                End Function))
+                                        End If
+                                        Return New RuleWithArgs With {.RuleName = GetStringIndex(Arabic.ItRegEx.Replace(S, String.Empty)), .Args = If(M.Success, New BeginEndIndex() With {.Index = OuterCount, .Length = CShort(Args.Count - OuterCount)}, Nothing)}
+                                    End Function))
+                                Return New BeginEndIndex With {.Index = ArrCount, .Length = CShort(AllArgs.Count - ArrCount)}
+                            End Function))
+                        _SplitEvaluator = New BeginEndIndex With {.Index = TopCount, .Length = CShort(RulesWithArgs.Count - TopCount)}
                     End If
                     Return _SplitEvaluator
                 End Get
@@ -2395,7 +2418,7 @@ Public Class IslamData
                 Dim StopIndexes As New List(Of Integer)
                 Dim NotStopIndexes As New List(Of Integer)
                 For Count = 0 To Evaluator.Length - 1
-                    Dim EvaluatorParts As RuleWithArgs() = AllArgs.GetRange(RulesWithArgs(Evaluator.Index + Count).Index, RulesWithArgs(Evaluator.Index + Count).Length).ToArray()
+                    Dim EvaluatorParts As List(Of RuleWithArgs) = AllArgs.GetRange(RulesWithArgs(Evaluator.Index + Count).Index, RulesWithArgs(Evaluator.Index + Count).Length)
                     If Linq.Enumerable.Any(EvaluatorParts, Function(RuleWithArgs) RuleWithArgs.RuleName = GetStringIndex("optionalstop")) Then StopIndexes.Add(Count)
                     If Linq.Enumerable.Any(EvaluatorParts, Function(RuleWithArgs) RuleWithArgs.RuleName = GetStringIndex("optionalnotstop")) Then NotStopIndexes.Add(Count)
                 Next
