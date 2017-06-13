@@ -308,7 +308,8 @@ public class AndroidiOSFileIO : XMLRender.PortableFileIO
     }
     public async System.Threading.Tasks.Task<bool> PathExists(string Path)
     {
-        return Directory.Exists(Path);
+        return Directory.Exists(Path) ||
+            ((IslamSourceQuranViewer.Xam.Droid.MainActivity)global::Xamarin.Forms.Forms.Context).Assets.List(System.IO.Path.GetDirectoryName(Path.Trim('/'))).Contains(System.IO.Path.GetFileName(Path.Trim('/')));
     }
     public async System.Threading.Tasks.Task CreateDirectory(string Path)
     {
@@ -365,7 +366,8 @@ public class AndroidiOSSettings : XMLRender.PortableSettings
     }
     public string GetResourceString(string baseName, string resourceKey)
     {
-        return new System.Resources.ResourceManager(baseName + ".Resources", System.Reflection.Assembly.Load(baseName)).GetString(resourceKey, System.Threading.Thread.CurrentThread.CurrentUICulture);
+        System.Resources.ResourceManager rm = new System.Resources.ResourceManager(baseName + ".Resources", System.Reflection.Assembly.Load(baseName));
+        return rm.GetString(resourceKey, System.Threading.Thread.CurrentThread.CurrentUICulture);
     }
 }
 #endif
@@ -1103,14 +1105,14 @@ using Android.Graphics;
         public static bool ContainsKey(string Key) { return Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey(Key); }
         public static object GetValue(string Key) { return Windows.Storage.ApplicationData.Current.LocalSettings.Values[Key]; }
         public static void SetValue(string Key, object Value) { Windows.Storage.ApplicationData.Current.LocalSettings.Values[Key] = Value; }
-#elif WINDOWS_PHONE
+/*#elif WINDOWS_PHONE
         public static bool ContainsKey(string Key) { return false; }
         public static object GetValue(string Key) { return null; }
-        public static void SetValue(string Key, object Value) { }
+        public static void SetValue(string Key, object Value) { }*/
 #else
-        public static bool ContainsKey(string Key) { return false; }
-        public static object GetValue(string Key) { return null; }
-        public static void SetValue(string Key, object Value) { }
+        public static bool ContainsKey(string Key) { return string.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault<string>(Key)); }
+        public static T GetValue<T>(string Key) { return Plugin.Settings.CrossSettings.Current.GetValueOrDefault<T>(Key); }
+        public static void SetValue(string Key, object Value) { Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Key, Value); }
 #endif
         public AppSettings() { }
         public async static System.Threading.Tasks.Task InitDefaultSettings()
@@ -1196,7 +1198,7 @@ using Android.Graphics;
                 LoopingMode = AppSettings.ChData.IslamData.LoopingModeList.DefaultLoopingMode;
             }
         }
-        public static string LoopingMode { get { return (string)GetValue("LoopingMode"); } set { SetValue("LoopingMode", value); } }
+        public static string LoopingMode { get { return GetValue<string>("LoopingMode"); } set { SetValue("LoopingMode", value); } }
         public List<ComboPair> LoopingTypes
         {
             get
@@ -1204,25 +1206,25 @@ using Android.Graphics;
                 return new List<ComboPair>(AppSettings.ChData.IslamData.LoopingModeList.LoopingModes.Select((Mode) => { return new ComboPair() { KeyString = Mode.Name, ValueString = AppSettings._PortableMethods.LoadResourceString("IslamInfo_" + Mode.Name) }; }));
             }
         }
-        public static bool bAutomaticAdvanceVerse { get { return (bool)GetValue("AutomaticAdvanceVerse"); } set { SetValue("AutomaticAdvanceVerse", value); } }
+        public static bool bAutomaticAdvanceVerse { get { return GetValue<bool>("AutomaticAdvanceVerse"); } set { SetValue("AutomaticAdvanceVerse", value); } }
         public bool AutomaticAdvanceVerse { get { return bAutomaticAdvanceVerse; } set { bAutomaticAdvanceVerse = value; } }
-        public static bool bDelayVerseLengthBeforeAdvancing { get { return (bool)GetValue("DelayVerseLengthBeforeAdvancing"); } set { SetValue("DelayVerseLengthBeforeAdvancing", value); } }
+        public static bool bDelayVerseLengthBeforeAdvancing { get { return GetValue<bool>("DelayVerseLengthBeforeAdvancing"); } set { SetValue("DelayVerseLengthBeforeAdvancing", value); } }
         public bool DelayVerseLengthBeforeAdvancing { get { return bDelayVerseLengthBeforeAdvancing; } set { bDelayVerseLengthBeforeAdvancing = value; } }
-        public static int iAdditionalVerseAdvanceDelay { get { return (int)GetValue("AdditionalVerseAdvanceDelay"); } set { SetValue("AdditionalVerseAdvanceDelay", value); } }
+        public static int iAdditionalVerseAdvanceDelay { get { return GetValue<int>("AdditionalVerseAdvanceDelay"); } set { SetValue("AdditionalVerseAdvanceDelay", value); } }
         public string AdditionalVerseAdvanceDelay { get { return iAdditionalVerseAdvanceDelay.ToString(); } set { if (value != null) { iAdditionalVerseAdvanceDelay = int.Parse(value); } } }
-        public static int iDefaultStartTab { get { return (int)GetValue("DefaultStartTab"); } set { SetValue("DefaultStartTab", value); } }
-        public static int[][] Bookmarks { get { return !((string)GetValue("Bookmarks")).Contains(',') ? new int[][] { } : System.Linq.Enumerable.Select(((string)GetValue("Bookmarks")).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { SetValue("Bookmarks", string.Join("|", System.Linq.Enumerable.Select(value, (Bookmark) => string.Join(",", System.Linq.Enumerable.Select(Bookmark, (Mark) => Mark.ToString()))))); } }
+        public static int iDefaultStartTab { get { return GetValue<int>("DefaultStartTab"); } set { SetValue("DefaultStartTab", value); } }
+        public static int[][] Bookmarks { get { return !(GetValue<string>("Bookmarks")).Contains(',') ? new int[][] { } : System.Linq.Enumerable.Select((GetValue<string>("Bookmarks")).Split('|'), (Bookmark) => System.Linq.Enumerable.Select(Bookmark.Split(','), (Str) => int.Parse(Str)).ToArray()).ToArray(); } set { SetValue("Bookmarks", string.Join("|", System.Linq.Enumerable.Select(value, (Bookmark) => string.Join(",", System.Linq.Enumerable.Select(Bookmark, (Mark) => Mark.ToString()))))); } }
 #if __ANDROID__ || __IOS__
         public static string strSelectedFont { get { return Plugin.Settings.CrossSettings.Current.GetValueOrDefault("CurrentFont", "Times New Roman"); } set { Plugin.Settings.CrossSettings.Current.AddOrUpdateValue("CurrentFont", value); } }
 #else
-        public static string strSelectedFont { get { return (string)GetValue("CurrentFont"); } set { SetValue("CurrentFont", value); } }
+        public static string strSelectedFont { get { return GetValue<string>("CurrentFont"); } set { SetValue("CurrentFont", value); } }
 #endif
-        public static string strOtherSelectedFont { get { return (string)GetValue("OtherCurrentFont"); } set { SetValue("OtherCurrentFont", value); } }
+        public static string strOtherSelectedFont { get { return GetValue<string>("OtherCurrentFont"); } set { SetValue("OtherCurrentFont", value); } }
         public string SelectedFont { get { return strSelectedFont; } set { strSelectedFont = value; } }
         public string OtherSelectedFont { get { return strOtherSelectedFont; } set { strOtherSelectedFont = value; } }
 
-        public static double dFontSize { get { return (double)GetValue("FontSize"); } set { SetValue("FontSize", value); } }
-        public static double dOtherFontSize { get { return (double)GetValue("OtherFontSize"); } set { SetValue("OtherFontSize", value); } }
+        public static double dFontSize { get { return GetValue<double>("FontSize"); } set { SetValue("FontSize", value); } }
+        public static double dOtherFontSize { get { return GetValue<double>("OtherFontSize"); } set { SetValue("OtherFontSize", value); } }
         public string FontSize { get { return dFontSize.ToString(); } set { double fontSize; if (double.TryParse(value, out fontSize)) { dFontSize = fontSize; } } }
         public string OtherFontSize { get { return dOtherFontSize.ToString(); } set { double fontSize; if (double.TryParse(value, out fontSize)) { dOtherFontSize = fontSize; } } }
         public List<string> GetFontList()
@@ -1243,7 +1245,7 @@ using Android.Graphics;
                 return GetFontList();
             }
         }
-        public static int iSelectedReciter { get { return (int)GetValue("CurrentReciter"); } set { SetValue("CurrentReciter", value); } }
+        public static int iSelectedReciter { get { return GetValue<int>("CurrentReciter"); } set { SetValue("CurrentReciter", value); } }
         public class ComboPair
         {
             public string KeyString { get; set; }
@@ -1260,7 +1262,7 @@ using Android.Graphics;
             }
         }
 
-        public static int iSelectedTranslation { get { return (int)GetValue("CurrentTranslation"); } set { SetValue("CurrentTranslation", value); } }
+        public static int iSelectedTranslation { get { return GetValue<int>("CurrentTranslation"); } set { SetValue("CurrentTranslation", value); } }
         public string SelectedTranslation { get { return AppSettings.ChData.IslamData.Translations.TranslationList[iSelectedTranslation].Name; } set { if (value != null) { iSelectedTranslation = Array.FindIndex(AppSettings.ChData.IslamData.Translations.TranslationList, (Translation) => Translation.Name == value); } } }
         public List<string> TranslationList
         {
@@ -1269,10 +1271,10 @@ using Android.Graphics;
                 return new List<string>(AppSettings.ChData.IslamData.Translations.TranslationList.Where((Translation) => { return Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Name || Translation.FileName.Substring(0, Translation.FileName.IndexOf('.')) == System.Globalization.CultureInfo.CurrentCulture.Parent.Name; }).Select((Translation) => Translation.Name));
             }
         }
-        public static bool bUseColoring { get { return (bool)GetValue("UseColoring"); } set { SetValue("UseColoring", value); } }
-        public static bool bShowTranslation { get { return (bool)GetValue("ShowTranslation"); } set { SetValue("ShowTranslation", value); } }
-        public static bool bShowTransliteration { get { return (bool)GetValue("ShowTransliteration"); } set { SetValue("ShowTransliteration", value); } }
-        public static bool bShowW4W { get { return (bool)GetValue("ShowW4W"); } set { SetValue("ShowW4W", value); } }
+        public static bool bUseColoring { get { return GetValue<bool>("UseColoring"); } set { SetValue("UseColoring", value); } }
+        public static bool bShowTranslation { get { return GetValue<bool>("ShowTranslation"); } set { SetValue("ShowTranslation", value); } }
+        public static bool bShowTransliteration { get { return GetValue<bool>("ShowTransliteration"); } set { SetValue("ShowTransliteration", value); } }
+        public static bool bShowW4W { get { return GetValue<bool>("ShowW4W"); } set { SetValue("ShowW4W", value); } }
         public bool UseColoring { get { return bUseColoring; } set { bUseColoring = value; } }
         public bool ShowTranslation { get { return bShowTranslation; } set { bShowTranslation = value; } }
         public bool ShowTransliteration { get { return bShowTransliteration; } set { bShowTransliteration = value; } }

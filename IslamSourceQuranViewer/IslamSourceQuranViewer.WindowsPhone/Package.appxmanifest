@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.50" />
+  <Identity Name="35516GMorseCode.QuranWordByWord" Publisher="CN=781370EF-81C3-47A0-A05B-C3423B2AB7DA" Version="1.1.0.51" />
   <mp:PhoneIdentity PhoneProductId="1ad5ad0d-547d-4e29-ae22-55110a8c3934" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ms-resource:DisplayName</DisplayName>

@@ -1208,15 +1208,17 @@ using Android.Graphics;
             }
             if (!ContainsKey("LoopingMode"))
             {
-                LoopingMode = AppSettings.ChData.IslamData.LoopingModeList.DefaultLoopingMode;
+                LoopingMode = AppSettings.ChData.IslamData.LoopingModeList.LoopingModes.Select((lt, i) => lt.Name == AppSettings.ChData.IslamData.LoopingModeList.DefaultLoopingMode ? i : -1).First((lt) => lt != -1);
             }
         }
-        public static string LoopingMode { get { return (string)GetValue("LoopingMode"); } set { SetValue("LoopingMode", value); } }
-        public List<ComboPair> LoopingTypes
+        public static int LoopingMode { get { return AppSettings.ChData.IslamData.LoopingModeList.LoopingModes.Select((lt, i) => lt.Name == (string)GetValue("LoopingMode") ? i : -1).First((lt) => lt != -1); } set { SetValue("LoopingMode", AppSettings.ChData.IslamData.LoopingModeList.LoopingModes[value].Name); } }
+        public List<string> _LoopingTypes;
+        public List<string> LoopingTypes
         {
             get
             {
-                return new List<ComboPair>(AppSettings.ChData.IslamData.LoopingModeList.LoopingModes.Select((Mode) => { return new ComboPair() { KeyString = Mode.Name, ValueString = AppSettings._PortableMethods.LoadResourceString("IslamInfo_" + Mode.Name) }; }));
+                if (_LoopingTypes == null) _LoopingTypes = AppSettings.ChData.IslamData.LoopingModeList.LoopingModes.Select((Mode) => { return /*new LoopComboPair() { KeyString = Mode.Name, ValueString = */AppSettings._PortableMethods.LoadResourceString("IslamInfo_" + Mode.Name)/* }*/; }).ToList();
+                return _LoopingTypes;
             }
         }
         public static bool bAutomaticAdvanceVerse { get { return (bool)GetValue("AutomaticAdvanceVerse"); } set { SetValue("AutomaticAdvanceVerse", value); } }
@@ -1259,18 +1261,13 @@ using Android.Graphics;
             }
         }
         public static int iSelectedReciter { get { return (int)GetValue("CurrentReciter"); } set { SetValue("CurrentReciter", value); } }
-        public class ComboPair
-        {
-            public string KeyString { get; set; }
-            public string ValueString { get; set; }
-        }
-        public ComboPair SelectedReciter { get { return ReciterList.First((Item) => Item.KeyString == AppSettings.ChData.IslamData.ReciterList.Reciters[iSelectedReciter].Name); } set { if (value != null) { iSelectedReciter = Array.FindIndex(AppSettings.ChData.IslamData.ReciterList.Reciters, (Reciter) => Reciter.Name == value.KeyString); } } }
-        public List<ComboPair> _ReciterList;
-        public List<ComboPair> ReciterList
+        public static int SelectedReciter { get { return iSelectedReciter; } set { iSelectedReciter = value; } }
+        public List<string> _ReciterList;
+        public List<string> ReciterList
         {
             get
-            {
-                if (_ReciterList == null) _ReciterList = new List<ComboPair>(AppSettings.ChData.IslamData.ReciterList.Reciters.Select((Reciter) => { return new ComboPair() { KeyString = Reciter.Name, ValueString = Reciter.Reciter + (Reciter.BitRate == 0 ? string.Empty : (" [" + Reciter.BitRate.ToString() + "kbps]")) }; }));
+            {   
+                if (_ReciterList == null) _ReciterList = AppSettings.ChData.IslamData.ReciterList.Reciters.Select((Reciter) => { return /*new ComboPair() { KeyString = Reciter.Name, ValueString = */Reciter.Reciter + (Reciter.BitRate == 0 ? string.Empty : (" [" + Reciter.BitRate.ToString() + "kbps]"))/* }*/; }).ToList();
                 return _ReciterList;
             }
         }

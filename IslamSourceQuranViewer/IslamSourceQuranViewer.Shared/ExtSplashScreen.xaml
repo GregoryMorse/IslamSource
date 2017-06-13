@@ -25,7 +25,7 @@
         <Grid Grid.Row="1" Grid.Column="1" Name="ProgressGrid" Background="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="18*"></RowDefinition>
-                <RowDefinition Height="8*"></RowDefinition>
+                <RowDefinition Height="12*"></RowDefinition>
                 <RowDefinition Height="76*"></RowDefinition>
             </Grid.RowDefinitions>
             <ProgressRing Name="splashProgressRing" Grid.Row="1" Grid.Column="0" IsActive="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Background="Transparent"></ProgressRing>

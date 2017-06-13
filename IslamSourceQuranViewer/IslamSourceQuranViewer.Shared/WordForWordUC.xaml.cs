@@ -315,20 +315,20 @@ namespace IslamSourceQuranViewer
                         await System.Threading.Tasks.Task.Delay((AppSettings.bDelayVerseLengthBeforeAdvancing ? (int)VersePlayer.NaturalDuration.TimeSpan.TotalMilliseconds : 0) + AppSettings.iAdditionalVerseAdvanceDelay * 1000);
                         if (PlayPause.Label == new Windows.ApplicationModel.Resources.ResourceLoader().GetString("Play/Label")) { return; }
                     }
-                    if (AppSettings.LoopingMode == AppSettings.ChData.IslamData.LoopingModeList.LoopingModes[1].Name) { VersePlayer.Play(); return; }
+                    if (AppSettings.LoopingMode == 1) { VersePlayer.Play(); return; }
                     do {
                         CurrentPlayingItem++;
                         if (ViewModel.VerseReferences.Count() == CurrentPlayingItem) {
-                            if (AppSettings.LoopingMode == AppSettings.ChData.IslamData.LoopingModeList.LoopingModes[2].Name) {
+                            if (AppSettings.LoopingMode == 2) {
                                 CurrentPlayingItem = 0;
                             } else {
                                 int max = (int)AppSettings.TR.GetSelectionNames(Division.ToString(), XMLRender.ArabicData.TranslitScheme.RuleBased, String.Empty).Last().GetValue(1);
-                                if (AppSettings.LoopingMode == AppSettings.ChData.IslamData.LoopingModeList.LoopingModes[0].Name && Selection != max) {
+                                if (AppSettings.LoopingMode == 0 && Selection != max) {
                                     this.Frame.Navigate(typeof(WordForWordUC), new { Division = Division, Selection = Selection + 1, JumpToChapter = -1, JumpToVerse = -1, StartPlaying = true });
                                     this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
                                     return;
                                 }
-                                else if (AppSettings.LoopingMode == AppSettings.ChData.IslamData.LoopingModeList.LoopingModes[3].Name) {
+                                else if (AppSettings.LoopingMode == 3) {
                                     this.Frame.Navigate(typeof(WordForWordUC), new { Division = Division, Selection = Selection == max ? 0 : (Selection + 1), JumpToChapter = -1, JumpToVerse = -1, StartPlaying = true });
                                     this.Frame.BackStack.Remove(this.Frame.BackStack.Last());
                                     return;
@@ -708,7 +708,7 @@ namespace IslamSourceQuranViewer
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
             if (item.GetType() == typeof(MyChildRenderStopContinue)) return StopContinueTemplate;
-            if (item.GetType() == typeof(MyChildRenderItem)) { return ((MyChildRenderItem)item).IsArabic ? ((MyChildRenderItem)item).ItemRuns.Count > 1 ? ArabicRenderTemplate : ArabicTemplate : NormalTemplate; }
+            if (item.GetType() == typeof(MyChildRenderItem)) { return ((MyChildRenderItem)item).IsArabic ? /*((MyChildRenderItem)item).ItemRuns.Count > 1 ? ArabicRenderTemplate :*/ ArabicTemplate : NormalTemplate; }
             return WordTemplate;
         }
     }
