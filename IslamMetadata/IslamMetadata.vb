@@ -880,7 +880,13 @@ Public Class Arabic
             Idx -= 1
             Ct += 1
         End While
-        Return Linq.Enumerable.Select(Linq.Enumerable.Take(Linq.Enumerable.Skip(MetadataList, Idx), Ct), Function(Item) New FullRuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New FullRuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
+        Dim NewMetadataList As New List(Of FullRuleMetadata)
+        For Count As Integer = Idx To Idx + Ct - 1
+            Dim Item As FullRuleMetadata = MetadataList(Count)
+            NewMetadataList.Add(New FullRuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New FullRuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children})
+        Next
+        Return NewMetadataList
+        'Return Linq.Enumerable.Select(Linq.Enumerable.Take(Linq.Enumerable.Skip(MetadataList, Idx), Ct), Function(Item) New FullRuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New FullRuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
         'MetadataList = Linq.Enumerable.Select(Linq.Enumerable.Where(MetadataList, Function(Item) Item.Index >= PreStringLength And Item.Index + Item.Length <= ArabicStringLength).ToList(), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
         'If PreStop Then OptionalStops.Add(0)
         'If PostStop Then OptionalStops.Add(ArabicString.Length - 1)
@@ -904,7 +910,13 @@ Public Class Arabic
             Idx -= 1
             Ct += 1
         End While
-        Return Linq.Enumerable.Select(Linq.Enumerable.Take(Linq.Enumerable.Skip(MetadataList, Idx), Ct), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
+        Dim NewMetadataList As New List(Of RuleMetadata)
+        For Count As Integer = Idx To Idx + Ct - 1
+            Dim Item As RuleMetadata = MetadataList(Count)
+            NewMetadataList.Add(New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children})
+        Next
+        Return NewMetadataList
+        'Return Linq.Enumerable.Select(Linq.Enumerable.Take(Linq.Enumerable.Skip(MetadataList, Idx), Ct), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
         'MetadataList = Linq.Enumerable.Select(Linq.Enumerable.Where(MetadataList, Function(Item) Item.Index >= PreStringLength And Item.Index + Item.Length <= ArabicStringLength).ToList(), Function(Item) New RuleMetadata With {.Index = Item.Index - PreStringLength, .Length = Item.Length, .Type = Item.Type, .OrigOrder = Item.OrigOrder, .Dependencies = If(Item.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(Item.Dependencies, Function(It) New RuleMetadata With {.Index = It.Index - PreStringLength, .Length = It.Length, .Type = It.Type, .OrigOrder = It.OrigOrder, .Children = It.Children}).ToArray()), .Children = Item.Children}).ToList()
         'If PreStop Then OptionalStops.Add(0)
         'If PostStop Then OptionalStops.Add(ArabicString.Length - 1)
@@ -1424,10 +1436,10 @@ Public Class Arabic
         End While
         Return Linq.Enumerable.Where(MetadataList, Function(Item, Idx) RemoveIndexes(Idx) <> -1).ToList()
     End Function
-    Public Function ReplaceTranslitRule(ArabicString As String, Scheme As String, LearningMode As Boolean, ByRef DiffMap As List(Of Integer)) As String
+    Public Function ReplaceTranslitRule(ArabicString As String, Scheme As String, LearningMode As Boolean, ByRef DiffMap() As Integer) As String
         'redundant romanization rules should have -'s such as seen/teh/kaf-heh
         Dim Count As Integer
-        Dim _DiffMap As List(Of Integer) = If(DiffMap Is Nothing, Nothing, DiffMap)
+        Dim _DiffMap As List(Of Integer) = If(DiffMap Is Nothing, Nothing, DiffMap.ToList())
         For Count = 0 To ChData.RuleTranslations("RomanizationRules").Length - 1
             Dim AdjRepCount As Integer = 0
             If ChData.RuleTranslations("RomanizationRules")(Count).RuleFunc = RuleFuncs.eNone Then
@@ -1448,34 +1460,34 @@ Public Class Arabic
                                                                                                                                                      End Function)
             End If
         Next
-        If Not DiffMap Is Nothing Then DiffMap = _DiffMap
+        If Not DiffMap Is Nothing Then DiffMap = _DiffMap.ToArray()
         Return ArabicString
     End Function
-    Public Function TransliterateWithRulesColor(ByVal ArabicString As String, Scheme As String, BreakWords As Boolean, LearningMode As Boolean, MetadataList As Generic.List(Of FullRuleMetadata)) As RenderArray.RenderText()()
+    Public Function TransliterateWithRulesColor(ByVal ArabicString As String, Scheme As String, BreakWords As Boolean, BreakVerse As Boolean, LearningMode As Boolean, MetadataList As Generic.List(Of FullRuleMetadata), ByRef VerseRender As RenderArray.RenderText()()) As RenderArray.RenderText()()
         Dim Count As Integer
         If Scheme = String.Empty Then Scheme = ChData.IslamData.LanguageDefaultInfo.GetLanguageByID(String.Empty).TranslitScheme
         DoErrorCheck(ArabicString)
         Dim Index As Integer = 0
-        Dim OffsetList As New List(Of Integer)
-        Dim RecOffsetList As New List(Of List(Of Integer))
+        Dim OffsetList(MetadataList.Count) As Integer
+        Dim RecOffsetList(MetadataList.Count)() As Integer
         While Index <= MetadataList.Count - 1
             'Dim OldLength As Integer = ArabicString.Length
-            OffsetList.Add(ArabicString.Length)
+            OffsetList(Index) = ArabicString.Length
             ArabicString = ReplaceMetadata(ArabicString, MetadataList(Index), LearningMode)
             If Not MetadataList(Index).Children Is Nothing Then
-                RecOffsetList.Add(New List(Of Integer))
+                ReDim RecOffsetList(Index)(MetadataList(Index).Children.Length)
                 For SubCount As Integer = 0 To MetadataList(Index).Children.Length - 1
-                    RecOffsetList(Index).Add(ArabicString.Length)
+                    RecOffsetList(Index)(SubCount) = ArabicString.Length
                     ArabicString = ArabicString.Remove(MetadataList(Index).Index).Insert(MetadataList(Index).Index, ReplaceMetadata(ArabicString.Substring(MetadataList(Index).Index), MetadataList(Index).Children(SubCount), LearningMode))
-                    RecOffsetList(Index)(RecOffsetList(Index).Count - 1) = ArabicString.Length - RecOffsetList(Index)(RecOffsetList(Index).Count - 1)
+                    RecOffsetList(Index)(SubCount) = ArabicString.Length - RecOffsetList(Index)(SubCount)
                 Next
             Else
-                RecOffsetList.Add(Nothing)
+                'RecOffsetList(Index) = Nothing
             End If
-            OffsetList(OffsetList.Count - 1) = ArabicString.Length - OffsetList(OffsetList.Count - 1)
+            OffsetList(Index) = ArabicString.Length - OffsetList(Index)
             Index += 1
         End While
-        Dim RuleIndexes As List(Of Integer) = Linq.Enumerable.Select(ArabicString.ToCharArray(), Function(It) 0).ToList()
+        Dim RuleIndexes() As Integer = Linq.Enumerable.Select(ArabicString.ToCharArray(), Function(It) 0).ToArray()
         Dim CumOffset As Integer = 0
         For Index = MetadataList.Count - 1 To 0 Step -1
             For Count = 0 To ChData.IslamData.ColorRuleSets(1).ColorRules.Length - 1
@@ -1509,6 +1521,8 @@ Public Class Arabic
             CumOffset += OffsetList(Index)
         Next
         Dim Base As Integer = 0
+        Dim VerseRenderers As New List(Of RenderArray.RenderText())
+        Dim AllRenderers As New List(Of RenderArray.RenderText)
         Dim WordRenderers As New List(Of RenderArray.RenderText())
         Dim Renderers As New List(Of RenderArray.RenderText)
         ArabicString = ReplaceTranslitRule(ArabicString, Scheme, LearningMode, RuleIndexes)
@@ -1516,16 +1530,27 @@ Public Class Arabic
             If RuleIndexes(Count) = -1 Or Count <> RuleIndexes.Count - 1 AndAlso RuleIndexes(Count + 1) = -1 Then Continue For
             If Count = RuleIndexes.Count - 1 Or (ArabicString(Count) = " "c And BreakWords) Then
                 If Count <> 0 Then
-                    Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = ChData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod ChData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
-                    WordRenderers.Add(Renderers.ToArray())
-                    Renderers = New List(Of RenderArray.RenderText)
+                    If BreakWords Then
+                        Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = ChData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod ChData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
+                        WordRenderers.Add(Renderers.ToArray())
+                    End If
+                    If Count = RuleIndexes.Count - 1 Then
+                        If BreakVerse Then
+                            AllRenderers.Add(If(BreakWords, Renderers(Renderers.Count - 1), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base), ArabicString.Substring(Base))) With {.Clr = ChData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod ChData.IslamData.ColorRuleSets(1).ColorRules.Length).Color}))
+                            VerseRenderers.Add(AllRenderers.ToArray())
+                        End If
+                    Else
+                        Renderers = New List(Of RenderArray.RenderText)
+                    End If
                 End If
                 Base = Count + 1
             ElseIf RuleIndexes(Count) <> RuleIndexes(Count + 1) Then
-                Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = ChData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod ChData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
+                If BreakWords Then Renderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = ChData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod ChData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
+                If BreakVerse Then AllRenderers.Add(If(BreakWords, Renderers(Renderers.Count - 1), New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, ArabicString.Substring(Base, Count - Base + 1)) With {.Clr = ChData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod ChData.IslamData.ColorRuleSets(1).ColorRules.Length).Color}))
                 Base = Count + 1
             End If
         Next
+        VerseRender = VerseRenderers.ToArray()
         Return WordRenderers.ToArray()
     End Function
     Public Function DecodeTranslitScheme(Str As String) As String
@@ -7068,7 +7093,7 @@ Public Class TanzilReader
         Next
         Await _PortableMethods.WriteAllLines(WordFilePath, Linq.Enumerable.Select(W4WLines, Function(Input As List(Of String)) String.Join("|"c, Input.ToArray())).ToArray())
     End Function
-    Public Function DoGetRenderedQuranTextW4W(Text As String, IndexToVerse As Integer()(), MetaRules As Generic.List(Of Arabic.FullRuleMetadata), UnfilteredMetaRules As Generic.List(Of Arabic.FullRuleMetadata), DefStops As Integer(), W4WLines As String()(), SchemeType As ArabicData.TranslitScheme, Scheme As String, IsLTRW4WTranslation As Boolean(), W4WNum As Boolean, NoArabic As Boolean, Colorize As Boolean, NoRef As Boolean) As RenderArray.RenderText
+    Public Function DoGetRenderedQuranTextW4W(Text As String, IndexToVerse As Integer()(), MetaRules As Generic.List(Of Arabic.FullRuleMetadata), UnfilteredMetaRules As Generic.List(Of Arabic.FullRuleMetadata), DefStops As Integer(), W4WLines As String()(), SchemeType As ArabicData.TranslitScheme, Scheme As String, IsLTRW4WTranslation As Boolean(), W4WNum As Boolean, NoArabic As Boolean, Colorize As Boolean, NoRef As Boolean, TranslitColors As RenderArray.RenderText()()) As RenderArray.RenderText
         Dim Texts As New List(Of RenderArray.RenderText)
         Dim Items As New Collections.Generic.List(Of RenderArray.RenderItem)
         If NoRef Then
@@ -7084,10 +7109,8 @@ Public Class TanzilReader
         End If
         Dim TranslitWords As String() = Nothing
         Dim WordColors As RenderArray.RenderText()() = Nothing
-        Dim TranslitColors As RenderArray.RenderText()() = Nothing
         If Colorize Then
             WordColors = Arb.ApplyColorRules(Text, True, MetaRules)
-            TranslitColors = Arb.TransliterateWithRulesColor(Text, Scheme, True, False, MetaRules)
         Else
             TranslitWords = New System.Text.RegularExpressions.Regex(" (?![^\(]*\))").Split(Arb.TransliterateToScheme(Text, SchemeType, Scheme, MetaRules))
         End If
@@ -7234,8 +7257,10 @@ Public Class TanzilReader
                     AdjDefStops = Linq.Enumerable.Select(Linq.Enumerable.Where(DefStops, Function(It) Index <> 0 AndAlso IndexToVerse(Index)(6) = 0 AndAlso IndexToVerse(Index - 1)(6) <> 0 AndAlso It = IndexToVerse(Index - 1)(3) Or Index <> 0 AndAlso IndexToVerse(Index)(1) = 1 AndAlso IndexToVerse(Index - 1)(1) = 0 AndAlso It = IndexToVerse(Index)(3) - 1 Or Index = 0 And It = -1 Or It >= IndexToVerse(Index)(3) And It <= IndexToVerse(Index)(3) + Text.Length), Function(It) If(It - IndexToVerse(Index)(3) < -1, -1, It - IndexToVerse(Index)(3))).ToArray()
                     MetaRules = Arabic.FilterMetadataStops(Text, MetaRules, AdjDefStops)
                 End If
+                Dim TranslitColors As RenderArray.RenderText()()
+                Dim VerseTranslitColors As RenderArray.RenderText()() = If(NoArabic, Nothing, Arb.TransliterateWithRulesColor(Text, Scheme, W4W And W4WLines.Length <> 0, Verses, False, MetaRules, TranslitColors))
                 If W4W And W4WLines.Length <> 0 Then
-                    Texts.Add(DoGetRenderedQuranTextW4W(Text, Linq.Enumerable.Select(Linq.Enumerable.TakeWhile(Linq.Enumerable.Skip(If(_CacheMetarules Is Nothing, Linq.Enumerable.Take(IndexToVerse, IndexToVerse.Length - 1), IndexToVerse), Index), Function(Elem As Integer()) Elem(0) = IndexToVerse(Index)(0) And Elem(1) = IndexToVerse(Index)(1)), Function(It) New Integer() {It(0), It(1), It(2), It(3) - IndexToVerse(Index)(3), It(4), It(5), It(6)}).ToArray(), MetaRules, UnfilteredMetaRules, AdjDefStops, W4WLines, SchemeType, Scheme, IsLTRW4WTranslation, W4WNum, NoArabic, Colorize, NoRef))
+                    Texts.Add(DoGetRenderedQuranTextW4W(Text, Linq.Enumerable.Select(Linq.Enumerable.TakeWhile(Linq.Enumerable.Skip(If(_CacheMetarules Is Nothing, Linq.Enumerable.Take(IndexToVerse, IndexToVerse.Length - 1), IndexToVerse), Index), Function(Elem As Integer()) Elem(0) = IndexToVerse(Index)(0) And Elem(1) = IndexToVerse(Index)(1)), Function(It) New Integer() {It(0), It(1), It(2), It(3) - IndexToVerse(Index)(3), It(4), It(5), It(6)}).ToArray(), MetaRules, UnfilteredMetaRules, AdjDefStops, W4WLines, SchemeType, Scheme, IsLTRW4WTranslation, W4WNum, NoArabic, Colorize, NoRef, TranslitColors))
                 End If
                 Last = Index
                 Do
@@ -7246,7 +7271,7 @@ Public Class TanzilReader
                         If Colorize Then
                             Texts.AddRange(Arb.ApplyColorRules(Text, False, MetaRules)(0))
                             If SchemeType <> ArabicData.TranslitScheme.None Then
-                                Texts.AddRange(Arb.TransliterateWithRulesColor(Text, Scheme, False, False, MetaRules)(0))
+                                Texts.AddRange(VerseTranslitColors(0))
                             Else
                                 Texts.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, String.Empty))
                             End If

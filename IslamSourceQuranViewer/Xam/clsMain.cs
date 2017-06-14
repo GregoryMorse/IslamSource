@@ -1111,8 +1111,8 @@ using Android.Graphics;
         public static void SetValue(string Key, object Value) { }*/
 #else
         public static bool ContainsKey(string Key) { return string.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault<string>(Key)); }
-        public static T GetValue<T>(string Key) { return Plugin.Settings.CrossSettings.Current.GetValueOrDefault<T>(Key); }
-        public static void SetValue(string Key, object Value) { Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Key, Value); }
+        public static T GetValue<T>(string Key) { return (T)Convert.ChangeType(Plugin.Settings.CrossSettings.Current.GetValueOrDefault<string>(Key), typeof(T)); }
+        public static void SetValue(string Key, object Value) { Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Key, Value.ToString()); }
 #endif
         public AppSettings() { }
         public async static System.Threading.Tasks.Task InitDefaultSettings()
@@ -1318,7 +1318,7 @@ using Android.Graphics;
             {
                 _Items = value.ToList();
                 int iDefault = AppSettings.iDefaultStartTab;
-                PropertyChanged(this, new PropertyChangedEventArgs("Items"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("Items"));
                 SelectedItem = _Items.ElementAt(iDefault);
             }
         }
@@ -1343,7 +1343,7 @@ using Android.Graphics;
             set
             {
                 _selectedItem.SelectedItem = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("ListSelectedItem"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("ListSelectedItem"));
             }
         }
 
@@ -1356,7 +1356,7 @@ using Android.Graphics;
             {
                 _selectedItem = value;
                 AppSettings.iDefaultStartTab = _selectedItem.Index;
-                PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
                 ListItems = _selectedItem.Items;
                 ListSelectedItem = ListItems.Count() == 0 ? null : ListItems.First();
             }
@@ -1436,7 +1436,7 @@ using Android.Graphics;
             {
                 AppSettings.dFontSize = value;
                 TextShaping.Cleanup(2);
-                PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
             }
         }
         public string FontFamily
@@ -1456,7 +1456,7 @@ using Android.Graphics;
             {
                 AppSettings.dOtherFontSize = value;
                 TextShaping.Cleanup(1);
-                PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
             }
         }
         public string OtherFontFamily

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IslamSourceQuranViewer.Xam"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
              x:Class="IslamSourceQuranViewer.Xam.MainPage">
     <ContentPage.Resources>
       <ResourceDictionary>
@@ -17,6 +18,9 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        <cv:CarouselView>
+            
+        </cv:CarouselView>
         <local:ItemsView x:Name="tabListBox" ItemsSource="{Binding ViewModel.Items}" 
                         SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}"
                         BackgroundColor="White">

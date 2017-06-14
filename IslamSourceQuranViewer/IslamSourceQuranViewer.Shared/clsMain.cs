@@ -1238,7 +1238,8 @@ using Android.Graphics;
         public string SelectedFont { get { return strSelectedFont; } set { strSelectedFont = value; } }
         public string OtherSelectedFont { get { return strOtherSelectedFont; } set { strOtherSelectedFont = value; } }
 
-        public static double dFontSize { get { return (double)GetValue("FontSize"); } set { SetValue("FontSize", value); } }
+        public static double _dFontSize;
+        public static double dFontSize { get { if (_dFontSize == 0) _dFontSize = (double)GetValue("FontSize"); return _dFontSize; } set { SetValue("FontSize", _dFontSize = value); } }
         public static double dOtherFontSize { get { return (double)GetValue("OtherFontSize"); } set { SetValue("OtherFontSize", value); } }
         public string FontSize { get { return dFontSize.ToString(); } set { double fontSize; if (double.TryParse(value, out fontSize)) { dFontSize = fontSize; } } }
         public string OtherFontSize { get { return dOtherFontSize.ToString(); } set { double fontSize; if (double.TryParse(value, out fontSize)) { dOtherFontSize = fontSize; } } }
@@ -1678,10 +1679,10 @@ using Android.Graphics;
         public RenderDataStruct RenderData { get { return _RenderData; } }
         void _UpdateSize()
         {
-            Size s = TextShaping.GetWordDiacriticPositionsDWrite(string.Concat(ItemRuns.Select((it) => it.ItemText)), (float)AppSettings.dFontSize, null, true, out _RenderData.BaseLine, out _RenderData.clusters, out _RenderData.indices, out _RenderData.offsets, out _RenderData.advances);
+            _RenderData.FontSize = AppSettings.dFontSize;
+            Size s = TextShaping.GetWordDiacriticPositionsDWrite(string.Concat(ItemRuns.Select((it) => it.ItemText)), (float)_RenderData.FontSize, null, true, out _RenderData.BaseLine, out _RenderData.clusters, out _RenderData.indices, out _RenderData.offsets, out _RenderData.advances);
             Width = s.Width;
             Height = s.Height;
-            _RenderData.FontSize = AppSettings.dFontSize;
             if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("RenderData"));
         }
         public MyChildRenderItem(List<MyChildRenderBlockItem> NewItemRuns, bool NewIsArabic, bool NewIsRTL)
