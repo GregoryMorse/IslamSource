@@ -132,7 +132,8 @@ namespace IslamSourceQuranViewer
                         (panel.RenderModels[mmodel - (index == 0 ? 1 : 0)].RenderItems[index == 0 ? panel.RenderModels[mmodel - 1].RenderItems.Count - 1 : index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
                         if (MainItem != null) MainItem.ItemRuns = strs[1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
                         (panel.RenderModels[mmodel + (index + 1 == model.RenderItems.Count ? 1 : 0)].RenderItems[index + 1 == model.RenderItems.Count ? 0 : index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && (Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
-                        strs = AppSettings.Arb.TransliterateWithRulesColor(text, String.Empty, true, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, stops.ToArray()));
+                        XMLRender.RenderArray.RenderText[][] rt = null;
+                        strs = AppSettings.Arb.TransliterateWithRulesColor(text, String.Empty, true, false, false, IslamMetadata.Arabic.FilterMetadataStops(text, (obj as MyChildRenderStopContinue).MetaRules, stops.ToArray()), ref rt);
                         (panel.RenderModels[mmodel - (index == 0 ? 1 : 0)].RenderItems[index == 0 ? panel.RenderModels[mmodel - 1].RenderItems.Count - 1 : index - 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[0].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
                         if (MainItem != null && MainItem.GetText.Trim().Length != 1) (model.RenderItems[index].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
                         (panel.RenderModels[mmodel + (index + 1 == model.RenderItems.Count ? 1 : 0)].RenderItems[index + 1 == model.RenderItems.Count ? 0 : index + 1].Items.FirstOrDefault((Item) => Item.GetType() == typeof(MyChildRenderItem) && !(Item as MyChildRenderItem).IsArabic) as MyChildRenderItem).ItemRuns = strs[(MainItem != null && MainItem.GetText.Trim().Length != 1) ? 2 : 1].Select((Item) => new MyChildRenderBlockItem() { ItemText = (string)Item.Text, Clr = Item.Clr }).ToList();
@@ -520,9 +521,17 @@ namespace IslamSourceQuranViewer
 #else
             SharpDX.DXGI.ISurfaceImageSourceNative surfaceImageSourceNative = SharpDX.ComObject.As<SharpDX.DXGI.ISurfaceImageSourceNative>(newSource);
 #endif
+#if WINDOWS_UWP
+            SharpDX.Mathematics.Interop.RawRectangle rt = new SharpDX.Mathematics.Interop.RawRectangle(0, 0, pixelWidth, pixelHeight);
+#else
             SharpDX.Rectangle rt = new SharpDX.Rectangle(0, 0, pixelWidth, pixelHeight);
+#endif
 #if WINDOWS_PHONE_APP || !STORETOOLKIT
+#if WINDOWS_UWP
+            SharpDX.Mathematics.Interop.RawPoint pt;
+#else
             SharpDX.Point pt;
+#endif
             IntPtr obj;
             surfaceImageSourceNative.Device = TextShaping.Dev2D;
             surfaceImageSourceNative.BeginDraw(rt, new Guid("e8f7fe7a-191c-466d-ad95-975678bda998"), out obj, out pt); //d2d1_1.h
@@ -536,12 +545,22 @@ namespace IslamSourceQuranViewer
             //devcxt.Target = bmp;
             devcxt.BeginDraw();
 #endif
+#if WINDOWS_UWP
+            devcxt.Clear(new SharpDX.Mathematics.Interop.RawColor4(Windows.UI.Colors.White.R / 255.0f, Windows.UI.Colors.White.G / 255.0f, Windows.UI.Colors.White.B / 255.0f, Windows.UI.Colors.Transparent.A / 255.0f));
+#else
             devcxt.Clear(new SharpDX.Color4(Windows.UI.Colors.White.R / 255.0f, Windows.UI.Colors.White.G / 255.0f, Windows.UI.Colors.White.B / 255.0f, Windows.UI.Colors.Transparent.A / 255.0f));
+#endif
             SharpDX.Direct2D1.Layer lyr = new SharpDX.Direct2D1.Layer(devcxt);
             //SharpDX.RectangleF.Infinite
+#if WINDOWS_UWP
+            devcxt.PushLayer(new SharpDX.Direct2D1.LayerParameters1(new SharpDX.Mathematics.Interop.RawRectangleF(float.NegativeInfinity, float.NegativeInfinity, float.PositiveInfinity, float.PositiveInfinity), null, SharpDX.Direct2D1.AntialiasMode.PerPrimitive, new SharpDX.Mathematics.Interop.RawMatrix3x2(1, 0, 0, 1, 0, 0), 1.0f, null, SharpDX.Direct2D1.LayerOptions1.None), lyr);
+            devcxt.PushAxisAlignedClip(new SharpDX.Mathematics.Interop.RawRectangleF(pt.X, pt.Y, pt.X + pixelWidth, pt.Y + pixelHeight), SharpDX.Direct2D1.AntialiasMode.PerPrimitive);
+            devcxt.Transform = new SharpDX.Mathematics.Interop.RawMatrix3x2(1, 0, 0, 1, pt.X, pt.Y);
+#else
             devcxt.PushLayer(new SharpDX.Direct2D1.LayerParameters1(new SharpDX.RectangleF(float.NegativeInfinity, float.NegativeInfinity, float.PositiveInfinity, float.PositiveInfinity), null, SharpDX.Direct2D1.AntialiasMode.PerPrimitive, SharpDX.Matrix3x2.Identity, 1.0f, null, SharpDX.Direct2D1.LayerOptions1.None), lyr);
             devcxt.PushAxisAlignedClip(new SharpDX.RectangleF(pt.X, pt.Y, pt.X + pixelWidth, pt.Y + pixelHeight), SharpDX.Direct2D1.AntialiasMode.PerPrimitive);
             devcxt.Transform = SharpDX.Matrix3x2.Translation(pt.X, pt.Y);
+#endif
             SharpDX.DirectWrite.GlyphRun gr = new SharpDX.DirectWrite.GlyphRun();
             gr.FontFace = TextShaping.DWFontFace;
             gr.FontSize = (float)TopLevelFontSize;
@@ -554,12 +573,21 @@ namespace IslamSourceQuranViewer
                 gr.Offsets = Item.offsets.Skip(Item.clusters[curlen]).TakeWhile((offset, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
                 gr.Advances = Item.advances.Skip(Item.clusters[curlen]).TakeWhile((advance, idx) => ct == Item.ItemRuns.Count() - 1 || idx < Item.clusters[newlen]).ToArray();
                 if (Item.ItemRuns[ct].ItemText[0] == XMLRender.ArabicData.ArabicEndOfAyah) gr.Advances[0] = 0;
+#if WINDOWS_UWP
+                SharpDX.Direct2D1.SolidColorBrush brsh = new SharpDX.Direct2D1.SolidColorBrush(devcxt, new SharpDX.Mathematics.Interop.RawColor4(XMLRender.Utility.ColorR(Item.ItemRuns[ct].Clr) / 255.0f, XMLRender.Utility.ColorG(Item.ItemRuns[ct].Clr) / 255.0f, XMLRender.Utility.ColorB(Item.ItemRuns[ct].Clr) / 255.0f, 0xFF / 255.0f));
+                devcxt.DrawGlyphRun(new SharpDX.Mathematics.Interop.RawVector2((float)pt.X + (float)pixelWidth + Item.offsets[0].AdvanceOffset - (Item.clusters[curlen] == 0 ? 0 : Item.advances.Take(Item.clusters[curlen]).Sum()), Item.BaseLine), gr, brsh, SharpDX.Direct2D1.MeasuringMode.Natural);
+#else
                 SharpDX.Direct2D1.SolidColorBrush brsh = new SharpDX.Direct2D1.SolidColorBrush(devcxt, new SharpDX.Color4(XMLRender.Utility.ColorR(Item.ItemRuns[ct].Clr) / 255.0f, XMLRender.Utility.ColorG(Item.ItemRuns[ct].Clr) / 255.0f, XMLRender.Utility.ColorB(Item.ItemRuns[ct].Clr) / 255.0f, 0xFF / 255.0f));
                 devcxt.DrawGlyphRun(new SharpDX.Vector2((float) pt.X + (float)pixelWidth + Item.offsets[0].AdvanceOffset - (Item.clusters[curlen] == 0 ? 0 : Item.advances.Take(Item.clusters[curlen]).Sum()), Item.BaseLine), gr, brsh, SharpDX.Direct2D1.MeasuringMode.Natural);
+#endif
                 brsh.Dispose();
                 curlen = newlen;
             }
+#if WINDOWS_UWP
+            devcxt.Transform = new SharpDX.Mathematics.Interop.RawMatrix3x2(1, 0, 0, 1, 0, 0);
+#else
             devcxt.Transform = SharpDX.Matrix3x2.Identity;
+#endif
             devcxt.PopAxisAlignedClip();
             devcxt.PopLayer();
 #if WINDOWS_PHONE_APP || !STORETOOLKIT

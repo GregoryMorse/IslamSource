@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>அரபு எழுத்துரு</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>பின்</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>எழுத்துரு அளவை குறைவாக்கு</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>இயல்புநிலை எழுத்துரு அளவு</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>அதன் அரபு, வார்த்தை மற்றும் வசனம் மூலம் கற்றல், படிக்கும், ஆராய்ச்சி, நினைவாற்றலுக்கு, பிரதிபலிப்பு மற்றும் தஜ்வீத் தேர்ச்சிக்கு, வசனம் மூலம் ஒலிபெயர்ப்பு மற்றும் மொழிபெயர்ப்பு வார்த்தை குர்ஆன்.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>குர்ஆன் வார்த்தை வார்த்தையாக</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>எழுத்துரு அளவை அதிகமாக்கு</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>பிற உரை எழுத்துரு</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>விடாது</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>அமைப்புகள்</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>மொழிபெயர்ப்பு காட்டு</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>ஒலிபெயர்ப்பு காட்டு</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>வார்த்தை வார்த்தையாக காட்டு</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>அளவு</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>ஒப்புவித்தல் விதி நிறம் பயன்படுத்தவும்</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>இயல்புநிலை மொழி</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;புத்தகக்குறியைச் சேர்</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;அடையாளக்குறிகள்</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>கிளிப்போர்டில் நகலெடுக்கவும்</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>வசனம் போய்</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>இடைநிறுத்து</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>இயக்கு</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>காரி</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>புக்மார்க் நீக்க</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>பின்னணிப் வசனம் அமை</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>விளக்கவுரை நிகழ்ச்சி</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>பகிர்</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>கூடுதல் வசனம் தாமதப்படுத்தவோ</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>அட்வான்ஸ் வசனம் தானாகவே</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>வசனம் தாமதம் நீளம் முன்னேறும் முன்</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>தேடுகிறது முறை</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>இது பற்றி</value>
+  </data>
+</root>

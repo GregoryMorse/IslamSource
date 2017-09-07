@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabiska typsnitt</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Föregående</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Minska teckenstorlek</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Teckenstorlek</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Koranen med arabiska, translitterering och översättning ord av ord och vers för vers för att lära sig, studera, forskning, memorering, reflektion och behärskning av tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Koranen ord av ord</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Öka teckenstorlek</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Andra typsnitt</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Rendera</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Visa Översättning</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Visa translitterering</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Visa ord av ord</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Storlek</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Använda recitationen regel färg</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Standardspråk</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Lägg till bokmärke</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Bokmärken</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopiera till Urklipp</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Gå till vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Spela upp</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Recitatör</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Ta bort bokmärke</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Ställ in uppspelning vers</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Visa exegetik</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Dela</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Extra vers Advance dröjsmål</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Förväg vers automatiskt</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Dröjsmål längden på vers innan framåt</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Looping läge</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Om</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabiska Koranen med metadata och alla översättningar och några ljud recitationer utom de som listas krediteras himlarna projekt (http://tanzil.net). 
+Ungerska Översättning av Koranen av Kiss Zsuzsanna Halima krediteras Magyar Iszlam (http://magyariszlam.hu). 
+Engelsk översättning av Qu'ran av Maulana Muhammad Ali krediteras till The Lahore Ahmadiyya rörelsen inom Islam (http://www.aaiil.org). 
+Morfologi data och engelska ord-av-ord översättning beröm koraniska arabiska Corpus (http://corpus.quran.com). 
+Indonesiska ord-av-ord översättning kredit till Al-Quran Indonesien (http://www.alquran-indonesia.com/web/quran). 
+Turkiska ord-av-ord översättning kredit till Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu uttrycka-vid-uttrycka översättning av Hafiz Nazar Muhammad krediteras lätt Koranen Wa Hadees (http://www.easyquranwahadees.com). 
+Andra uttrycka-vid-uttrycka översättningar och andra översättningar i programmet Microsoft översättningsprovider (http://www.microsoft.com/en-us/translator) och Google Translate (http://translate.google.com) samt kanske inte är korrekta.  För Malaysiska uttrycka-vid-uttrycka Koranen är källan indonesiska.  För alla andra uttrycka-vid-uttrycka Koranen är källan den engelska koraniska arabiska Corpus. 
+Andra ljud recitationer med bitrate visas krediteras varje Ayah (http://www.everyayah.com). 
+Unicode-data krediteras The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>

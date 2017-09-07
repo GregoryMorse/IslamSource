@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabă-Font</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Înapoi</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Micșorare dimensiune font</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Dimensiune font implicit</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Coranul cu arabă, transcriere şi traducere cuvant cu cuvant si verset cu verset pentru învăţare, studierea, cercetarea, memorare, reflecţie şi stăpânirea de nunta.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Coranul cuvant cu cuvant</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Mărire dimensiune font</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Alte fonturi de Text</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Redare</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Arată traducere</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Arată transcriere</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Arată cuvant cu cuvant</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Dimensiune</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Utilizarea recitarea regula colorat</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Limbă implicită</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Adauga Bookmark</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Marcaje în document</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Copiere în clipboard</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Du-te la versetul</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pauză</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Redare</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Recitator</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Eliminaţi marcaj</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Setare redare versetul</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Arată exegeză</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Partajare</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Întârziere de avans versetul suplimentare</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Versetul în avans automat</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Lungime de întârziere a versetului înainte de avansează</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Modul de buclare</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Despre</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Coranul arabă cu metadate şi toate traducerile şi unele recitaluri de audio cu excepţia cele enumerate creditate georgy proiect (http://tanzil.net). 
+Maghiar traducere a Coranului de sărut Zsuzsanna Halima creditate în Magyar Iszlam (http://magyariszlam.hu). 
+Englez traducere de Qu'ran de Maulana Muhammad Ali creditate în mișcarea Ahmadiyya Lahore în Islam (http://www.aaiil.org). 
+Morfologiei date şi Engleză Traducere cuvant cu cuvant credita Quranic Arabă Corpus (http://corpus.quran.com). 
+Indoneziană Traducere cuvant cu cuvant creditului pentru Al-Quran Indonezia (http://www.alquran-indonesia.com/web/quran). 
+Turcă Traducere cuvant cu cuvant de credit la Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu traducere cuvant cu cuvant de Hafiz Nazar Muhammad creditul simplu Coranul Wa Hadees (http://www.easyquranwahadees.com). 
+Alte traduceri cuvant cu cuvant, precum şi alte traduceri în programul creditul furnizor de traduceri Microsoft (http://www.microsoft.com/en-us/translator) şi Google Translate (http://translate.google.com) şi nu pot fi corecte.  Pentru Malaysian cuvant cu cuvant Coranul, sursa este indoneziană.  Pentru toate celelalte Coranul cuvant cu cuvant, sursa este limba engleză Quranic Arabă Corpus. 
+Alte recitations audio cu bitrate indicat creditate fiecare David (http://www.everyayah.com). 
+Date Unicode creditate Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>

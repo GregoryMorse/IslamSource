@@ -1540,6 +1540,7 @@ Public Class Arabic
                             VerseRenderers.Add(AllRenderers.ToArray())
                         End If
                     Else
+                        If BreakVerse Then AllRenderers.Add(New RenderArray.RenderText(RenderArray.RenderDisplayClass.eTransliteration, If((ArabicString(Count) = " "c And BreakWords), ArabicString.Substring(Base, Count - Base + 1), ArabicString.Substring(Base))) With {.Clr = ChData.IslamData.ColorRuleSets(1).ColorRules(RuleIndexes(Count) Mod ChData.IslamData.ColorRuleSets(1).ColorRules.Length).Color})
                         Renderers = New List(Of RenderArray.RenderText)
                     End If
                 End If
@@ -7257,8 +7258,8 @@ Public Class TanzilReader
                     AdjDefStops = Linq.Enumerable.Select(Linq.Enumerable.Where(DefStops, Function(It) Index <> 0 AndAlso IndexToVerse(Index)(6) = 0 AndAlso IndexToVerse(Index - 1)(6) <> 0 AndAlso It = IndexToVerse(Index - 1)(3) Or Index <> 0 AndAlso IndexToVerse(Index)(1) = 1 AndAlso IndexToVerse(Index - 1)(1) = 0 AndAlso It = IndexToVerse(Index)(3) - 1 Or Index = 0 And It = -1 Or It >= IndexToVerse(Index)(3) And It <= IndexToVerse(Index)(3) + Text.Length), Function(It) If(It - IndexToVerse(Index)(3) < -1, -1, It - IndexToVerse(Index)(3))).ToArray()
                     MetaRules = Arabic.FilterMetadataStops(Text, MetaRules, AdjDefStops)
                 End If
-                Dim TranslitColors As RenderArray.RenderText()()
-                Dim VerseTranslitColors As RenderArray.RenderText()() = If(NoArabic, Nothing, Arb.TransliterateWithRulesColor(Text, Scheme, W4W And W4WLines.Length <> 0, Verses, False, MetaRules, TranslitColors))
+                Dim VerseTranslitColors As RenderArray.RenderText()() = Nothing
+                Dim TranslitColors As RenderArray.RenderText()() = If(NoArabic, Nothing, Arb.TransliterateWithRulesColor(Text, Scheme, W4W And W4WLines.Length <> 0, Verses, False, MetaRules, VerseTranslitColors))
                 If W4W And W4WLines.Length <> 0 Then
                     Texts.Add(DoGetRenderedQuranTextW4W(Text, Linq.Enumerable.Select(Linq.Enumerable.TakeWhile(Linq.Enumerable.Skip(If(_CacheMetarules Is Nothing, Linq.Enumerable.Take(IndexToVerse, IndexToVerse.Length - 1), IndexToVerse), Index), Function(Elem As Integer()) Elem(0) = IndexToVerse(Index)(0) And Elem(1) = IndexToVerse(Index)(1)), Function(It) New Integer() {It(0), It(1), It(2), It(3) - IndexToVerse(Index)(3), It(4), It(5), It(6)}).ToArray(), MetaRules, UnfilteredMetaRules, AdjDefStops, W4WLines, SchemeType, Scheme, IsLTRW4WTranslation, W4WNum, NoArabic, Colorize, NoRef, TranslitColors))
                 End If

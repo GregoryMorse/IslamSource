@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>અરબી ફોન્ટ</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>બેક</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>ફૉન્ટનો આકાર ઘટાડો</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>મૂળભૂત ફોન્ટ માપ</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>શિક્ષણ, અભ્યાસ, સંશોધન, યાદ, પ્રતિબિંબ અને tajweed નિપુણતા માટે તેના અરેબિક, લિવ્યંતર અને અનુવાદ શબ્દ શબ્દ અને શ્લોક દ્વારા શ્લોક દ્વારા કુરાન.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>કુરાન શબ્દ દ્વારા શબ્દ</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>ફૉન્ટનો આકાર વધારો</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>અન્ય લખાણ ફોન્ટ</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>રેન્ડર</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>સેટિંગ્સ</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>અનુવાદ બતાવો</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>બતાવો ટ્રાન્સલિટરેશન</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>બતાવો શબ્દ દ્વારા શબ્દ</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>કદ</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>વાચન નિયમ રંગ વાપરો</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>મૂળભૂત ભાષા</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;બુકમાર્ક ઍડ કરો</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>બુકમાર્ક</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>ક્લિપબોર્ડ પર પ્રતિલિપિ બનાવો</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>શ્લોક પર જાઓ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>થોભો</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>ચલાવો</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>બુકમાર્ક દૂર</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>સેટ પ્લેબેક શ્લોક</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>બતાવો સમજણની</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>સહિયારું કરો</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>વધારાની શ્લોક એડવાન્સ વિલંબ</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>એડવાન્સ શ્લોક આપમેળે</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>શ્લોક વિલંબ લંબાઈ આગળ પહેલાં</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>રહ્યાં સ્થિતિ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>આના વિષે</value>
+  </data>
+</root>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>арапски на фонт</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Намали фонт</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Зададена големина на фонт</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Куран со своите арапски, транслитерација и превод збор по збор и стих по стих за учење, учење, истражување, меморирање, размислување и мајсторство на tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Куранот збор по збор</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Зголеми фонт</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Други фонтот</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Рендерирање</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Параметри</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Покажи превод</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Прикажи Транслитерација</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Прикажи збор по збор</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Големина</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Користете рецитација Правило Боење</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Стандарден јазик</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Додај &amp;обележувач</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Маркери</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Копирај во складот</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Оди на Стих</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Пушти</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Отстрани обележувачи</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Поставете репродукција Стих</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Прикажи егзегеза</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Сподели</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Дополнителни стих напредување губеа</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Однапред стих Автоматски</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Губеа должина на стихот пред да напредува</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping режим</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>За</value>
+  </data>
+</root>

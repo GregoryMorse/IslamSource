@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Tiếng ả Rập phông chữ</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Lùi lại</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Giảm Cỡ Phông</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Cỡ phông mặc định</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Kinh Qur'an với tiếng ả Rập, phiên âm và dịch chữ bằng chữ và câu thơ của thơ của học tập, học tập, nghiên cứu, ghi nhớ, phản ánh và quyền làm chủ của tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Kinh Qur'an chữ bằng chữ</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Tăng Cỡ Phông</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Phông văn bản khác</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Render</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Thiết đặt</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Hiển thị bản dịch</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Hiển thị phiên âm</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Hiển thị chữ bằng chữ</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Kích cỡ</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Sử dụng lần chuỗi quy tắc màu</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Ngôn ngữ Mặc định</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Thêm dấu trang</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Thẻ đánh dấu</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Sao vào Bảng tạm</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Đi câu</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Tạm dừng</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Phát</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Người ngâm Vịnh</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Xoá dấu trang</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Thiết lập phát lại câu</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Exegesis Hiển thị</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Chia sẻ</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Bổ sung câu trước chậm trễ</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Trước câu thơ tự động</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Sự chậm trễ chiều dài của câu trước khi tiến</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Looping chế độ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Tiếng ả Rập Qur'an với siêu dữ liệu và tất cả bản dịch và một số recitations âm thanh ngoại trừ những người được liệt kê ghi cho dự án Tanzil (http://tanzil.net). 
+Hungary dịch kinh Koran bởi hôn Zsuzsanna Halima ghi cho Magyar Iszlam (http://magyariszlam.hu). 
+Tiếng Anh dịch Âu bởi Maulana Muhammad Ali ghi có vào các phong trào Ahmadiyya Lahore trong Islam (http://www.aaiil.org). Dữ liệu 
+hình Thái và bản dịch tiếng Anh từ bằng chữ tín dụng trong kinh Qur'an tiếng ả Rập Corpus (http://corpus.quran.com). 
+Tín dụng Indonesia chữ bằng chữ dịch kinh Qur'an Al Indonesia (http://www.alquran-indonesia.com/web/quran). 
+Thổ Nhĩ Kỳ dịch chữ bằng chữ tín dụng để Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Tiếng Urdu chữ bằng chữ dịch bởi Hafiz Nazar Muhammad ghi để dễ dàng Kinh Qur'an Wa Hadees (http://www.easyquranwahadees.com). 
+Các bản dịch chữ bằng chữ khác cũng như các bản dịch khác trong chương trình ghi có vào nhà cung cấp công cụ Microsoft dịch (http://www.microsoft.com/en-us/translator) và Google Translate (http://translate.google.com) và có thể không chính xác.  Cho Malaysia chữ bằng chữ kinh Koran, nguồn gốc là tiếng Indonesia.  Cho tất cả kinh Koran chữ bằng chữ, nguồn gốc là tiếng Anh trong kinh Qur'an tiếng ả Rập Corpus. 
+Khác recitations âm thanh với bitrate Hiển thị ghi có vào mỗi Ayah (http://www.everyayah.com). 
+Unicode dữ liệu ghi The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>

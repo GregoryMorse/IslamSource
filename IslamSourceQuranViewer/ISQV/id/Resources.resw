@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Huruf Arab</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Kembali</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Kurangi Ukuran Font</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Ukuran Font Default</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Al-Quran dengan bahasa Arab, transliterasi dan terjemahan kata demi kata dan ayat demi ayat untuk belajar, belajar, penelitian, menghafal, refleksi dan penguasaan tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran kata demi kata</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Tambahkan Ukuran Font</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Font teks lain</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Membuat</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Tampilkan terjemahan</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Transliterasi Tampilkan</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Tampilkan kata demi kata</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Ukuran</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Menggunakan pembacaan aturan mewarnai</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Bahasa Default</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Tambahkan Bookmark</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Bookmark</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Salin ke Papan klip</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Pergi ke ayat</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Jeda</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Putar</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Pembaca</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Menghapus Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set pemutaran ayat</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Penafsiran Tampilkan</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Bagikan</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Tambahan ayat Advance penundaan</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Memajukan ayat secara otomatis</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Penundaan panjang ayat sebelum maju</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Perulangan Mode</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Tentang</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Bahasa Arab Al-Qur'an dengan metadata dan semua terjemahan dan Tilawah beberapa audio kecuali mereka terdaftar dikreditkan ke Tanzil proyek (http://tanzil.net). 
+Terjemahan Hungaria Qur'an oleh Kiss Zsuzsanna Halima dikreditkan ke Magyar Iszlam (http://magyariszlam.hu). 
+Terjemahan bahasa Inggris Qu'ran oleh Maulana Muhammad Ali dikreditkan ke The Lahore Gerakan Ahmadiah dalam Islam (http://www.aaiil.org). 
+Morfologi data dan terjemahan kata demi kata bahasa Inggris kredit untuk Corpus Arab Al-Qur'an (http://corpus.quran.com). 
+Kredit Indonesia terjemahan kata demi kata Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran). 
+Turki terjemahan kata demi kata kredit untuk Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Terjemahan kata demi kata bahasa Urdu oleh Hafiz Nazar Muhammad dikreditkan ke mudah Quran Wa hadits (http://www.easyquranwahadees.com). 
+Terjemahan kata demi kata lainnya serta terjemahan lainnya dalam program dikreditkan ke Microsoft terjemahan penyedia (http://www.microsoft.com/en-us/translator) dan Google Translate (http://translate.google.com) dan mungkin tidak akurat.  Al-Qur'an kata demi kata Malaysia, sumber Indonesia.  Untuk semua Al Qur'an kata demi kata lain, sumber adalah Corpus Arab Al-Quran Inggris. 
+Lain Tilawah audio dengan bitrate yang ditunjukkan dikreditkan untuk setiap Ayah (http://www.everyayah.com). 
+Data Unicode dikreditkan ke Unicode The konsorsium (http://www.unicode.org)</value>
+  </data>
+</root>

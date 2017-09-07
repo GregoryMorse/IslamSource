@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>arabesch Font</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Zeréck</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Schrëft verklengeren</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default Schrëftgréisst</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Koran mat sengem arabesch, transliteration an Iwwersetzung Wuert vum Wuert a verschaaft vun verschaaft fir Léieren, ënnersicht, Fuerschung, memorization, Reflexiounen a Meeschterleeschtung vum tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Nodeems Wuert vum Wuert</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Schrëft vergréisseren</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Aner Text Font</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>uerdnen</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Parameteren</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Show Iwwersetzung</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Show Transliteration</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Show Wuert vum Wuert</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Gréisst:</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Benotzt Recitation Rechtsstaat gemoolt</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Default Sprooch</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;Lieszeechen Derbäisetzen</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Lieszeechen</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Op de Clipboard kopéieren</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Go fir Wann</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Paus</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Ofspillen</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>ewechhuelen Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set Playback Wann</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Show Exegesis</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Deelen</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Weider Wann Virausbezuelung Retard</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Viraus Wann Automatesch</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Verspéidung Längt vun Wann Ier Zäit geholl</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Looping Mode</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Info</value>
+  </data>
+</root>

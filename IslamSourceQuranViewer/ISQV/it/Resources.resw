@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Tipo di carattere arabo</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Indietro</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Riduci dimensione carattere</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Dimensione carattere predefinita</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Corano arabo, traslitterazione e traduzione parola per parola e versetto per versetto di apprendimento, lo studio, ricerca, memorizzazione, riflessione e padronanza di tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Corano parola per parola</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Aumenta dimensione carattere</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Altro tipo di carattere del testo</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Render</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>impostazioni</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Visualizza traduzione</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Visualizza traslitterazione</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Visualizza parola per parola</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Dimensioni</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Utilizzare recita regola da colorare</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Default Language  </value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Aggiungi segnalibro</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Segnalibri</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Copia negli Appunti</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Vai al versetto</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausa</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Riproduci</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Voce recitante</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Rimuovere il segnalibro</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Impostare riproduzione versetto</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Visualizza esegesi</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Condividi</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Strofa aggiuntiva anticipo ritardo</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Avanzare verso automaticamente</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Lunghezza di ritardo del versetto prima di avanzare</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Modalità loop</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Informazioni su</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Corano arabo con i metadati e tutte le traduzioni e alcune recitazioni audio tranne quelli elencati accreditate Tanzil Project (http://tanzil.net). 
+Ungherese Traduzione del Corano di bacio Zsuzsanna Halima accreditato a Magyar Iszlam (http://magyariszlam.hu). 
+Traduzione inglese di Qu'ran da Maulana Muhammad Ali accreditato il Lahore del movimento di Ahmadiyya nell'Islam (http://www.aaiil.org). 
+Morfologia dati e traduzione parola-per-parola del credito al Corpus di Quranic arabo (http://corpus.quran.com). 
+Credito Indonesiano traduzione parola-per-parola Al-Quran Indonesia (http://www.alquran-indonesia.com/web/quran). 
+Credito Turco traduzione parola-per-parola a Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Urdu traduzione parola-per-parola di Hafiz Nazar Muhammad accreditato facile Quran Wa Hadees (http://www.easyquranwahadees.com). 
+Altre traduzioni parola per parola, come pure altre traduzioni nel programma accreditato al Provider di traduzione di Microsoft (http://www.microsoft.com/en-us/translator) e Google Translate (http://translate.google.com) e potrebbero non essere accurate.  Per malese-parola-Qur'an, la fonte è indonesiana.  Per tutti gli altri Corano parola per parola, la fonte è il Corpus di arabo di Quranic inglese. 
+Altre recitazioni audio con bitrate indicato accreditate ogni Ayah (http://www.everyayah.com). 
+Dati Unicode accreditati per il Consorzio Unicode (http://www.unicode.org)</value>
+  </data>
+</root>

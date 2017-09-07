@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arābu valodas fontu</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Atpakaļ</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Samazināt fonta lielumu</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Noklusējuma fonta lielums</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Korāns ar tās arābu, transliterācija un tulkošanas pa vārdam un dzejolis, dzejolis, mācību, studiju, pētniecības, memorization, pārdomu un tajweed meistarību.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Korāns pa vārdam</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Palielināt fonta lielumu</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Citi teksta fontu</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Atveidot</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Iestatījumi</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Rādīt Translation</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Rādīt transliterācija</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Rādīt pa vārdam</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Lielums</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Izmantot sarīkojums noteikums krāsošana</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Noklusējuma valoda</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Pievienot grāmatzīmi</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Grāmatzīmes</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopēt starpliktuvē</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Doties uz Verse</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pauze</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Atskaņot</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Deklamētājs</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Noņemt grāmatzīmi</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Iestatīt demonstrēšanu Verse</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Rādīt ekseģēze</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Kopīgot</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Papildu Verse avansa kavēšanās</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Automātiski iepriekš Verse</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Dzejolis pirms pāriešanas kavēšanās ilgums</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Cikla režīmā</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Par</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arābu valodā Qur ar metadatiem un visi tulkojumi un daži audio recitations, izņemot uzskaitītos kredītā Tanzil Project (http://tanzil.net). 
+Ungārijas tulkošanas Korāns, skūpsts Žužanna Halima kredītā Magyar Iszlam (http://magyariszlam.hu). 
+Angļu valodas tulkojuma Qu'ran, Maulana Muhammad Ali kredītā Lahore Ahmadiyya kustība islāmā (http://www.aaiil.org). 
+Morfoloģijas datus un pa vārdam angļu translation kredīta Quranic arābu Corpus (http://corpus.quran.com). 
+Indonēzijas pa vārdam tulkošanas kredīta Al-Qur-Indonēzijā (http://www.alquran-indonesia.com/web/quran). 
+Turku pa vārdam tulkošanas kredītu Sīlejmans Ates (http://www.kuranmeali.com/kelime.asp). Urdu-vārdiskam tulkošanas, Hafiz Nazar Muhammad 
+kredītā Wa Hadees viegli Korāns (http://www.easyquranwahadees.com). 
+Citi pa vārdam tulkojumi, kā arī citi tulkojumi programmā ieskaitīti tulkošanas pakalpojumu sniedzējs (http://www.microsoft.com/en-us/translator) Microsoft un Google Translate (http://translate.google.com) un var nebūt precīzi.  Malaizijas pa vārdam Qur ', avots ir Indonēzijas.  Citiem pa vārdam Korāns, avots ir angļu Quranic arābu Corpus. 
+Citas audio recitations ar bitrate parādīta kredītā katru ajai (http://www.everyayah.com). Unikoda datus kredītā Unicode Consortium (http://www.unicode.org) 
+</value>
+  </data>
+</root>

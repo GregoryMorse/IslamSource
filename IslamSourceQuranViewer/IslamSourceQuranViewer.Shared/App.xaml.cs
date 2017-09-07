@@ -38,7 +38,6 @@ namespace IslamSourceQuranViewer
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-
 #if WINDOWS_PHONE_APP
             Windows.Phone.UI.Input.HardwareButtons.BackPressed += HardwareButtons_BackPressed;
 #endif
@@ -55,6 +54,10 @@ namespace IslamSourceQuranViewer
             /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+#if WINDOWS_UWP
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += HardwareButtons_BackPressed;
+            Windows.UI.Core.SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = Windows.UI.Core.AppViewBackButtonVisibility.Visible;
+#endif
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -78,7 +81,7 @@ namespace IslamSourceQuranViewer
                 {
                     // TODO: Load state from previously suspended application
                 }
-#if WINDOWS_APP
+#if WINDOWS_APP || WINDOWS_UWP
                 if (e.PreviousExecutionState != ApplicationExecutionState.Running) {
                     rootFrame.Content = new ExtSplashScreen(e.SplashScreen, e.PreviousExecutionState == ApplicationExecutionState.Terminated);
                 }
@@ -137,8 +140,19 @@ namespace IslamSourceQuranViewer
             rootFrame.ContentTransitions = this.transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
             rootFrame.Navigated -= this.RootFrame_FirstNavigated;
         }
-
         void HardwareButtons_BackPressed(object sender, Windows.Phone.UI.Input.BackPressedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame != null && rootFrame.CanGoBack)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
+        }
+#endif
+#if WINDOWS_UWP
+        void HardwareButtons_BackPressed(object sender, Windows.UI.Core.BackRequestedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 

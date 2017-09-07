@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{CCF2C22A-C078-43E9-AA14-A9DE8FB3ECDD}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ISQV</RootNamespace>
+    <AssemblyName>ISQV</AssemblyName>
+    <DefaultLanguage>en</DefaultLanguage>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>IslamSourceQuranViewer.Windows_StoreKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\..\IslamMetadata\IslamMetadata.vbproj">
+      <Project>{8cef3958-a8d0-4afa-95f1-80568237f4ee}</Project>
+      <Name>IslamMetadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IslamResources\IslamResources.vbproj">
+      <Project>{0a2a299b-a9d7-4a06-b810-de0fcd3bbdd7}</Project>
+      <Name>IslamResources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XMLRender\XMLRender.vbproj">
+      <Project>{8ac9d06f-320d-4cf4-8a73-725a5ef177ad}</Project>
+      <Name>XMLRender</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="IslamSourceQuranViewer.Windows_StoreKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\StoreResource\Resources.resx">
+      <Link>en\%(FileName).resw</Link>
+    </Content>
+    <Content Include="..\StoreResource\Resources.*.resx">
+      <Link>$([System.String]::Copy('%(FileName)').Replace('.resx','').Replace('Resources.', ''))\Resources.resw</Link>
+    </Content>
+    <Content Include="..\..\metadata\en.*">
+      <Link>metadata\en\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\hu.*">
+      <Link>metadata\hu\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\id.*">
+      <Link>metadata\id\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh-Hans.*">
+      <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh-Hant.*">
+      <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh.jian.*">
+      <Link>metadata\zh-Hans\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\zh.majian.*">
+      <Link>metadata\zh-Hant\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\fr.*">
+      <Link>metadata\fr\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\es.*">
+      <Link>metadata\es\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ru.*">
+      <Link>metadata\ru\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\de.*">
+      <Link>metadata\de\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ms.*">
+      <Link>metadata\ms\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ur.*">
+      <Link>metadata\ur\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\tr.*">
+      <Link>metadata\tr\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ml.*">
+      <Link>metadata\ml\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\pt.*">
+      <Link>metadata\pt\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\it.*">
+      <Link>metadata\it\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\ko.*">
+      <Link>metadata\ko\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\hi.*">
+      <Link>metadata\hi\%(FileName)%(Extension)</Link>
+    </Content>
+    <Content Include="..\..\metadata\quranic-corpus-morphology-0.4.txt">
+      <Link>metadata\quranic-corpus-morphology-0.4.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\islaminfo.xml">
+      <Link>metadata\islaminfo.xml</Link>
+    </Content>
+    <Content Include="..\..\metadata\quran-data.xml">
+      <Link>metadata\quran-data.xml</Link>
+    </Content>
+    <Content Include="..\..\metadata\quran-hafs.xml">
+      <Link>metadata\quran-hafs.xml</Link>
+    </Content>
+    <Content Include="..\..\metadata\QuranTajweedData.txt">
+      <Link>metadata\QuranTajweedData.txt</Link>
+    </Content>
+    <Content Include="..\..\metadata\UnicodeData.txt">
+      <Link>metadata\UnicodeData.txt</Link>
+    </Content>
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\smalllogo.scale-140.png" />
+    <Content Include="Assets\smalllogo.scale-180.png" />
+    <Content Include="Assets\smalllogo.scale-80.png" />
+    <Content Include="Assets\smalllogo.targetsize-16.png" />
+    <Content Include="Assets\smalllogo.targetsize-256.png" />
+    <Content Include="Assets\smalllogo.targetsize-32.png" />
+    <Content Include="Assets\smalllogo.targetsize-48.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\splashscreen.scale-140.png" />
+    <Content Include="Assets\splashscreen.scale-180.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-140.png" />
+    <Content Include="Assets\Square150x150Logo.scale-180.png" />
+    <Content Include="Assets\Square150x150Logo.scale-80.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-140.png" />
+    <Content Include="Assets\Square310x310Logo.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-80.png" />
+    <Content Include="Assets\Square70x70Logo.scale-100.png" />
+    <Content Include="Assets\Square70x70Logo.scale-140.png" />
+    <Content Include="Assets\Square70x70Logo.scale-180.png" />
+    <Content Include="Assets\Square70x70Logo.scale-80.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\storelogo.scale-140.png" />
+    <Content Include="Assets\storelogo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-140.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-180.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-80.png" />
+    <None Include="Package.StoreAssociation.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include=".\**\Resources.resw">
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Bcl.Async">
+      <Version>1.0.168</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX">
+      <Version>4.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.Direct2D1">
+      <Version>4.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.Direct3D11">
+      <Version>4.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.DXGI">
+      <Version>4.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="WinRTXamlToolkit.UWP">
+      <Version>2.3.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="..\IslamSourceQuranViewer.Shared\IslamSourceQuranViewer.Shared.projitems" Label="Shared" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+    <Copy SourceFiles="%(Content.Identity)" DestinationFiles="%(Content.Link)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Condition="'%(Content.Link)' != ''" />
+  </Target>
+</Project>

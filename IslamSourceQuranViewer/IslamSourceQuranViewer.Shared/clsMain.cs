@@ -6,7 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 
-#if WINDOWS_APP || WINDOWS_PHONE_APP
+#if WINDOWS_APP || WINDOWS_PHONE_APP || WINDOWS_UWP
 using Windows.Foundation;
 public class WindowsRTFileIO : XMLRender.PortableFileIO
 {
@@ -521,7 +521,7 @@ using Android.Graphics;
 			return textTypeface;
 		}
 	}
-#elif WINDOWS_APP || WINDOWS_PHONE_APP
+#elif WINDOWS_APP || WINDOWS_PHONE_APP || WINDOWS_UWP
     public static class TextShaping
     {
         public static void Cleanup(int AllNormArb)
@@ -1114,7 +1114,7 @@ using Android.Graphics;
         public static IslamMetadata.Arabic Arb;
         public static IslamMetadata.CachedData ChData;
         public static IslamMetadata.TanzilReader TR;
-#if WINDOWS_APP || WINDOWS_PHONE_APP
+#if WINDOWS_APP || WINDOWS_PHONE_APP || WINDOWS_UWP
         public static bool ContainsKey(string Key) { return Windows.Storage.ApplicationData.Current.LocalSettings.Values.ContainsKey(Key); }
         public static object GetValue(string Key) { return Windows.Storage.ApplicationData.Current.LocalSettings.Values[Key]; }
         public static void SetValue(string Key, object Value) { Windows.Storage.ApplicationData.Current.LocalSettings.Values[Key] = Value; }
@@ -1130,7 +1130,7 @@ using Android.Graphics;
         public AppSettings() { }
         public async static System.Threading.Tasks.Task InitDefaultSettings()
         {
-#if WINDOWS_APP || WINDOWS_PHONE_APP
+#if WINDOWS_APP || WINDOWS_PHONE_APP || WINDOWS_UWP
             _PortableMethods = new XMLRender.PortableMethods(new WindowsRTFileIO(), new WindowsRTSettings());
 #elif WINDOWS_PHONE
             _PortableMethods = new XMLRender.PortableMethods(new WindowsRTXamFileIO(), new WindowsRTXamSettings());

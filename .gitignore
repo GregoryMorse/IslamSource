@@ -194,3 +194,4 @@ IslamSourceQuranViewer/IslamSourceQuranViewer.Windows/metadata/*
 IslamSourceQuranViewer/IslamSourceQuranViewer.WindowsPhone/metadata/*
 applicationhost.config
 Package.StoreAssociation.xml
+/.vs/IslamSource/v15/sqlite3/storage.ide

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>فونت عربی</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>کاهش اندازه قلم</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>اندازه فونت پیش فرض</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>قرآن با آن عربی حرف­نگاري و ترجمه کلمه به کلمه و آیه به آیه برای یادگیری، مطالعه، تحقیق، حفظ، انعکاس و تسلط tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>کلمه به کلمه قرآن</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>افزایش اندازه قلم</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>دیگر قلم متن</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>بارگزاری صفحه</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>نمایش ترجمه</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>نمایش حرف­نگاري</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>نمایش کلمه به کلمه</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>‏‏اندازه</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>استفاده از قرائت قانون رنگ</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>زبان پیش فرض</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>افزودنیهای آموزشی</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>نشانک ها</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>‏‏در كليپ برد كپي شود</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>رفتن به آیه</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>مکث</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>پخش</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>حذف نشانه گذار</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>پخش مجموعه شعر</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>تفسير نمایش</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>اشتراک گذاری</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>آیه های اضافی پیشرفته تاخیر</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>آيه به پیشرفت به صورت خودکار</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>طول تاخیر آيه قبل از پیشبرد</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>حالت حلقه</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>درباره</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>قرآن عربی با فراداده و همه ترجمه و صوت صوتی برخی از جز این فهرست شده به پروژه Tanzil (http://tanzil.net). 
+اعتبار ترجمه مجارستانی قرآن توسط بوسه Zsuzsanna Halima به Iszlam اهل مجارستان (http://magyariszlam.hu). 
+اعتبار ترجمه انگلیسی Qu'ran توسط مولانا محمد علی به جنبش Ahmadiyya لاهور در اسلام (http://www.aaiil.org). 
+مورفولوژی داده و ترجمه کلمه به کلمه انگلیسی اعتبار به جسم عربی قرآن (http://corpus.quran.com). 
+اندونزی کلمه به کلمه ترجمه اعتباری به اندونزی آل قرآن (http://www.alquran-indonesia.com/web/quran). 
+ترکی کلمه به کلمه ترجمه اعتباری به سلیمان Ateş (http://www.kuranmeali.com/kelime.asp). اعتبار 
+اردو ترجمه کلمه به کلمه توسط محمد نظر حافظ به آسان قرآن وا Hadees (http://www.easyquranwahadees.com). 
+ترجمه واژه به واژه دیگر و همچنین ترجمه های دیگر را در برنامه به مایکروسافت ترجمه کننده (http://www.microsoft.com/en-us/translator) و گوگل ترجمه (http://translate.google.com) اعتبار و ممکن است دقیق نباشد.  برای مالزی کلمه به کلمه قرآن منبع اندونزی است.  برای تمامی قرآن کلمه به کلمه دیگر، منبع انگلیسی قرآنی عربی جسم است. 
+اعتبار دیگر صوت صوتی با بیت نشان داده شده در هر Ayah (http://www.everyayah.com). 
+داده های یونیکد به کنسرسیوم های یونیکد (http://www.unicode.org)</value>
+  </data>
+</root>

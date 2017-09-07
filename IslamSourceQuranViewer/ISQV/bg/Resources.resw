@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Арабски шрифт</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Намали размера на шрифта</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Размер на шрифта по подразбиране</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Корана с арабски, английски и превод дума по дума и стих от стих за обучение, обучение, изследвания, запаметяване, размисъл и майсторството на tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Корана дума по дума</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Увеличи размера на шрифта</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Друг текстов шрифт</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Рендиране</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Покажи превод</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Покажи транслитерация</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Покажи дума по дума</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Размер</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Използвайте рецитация правило оцветяване</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Език по подразбиране</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Добавяне на показалец</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Маркери</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Копирай в клипборда</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Отидете в стих</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Пауза</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Пусни</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Рецитатор</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Премахване на показалец</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Задаване възпроизвеждане стих</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Покажи обяснение</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Споделяне</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Допълнителен стих авансово закъснение</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Предварително стих автоматично</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Забавяне дължина на стих преди напредък</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Привързан режим</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>За програмата</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Арабски Корана с метаданни и всички преводи и някои аудио декламации Освен изброените кредитират Tanzil проект (http://tanzil.net). 
+Унгарски превод на Корана от целувка Жужана Христофор кредитират Magyar Iszlam (http://magyariszlam.hu). 
+Английски превод на Корана от Maulana Мохамед Али кредитирани в Лахор Ahmadiyya движение в исляма (http://www.aaiil.org). 
+Морфология данни и английската дума по дума превод кредита за Корана арабски корпус (http://corpus.quran.com). 
+Кредит на индонезийски дума по дума превод на Ал-Корана Индонезия (http://www.alquran-indonesia.com/web/quran). 
+Турски дума по дума превод кредит на Сюлейман Ateş (http://www.kuranmeali.com/kelime.asp). 
+Урду дума по дума превод от Мохамед Хафъз Nazar кредитират лесно Коран Wa Hadees (http://www.easyquranwahadees.com). 
+Други дума по дума преводи, както и други преводи в програмата Microsoft Превод доставчик (http://www.microsoft.com/en-us/translator) и Google Translate (http://translate.google.com) и не могат да бъдат точни.  За Малайзия дума по дума Корана източникът е индонезийски.  За всички други дума по дума Корана източникът е английски Корана арабски корпус. 
+Други аудио декламации с битрейт показани кредитирани всеки Аят (http://www.everyayah.com). 
+Данни на Unicode, кредитирани в Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>

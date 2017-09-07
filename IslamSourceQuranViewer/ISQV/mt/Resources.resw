@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Għarbi Font</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Lura</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Ċekken id-Daqs tal-Font</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default Font Daqs</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Qur'an ma Għarbi tagħha, trasliterazzjoni u l-kelma traduzzjoni bil-kelma u poeżiji mill-poeżiji għat-tagħlim, l-istudju, ir-riċerka, memorization, riflessjoni u l-padrunanza ta 'tajweed.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran kelma b'kelma</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Kabbar id-Daqs tal-Font</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Font oħra Test</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>jirrendi</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Uri Traduzzjoni</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Uri tranżlitterazzjoni</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Uri kelma b'kelma</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Daqqas</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Uża recitation Regola kulur</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>lingwa default</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Żid &amp;Bookmark</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>&amp;Bookmarks</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Ikkopja fil-Klibbord</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Mur fil Poeżiji</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Issospendi</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Aqra</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Neħħi Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set Daqq Verse</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Uri exegesis</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Ixxerja</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Addizzjonali Verse Advance Dewmien</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Advance Verse Awtomatikament</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Dewmien Tul ta Verse Qabel Avvanz</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>looping Modalità</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Dwar</value>
+  </data>
+</root>

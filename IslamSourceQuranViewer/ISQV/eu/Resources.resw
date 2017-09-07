@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabic Font</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Atzera</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Txikitu letra-tamaina</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Default Font Size</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>arabieraz, transliterazio eta itzulpen hitza hitza eta bertso bertsoa arabera ikaskuntza, ikasten, ikerketa, buruz ikastea, hausnarketa eta tajweed menderatzen dituzten Qur'an.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Quran Word By Hitza</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Handitu letra-tamaina</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Beste Testua Font</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Errendatu</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Ezarpenak</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Erakutsi itzulpenak</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Erakutsi translation</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Erakutsi Word By Hitza</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Tamaina</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Erabili Hitzaldiaren Araua koloreztatzen</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Hizkuntza lehenetsia</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;Gehitu laster-marka</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Laster-markak</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopiatu arbelera</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Joan den bertso</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pausatu</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Erreproduzitu</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Kendu Bookmark</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Ezarri Playback Bertsoa</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Erakutsi exegesi</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Partekatu</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Gehigarria Bertsoa Advance atzerapena</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Aldez Bertsoa Automatikoki</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Atzerapena Bertsoa luzera aurrera aurretik</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>begizta Mode</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Honi buruz</value>
+  </data>
+</root>

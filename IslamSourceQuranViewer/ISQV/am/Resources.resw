@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>አረብኛ ቅርጸ ቁምፊ</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>ተመለስ</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>የቅርጸ ቁምፊ መጠን አሳንስ</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>ነባሪ የፊደል መጠን</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>የመማር, ማጥናት, ምርምር, ማጥናት, ነጸብራቅ እና tajweed በቁጥጥር የሚሆን ጥቅስ ቃል ጥቅስ በውስጡ አረብኛ, በቋንቋ እና የትርጉም ቃል ጋር ቁርኣን.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>ሳኒ ቃል በ ቃል</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>የቅርጸ ቁምፊ መጠን አሳድግ</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>ሌሎች የጽሁፍ ቅርጸ ቁምፊ</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>አስረክቡ</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>ቅንጅቶች</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>አሳይ ትርጉም</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>አሳይ በቋንቋ</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>ቃል በ ቃል አሳይ</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>መጠን፦</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>የማነብነብ ደ የማቅለሚያ ይጠቀሙ</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>ነባሪ ቋንቋ</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>&amp;እልባት አክል</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>እልባቶች</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>ወደ ቅንጥብ ሰሌዳ ገልብጥ</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>ጥቅስ ሂድ</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>ላፍታ አቁም</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value> አጫውት</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>ዕልባት አስወግድ</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>ማጫወት ቁጥር አዘጋጅ</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>አሳይ ትርጓሜ</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>አጋራ</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>ተጨማሪ ቁጥር የቅድሚያ መዘግየት</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>የቅድሚያ ቁጥር በራስ-ሰር</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>ቁጥር መዘግየት ርዝመት መግፋትና በፊት</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>መዟዟር ሁነታ</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>ስለ</value>
+  </data>
+</root>

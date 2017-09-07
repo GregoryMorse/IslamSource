@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arabų k. šriftas</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Atgal</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Mažinti šriftą</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Numatytasis šrifto dydis</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Korano su Arabų, transliteracijos ir žodis po žodžio ir iki stichijos mokymosi, studijų, mokslinių tyrimų, atmintimi, atspindys ir meistriškumo, tajweed vertimas.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Korano žodis po žodžio</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Didinti šriftą</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Kitos teksto šriftas</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Generuoti</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>parametrai</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Rodyti Vertimas</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Rodyti transliteracija</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Rodyti žodis po žodžio</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Dydis</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Naudoti deklamavimas taisyklė dažymas</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Numatytoji kalba</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Susieti ¾ym±</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Žymelės</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Kopijuoti į mainų sritį</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Eiti į stichijos</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Pristabdyti</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Leisti</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Reciter</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Pašalinti žymę</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Nustatyti atkūrimo stichijos</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Rodyti egzegezė</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Bendrinti</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>Papildomas stichijos iš anksto vėlavimo</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>Iš anksto stichijos automatiškai</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Vėlavimo trukmė stichijos iki pažangos</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Looping režimas</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Apie</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arabų Korano su metaduomenų ir visų vertimų ir kai kurie garso recitations išskyrus išvardytas įskaitomos į Tanzil projektą (http://tanzil.net). 
+Vertimas Vengrijos iš Korano iš Kiss suzana Halima pervesti Magyar Iszlam (http://magyariszlam.hu). 
+Vertimas anglų, Qu'ran iš Maulana Muhammad Ali įskaityta į The Lahore Achmadijos judėjimas į islamą (http://www.aaiil.org). 
+Morfologija duomenų ir anglų žodis po žodžio Vertimas kredito Quranic Arabų Corpus (http://corpus.quran.com). 
+Italų žodis po žodžio Vertimas kredito Al-Korano Indonezija (http://www.alquran-indonesia.com/web/quran). Turkų žodis po žodžio Vertimas kredito Süleyman Ateş (http://www.kuranmeali.com/kelime.asp) 
+. 
+Urdų kalbos žodis po žodžio Vertimas iš Deivilas Nazar Muhammad įskaityta į lengvai Korano Wa Reno (http://www.easyquranwahadees.com). 
+Kitas žodis po žodžio vertimas, taip pat kitų vertimų programa įskaitomos į Microsoft vertimo teikėjui (http://www.microsoft.com/en-us/translator) ir "Google" Vertėjas (http://translate.google.com) ir negali būti tikslūs.  Korano, žodis po žodžio Malaizijos šaltinis yra Indonezijos.  Dėl visų kitų žodis po žodžio Korano, šaltinis yra anglų Quranic Arabų Corpus. 
+Kitų garso recitations su bitrate rodomas įskaitomos į kiekvieną aukle (http://www.everyayah.com). 
+Unicode duomenis į The Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>

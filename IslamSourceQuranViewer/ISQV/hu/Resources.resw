@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ArabicFont.Text" xml:space="preserve">
+    <value>Arab betűtípus</value>
+  </data>
+  <data name="Back.Label" xml:space="preserve">
+    <value>Vissza</value>
+  </data>
+  <data name="DecreaseFontSize.Label" xml:space="preserve">
+    <value>Betűméret csökkentése</value>
+  </data>
+  <data name="DefaultFontSize.Label" xml:space="preserve">
+    <value>Alapértelmezett betűméret</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Korán, Arab, olasz és fordítás, szó szerint és verset a tanulás, a tanulás, kutatás, memorizálás, elmélkedés és tajweed elsajátítását.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Korán szó szerint</value>
+  </data>
+  <data name="IncreaseFontSize.Label" xml:space="preserve">
+    <value>Betűméret növelése</value>
+  </data>
+  <data name="OtherTextFont.Text" xml:space="preserve">
+    <value>Más betűtípus</value>
+  </data>
+  <data name="Render.Label" xml:space="preserve">
+    <value>Leképezés</value>
+  </data>
+  <data name="Settings.Label" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="ShowTranslation.Text" xml:space="preserve">
+    <value>Fordítás megmutatása</value>
+  </data>
+  <data name="ShowTransliteration.Text" xml:space="preserve">
+    <value>Transliteration Térkép</value>
+  </data>
+  <data name="ShowWordByWord.Text" xml:space="preserve">
+    <value>Térkép-szó szerint</value>
+  </data>
+  <data name="Size.Text" xml:space="preserve">
+    <value>Méret</value>
+  </data>
+  <data name="UseRecitationRuleColoring.Text" xml:space="preserve">
+    <value>Használja a szavalat szabály színezés</value>
+  </data>
+  <data name="DefaultLanguage.Text" xml:space="preserve">
+    <value>Alapértelmezett nyelv</value>
+  </data>
+  <data name="AddBookmark.Text" xml:space="preserve">
+    <value>Könyvjelző felvétele</value>
+  </data>
+  <data name="Bookmarks.Text" xml:space="preserve">
+    <value>Könyvjelzők</value>
+  </data>
+  <data name="CopyToClipboard.Text" xml:space="preserve">
+    <value>Másolás a vágólapra</value>
+  </data>
+  <data name="GoToVerse.Label" xml:space="preserve">
+    <value>Megy a vers</value>
+  </data>
+  <data name="Pause.Label" xml:space="preserve">
+    <value>Szünet</value>
+  </data>
+  <data name="Play.Label" xml:space="preserve">
+    <value>Lejátszás</value>
+  </data>
+  <data name="Reciter.Text" xml:space="preserve">
+    <value>Szavaló</value>
+  </data>
+  <data name="RemoveBookmark.Text" xml:space="preserve">
+    <value>Könyvjelző eltávolítása</value>
+  </data>
+  <data name="SetPlaybackVerse.Text" xml:space="preserve">
+    <value>Set lejátszás vers</value>
+  </data>
+  <data name="ShowExegesis.Text" xml:space="preserve">
+    <value>Térkép Exegesis</value>
+  </data>
+  <data name="Share.Text" xml:space="preserve">
+    <value>Megosztás</value>
+  </data>
+  <data name="AdditionalVerseAdvanceDelay.Text" xml:space="preserve">
+    <value>További vers előzetes késedelem</value>
+  </data>
+  <data name="AutomaticAdvanceVerse.Text" xml:space="preserve">
+    <value>A vers automatikusan előre</value>
+  </data>
+  <data name="DelayVerseLengthBeforeAdvancing.Text" xml:space="preserve">
+    <value>Késedelem hosszát vers előtt halad</value>
+  </data>
+  <data name="Looping.Text" xml:space="preserve">
+    <value>Körkörös lejátszás mód</value>
+  </data>
+  <data name="About.Label" xml:space="preserve">
+    <value>Névjegy</value>
+  </data>
+  <data name="AboutInfo.Text" xml:space="preserve">
+    <value>Arab korán metaadatok és néhány audio mozgássorozatokat kivéve felsorolt jóváírt Kálmán projekt (http://tanzil.net) és az összes fordítást. 
+Magyar fordítás a Korán által Kiss Zsuzsanna Halima jóváírásra Magyar Iszlam (http://magyariszlam.hu). 
+Angol fordítás liberalizálják által Maulana Muhammad Ali jóváírni a Lahore Ahmadiyya mozgalom az iszlám (http://www.aaiil.org). 
+Morfológiai adatok és angol szó szerint fordításban hitel korán Arab Corpus (http://corpus.quran.com). 
+Fordítás szóra hitel belefér Indonézia (http://www.alquran-indonesia.com/web/quran). 
+Török szó-mellett-szó fordítását hitellel való Süleyman Ateş (http://www.kuranmeali.com/kelime.asp). 
+Ágnes Judit fordításában Urdu szó szerint jóváírásra könnyű korán Wa Hoang Zoli (http://www.easyquranwahadees.com). 
+Más szó szerint fordítások, valamint egyéb fordítások a program Microsoft fordítási szolgáltató (http://www.microsoft.com/en-us/translator) és a Google Translate (http://translate.google.com), és nem lehet pontos.  Maláj szó szerint korán a forrás az indonéz.  Az összes többi szó szerint korán a forrás az angol korán Arab Corpus. 
+Más audio mozgássorozatokat bitráta jelenik meg a jóváírt minden hindu dajka (http://www.everyayah.com). 
+Unicode-adatokat jóváírásra az Unicode Consortium (http://www.unicode.org)</value>
+  </data>
+</root>
