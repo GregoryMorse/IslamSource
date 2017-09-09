@@ -6,15 +6,16 @@ using System.Text;
 using Xamarin.Forms;
 
 #if WINDOWS_UWP
-#else
 namespace IslamSourceQuranViewer.Xam
 {
-	public class App : Application
+	public partial class App : Application
 	{
 		public App ()
 		{
-            AppSettings.InitDefaultSettings().Wait();
-            MainPage = new IslamSourceQuranViewer.Xam.MainPage();
+			InitializeComponent();
+
+            //AppSettings.InitDefaultSettings().Wait();
+			MainPage = new NavigationPage(new ISQV.Xam.ExtSplashScreen());
 			// The root page of your application
 			//MainPage = new ContentPage {
 			//	Content = new StackLayout {

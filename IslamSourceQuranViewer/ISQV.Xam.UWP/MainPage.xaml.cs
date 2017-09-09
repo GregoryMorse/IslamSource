@@ -21,7 +21,7 @@ namespace ISQV.Xam.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new ISQV.Xam.App());
+            LoadApplication(new IslamSourceQuranViewer.Xam.App());
         }
     }
 }

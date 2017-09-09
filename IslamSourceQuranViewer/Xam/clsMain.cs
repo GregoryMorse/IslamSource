@@ -163,6 +163,9 @@ public class WindowsRTSettings : XMLRender.PortableSettings
     }
 }
 #elif WINDOWS_PHONE
+#if WINDOWS_UWP
+using System.Reflection;
+#endif
 public class WindowsRTXamFileIO : XMLRender.PortableFileIO
 {
     public async System.Threading.Tasks.Task<string[]> GetDirectoryFiles(string Path)
@@ -174,7 +177,11 @@ public class WindowsRTXamFileIO : XMLRender.PortableFileIO
     public async System.Threading.Tasks.Task<Stream> LoadStream(string FilePath)
     {
         Stream rc = null;
+#if WINDOWS_UWP
+        rc = typeof(ISQV.Xam.WinPhone.Resources.AppResources).GetTypeInfo().Assembly.GetManifestResourceStream(FilePath);
+#else
         rc = IslamSourceQuranViewer.Xam.WinPhone.Resources.AppResources.ResourceManager.GetStream(FilePath.Replace(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, "ms-resource:///Files").Replace("\\", "/"));
+#endif
         if (rc != null)
         {
             return rc;
@@ -210,7 +217,8 @@ public class WindowsRTXamFileIO : XMLRender.PortableFileIO
     }
     public async System.Threading.Tasks.Task<bool> PathExists(string Path)
     {
-        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync()).FirstOrDefault(p => p.Name == Path) != null;
+        string fileName = System.IO.Path.GetFileName(Path);
+        return (await (await Windows.Storage.StorageFolder.GetFolderFromPathAsync(System.IO.Path.GetDirectoryName(Path))).GetItemsAsync()).FirstOrDefault(p => p.Name == fileName) != null;
     }
     public async System.Threading.Tasks.Task CreateDirectory(string Path)
     {
@@ -264,7 +272,11 @@ public class WindowsRTXamSettings : XMLRender.PortableSettings
     }
     public string GetResourceString(string baseName, string resourceKey)
     {
+#if WINDOWS_UWP
+        return new System.Resources.ResourceManager(baseName + ".Resources", System.Reflection.Assembly.Load(new System.Reflection.AssemblyName(baseName))).GetString(resourceKey, System.Globalization.CultureInfo.CurrentUICulture);
+#else
         return new System.Resources.ResourceManager(baseName + ".Resources", System.Reflection.Assembly.Load(baseName)).GetString(resourceKey, System.Threading.Thread.CurrentThread.CurrentUICulture);
+#endif
     }
 }
 #else
@@ -1109,6 +1121,10 @@ using Android.Graphics;
         public static bool ContainsKey(string Key) { return false; }
         public static object GetValue(string Key) { return null; }
         public static void SetValue(string Key, object Value) { }*/
+#elif WINDOWS_UWP
+        public static bool ContainsKey(string Key) { return Plugin.Settings.CrossSettings.Current.Contains(Key); }
+        public static T GetValue<T>(string Key) { return (T)Convert.ChangeType(Plugin.Settings.CrossSettings.Current.GetValueOrDefault(Key, (decimal)Convert.ChangeType(default(T), typeof(decimal))), typeof(T)); }
+        public static void SetValue(string Key, object Value) { Plugin.Settings.CrossSettings.Current.AddOrUpdateValue(Key, Value.ToString()); }
 #else
         public static bool ContainsKey(string Key) { return string.IsNullOrEmpty(Plugin.Settings.CrossSettings.Current.GetValueOrDefault<string>(Key)); }
         public static T GetValue<T>(string Key) { return (T)Convert.ChangeType(Plugin.Settings.CrossSettings.Current.GetValueOrDefault<string>(Key), typeof(T)); }

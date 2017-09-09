@@ -195,3 +195,7 @@ IslamSourceQuranViewer/IslamSourceQuranViewer.WindowsPhone/metadata/*
 applicationhost.config
 Package.StoreAssociation.xml
 /.vs/IslamSource/v15/sqlite3/storage.ide
+/IslamSourceQuranViewer/Xam.WinPhone/Assets/Tiles/Thumbs.db
+/IslamSourceQuranViewer/Xam.WinPhone/Assets/Thumbs.db
+/IslamSourceQuranViewer/Xam.WinPhone/Toolkit.Content/Thumbs.db
+/Test/Test

@@ -18,10 +18,15 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <cv:CarouselView>
-            
+        <cv:CarouselView ItemsSource="{Binding ViewModel.Items, Mode=OneWay}">
+            <cv:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Title}"
+                Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
+                </DataTemplate>
+            </cv:CarouselView.ItemTemplate>
         </cv:CarouselView>
-        <local:ItemsView x:Name="tabListBox" ItemsSource="{Binding ViewModel.Items}" 
+        <!--<local:ItemsView x:Name="tabListBox" ItemsSource="{Binding ViewModel.Items, Mode=OneWay}" 
                         SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}"
                         BackgroundColor="White">
           <local:ItemsView.ItemTemplate>
@@ -30,9 +35,9 @@
                 Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
             </DataTemplate>
           </local:ItemsView.ItemTemplate>
-        </local:ItemsView>
+        </local:ItemsView>-->
         <!--Binding Converter={StaticResource converter},RelativeSource={RelativeSource AncestorType={x:Type ListView}}}-->
-        <ListView x:Name="sectionListBox" Grid.Row="1" ItemsSource="{Binding ViewModel.ListItems}" 
+        <ListView x:Name="sectionListBox" Grid.Row="1" ItemsSource="{Binding ViewModel.ListItems, Mode=OneWay}" 
                         SelectedItem="{Binding Path=ViewModel.ListSelectedItem, Mode=TwoWay}"
                         BackgroundColor="White" ItemTapped="sectionListBox_DoubleTapped">
             <ListView.ItemTemplate>
@@ -47,8 +52,8 @@
             </ListView.ItemTemplate>
         </ListView>
     </Grid>
-    <ContentPage.ToolBarItems>
-        <ToolBarItem Name="Settings" Activated="Settings_Click" x:Uid="Settings" Icon="Setting"></ToolBarItem>
-        <ToolBarItem Name="About" Activated="About_Click" x:Uid="About" Icon="ContactInfo"></ToolBarItem>
-    </ContentPage.ToolBarItems>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Settings" Activated="Settings_Click" x:Uid="Settings" Icon="Setting"></ToolbarItem>
+        <ToolbarItem Name="About" Activated="About_Click" x:Uid="About" Icon="ContactInfo"></ToolbarItem>
+    </ContentPage.ToolbarItems>
 </ContentPage>

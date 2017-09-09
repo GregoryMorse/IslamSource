@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IslamSourceQuranViewer.Xam.WinPhone.Resources {
+namespace ISQV.Xam.WinPhone.Resources {
     using System;
-    
+    using System.Reflection;
     
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -39,7 +39,8 @@ namespace IslamSourceQuranViewer.Xam.WinPhone.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IslamSourceQuranViewer.Xam.WinPhone.Resources.AppResources", typeof(AppResources).Assembly);
+                    //global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ISQV.Xam.WinPhone.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ISQV.Xam.WinPhone.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

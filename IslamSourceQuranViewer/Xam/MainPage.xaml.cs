@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Windows.Input;
 using Xamarin.Forms;
 using System.Globalization;
+using System.Collections.ObjectModel;
 
 namespace IslamSourceQuranViewer.Xam
 {
@@ -433,10 +434,11 @@ namespace IslamSourceQuranViewer.Xam
 	{
 		public MainPage ()
 		{
+            InitializeComponent();
             this.BindingContext = this;
             this.ViewModel = new MyTabViewModel();
             UIChanger = new MyUIChanger();
-            ViewModel.Items = System.Linq.Enumerable.Select(AppSettings.TR.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx });
+            ViewModel.Items = new ObservableCollection<MyTabItem>(System.Linq.Enumerable.Select(AppSettings.TR.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx }));
         }
         public MyUIChanger UIChanger { get; set; }
         public MyTabViewModel ViewModel { get; set; }
@@ -444,6 +446,14 @@ namespace IslamSourceQuranViewer.Xam
         {
             if (ViewModel.ListSelectedItem == null) return;
             this.Navigation.PushAsync(new WordForWordUC(new { Division = ViewModel.SelectedItem.Index, Selection = ViewModel.ListSelectedItem.Index }));
+        }
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Settings());
+        }
+        private void About_Click(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new About());
         }
     }
 

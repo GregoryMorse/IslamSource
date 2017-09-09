@@ -1,6 +1,6 @@
-﻿using IslamSourceQuranViewer.Xam.WinPhone.Resources;
+﻿using ISQV.Xam.WinPhone.Resources;
 
-namespace IslamSourceQuranViewer.Xam.WinPhone
+namespace ISQV.Xam.WinPhone
 {
 	/// <summary>
 	/// Provides access to string resources.

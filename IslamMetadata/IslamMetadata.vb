@@ -5106,33 +5106,33 @@ Public Class TanzilReader
                 IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(Linq.Enumerable.Select(It.Type,
                     Function(Rule As IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
                         Dim ArgsCount As Integer = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                        IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
+                        If Not Rule.Args Is Nothing Then IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
                             Function(Arg As Short())
                                 IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Arg)
                                 Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Arg.Length, .Length = CShort(Arg.Length)}
                             End Function))
                         Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Rule.RuleName, .Args = New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = ArgsCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - ArgsCount)}}
                     End Function))
-                Return New Arabic.RuleMetadata(It.Index, It.Length, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = AllArgsCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - AllArgsCount)}, It.OrigOrder) With {.Children = Linq.Enumerable.Select(It.Children,
+                Return New Arabic.RuleMetadata(It.Index, It.Length, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = AllArgsCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - AllArgsCount)}, It.OrigOrder) With {.Children = If(It.Children Is Nothing, Nothing, Linq.Enumerable.Select(It.Children,
                     Function(ChildIt As Arabic.FullRuleMetadata)
                         Dim AllArgsCountOth As Integer = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
                         IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(Linq.Enumerable.Select(ChildIt.Type,
                             Function(Rule As IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
                                 Dim ArgsCount As Integer = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                                IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
+                                If Not Rule.Args Is Nothing Then IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
                                     Function(Arg As Short())
                                         IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Arg)
                                         Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Arg.Length, .Length = CShort(Arg.Length)}
                                     End Function))
                                 Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Rule.RuleName, .Args = New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = ArgsCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - ArgsCount)}}
                             End Function))
-                        Return New Arabic.RuleMetadata(ChildIt.Index, ChildIt.Length, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = AllArgsCountOth, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - AllArgsCountOth)}, ChildIt.OrigOrder) With {.Dependencies = Linq.Enumerable.Select(ChildIt.Children,
+                        Return New Arabic.RuleMetadata(ChildIt.Index, ChildIt.Length, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = AllArgsCountOth, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - AllArgsCountOth)}, ChildIt.OrigOrder) With {.Dependencies = If(ChildIt.Children Is Nothing, Nothing, Linq.Enumerable.Select(ChildIt.Children,
                             Function(DepIt As Arabic.FullRuleMetadata)
                                 Dim AllArgsCountOthOth As Integer = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
                                 IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(Linq.Enumerable.Select(DepIt.Type,
                                     Function(Rule As IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
                                         Dim ArgsCount As Integer = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                                        IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
+                                        If Not Rule.Args Is Nothing Then IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
                                             Function(Arg As Short())
                                                 IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Arg)
                                                 Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Arg.Length, .Length = CShort(Arg.Length)}
@@ -5140,14 +5140,14 @@ Public Class TanzilReader
                                         Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Rule.RuleName, .Args = New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = ArgsCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - ArgsCount)}}
                                     End Function))
                                 Return New Arabic.RuleMetadata(DepIt.Index, DepIt.Length, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = AllArgsCountOthOth, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - AllArgsCountOthOth)}, DepIt.OrigOrder)
-                            End Function).ToArray()}
-                    End Function).ToArray(), .Dependencies = Linq.Enumerable.Select(It.Dependencies,
+                            End Function).ToArray())}
+                    End Function).ToArray()), .Dependencies = If(It.Dependencies Is Nothing, Nothing, Linq.Enumerable.Select(It.Dependencies,
                         Function(DepIt As Arabic.FullRuleMetadata)
                             Dim AllArgsCountOth As Integer = IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count
                             IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.AddRange(Linq.Enumerable.Select(DepIt.Type,
                                 Function(Rule As IslamData.RuleMetaSet.RuleMetadataTranslation.FullRuleWithArgs)
                                     Dim ArgsCount As Integer = IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count
-                                    IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
+                                    If Not Rule.Args Is Nothing Then IslamData.RuleMetaSet.RuleMetadataTranslation.Args.AddRange(Linq.Enumerable.Select(Rule.Args,
                                         Function(Arg As Short())
                                             IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.AddRange(Arg)
                                             Return New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = IslamData.RuleMetaSet.RuleMetadataTranslation.Strs.Count - Arg.Length, .Length = CShort(Arg.Length)}
@@ -5155,7 +5155,7 @@ Public Class TanzilReader
                                     Return New IslamData.RuleMetaSet.RuleMetadataTranslation.RuleWithArgs() With {.RuleName = Rule.RuleName, .Args = New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = ArgsCount, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.Args.Count - ArgsCount)}}
                                 End Function))
                             Return New Arabic.RuleMetadata(DepIt.Index, DepIt.Length, New IslamData.RuleMetaSet.RuleMetadataTranslation.BeginEndIndex() With {.Index = AllArgsCountOth, .Length = CShort(IslamData.RuleMetaSet.RuleMetadataTranslation.AllArgs.Count - AllArgsCountOth)}, DepIt.OrigOrder)
-                        End Function).ToArray()}
+                        End Function).ToArray())}
             End Function).ToList()
         Await _PortableMethods.WriteAllLines(_PortableMethods.FileIO.CombinePath(Await _PortableMethods.DiskCache.GetCacheDirectory(), "QuranTajweedData.txt"), Arabic.MakeCacheMetarules(Rules, _IndexToVerse))
         Return Rules

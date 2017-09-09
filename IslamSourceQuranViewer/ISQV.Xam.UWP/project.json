@@ -1,13 +1,15 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Microsoft.Bcl.Build": "1.0.21",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
     "System.Threading.Tasks": "4.3.0",
-    "System.Threading.Tasks.Extensions": "4.3.0",
-    "Xam.Plugins.Settings": "2.5.8",
-    "Xamarin.Forms": "2.3.4.224"
+    "System.Threading.Tasks.Extensions": "4.4.0",
+    "Xam.Plugins.Settings": "3.0.1",
+    "Xamarin.Forms": "2.3.4.270",
+    "Xamarin.Forms.CarouselView": "2.3.0-pre2"
   },
   "frameworks": {
-    "uap10.0": {}
+    "uap10.0.10240": {}
   },
   "runtimes": {
     "win10-arm": {},
