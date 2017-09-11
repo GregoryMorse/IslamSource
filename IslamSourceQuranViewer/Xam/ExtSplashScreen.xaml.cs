@@ -35,6 +35,32 @@ namespace ISQV.Xam
 #endif
             System.Threading.Tasks.Task t = DismissExtendedSplash();
         }
+        void OnCanvasViewPaintSurface(object sender, SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs args)
+        {
+            SkiaSharp.SKImageInfo info = args.Info;
+            SkiaSharp.SKSurface surface = args.Surface;
+            SkiaSharp.SKCanvas canvas = surface.Canvas;
+            canvas.Clear();
+            SkiaSharp.SKRect bounds;
+            SkiaSharp.SKPath path = SkiaSharp.SKPath.ParseSvgPathData((string)this.Resources["PathString"]);
+            path.GetTightBounds(out bounds);
+            SkiaSharp.SKPaint paint = new SkiaSharp.SKPaint
+            {
+                Style = SkiaSharp.SKPaintStyle.Stroke,
+                Color = SkiaSharp.SKColors.Black,
+                StrokeWidth = 10,
+                StrokeCap = SkiaSharp.SKStrokeCap.Round,
+                StrokeJoin = SkiaSharp.SKStrokeJoin.Round
+            };
+            canvas.Translate(info.Width / 2, info.Height / 2);
+
+            canvas.Scale(info.Width / (bounds.Width + paint.StrokeWidth),
+                         info.Height / (bounds.Height + paint.StrokeWidth));
+
+            canvas.Translate(-bounds.MidX, -bounds.MidY);
+
+            canvas.DrawPath(path, paint);
+        }
         void Position()
         {
             //MainGrid.SetValue(Canvas.LeftProperty, splashImageRect.X);

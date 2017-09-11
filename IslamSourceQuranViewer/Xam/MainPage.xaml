@@ -8,7 +8,7 @@
       <ResourceDictionary>
         <Style x:Key="TitleStyle" TargetType="Label">
           <Setter Property="TextColor" Value="Black"/>
-          <Setter Property="FontFamily" Value="Global User Interface"/>
+          <!-- <Setter Property="FontFamily" Value="Global User Interface"/> -->
         </Style>
         <local:ListFormattedText x:Key="ListFormattedText"></local:ListFormattedText>
       </ResourceDictionary>
@@ -18,14 +18,19 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <cv:CarouselView ItemsSource="{Binding ViewModel.Items, Mode=OneWay}">
-            <cv:CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding Title}"
-                Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
-                </DataTemplate>
-            </cv:CarouselView.ItemTemplate>
-        </cv:CarouselView>
+        <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <cv:CarouselView ItemsSource="{Binding ViewModel.Items, Mode=OneWay}" ItemSelected="Tab_ItemSelected">
+                <cv:CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Title}" Style="{StaticResource TitleStyle}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </ContentView>
+                    </DataTemplate>
+                </cv:CarouselView.ItemTemplate>
+            </cv:CarouselView>
+        </ContentView>
         <!--<local:ItemsView x:Name="tabListBox" ItemsSource="{Binding ViewModel.Items, Mode=OneWay}" 
                         SelectedItem="{Binding Path=ViewModel.SelectedItem, Mode=TwoWay}"
                         BackgroundColor="White">
@@ -45,7 +50,7 @@
                   <ViewCell>
                     <ViewCell.View>
                       <Label FormattedText="{Binding TextItems, Converter={StaticResource ListFormattedText}}"
-                          Style="{StaticResource TitleStyle}" FontFamily="Global User Interface"/>
+                          Style="{StaticResource TitleStyle}" />
                     </ViewCell.View>
                   </ViewCell>
                 </DataTemplate>

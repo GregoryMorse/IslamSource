@@ -434,11 +434,14 @@ namespace IslamSourceQuranViewer.Xam
 	{
 		public MainPage ()
 		{
-            InitializeComponent();
             this.BindingContext = this;
             this.ViewModel = new MyTabViewModel();
             UIChanger = new MyUIChanger();
-            ViewModel.Items = new ObservableCollection<MyTabItem>(System.Linq.Enumerable.Select(AppSettings.TR.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx }));
+            List<MyTabItem> items = null;
+            items = System.Linq.Enumerable.Select(AppSettings.TR.GetDivisionTypes(), (Arr, idx) => new MyTabItem { Title = Arr, Index = idx + 1 }).ToList();
+            items.Insert(0, new MyTabItem { IsBookmarks = true, Title = ISQV.Xam.UWP.Resources.AppResources.Bookmarks_Text, Index = 0 });
+            ViewModel.Items = items;
+            InitializeComponent();
         }
         public MyUIChanger UIChanger { get; set; }
         public MyTabViewModel ViewModel { get; set; }
@@ -454,6 +457,10 @@ namespace IslamSourceQuranViewer.Xam
         private void About_Click(object sender, EventArgs e)
         {
             Navigation.PushAsync(new About());
+        }
+        private void Tab_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ViewModel.SelectedItem = e.SelectedItem as MyTabItem;
         }
     }
 

@@ -8,9 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ISQV.Xam.WinPhone.Resources {
+namespace ISQV.Xam.UWP.Resources {
     using System;
     using System.Reflection;
+    
     
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -19,7 +20,7 @@ namespace ISQV.Xam.WinPhone.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class AppResources {
@@ -39,8 +40,7 @@ namespace ISQV.Xam.WinPhone.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    //global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ISQV.Xam.WinPhone.Resources.AppResources", typeof(AppResources).Assembly);
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ISQV.Xam.WinPhone.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ISQV.Xam.UWP.Resources.AppResources", typeof(AppResources).GetTypeInfo().Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -58,6 +58,46 @@ namespace ISQV.Xam.WinPhone.Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About_Label {
+            get {
+                return ResourceManager.GetString("About.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arabic Qur&apos;an with metadata and all Translations and some audio recitations except those listed credited to Tanzil Project (http://tanzil.net).
+        ///Hungarian Translation of Qur&apos;an by Kiss Zsuzsanna Halima credited to Magyar Iszlam (http://magyariszlam.hu).
+        ///English Translation of Qu&apos;ran by Maulana Muhammad Ali credited to The Lahore Ahmadiyya Movement in Islam (http://www.aaiil.org).
+        ///Morphology data and English word-by-word translation credit to Quranic Arabic Corpus (http://corpus.quran.com).
+        ///Indonesian wor [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string AboutInfo_Text {
+            get {
+                return ResourceManager.GetString("AboutInfo.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Bookmark.
+        /// </summary>
+        public static string AddBookmark_Text {
+            get {
+                return ResourceManager.GetString("AddBookmark.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Additional Verse Advance Delay.
+        /// </summary>
+        public static string AdditionalVerseAdvanceDelay_Text {
+            get {
+                return ResourceManager.GetString("AdditionalVerseAdvanceDelay.Text", resourceCulture);
             }
         }
         
@@ -89,6 +129,186 @@ namespace ISQV.Xam.WinPhone.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arabic Font.
+        /// </summary>
+        public static string ArabicFont_Text {
+            get {
+                return ResourceManager.GetString("ArabicFont.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advance Verse Automatically.
+        /// </summary>
+        public static string AutomaticAdvanceVerse_Text {
+            get {
+                return ResourceManager.GetString("AutomaticAdvanceVerse.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back_Label {
+            get {
+                return ResourceManager.GetString("Back.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bookmarks.
+        /// </summary>
+        public static string Bookmarks_Text {
+            get {
+                return ResourceManager.GetString("Bookmarks.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy to Clipboard.
+        /// </summary>
+        public static string CopyToClipboard_Text {
+            get {
+                return ResourceManager.GetString("CopyToClipboard.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decrease Font Size.
+        /// </summary>
+        public static string DecreaseFontSize_Label {
+            get {
+                return ResourceManager.GetString("DecreaseFontSize.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default Font Size.
+        /// </summary>
+        public static string DefaultFontSize_Label {
+            get {
+                return ResourceManager.GetString("DefaultFontSize.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default Language.
+        /// </summary>
+        public static string DefaultLanguage_Text {
+            get {
+                return ResourceManager.GetString("DefaultLanguage.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delay Length of Verse Before Advancing.
+        /// </summary>
+        public static string DelayVerseLengthBeforeAdvancing_Text {
+            get {
+                return ResourceManager.GetString("DelayVerseLengthBeforeAdvancing.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Qur&apos;an with its Arabic, transliteration and translation word by word and verse by verse for learning, studying, research, memorization, reflection and mastery of tajweed..
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quran Word By Word.
+        /// </summary>
+        public static string DisplayName {
+            get {
+                return ResourceManager.GetString("DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Go to Verse.
+        /// </summary>
+        public static string GoToVerse_Label {
+            get {
+                return ResourceManager.GetString("GoToVerse.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increase Font Size.
+        /// </summary>
+        public static string IncreaseFontSize_Label {
+            get {
+                return ResourceManager.GetString("IncreaseFontSize.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Looping Mode.
+        /// </summary>
+        public static string Looping_Text {
+            get {
+                return ResourceManager.GetString("Looping.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other Text Font.
+        /// </summary>
+        public static string OtherTextFont_Text {
+            get {
+                return ResourceManager.GetString("OtherTextFont.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pause.
+        /// </summary>
+        public static string Pause_Label {
+            get {
+                return ResourceManager.GetString("Pause.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Play.
+        /// </summary>
+        public static string Play_Label {
+            get {
+                return ResourceManager.GetString("Play.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reciter.
+        /// </summary>
+        public static string Reciter_Text {
+            get {
+                return ResourceManager.GetString("Reciter.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Bookmark.
+        /// </summary>
+        public static string RemoveBookmark_Text {
+            get {
+                return ResourceManager.GetString("RemoveBookmark.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Render.
+        /// </summary>
+        public static string Render_Label {
+            get {
+                return ResourceManager.GetString("Render.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
         public static string ResourceFlowDirection {
@@ -103,6 +323,87 @@ namespace ISQV.Xam.WinPhone.Resources {
         public static string ResourceLanguage {
             get {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Playback Verse.
+        /// </summary>
+        public static string SetPlaybackVerse_Text {
+            get {
+                return ResourceManager.GetString("SetPlaybackVerse.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Settings_Label {
+            get {
+                return ResourceManager.GetString("Settings.Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share.
+        /// </summary>
+        public static string Share_Text {
+            get {
+                return ResourceManager.GetString("Share.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Exegesis.
+        /// </summary>
+        public static string ShowExegesis_Text {
+            get {
+                return ResourceManager.GetString("ShowExegesis.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Translation.
+        /// </summary>
+        public static string ShowTranslation_Text {
+            get {
+                return ResourceManager.GetString("ShowTranslation.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Transliteration.
+        /// </summary>
+        public static string ShowTransliteration_Text {
+            get {
+                return ResourceManager.GetString("ShowTransliteration.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Word By Word.
+        /// </summary>
+        public static string ShowWordByWord_Text {
+            get {
+                return ResourceManager.GetString("ShowWordByWord.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Size_Text {
+            get {
+                return ResourceManager.GetString("Size.Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Recitation Rule Coloring.
+        /// </summary>
+        public static string UseRecitationRuleColoring_Text {
+            get {
+                return ResourceManager.GetString("UseRecitationRuleColoring.Text", resourceCulture);
             }
         }
     }

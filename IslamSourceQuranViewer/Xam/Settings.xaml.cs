@@ -14,7 +14,7 @@ namespace IslamSourceQuranViewer.Xam
 	{
 		public Settings ()
 		{
-            //this.DataContext = this;
+            this.BindingContext = this;
             MyAppSettings = new AppSettings();
             InitializeComponent();
 		}

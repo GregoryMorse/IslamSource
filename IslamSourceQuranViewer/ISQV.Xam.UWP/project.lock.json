@@ -354,6 +354,91 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libSkiaSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "runtimes/win7-x64/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x64"
+          },
+          "runtimes/win7-x86/native/libSkiaSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x86"
+          }
+        }
+      },
+      "SkiaSharp.Views/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "SkiaSharp.Views": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2209,6 +2294,18 @@
           }
         }
       },
+      "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.0.1": {
         "type": "package",
         "compile": {
@@ -2874,6 +2971,46 @@
         "type": "package",
         "native": {
           "runtimes/win8-arm/native/clrcompression.dll": {}
+        }
+      },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {},
+          "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {},
+          "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.Views/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "SkiaSharp.Views": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -4560,6 +4697,18 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.0.1": {
         "type": "package",
         "compile": {
@@ -5261,6 +5410,46 @@
         },
         "native": {
           "runtimes/win8-arm-aot/native/_._": {}
+        }
+      },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {},
+          "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {},
+          "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.Views/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "SkiaSharp.Views": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -6947,6 +7136,18 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.0.1": {
         "type": "package",
         "compile": {
@@ -7621,6 +7822,46 @@
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
+        }
+      },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {},
+          "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {},
+          "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.Views/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "SkiaSharp.Views": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -9305,6 +9546,18 @@
         },
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
         }
       },
       "Xam.Plugins.Settings/3.0.1": {
@@ -10019,6 +10272,46 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {},
+          "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {},
+          "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.Views/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "SkiaSharp.Views": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -11703,6 +11996,18 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.0.1": {
         "type": "package",
         "compile": {
@@ -12377,6 +12682,46 @@
         },
         "runtime": {
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
+        }
+      },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {},
+          "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {},
+          "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.Views/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "SkiaSharp.Views": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -14063,6 +14408,18 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        }
+      },
       "Xam.Plugins.Settings/3.0.1": {
         "type": "package",
         "compile": {
@@ -14773,6 +15130,46 @@
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
+        }
+      },
+      "SkiaSharp/1.59.1": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {},
+          "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {},
+          "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.Views/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.UWP.dll": {}
+        }
+      },
+      "SkiaSharp.Views.Forms/1.59.1": {
+        "type": "package",
+        "dependencies": {
+          "SkiaSharp": "1.59.1",
+          "SkiaSharp.Views": "1.59.1",
+          "Xamarin.Forms": "2.3.0"
+        },
+        "compile": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -16457,6 +16854,18 @@
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.4.247"
+        },
+        "compile": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll": {}
         }
       },
       "Xam.Plugins.Settings/3.0.1": {
@@ -19887,6 +20296,78 @@
         "runtime.win8-arm.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
         "runtime.win8-arm.runtime.native.system.io.compression.nuspec",
         "runtimes/win8-arm/native/clrcompression.dll"
+      ]
+    },
+    "SkiaSharp/1.59.1": {
+      "sha512": "Le+YqP0aWwJ5ImHikWiLWOWjdH8oOV6F2D7fknzKp9ArzDIrtPASeiHpI1RgqQEK/GGvR56B2l5belsDzwK7uQ==",
+      "type": "package",
+      "path": "skiasharp/1.59.1",
+      "files": [
+        "build/net45/SkiaSharp.dll.config",
+        "build/net45/SkiaSharp.targets",
+        "lib/MonoAndroid/SkiaSharp.dll",
+        "lib/MonoAndroid/SkiaSharp.xml",
+        "lib/XamarinMac/SkiaSharp.dll",
+        "lib/XamarinMac/SkiaSharp.xml",
+        "lib/XamariniOS/SkiaSharp.dll",
+        "lib/XamariniOS/SkiaSharp.xml",
+        "lib/XamarintvOS/SkiaSharp.dll",
+        "lib/XamarintvOS/SkiaSharp.xml",
+        "lib/net45/SkiaSharp.dll",
+        "lib/net45/SkiaSharp.dll.config",
+        "lib/net45/SkiaSharp.xml",
+        "lib/netstandard1.3/SkiaSharp.dll",
+        "lib/netstandard1.3/SkiaSharp.xml",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.dll",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.xml",
+        "lib/uap10.0/SkiaSharp.dll",
+        "lib/uap10.0/SkiaSharp.xml",
+        "runtimes/osx/native/libSkiaSharp.dylib",
+        "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll",
+        "runtimes/win7-x64/native/libSkiaSharp.dll",
+        "runtimes/win7-x86/native/libSkiaSharp.dll",
+        "skiasharp.1.59.1.nupkg.sha512",
+        "skiasharp.nuspec",
+        "xamarin.interactive/SkiaSharp.Workbooks.dll"
+      ]
+    },
+    "SkiaSharp.Views/1.59.1": {
+      "sha512": "eefeTt+Kka9cEFTzcJGkUFgcWPXmZp8OT1fXv2fcdy9FU4/i4yn/X0Dbtz8ZqsPxGfujIYj+MZvnAK8Fl/J5Eg==",
+      "type": "package",
+      "path": "skiasharp.views/1.59.1",
+      "files": [
+        "lib/MonoAndroid/SkiaSharp.Views.Android.dll",
+        "lib/XamarinMac/SkiaSharp.Views.Mac.dll",
+        "lib/XamariniOS/SkiaSharp.Views.iOS.dll",
+        "lib/XamarintvOS/SkiaSharp.Views.tvOS.dll",
+        "lib/net45/SkiaSharp.Views.Desktop.dll",
+        "lib/net45/SkiaSharp.Views.WPF.dll",
+        "lib/uap10.0/SkiaSharp.Views.UWP.dll",
+        "skiasharp.views.1.59.1.nupkg.sha512",
+        "skiasharp.views.nuspec"
+      ]
+    },
+    "SkiaSharp.Views.Forms/1.59.1": {
+      "sha512": "oJB/Hgk1TghpMuuXhUZKmQ3rOU/l4RleYsgNd0EvrNmDahdr/PPhJ30rFH0OjdIsuf5T2hrRdAn55zdb7yMg2w==",
+      "type": "package",
+      "path": "skiasharp.views.forms/1.59.1",
+      "files": [
+        "lib/MonoAndroid/SkiaSharp.Views.Forms.dll",
+        "lib/XamarinMac/SkiaSharp.Views.Forms.dll",
+        "lib/XamariniOS/SkiaSharp.Views.Forms.dll",
+        "lib/netstandard1.3/SkiaSharp.Views.Forms.dll",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.Views.Forms.dll",
+        "lib/uap10.0/SkiaSharp.Views.Forms.dll",
+        "skiasharp.views.forms.1.59.1.nupkg.sha512",
+        "skiasharp.views.forms.nuspec"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -26021,6 +26502,20 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Xam.Plugins.Forms.ProgressRing/0.1.2": {
+      "sha512": "TqxIQo9uiq0EXPSIet8eouoF0Vs1Al30Urd++LXkH2lCQPMJzr5aCrwnCrTi9/4V229njCgUw53+Au6xWbZwHg==",
+      "type": "package",
+      "path": "xam.plugins.forms.progressring/0.1.2",
+      "files": [
+        "lib/MonoAndroid10/ProgressRing.Forms.Plugin.Android.dll",
+        "lib/MonoAndroid10/ProgressRing.Forms.Plugin.dll",
+        "lib/Xamarin.iOS10/ProgressRing.Forms.Plugin.dll",
+        "lib/Xamarin.iOS10/ProgressRing.Forms.Plugin.iOS.dll",
+        "lib/portable-net45+wp80+win8+wpa81/ProgressRing.Forms.Plugin.dll",
+        "xam.plugins.forms.progressring.0.1.2.nupkg.sha512",
+        "xam.plugins.forms.progressring.nuspec"
+      ]
+    },
     "Xam.Plugins.Settings/3.0.1": {
       "sha512": "kdW6sarcRfu+BWlw8iAycIsxR2zgfh8c0QuHsSGC0pww00JlhOKqAHI8YsaZyB7mfKNKZga+Kh2R61daoUtt7g==",
       "type": "package",
@@ -26286,8 +26781,11 @@
     "": [
       "Microsoft.Bcl.Build >= 1.0.21",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.4.0",
+      "SkiaSharp >= 1.59.1",
+      "SkiaSharp.Views.Forms >= 1.59.1",
       "System.Threading.Tasks >= 4.3.0",
       "System.Threading.Tasks.Extensions >= 4.4.0",
+      "Xam.Plugins.Forms.ProgressRing >= 0.1.2",
       "Xam.Plugins.Settings >= 3.0.1",
       "Xamarin.Forms >= 2.3.4.270",
       "Xamarin.Forms.CarouselView >= 2.3.0-pre2"
@@ -26333,8 +26831,11 @@
     "dependencies": {
       "Microsoft.Bcl.Build": "1.0.21",
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
+      "SkiaSharp": "1.59.1",
+      "SkiaSharp.Views.Forms": "1.59.1",
       "System.Threading.Tasks": "4.3.0",
       "System.Threading.Tasks.Extensions": "4.4.0",
+      "Xam.Plugins.Forms.ProgressRing": "0.1.2",
       "Xam.Plugins.Settings": "3.0.1",
       "Xamarin.Forms": "2.3.4.270",
       "Xamarin.Forms.CarouselView": "2.3.0-pre2"

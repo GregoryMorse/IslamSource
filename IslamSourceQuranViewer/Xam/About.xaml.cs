@@ -17,8 +17,9 @@ namespace IslamSourceQuranViewer.Xam
         public About()
         {
             this.InitializeComponent();
-            DisplayName.Text = (string)Application.Current.Resources["DisplayName"];
-            Description.Text = (string)Application.Current.Resources["Description"];
+            DisplayName.Text = (string)ISQV.Xam.UWP.Resources.AppResources.DisplayName;
+            Description.Text = (string)ISQV.Xam.UWP.Resources.AppResources.Description;
+            AboutInfo.Text = (string)ISQV.Xam.UWP.Resources.AppResources.AboutInfo_Text;
         }
     }
 }

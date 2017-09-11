@@ -3,21 +3,21 @@
              x:Class="IslamSourceQuranViewer.Xam.About">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="TitleStyle" TargetType="TextBlock">
-                <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="FontFamily" Value="Global User Interface"/>
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <!-- <Setter Property="FontFamily" Value="Global User Interface"/> -->
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid BackgroundColor="White">
         <ScrollView>
-            <StackLayout Orientation="Vertical" Background="White">
-                <Label x:Name="DisplayName" HorizontalAlignment="Center" FontSize="42" Style="{StaticResource TitleStyle}"></Label>
-                <Label x:Name="Description" HorizontalAlignment="Center" FontSize="28" Style="{StaticResource TitleStyle}" TextWrapping="Wrap"></Label>
-                <Label x:Uid="AboutInfo" FontSize="14" Style="{StaticResource TitleStyle}" TextWrapping="Wrap"></Label>
+            <StackLayout Orientation="Vertical" BackgroundColor="White">
+                <Label x:Name="DisplayName" HorizontalOptions="Center" FontSize="42" Style="{StaticResource TitleStyle}"></Label>
+                <Label x:Name="Description" HorizontalOptions="Center" FontSize="28" Style="{StaticResource TitleStyle}"></Label>
+                <Label x:Name="AboutInfo" FontSize="14" Style="{StaticResource TitleStyle}"></Label>
             </StackLayout>
         </ScrollView>
     </Grid>
-    <ContentPage.ToolBarItems>
-    </ContentPage.ToolBarItems>
+    <ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>
 </ContentPage>

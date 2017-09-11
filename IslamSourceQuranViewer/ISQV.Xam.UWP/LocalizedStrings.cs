@@ -1,4 +1,4 @@
-﻿using ISQV.Xam.WinPhone.Resources;
+﻿using ISQV.Xam.UWP.Resources;
 
 namespace ISQV.Xam.WinPhone
 {
