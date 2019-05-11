@@ -156,6 +156,18 @@ Public Class PortableMethods
         Stream.Dispose()
         Return Lines
     End Function
+    Public Function GetLanguageName() As String
+        Return Threading.Thread.CurrentThread.CurrentUICulture.Name
+    End Function
+    Public Function GetLanguageAltName() As String
+        Return Threading.Thread.CurrentThread.CurrentUICulture.Parent.Name
+    End Function
+    Public Function GetTwoLetterISOLanguageName() As String
+        Return Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName
+    End Function
+    Public Function GetTwoLetterISOLanguageAltName() As String
+        Return Threading.Thread.CurrentThread.CurrentUICulture.Parent.TwoLetterISOLanguageName
+    End Function
 End Class
 Public Class Utility
     Public Interface IInitClass

@@ -1,11 +1,13 @@
 ﻿Option Explicit On
 Option Strict On
 Imports XMLRender
+Imports System
 Imports System.Drawing
 Imports System.Web
 Imports System.Web.UI
-Imports HostPageUtility
 Imports System.Threading.Tasks
+Imports SharpDX
+Imports System.Runtime.InteropServices
 
 Public Class WindowsWebSettings
     Implements PortableSettings
@@ -53,10 +55,12 @@ End Class
 Public Class WindowsWebFileIO
     Implements PortableFileIO
     Public Async Function GetDirectoryFiles(Path As String) As Threading.Tasks.Task(Of String()) Implements PortableFileIO.GetDirectoryFiles
-        Return Await Threading.Tasks.Task.Factory.StartNew(Function() IO.Directory.GetFiles(Path))
+        'Threading.Tasks.Task.Factory.StartNew needs DenyChildAttach or will cause premature await termination
+        'Task.Run already uses this now as of .NET 4.5
+        Return Await Threading.Tasks.Task.Run(Function() IO.Directory.GetFiles(Path))
     End Function
     Public Async Function LoadStream(FilePath As String) As Threading.Tasks.Task(Of IO.Stream) Implements PortableFileIO.LoadStream
-        Return Await Threading.Tasks.Task.Factory.StartNew(Function() IO.File.Open(FilePath, IO.FileMode.Open, IO.FileAccess.Read))
+        Return Await Threading.Tasks.Task.Run(Function() IO.File.Open(FilePath, IO.FileMode.Open, IO.FileAccess.Read))
     End Function
     Public Async Function SaveStream(FilePath As String, Stream As IO.Stream) As Threading.Tasks.Task Implements PortableFileIO.SaveStream
         Await Threading.Tasks.Task.Factory.StartNew(Sub()
@@ -76,19 +80,19 @@ Public Class WindowsWebFileIO
         Return IO.Path.Combine(Paths)
     End Function
     Public Async Function DeleteFile(FilePath As String) As Threading.Tasks.Task Implements PortableFileIO.DeleteFile
-        Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.File.Delete(FilePath))
+        Await Threading.Tasks.Task.Run(Sub() IO.File.Delete(FilePath))
     End Function
     Public Async Function PathExists(Path As String) As Threading.Tasks.Task(Of Boolean) Implements PortableFileIO.PathExists
-        Return (Await Threading.Tasks.Task.Factory.StartNew(Function() IO.Directory.Exists(Path) Or IO.File.Exists(Path)))
+        Return (Await Threading.Tasks.Task.Run(Function() IO.Directory.Exists(Path) Or IO.File.Exists(Path)))
     End Function
     Public Async Function CreateDirectory(Path As String) As Threading.Tasks.Task Implements PortableFileIO.CreateDirectory
-        Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.Directory.CreateDirectory(Path))
+        Await Threading.Tasks.Task.Run(Sub() IO.Directory.CreateDirectory(Path))
     End Function
     Public Async Function PathGetLastWriteTimeUtc(Path As String) As Threading.Tasks.Task(Of Date) Implements PortableFileIO.PathGetLastWriteTimeUtc
-        Return Await Threading.Tasks.Task.Factory.StartNew(Function() IO.File.GetLastWriteTimeUtc(Path))
+        Return Await Threading.Tasks.Task.Run(Function() IO.File.GetLastWriteTimeUtc(Path))
     End Function
     Public Async Function PathSetLastWriteTimeUtc(Path As String, Time As Date) As Threading.Tasks.Task Implements PortableFileIO.PathSetLastWriteTimeUtc
-        Await Threading.Tasks.Task.Factory.StartNew(Sub() IO.File.SetLastWriteTimeUtc(Path, Time))
+        Await Threading.Tasks.Task.Run(Sub() IO.File.SetLastWriteTimeUtc(Path, Time))
     End Function
 End Class
 Public Class NativeMethods
@@ -204,11 +208,11 @@ Public Class InitClass
         SD = NewSD
     End Sub
     Public Function Init(bWeb As Boolean) As Task Implements Utility.IInitClass.Init
-        Return Task.Factory.StartNew(Sub()
-                                         RAWeb = New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
-                                         Doc = New Document(_PortableMethods)
-                                         ArbDataWeb = New ArabicDataWeb(ArbData)
-                                     End Sub)
+        Return Task.Run(Sub()
+                            RAWeb = New RenderArrayWeb(Nothing, _PortableMethods, ArbData, UWeb)
+                            Doc = New Document(_PortableMethods)
+                            ArbDataWeb = New ArabicDataWeb(ArbData)
+                        End Sub)
     End Function
     Public Function LookupObject(ClassName As String) As Object Implements Utility.IInitClass.LookupObject
         If ClassName = "RenderArrayWeb" Then
@@ -474,7 +478,7 @@ Public Class UtilityWeb
         cspParams.KeyNumber = System.Security.Cryptography.KeyNumber.Exchange
         cspParams.Flags = System.Security.Cryptography.CspProviderFlags.NoFlags 'user may change to must use machine store
         Dim Transform As New System.Security.Cryptography.RSACryptoServiceProvider(512, cspParams)
-        Dim CspBlob As Byte() = IO.File.ReadAllBytes(_PortableMethods.Settings.GetFilePath("bin\" + UtilityWeb.ConnectionData.KeyFileName))
+        Dim CspBlob As Byte() = IO.File.ReadAllBytes(_PortableMethods.Settings.GetFilePath("bin\..\IslamSourceSite\bin\" + UtilityWeb.ConnectionData.KeyFileName))
         Transform.PersistKeyInCsp = False
         Transform.ImportCspBlob(CspBlob)
         Dim Bytes(DecryptStr.Length \ 2 - 1) As Byte '.NET uses reverse from order of CryptDecrypt
@@ -995,7 +999,9 @@ Public Class Geolocation
         Return New Array() {New String() {"Status Code", "Status Message", "IP Address", "Country Code", "Country Name", "Region Name", "City Name", "Zip Code", "Latitude", "Longitude", "Time Zone"}, New String() {Strings(0), Strings(1), Strings(2), Strings(3), Strings(4), Strings(5), Strings(6), Strings(7), Strings(8), Strings(9), Strings(10)}}
     End Function
     Public Shared Function GetElevationData(ByVal lat As String, ByVal lng As String) As String
-        Dim URL As String = "http://maps.googleapis.com/maps/api/elevation/xml?locations=" + lat + "," + lng + "&sensor=false"
+        'Google API is now pay per use only
+        'Dim URL As String = "http://maps.googleapis.com/maps/api/elevation/xml?locations=" + lat + "," + lng + "&sensor=false"
+        Dim URL As String = "http://api.open-elevation.com/api/v1/lookup?locations=" + lat + "," + lng
         Dim MyWebRequest As Net.HttpWebRequest = DirectCast(Net.WebRequest.Create(URL), Net.HttpWebRequest)
         Dim Data As String = String.Empty
         Dim DataStream As IO.StreamReader = Nothing
@@ -1014,9 +1020,9 @@ Public Class Geolocation
                     If XMLChildNode.Name = "elevation" Then
                         Return XMLChildNode.Value
                     End If
-                    If XMLChildNode.Name = "resolution" Then
-                        'Return XMLChildNode.InnerText
-                    End If
+                    'If XMLChildNode.Name = "resolution" Then
+                    'Return XMLChildNode.InnerText
+                    'End If
                 Next
             End If
         Next
@@ -1463,6 +1469,18 @@ Public Class RenderArrayWeb
             Dispose(True)
             GC.SuppressFinalize(Me)
         End Sub
+
+        Public Function QueryInterface(ByRef guid As Guid, ByRef comObject As IntPtr) As Result Implements IUnknown.QueryInterface
+            Throw New NotImplementedException()
+        End Function
+
+        Public Function AddReference() As Integer Implements IUnknown.AddReference
+            Throw New NotImplementedException()
+        End Function
+
+        Public Function Release() As Integer Implements IUnknown.Release
+            Throw New NotImplementedException()
+        End Function
 #End Region
     End Class
     Class TextSink
@@ -1515,7 +1533,143 @@ Public Class RenderArrayWeb
             Dispose(True)
             GC.SuppressFinalize(Me)
         End Sub
+
+        Public Function QueryInterface(ByRef guid As Guid, ByRef comObject As IntPtr) As Result Implements IUnknown.QueryInterface
+            Throw New NotImplementedException()
+        End Function
+
+        Public Function AddReference() As Integer Implements IUnknown.AddReference
+            Throw New NotImplementedException()
+        End Function
+
+        Public Function Release() As Integer Implements IUnknown.Release
+            Throw New NotImplementedException()
+        End Function
 #End Region
+    End Class
+    Public Enum FontWeight As Integer
+        FW_DONTCARE = 0
+        FW_THIN = 100
+        FW_EXTRALIGHT = 200
+        FW_LIGHT = 300
+        FW_NORMAL = 400
+        FW_MEDIUM = 500
+        FW_SEMIBOLD = 600
+        FW_BOLD = 700
+        FW_EXTRABOLD = 800
+        FW_HEAVY = 900
+    End Enum
+
+    Public Enum FontCharSet As Byte
+        ANSI_CHARSET = 0
+        DEFAULT_CHARSET = 1
+        SYMBOL_CHARSET = 2
+        SHIFTJIS_CHARSET = 128
+        HANGEUL_CHARSET = 129
+        HANGUL_CHARSET = 129
+        GB2312_CHARSET = 134
+        CHINESEBIG5_CHARSET = 136
+        OEM_CHARSET = 255
+        JOHAB_CHARSET = 130
+        HEBREW_CHARSET = 177
+        ARABIC_CHARSET = 178
+        GREEK_CHARSET = 161
+        TURKISH_CHARSET = 162
+        VIETNAMESE_CHARSET = 163
+        THAI_CHARSET = 222
+        EASTEUROPE_CHARSET = 238
+        RUSSIAN_CHARSET = 204
+        MAC_CHARSET = 77
+        BALTIC_CHARSET = 186
+    End Enum
+
+    Public Enum FontPrecision As Byte
+        OUT_DEFAULT_PRECIS = 0
+        OUT_STRING_PRECIS = 1
+        OUT_CHARACTER_PRECIS = 2
+        OUT_STROKE_PRECIS = 3
+        OUT_TT_PRECIS = 4
+        OUT_DEVICE_PRECIS = 5
+        OUT_RASTER_PRECIS = 6
+        OUT_TT_ONLY_PRECIS = 7
+        OUT_OUTLINE_PRECIS = 8
+        OUT_SCREEN_OUTLINE_PRECIS = 9
+        OUT_PS_ONLY_PRECIS = 10
+    End Enum
+
+    Public Enum FontClipPrecision As Byte
+        CLIP_DEFAULT_PRECIS = 0
+        CLIP_CHARACTER_PRECIS = 1
+        CLIP_STROKE_PRECIS = 2
+        CLIP_MASK = &HF
+        CLIP_LH_ANGLES = (1 << 4)
+        CLIP_TT_ALWAYS = (2 << 4)
+        CLIP_DFA_DISABLE = (4 << 4)
+        CLIP_EMBEDDED = (8 << 4)
+    End Enum
+
+    Public Enum FontQuality As Byte
+        DEFAULT_QUALITY = 0
+        DRAFT_QUALITY = 1
+        PROOF_QUALITY = 2
+        NONANTIALIASED_QUALITY = 3
+        ANTIALIASED_QUALITY = 4
+        CLEARTYPE_QUALITY = 5
+        CLEARTYPE_NATURAL_QUALITY = 6
+    End Enum
+
+    Public Enum FontPitchAndFamily As Byte
+        DEFAULT_PITCH = 0
+        FIXED_PITCH = 1
+        VARIABLE_PITCH = 2
+        FF_DONTCARE = (0 << 4)
+        FF_ROMAN = (1 << 4)
+        FF_SWISS = (2 << 4)
+        FF_MODERN = (3 << 4)
+        FF_SCRIPT = (4 << 4)
+        FF_DECORATIVE = (5 << 4)
+    End Enum
+    <StructLayout(LayoutKind.Sequential, CharSet:=CharSet.Auto)>
+    Public Class LOGFONT
+        Public lfHeight As Integer
+        Public lfWidth As Integer
+        Public lfEscapement As Integer
+        Public lfOrientation As Integer
+        Public lfWeight As FontWeight
+        <MarshalAs(UnmanagedType.U1)>
+        Public lfItalic As Boolean
+        <MarshalAs(UnmanagedType.U1)>
+        Public lfUnderline As Boolean
+        <MarshalAs(UnmanagedType.U1)>
+        Public lfStrikeOut As Boolean
+        Public lfCharSet As FontCharSet
+        Public lfOutPrecision As FontPrecision
+        Public lfClipPrecision As FontClipPrecision
+        Public lfQuality As FontQuality
+        Public lfPitchAndFamily As FontPitchAndFamily
+        <MarshalAs(UnmanagedType.ByValTStr, SizeConst:=32)>
+        Public lfFaceName As String
+
+        Public Overrides Function ToString() As String
+            Dim sb As New System.Text.StringBuilder()
+            sb.Append("LOGFONT" & vbLf)
+            sb.AppendFormat("   lfHeight: {0}" & vbLf, lfHeight)
+            sb.AppendFormat("   lfWidth: {0}" & vbLf, lfWidth)
+            sb.AppendFormat("   lfEscapement: {0}" & vbLf, lfEscapement)
+            sb.AppendFormat("   lfOrientation: {0}" & vbLf, lfOrientation)
+            sb.AppendFormat("   lfWeight: {0}" & vbLf, lfWeight)
+            sb.AppendFormat("   lfItalic: {0}" & vbLf, lfItalic)
+            sb.AppendFormat("   lfUnderline: {0}" & vbLf, lfUnderline)
+            sb.AppendFormat("   lfStrikeOut: {0}" & vbLf, lfStrikeOut)
+            sb.AppendFormat("   lfCharSet: {0}" & vbLf, lfCharSet)
+            sb.AppendFormat("   lfOutPrecision: {0}" & vbLf, lfOutPrecision)
+            sb.AppendFormat("   lfClipPrecision: {0}" & vbLf, lfClipPrecision)
+            sb.AppendFormat("   lfQuality: {0}" & vbLf, lfQuality)
+            sb.AppendFormat("   lfPitchAndFamily: {0}" & vbLf, lfPitchAndFamily)
+            sb.AppendFormat("   lfFaceName: {0}" & vbLf, lfFaceName)
+
+            Return sb.ToString()
+        End Function
     End Class
     Public Function GetWordDiacriticPositionsDWrite(Str As String, useFont As Font, Forms As Char(), IsRTL As Boolean, ByRef BaseLine As Single, ByRef Pos As CharPosInfo()) As SizeF
         If Str = String.Empty Then
@@ -1525,7 +1679,9 @@ Public Class RenderArrayWeb
         End If
         Dim Factory As New SharpDX.DirectWrite.Factory()
         Dim Analyze As New SharpDX.DirectWrite.TextAnalyzer(Factory)
-        Dim Font As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(useFont)
+        Dim lt As New LOGFONT
+        useFont.ToLogFont(lt)
+        Dim Font As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromLogFont(lt)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(Font)
         Dim Analysis As New SharpDX.DirectWrite.ScriptAnalysis
         Dim Sink As New TextSink
@@ -1544,12 +1700,12 @@ Public Class RenderArrayWeb
         ' 'ss01' Style Set 1
         'iTextSharp only handles Required Ligatures, could add the others with special routines
         Dim FeatureDisabler() As SharpDX.DirectWrite.FontFeature = {
-            New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.GlyphCompositionDecomposition, 1),
-            New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 0),
-            New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StandardLigatures, 0),
-            New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualAlternates, 0),
-            New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StylisticSet1, 0)
-            }
+        New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.GlyphCompositionDecomposition, 1),
+        New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 0),
+        New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StandardLigatures, 0),
+        New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualAlternates, 0),
+        New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.StylisticSet1, 0)
+        }
         'New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.Default, 0),
         'New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.ContextualLigatures, 0),
         'New SharpDX.DirectWrite.FontFeature(SharpDX.DirectWrite.FontFeatureTag.DiscretionaryLigatures, 0),
@@ -1780,7 +1936,9 @@ Public Class RenderArrayWeb
         Dim RowTop As Single = Single.NaN
         Dim MaxRect As RectangleF
         Dim Factory As New SharpDX.DirectWrite.Factory
-        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(DrawFont)
+        Dim lt As New LOGFONT
+        DrawFont.ToLogFont(lt)
+        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromLogFont(lt)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(DFont)
         MaxRect = New RectangleF(Doc.PageSize.Width, Doc.PageSize.Height, 0, 0)
         For ListCount As Integer = 2 To OutArray.Length - 1
@@ -1871,7 +2029,9 @@ Public Class RenderArrayWeb
     End Sub
     Public Sub DoRenderPdf(Doc As iTextSharp.text.Document, Writer As iTextSharp.text.pdf.PdfWriter, Font As iTextSharp.text.Font, DrawFont As Font, Forms As Char(), CurRenderArray As List(Of RenderArray.RenderItem), _Bounds As Generic.List(Of Generic.List(Of Generic.List(Of LayoutInfo))), ByRef PageOffset As PointF, BaseOffset As PointF)
         Dim Factory As New SharpDX.DirectWrite.Factory()
-        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(DrawFont)
+        Dim lt As New LOGFONT
+        DrawFont.ToLogFont(lt)
+        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromLogFont(lt)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(DFont)
         Dim RowTop As Single = Single.NaN
         Dim MaxRect As RectangleF
@@ -2026,7 +2186,9 @@ Public Class RenderArrayWeb
         Next
         Dim bReverse As Boolean = False
         Dim Factory As New SharpDX.DirectWrite.Factory()
-        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(DrawFont)
+        Dim lt As New LOGFONT
+        DrawFont.ToLogFont(lt)
+        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromLogFont(lt)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(DFont)
         Dim Mode As Integer = 1
         For Count As Integer = 0 To CType(CurRenderArray(0).TextItems(0).Text, Array()).Length - 1 - 3
@@ -2460,7 +2622,7 @@ Public Class RenderArrayWeb
             For SubCount = 0 To Bounds(Count).Count - 1
                 Dim CenterAdj As Single = 0
                 If NextOverIndex <> OverIndexes.Count AndAlso (OverIndexes(NextOverIndex).Index < Count Or
-                        OverIndexes(NextOverIndex).Index = Count) Then
+                    OverIndexes(NextOverIndex).Index = Count) Then
                     NextOverIndex += 1
                 End If
                 If NextOverIndex <> OverIndexes.Count Then
@@ -2592,7 +2754,9 @@ Public Class RenderArrayWeb
         'divide into pages by heights
         Dim Forms As Char() = ArbData.GetPresentationForms()
         Dim Factory As New SharpDX.DirectWrite.Factory()
-        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromSystemDrawingFont(DrawFont)
+        Dim lt As New LOGFONT
+        DrawFont.ToLogFont(lt)
+        Dim DFont As SharpDX.DirectWrite.Font = Factory.GdiInterop.FromLogFont(lt)
         Dim FontFace As New SharpDX.DirectWrite.FontFace(DFont)
         Dim SupportedGlyphs As Short() = FontFace.GetGlyphIndices(New List(Of Integer)(Linq.Enumerable.Select(Forms, Function(Ch As Char) AscW(Ch))).ToArray())
         For Count = 0 To SupportedGlyphs.Length - 1
@@ -2622,8 +2786,8 @@ Public Class RenderArrayWeb
     End Function
     Public Function GetStarRatingJS() As String
         Return "function changeStarRating(e, item, val, data) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') { Element.style.color = (index < val) ? '#00a4e4' : '#cccccc'; Element.innerText = (index < val) ? '\u2605' : '\u2606'; } }); data['Rating'] = val.toString(); $.ajax({url: '" + UWeb.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().children('span').text(data); }, dataType: 'text'}); } " +
-            "function restoreStarRating(e, item) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'; }); } " +
-            "function updateStarRating(e, item, val) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (index < val) ? '#aa1010' : ((Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'); }); }"
+        "function restoreStarRating(e, item) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'; }); } " +
+        "function updateStarRating(e, item, val) { $(item).parent().find('span').each(function (index, Element) { if (Element.textContent !== '\u26D2') Element.style.color = (index < val) ? '#aa1010' : ((Element.textContent === '\u2605') ? '#00a4e4' : '#cccccc'); }); }"
         'Return "function changeStarRating(e, item, data) { $(item).find('div').get(0).style.width = (Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10) * 10).toString() + '%'; data['Rating'] = Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10).toString(); $.ajax({url: '" + host.GetPageString("HadithRanking") + "', data: data, type: 'POST', success: function(data) { $(item).parent().parent().find('span').text(data); }, dataType: 'text'}); } " + _
         '    "function restoreStarRating(e, item) { $(item).find('div').get(1).style.width = '0%'; $(item).find('div').get(1).style.zIndex = 102; } " + _
         '    "function updateStarRating(e, item) { $(item).find('div').get(1).style.width = (Math.ceil((e.pageX - $(item).parent().offset().left) / $(item).outerWidth() * 10) * 10).toString() + '%'; $(item).find('div').get(0).style.zIndex = parseFloat($(item).find('div').get(1).style.width) > parseFloat($(item).find('div').get(0).style.width) ? 103 : 102; }"

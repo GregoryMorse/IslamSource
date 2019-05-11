@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using SharpDX;
 
 #if WINDOWS_APP || WINDOWS_PHONE_APP || WINDOWS_UWP
 using Windows.Foundation;
@@ -739,6 +740,21 @@ using Android.Graphics;
                 return this._Str.Substring(0x0, textPosition - 0x1);
             }
 
+            public Result QueryInterface(ref Guid guid, out IntPtr comObject)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int AddReference()
+            {
+                throw new NotImplementedException();
+            }
+
+            public int Release()
+            {
+                throw new NotImplementedException();
+            }
+
             // Properties
             public SharpDX.DirectWrite.ReadingDirection ReadingDirection
             {
@@ -794,6 +810,21 @@ using Android.Graphics;
             public void SetScriptAnalysis(int textPosition, int textLength, SharpDX.DirectWrite.ScriptAnalysis scriptAnalysis)
             {
                 this._scriptAnalysis = scriptAnalysis;
+            }
+
+            public Result QueryInterface(ref Guid guid, out IntPtr comObject)
+            {
+                throw new NotImplementedException();
+            }
+
+            public int AddReference()
+            {
+                throw new NotImplementedException();
+            }
+
+            public int Release()
+            {
+                throw new NotImplementedException();
             }
 
             public IDisposable Shadow { get; set; }
@@ -1354,7 +1385,7 @@ using Android.Graphics;
             set
             {
                 _selectedItem.SelectedItem = value;
-                PropertyChanged(this, new PropertyChangedEventArgs("ListSelectedItem"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("ListSelectedItem"));
             }
         }
 
@@ -1367,7 +1398,7 @@ using Android.Graphics;
             {
                 _selectedItem = value;
                 if (_selectedItem != null) AppSettings.iDefaultStartTab = _selectedItem.Index;
-                PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
                 if (_selectedItem != null) ListItems = _selectedItem.Items;
                 if (_selectedItem != null) ListSelectedItem = ListItems.Count() == 0 ? null : ListItems.First();
             }
@@ -1447,7 +1478,7 @@ using Android.Graphics;
             {
                 AppSettings.dFontSize = value;
                 TextShaping.Cleanup(2);
-                PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("FontSize"));
             }
         }
         public string FontFamily
@@ -1467,7 +1498,7 @@ using Android.Graphics;
             {
                 AppSettings.dOtherFontSize = value;
                 TextShaping.Cleanup(1);
-                PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
+                if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs("OtherFontSize"));
             }
         }
         public string OtherFontFamily

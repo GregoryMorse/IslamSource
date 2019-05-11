@@ -237,7 +237,7 @@ namespace IslamSourceQuranViewer.Xam
 
         protected virtual View GetItemView(object item)
         {
-            var content = ItemTemplate.CreateContent();
+            var content = (ItemTemplate is DataTemplateSelector) ? ((DataTemplateSelector)ItemTemplate).SelectTemplate(item, this).CreateContent() : ItemTemplate.CreateContent();
             var view = content as View;
             if (view == null) return null;
 
@@ -286,11 +286,12 @@ namespace IslamSourceQuranViewer.Xam
             }
         }
 
-        //protected override SizeRequest OnSizeRequest(double widthConstraint, double heightConstraint)
+        //OnSizeRequest is obsolete as of version 2.2.0. Please use OnMeasure instead
+        //protected override SizeRequest OnSizeRequest(double widthContraint, double heightConstraint)
         //{
         //    Size size2;
         //    Size minimum = new Size(40.0, 40.0);
-            
+
         //    double width = Math.Min(Device.Info.ScaledScreenSize.Width, Device.Info.ScaledScreenSize.Height);
         //    IList itemsSource = ItemsSource as IList;
         //    if (((itemsSource != null) && !this.HasUnevenColumns) && ((this.ColumnWidth > 0) && !this.IsGroupingEnabled))
@@ -351,18 +352,21 @@ namespace IslamSourceQuranViewer.Xam
         }
         protected virtual async void ScrollAutomaticAsync()
         {
-            while (!_isScrollAutomaticInitialized)
+            while (this.ItemsCount != 0 && !_isScrollAutomaticInitialized)
             {
                 _isScrollAutomaticInitialized = true;
-                if (Wait)
-                {
+                if (Wait) {
                     Wait = false;
                     await Task.Delay(5000);
                 }
-                SetActivePage();
-                await Task.Delay(5000);
-                this.ActualElementIndex++;
-                await ScrollToActualAsync();
+                if (this.ItemsCount != 0) {
+                    SetActivePage();
+                    await Task.Delay(5000);
+                }
+                if (this.ItemsCount != 0) {
+                    this.ActualElementIndex++;
+                    await ScrollToActualAsync();
+                }
                 _isScrollAutomaticInitialized = false;
 
             }
@@ -375,7 +379,6 @@ namespace IslamSourceQuranViewer.Xam
 
             if (this.ActualElementIndex < 0)
                 this.ActualElementIndex = 0;
-
             try
             {
                 await this.ScrollView.ScrollToAsync(this.ActualElement.X, 0, false);

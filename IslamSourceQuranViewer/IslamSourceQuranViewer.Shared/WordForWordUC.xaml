@@ -14,7 +14,7 @@
         <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
         <local:SurfaceSourceConverter x:Key="SurfaceSource" TopLevelFontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}"/>
         <local:RenderSourceConverter x:Key="RenderSource"/>
-        <local:ArabicFlowConverter x:Key="ArabicFlow"/>
+        <!-- <local:ArabicFlowConverter x:Key="ArabicFlow"/> -->
         <local:StopContinueTextConverter x:Key="StopContinueText"/>
         <local:StopContinueTextColorConverter x:Key="StopContinueTextColor"/>
         <local:BackgroundSelectedConverter x:Key="BackgroundSelected"/>

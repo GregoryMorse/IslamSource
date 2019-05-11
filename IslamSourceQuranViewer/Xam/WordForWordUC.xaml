@@ -2,64 +2,70 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:IslamSourceQuranViewer.Xam"
-             x:Class="IslamSourceQuranViewer.Xam.WordForWordUC">
+             x:Class="IslamSourceQuranViewer.Xam.WordForWordUC" x:Name="TopLevel">
   <ContentPage.Resources>
     <ResourceDictionary>
-      <Style x:Key="TitleStyle" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="Black"/>
+      <Style x:Key="TitleStyle" TargetType="Label">
+          <Setter Property="TextColor" Value="Black"/>
       </Style>
       <local:RunFormattedText x:Key="RunFormattedText"/>
-      <local:WidthLimiterConverter x:Key="WidthLimiter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay}"/>
-      <local:ArabicFlowConverter x:Key="ArabicFlow"/>
+      <local:WidthLimiterConverter x:Key="WidthLimiter" x:Name="WidthLimiterConverter" TopLevelMaxValue="{Binding Path=UIChanger.MaxWidth, Mode=OneWay, Source={x:Reference TopLevel}}"/>
       <local:BackgroundSelectedConverter x:Key="BackgroundSelected"/>
-      <ItemsPanelTemplate x:Key="VirtualPanelTemplate">
-        <VirtualizingStackPanel Background="White" FlowDirection="RightToLeft"/>
-      </ItemsPanelTemplate>
       <DataTemplate x:Key="WordTemplate">
-        <ListView ItemsSource="{Binding Mode=OneWay, Path=RenderSource}" ItemTemplate="{StaticResource WrapTemplate}">
-        </ListView>
+        <ViewCell>
+          <ViewCell.View>
+            <ListView ItemsSource="{Binding Mode=OneWay, Path=RenderSource}" ItemTemplate="{StaticResource WrapTemplate}" HasUnevenRows="true">
+            </ListView>
+          </ViewCell.View>
+        </ViewCell>
       </DataTemplate>
       <DataTemplate x:Key="ArabicTemplate">
-        <Grid>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-          </Grid.RowDefinitions>
-
-          <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-          <Label Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding IsRTL, Converter={StaticResource ArabicFlow}}" FormattedText="{Binding ItemRuns, Converter={StaticResource RunFormattedText}}"
-                  TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" Language="ar" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.FontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.FontSize, Mode=OneWay}">
-          </Label>
-        </Grid>
+        <ViewCell>
+          <ViewCell.View>
+            <Frame OutlineColor="LightGray">
+              <Label Grid.Row="0" Width="auto" HorizontalOptions="Center" Margin="5" HorizontalTextAlignment="Center" FormattedText="{Binding ItemRuns, Converter={StaticResource RunFormattedText}}"
+        TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" Language="ar" FontFamily="{Binding Path=UIChanger.FontFamily, Mode=OneWay, Source={x:Reference TopLevel}}" FontSize="{Binding Path=UIChanger.FontSize, Mode=OneWay, Source={x:Reference TopLevel}}">
+              </Label>
+            </Frame>
+          </ViewCell.View>
+        </ViewCell>
       </DataTemplate>
       <DataTemplate x:Key="NormalTemplate">
-        <Grid>
-          <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-          </Grid.RowDefinitions>
-
-          <Rectangle Grid.Row="0" Stroke="LightGray" StrokeThickness="1" StrokeDashArray="3,3" StrokeDashCap="Round"></Rectangle>
-          <Label Grid.Row="0" Width="auto" HorizontalAlignment="Center" Margin="5" FlowDirection="{Binding IsRTL, Converter={StaticResource ArabicFlow}}" FormattedText="{Binding ItemRuns, Converter={StaticResource RunFormattedText}}"
-                  TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontFamily, Mode=OneWay}" FontSize="{Binding ElementName=TopLevel, Path=UIChanger.OtherFontSize, Mode=OneWay}">
-          </Label>
-        </Grid>
+        <ViewCell>
+          <ViewCell.View>
+            <Frame OutlineColor="LightGray">
+              <Label Grid.Row="0" Width="auto" HorizontalOptions="Center" Margin="5" HorizontalTextAlignment="Center" FormattedText="{Binding ItemRuns, Converter={StaticResource RunFormattedText}}"
+                      TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TitleStyle}" FontFamily="{Binding Path=UIChanger.OtherFontFamily, Mode=OneWay, Source={x:Reference TopLevel}}" FontSize="{Binding Path=UIChanger.OtherFontSize, Mode=OneWay, Source={x:Reference TopLevel}}">
+              </Label>
+            </Frame>
+          </ViewCell.View>
+        </ViewCell>
       </DataTemplate>
       <local:NormalWordTemplateSelector x:Key="NormalWordTemplateSelector" WordTemplate="{StaticResource WordTemplate}" NormalTemplate="{StaticResource NormalTemplate}" ArabicTemplate="{StaticResource ArabicTemplate}"></local:NormalWordTemplateSelector>
       <DataTemplate x:Key="MyTemplate">
-        <ListView BackgroundColor="{Binding IsSelected, Converter={StaticResource BackgroundSelected}, Mode=OneWay}" ItemsSource="{Binding Items}" ItemTemplateSelector="{StaticResource NormalWordTemplateSelector}" MaxWidth="{Binding MaxWidth, Converter={StaticResource WidthLimiter}, Mode=OneWay}">
+        <ListView BackgroundColor="{Binding IsSelected, Converter={StaticResource BackgroundSelected}, Mode=OneWay}" ItemsSource="{Binding Items}" ItemTemplate="{StaticResource NormalWordTemplateSelector}" WidthRequest="{Binding MaxWidth, Converter={StaticResource WidthLimiter}, Mode=OneWay}" HorizontalOptions="Start" HasUnevenRows="true">
         </ListView>
       </DataTemplate>
       <local:MyDataTemplateSelector x:Key="MyDataTemplateSelector" MyTemplate="{StaticResource MyTemplate}"></local:MyDataTemplateSelector>
       <DataTemplate x:Key="WrapTemplate">
-        <local:ItemsView ItemsSource="{Binding RenderItems}" ItemTemplateSelector="{StaticResource MyDataTemplateSelector}">
-        </local:ItemsView>
+        <ViewCell>
+          <ViewCell.View>
+            <local:ItemsView ItemsSource="{Binding RenderItems}" ItemTemplate="{StaticResource MyDataTemplateSelector}" HorizontalOptions="FillAndExpand">
+            </local:ItemsView>
+          </ViewCell.View>
+        </ViewCell>
       </DataTemplate>
     </ResourceDictionary>
   </ContentPage.Resources>
-  <Grid Background="White" x:Name="MainGrid">
+  <Grid BackgroundColor="White" x:Name="MainGrid" HorizontalOptions="FillAndExpand">
     <Grid.RowDefinitions>
       <RowDefinition Height="*"></RowDefinition>
     </Grid.RowDefinitions>
-    <ListView Background="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding Mode=OneWay, Path=ViewModel.RenderSource}" VirtualizingStackPanel.VirtualizationMode="Recycling">
+        <ListView BackgroundColor="White" x:Name="MainControl" Grid.Row="0" ItemTemplate="{StaticResource WrapTemplate}" ItemsSource="{Binding ViewModel.RenderModels, Mode=OneWay}" HasUnevenRows="true" HorizontalOptions="FillAndExpand">
     </ListView>
   </Grid>
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name="Settings" Activated="Settings_Click" x:Uid="Settings" Icon="Setting"></ToolbarItem>
+    <ToolbarItem Name="About" Activated="About_Click" x:Uid="About" Icon="ContactInfo"></ToolbarItem>
+  </ContentPage.ToolbarItems>
 </ContentPage>

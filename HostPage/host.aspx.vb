@@ -37,17 +37,16 @@ Partial Class host
         AsyncTimeout = New TimeSpan(0, 0, 360)
         RegisterAsyncTask(New PageAsyncTask(Function(_sender As Object, _e As EventArgs, cb As AsyncCallback, extraData As Object) As IAsyncResult
                                                 'adapter for .NET 4
-                                                'Dim Context As HttpContext = HttpContext.Current
-                                                _dlgt = New AsyncTaskDelegate(Sub() DoAsyncLoad().Wait())
+                                                _dlgt = New AsyncTaskDelegate(Sub() DoAsyncLoad(CType(extraData, HttpContext)).Wait())
                                                 Return _dlgt.BeginInvoke(cb, extraData)
                                             End Function,
                                             Sub(ar As IAsyncResult)
                                                 _dlgt.EndInvoke(ar)
                                             End Sub,
                                             Sub(ar As IAsyncResult)
-
-                                            End Sub, "Async"))
-        'ExecuteRegisteredAsyncTasks()
+                                                _dlgt.EndInvoke(ar)
+                                            End Sub, HttpContext.Current))
+        ExecuteRegisteredAsyncTasks()
     End Sub
     Protected Delegate Sub AsyncTaskDelegate()
     Private _PortableMethods As PortableMethods
@@ -61,7 +60,7 @@ Partial Class host
     Public Function IsLoggedIn(Context As HttpContext) As Boolean
         Return UA.IsLoggedIn(Context)
     End Function
-    Public Async Function DoAsyncLoad() As Threading.Tasks.Task
+    Public Async Function DoAsyncLoad(State As HttpContext) As Threading.Tasks.Task
         Dim Index As Integer
         Dim IsPrint As Boolean = False
         Dim bmp As Bitmap = Nothing
@@ -363,16 +362,16 @@ Partial Class host
                 End If
             End If
             If Not ResultBmp Is Nothing Then
-                Context.Response.ContentType = "image/gif"
+                State.Response.ContentType = "image/gif"
                 'Save crashes because it calls get_Position on the stream
                 'ResultBmp.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Gif)
                 Dim MemStream As New IO.MemoryStream()
                 ResultBmp.Save(MemStream, CType(If(Object.Equals(ResultBmp.RawFormat, Drawing.Imaging.ImageFormat.MemoryBmp), Drawing.Imaging.ImageFormat.Gif, ResultBmp.RawFormat), Drawing.Imaging.ImageFormat))
-                If Bytes Is Nothing Then Await _PortableMethods.DiskCache.CacheItem(Context.Request.Url.Host + "_" + Context.Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
-                Context.Response.Cache.SetCacheability(HttpCacheability.Public)
-                Context.Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
+                If Bytes Is Nothing Then Await _PortableMethods.DiskCache.CacheItem(State.Request.Url.Host + "_" + State.Request.QueryString().ToString(), DateModified, MemStream.GetBuffer())
+                State.Response.Cache.SetCacheability(HttpCacheability.Public)
+                State.Response.OutputStream.Write(MemStream.ToArray(), 0, CInt(MemStream.Length))
                 Try
-                    Context.Response.Flush()
+                    State.Response.Flush()
                 Catch e As HttpException
                     'e.ErrorCode = &H80070057
                 End Try

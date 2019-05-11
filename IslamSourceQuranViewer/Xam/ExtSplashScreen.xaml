@@ -16,7 +16,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <Grid x:Name="MainGrid" BackgroundColor="LightBlue">
+    <Grid x:Name="MainGrid" BackgroundColor="LightBlue" HorizontalOptions="FillAndExpand">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="3*"></RowDefinition>
 			<RowDefinition Height="94*"></RowDefinition>
@@ -27,7 +27,7 @@
 			<ColumnDefinition Width="auto"></ColumnDefinition>
 			<ColumnDefinition Width="*"></ColumnDefinition>
 		</Grid.ColumnDefinitions>
-        <skia:SKCanvasView x:Name="SplashImg" Grid.Row="1" Grid.Column="1" PaintSurface="OnCanvasViewPaintSurface"></skia:SKCanvasView>
+        <skia:SKCanvasView x:Name="SplashImg" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" PaintSurface="OnCanvasViewPaintSurface"></skia:SKCanvasView>
         <!-- <Path x:Name="SplashImg" Grid.Row="1" Grid.Column="1" Data="{StaticResource PathString}" Fill="Black" HorizontalAlignment="Center" Margin="0,0,0,0" Stretch="UniformToFill" UseLayoutRounding="False" VerticalAlignment="Center"/> -->
         <Grid Grid.Row="1" Grid.Column="1" x:Name="ProgressGrid" BackgroundColor="Transparent">
             <Grid.RowDefinitions>
@@ -35,7 +35,7 @@
                 <RowDefinition Height="12*"></RowDefinition>
                 <RowDefinition Height="76*"></RowDefinition>
             </Grid.RowDefinitions>
-            <pr:CustomProgressRing x:Name="splashProgressRing" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent"></pr:CustomProgressRing>
+            <pr:CustomProgressRing x:Name="splashProgressRing" Grid.Row="1" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent"></pr:CustomProgressRing>
             <control:ProgressRing Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" RingThickness="20" Progress="0"/>
             <!-- <ProgressRing x:Name="splashProgressRing" Grid.Row="1" Grid.Column="0" IsActive="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Background="Transparent"></ProgressRing> -->
         </Grid>

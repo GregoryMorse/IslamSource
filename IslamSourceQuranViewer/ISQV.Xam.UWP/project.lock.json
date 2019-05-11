@@ -2,6 +2,41 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.10240": {
+      "HarfBuzzSharp/1.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx/native/libHarfBuzzSharp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win10-arm/nativeassets/uap10.0/libHarfBuzzSharp.dll": {
+            "assetType": "native",
+            "rid": "win10-arm"
+          },
+          "runtimes/win10-x64/nativeassets/uap10.0/libHarfBuzzSharp.dll": {
+            "assetType": "native",
+            "rid": "win10-x64"
+          },
+          "runtimes/win10-x86/nativeassets/uap10.0/libHarfBuzzSharp.dll": {
+            "assetType": "native",
+            "rid": "win10-x86"
+          },
+          "runtimes/win7-x64/native/libHarfBuzzSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x64"
+          },
+          "runtimes/win7-x86/native/libHarfBuzzSharp.dll": {
+            "assetType": "native",
+            "rid": "win7-x86"
+          }
+        }
+      },
       "Microsoft.Bcl.Build/1.0.21": {
         "type": "package",
         "build": {
@@ -354,6 +389,59 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        }
+      },
       "SkiaSharp/1.59.1": {
         "type": "package",
         "compile": {
@@ -411,6 +499,19 @@
             "assetType": "native",
             "rid": "win7-x86"
           }
+        }
+      },
+      "SkiaSharp.HarfBuzz/1.59.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "1.4.6",
+          "SkiaSharp": "1.59.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
         }
       },
       "SkiaSharp.Views/1.59.1": {
@@ -2366,6 +2467,18 @@
       }
     },
     "UAP,Version=v10.0.10240/win10-arm": {
+      "HarfBuzzSharp/1.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-arm/nativeassets/uap10.0/libHarfBuzzSharp.dll": {}
+        }
+      },
       "Microsoft.Bcl.Build/1.0.21": {
         "type": "package",
         "build": {
@@ -2973,6 +3086,59 @@
           "runtimes/win8-arm/native/clrcompression.dll": {}
         }
       },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        }
+      },
       "SkiaSharp/1.59.1": {
         "type": "package",
         "compile": {
@@ -2985,6 +3151,19 @@
           "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {},
           "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {},
           "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.HarfBuzz/1.59.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "1.4.6",
+          "SkiaSharp": "1.59.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
         }
       },
       "SkiaSharp.Views/1.59.1": {
@@ -4769,6 +4948,18 @@
       }
     },
     "UAP,Version=v10.0.10240/win10-arm-aot": {
+      "HarfBuzzSharp/1.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-arm/nativeassets/uap10.0/libHarfBuzzSharp.dll": {}
+        }
+      },
       "Microsoft.Bcl.Build/1.0.21": {
         "type": "package",
         "build": {
@@ -5412,6 +5603,59 @@
           "runtimes/win8-arm-aot/native/_._": {}
         }
       },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        }
+      },
       "SkiaSharp/1.59.1": {
         "type": "package",
         "compile": {
@@ -5424,6 +5668,19 @@
           "runtimes/win10-arm/nativeassets/uap10.0/libEGL.dll": {},
           "runtimes/win10-arm/nativeassets/uap10.0/libGLESv2.dll": {},
           "runtimes/win10-arm/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.HarfBuzz/1.59.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "1.4.6",
+          "SkiaSharp": "1.59.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
         }
       },
       "SkiaSharp.Views/1.59.1": {
@@ -7208,6 +7465,18 @@
       }
     },
     "UAP,Version=v10.0.10240/win10-x64": {
+      "HarfBuzzSharp/1.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x64/nativeassets/uap10.0/libHarfBuzzSharp.dll": {}
+        }
+      },
       "Microsoft.Bcl.Build/1.0.21": {
         "type": "package",
         "build": {
@@ -7824,6 +8093,59 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        }
+      },
       "SkiaSharp/1.59.1": {
         "type": "package",
         "compile": {
@@ -7836,6 +8158,19 @@
           "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {},
           "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {},
           "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.HarfBuzz/1.59.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "1.4.6",
+          "SkiaSharp": "1.59.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
         }
       },
       "SkiaSharp.Views/1.59.1": {
@@ -9620,6 +9955,18 @@
       }
     },
     "UAP,Version=v10.0.10240/win10-x64-aot": {
+      "HarfBuzzSharp/1.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x64/nativeassets/uap10.0/libHarfBuzzSharp.dll": {}
+        }
+      },
       "Microsoft.Bcl.Build/1.0.21": {
         "type": "package",
         "build": {
@@ -10272,6 +10619,59 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        }
+      },
       "SkiaSharp/1.59.1": {
         "type": "package",
         "compile": {
@@ -10284,6 +10684,19 @@
           "runtimes/win10-x64/nativeassets/uap10.0/libEGL.dll": {},
           "runtimes/win10-x64/nativeassets/uap10.0/libGLESv2.dll": {},
           "runtimes/win10-x64/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.HarfBuzz/1.59.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "1.4.6",
+          "SkiaSharp": "1.59.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
         }
       },
       "SkiaSharp.Views/1.59.1": {
@@ -12068,6 +12481,18 @@
       }
     },
     "UAP,Version=v10.0.10240/win10-x86": {
+      "HarfBuzzSharp/1.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x86/nativeassets/uap10.0/libHarfBuzzSharp.dll": {}
+        }
+      },
       "Microsoft.Bcl.Build/1.0.21": {
         "type": "package",
         "build": {
@@ -12684,6 +13109,59 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        }
+      },
       "SkiaSharp/1.59.1": {
         "type": "package",
         "compile": {
@@ -12696,6 +13174,19 @@
           "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {},
           "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {},
           "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.HarfBuzz/1.59.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "1.4.6",
+          "SkiaSharp": "1.59.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
         }
       },
       "SkiaSharp.Views/1.59.1": {
@@ -14480,6 +14971,18 @@
       }
     },
     "UAP,Version=v10.0.10240/win10-x86-aot": {
+      "HarfBuzzSharp/1.4.6": {
+        "type": "package",
+        "compile": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/HarfBuzzSharp.dll": {}
+        },
+        "native": {
+          "runtimes/win10-x86/nativeassets/uap10.0/libHarfBuzzSharp.dll": {}
+        }
+      },
       "Microsoft.Bcl.Build/1.0.21": {
         "type": "package",
         "build": {
@@ -15132,6 +15635,59 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.dll": {}
+        }
+      },
+      "SharpDX.Direct2D1/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct2D1.dll": {}
+        }
+      },
+      "SharpDX.Direct3D11/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1",
+          "SharpDX.DXGI": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.Direct3D11.dll": {}
+        }
+      },
+      "SharpDX.DXGI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/SharpDX.DXGI.dll": {}
+        }
+      },
       "SkiaSharp/1.59.1": {
         "type": "package",
         "compile": {
@@ -15144,6 +15700,19 @@
           "runtimes/win10-x86/nativeassets/uap10.0/libEGL.dll": {},
           "runtimes/win10-x86/nativeassets/uap10.0/libGLESv2.dll": {},
           "runtimes/win10-x86/nativeassets/uap10.0/libSkiaSharp.dll": {}
+        }
+      },
+      "SkiaSharp.HarfBuzz/1.59.0-beta": {
+        "type": "package",
+        "dependencies": {
+          "HarfBuzzSharp": "1.4.6",
+          "SkiaSharp": "1.59.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll": {}
         }
       },
       "SkiaSharp.Views/1.59.1": {
@@ -16929,6 +17498,32 @@
     }
   },
   "libraries": {
+    "HarfBuzzSharp/1.4.6": {
+      "sha512": "iyUFjOO/BiEUTerwe2O8+V3Ac91U9YVv6Hc9KuGua/r5UJ4doujiyG4r9BuuMQMnpgpc8XhL78t/sZ4x9Eifjw==",
+      "type": "package",
+      "path": "harfbuzzsharp/1.4.6",
+      "files": [
+        "build/net45/HarfBuzzSharp.dll.config",
+        "build/net45/HarfBuzzSharp.targets",
+        "harfbuzzsharp.1.4.6.nupkg.sha512",
+        "harfbuzzsharp.nuspec",
+        "lib/MonoAndroid/HarfBuzzSharp.dll",
+        "lib/XamarinMac/HarfBuzzSharp.dll",
+        "lib/XamariniOS/HarfBuzzSharp.dll",
+        "lib/XamarintvOS/HarfBuzzSharp.dll",
+        "lib/net45/HarfBuzzSharp.dll",
+        "lib/net45/HarfBuzzSharp.dll.config",
+        "lib/netstandard1.3/HarfBuzzSharp.dll",
+        "lib/portable-net45+win8+wpa81+wp8/HarfBuzzSharp.dll",
+        "lib/uap10.0/HarfBuzzSharp.dll",
+        "runtimes/osx/native/libHarfBuzzSharp.dylib",
+        "runtimes/win10-arm/nativeassets/uap10.0/libHarfBuzzSharp.dll",
+        "runtimes/win10-x64/nativeassets/uap10.0/libHarfBuzzSharp.dll",
+        "runtimes/win10-x86/nativeassets/uap10.0/libHarfBuzzSharp.dll",
+        "runtimes/win7-x64/native/libHarfBuzzSharp.dll",
+        "runtimes/win7-x86/native/libHarfBuzzSharp.dll"
+      ]
+    },
     "Microsoft.Bcl.Build/1.0.21": {
       "sha512": "sgHu4mIt0+NVGyI12Bj4hLPypNK55UOH+ologj2LqDCjxq3EbIxe/uAtHjY+fEwbE1dtsAHG8SXHf+V/EYbKTg==",
       "type": "package",
@@ -20298,6 +20893,86 @@
         "runtimes/win8-arm/native/clrcompression.dll"
       ]
     },
+    "SharpDX/4.0.1": {
+      "sha512": "8YA1VFg1/K8Emb8FEZDobojcv1BLuppVo7CRJQEgA1V748VIMPBru0i0OnsCjLSThzTn7juOvH85qjFL9Grl1w==",
+      "type": "package",
+      "path": "sharpdx/4.0.1",
+      "files": [
+        "lib/net40/SharpDX.dll",
+        "lib/net40/SharpDX.xml",
+        "lib/net45/SharpDX.dll",
+        "lib/net45/SharpDX.xml",
+        "lib/netcoreapp1.0/SharpDX.dll",
+        "lib/netcoreapp1.0/SharpDX.xml",
+        "lib/netstandard1.1/SharpDX.dll",
+        "lib/netstandard1.1/SharpDX.xml",
+        "lib/uap10.0/SharpDX.dll",
+        "lib/uap10.0/SharpDX.pri",
+        "lib/uap10.0/SharpDX.xml",
+        "sharpdx.4.0.1.nupkg.sha512",
+        "sharpdx.nuspec"
+      ]
+    },
+    "SharpDX.Direct2D1/4.0.1": {
+      "sha512": "EDBYa9kAG+gaMB4cCH7WNpxS8WijSCejNz/SERs2P1sWEPZZdUiUIruQMjPCdW3lXxT508aYiH2UXHAaZtk00g==",
+      "type": "package",
+      "path": "sharpdx.direct2d1/4.0.1",
+      "files": [
+        "lib/net40/SharpDX.Direct2D1.dll",
+        "lib/net40/SharpDX.Direct2D1.xml",
+        "lib/net45/SharpDX.Direct2D1.dll",
+        "lib/net45/SharpDX.Direct2D1.xml",
+        "lib/netcoreapp1.0/SharpDX.Direct2D1.dll",
+        "lib/netcoreapp1.0/SharpDX.Direct2D1.xml",
+        "lib/netstandard1.1/SharpDX.Direct2D1.dll",
+        "lib/netstandard1.1/SharpDX.Direct2D1.xml",
+        "lib/uap10.0/SharpDX.Direct2D1.dll",
+        "lib/uap10.0/SharpDX.Direct2D1.pri",
+        "lib/uap10.0/SharpDX.Direct2D1.xml",
+        "sharpdx.direct2d1.4.0.1.nupkg.sha512",
+        "sharpdx.direct2d1.nuspec"
+      ]
+    },
+    "SharpDX.Direct3D11/4.0.1": {
+      "sha512": "7xIfeAhxPhbPgSiREfFbOOwIWonUt2GHR7XZN5p2DJMWuqjl0+h1oo2/sF+SH/c6D6APjdbt0J+dYSzoV0PA/w==",
+      "type": "package",
+      "path": "sharpdx.direct3d11/4.0.1",
+      "files": [
+        "lib/net40/SharpDX.Direct3D11.dll",
+        "lib/net40/SharpDX.Direct3D11.xml",
+        "lib/net45/SharpDX.Direct3D11.dll",
+        "lib/net45/SharpDX.Direct3D11.xml",
+        "lib/netcoreapp1.0/SharpDX.Direct3D11.dll",
+        "lib/netcoreapp1.0/SharpDX.Direct3D11.xml",
+        "lib/netstandard1.1/SharpDX.Direct3D11.dll",
+        "lib/netstandard1.1/SharpDX.Direct3D11.xml",
+        "lib/uap10.0/SharpDX.Direct3D11.dll",
+        "lib/uap10.0/SharpDX.Direct3D11.pri",
+        "lib/uap10.0/SharpDX.Direct3D11.xml",
+        "sharpdx.direct3d11.4.0.1.nupkg.sha512",
+        "sharpdx.direct3d11.nuspec"
+      ]
+    },
+    "SharpDX.DXGI/4.0.1": {
+      "sha512": "Av/kToUkVR1tDtIP9zmDGwCuCtyL04+PP7kes6aABzky1Y9vT03kR7mDeE83gl+E8GUmMMbVXbQ4AG2CVb66sg==",
+      "type": "package",
+      "path": "sharpdx.dxgi/4.0.1",
+      "files": [
+        "lib/net40/SharpDX.DXGI.dll",
+        "lib/net40/SharpDX.DXGI.xml",
+        "lib/net45/SharpDX.DXGI.dll",
+        "lib/net45/SharpDX.DXGI.xml",
+        "lib/netcoreapp1.0/SharpDX.DXGI.dll",
+        "lib/netcoreapp1.0/SharpDX.DXGI.xml",
+        "lib/netstandard1.1/SharpDX.DXGI.dll",
+        "lib/netstandard1.1/SharpDX.DXGI.xml",
+        "lib/uap10.0/SharpDX.DXGI.dll",
+        "lib/uap10.0/SharpDX.DXGI.pri",
+        "lib/uap10.0/SharpDX.DXGI.xml",
+        "sharpdx.dxgi.4.0.1.nupkg.sha512",
+        "sharpdx.dxgi.nuspec"
+      ]
+    },
     "SkiaSharp/1.59.1": {
       "sha512": "Le+YqP0aWwJ5ImHikWiLWOWjdH8oOV6F2D7fknzKp9ArzDIrtPASeiHpI1RgqQEK/GGvR56B2l5belsDzwK7uQ==",
       "type": "package",
@@ -20337,6 +21012,17 @@
         "skiasharp.1.59.1.nupkg.sha512",
         "skiasharp.nuspec",
         "xamarin.interactive/SkiaSharp.Workbooks.dll"
+      ]
+    },
+    "SkiaSharp.HarfBuzz/1.59.0-beta": {
+      "sha512": "z7DppCe2ujn0EwdvKb9joRaKqRfToPdmsbudOeSTCsvy/oa19GOwFAP10EzAKU05KlKAt01tbjlSsi34/JCvcQ==",
+      "type": "package",
+      "path": "skiasharp.harfbuzz/1.59.0-beta",
+      "files": [
+        "lib/netstandard1.3/SkiaSharp.HarfBuzz.dll",
+        "lib/portable-net45+win8+wpa81+wp8/SkiaSharp.HarfBuzz.dll",
+        "skiasharp.harfbuzz.1.59.0-beta.nupkg.sha512",
+        "skiasharp.harfbuzz.nuspec"
       ]
     },
     "SkiaSharp.Views/1.59.1": {
@@ -26781,7 +27467,10 @@
     "": [
       "Microsoft.Bcl.Build >= 1.0.21",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.4.0",
+      "SharpDX.Direct2D1 >= 4.0.1",
+      "SharpDX.Direct3D11 >= 4.0.1",
       "SkiaSharp >= 1.59.1",
+      "SkiaSharp.HarfBuzz >= 1.59.0-beta",
       "SkiaSharp.Views.Forms >= 1.59.1",
       "System.Threading.Tasks >= 4.3.0",
       "System.Threading.Tasks.Extensions >= 4.4.0",
@@ -26831,7 +27520,10 @@
     "dependencies": {
       "Microsoft.Bcl.Build": "1.0.21",
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
+      "SharpDX.Direct2D1": "4.0.1",
+      "SharpDX.Direct3D11": "4.0.1",
       "SkiaSharp": "1.59.1",
+      "SkiaSharp.HarfBuzz": "1.59.0-beta",
       "SkiaSharp.Views.Forms": "1.59.1",
       "System.Threading.Tasks": "4.3.0",
       "System.Threading.Tasks.Extensions": "4.4.0",
