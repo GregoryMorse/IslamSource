@@ -680,6 +680,18 @@ namespace IslamSourceQuranViewer
             throw new NotImplementedException();
         }
     }
+    public class ArabicFlowConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
     public class StopContinueTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
